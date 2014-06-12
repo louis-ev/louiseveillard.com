@@ -28,6 +28,13 @@ require('pho-devstack')(gulp, {
   watch: {
     enabled: false
   },
+	htmlmin: {
+	/* Markup minification */
+	/* Option list: https://github.com/kangax/html-minifier#options-quick-reference */
+	enabled: true,
+	collapseWhitespace: true, // remove whitespace characters from text nodes and document tree
+	removeComments: false      // strip HTML comments
+	},
   spritesPreprocessor: {
     enabled: true,
     prefix: '../images/sprites/' // change this to prefix path before sprites. '/images/sprites/' for absolute paths
