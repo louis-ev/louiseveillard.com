@@ -87,10 +87,9 @@ video {
 	}
 }
 
-/* optimisation du scroll */
-
 picture {
 	display: block;
+	transition: opacity .4s;
 }
 
 /* let the fun begin! */
@@ -353,6 +352,7 @@ a:hover {
 	#entete {
 		margin-top:55px;
 		margin-bottom: @marge-entre-sections;
+		font-size: 1em;
 
 		#nom {
 			h1 {
@@ -396,11 +396,19 @@ a:hover {
 
 		margin-bottom: @marge-entre-sections;
 
-		.header h2 {
- 			margin-bottom: @marge-header-cat;
-			font-weight: 400;
-			cursor: pointer;
+		.header {
 
+			&.open {
+				h2 {
+					.boite-hovered;
+				}
+			}
+
+			h2 {
+	 			margin-bottom: @marge-header-cat;
+				font-weight: 400;
+				cursor: pointer;
+			}
 		}
 
 		#details {
@@ -502,8 +510,12 @@ a:hover {
 		.header h2 {
  			margin-bottom: @marge-header-cat;
 			font-weight: 400;
-			cursor: pointer;
+			cursor: default;
 
+			&:hover {
+				background-color: transparent;
+				box-shadow: none;
+			}
 		}
 
 		.row.lienProjets {
@@ -518,7 +530,7 @@ a:hover {
 					padding: 15px 0 0;
 
 					.column:first-child {
-						margin-left: 8.33333%;
+						//margin-left: 8.33333%;
 					}
 				}
 			}
@@ -588,11 +600,14 @@ main {
 	z-index:100;
 	-webkit-box-shadow: 0px 0px 30px 15px #000;
 	box-shadow: 0px 0px 30px 15px #000;
-	transition: opacity .5s;
+	transition: opacity .5s, -webkit-transform 1s;
 
 	@media @tablet-only {
 	  /* sélectionner tous les articles sauf le premier */
 	  margin-top: 40px !important;
+	  margin-bottom: 0px !important;
+	  -webkit-transform: translateY(0) !important;
+	  transform: translateY(0) !important;
 
 	  & ~ .article {
 		margin-top:160px !important;
@@ -609,6 +624,10 @@ main {
 		max-width: 1920px;
 	}
 
+	.csstransforms &:first-child {
+		margin-top: 0 !important;
+	}
+
 
 	&.peripherie .imgfond {
 
@@ -620,7 +639,6 @@ main {
 	}
 
 	.jour & {
-		background-color:#fff;
 		-webkit-box-shadow: 0px 0px 40px 5px #bbb;
 		box-shadow: 0px 0px 40px 5px #bbb;
 	}
@@ -661,9 +679,19 @@ main {
 			margin-left: 16.666666666666664%;
 		}
 	}
+	.col-md-offset-3 {
+		@media @desktop {
+			margin-left: 24.999999997%;
+		}
+	}
 	.col-md-offset-4 {
 		@media @desktop {
 			margin-left: 33.33333333333333%;
+		}
+	}
+	.col-md-offset-5 {
+		@media @desktop {
+			margin-left: 41.6666666666%;
 		}
 	}
 	.col-md-offset-6 {
@@ -671,9 +699,19 @@ main {
 	        margin-left: 50%;
 		}
 	}
+	.col-md-offset-7 {
+		@media @desktop {
+			margin-left: 58.3333333333%;
+		}
+	}
 	.col-md-offset-8 {
 		@media @desktop {
-	        margin-left: 66.66666666666666%;
+			margin-left: 66.666666666666664%;
+		}
+	}
+	.col-md-offset-9 {
+		@media @desktop {
+	        margin-left: 74.9999999997%;
 		}
 	}
 	.col-md-offset-10 {
@@ -737,6 +775,7 @@ main {
 		padding-bottom: 5px;
 		padding:0;
 		border-bottom: 1px solid #000;
+		transition: opacity .4s;
 
 		@media @desktop {
 			position:absolute;
@@ -750,6 +789,21 @@ main {
 		margin-top:-3%;
 	}
 
+	.cadreur {
+		background-color: rgba(255,255,255,.95);
+		-webkit-box-shadow: 0px 0px 8px 3px rgba(0,0,0,.1);
+		-moz-box-shadow: 0px 0px 8px 3px rgba(0,0,0,.1);
+		box-shadow: 0px 0px 8px 3px rgba(0,0,0,.1);
+
+		.jour & {
+			-webkit-box-shadow: 0px 0px 8px 3px rgba(204,204,204,.2);
+			-moz-box-shadow: 0px 0px 8px 3px rgba(204,204,204,.2);
+			box-shadow: 0px 0px 8px 3px rgba(204,204,204,.2);
+		}
+
+	}
+
+
 	.chapeau {
 		position: relative;
 		padding: 1em 15px;
@@ -760,12 +814,9 @@ main {
 		background-color: rgba(255,255,255,1);
 
 		@media @desktop {
+			.cadreur;
 			margin:1em 0;
 			border-bottom: 1px solid #eee;
-			background-color: rgba(255,255,255,.95);
-			-webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,.2);
-			-moz-box-shadow: 0px 0px 15px 3px rgba(0,0,0,.2);
-			box-shadow: 0px 0px 15px 3px rgba(0,0,0,.2);
 		}
 
 		list-style: none;
@@ -800,11 +851,6 @@ main {
 		}
 
 	}
-	.jour .chapeau {
-		-webkit-box-shadow: 0px 0px 15px 3px rgba(204,204,204,.2);
-		-moz-box-shadow: 0px 0px 15px 3px rgba(204,204,204,.2);
-		box-shadow: 0px 0px 15px 3px rgba(204,204,204,.2);
-	}
 
 	.txt {
 		position: relative;
@@ -812,10 +858,6 @@ main {
 		margin:0;
 		padding:.5em 15px 1em 15px;
 		z-index: 3;
-		background-color: rgba(255,255,255,.85);
-		-webkit-box-shadow: 0px 0px 15px 3px rgba(0,0,0,.2);
-		-moz-box-shadow: 0px 0px 15px 3px rgba(0,0,0,.2);
-		box-shadow: 0px 0px 15px 3px rgba(0,0,0,.2);
 
 		>p {
 			margin:0;
@@ -829,11 +871,11 @@ main {
 		@media @tablet-only {
 			background-color: rgba(255,255,255,1);
 		}
-	}
-	.jour .txt {
-		-webkit-box-shadow: 0px 0px 15px 3px rgba(204,204,204,.2);
-		-moz-box-shadow: 0px 0px 15px 3px rgba(204,204,204,.2);
-		box-shadow: 0px 0px 15px 3px rgba(204,204,204,.2);
+
+		@media @desktop {
+			.cadreur;
+		}
+
 	}
 
 	.chapeau + .txt {
@@ -847,7 +889,7 @@ main {
 
 	/* liens */
 
-	.txt {
+	.chapeau, .txt {
 		a, a:link, a:visited {
 			color: @textblack;
 			padding:0;
@@ -873,7 +915,7 @@ main {
 
 		a::before {
 			position: absolute;
-			top: 0;
+			top: -1px;
 			left: 0;
 			box-sizing: content-box;
 			padding: 0 0px;
@@ -946,8 +988,8 @@ main {
 		}
 	}
 
-	.js & picture:not(.premier) {
-		opacity:0;
+	.js & picture {
+		opacity:.4;
 	}
 
 	.js & .loader {
@@ -963,7 +1005,7 @@ main {
 		left: 0;
 		opacity: 1;
 		z-index: 1;
-		transition: all .5s;
+		transition: opacity 1s;
 
 	}
 
