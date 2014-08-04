@@ -13,7 +13,7 @@
   <meta name="og:url" content="<!-- substitute:og:url -->">
   <meta name="og:site_name" content="<!-- substitute:og:site_name -->">
 
-	<meta name="viewport" content="width=device-width, initial-scale = 1.0">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0">
 
 <!--
 
@@ -30,24 +30,27 @@
 
   <!-- substitute:css -->
 
-    <script src="bower_components/modernizr/modernizr.js"></script>
+  <script src="bower_components/modernizr/modernizr.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="bower_components/jquery/jquery.min.js"><\/script>')</script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="bower_components/jquery/jquery.min.js"><\/script>')</script>
+  <noscript>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata&subset=latin" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata:700&subset=latin" />
+  </noscript>
 
-    <noscript>
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata&subset=latin" />
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata:700&subset=latin" />
-    </noscript>
-
-	<script type="text/javascript" src="//use.typekit.net/wvj3mrq.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script type="text/javascript" src="//use.typekit.net/wvj3mrq.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 </head>
+
 <body>
 
     <script>
 	    (function() {
+	    	if ( window.innerWidth > 1024 ) {
+				document.body.className += 'loading';
+			}
 	    	var heure,mode;
 			heure = (new Date()).getHours();
 			if (heure < 19 && heure > 7) {
@@ -127,7 +130,7 @@
 			</div>
 			<div id="details" class="ui three column stackable grid">
 				<div class="row">
-					<div class="column collapsable collapsed">
+					<div class="column collapsable">
 					    <div class="content activites">
 							<div class="header">
 				    	    	<h3>Activités</h3>
@@ -139,7 +142,7 @@
 							</ul>
 					    </div>
 			    	</div>
-					<div class="column collapsable collapsed">
+					<div class="column collapsable">
 					    <div class="content interventions">
 							<div class="header">
 				    	    	<h3>Interventions</h3>
@@ -150,7 +153,7 @@
 							</ul>
 					    </div>
 			    	</div>
-			    	<div class="column collapsable collapsed">
+			    	<div class="column collapsable">
 					    <div class="content prix">
 							<div class="header">
 								<h3>Prix & diplômes</h3>
@@ -166,7 +169,7 @@
 			    	</div>
 				</div>
 				<div class="row">
-			    	<div class="column collapsable collapsed">
+			    	<div class="column collapsable">
 					    <div class="content publications">
 							<div class="header">
 								<h3>Publications</h3>
@@ -180,7 +183,7 @@
 							</ul>
 					    </div>
 			    	</div>
-			    	<div class="column collapsable collapsed">
+			    	<div class="column collapsable">
 					    <div class="content expositions">
 							<div class="header">
 								<h3>Expositions</h3>
@@ -300,7 +303,7 @@
             <header class="post_title">
                 <div class="centered">
 	                <div class="row" style="position: relative">
-	                    <div class="col2 titreProj" itemprop="headline">
+	                    <div class="col-md-2 titreProj" itemprop="headline">
 	                    	<div class="boiteProj header lien">
 		                    	<h3>Habsense</h3>
 	                    	</div>
@@ -349,6 +352,7 @@
 		                    		Bronze Award aux <a href="http://www.samsung.com/fr/news/localnews/2014/samsung-design-awards-2014" target="_blank">Samsung Design Awards 2014</a>.<br><br>
 	                    		</strong>
 
+								<small>
 		                    	Publié dans le magazine <a href="http://payload266.cargocollective.com/1/7/246337/7622960/Intramuros_920.jpg" target="_blank">Intramuros #172</a> (mai-juin 2014).<br><br>
 		                    	Repris par :
 		                    	</p>
@@ -385,7 +389,6 @@
 									</li>
 		                    	</ul>
 
-		                    	<small>
 		                    		Réalisé avec <a href="http://jeremielasnier.com/Habsense" target="_blank">Jérémie Lasnier</a>. Certains des photos suivantes ont été prises par Jérémie.
 		                    	</small>
 		                    </div>
@@ -393,7 +396,7 @@
                 	</div>
                 </div>
 
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture class="premier">
 					    <img alt="Habsense" height="1280" width="1920" src="img/hab/hab-small-2.jpg">
@@ -413,7 +416,7 @@
 	                </div>
                 </div>
 
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/hab/hab-small-4.jpg">
@@ -435,7 +438,7 @@
 	                </div>
                 </div>
 
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/hab/presentation-habsense-small.jpg">
@@ -481,7 +484,7 @@
             <header class="post_title">
                 <div class="centered">
 	                <div class="row" style="position: relative">
-	                    <div class="col2 col-md-offset-2 titreProj" itemprop="headline">
+	                    <div class="col-md-2 col-md-offset-2 titreProj" itemprop="headline">
 	                    	<div class="boiteProj header lien">
 		                    	<h3>Slowscreen</h3>
 	                    	</div>
@@ -542,13 +545,11 @@
                 	</div>
                 </div>
 
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <img alt="Slowscreen" height="1280" width="1920" src="img/ssc/ssc-small-1.jpg">
 					</picture>
-
-	                <div class="loader"></div>
 
                 </div>
 
@@ -561,7 +562,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/ssc/ssc-small-2.jpg">
@@ -581,7 +582,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/ssc/ssc-small-3.jpg">
@@ -707,7 +708,7 @@
                 	</div>
             	</div>
 
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/slg/slg-small-0.jpg">
@@ -728,7 +729,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/slg/slg-small-1.jpg">
@@ -769,7 +770,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<a style="position: relative;" href="https://vimeo.com/73757330" target='_blank' title="Regarder la vidéo sur Vimeo">
 
@@ -858,7 +859,7 @@
                 	</div>
                 </div>
 
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture class="canvas">
 						<canvas id="balls" width="1024" height="600">
@@ -884,7 +885,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<a href="img/cnx/cnx-recherche-01b.gif" target='_blank' title="Recherche du terme '2008'">
 						<picture>
@@ -906,7 +907,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/cnx/cnx-small-2.png">
@@ -990,7 +991,7 @@
                 	</div>
                 </div>
 
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/udc/udc-small-1.jpg">
@@ -1024,7 +1025,7 @@
 					    </noscript>
 					</picture>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<a style="position: relative;" href="https://vimeo.com/63063081" target='_blank' title="Regarder la vidéo sur Vimeo">
 
@@ -1107,7 +1108,7 @@
                 	</div>
                 </div>
 
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/alb/alb-small-1.jpg">
@@ -1143,7 +1144,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 					<picture>
 					    <source src="img/alb/alb-small-4.jpg">
 					    <source src="img/alb/alb-large-4.jpg" media="(min-width:1025px)">
@@ -1250,7 +1251,7 @@
                 	</div>
                 </div>
 
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/hyp/hyp-small-1.jpg">
@@ -1269,7 +1270,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 					<picture>
 					    <source src="img/hyp/hyp-small-2.jpg">
 					    <source src="img/hyp/hyp-large-2.jpg" media="(min-width:1025px)">
@@ -1287,7 +1288,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 					<picture>
 					    <source src="img/hyp/hyp-small-3.jpg">
 					    <source src="img/hyp/hyp-large-3.jpg" media="(min-width:1025px)">
@@ -1465,7 +1466,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/hyp/hyp-small-26.jpg">
@@ -1574,7 +1575,7 @@
                 	</div>
                 </div>
 
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/blg/docschool-small-1.png">
@@ -1596,7 +1597,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/blg/generative-small-1.png">
@@ -1618,7 +1619,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/blg/oridog-small-1.jpg">
@@ -1640,7 +1641,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/blg/shaders-small-1.png">
@@ -1662,7 +1663,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/blg/gknit-small-1.jpg">
@@ -1683,7 +1684,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/blg/param-small-1.jpg">
@@ -1704,7 +1705,7 @@
 		            	</div>
 	                </div>
                 </div>
-                <div class="imgfond row">
+                <div class="imgfond">
 
 					<picture>
 					    <source src="img/blg/sleep-small-1.jpg">

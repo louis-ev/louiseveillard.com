@@ -7,9 +7,11 @@
 	window.articleMarginTop = 0;
 	window.bodyHeight;
 
+	var tablet_max = 1024;
+	var init_pjs = 1024;
+
 	var articleVu = '';
 	var $viewport = $('html, body');
-	var scrollOnReady = '';
 	var imgActuelle = 0;
 	var newArticleVu = $('article.article').first();
 	var gotoByScroll, adjustHeight, articleProche, activeArticle, detectArticle, restartDetectArticle;
@@ -123,6 +125,48 @@
 
 	};
 
+	var CV = {
+
+		open : function() {
+	    	$('#cv .status-witness').toggleClass("open");
+			$('#cv .collapsable').each(function() {
+				$this = $(this);
+ 				$this.removeClass("collapsed");
+			});
+			$('main').css('opacity', '0');
+			$('main').css('marginTop', '1280px');
+			waitForFinalEvent(	function () {
+				$('main').css('display', 'none');
+			    $viewport.animate({
+				        scrollTop: 0
+				    }, 0, 'easeInOutQuint', function () {}
+			    );
+ 				$("body").addClass("navbarouverte");
+			}, 400, "removeAndRelative");
+		},
+
+		close : function() {
+	    	$('#cv .status-witness').toggleClass("open");
+			$('#cv .collapsable').each(function() {
+					$this = $(this);
+ 				$this.addClass("collapsed");
+			});
+			$('main').css('display', 'block');
+			$('main').css('marginTop', '0px');
+
+		    $viewport.animate({
+			        scrollTop: 0
+			    }, 200, 'easeInOutQuint', function () {}
+		    );
+
+			$("body").removeClass("navbarouverte");
+			waitForFinalEvent( function () {
+				adjustHeight();
+				$('main').css('opacity', '1');
+			}, 1200, "readjustheight");
+		}
+	}
+
 	/* universal delayer from stackoverflow */
 	var waitForFinalEvent = (function () {
 	  var timers = {};
@@ -139,64 +183,22 @@
 
 	// ajuster la hauteur de margin-top
 	var adjustHeight = function () {
-		if ( $(window).width() > 991 ) {
+		if ( $(window).width() > tablet_max ) {
 		    var height = $('#navbar').height() + 40 ;
 
-			if (Modernizr.csstransforms){
-			    $(".article:not(:first-child)").css( 'marginTop', height + 'px');
-			    $(".article:first-child").css( 'transform', 'translateY(' + height + 'px)');
-			    $(".article:first-child").css( 'marginBottom', height*2 + 'px');
-			} else {
-			    $(".article").css( 'marginTop', height + 'px');
-			}
+		    $(".article").css( 'marginTop', height + 'px');
 
 		    window.articleMarginTop = height;
 		}
 	};
 
-	var mapScroll = {
-
-		init : function() {
-			$( "#backtotopglobal" ).after( "<nav id='scrollmapcontainer'></nav>" );
-			$("article.article").each( function () {
-				$( "#scrollmapcontainer" ).append("<div class='reperes'><div class='titre'><h4>" + $(this).find(".titreProj h2").text() + "</h4></div></div>");
-			});
-		},
-
-		remap : function() {
-			if ( $(window).width() > 991 ) {
-				//console.log("remap");
-
-				var docheight = $(document).height();
-				var marginglobal = window.articleMarginTop / 50;
-				var scrollmcheight = $( "#scrollmapcontainer" ).height();
-
-				// div = hauteur des projets
-				$("article.article").each( function (index) {
-/* 					console.log( "data-id = " + $(this).attr('data-id') + " $(this).height() : " + $(this).height() + " $(this).innerHeight() : " + $(this).innerHeight() + " this.offsetHeight : " + this.offsetHeight ); */
-					var maptoptoscrollmap = ( $(this).offset().top / docheight ) * scrollmcheight;
-					var mapheighttoscrollmap = ( $(this).innerHeight() / docheight ) * scrollmcheight;
-					$( "#scrollmapcontainer .reperes" ).eq(index).css('height', mapheighttoscrollmap).css('top', maptoptoscrollmap);
-				});
-
-/*
-				$("article.article").each( function (index) {
-					var maptoptoscrollmap = ( $(this).offset().top / docheight ) * scrollmcheight;
-					var mapheighttoscrollmap = ( $(this).innerHeight() / docheight ) * scrollmcheight;
-					$( "#scrollmapcontainer .reperes" ).eq(index).css('top', maptoptoscrollmap );
-				});
-*/
-
-			}
-		}
-	};
 
 	// fonction scroll vers le projet au click dans le header ou au clavier
 	gotoByScroll = function (idProjet) {
 		var leProjet = $(".article").filter(function(){ return $(this).attr('data-id').match(idProjet) });
 		//console.log("gotoByScroll vers : " + leProjet.attr('class') + " window.articleMarginTop : " + window.articleMarginTop);
 		adjustHeight();
-		if ($(window).width() <= 991) window.articleMarginTop = 0;
+		if ($(window).width() <= tablet_max ) window.articleMarginTop = 0;
 	    $viewport.animate({
 		        scrollTop: leProjet.offset().top - window.articleMarginTop
 		    }, 900, 'easeInOutQuint');
@@ -238,7 +240,7 @@
 
 		init : function() {
 
-			if ($(window).width() > 991) {
+			if ($(window).width() > tablet_max ) {
 
 				var margeGaucheArticle = $("article.article .row:first-child").offset().left;
 
@@ -285,7 +287,7 @@
 			//console.log("scrollFromTop : " + scrollBackToTop + " theoffset.height : " + theoffset.height);
 	*/
 
-			if ($(window).width() > 991) {
+			if ($(window).width() > tablet_max ) {
 				if (scrollBackToTop <= 0 || scrollBackToTop >= $articleActifAct.height()-80) {
 					$articleActifAct.find(".backtotopicon").removeClass("sticky");
 					$articleActifAct.find(".titreProj").removeClass("sticky");
@@ -307,9 +309,11 @@
 	};
 
 	detectArticle = function () {
-		activeArticle(window.pageYOffset);
-		//console.log("detectArticle");
-	    restartDetectArticle = setTimeout(detectArticle, 1000);
+		console.log("detectArticle");
+	    restartDetectArticle = setTimeout(function () {
+			activeArticle(window.pageYOffset);
+	    	detectArticle();
+	    }, 1000);
 	};
 
 	activeArticle = function (wscrollTop) {
@@ -319,7 +323,7 @@
     	// on trouve l'article le plus proche (vu principalement)
 		newArticleVu = articleProche(wscrollTop + articleMarginTop);
 
-		//console.log("activeArticle");
+		console.log("activeArticle");
 
 		// comparer à l'article vu (optimisation)
 		if ( newArticleVu.hasClass("peripherie") ) {
@@ -330,7 +334,12 @@
 			articleVu = newArticleVu;
 
 			// charger les images si on passe sur un projet qui en contient, en pleine résolution si nécessaire
-			articleVu.find('picture:not(.video)').picture({ container:'.imgfond', inlineDimensions:true, forceSmall:false });
+			if ( $(window).width() > 1 ) {
+				// plantage sur safari ios...
+				articleVu.find('picture:not(.video)').picture({ container:'.imgfond', inlineDimensions:true, forceSmall:false });
+			} else {
+				articleVu.find('picture:not(.video)').picture({ container:'.imgfond', inlineDimensions:true, forceSmall:true });
+			}
 
 			// on récupère le data-id de l'article
 			var inviewId = articleVu.attr('data-id');
@@ -364,6 +373,8 @@
 
 	(function () {
 
+		CV.close();
+
 		//$('.lienprojets>a').attr('href', '');
 		// et virer les name des article, pour mieux controler le scroll de projet à projet
 		$('.article').each( function() {
@@ -372,28 +383,10 @@
 			$this.attr('data-id', thisId).attr('id', '');
 		});
 
-/*		le scroll par hashtag est peu pratique et franchement inutile. J'enleve pour l'instant
-
-		// si hashtag dans l'url, changer le active du header
-		if (window.location.hash !== '' && window.location.hash !== '#') {
-			var projetHash = window.location.hash.substr(1);
-	 		//console.log("hash : " + projetHash);
-			scrollOnReady = projetHash;
-		}
-
-
-		// si pas de hashtag, mettre le premier projet en class active
-		else {
-			$('.lienprojets > a').removeClass('active').first().addClass('active');
-
-			//console.log("pas de hash");
-		}
-*/
-
 		/* background animation for Connexe */
-		/* made with PJS, only for >1024px devices, (ipad and desktop) */
+		/* made with PJS, only for >tablet_max devices, (ipad and desktop) */
 
-		if ( $(window).width() > 991 ) {
+		if ( $(window).width() > init_pjs ) {
 
 		    var scriptSrc = '//cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing.min.js';
 
@@ -410,6 +403,7 @@
 			head.appendChild(script);
 
     	} else {
+				CV.close();
 		    	canvasConnexe.placeholder();
     	}
 //
@@ -421,11 +415,9 @@
 
 		// calculer la hauteur du header dès que le doc est chargé
 		adjustHeight();
- 		mapScroll.init();
 		backToTop.init();
 
         $(window).on('scrollstart', function() {
-			$('body').addClass('scrolling');
 		  	//console.log("scrollstart");
 
 			// exécuter la détection du projet visible toutes les 1000ms, sauf si c'est un scroll automatique
@@ -434,6 +426,9 @@
 				return;
 			}
 
+			if ( $(window).width() > tablet_max ) {
+				$('body').addClass('scrolling');
+			}
 			// détection de la proximité d'article à la volée, en plein scroll => très lourd en ressources...
 			detectArticle();
         });
@@ -450,7 +445,6 @@
 		    // quand le scroll est finis depuis plus de 500 ms (se déclenche une fois)
 		    // ajuster la hauteur entre header et projets
     		adjustHeight();
-    		mapScroll.remap();
 
 			// supprimer la détection d'article vu
 			clearTimeout(restartDetectArticle);
@@ -458,9 +452,6 @@
 			// placer le backtotop en vu
 			backToTop.init();
 			backToTop.recalc(window.pageYOffset, activeArticle(window.pageYOffset) );
-
-		   // on annule le scroll vers un projet spécifique dans ce cas
-		   scrollOnReady = '';
 
 		   // scroll infini : de retour en haut quand on arrive en bas
 			//console.log("$(window).scrollTop() : " + $(window).scrollTop());
@@ -484,7 +475,6 @@ if ( $(window).scrollTop() >= ($('body').height() - $(window).height() + window.
 			    // recalculer la hauteur entre les images
 				//console.log('resize-end');
 				adjustHeight();
-/* 				mapScroll.remap(); */
 				backToTop.init();
 				canvasConnexe.resize();
 				activeArticle(window.pageYOffset);
@@ -523,7 +513,6 @@ if ( $(window).scrollTop() >= ($('body').height() - $(window).height() + window.
 		// et au chargement de la page, on scan l'url pour voir si il y a un article à montrer en particulier
 		// marche grâce aux id, même si pas super clean. À voir la compatibilité avec tous les devices si géré en JS
 
-
 		// le jquery scroll se stop au click ou au scroll manuel // de stackoverflow
 	    $viewport.bind("scroll mousedown DOMMouseScroll mousewheel", function(e){
 		    if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"){
@@ -535,7 +524,6 @@ if ( $(window).scrollTop() >= ($('body').height() - $(window).height() + window.
 	    $('.lienProjets a:not(.disabled), .backtotop a, .titreProj').click(function (e) {
 	        e.preventDefault();
 	        var dataslide = $(this).data('projet');
-	        scrollOnReady = '';
 			gotoByScroll(dataslide);
 	        console.log("scroll vers : " + dataslide);
 	    });
@@ -563,40 +551,11 @@ if ( $(window).scrollTop() >= ($('body').height() - $(window).height() + window.
 
 	    $('#cv .header').click(function (e) {
 
-	    	$('#cv .status-witness').toggleClass("open");
 	    	var openornot = $('#cv .status-witness').hasClass("open");
 			if ( openornot ) {
-				$('#cv .collapsable').each(function() {
-					$this = $(this);
-	 				$this.removeClass("collapsed");
-				});
-				$('main').css('opacity', '0');
-				$('main').css('marginTop', '1280px');
-				waitForFinalEvent(	function () {
-					$('main').css('display', 'none');
-				    $viewport.animate({
-					        scrollTop: 0
-					    }, 0, 'easeInOutQuint', function () {}
-				    );
-     				$("body").addClass("navbarouverte");
-				}, 400, "removeAndRelative");
-
+				CV.close();
 			} else {
-				$('#cv .collapsable').each(function() {
- 					$this = $(this);
-	 				$this.addClass("collapsed");
-				});
-				$('main').css('display', 'block');
-				$('main').css('marginTop', '0px');
-			    $viewport.animate({
-				        scrollTop: 0
-				    }, 200, 'easeInOutQuint', function () {}
-			    );
- 				$("body").removeClass("navbarouverte");
- 				waitForFinalEvent( function () {
- 					adjustHeight();
-					$('main').css('opacity', '1');
- 				}, 1200, "readjustheight");
+				CV.open();
 			}
 
 /* 		    $(".article").css( 'marginTop', 1000 + 'px'); */
@@ -610,24 +569,13 @@ if ( $(window).scrollTop() >= ($('body').height() - $(window).height() + window.
 
 	$(window).load(function() {
 
-		// a la fin de chargement complet du doc, ajuster l'espace pour la navbar en haut et entre les projets
-		adjustHeight();
-/* 		mapScroll.remap(); */
-		//console.log("plop");
-		$('picture').css('opacity', 1);
-		$('.texttop').css('opacity', 1);
-
 		setTimeout(function () {
-			$('.loader').css('display', 'none');
-			// passer manuellement la première image en large si le bloc image > 1024
-			if ($('.imgfond').width() > 1024) {
-				$('picture.premier').children('img').attr('src', 'img/hab/hab-large-2.jpg');
-			}
-			if (scrollOnReady) {
-				console.log("scrollOnReady : " + scrollOnReady);
-				gotoByScroll(scrollOnReady);
-			}
+
+			$('body').removeClass("loading");
+			$('picture').css('opacity', 1);
+			$('.texttop').css('opacity', 1);
+			adjustHeight();
+			$('main').css('opacity', '1');
+
 		}, 550);
-
-
 	});
