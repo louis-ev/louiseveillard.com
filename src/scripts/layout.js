@@ -133,16 +133,20 @@
 				$this = $(this);
  				$this.removeClass("collapsed");
 			});
-			$('main').css('opacity', '0');
-			$('main').css('marginTop', '1280px');
-			waitForFinalEvent(	function () {
-				$('main').css('display', 'none');
-			    $viewport.animate({
-				        scrollTop: 0
-				    }, 0, 'easeInOutQuint', function () {}
-			    );
- 				$("body").addClass("navbarouverte");
-			}, 400, "removeAndRelative");
+
+			if ( $(window).width() > tablet_max ) {
+				$('main').css('opacity', '0');
+				$('main').css('marginTop', '1280px');
+				waitForFinalEvent(	function () {
+					$('main').css('display', 'none');
+				    $viewport.animate({
+					        scrollTop: 0
+					    }, 0, 'easeInOutQuint', function () {}
+				    );
+	 				$("body").addClass("navbarouverte");
+				}, 400, "removeAndRelative");
+			}
+
 		},
 
 		close : function() {
@@ -151,13 +155,16 @@
 					$this = $(this);
  				$this.addClass("collapsed");
 			});
+
 			$('main').css('display', 'block');
 			$('main').css('marginTop', '0px');
 
-		    $viewport.animate({
-			        scrollTop: 0
-			    }, 200, 'easeInOutQuint', function () {}
-		    );
+			if ( $(window).width() > tablet_max ) {
+			    $viewport.animate({
+				        scrollTop: 0
+				    }, 200, 'easeInOutQuint', function () {}
+			    );
+			}
 
 			$("body").removeClass("navbarouverte");
 			waitForFinalEvent( function () {
