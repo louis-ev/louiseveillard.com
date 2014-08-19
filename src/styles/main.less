@@ -430,12 +430,6 @@ a:hover {
 					transition: opacity .8s;
 
 					@media @desktop {
-						.loading & {
-							color: transparent;
-							a {
-								color: transparent;
-							}
-						}
 					}
 				}
 
@@ -446,7 +440,7 @@ a:hover {
 
 			}
 
-			.collapsable.collapsed {
+			.js & .collapsable.collapsed {
 				max-height:3em;
 				transition: max-height .55s ease-out;
 
@@ -752,9 +746,8 @@ main {
 			.js & .boiteProj {
 				position: absolute;
 				.headerlienh3;
-				.boite-hovered;
-				-webkit-box-shadow: 0px 0px 8px 3px rgba(204,204,204,.2);
-				box-shadow: 0px 0px 8px 3px rgba(204,204,204,.2);
+				border: 1px solid #fff;
+				color: #fff;
 			}
 		}
 	}

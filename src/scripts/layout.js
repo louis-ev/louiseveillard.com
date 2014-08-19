@@ -128,7 +128,7 @@
 	var CV = {
 
 		open : function() {
-	    	$('#cv .status-witness').toggleClass("open");
+	    	$('#cv .status-witness').addClass("open");
 			$('#cv .collapsable').each(function() {
 				$this = $(this);
  				$this.removeClass("collapsed");
@@ -150,7 +150,7 @@
 		},
 
 		close : function() {
-	    	$('#cv .status-witness').toggleClass("open");
+	    	$('#cv .status-witness').removeClass("open");
 			$('#cv .collapsable').each(function() {
 					$this = $(this);
  				$this.addClass("collapsed");
@@ -380,8 +380,6 @@
 
 	(function () {
 
-		CV.close();
-
 		//$('.lienprojets>a').attr('href', '');
 		// et virer les name des article, pour mieux controler le scroll de projet à projet
 		$('.article').each( function() {
@@ -410,7 +408,6 @@
 			head.appendChild(script);
 
     	} else {
-				CV.close();
 		    	canvasConnexe.placeholder();
     	}
 //
@@ -567,8 +564,6 @@ if ( $(window).scrollTop() >= ($('body').height() - $(window).height() + window.
 
 /* 		    $(".article").css( 'marginTop', 1000 + 'px'); */
 /* 			var readjust = setTimeout(adjustHeight, 1200); */
-
-
 
 	    });
 
