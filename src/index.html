@@ -157,6 +157,7 @@
 				    	    	<h3>Interventions</h3>
 							</div>
 							<ul class="description">
+								<li>Résidence avec l'association Sew&Laine à Bordeaux pour le projet <a href="http://www.letricodeur.com" target="_blank">le tricodeur</a> (septembre 2014). Préparation et animation d'un workshop de 3 jours sur le détournement et l'utilisation de machines à tricoter programmable pour réaliser des motifs générés par le code ou par des données personnelles (à venir en octobre 2014, <a href="mailto:contact@sewetlaine.com">inscriptions ici</a>).</li>
 								<li>Enseignant de design génératif en 4<sup>e</sup> année à <a href='http://www.hetic.net/' target='_blank'>HETIC</a> à Montreuil (2013). Résumé et code du cours <a href="http://www.beautifulseams.com/2013/10/31/teaching-generative-design/" target="_blank">sur mon blog</a>.</li>
 								<li>Conférence sur l'algorithme dans l'art et le design à l'<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a> (2013). Compte-rendu, slides et projets des étudiants <a href="http://algorithme.beautifulseams.com/" target="_blank">sur cette page</a>.</li>
 							</ul>
@@ -1762,6 +1763,8 @@
 		// charger les images en small pour remplir la page
 		$(function(){
 		    $('picture:not(.premier, .lazy, .video, .canvas)').picture({ container:'.imgfond', inlineDimensions:true, forceSmall:true });
+		    // replier les articles
+		    $(".post_content").addClass("folded");
 		});
 
 	</script>

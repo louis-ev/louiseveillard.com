@@ -330,7 +330,7 @@
     	// on trouve l'article le plus proche (vu principalement)
 		newArticleVu = articleProche(wscrollTop + articleMarginTop);
 
-		console.log("activeArticle");
+		//console.log("activeArticle");
 
 		// comparer à l'article vu (optimisation)
 		if ( newArticleVu.hasClass("peripherie") ) {
