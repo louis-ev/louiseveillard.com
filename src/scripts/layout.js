@@ -340,9 +340,9 @@
 
 			articleVu = newArticleVu;
 
+		/* seulement si click */
 			// charger les images si on passe sur un projet qui en contient, en pleine résolution si nécessaire
 			if ( $(window).width() > 1 ) {
-				// plantage sur safari ios...
 				articleVu.find('picture:not(.video)').picture({ container:'.imgfond', inlineDimensions:true, forceSmall:false });
 			} else {
 				articleVu.find('picture:not(.video)').picture({ container:'.imgfond', inlineDimensions:true, forceSmall:true });
@@ -420,6 +420,24 @@
 		// calculer la hauteur du header dès que le doc est chargé
 		adjustHeight();
 		backToTop.init();
+
+		// si encore en train de charger après 10 secondes
+		var stopLoading = setTimeout( function() {
+			$('body').removeClass("loading");
+			console.log("stop Loading");
+		}, 10000);
+
+
+		$(".article").each(function() {
+			$this = $(this);
+			$this.find("picture").each(function(i) {
+
+				$(this).css("z-index", 50-i);
+
+				if ( i >= 1) {
+				}
+			});
+		});
 
         $(window).on('scrollstart', function() {
 		  	//console.log("scrollstart");
@@ -578,6 +596,9 @@ if ( $(window).scrollTop() >= ($('body').height() - $(window).height() + window.
 			$('.texttop').css('opacity', 1);
 			adjustHeight();
 			$('main').css('opacity', '1');
+
+			articleVu = activeArticle(window.pageYOffset + articleMarginTop);
+			articleVu.removeClass("peripherie");
 
 		}, 550);
 	});
