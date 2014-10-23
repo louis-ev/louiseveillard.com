@@ -15,7 +15,7 @@
 	var imgActuelle = 0;
 	var newArticleVu = $('article.article').first();
 	var gotoByScroll, adjustHeight, articleProche, activeArticle, detectArticle, restartDetectArticle;
-
+	var siteIsLoaded = false;
 
 	var canvasConnexe = {
 		init : function() {
@@ -171,6 +171,20 @@
 				adjustHeight();
 				$('main').css('opacity', '1');
 			}, 1200, "readjustheight");
+		}
+	}
+
+	var loadSite = function() {
+
+		if ( !siteIsLoaded ) {
+			siteIsLoaded = true;
+
+			if ( $(window).width() > 1024 ) {
+				$('body').removeClass("loading");
+				adjustHeight();
+				articleVu = activeArticle(window.pageYOffset + articleMarginTop);
+				articleVu.removeClass("peripherie");
+			}
 		}
 	}
 
@@ -342,10 +356,8 @@
 
 		/* seulement si click */
 			// charger les images si on passe sur un projet qui en contient, en pleine résolution si nécessaire
-			if ( $(window).width() > 1 ) {
+			if ( $(window).width() > 1024 ) {
 				articleVu.find('picture:not(.video)').picture({ container:'.imgfond', inlineDimensions:true, forceSmall:false });
-			} else {
-				articleVu.find('picture:not(.video)').picture({ container:'.imgfond', inlineDimensions:true, forceSmall:true });
 			}
 
 			// on récupère le data-id de l'article
@@ -422,9 +434,9 @@
 		backToTop.init();
 
 		// si encore en train de charger après 10 secondes
-		var stopLoading = setTimeout( function() {
-			$('body').removeClass("loading");
-			console.log("stop Loading");
+		setTimeout( function() {
+			loadSite();
+			//console.log("stop Loading");
 		}, 10000);
 
 
@@ -439,57 +451,60 @@
 			});
 		});
 
-        $(window).on('scrollstart', function() {
-		  	//console.log("scrollstart");
+		if ( $(window).width() > 1024 ) {
+	        $(window).on('scrollstart', function() {
+			  	//console.log("scrollstart");
 
-			// exécuter la détection du projet visible toutes les 1000ms, sauf si c'est un scroll automatique
-			if ($viewport.is(':animated')) {
-				console.log( "animated");
-				return;
-			}
+				// exécuter la détection du projet visible toutes les 1000ms, sauf si c'est un scroll automatique
+				if ($viewport.is(':animated')) {
+					console.log( "animated");
+					return;
+				}
 
-			if ( $(window).width() > tablet_max ) {
-				$('body').addClass('scrolling');
-			}
-			// détection de la proximité d'article à la volée, en plein scroll => très lourd en ressources...
-			detectArticle();
-        });
+				if ( $(window).width() > tablet_max ) {
+					$('body').addClass('scrolling');
+				}
+				// détection de la proximité d'article à la volée, en plein scroll => très lourd en ressources...
+				detectArticle();
+	        });
+        }
 
 		$(window).on('scroll', function () {
 			// placer le backtotop en vu
 			backToTop.recalc(window.pageYOffset, newArticleVu);
 		});
 
-        $(window).on('scrollstop', function() {
+		if ( $(window).width() > 1024 ) {
+	        $(window).on('scrollstop', function() {
 
-			$('body').removeClass('scrolling');
+				$('body').removeClass('scrolling');
 
-		    // quand le scroll est finis depuis plus de 500 ms (se déclenche une fois)
-		    // ajuster la hauteur entre header et projets
-    		adjustHeight();
+			    // quand le scroll est finis depuis plus de 500 ms (se déclenche une fois)
+			    // ajuster la hauteur entre header et projets
+	    		adjustHeight();
 
-			// supprimer la détection d'article vu
-			clearTimeout(restartDetectArticle);
+				// supprimer la détection d'article vu
+				clearTimeout(restartDetectArticle);
 
-			// placer le backtotop en vu
-			backToTop.init();
-			backToTop.recalc(window.pageYOffset, activeArticle(window.pageYOffset) );
+				// placer le backtotop en vu
+				backToTop.init();
+				backToTop.recalc(window.pageYOffset, activeArticle(window.pageYOffset) );
 
-		   // scroll infini : de retour en haut quand on arrive en bas
-			//console.log("$(window).scrollTop() : " + $(window).scrollTop());
-			//console.log("$('body').height() : " + $('body').height());
-			//console.log("$(window).height() : " + $(window).height());
+			   // scroll infini : de retour en haut quand on arrive en bas
+				//console.log("$(window).scrollTop() : " + $(window).scrollTop());
+				//console.log("$('body').height() : " + $('body').height());
+				//console.log("$(window).height() : " + $(window).height());
 
-	        /*
-if ( $(window).scrollTop() >= ($('body').height() - $(window).height() + window.articleMarginTop) ) {
-	            $(window).scrollTop(1);
-	        }
-	        else if ( $(window).scrollTop() == 0 ) {
-	            $(window).scrollTop($('body').height() - $(window).height() + window.articleMarginTop -1);
-	        }
-			*/
-	    });
-
+		        /*
+	if ( $(window).scrollTop() >= ($('body').height() - $(window).height() + window.articleMarginTop) ) {
+		            $(window).scrollTop(1);
+		        }
+		        else if ( $(window).scrollTop() == 0 ) {
+		            $(window).scrollTop($('body').height() - $(window).height() + window.articleMarginTop -1);
+		        }
+				*/
+		    });
+		}
 
 		// à la fin d'un resize
 	    $(window).resize(function () {
@@ -590,15 +605,6 @@ if ( $(window).scrollTop() >= ($('body').height() - $(window).height() + window.
 	$(window).load(function() {
 
 		setTimeout(function () {
-
-			$('body').removeClass("loading");
-			$('picture').css('opacity', 1);
-			$('.texttop').css('opacity', 1);
-			adjustHeight();
-			$('main').css('opacity', '1');
-
-			articleVu = activeArticle(window.pageYOffset + articleMarginTop);
-			articleVu.removeClass("peripherie");
-
+			loadSite();
 		}, 550);
 	});

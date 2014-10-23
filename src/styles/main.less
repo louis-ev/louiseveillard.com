@@ -1013,6 +1013,38 @@ article small {
 		min-height: 0;
 	}
 
+	picture {
+
+		position: relative;
+
+		&[data-caption] {
+			color:#333;
+		}
+		&[data-captioncolor="white"] {
+		    color:#fff;
+		}
+		&[data-captioncolor="lgrey"] {
+		    color:#ececee;
+		}
+		&[data-captioncolor="dgrey"] {
+		    color:#666;
+		}
+
+		&::before {
+		    content: attr(data-caption);
+		    bottom: 0;
+		    position:absolute;
+		    padding: .5em;
+		    padding-left: .7em;
+		    font-size: .8em;
+		    line-height: 1.2;
+			width: 12%;
+			text-align: left;
+
+		}
+
+	}
+
 	img, video {
 	    max-width: 1920px;
 		width:100%;
@@ -1050,8 +1082,11 @@ article small {
 	}
 }
 
-.js & picture {
-	opacity:.4;
+.js .loading & picture {
+
+	@media @desktop {
+		opacity:.4;
+	}
 }
 
 .js .loading & .loader {
