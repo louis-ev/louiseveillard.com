@@ -264,7 +264,7 @@ a:hover {
 	box-shadow: 0px 0px 8px 3px rgba(255,255,255,.2);
 	color: #000;
 	background-color: rgba(255,255,255,.95);
-	transition: background-color 0s, box-shadow 0s ease-in-out 0s;
+	transition: background-color 0s, box-shadow 0s ease-in-out 0s, border-color .4s ease-out;
 
 	.jour & {
 		-webkit-box-shadow: 0px 0px 8px 3px rgba(204,204,204,.2);
@@ -319,6 +319,34 @@ a:hover {
 	}
 }
 
+
+/********************* LINKS *********************/
+
+#links {
+
+	position: absolute;
+	top:0;
+	left:0;
+
+	z-index: -1;
+
+	opacity: 0;
+
+	transition: opacity .2s 0s;
+
+	.navbarouverte & {
+		opacity: 1;
+		transition: opacity 1s 1s;
+
+	}
+
+}
+
+
+
+
+
+
 /********************* NAVBAR *********************/
 @marge-entre-sections: 2em;
 
@@ -328,7 +356,6 @@ a:hover {
 	z-index:1;
 	border: none;
 	background: transparent;
-
 
 	&.fixed {
 		position: relative;
@@ -355,8 +382,16 @@ a:hover {
 
 	}
 
+	a {
+
+	}
+
 	.navbarouverte & {
 		position: relative;
+
+		a[data-link] {
+			border-bottom-color: #7DC1C8;
+		}
 	}
 
 	.column {
@@ -426,6 +461,8 @@ a:hover {
 
 		#details {
 
+			position: relative;
+
 			.row {
 				margin-top: 0;
 				padding-top: 0;
@@ -434,14 +471,35 @@ a:hover {
 			.collapsable {
 				opacity:1;
 				overflow-y:hidden;
-				max-height:600px;
+				max-height:800px;
 				transition: max-height .55s ease-out;
 
 				.description {
+					margin-top: 1em;
 					opacity: 1;
 					transition: opacity .8s;
 
 					@media @desktop {
+					}
+
+				}
+				.realisations {
+
+					.description {
+					}
+					li {
+						padding-bottom: .5em;
+
+						a {
+// 							padding-bottom: 0;
+							margin-bottom: .2em;
+						}
+
+						.realisationsDetails {
+							font-size: .7em;
+							line-height: 1.1;
+
+						}
 					}
 				}
 
@@ -452,7 +510,7 @@ a:hover {
 
 			}
 
-			.js & .collapsable.collapsed {
+			.js & .collapsable.is-collapsed {
 				max-height:3em;
 				transition: max-height .55s ease-out;
 
@@ -519,6 +577,7 @@ a:hover {
 					list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAHklEQVQIW2NkwAEYkcT/Q9lgMZgESBCFTZkOFGcAAKaSBgeZwyCDAAAAAElFTkSuQmCC);
 				}
 			}
+
 		}
 	}
 
@@ -562,6 +621,7 @@ a:hover {
 
 			.navbarouverte & {
 				opacity:0;
+
 			}
 
 			h3 {
@@ -1214,7 +1274,7 @@ a:hover > picture > .vimeoplay {
 		  margin-bottom: 0px;
 		}
 
-		.collapsable.collapsed {
+		.collapsable.is-collapsed {
 			max-height: 550px;
 		}
 	}

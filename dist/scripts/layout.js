@@ -61,6 +61,148 @@
 
 	};
 
+	var canvasCV = {
+		init : function() {
+			// trouver le canvas dans la page
+			var canvas = $("body").prepend("<canvas id='links' width='1024' height='1551' class=''>");;
+			// rattacher le sketch au doc HTML
+			canvas.css('visibility',"visible");
+
+			function drawLinks(processing) {
+
+				processing.setup = function() {
+					processing.noLoop();
+					processing.background(0,0);
+					processing.noSmooth();
+				};
+
+				processing.draw = function() {
+
+				};
+
+				processing.drawLink = function( startPointx, startPointy, endPointx, endPointy ) {
+
+					processing.noFill();
+					processing.strokeWeight(1);
+
+					for( var i=0; i<1; i++ ) {
+
+						var randomInt = processing.random();
+	//					console.log( randomInt );
+
+						var cred = processing.color(255, 39, 25);
+						var cdgreen = processing.color(9, 96, 111);
+						var clgreen = processing.color( 125, 193, 200);
+
+						var randomToInterval = processing.map( randomInt, 0, 2, -20, -10 );
+
+//						processing.stroke( processing.lerpColor( clgreen, cdgreen, randomInt ) );
+						processing.stroke( clgreen );
+
+						processing.bezier( startPointx, startPointy, (startPointx + endPointx )/2 + randomToInterval, (startPointy + endPointy)/2, (startPointx + endPointx)/2 + randomToInterval, (startPointy + endPointy)/2, endPointx, endPointy );
+
+					}
+				}
+
+				processing.drawBg = function() {
+
+					processing.fill( 34,34,34, 180);
+					processing.noStroke();
+					processing.rect( 0, 0, processing.width, processing.height);
+
+				}
+
+				processing.updateSize = function( width, height ) {
+				  processing.size(width, height);
+				}
+
+			}
+
+			var canvasJS = document.getElementById("links");
+			var processingInstance = new Processing(canvasJS, drawLinks);
+
+			$("#navbar a").on("mouseover", function() {
+
+				$this = $(this);
+				thisLink = $this.attr("data-link");
+
+				var thisSketch = Processing.getInstanceById('links');
+				thisSketch.drawBg();
+
+
+				if ( $("body").hasClass("navbarouverte") && thisLink !== undefined ) {
+
+					//console.log( " thisLink : " + thisLink );
+
+
+					if ( thisLink !== undefined ) {
+						canvasCV.drawAllLinks( $this, thisLink )
+					} else {
+
+					}
+
+				}
+
+			});
+
+		},
+
+		drawAllLinks : function( $hoveredLink, hoveredDataLink ) {
+
+			var detailLeft = $("#navbar").offset().left;
+			var detailTop = $("#navbar").offset().top;
+			var thisSketch = Processing.getInstanceById('links');
+
+			//thisSketch.background(0,90);
+
+
+			var $linkTo = $("#navbar").find("a[data-link='" + hoveredDataLink + "']").not( $hoveredLink );
+
+			if ( $linkTo.length > 0 ) {
+
+				$linkTo.each( function() {
+
+					$thisLinkTo = $(this);
+
+					console.log("LINK $this :" + $hoveredLink.text() + " $linkTo : " + $thisLinkTo.text() );
+
+					if ( $hoveredLink.closest(".content").hasClass("realisations") === true ) {
+						thisPosLeft = $hoveredLink.offset().left - 10;
+						thisPosTop = $hoveredLink.offset().top + $hoveredLink.height()/2 + 2;
+					} else {
+						thisPosLeft = $hoveredLink.offset().left;
+						thisPosTop = $hoveredLink.offset().top + $hoveredLink.height() + 1;
+					}
+					if ( $thisLinkTo.closest(".content").hasClass("realisations") === true ) {
+						linkPosLeft = $thisLinkTo.offset().left - 10;
+						linkPosTop = $thisLinkTo.offset().top + $thisLinkTo.height()/2 + 2;
+					} else {
+						linkPosLeft = $thisLinkTo.offset().left;
+						linkPosTop = $thisLinkTo.offset().top + $thisLinkTo.height() + 1;
+					}
+
+
+					thisSketch.drawLink( thisPosLeft, thisPosTop, linkPosLeft, linkPosTop );
+
+				});
+			}
+
+		},
+
+		resize : function () {
+			// recalculer la largeur du sketch Connexe si il existe bien
+			var linkSketch = Processing.getInstanceById('links');
+			linkSketch.updateSize( $("body").width(), $("#navbar").height() );
+			setTimeout( function() {
+				//canvasCV.drawAllLinks();
+			}, 500)
+		},
+
+		loopMeUp: function() {
+
+		}
+	};
+
 	var navPage = {
 
 		imageSuiv : function() {
@@ -128,10 +270,10 @@
 	var CV = {
 
 		open : function() {
-	    	$('#cv .status-witness').addClass("open");
+    	$('#cv .status-witness').addClass("open");
 			$('#cv .collapsable').each(function() {
 				$this = $(this);
- 				$this.removeClass("collapsed");
+ 				$this.removeClass("is-collapsed");
 			});
 
 			if ( $(window).width() > tablet_max ) {
@@ -144,6 +286,9 @@
 					    }, 0, 'easeInOutQuint', function () {}
 				    );
 	 				$("body").addClass("navbarouverte");
+
+	 				canvasCV.resize();
+
 				}, 400, "removeAndRelative");
 			}
 
@@ -152,8 +297,8 @@
 		close : function() {
 	    	$('#cv .status-witness').removeClass("open");
 			$('#cv .collapsable').each(function() {
-					$this = $(this);
- 				$this.addClass("collapsed");
+				$this = $(this);
+ 				$this.addClass("is-collapsed");
 			});
 
 			$('main').css('display', 'block');
@@ -167,6 +312,7 @@
 			}
 
 			$("body").removeClass("navbarouverte");
+
 			waitForFinalEvent( function () {
 				adjustHeight();
 				$('main').css('opacity', '1');
@@ -414,6 +560,7 @@
 
 			script.onload = function() {
 		    	canvasConnexe.init();
+		    	canvasCV.init();
 			};
 
 			var head = document.getElementsByTagName('head')[0];
@@ -514,6 +661,7 @@
 				adjustHeight();
 				backToTop.init();
 				canvasConnexe.resize();
+				canvasCV.resize();
 				activeArticle(window.pageYOffset);
 		    }, 500, "resize");
 		});
@@ -606,5 +754,6 @@
 
 		setTimeout(function () {
 			loadSite();
+			CV.open();
 		}, 550);
 	});
