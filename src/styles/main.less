@@ -331,11 +331,13 @@ a:hover {
 	z-index: -1;
 
 	opacity: 0;
+	display: none;
 
 	transition: opacity .2s 0s;
 
 	.navbarouverte & {
 		opacity: 1;
+		display: block;
 		transition: opacity 1s 1s;
 
 	}
@@ -471,7 +473,7 @@ a:hover {
 			.collapsable {
 				opacity:1;
 				overflow-y:hidden;
-				max-height:800px;
+				max-height:900px;
 				transition: max-height .55s ease-out;
 
 				.description {

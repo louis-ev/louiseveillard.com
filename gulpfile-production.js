@@ -23,7 +23,7 @@ require('pho-devstack')(gulp, {
     enabled: false
   },
   rename: {
-    enabled: true
+    enabled: false
   },
   watch: {
     enabled: false
@@ -47,7 +47,7 @@ require('pho-devstack')(gulp, {
     // cdn: 'http://example.com' // url to your cdn server
   }),
 
-  copy: ['humans.txt', 'favicon.ico', 'bower_components/jquery/jquery.min.js', 'bower_components/modernizr/modernizr.js', 'scripts/balls.pde', 'scripts/plugins.js', 'scripts/layout.js']
+  copy: ['humans.txt', 'favicon.ico', 'bower_components/jquery/jquery.min.js', 'bower_components/modernizr/modernizr.js', 'scripts/balls.pde', 'scripts/plugins.js']
 });
 
 // If needed, redefine tasks here

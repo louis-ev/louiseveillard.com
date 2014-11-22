@@ -26,12 +26,11 @@
 			canvas.css('visibility',"visible");
 
 			// recharger le canvas
-			  var source = canvas.attr("data-processing-sources");
-			  if (source !== undefined) {
-			    var sourceFiles = source.split(/\s+/);
-			    Processing.loadSketchFromSources("balls", sourceFiles);
-			  }
-
+		  var source = canvas.attr("data-processing-sources");
+		  if (source !== undefined) {
+		    var sourceFiles = source.split(/\s+/);
+		    Processing.loadSketchFromSources("balls", sourceFiles);
+		  }
 
 
 			$('canvas#balls').hover(
@@ -106,7 +105,12 @@
 
 				processing.drawBg = function() {
 
-					processing.fill( 34,34,34, 180);
+					if( $("body").hasClass("jour") ) {
+						processing.fill( 242,242,242, 180);
+					} else {
+						processing.fill( 34,34,34, 180);
+					}
+
 					processing.noStroke();
 					processing.rect( 0, 0, processing.width, processing.height);
 
@@ -754,6 +758,5 @@
 
 		setTimeout(function () {
 			loadSite();
-			CV.open();
 		}, 550);
 	});
