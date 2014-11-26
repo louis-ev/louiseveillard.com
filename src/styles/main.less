@@ -319,6 +319,11 @@ a:hover {
 	}
 }
 
+.js #backtotopglobal {
+	opacity: 0;
+	top: -80px;
+}
+
 
 /********************* LINKS *********************/
 
@@ -342,6 +347,79 @@ a:hover {
 
 	}
 
+}
+
+/********************* DAY AND NIGHT https://www.youtube.com/watch?v=lVb_t_ao9gw /o/\o\  *********************/
+
+#dayNight {
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	top:17px;
+	right: -52px;
+	overflow: hidden;
+	cursor: pointer;
+
+	.navbarouverte & {
+		top: -38px;
+	}
+
+	@media @tablet-only {
+		top: -38px;
+	}
+
+	@media @phone-only {
+		top:17px;
+		right: 0;
+	}
+
+	.no-touch &:hover {
+		.dayNightContainer {
+			left: -22px;
+		}
+	}
+
+	.no-touch .jour &:hover {
+		.dayNightContainer {
+			left: 0;
+		}
+	}
+
+	.dayNightContainer {
+		position: relative;
+		height: 22px;
+		width: 44px;
+		left: 0;
+		transition: left .4s ease-in-out;
+
+		.jour & {
+			left: -22px;
+		}
+
+	}
+
+
+
+	.moon, .sun {
+		position: relative;
+		display: inline-block;
+		width: 22px;
+		height: 22px;
+		top:0;
+		left: 0;
+		opacity: 1;
+
+		svg {
+			fill: #F2F2F2;
+			transform: fill 1s ease-out;
+		}
+
+		.jour & {
+			svg {
+				fill: #222;
+			}
+		}
+	}
 }
 
 
@@ -401,9 +479,9 @@ a:hover {
 	}
 
 	#entete {
-		margin-top:55px;
 		margin-bottom: @marge-entre-sections;
 		font-size: 1em;
+		margin-top:55px;
 
 		#nom {
 			h1 {
@@ -446,21 +524,6 @@ a:hover {
 
 		margin-bottom: @marge-entre-sections;
 
-		.header {
-
-			&.open {
-				h2 {
-					.boite-hovered;
-				}
-			}
-
-			h2 {
-	 			margin-bottom: @marge-header-cat;
-				font-weight: 400;
-				cursor: pointer;
-			}
-		}
-
 		#details {
 
 			position: relative;
@@ -474,12 +537,12 @@ a:hover {
 				opacity:1;
 				overflow-y:hidden;
 				max-height:900px;
-				transition: max-height .55s ease-out;
+				transition: max-height .35s ease-out;
 
 				.description {
 					margin-top: 1em;
 					opacity: 1;
-					transition: opacity .8s;
+					transition: opacity .4s;
 
 					@media @desktop {
 					}
@@ -514,7 +577,7 @@ a:hover {
 
 			.js & .collapsable.is-collapsed {
 				max-height:3em;
-				transition: max-height .55s ease-out;
+				transition: max-height .35s ease-out;
 
 				@media @tablet {
 					max-height:1.5em;
@@ -526,8 +589,6 @@ a:hover {
 			}
 
 			.header {
-
-				cursor: pointer;
 
 				h3 {
 					.headerlienh3;
@@ -584,21 +645,28 @@ a:hover {
 	}
 
 
+	.header {
+
+		&.open {
+			h2 {
+				.boite-hovered;
+			}
+		}
+
+		h2 {
+ 			margin-bottom: @marge-header-cat;
+			font-weight: 400;
+		}
+	}
+
+	.status-witness {
+		cursor: pointer;
+	}
+
 
 	#navigation {
 
 		margin-bottom: @marge-entre-sections;
-
-		.header h2 {
- 			margin-bottom: @marge-header-cat;
-			font-weight: 400;
-			cursor: default;
-
-			&:hover {
-				background-color: transparent;
-				box-shadow: none;
-			}
-		}
 
 		.row.lienProjets {
 			margin-top: 0;
@@ -1300,6 +1368,7 @@ a:hover > picture > .vimeoplay {
 	}
 
 }
+
 
 
 /*

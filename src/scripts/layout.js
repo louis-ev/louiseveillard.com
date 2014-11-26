@@ -98,7 +98,7 @@
 //						processing.stroke( processing.lerpColor( clgreen, cdgreen, randomInt ) );
 						processing.stroke( clgreen );
 
-						processing.bezier( startPointx, startPointy, (startPointx + endPointx )/2 + randomToInterval, (startPointy + endPointy)/2, (startPointx + endPointx)/2 + randomToInterval, (startPointy + endPointy)/2, endPointx, endPointy );
+						processing.bezier( startPointx, startPointy, (startPointx + randomToInterval )/2, (startPointy + randomToInterval)/2, endPointx, endPointy, endPointx, endPointy );
 
 					}
 				}
@@ -106,13 +106,14 @@
 				processing.drawBg = function() {
 
 					if( $("body").hasClass("jour") ) {
-						processing.fill( 242,242,242, 180);
+						processing.fill( 242,242,242, 120);
 					} else {
-						processing.fill( 34,34,34, 180);
+						processing.fill( 34,34,34, 120);
 					}
 
 					processing.noStroke();
 					processing.rect( 0, 0, processing.width, processing.height);
+
 
 				}
 
@@ -274,7 +275,7 @@
 	var CV = {
 
 		open : function() {
-    	$('#cv .status-witness').addClass("open");
+	    $('.status-witness').toggleClass("open");
 			$('#cv .collapsable').each(function() {
 				$this = $(this);
  				$this.removeClass("is-collapsed");
@@ -299,7 +300,7 @@
 		},
 
 		close : function() {
-	    	$('#cv .status-witness').removeClass("open");
+	    $('.status-witness').toggleClass("open");
 			$('#cv .collapsable').each(function() {
 				$this = $(this);
  				$this.addClass("is-collapsed");
@@ -471,8 +472,10 @@
 			} else {
 				if ( scrollFromTop < $(window).height() ) {
 					$("#backtotopglobal").css('opacity', '0');
+					$("#backtotopglobal").css('top', '-80px');
 				} else {
 					$("#backtotopglobal").css('opacity', '1');
+					$("#backtotopglobal").css('top', '0px');
 				}
 			}
 
@@ -709,6 +712,12 @@
 	 	    }
 		});
 
+		// basculer le mode de lecture au click sur dayNight
+		$("#dayNight").click(function() {
+			$('body').toggleClass('jour');
+		});
+
+
 		// slide vers l'article au click
 	    $('.lienProjets a:not(.disabled), .backtotop a, .titreProj').click(function (e) {
 	        e.preventDefault();
@@ -738,14 +747,14 @@
 		    }, 900, 'easeInOutQuint');
 	    });
 
-	    $('#cv .header').click(function (e) {
+	    $('#navbar .status-witness').click(function (e) {
 
 	    	var openornot = $('#cv .status-witness').hasClass("open");
-			if ( openornot ) {
-				CV.close();
-			} else {
-				CV.open();
-			}
+				if ( openornot ) {
+					CV.close();
+				} else {
+					CV.open();
+				}
 
 /* 		    $(".article").css( 'marginTop', 1000 + 'px'); */
 /* 			var readjust = setTimeout(adjustHeight, 1200); */
