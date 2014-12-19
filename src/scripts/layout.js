@@ -14,7 +14,7 @@
 	var $viewport = $('html, body');
 	var imgActuelle = 0;
 	var newArticleVu = $('article.article').first();
-	var gotoByScroll, adjustHeight, articleProche, activeArticle, detectArticle, restartDetectArticle;
+	var gotoByScroll, adjustHeight, articleProche, activeArticle, detectArticle, restartDetectArticle, getLocationOfDatalink;
 	var siteIsLoaded = false;
 
 	var canvasConnexe = {
@@ -72,7 +72,7 @@
 				processing.setup = function() {
 					processing.noLoop();
 					processing.background(0,0);
-					processing.noSmooth();
+					processing.smooth();
 				};
 
 				processing.draw = function() {
@@ -84,7 +84,7 @@
 					processing.noFill();
 					processing.strokeWeight(1);
 
-					for( var i=0; i<1; i++ ) {
+					for( var i=0; i< 1 ; i++ ) {
 
 						var randomInt = processing.random();
 	//					console.log( randomInt );
@@ -93,12 +93,13 @@
 						var cdgreen = processing.color(9, 96, 111);
 						var clgreen = processing.color( 125, 193, 200);
 
-						var randomToInterval = processing.map( randomInt, 0, 2, -20, -10 );
+						var randomToInterval = processing.map( randomInt, 0, 2, 140, 400 );
+						randomToInterval = 240;
 
 //						processing.stroke( processing.lerpColor( clgreen, cdgreen, randomInt ) );
 						processing.stroke( clgreen );
 
-						processing.bezier( startPointx, startPointy, (startPointx + randomToInterval )/2, (startPointy + randomToInterval)/2, endPointx, endPointy, endPointx, endPointy );
+						processing.bezier( startPointx, startPointy, (startPointx + randomToInterval ), startPointy, (endPointx - randomToInterval ), endPointy, endPointx, endPointy );
 
 					}
 				}
@@ -106,9 +107,22 @@
 				processing.drawBg = function() {
 
 					if( $("body").hasClass("jour") ) {
-						processing.fill( 242,242,242, 120);
+						processing.fill( 242,242,242, 220);
 					} else {
-						processing.fill( 34,34,34, 120);
+						processing.fill( 34,34,34, 220);
+					}
+
+					processing.noStroke();
+					processing.rect( 0, 0, processing.width, processing.height);
+
+
+				}
+				processing.eraseBg = function() {
+
+					if( $("body").hasClass("jour") ) {
+						processing.fill( 242,242,242);
+					} else {
+						processing.fill( 34,34,34);
 					}
 
 					processing.noStroke();
@@ -126,6 +140,12 @@
 			var canvasJS = document.getElementById("links");
 			var processingInstance = new Processing(canvasJS, drawLinks);
 
+			$("#navbar a[data-link]").each(function() {
+
+				console.log("each");
+
+			});
+
 			$("#navbar a").on("mouseover", function() {
 
 				$this = $(this);
@@ -138,7 +158,6 @@
 				if ( $("body").hasClass("navbarouverte") && thisLink !== undefined ) {
 
 					//console.log( " thisLink : " + thisLink );
-
 
 					if ( thisLink !== undefined ) {
 						canvasCV.drawAllLinks( $this, thisLink )
@@ -171,6 +190,7 @@
 
 					console.log("LINK $this :" + $hoveredLink.text() + " $linkTo : " + $thisLinkTo.text() );
 
+/*
 					if ( $hoveredLink.closest(".content").hasClass("realisations") === true ) {
 						thisPosLeft = $hoveredLink.offset().left - 10;
 						thisPosTop = $hoveredLink.offset().top + $hoveredLink.height()/2 + 2;
@@ -185,9 +205,11 @@
 						linkPosLeft = $thisLinkTo.offset().left;
 						linkPosTop = $thisLinkTo.offset().top + $thisLinkTo.height() + 1;
 					}
+*/
+					var locationthisPos = getLocationOfDatalink( $hoveredLink, false );
+					var locationlinkPos = getLocationOfDatalink( $thisLinkTo, true );
 
-
-					thisSketch.drawLink( thisPosLeft, thisPosTop, linkPosLeft, linkPosTop );
+					thisSketch.drawLink( locationthisPos.left - 1, locationthisPos.bottom, locationlinkPos.left + 1, locationlinkPos.bottom );
 
 				});
 			}
@@ -364,6 +386,12 @@
 		}
 	};
 
+	var dayNightSwitch = function() {
+		$('body').toggleClass('jour');
+		var thisSketch = Processing.getInstanceById('links');
+		thisSketch.eraseBg();
+
+	}
 
 	// fonction scroll vers le projet au click dans le header ou au clavier
 	gotoByScroll = function (idProjet) {
@@ -382,6 +410,28 @@
 		$('.lienProjets a').removeClass('active').filter(function() {
 			return $(this).data('projet') === lienProjet;
 		}).addClass('active');
+	}
+
+	getLocationOfDatalink = function( $thisLink, firstChar ) {
+
+		var $elem = $thisLink;
+		var text = $elem.html();
+
+		if( !firstChar ) {
+			var newText = text + '<span class="position-of-eles"></span>';
+		} else {
+			var newText = '<span class="position-of-eles"></span>' + text;
+		}
+		$elem.html(newText); //Set wrapper
+		var offset = $elem.find(".position-of-eles").offset();
+		var height = $elem.find(".position-of-eles").height();
+		offset.bottom = offset.top + height + 1.5;
+
+		console.log( offset );
+
+		$elem.html(text)    ; //Place back
+
+		return offset;
 	}
 
 	articleProche = function (modwscrollTop) {
@@ -694,7 +744,7 @@
 
 		// basculer de mode en appuyant sur 'n'
 		$(document).bind('keydown', 'alt', function (evt){
-			$('body').toggleClass('jour');
+			dayNightSwitch();
 		});
 
 		// on met tous les articles en périphérie
@@ -714,7 +764,7 @@
 
 		// basculer le mode de lecture au click sur dayNight
 		$("#dayNight").click(function() {
-			$('body').toggleClass('jour');
+			dayNightSwitch();
 		});
 
 

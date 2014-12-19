@@ -202,6 +202,7 @@ a:hover {
 	padding-left: 15px;
 	padding-right: 15px;
 	margin-left: -15px;
+	line-height: 1.5em;
 
 	@media @phone-only {
 		margin-right: -15px;
@@ -471,6 +472,16 @@ a:hover {
 
 		a[data-link] {
 			border-bottom-color: #7DC1C8;
+
+			.position-of-eles {
+
+				&:before {
+					content: ".";
+					position: absolute;
+					color: #7dc1c8;
+				}
+
+			}
 		}
 	}
 
