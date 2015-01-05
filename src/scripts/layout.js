@@ -99,7 +99,13 @@
 //						processing.stroke( processing.lerpColor( clgreen, cdgreen, randomInt ) );
 						processing.stroke( clgreen );
 
+						processing.pushMatrix();
+
+						processing.scale(2);
+
 						processing.bezier( startPointx, startPointy, (startPointx + randomToInterval ), startPointy, (endPointx - randomToInterval ), endPointy, endPointx, endPointy );
+
+						processing.popMatrix();
 
 					}
 				}
@@ -132,7 +138,7 @@
 				}
 
 				processing.updateSize = function( width, height ) {
-				  processing.size(width, height);
+				  processing.size(width * 2, height * 2);
 				}
 
 			}
