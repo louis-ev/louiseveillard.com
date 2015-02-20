@@ -79,7 +79,7 @@
 
 				};
 
-				processing.drawLink = function( startPointx, startPointy, endPointx, endPointy ) {
+				processing.drawLink = function( startPointx, startPointy, endPointx, endPointy, p5Color ) {
 
 					processing.noFill();
 					processing.strokeWeight(1);
@@ -87,23 +87,31 @@
 					for( var i=0; i< 1 ; i++ ) {
 
 						var randomInt = processing.random();
-	//					console.log( randomInt );
 
 						var cred = processing.color(255, 39, 25);
 						var cdgreen = processing.color(9, 96, 111);
 						var clgreen = processing.color( 125, 193, 200);
 
+						console.log( p5Color );
+
 						var randomToInterval = processing.map( randomInt, 0, 2, 140, 400 );
 						randomToInterval = 240;
 
+						var noHorizontalLine = 0;
+						if( Math.abs(startPointy - endPointy) < 40 ) {
+							noHorizontalLine = 60;
+						}
+
 //						processing.stroke( processing.lerpColor( clgreen, cdgreen, randomInt ) );
-						processing.stroke( clgreen );
+//						processing.stroke( clgreen );
+						processing.stroke( p5Color );
 
 						processing.pushMatrix();
 
 						processing.scale(2);
 
-						processing.bezier( startPointx, startPointy, (startPointx + randomToInterval ), startPointy, (endPointx - randomToInterval ), endPointy, endPointx, endPointy );
+
+						processing.bezier( startPointx, startPointy, (startPointx + randomToInterval ), startPointy + noHorizontalLine, (endPointx - randomToInterval ), endPointy, endPointx, endPointy );
 
 						processing.popMatrix();
 
@@ -113,9 +121,9 @@
 				processing.drawBg = function() {
 
 					if( $("body").hasClass("jour") ) {
-						processing.fill( 242,242,242, 220);
+						processing.fill( 242,242,242, 190);
 					} else {
-						processing.fill( 34,34,34, 220);
+						processing.fill( 34,34,34, 190);
 					}
 
 					processing.noStroke();
@@ -146,12 +154,6 @@
 			var canvasJS = document.getElementById("links");
 			var processingInstance = new Processing(canvasJS, drawLinks);
 
-			$("#navbar a[data-link]").each(function() {
-
-				console.log("each");
-
-			});
-
 			$("#navbar a").on("mouseover", function() {
 
 				$this = $(this);
@@ -166,7 +168,8 @@
 					//console.log( " thisLink : " + thisLink );
 
 					if ( thisLink !== undefined ) {
-						canvasCV.drawAllLinks( $this, thisLink )
+						thisColor = $this.css("border-bottom-color");
+						canvasCV.drawAllLinks( $this, thisLink, thisColor )
 					} else {
 
 					}
@@ -177,11 +180,21 @@
 
 		},
 
-		drawAllLinks : function( $hoveredLink, hoveredDataLink ) {
+		drawAllLinks : function( $hoveredLink, hoveredDataLink, thisColor ) {
 
 			var detailLeft = $("#navbar").offset().left;
 			var detailTop = $("#navbar").offset().top;
 			var thisSketch = Processing.getInstanceById('links');
+
+			thisColor = thisColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+
+			var linkColor;
+
+			var p5Color = thisSketch.color( parseInt(thisColor[1],10), parseInt(thisColor[2],10), parseInt(thisColor[3],10) );
+
+			console.log( "thisColor " + thisColor );
+			console.log( "parseInt(thisColor[1],10) " + parseInt(thisColor[1],10) );
+
 
 			//thisSketch.background(0,90);
 
@@ -194,7 +207,7 @@
 
 					$thisLinkTo = $(this);
 
-					console.log("LINK $this :" + $hoveredLink.text() + " $linkTo : " + $thisLinkTo.text() );
+					console.log("LINK $this :" + $hoveredLink.text() + " $linkTo : " + $thisLinkTo.text() + " thisColor : " + thisColor );
 
 /*
 					if ( $hoveredLink.closest(".content").hasClass("realisations") === true ) {
@@ -215,7 +228,7 @@
 					var locationthisPos = getLocationOfDatalink( $hoveredLink, false );
 					var locationlinkPos = getLocationOfDatalink( $thisLinkTo, true );
 
-					thisSketch.drawLink( locationthisPos.left - 1, locationthisPos.bottom, locationlinkPos.left + 1, locationlinkPos.bottom );
+					thisSketch.drawLink( locationthisPos.left - 1, locationthisPos.bottom, locationlinkPos.left + 1, locationlinkPos.bottom, p5Color );
 
 				});
 			}
@@ -232,6 +245,35 @@
 		},
 
 		loopMeUp: function() {
+
+		},
+
+		drawAllLinksAtOnce : function() {
+
+			$("#navbar a[data-link]").each(function() {
+
+				$this = $(this);
+				thisLink = $this.attr("data-link");
+
+				var thisSketch = Processing.getInstanceById('links');
+
+				if ( $("body").hasClass("navbarouverte") && thisLink !== undefined ) {
+
+					console.log( " thisLink : " + thisLink );
+
+					if ( thisLink !== undefined ) {
+						thisColor = $this.css("border-bottom-color");
+						canvasCV.drawAllLinks( $this, thisLink, thisColor );
+					} else {
+
+					}
+
+				}
+
+			});
+
+
+
 
 		}
 	};
@@ -321,6 +363,7 @@
 	 				$("body").addClass("navbarouverte");
 
 	 				canvasCV.resize();
+	 				canvasCV.drawAllLinksAtOnce();
 
 				}, 400, "removeAndRelative");
 			}

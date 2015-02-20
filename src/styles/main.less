@@ -172,7 +172,8 @@ a, a:link, a:active, a:visited {
 
 	.jour & {
 		color: @textblack;
-		border-bottom: @textblack solid 1px;
+		border-bottom:solid 1px;
+		border-bottom-color:  @textblack;
 
 	}
 
@@ -339,14 +340,13 @@ a:hover {
 	z-index: -1;
 
 	opacity: 0;
-	display: none;
+		display: block;
 
 	transition: opacity .2s 0s;
 
 	.navbarouverte & {
 		opacity: 1;
-		display: block;
-		transition: opacity 1s 1s;
+		transition: opacity 1s .6s;
 
 	}
 
@@ -475,6 +475,7 @@ a:hover {
 		a[data-link] {
 			border-bottom-color: #7DC1C8;
 
+
 			.position-of-eles {
 
 				&:before {
@@ -485,6 +486,23 @@ a:hover {
 
 			}
 		}
+
+/*
+		a[data-link=panopticlab] {	border-bottom-color: rgb(255, 200, 85);	}
+		a[data-link=socmed] {				border-bottom-color: #D02D24;						}
+		a[data-link=chevalvert] {		border-bottom-color: #09CD53;						}
+		a[data-link=bvh] {					border-bottom-color: rgb(83,83,83);			}
+		a[data-link=frac] {					border-bottom-color: #000;							}
+		a[data-link=socmed] {
+		a[data-link=fab] {
+		a[data-link=chevalvert] {
+		a[data-link=tricodeur] {
+		a[data-link=connexe] {
+		a[data-link=blog] {
+		a[data-link=algorithme] {
+		a[data-link=esad-amiens] {
+*/
+
 	}
 
 	.column {
