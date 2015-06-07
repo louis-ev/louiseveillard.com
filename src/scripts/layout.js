@@ -98,20 +98,19 @@
 						randomToInterval = 240;
 
 						var noHorizontalLine = 0;
-						if( Math.abs(startPointy - endPointy) < 40 ) {
-							noHorizontalLine = 60;
+						if( Math.abs(startPointy - endPointy) < 20 ) {
+							noHorizontalLine = 20;
 						}
 
+						processing.stroke( p5Color );
 //						processing.stroke( processing.lerpColor( clgreen, cdgreen, randomInt ) );
 //						processing.stroke( clgreen );
-						processing.stroke( p5Color );
 
 						processing.pushMatrix();
 
 						processing.scale(2);
 
-
-						processing.bezier( startPointx, startPointy, (startPointx + randomToInterval ), startPointy + noHorizontalLine, (endPointx - randomToInterval ), endPointy, endPointx, endPointy );
+						processing.bezier( startPointx, startPointy, (startPointx + randomToInterval ), startPointy, (endPointx - randomToInterval ), endPointy + noHorizontalLine, endPointx, endPointy );
 
 						processing.popMatrix();
 
@@ -121,9 +120,9 @@
 				processing.drawBg = function() {
 
 					if( $("body").hasClass("jour") ) {
-						processing.fill( 242,242,242, 190);
+						processing.fill( 242,242,242);
 					} else {
-						processing.fill( 34,34,34, 190);
+						processing.fill( 34,34,34);
 					}
 
 					processing.noStroke();
@@ -706,19 +705,19 @@
 
 		if ( $(window).width() > 1024 ) {
 	        $(window).on('scrollstart', function() {
-			  	//console.log("scrollstart");
+				  	//console.log("scrollstart");
 
-				// exécuter la détection du projet visible toutes les 1000ms, sauf si c'est un scroll automatique
-				if ($viewport.is(':animated')) {
-					console.log( "animated");
-					return;
-				}
+						// exécuter la détection du projet visible toutes les 1000ms, sauf si c'est un scroll automatique
+						if ($viewport.is(':animated')) {
+							console.log( "animated");
+							return;
+						}
 
-				if ( $(window).width() > tablet_max ) {
-					$('body').addClass('scrolling');
-				}
-				// détection de la proximité d'article à la volée, en plein scroll => très lourd en ressources...
-				detectArticle();
+						if ( $(window).width() > tablet_max ) {
+							$('body').addClass('scrolling');
+						}
+						// détection de la proximité d'article à la volée, en plein scroll => très lourd en ressources...
+						detectArticle();
 	        });
         }
 
@@ -805,7 +804,7 @@
 		// marche grâce aux id, même si pas super clean. À voir la compatibilité avec tous les devices si géré en JS
 
 		// le jquery scroll se stop au click ou au scroll manuel // de stackoverflow
-	    $viewport.bind("scroll mousedown DOMMouseScroll mousewheel", function(e){
+	  $viewport.bind("scroll mousedown DOMMouseScroll mousewheel", function(e){
 		    if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"){
 		         $viewport.stop();
 	 	    }
@@ -816,6 +815,28 @@
 			dayNightSwitch();
 		});
 
+		// pour les articles qui ont des vidéos, la charger au click sur le petit bouton play
+		$(".imgfond[data-hasVideo]").each(function() {
+			$this = $(this);
+			$this.append("<button class='playVideo'></button>");
+
+			$this.click(function() {
+				$that = $(this);
+
+				if( !$that.hasClass("videoLoaded") ) {
+
+					mp4file = $that.attr("data-videoMP4");
+					webmfile = $that.attr("data-videoWEBM");
+
+					$that.prepend('<video style="position:absolute;top:0px;left:0px;z-index:51;" class="" autoplay="true" loop="true"><source src="' + webmfile + '" type="video/webm"><source src="' + mp4file + '" type="video/mp4"></video>');
+//					$that.find("picture").delay(1000).css("opacity", 0).css("cursor", "default");
+					$that.find(".playVideo").css("opacity", 0);
+
+					$that.addClass("videoLoaded");
+				}
+			});
+
+		});
 
 		// slide vers l'article au click
 	    $('.lienProjets a:not(.disabled), .backtotop a, .titreProj').click(function (e) {
