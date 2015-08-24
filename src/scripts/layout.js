@@ -506,6 +506,7 @@
 		return articleActif;
 	}
 
+
 	var backToTop = {
 
 		init : function() {
@@ -581,9 +582,8 @@
 	};
 
 	detectArticle = function () {
-		console.log("detectArticle");
 	    restartDetectArticle = setTimeout(function () {
-			activeArticle(window.pageYOffset);
+				activeArticle(window.pageYOffset);
 	    	detectArticle();
 	    }, 1000);
 	};
@@ -656,7 +656,7 @@
 
 		if ( $(window).width() > init_pjs ) {
 
-		    var scriptSrc = '//cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing.min.js';
+		    var scriptSrc = 'scripts/vendor/processing-1.4.1.min.js';
 
 		    //console.log( "script : " , script);
 
@@ -721,11 +721,12 @@
 	        });
         }
 
-		$(window).on('scroll', function () {
-			// placer le backtotop en vu
-			backToTop.recalc(window.pageYOffset, newArticleVu);
-		});
-
+		if ( $(window).width() <= 1024 ) {
+			$(window).on('scroll', function () {
+				// placer le backtotop en vu
+				backToTop.recalc(window.pageYOffset, newArticleVu);
+			});
+		}
 		if ( $(window).width() > 1024 ) {
 	        $(window).on('scrollstop', function() {
 
