@@ -656,10 +656,8 @@
 
 		if ( $(window).width() > init_pjs ) {
 
-		    var scriptSrc = 'scripts/vendor/processing-1.4.1.min.js';
-
-		    //console.log( "script : " , script);
-
+	    var scriptSrc = 'scripts/vendor/processing-1.4.1.min.js?' + new Date().getTime();
+	    //console.log( "script : " , script);
 			var script = document.createElement('script');
 			script.src = scriptSrc;
 
