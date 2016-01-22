@@ -443,7 +443,7 @@ html {
 }
 .containMe {
   width: 100%;
-  padding: 0 10%;
+  padding: 0 5%;
 }
 body {
   font-family: 'gt cinetype regular', Helvetica, Arial, sans-serif;
@@ -451,7 +451,7 @@ body {
   font-size: 1.2rem;
   line-height: 1.41;
   color: #f9f9f9;
-  background-color: #000;
+  background-color: #151515;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "kern" 1;
@@ -510,18 +510,22 @@ h3 {
   padding: .5rem;
 }
 .module--intro {
-  margin: 24vh	0 15vh 50% ;
-  width: 50%;
-  max-width: 22em;
+  width: 100%;
+  padding: 0 5%;
   font-size: 1.8rem;
+  line-height: 1.6;
+}
+.module--intro .module--into--textblock {
+  margin: 28vh	0 22vh 33% ;
+  max-width: 22em;
 }
 .module--intro a {
   display: inline;
   cursor: pointer;
   color: #fff;
-  background-color: #343434;
-  padding: 0 .1em;
-  margin: 0 -0.1em;
+  background-color: #404040;
+  padding: .1em .1em;
+  margin: -0.1em -0.1em;
   transition: all 1s ease-out;
 }
 .module--intro a:hover {
@@ -529,20 +533,34 @@ h3 {
   border-bottom-color: rgba(25, 118, 210, 0);
   color: #f5f5f5;
 }
+.projet--number {
+  font-size: 1.125rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-right: 70px;
+  font-family: 'GT Cinetype Bold';
+}
+.projet--name {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: block;
+  color: #fff;
+  transition: letter-spacing 0.6s ease-in-out;
+  font-size: 2rem;
+}
 .module--projetList {
   width: 100%;
-  padding: 0 10%;
+  padding: 0 5%;
   min-height: 100vh;
   counter-reset: projet;
   list-style-type: none;
 }
 .module--projetList li {
-  cursor: pointer;
   transition: opacity 0.4s ease-out;
 }
 .module--projetList li a {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   display: block;
   color: #fff;
   transition: letter-spacing 0.6s ease-in-out;
@@ -551,10 +569,11 @@ h3 {
 .module--projetList li a::before {
   counter-increment: projet;
   content: counters(projet, ".", decimal-leading-zero);
-  letter-spacing: 0;
-  font-size: .7em;
+  font-size: 1.125rem;
+  letter-spacing: .05em;
   text-transform: uppercase;
   margin-right: 70px;
+  font-family: 'GT Cinetype Bold';
 }
 .module--projetList li a::after {
   content: "->";
@@ -580,9 +599,10 @@ h3 {
 .module--projet {
   margin-top: 80vh;
   color: #f9f9f9;
-  background-color: #000;
+  background-color: #151515;
   width: 100%;
-  padding: 0 10%;
+  padding: 0 5%;
+  padding-top: 30px;
 }
 .module--projet::before {
   content: "";
@@ -592,12 +612,11 @@ h3 {
   left: 0;
   height: 80vh;
   width: 100%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, #000);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, #151515);
   z-index: -1;
 }
 .module--projet .module--projet--header {
-  width: 90%;
-  margin: 0vh 5% 0 50%;
+  padding: 0vh 5% 0 33%;
 }
 .module--projet .module--projet--header h1,
 .module--projet .module--projet--header h2 {
@@ -622,9 +641,6 @@ h3 {
   width: 100%;
   height: 100%;
 }
-.module--projet .module--projet--text {
-  padding: 0 10%;
-}
 .module--projet img {
   max-width: 100%;
 }
@@ -638,7 +654,7 @@ h3 {
   bottom: 0;
   width: 200%;
   z-index: -1;
-  background: linear-gradient(to right, #000 0%, #000 50%, #000000 100%);
+  background: linear-gradient(to right, #151515 0%, #151515 50%, #151515 100%);
   -webkit-transform: translateX(0%);
   -ms-transform: translateX(0%);
   transform: translateX(0%);

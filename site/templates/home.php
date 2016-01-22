@@ -4,7 +4,9 @@
 <main class="main" role="main">
 
 	<div class="module--intro">
-	  <?php echo $page->text()->kirbytext() ?>
+		<header class="module--into--textblock">
+	  	<?php echo $page->text()->kirbytext() ?>
+	  </div>
 	</div>
 
 	<ol class="module--projetList">

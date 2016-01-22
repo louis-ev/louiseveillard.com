@@ -21,10 +21,10 @@ html {
 
 .containMe {
 	width: 	100%;
-	padding: 0 10%;
+	padding: 0 5%;
 }
 
-@c-pagebg: #000;
+@c-pagebg: #151515;
 @c-textColor: #f9f9f9;
 
 
@@ -118,18 +118,23 @@ h3 {
 
 // page home
 .module--intro {
-	margin: 24vh	0 15vh 50% ;
-	width: 50%;
-	max-width: 22em;
+
+	.containMe;
 	font-size: 	1.8rem;
+  line-height: 1.6;
+
+	.module--into--textblock {
+		margin: 28vh	0 22vh 33% ;
+		max-width: 22em;
+	}
 
 	a {
 		display: inline;
 		cursor: pointer;
 		color: #fff;
-		background-color: #343434;
-		padding: 0 .1em;
-		margin: 0 -.1em;
+		background-color: #404040;
+		padding: .1em .1em;
+		margin: -.1em -.1em;
 		transition: all 1s ease-out;
 
 	  &:hover {
@@ -141,6 +146,26 @@ h3 {
 	}
 
 }
+
+.projet--number {
+	font-size: 	1.125rem;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	margin-right: 	70px;
+
+	font-family: 'GT Cinetype Bold';
+}
+.projet--name {
+	padding-top: 			2rem;
+	padding-bottom: 	2rem;
+	display: block;
+	color: #fff;
+	transition: letter-spacing .6s ease-in-out;
+	.largeText;
+}
+
+
+
 // page home
 .module--projetList {
 
@@ -150,31 +175,17 @@ h3 {
   counter-reset: projet;
   list-style-type: none;
 
-
-
 	li {
-		cursor: pointer;
 		transition: opacity .4s ease-out;
 
-
-
 		a {
-			padding-top: 	3rem;
-			padding-bottom: 	3rem;
-			display: block;
-			color: #fff;
-			transition: letter-spacing .6s ease-in-out;
-			.largeText;
+
+			.projet--name;
 
 			&::before {
 		    counter-increment: projet;
 		    content: counters(projet, ".", decimal-leading-zero);
-
-					letter-spacing: 0;
-
-				font-size: 	.7em;
-				text-transform: uppercase;
-				margin-right: 	70px;
+				.projet--number;
 			}
 			&::after {
 				content: "->";
@@ -207,11 +218,11 @@ h3 {
 .module--projet {
 
 	@spaceBeforeProjet: 80vh;
-
 	margin-top: @spaceBeforeProjet;
 	color: @c-textColor;
 	background-color: @c-pagebg;
 	.containMe;
+	padding-top: 30px;
 
 
 	&::before {
@@ -229,8 +240,7 @@ h3 {
 
 	.module--projet--header {
 
-		width: 90%;
-		margin: 0vh 5% 0 50%;
+		padding: 0vh 5% 0 33%;
 
 		h1,h2 {
 			margin: 0;
@@ -259,8 +269,6 @@ h3 {
 	}
 
 	.module--projet--text {
-		padding: 0 10%;
-
 	}
 
 	img {
