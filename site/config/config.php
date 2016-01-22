@@ -33,16 +33,16 @@ c::set('environment', 'production');
 
 c::set('languages', array(
   array(
-    'code'    => 'en',
-    'name'    => 'English',
+    'code'    => 'fr',
+    'name'    => 'Français',
     'default' => true,
-    'locale'  => 'en_US',
+    'locale'  => 'fr_FR',
     'url'     => '/',
   ),
-  // array(
-  //   'code'    => 'fr',
-  //   'name'    => 'Français',
-  //   'locale'  => 'fr_FR',
-  //   'url'     => '/fr',
-  // ),
+  array(
+    'code'    => 'en',
+    'name'    => 'English',
+    'locale'  => 'en_US',
+    'url'     => '/en',
+  ),
 ));

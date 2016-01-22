@@ -1,16 +1,16 @@
 
   <footer>
-
     <p style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">
       <a href="http://g-u-i.net/">Made by Julien Gargot from <em>g.u.i.</em></a> and <a href="http://www.louiseveillard.com">Louis Eveillard</a>.
     </p>
-
   </footer>
+
+	<div class="module--gradient_overlay <?php e( $page->intendedTemplate() === "home", '', 'is--away'); ?>"></div>
 
   <!-- scripts -->
   <?php if ( c::get('environment') == 'local' ) : ?>
 
-  <?= js('assets/js/plugin.js') ?>
+  <?= js('assets/js/plugins.js') ?>
   <?= js('assets/js/main.js') ?>
 
   <?php else: ?>

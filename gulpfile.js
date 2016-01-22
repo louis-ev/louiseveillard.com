@@ -122,11 +122,11 @@ gulp.task('scripts', function() {
 
 // Watch Files For Changes
 gulp.task('dev-watch', function() {
-  gulp.watch( userScripts, ['lint', 'script-plugins']);
+  gulp.watch( userScripts, [ 'script-plugins']);
   gulp.watch( 'assets/less/*.less', ['less']);
 });
 
 
 
 // Default Task
-gulp.task('default', ['lint', 'css', 'script-plugins', 'scripts']);
+gulp.task('default', ['css', 'script-plugins', 'scripts']);
