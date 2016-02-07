@@ -20,9 +20,12 @@ var pluginsScripts = [
   'bower_components/isotope/dist/isotope.pkgd.min.js',
   'bower_components/lazysizes/lazysizes.min.js'
 ];
+
 var userScripts = [
   'assets/js/main.js'
 ];
+
+var localDevUrl = 'localhost:8888/louiseveillard.com-v2/';
 
 /*
 
@@ -53,6 +56,7 @@ var nano    = require('gulp-cssnano');
 var plumber = require('gulp-plumber');
 var rename  = require('gulp-rename');
 var uglify  = require('gulp-uglify');
+var browserSync = require('browser-sync').create();
 
 
 
@@ -134,6 +138,10 @@ gulp.task('scripts', function() {
 
 // Watch Files For Changes
 gulp.task('dev-watch', function() {
+  browserSync.init({
+    files: ['{site}/**/*.php', '*.php', userScripts, 'assets/less/*.less'],
+    proxy: localDevUrl,
+  });
   gulp.watch( userScripts, [ 'script-plugins']);
   gulp.watch( 'assets/less/*.less', ['less']);
 });

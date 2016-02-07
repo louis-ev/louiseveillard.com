@@ -4,10 +4,6 @@ Title: Le Tricodeur
 
 Text: 
 
-détournement de machines à tricoter
-hack, generative knitting, data-visualization
-2014
-
 Le Tricodeur explore la mise en relation de deux pratiques créatives liées entre elles par un héritage commun : le tricot et la programmation. Au XIXe siècle, le métier à tisser Jacquard est précurseur dans l'utilisation de cartes perforées pour encoder un motif. Il a ensuite inspiré la création du Analytical Engine, ancêtre des ordinateurs modernes et première machine capable de mémoriser et d'exécuter un algorithme dit algébrique. Son développement a d'ailleurs mené à l'informatique contemporaine.
 
 (image: tricodeur-residence-large-1.jpg legende: Installation à l'association Sew & Laine en septembre 2014)
@@ -76,11 +72,7 @@ Imagecover: tricodeur-large-1.jpg
 
 ----
 
-Header: 
-
-# Le Tricodeur
-
-## Tricot + code + data
+Header: Un projet de détournement de machines à tricoter pour produire des motifs générés avec du code.
 
 ----
 
@@ -89,3 +81,12 @@ Type: installations
 ----
 
 Annee: 2014
+
+----
+
+Headercol2: 
+
+### thème
+## Tricot + code + data
+### année
+2014—2015

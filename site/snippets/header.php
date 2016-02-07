@@ -47,4 +47,6 @@
 <body
    data-login="<?php e($site->user(),'true', 'false') ?>"
    data-template="<?php echo $page->template() ?>"
-   data-intended-template="<?php echo $page->intendedTemplate() ?>">
+   data-intended-template="<?php echo $page->intendedTemplate() ?>"
+   data-rubrique="<?php e( $page->type()->exists(), str::slug( $page->type()), '' ); ?>"
+       >

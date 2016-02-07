@@ -206,10 +206,12 @@ var theProjetList = {
 		// binder un event mouse : au survol sur un a, passer le gradient en is--away et charger l'image qui correspond
 		var $allProjets = $(".module--projet");
 		$('.module--projetList .module--projetList--projetName--links').each( function() {
+
   		$(this).on('mouseover', function() {
+
   			$("body").attr("module--gradient_overlay", "is--away");
   			projetIndex = $(this).parent("li").attr("data-index");
-  			$thisProjet = $(".module--projet[data-index=" + projetIndex + "]");
+  			$thisProjet = $(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
 
   			$thisProjet.addClass("is--shown");
 
@@ -217,7 +219,7 @@ var theProjetList = {
   		$(this).on('mouseleave', function() {
 
   			projetIndex = $(this).parent("li").attr("data-index");
-  			$thisProjet = $(".module--projet[data-index=" + projetIndex + "]");
+  			$thisProjet = $(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
   			$thisProjet.removeClass("is--shown");
 
   			$("body").attr("module--gradient_overlay", "");

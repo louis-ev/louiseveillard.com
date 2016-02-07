@@ -17,6 +17,11 @@ fields:
   header:
     label: Header
     type:  textarea
+    width: 1/2
+  headercol2:
+    label: Infos techniques
+    type:  textarea
+    width: 1/2
   text:
     label: Text
     type:  textarea

@@ -467,17 +467,15 @@ html {
   box-sizing: inherit;
 }
 .largeText {
-  font-size: 2rem;
+  font-size: 2em;
 }
 .mediumText {
-  font-size: 1.4rem;
+  font-size: 1.4em;
 }
 .containMe {
   width: 100%;
-  padding: 0 5%;
-}
-.containMeSmaller {
-  width: 100%;
+  max-width: 88em;
+  margin: 0 auto;
   padding: 0 10%;
 }
 body {
@@ -509,6 +507,10 @@ b {
   font-weight: normal;
   font-size: inherit;
 }
+hr {
+  border: none;
+  border-top: 1px solid #333;
+}
 a,
 a:hover,
 a:active,
@@ -528,41 +530,40 @@ h3 {
 }
 .module--navbar {
   position: fixed;
-  left: 5%;
-  top: 0rem;
-  width: 350px;
+  width: 100%;
+  max-width: 88em;
+  margin: 0 auto;
+  padding: 0 10%;
+  top: 0;
   text-transform: lowercase;
   color: #fff;
 }
 .module--navbar a {
   padding: .5rem;
+  margin-left: -0.5rem;
 }
 .module--navbar ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.module--navbar .module--logo {
-  display: inline-block;
-}
 .module--navbar .module--logo svg {
   width: 60px;
-}
-.module--navbar .module--navbar--list {
-  display: inline-block;
 }
 .module--navbar .module--navbar--list .module--navbar--list--item {
   display: inline-block;
 }
 .module--intro {
   width: 100%;
-  padding: 0 5%;
+  max-width: 88em;
+  margin: 0 auto;
+  padding: 0 10%;
   font-size: 1.8rem;
   line-height: 1.6;
   transition: opacity 0.4s 0.4s ease-out;
 }
 .module--intro .module--into--textblock {
-  margin: 24vh	0 12vh 33% ;
+  margin: 24vh	0 14vh 33% ;
   max-width: 22em;
 }
 body[module--gradient_overlay="is--away"] .module--intro {
@@ -617,10 +618,10 @@ body[module--gradient_overlay="is--away"] .module--intro {
   background-size: 200% 100%;
 }
 .projet--number {
-  font-size: 1.125rem;
+  font-size: .6em;
   letter-spacing: .05em;
   text-transform: uppercase;
-  margin-right: 32px;
+  margin-right: 3em;
   font-family: 'GT Cinetype Bold';
 }
 .projet--type {
@@ -630,31 +631,23 @@ body[module--gradient_overlay="is--away"] .module--intro {
   height: 6px;
 }
 .projet--name {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: .5em;
+  padding-bottom: .5em;
   display: block;
   color: #fff;
-  font-size: 2rem;
+  font-size: 2em;
   transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out;
-}
-.projet--name::before {
-  counter-increment: projet;
-  content: counters(projet, ".", decimal-leading-zero);
-  font-size: 1.125rem;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  margin-right: 32px;
-  font-family: 'GT Cinetype Bold';
 }
 .module--projetList {
   width: 100%;
-  padding: 0 5%;
-  min-height: 100vh;
-  counter-reset: projet;
+  max-width: 88em;
+  margin: 0 auto;
+  padding: 0 10%;
+  min-height: 120vh;
   list-style-type: none;
 }
 .module--projetList:hover .module--projetList--projetName .module--projetList--projetName--links {
-  color: #474747;
+  color: #ababab;
 }
 .module--projetList:hover .module--projetList--projetName .module--projetList--projetName--links:hover {
   color: inherit;
@@ -663,33 +656,34 @@ body[module--gradient_overlay="is--away"] .module--intro {
   width: 80%;
   transition: opacity 0.3s ease-out;
 }
-.module--projetList .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links::before {
+.module--projetList .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links--index {
   color: #0A997F;
 }
-.module--projetList .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links::before {
+.module--projetList .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links--index {
   color: #03a9f4;
 }
-.module--projetList .module--projetList--projetName[data-type="installations"] .module--projetList--projetName--links::before {
+.module--projetList .module--projetList--projetName[data-type="installations"] .module--projetList--projetName--links--index {
   color: #D1DF98;
 }
-.module--projetList .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links::before {
+.module--projetList .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links--index {
   color: #FECD62;
 }
+body[data-template="projet"] .module--projetList .module--projetList--projetName:not(.is--active):not(:hover) {
+  font-size: .5em;
+}
 .module--projetList .module--projetList--projetName .module--projetList--projetName--links {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: .5em;
+  padding-bottom: .5em;
   display: block;
   color: #fff;
-  font-size: 2rem;
+  font-size: 2em;
   transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out;
 }
-.module--projetList .module--projetList--projetName .module--projetList--projetName--links::before {
-  counter-increment: projet;
-  content: counters(projet, ".", decimal-leading-zero);
-  font-size: 1.125rem;
+.module--projetList .module--projetList--projetName .module--projetList--projetName--links--index {
+  font-size: .6em;
   letter-spacing: .05em;
   text-transform: uppercase;
-  margin-right: 32px;
+  margin-right: 3em;
   font-family: 'GT Cinetype Bold';
 }
 .module--projetList .module--projetList--projetName .module--projetList--projetName--links::after {
@@ -713,12 +707,26 @@ body[module--gradient_overlay="is--away"] .module--intro {
 .module--projet {
   color: #f9f9f9;
   background-color: #151515;
+  margin-top: 24vh;
   padding-bottom: 30px;
   transition: opacity 0.4s 0.2s ease-out;
 }
+.module--projet .module--projet--header {
+  width: 100%;
+  max-width: 88em;
+  margin: 0 auto;
+  padding: 0 10%;
+}
 .module--projet .module--projet--header .module--projet--header--text {
-  padding: 0vh 5% 0 5%;
   padding-top: 2rem;
+}
+.module--projet .module--projet--header .module--projet--header--text:before,
+.module--projet .module--projet--header .module--projet--header--text:after {
+  content: " ";
+  display: table;
+}
+.module--projet .module--projet--header .module--projet--header--text:after {
+  clear: both;
 }
 .module--projet .module--projet--header .module--projet--header--text h1,
 .module--projet .module--projet--header .module--projet--header--text h2,
@@ -726,30 +734,57 @@ body[module--gradient_overlay="is--away"] .module--intro {
   margin: 0;
   line-height: 1.4;
 }
-.module--projet .module--projet--header .module--projet--header--text h1 {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  display: block;
-  color: #fff;
-  font-size: 2rem;
-  transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out;
-}
-.module--projet .module--projet--header .module--projet--header--text h1::before {
-  counter-increment: projet;
-  content: counters(projet, ".", decimal-leading-zero);
-  font-size: 1.125rem;
+.module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
+  font-size: .6em;
   letter-spacing: .05em;
   text-transform: uppercase;
-  margin-right: 32px;
+  margin-right: 3em;
   font-family: 'GT Cinetype Bold';
 }
+[data-type="vr"].module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
+  color: #0A997F;
+}
+[data-type="sites"].module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
+  color: #03a9f4;
+}
+[data-type="installations"].module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
+  color: #D1DF98;
+}
+[data-type="outils-pedagogiques"].module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
+  color: #FECD62;
+}
+.module--projet .module--projet--header .module--projet--header--text h1 {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  display: block;
+  color: #fff;
+  font-size: 2em;
+  transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out;
+}
 .module--projet .module--projet--header .module--projet--header--text h2 {
-  font-size: 1.4rem;
+  font-size: 1.4em;
+}
+.module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colLeft {
+  float: left;
+  width: 66%;
+  font-size: 1.4em;
+}
+.module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colLeft > *:first-child {
+  margin-top: 0;
+}
+.module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colLeft p {
+  margin-top: .5em;
+}
+.module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colRight {
+  float: right;
+  right: 34%;
+}
+.module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colRight h3 {
+  margin-top: .5em;
 }
 .module--projet .module--projet--header--visuel {
   background-color: #151515;
   color: #f9f9f9;
-  padding: 0 15% 0 15%;
 }
 .module--projet .module--projet--header--visuel img {
   max-width: 100%;
@@ -829,19 +864,21 @@ body[data-template="home"] .module--projet {
   width: 100%;
   height: 100%;
   opacity: 0;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-  transition: opacity 0.4s 0.2s ease-out, -webkit-filter 0s 0.6s ease-out;
-  transition: opacity 0.4s 0.2s ease-out, filter 0s 0.6s ease-out;
-  transition: opacity 0.4s 0.2s ease-out, filter 0s 0.6s ease-out, -webkit-filter 0s 0.6s ease-out;
+  -webkit-filter: grayscale(40%);
+  filter: grayscale(40%);
+  z-index: -2;
+  transition: opacity 0.6s 0s ease-out, -webkit-filter 0.6s 0s ease-out;
+  transition: opacity 0.6s 0s ease-out, filter 0.6s 0s ease-out;
+  transition: opacity 0.6s 0s ease-out, filter 0.6s 0s ease-out, -webkit-filter 0.6s 0s ease-out;
 }
 body[data-template="home"] .module--projet.is--shown {
-  opacity: 1;
+  opacity: .8;
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
-  transition: opacity 0.4s 0.2s ease-out, -webkit-filter 1s ease-out;
-  transition: opacity 0.4s 0.2s ease-out, filter 1s ease-out;
-  transition: opacity 0.4s 0.2s ease-out, filter 1s ease-out, -webkit-filter 1s ease-out;
+  transition: opacity 0.4s ease-out, -webkit-filter 0.4s 0.2s ease-out;
+  transition: opacity 0.4s ease-out, filter 0.4s 0.2s ease-out;
+  transition: opacity 0.4s ease-out, filter 0.4s 0.2s ease-out, -webkit-filter 0.4s 0.2s ease-out;
+  z-index: -1;
 }
 body[data-template="home"] .module--projet::before {
   display: none;
@@ -853,6 +890,7 @@ body[data-template="home"] .module--projet .module--projet--header--visuel {
   z-index: -2;
   width: 100%;
   height: 100vh;
+  max-width: none;
   padding: 0;
 }
 body[data-template="home"] .module--projet .module--projet--header--visuel img {

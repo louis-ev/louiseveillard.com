@@ -2,6 +2,19 @@
 @import "_fonts.less";
 @import "_image.less";
 
+@c-pagebg: #151515;
+
+@c-textColor: #f9f9f9;
+@c-textMeta: #999;
+
+@c-vr:                     #0A997F;
+@c-sites:                  #03a9f4;
+@c-installations:          #D1DF98;
+@c-outils-pedagogiques: #FECD62;
+
+
+
+
 ::-moz-selection {
     background: rgba(0, 220, 140,0.25);
 }
@@ -17,31 +30,30 @@ html {
 }
 
 .largeText {
-	font-size: 	2rem;
+	font-size: 	2em;
 }
 .mediumText {
-	font-size: 	1.4rem;
+	font-size: 	1.4em;
+}
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
 }
 
 
 .containMe {
 	width: 	100%;
-	padding: 0 5%;
+	max-width: 88em;
+	margin: 0 auto;
+	padding: 0 10%;
 }
-.containMeSmaller {
-  width:  100%;
-  padding: 0 10%;
-}
-
-@c-pagebg: #151515;
-
-@c-textColor: #f9f9f9;
-@c-textMeta: #999;
-
-@c-vr:                     #0A997F;
-@c-sites:                  #03a9f4;
-@c-installations:          #D1DF98;
-@c-outils-pedagogiques: #FECD62;
 
 body {
 
@@ -75,6 +87,12 @@ h1, h2, h3, h4, h5, h6, b {
 }
 
 
+      hr {
+        border: none;
+        border-top: 1px solid #333;
+      }
+
+
 a, a:hover, a:active, a:visited {
   color: inherit;
   text-decoration: none;
@@ -96,15 +114,17 @@ h3 {
 
 .module--navbar {
 	position: fixed;
-	left: 5%;
-	top: 0rem;
-	width:  350px;
+
+  .containMe;
+  top:0;
+
 	text-transform: lowercase;
 
 	color: #fff;
 
 	a {
 		padding:.5rem;
+		margin-left:  -.5rem;
 	}
 
 	ul {
@@ -114,13 +134,11 @@ h3 {
 	}
 
 	.module--logo {
-    display: inline-block;
 		svg {
 			width: 60px;
 		}
 	}
 	.module--navbar--list {
-  	display: inline-block;
 
   	.module--navbar--list--item {
 
@@ -149,7 +167,7 @@ h3 {
 	transition: opacity .4s .4s ease-out;
 
 	.module--into--textblock {
-		margin: 24vh	0 12vh 33% ;
+		margin: 24vh	0 14vh 33% ;
 		max-width: 22em;
 	}
 	body[module--gradient_overlay="is--away"] & {
@@ -216,10 +234,10 @@ h3 {
 }
 
 .projet--number {
-	font-size: 	1.125rem;
+	font-size: 	.6em;
 	letter-spacing: .05em;
 	text-transform: uppercase;
-	margin-right: 	32px;
+	margin-right: 	3em;
 
 	font-family: 'GT Cinetype Bold';
 }
@@ -232,18 +250,13 @@ h3 {
 
 
 .projet--name {
-	padding-top: 			.5rem;
-	padding-bottom: 	.5rem;
+	padding-top: 			.5em;
+	padding-bottom: 	.5em;
 	display: block;
 	color: #fff;
 	.largeText;
 	transition: letter-spacing .4s ease-in-out, opacity .4s ease-in-out, color .4s ease-in-out;
 
-	&::before {
-    counter-increment: projet;
-    content: counters(projet, ".", decimal-leading-zero);
-		.projet--number;
-	}
 }
 
 
@@ -253,12 +266,12 @@ h3 {
 
 	.containMe;
 
-	min-height: 100vh;
-  counter-reset: projet;
+	min-height: 120vh;
+//   counter-reset: projet;
   list-style-type: none;
 
   &:hover .module--projetList--projetName .module--projetList--projetName--links {
-    color: rgba(71,71,71,1);
+    color: rgba( 171, 171, 171,1);
 
     &:hover {
       color: inherit;
@@ -271,7 +284,7 @@ h3 {
 		transition: opacity .3s ease-out;
 
   	.styleLink( @rubrique, @color ) {
-      &[data-type= @{rubrique}] .module--projetList--projetName--links::before {
+      &[data-type= @{rubrique}] .module--projetList--projetName--links--index {
         color: @color;
   		}
   	}
@@ -281,8 +294,23 @@ h3 {
   	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
 
 
+    body[data-template="projet"] & {
+
+
+      &:not(.is--active):not(:hover) {
+        font-size: .5em;
+      }
+
+    }
+
+
 		.module--projetList--projetName--links {
 			.projet--name;
+
+    	&--index {
+    		.projet--number;
+    	}
+
 			&::after {
 				content: "->";
 				margin-left: -1em;
@@ -315,6 +343,8 @@ h3 {
 
 	color: @c-textColor;
 	background-color: @c-pagebg;
+
+	margin-top:   24vh;
 	padding-bottom: 	30px;
 
 	transition: opacity .4s .2s ease-out;
@@ -322,24 +352,66 @@ h3 {
 
 	.module--projet--header {
 
+    .containMe;
+
 
     .module--projet--header--text {
-  		padding: 0vh 5% 0 5%;
-  		padding-top: 2rem;
 
+  		padding-top: 2rem;
+      .clearfix();
 
   		h1,h2, h3 {
   			margin: 0;
   			line-height:  1.4;
   		}
+
+      .module--projet--header--text--index {
+    		.projet--number;
+
+      	.styleLink( @rubrique, @color ) {
+          [data-type= @{rubrique}]& {
+            color: @color;
+      		}
+      	}
+      	.styleLink( "vr", @c-vr);
+      	.styleLink( "sites", @c-sites);
+      	.styleLink( "installations", @c-installations);
+      	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
+      }
+
   		h1 {
   			.projet--name;
   		}
   		h2 {
         .mediumText
   		}
-  		h3 {
-  		}
+
+      .module--projet--header--text--colLeft {
+        float: left;
+        width: 66%;
+
+        font-size:  1.4em;
+
+        > *:first-child {
+          margin-top: 0;
+        }
+        p {
+          margin-top: .5em;
+        }
+
+      }
+      .module--projet--header--text--colRight {
+        float: right;
+        right:  34%;
+
+        h3 {
+          margin-top: .5em;
+
+        }
+
+      }
+
+
     }
 	}
 
@@ -347,7 +419,6 @@ h3 {
 
     background-color: @c-pagebg;
     color: @c-textColor;
-		padding: 0 15% 0 15%;
 
     img {
       max-width: 100%;
@@ -446,14 +517,18 @@ body[data-template="home"] {
 		height: 	100%;
 
 		opacity: 0;
-    filter: grayscale(100%);
+    filter: grayscale(40%);
 
-    transition: opacity .4s .2s ease-out, filter 0s .6s ease-out;
+    z-index: -2;
+
+    transition: opacity .6s 0s ease-out, filter .6s 0s ease-out;
 
   	&.is--shown {
-      opacity: 1;
+      opacity: .8;
       filter: grayscale( 0%);
-      transition: opacity .4s .2s ease-out, filter 1s ease-out;
+      transition: opacity .4s ease-out, filter .4s .2s ease-out;
+
+      z-index:  -1;
   	}
 
 
@@ -468,6 +543,8 @@ body[data-template="home"] {
   		z-index: 	-2;
       width: 100%;
       height: 100vh;
+
+      max-width: none;
 
       padding:0;
 
