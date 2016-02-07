@@ -10,4 +10,16 @@ Cover:
 
 ----
 
-Imagecover: 
+Imagecover: ingame-1.jpg
+
+----
+
+Header: 
+
+----
+
+Type: vr
+
+----
+
+Annee: 2015

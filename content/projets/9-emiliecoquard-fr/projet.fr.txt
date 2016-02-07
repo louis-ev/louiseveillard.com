@@ -11,3 +11,15 @@ Cover:
 ----
 
 Imagecover: 
+
+----
+
+Type: sites
+
+----
+
+Annee: 2015
+
+----
+
+Header: 

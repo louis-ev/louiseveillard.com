@@ -1,11 +1,12 @@
 @import (less) "../../bower_components/normalize-css/normalize.css";
 @import "_fonts.less";
+@import "_image.less";
 
 ::-moz-selection {
-    background: rgba(240,220,0,0.25);
+    background: rgba(0, 220, 140,0.25);
 }
 ::selection {
-    background: rgba(240,220,0,0.25);
+    background: rgba(0, 220, 140, 0.25);
 }
 
 html {
@@ -18,23 +19,36 @@ html {
 .largeText {
 	font-size: 	2rem;
 }
+.mediumText {
+	font-size: 	1.4rem;
+}
+
 
 .containMe {
 	width: 	100%;
 	padding: 0 5%;
 }
+.containMeSmaller {
+  width:  100%;
+  padding: 0 10%;
+}
 
 @c-pagebg: #151515;
+
 @c-textColor: #f9f9f9;
+@c-textMeta: #999;
 
-
+@c-vr:                     #0A997F;
+@c-sites:                  #03a9f4;
+@c-installations:          #D1DF98;
+@c-outils-pedagogiques: #FECD62;
 
 body {
 
   font-family: 'gt cinetype regular', Helvetica, Arial, sans-serif;
   margin: 0 auto;
-  font-size: 1.2rem;
-  line-height: 1.41;
+  font-size: 1.1rem;
+  line-height: 1.91;
 
   color: @c-textColor;
   background-color: @c-pagebg;
@@ -73,6 +87,7 @@ a:hover {
 h3 {
 	font-size: .8rem;
 	font-family: 'GT Cinetype Bold';
+	margin-top: 1.5rem;
 	margin-bottom: 1rem;
 	text-transform: uppercase;
 }
@@ -82,10 +97,15 @@ h3 {
 .module--navbar {
 	position: fixed;
 	left: 5%;
-	top: 2rem;
+	top: 0rem;
+	width:  350px;
 	text-transform: lowercase;
 
 	color: #fff;
+
+	a {
+		padding:.5rem;
+	}
 
 	ul {
 		list-style: none;
@@ -94,20 +114,23 @@ h3 {
 	}
 
 	.module--logo {
+    display: inline-block;
 		svg {
 			width: 60px;
 		}
 	}
+	.module--navbar--list {
+  	display: inline-block;
 
-	.module--navbar--item {
+  	.module--navbar--list--item {
 
-		a {
-			margin-left: -.5rem;
-			padding:.5rem;
-		}
+      display: inline-block;
 
-	}
+  		a {
+  		}
 
+  	}
+  }
 
 }
 
@@ -123,25 +146,70 @@ h3 {
 	font-size: 	1.8rem;
   line-height: 1.6;
 
+	transition: opacity .4s .4s ease-out;
+
 	.module--into--textblock {
-		margin: 28vh	0 22vh 33% ;
+		margin: 24vh	0 12vh 33% ;
 		max-width: 22em;
 	}
+	body[module--gradient_overlay="is--away"] & {
+    opacity: 0;
+    transition: opacity .4s ease-out;
+  }
 
 	a {
 		display: inline;
 		cursor: pointer;
 		color: #fff;
-		background-color: #404040;
-		padding: .1em .1em;
-		margin: -.1em -.1em;
-		transition: all 1s ease-out;
+		padding: .1em .0em;
+		margin: -.1em -.0em;
 
-	  &:hover {
-	    background-color: #1976d2;
-	    border-bottom-color: rgba(25,118,210,0);
-	    color: #f5f5f5;
-	  }
+  	background-position: 0 100%;
+  	background-repeat: no-repeat;
+  	background-size: 200% 1px;
+  	transition:	all .25s;
+
+
+  	.styleLink( @rubrique, @color ) {
+  		&[href*= @{rubrique}] {
+  			background-image: linear-gradient(to right,
+  			                                  @color,
+  			                                  @color 50%,
+  			                                  transparent 50%,
+  			                                  transparent);
+  		}
+  	}
+
+  	.styleLink( "vr", @c-vr);
+  	.styleLink( "sites", @c-sites);
+  	.styleLink( "installations", @c-installations);
+  	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
+
+    &:hover {
+    	.styleLink( @rubrique, @color ) {
+    		&[href*= @{rubrique}] {
+          background-size: 200% 10%;
+    		}
+    	}
+
+    	.styleLink( "vr", @c-vr);
+    	.styleLink( "sites", @c-sites);
+    	.styleLink( "installations", @c-installations);
+    	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
+    }
+
+	  &.is--active {
+    	.styleLink( @rubrique, @color ) {
+    		&[href*= @{rubrique}] {
+          background-size: 200% 100%;
+    		}
+    	}
+
+    	.styleLink( "vr", @c-vr);
+    	.styleLink( "sites", @c-sites);
+    	.styleLink( "installations", @c-installations);
+    	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
+    }
 
 	}
 
@@ -151,17 +219,31 @@ h3 {
 	font-size: 	1.125rem;
 	letter-spacing: .05em;
 	text-transform: uppercase;
-	margin-right: 	70px;
+	margin-right: 	32px;
 
 	font-family: 'GT Cinetype Bold';
 }
+.projet--type {
+	margin-right: 	32px;
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+}
+
+
 .projet--name {
-	padding-top: 			2rem;
-	padding-bottom: 	2rem;
+	padding-top: 			.5rem;
+	padding-bottom: 	.5rem;
 	display: block;
 	color: #fff;
-	transition: letter-spacing .6s ease-in-out;
 	.largeText;
+	transition: letter-spacing .4s ease-in-out, opacity .4s ease-in-out, color .4s ease-in-out;
+
+	&::before {
+    counter-increment: projet;
+    content: counters(projet, ".", decimal-leading-zero);
+		.projet--number;
+	}
 }
 
 
@@ -175,18 +257,32 @@ h3 {
   counter-reset: projet;
   list-style-type: none;
 
-	li {
-		transition: opacity .4s ease-out;
+  &:hover .module--projetList--projetName .module--projetList--projetName--links {
+    color: rgba(71,71,71,1);
 
-		a {
+    &:hover {
+      color: inherit;
+    }
+  }
 
+	.module--projetList--projetName {
+
+  	width: 80%;
+		transition: opacity .3s ease-out;
+
+  	.styleLink( @rubrique, @color ) {
+      &[data-type= @{rubrique}] .module--projetList--projetName--links::before {
+        color: @color;
+  		}
+  	}
+  	.styleLink( "vr", @c-vr);
+  	.styleLink( "sites", @c-sites);
+  	.styleLink( "installations", @c-installations);
+  	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
+
+
+		.module--projetList--projetName--links {
 			.projet--name;
-
-			&::before {
-		    counter-increment: projet;
-		    content: counters(projet, ".", decimal-leading-zero);
-				.projet--number;
-			}
 			&::after {
 				content: "->";
 				margin-left: -1em;
@@ -194,6 +290,7 @@ h3 {
 				transition: margin .3s ease-out, opacity .2s ease-out;
 				font-family: 'gt cinetype regular';
 			}
+
 		}
 
 		&:hover {
@@ -202,12 +299,11 @@ h3 {
 				letter-spacing: 5px;
 
 				&::before {
-					letter-spacing: 0;
 				}
 				&::after {
 			    opacity: 1;
 			    margin-left: 1em;
-					transition: margin .6s .3s ease-out, opacity .6s .4s ease-out;
+					transition: margin .25s .3s ease-out, opacity .3s .4s ease-out;
 				}
 			}
 		}
@@ -217,85 +313,203 @@ h3 {
 // page projet
 .module--projet {
 
-	@spaceBeforeProjet: 80vh;
-	margin-top: @spaceBeforeProjet;
 	color: @c-textColor;
 	background-color: @c-pagebg;
-	.containMe;
-	padding-top: 30px;
+	padding-bottom: 	30px;
 
+	transition: opacity .4s .2s ease-out;
 
-	&::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 	@spaceBeforeProjet;
-    width: 100%;
-    background: linear-gradient(to bottom,rgba(255,255,255,0) 40%, @c-pagebg);
-
-    z-index: 	-1;
-	}
 
 	.module--projet--header {
 
-		padding: 0vh 5% 0 33%;
 
-		h1,h2 {
-			margin: 0;
-		}
-		h1 {
-			.largeText;
-		}
-		h2 {
-			font-size: 	1.2em;
-		}
+    .module--projet--header--text {
+  		padding: 0vh 5% 0 5%;
+  		padding-top: 2rem;
+
+
+  		h1,h2, h3 {
+  			margin: 0;
+  			line-height:  1.4;
+  		}
+  		h1 {
+  			.projet--name;
+  		}
+  		h2 {
+        .mediumText
+  		}
+  		h3 {
+  		}
+    }
 	}
-	.module--projet--visuel {
-		position: fixed;
-		top:0;
-		left: 0;
-		z-index: 	-2;
-    width: 100%;
-    height: @spaceBeforeProjet;
+
+	.module--projet--header--visuel {
+
+    background-color: @c-pagebg;
+    color: @c-textColor;
+		padding: 0 15% 0 15%;
 
     img {
-			object-fit: cover;
-			width: 100%;
-			height: 100%;
+      max-width: 100%;
 
     }
 	}
 
 	.module--projet--text {
+
+    background-color: @c-pagebg;
+    color: @c-textColor;
+		padding: 0 15% 0 15%;
+
+		&:nth-child(odd) {
+      background-color: @c-textColor;
+      color: @c-pagebg;
+		}
+
+  	img {
+  		max-width: 100%;
+  	}
+  	figure {
+  		margin: 0;
+  	}
+  	ul,ol {
+    	padding-left:  0;
+    	margin-left: 0;
+    	list-style-type: none;
+
+      li {
+				margin-left: 4rem;
+				margin-right: 4rem;
+        margin-bottom:  1rem;
+
+  			&::before {
+  				content: "->";
+  				margin-left: -1em;
+  				font-family: 'gt cinetype regular';
+  				color: @c-textMeta;
+  			}
+  		}
+  	}
+
+    .media-image {
+
+    	padding-top: 2rem;
+    	padding-bottom: 2rem;
+
+      .legende {
+        p {
+          margin-left: 0;
+          padding: 0;
+        }
+      }
+
+    }
+
+
+  	p, ul, ol {
+
+    	&:empty { display: none; }
+
+    	&:not(:empty) {
+      	max-width: 44em;
+      	max-width: 66ch;
+      	margin: 0 auto;
+
+      	padding-top: 2rem;
+      	padding-bottom: 2rem;
+
+      	& + p, ul, ol {
+        	padding-top: 0rem;
+      	}
+      }
+  	}
+
+
+
 	}
 
-	img {
-		max-width: 100%;
-	}
-	figure {
-		margin: 0;
-	}
-	p {
+
+
+}
+
+// cas spécial : on utilise le même markup sur la page d'accueil (parce que c'est plus simple (en théorie !))
+// voici les exceptions pour module--projet
+body[data-template="home"] {
+
+	.module--projet {
+
+		position: fixed;
+		z-index: -150;
+
+		top: 0;	left: 0;
+		width: 	100%;
+		height: 	100%;
+
+		opacity: 0;
+    filter: grayscale(100%);
+
+    transition: opacity .4s .2s ease-out, filter 0s .6s ease-out;
+
+  	&.is--shown {
+      opacity: 1;
+      filter: grayscale( 0%);
+      transition: opacity .4s .2s ease-out, filter 1s ease-out;
+  	}
+
+
+		&::before {
+			display: none;
+		}
+
+  	.module--projet--header--visuel {
+  		position: fixed;
+  		top:0;
+  		left: 0;
+  		z-index: 	-2;
+      width: 100%;
+      height: 100vh;
+
+      padding:0;
+
+      img {
+  			object-fit: cover;
+  			width: 100vw;
+  			height: 100vh;
+      }
+  	}
+
+		.module--projet--header--text {
+  		opacity: 0;
+		}
 	}
 }
 
 
-.module--gradient_overlay {
 
+
+
+.module--gradient_overlay {
 	position: fixed;
-	left: 0;	top: 0;	bottom: 0; width: 200%;
+	left: 0;	top: 0;	bottom: 0; right: 0;
 	z-index: -1;
 
-	background: 				linear-gradient(to right, @c-pagebg 00%, @c-pagebg 50%, fade( @c-pagebg, 100%) 100%);
-
-	transform: translateX( 0%);
-	transition: transform 1s;
-
-	will-change: transform;
-
-	&.is--away {
-		transform: translateX( -100%);
+	&::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  	background-color: #151515;
+  	transition: background-color .4s .4s ease-out;
 	}
+
+	body[module--gradient_overlay="is--away"] & {
+  	&::before {
+  	  background-color: transparent;
+  	}
+	}
+
+}
+
+body[data-template="projet"] .module--gradient_overlay {
+	display: none;
 }

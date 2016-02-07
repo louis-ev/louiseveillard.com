@@ -1,0 +1,30 @@
+title: Projets
+pages: true
+files: true
+  sortable: true
+fields:
+  title:
+    label: Title
+    type:  text
+  type:
+    label: Type
+    type: tags
+    width: 3/4
+  annee:
+    label: Année
+    type: number
+    width: 1/4
+  header:
+    label: Header
+    type:  textarea
+  text:
+    label: Text
+    type:  textarea
+  cover:
+    label: Aperçu
+    type: headline
+  imageCover:
+    label: Couverture
+    type: selector
+    help: Image ou vidéo
+

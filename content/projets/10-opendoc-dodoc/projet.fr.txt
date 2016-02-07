@@ -1,0 +1,25 @@
+Title: Opendoc/Dodoc
+
+----
+
+Type: outils pédagogiques
+
+----
+
+Annee: 2015
+
+----
+
+Header: 
+
+----
+
+Text: 
+
+----
+
+Cover: 
+
+----
+
+Imagecover: 

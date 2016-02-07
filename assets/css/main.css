@@ -424,11 +424,39 @@ th {
 .gt-bold-italic {
   font-family: 'GT Cinetype Bold Italic';
 }
+.media-image.largeur--1\/2 {
+  width: 50%;
+  min-width: 250px;
+}
+.media-image .FigureImage-lazy {
+  position: relative;
+}
+.media-image .FigureImage-lazy img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.media-image .FigureImage-lazy noscript {
+  display: block;
+}
+.media-image img {
+  transition: opacity 0.4s ease-out, -webkit-filter 0.8s linear, -moz-filter 0.8s linear, -o-filter 0.8s linear, filter 0.8s linear;
+}
+.media-image .image {
+  background-color: transparent;
+}
+.media-image .lazyload > img,
+.media-image .lazyloading img {
+  opacity: 0;
+}
+.media-image .lazyloaded img {
+  opacity: 1;
+}
 ::-moz-selection {
-  background: rgba(240, 220, 0, 0.25);
+  background: rgba(0, 220, 140, 0.25);
 }
 ::selection {
-  background: rgba(240, 220, 0, 0.25);
+  background: rgba(0, 220, 140, 0.25);
 }
 html {
   box-sizing: border-box;
@@ -441,15 +469,22 @@ html {
 .largeText {
   font-size: 2rem;
 }
+.mediumText {
+  font-size: 1.4rem;
+}
 .containMe {
   width: 100%;
   padding: 0 5%;
 }
+.containMeSmaller {
+  width: 100%;
+  padding: 0 10%;
+}
 body {
   font-family: 'gt cinetype regular', Helvetica, Arial, sans-serif;
   margin: 0 auto;
-  font-size: 1.2rem;
-  line-height: 1.41;
+  font-size: 1.1rem;
+  line-height: 1.91;
   color: #f9f9f9;
   background-color: #151515;
   text-rendering: optimizeLegibility;
@@ -487,66 +522,129 @@ a:hover {
 h3 {
   font-size: .8rem;
   font-family: 'GT Cinetype Bold';
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
 .module--navbar {
   position: fixed;
   left: 5%;
-  top: 2rem;
+  top: 0rem;
+  width: 350px;
   text-transform: lowercase;
   color: #fff;
+}
+.module--navbar a {
+  padding: .5rem;
 }
 .module--navbar ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+.module--navbar .module--logo {
+  display: inline-block;
+}
 .module--navbar .module--logo svg {
   width: 60px;
 }
-.module--navbar .module--navbar--item a {
-  margin-left: -0.5rem;
-  padding: .5rem;
+.module--navbar .module--navbar--list {
+  display: inline-block;
+}
+.module--navbar .module--navbar--list .module--navbar--list--item {
+  display: inline-block;
 }
 .module--intro {
   width: 100%;
   padding: 0 5%;
   font-size: 1.8rem;
   line-height: 1.6;
+  transition: opacity 0.4s 0.4s ease-out;
 }
 .module--intro .module--into--textblock {
-  margin: 28vh	0 22vh 33% ;
+  margin: 24vh	0 12vh 33% ;
   max-width: 22em;
+}
+body[module--gradient_overlay="is--away"] .module--intro {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
 }
 .module--intro a {
   display: inline;
   cursor: pointer;
   color: #fff;
-  background-color: #404040;
-  padding: .1em .1em;
-  margin: -0.1em -0.1em;
-  transition: all 1s ease-out;
+  padding: .1em .0em;
+  margin: -0.1em 0em;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 200% 1px;
+  transition: all .25s;
 }
-.module--intro a:hover {
-  background-color: #1976d2;
-  border-bottom-color: rgba(25, 118, 210, 0);
-  color: #f5f5f5;
+.module--intro a[href*="vr"] {
+  background-image: linear-gradient(to right, #0A997F, #0A997F 50%, transparent 50%, transparent);
+}
+.module--intro a[href*="sites"] {
+  background-image: linear-gradient(to right, #03a9f4, #03a9f4 50%, transparent 50%, transparent);
+}
+.module--intro a[href*="installations"] {
+  background-image: linear-gradient(to right, #D1DF98, #D1DF98 50%, transparent 50%, transparent);
+}
+.module--intro a[href*="outils-pedagogiques"] {
+  background-image: linear-gradient(to right, #FECD62, #FECD62 50%, transparent 50%, transparent);
+}
+.module--intro a:hover[href*="vr"] {
+  background-size: 200% 10%;
+}
+.module--intro a:hover[href*="sites"] {
+  background-size: 200% 10%;
+}
+.module--intro a:hover[href*="installations"] {
+  background-size: 200% 10%;
+}
+.module--intro a:hover[href*="outils-pedagogiques"] {
+  background-size: 200% 10%;
+}
+.module--intro a.is--active[href*="vr"] {
+  background-size: 200% 100%;
+}
+.module--intro a.is--active[href*="sites"] {
+  background-size: 200% 100%;
+}
+.module--intro a.is--active[href*="installations"] {
+  background-size: 200% 100%;
+}
+.module--intro a.is--active[href*="outils-pedagogiques"] {
+  background-size: 200% 100%;
 }
 .projet--number {
   font-size: 1.125rem;
   letter-spacing: .05em;
   text-transform: uppercase;
-  margin-right: 70px;
+  margin-right: 32px;
   font-family: 'GT Cinetype Bold';
 }
+.projet--type {
+  margin-right: 32px;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+}
 .projet--name {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
   display: block;
   color: #fff;
-  transition: letter-spacing 0.6s ease-in-out;
   font-size: 2rem;
+  transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+.projet--name::before {
+  counter-increment: projet;
+  content: counters(projet, ".", decimal-leading-zero);
+  font-size: 1.125rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-right: 32px;
+  font-family: 'GT Cinetype Bold';
 }
 .module--projetList {
   width: 100%;
@@ -555,116 +653,235 @@ h3 {
   counter-reset: projet;
   list-style-type: none;
 }
-.module--projetList li {
-  transition: opacity 0.4s ease-out;
+.module--projetList:hover .module--projetList--projetName .module--projetList--projetName--links {
+  color: #474747;
 }
-.module--projetList li a {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.module--projetList:hover .module--projetList--projetName .module--projetList--projetName--links:hover {
+  color: inherit;
+}
+.module--projetList .module--projetList--projetName {
+  width: 80%;
+  transition: opacity 0.3s ease-out;
+}
+.module--projetList .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links::before {
+  color: #0A997F;
+}
+.module--projetList .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links::before {
+  color: #03a9f4;
+}
+.module--projetList .module--projetList--projetName[data-type="installations"] .module--projetList--projetName--links::before {
+  color: #D1DF98;
+}
+.module--projetList .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links::before {
+  color: #FECD62;
+}
+.module--projetList .module--projetList--projetName .module--projetList--projetName--links {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
   display: block;
   color: #fff;
-  transition: letter-spacing 0.6s ease-in-out;
   font-size: 2rem;
+  transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out;
 }
-.module--projetList li a::before {
+.module--projetList .module--projetList--projetName .module--projetList--projetName--links::before {
   counter-increment: projet;
   content: counters(projet, ".", decimal-leading-zero);
   font-size: 1.125rem;
   letter-spacing: .05em;
   text-transform: uppercase;
-  margin-right: 70px;
+  margin-right: 32px;
   font-family: 'GT Cinetype Bold';
 }
-.module--projetList li a::after {
+.module--projetList .module--projetList--projetName .module--projetList--projetName--links::after {
   content: "->";
   margin-left: -1em;
   opacity: 0;
   transition: margin 0.3s ease-out, opacity 0.2s ease-out;
   font-family: 'gt cinetype regular';
 }
-.module--projetList li:hover {
+.module--projetList .module--projetList--projetName:hover {
   opacity: 1;
 }
-.module--projetList li:hover a {
+.module--projetList .module--projetList--projetName:hover a {
   letter-spacing: 5px;
 }
-.module--projetList li:hover a::before {
-  letter-spacing: 0;
-}
-.module--projetList li:hover a::after {
+.module--projetList .module--projetList--projetName:hover a::after {
   opacity: 1;
   margin-left: 1em;
-  transition: margin 0.6s 0.3s ease-out, opacity 0.6s 0.4s ease-out;
+  transition: margin 0.25s 0.3s ease-out, opacity 0.3s 0.4s ease-out;
 }
 .module--projet {
-  margin-top: 80vh;
   color: #f9f9f9;
   background-color: #151515;
-  width: 100%;
-  padding: 0 5%;
-  padding-top: 30px;
+  padding-bottom: 30px;
+  transition: opacity 0.4s 0.2s ease-out;
 }
-.module--projet::before {
-  content: "";
+.module--projet .module--projet--header .module--projet--header--text {
+  padding: 0vh 5% 0 5%;
+  padding-top: 2rem;
+}
+.module--projet .module--projet--header .module--projet--header--text h1,
+.module--projet .module--projet--header .module--projet--header--text h2,
+.module--projet .module--projet--header .module--projet--header--text h3 {
+  margin: 0;
+  line-height: 1.4;
+}
+.module--projet .module--projet--header .module--projet--header--text h1 {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
   display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 80vh;
-  width: 100%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 40%, #151515);
-  z-index: -1;
+  color: #fff;
+  font-size: 2rem;
+  transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out;
 }
-.module--projet .module--projet--header {
-  padding: 0vh 5% 0 33%;
+.module--projet .module--projet--header .module--projet--header--text h1::before {
+  counter-increment: projet;
+  content: counters(projet, ".", decimal-leading-zero);
+  font-size: 1.125rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-right: 32px;
+  font-family: 'GT Cinetype Bold';
 }
-.module--projet .module--projet--header h1,
-.module--projet .module--projet--header h2 {
+.module--projet .module--projet--header .module--projet--header--text h2 {
+  font-size: 1.4rem;
+}
+.module--projet .module--projet--header--visuel {
+  background-color: #151515;
+  color: #f9f9f9;
+  padding: 0 15% 0 15%;
+}
+.module--projet .module--projet--header--visuel img {
+  max-width: 100%;
+}
+.module--projet .module--projet--text {
+  background-color: #151515;
+  color: #f9f9f9;
+  padding: 0 15% 0 15%;
+}
+.module--projet .module--projet--text:nth-child(odd) {
+  background-color: #f9f9f9;
+  color: #151515;
+}
+.module--projet .module--projet--text img {
+  max-width: 100%;
+}
+.module--projet .module--projet--text figure {
   margin: 0;
 }
-.module--projet .module--projet--header h1 {
-  font-size: 2rem;
+.module--projet .module--projet--text ul,
+.module--projet .module--projet--text ol {
+  padding-left: 0;
+  margin-left: 0;
+  list-style-type: none;
 }
-.module--projet .module--projet--header h2 {
-  font-size: 1.2em;
+.module--projet .module--projet--text ul li,
+.module--projet .module--projet--text ol li {
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 1rem;
 }
-.module--projet .module--projet--visuel {
+.module--projet .module--projet--text ul li::before,
+.module--projet .module--projet--text ol li::before {
+  content: "->";
+  margin-left: -1em;
+  font-family: 'gt cinetype regular';
+  color: #999;
+}
+.module--projet .module--projet--text .media-image {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.module--projet .module--projet--text .media-image .legende p {
+  margin-left: 0;
+  padding: 0;
+}
+.module--projet .module--projet--text p:empty,
+.module--projet .module--projet--text ul:empty,
+.module--projet .module--projet--text ol:empty {
+  display: none;
+}
+.module--projet .module--projet--text p:not(:empty),
+.module--projet .module--projet--text ul:not(:empty),
+.module--projet .module--projet--text ol:not(:empty) {
+  max-width: 44em;
+  max-width: 66ch;
+  margin: 0 auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.module--projet .module--projet--text p:not(:empty) + p,
+.module--projet .module--projet--text ul:not(:empty) + p,
+.module--projet .module--projet--text ol:not(:empty) + p,
+.module--projet .module--projet--text p:not(:empty) ul,
+.module--projet .module--projet--text ul:not(:empty) ul,
+.module--projet .module--projet--text ol:not(:empty) ul,
+.module--projet .module--projet--text p:not(:empty) ol,
+.module--projet .module--projet--text ul:not(:empty) ol,
+.module--projet .module--projet--text ol:not(:empty) ol {
+  padding-top: 0rem;
+}
+body[data-template="home"] .module--projet {
+  position: fixed;
+  z-index: -150;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: opacity 0.4s 0.2s ease-out, -webkit-filter 0s 0.6s ease-out;
+  transition: opacity 0.4s 0.2s ease-out, filter 0s 0.6s ease-out;
+  transition: opacity 0.4s 0.2s ease-out, filter 0s 0.6s ease-out, -webkit-filter 0s 0.6s ease-out;
+}
+body[data-template="home"] .module--projet.is--shown {
+  opacity: 1;
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+  transition: opacity 0.4s 0.2s ease-out, -webkit-filter 1s ease-out;
+  transition: opacity 0.4s 0.2s ease-out, filter 1s ease-out;
+  transition: opacity 0.4s 0.2s ease-out, filter 1s ease-out, -webkit-filter 1s ease-out;
+}
+body[data-template="home"] .module--projet::before {
+  display: none;
+}
+body[data-template="home"] .module--projet .module--projet--header--visuel {
   position: fixed;
   top: 0;
   left: 0;
   z-index: -2;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
+  padding: 0;
 }
-.module--projet .module--projet--visuel img {
+body[data-template="home"] .module--projet .module--projet--header--visuel img {
   object-fit: cover;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
-.module--projet img {
-  max-width: 100%;
-}
-.module--projet figure {
-  margin: 0;
+body[data-template="home"] .module--projet .module--projet--header--text {
+  opacity: 0;
 }
 .module--gradient_overlay {
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 200%;
+  right: 0;
   z-index: -1;
-  background: linear-gradient(to right, #151515 0%, #151515 50%, #151515 100%);
-  -webkit-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  transform: translateX(0%);
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
-  will-change: transform;
 }
-.module--gradient_overlay.is--away {
-  -webkit-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  transform: translateX(-100%);
+.module--gradient_overlay::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #151515;
+  transition: background-color 0.4s 0.4s ease-out;
+}
+body[module--gradient_overlay="is--away"] .module--gradient_overlay::before {
+  background-color: transparent;
+}
+body[data-template="projet"] .module--gradient_overlay {
+  display: none;
 }

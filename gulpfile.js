@@ -16,7 +16,9 @@ Managing more than one LESS/CSS is made with @imports in LESS.
 
 var pluginsScripts = [
   'bower_components/jquery/dist/jquery.js',
-  'bower_components/bootstrap/dist/js/bootstrap.js'
+  'bower_components/bootstrap/dist/js/bootstrap.js',
+  'bower_components/isotope/dist/isotope.pkgd.min.js',
+  'bower_components/lazysizes/lazysizes.min.js'
 ];
 var userScripts = [
   'assets/js/main.js'
@@ -59,6 +61,7 @@ gulp.task('less', function() {
   return gulp.src( 'assets/less/main.less')
     .pipe(plumber({
         errorHandler: function (err) {
+            console.log(err);
             this.emit('end');
         }
     }))
@@ -80,7 +83,12 @@ gulp.task('less', function() {
  */
 gulp.task('css', function () {
   return gulp.src( 'assets/less/main.less')
-    .pipe(plumber())
+    .pipe(plumber({
+        errorHandler: function (err) {
+            console.log(err);
+            this.emit('end');
+        }
+    }))
     .pipe(less())
     .pipe(autoprefixer({
 			browsers: ['last 3 versions'],

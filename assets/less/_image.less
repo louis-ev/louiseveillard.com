@@ -1,0 +1,39 @@
+.media-image {
+  &.largeur--1\/2 {
+	  width: 	50%;
+	  min-width: 250px;
+	}
+}
+
+.media-image .FigureImage-lazy {
+  position: relative;
+
+	.no-js & {
+	}
+
+	img {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	}
+
+	noscript {
+		display: block;
+	}
+}
+
+.media-image img {
+	transition: opacity 0.4s ease-out,-webkit-filter 0.8s linear,-moz-filter 0.8s linear,-o-filter 0.8s linear,filter 0.8s linear;
+}
+
+.media-image .image {
+	background-color: transparent;
+}
+.media-image .lazyload > img, .media-image .lazyloading img{
+    opacity: 0;
+}
+
+.media-image .lazyloaded img {
+	opacity: 1;
+}
+

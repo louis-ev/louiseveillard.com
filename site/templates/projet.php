@@ -4,9 +4,9 @@
 <main class="main" role="main">
 	<article class="module--projet">
 		<?= snippet( "projet--header", array( 'projet' => $page)); ?>
-		<div class="module--projet--text">
+		<section class="module--projet--text">
 			<?php echo $page->text()->kirbytext() ?>
-		</div>
+		</section>
 
 	</article>
 </main>

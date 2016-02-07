@@ -11,3 +11,15 @@ Cover:
 ----
 
 Imagecover: baldingervuhuu-com.png
+
+----
+
+Type: sites
+
+----
+
+Annee: 2015
+
+----
+
+Header: 
