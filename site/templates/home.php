@@ -11,10 +11,13 @@
 
 	<?php snippet( "module--projetList"); ?>
 
-  <?php foreach($pages->findByURI('projets')->children()->visible() as $p): ?>
-		<div class="module--projet">
-			<?php snippet( "projet--header", array( 'p' => $p)); ?>
-		</div>
-	<?php endforeach ?>
+  <div class="module--projet_short">
+    <?php foreach($pages->findByURI('projets')->children()->visible() as $p): ?>
+  		<article class="module--projet">
+  			<?php snippet( "projet--header", array( 'p' => $p)); ?>
+  		</article>
+  	<?php endforeach ?>
+	</div>
 </main>
+
 <?php snippet('footer') ?>

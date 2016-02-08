@@ -1,6 +1,7 @@
 @import (less) "../../bower_components/normalize-css/normalize.css";
 @import "_fonts.less";
 @import "_image.less";
+@import "_grid.less";
 
 @c-pagebg: #151515;
 
@@ -13,6 +14,7 @@
 @c-outils-pedagogiques: #FECD62;
 
 
+@t-margin: 16px;
 
 
 ::-moz-selection {
@@ -87,10 +89,10 @@ h1, h2, h3, h4, h5, h6, b {
 }
 
 
-      hr {
-        border: none;
-        border-top: 1px solid #333;
-      }
+hr {
+  border: none;
+  border-top: 1px solid #444;
+}
 
 
 a, a:hover, a:active, a:visited {
@@ -105,26 +107,28 @@ a:hover {
 h3 {
 	font-size: .8rem;
 	font-family: 'GT Cinetype Bold';
-	margin-top: 1.5rem;
-	margin-bottom: 1rem;
+	margin-top: @t-margin;
+	margin-bottom: 0;
 	text-transform: uppercase;
 }
 
 
 
 .module--navbar {
-	position: fixed;
 
   .containMe;
-  top:0;
-
-	text-transform: lowercase;
+	overflow: auto;
 
 	color: #fff;
 
 	a {
-		padding:.5rem;
-		margin-left:  -.5rem;
+  	display: block;
+		padding: 1rem;
+		margin-left:  -1rem;
+
+    font-size: 1.2rem;
+    font-family: 'GT Cinetype Bold';
+    text-transform: lowercase;
 	}
 
 	ul {
@@ -134,11 +138,16 @@ h3 {
 	}
 
 	.module--logo {
+  	display: block;
+  	float: left;
+
 		svg {
 			width: 60px;
 		}
 	}
 	.module--navbar--list {
+
+    float: right;
 
   	.module--navbar--list--item {
 
@@ -250,8 +259,8 @@ h3 {
 
 
 .projet--name {
-	padding-top: 			.5em;
-	padding-bottom: 	.5em;
+	padding-top: 			@t-margin/2;
+	padding-bottom: 	@t-margin/2;
 	display: block;
 	color: #fff;
 	.largeText;
@@ -264,14 +273,15 @@ h3 {
 // page home
 .module--projetList {
 
+  position: relative;
 	.containMe;
-
 	min-height: 120vh;
 //   counter-reset: projet;
   list-style-type: none;
+  z-index: 0;
 
   &:hover .module--projetList--projetName .module--projetList--projetName--links {
-    color: rgba( 171, 171, 171,1);
+    color: #BEBEBE;
 
     &:hover {
       color: inherit;
@@ -297,9 +307,11 @@ h3 {
     body[data-template="projet"] & {
 
 
+/*
       &:not(.is--active):not(:hover) {
         font-size: .5em;
       }
+*/
 
     }
 
@@ -338,27 +350,59 @@ h3 {
 	}
 }
 
+
+@t-bandeauImage: 34vh;
+
 // page projet
 .module--projet {
 
-	color: @c-textColor;
-	background-color: @c-pagebg;
-
-	margin-top:   24vh;
 	padding-bottom: 	30px;
-
-	transition: opacity .4s .2s ease-out;
-
+	transition: opacity .4s ease-out, margin 1.5s ease-out;
 
 	.module--projet--header {
 
-    .containMe;
+  	color: @c-textColor;
+    padding-bottom:  @t-margin * 2;
 
+    margin-top:   @t-bandeauImage + 10vh;
+  	background-color: @c-pagebg;
+
+    transition: margin-top .4s ease-out, background-color .4s ease;
+
+    // à l'arrivée (quand is--loading), afficher l'image non collapsed
+    // quand le body est loading, on collapse l'image
+    // sans js on ne peut pas désactiver le is--collapsed
+    body:not(.is--loading) &.is--collapsed {
+      margin-top: @t-bandeauImage;
+
+      .module--projet--header--visuel {
+        transform: translate( 0, -50vh + @t-bandeauImage);
+        opacity: .8;
+      }
+    }
+
+    // avec JS, après chargement, full screen image
+    body:not(.is--loading) &:not(.is--collapsed) {
+      margin-top: @t-bandeauImage + 20vh;
+      .module--projet--header--text {
+        opacity:0;
+      }
+
+      background: transparent;
+
+      + .module--projet--text {
+        opacity:0;
+      }
+
+    }
 
     .module--projet--header--text {
 
-  		padding-top: 2rem;
+      .containMe;
+      padding-top: 2rem;
       .clearfix();
+
+      transition: opacity .2s ease-out;
 
   		h1,h2, h3 {
   			margin: 0;
@@ -388,43 +432,70 @@ h3 {
 
       .module--projet--header--text--colLeft {
         float: left;
-        width: 66%;
+        width: 60%;
 
         font-size:  1.4em;
+
+        margin-right:   @t-margin;
+        margin-top: @t-margin/2;
 
         > *:first-child {
           margin-top: 0;
         }
         p {
-          margin-top: .5em;
+          margin-top: @t-margin/2;
         }
 
       }
       .module--projet--header--text--colRight {
-        float: right;
-        right:  34%;
+        float: left;
+        right:  40%;
+        margin-top: @t-margin/2;
 
         h3 {
-          margin-top: .5em;
+          margin-top: @t-margin/2;
+        }
 
+        p {
+          margin: 0;
         }
 
       }
 
 
     }
+
+  	.module--projet--header--visuel {
+
+      background-color: @c-pagebg;
+      color: @c-textColor;
+      overflow: hidden;
+      position: fixed;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      height: 100vh;
+      width:  auto;
+
+      z-index:  -2;
+
+
+      img {
+  			object-fit: cover;
+  			width: 100%;
+  			height: 100%;
+      }
+
+      transform: translate( 0, 00vh);
+      transition: transform .6s ease-out, opacity .5s ease-out;
+
+  	}
+
+
 	}
 
-	.module--projet--header--visuel {
-
-    background-color: @c-pagebg;
-    color: @c-textColor;
-
-    img {
-      max-width: 100%;
-
-    }
-	}
 
 	.module--projet--text {
 
@@ -432,13 +503,24 @@ h3 {
     color: @c-textColor;
 		padding: 0 15% 0 15%;
 
-		&:nth-child(odd) {
+  	padding-top: 2rem;
+  	padding-bottom: 2rem;
+
+  	transition: opacity .4s;
+
+    // sur une page projet, virer les encarts lorsqu'on hover la projetListe
+    body[module--gradient_overlay="is--away"] & {
+      opacity: 0;
+    }
+
+		&:nth-of-type(even) {
       background-color: @c-textColor;
       color: @c-pagebg;
 		}
 
   	img {
   		max-width: 100%;
+  		height: auto;
   	}
   	figure {
   		margin: 0;
@@ -471,6 +553,8 @@ h3 {
         p {
           margin-left: 0;
           padding: 0;
+
+          font-size:  .8em;
         }
       }
 
@@ -486,8 +570,8 @@ h3 {
       	max-width: 66ch;
       	margin: 0 auto;
 
-      	padding-top: 2rem;
-      	padding-bottom: 2rem;
+      	padding-top: 1rem;
+      	padding-bottom: 1rem;
 
       	& + p, ul, ol {
         	padding-top: 0rem;
@@ -505,23 +589,29 @@ h3 {
 
 // cas spécial : on utilise le même markup sur la page d'accueil (parce que c'est plus simple (en théorie !))
 // voici les exceptions pour module--projet
-body[data-template="home"] {
+.module--projet_short {
 
-	.module--projet {
+	position: fixed;
+	z-index: -100;
+	top: 0;
+	bottom: 0;
+	width: 	100%;
+	height: 	100%;
 
-		position: fixed;
-		z-index: -150;
 
-		top: 0;	left: 0;
-		width: 	100%;
-		height: 	100%;
+  .module--projet {
 
-		opacity: 0;
+    position: absolute;
+  	top: 0;	left: 0;
+  	width: 	100%;
+  	height: 	100%;
+  	background-color: transparent;
+
+  	opacity: 0;
     filter: grayscale(40%);
 
-    z-index: -2;
 
-    transition: opacity .6s 0s ease-out, filter .6s 0s ease-out;
+    transition: opacity .6s ease-out, filter .6s 0s ease-out;
 
   	&.is--shown {
       opacity: .8;
@@ -532,43 +622,121 @@ body[data-template="home"] {
   	}
 
 
-		&::before {
-			display: none;
-		}
-
-  	.module--projet--header--visuel {
-  		position: fixed;
-  		top:0;
-  		left: 0;
-  		z-index: 	-2;
-      width: 100%;
-      height: 100vh;
-
-      max-width: none;
-
-      padding:0;
-
-      img {
-  			object-fit: cover;
-  			width: 100vw;
-  			height: 100vh;
-      }
+  	&::before {
+  		display: none;
   	}
 
-		.module--projet--header--text {
-  		opacity: 0;
-		}
-	}
+    .module--projet--header {
+      background-color: transparent;
+    }
+
+  	.module--projet--header--text {
+  		display: none;
+  	}
+  	.module--projet--header--visuel {
+    	transform: none !important;
+  	}
+  }
 }
 
 
+.module--cv {
 
+  position: relative;
+	.containMe;
+
+
+	a {
+		display: inline;
+		cursor: pointer;
+		color: #fff;
+		padding: .1em .0em;
+		margin: -.1em -.0em;
+
+  	background-position: 0 100%;
+  	background-repeat: no-repeat;
+  	background-size: 200% 1px;
+  	transition:	all .25s;
+
+
+		background-image: linear-gradient(to right,
+		                                  #fff,
+		                                  #fff 50%,
+		                                  transparent 50%,
+		                                  transparent);
+  }
+
+	.description {
+		margin-top: 1em;
+		opacity: 1;
+		transition: opacity .4s;
+
+	}
+
+	.realisations {
+
+		.description {
+		}
+		li {
+			padding-bottom: .5em;
+
+			a {
+// 							padding-bottom: 0;
+				margin-bottom: .2em;
+			}
+
+			.realisationsDetails {
+				font-size: .7em;
+				line-height: 1.1;
+
+			}
+		}
+	}
+
+	.description {
+
+		padding-left: 0;
+		padding-right: 1em;
+		list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAJ0lEQVQIW2NkwAEYYeL/gQDEZgQCMA0iQIIwARgbvwRMF4ZR2OwHABqMGAckPqgXAAAAAElFTkSuQmCC);
+
+		li {
+			padding-bottom: 1em;
+		}
+
+	/* custom list images, sur 8 pixels */
+		&> li:nth-child(4n + 1) {
+			list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAJ0lEQVQIW2NkwAEYYeL/gQDEZgQCMA0iQIIwARgbvwRMF4ZR2OwHABqMGAckPqgXAAAAAElFTkSuQmCC);
+		}
+
+		&> li:nth-child(4n + 2) {
+			list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAI0lEQVQIW2NkwAEYQeL/gYARCJDZYA5MAETDFOCXwGsUuhsAGowYB1QLYcMAAAAASUVORK5CYII=);
+		}
+
+		&> li:nth-child(4n + 3) {
+			list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALElEQVQIW2NkwAEYQeL/gQBEMwIBiA2iwRLIAEUCxkFWADcKZgzMSAyjYLoAGowYB9CpIioAAAAASUVORK5CYII=);
+		}
+
+		&> li:nth-child(4n + 4) {
+			list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAI0lEQVQIW2NkwAEYYeL/gQDEZgQCMA0iQIIwARibAh3obgAAtn0YB/1UIlkAAAAASUVORK5CYII=);
+
+		}
+  }
+}
+
+#links {
+  width:  100%;
+  position: absolute;
+  top: 0; left: 0;
+  z-index:  -1;
+
+  pointer-events: none;
+}
 
 
 .module--gradient_overlay {
 	position: fixed;
 	left: 0;	top: 0;	bottom: 0; right: 0;
-	z-index: -1;
+	z-index: -50;
 
 	&::before {
     content: "";
@@ -584,9 +752,4 @@ body[data-template="home"] {
   	  background-color: transparent;
   	}
 	}
-
-}
-
-body[data-template="projet"] .module--gradient_overlay {
-	display: none;
 }

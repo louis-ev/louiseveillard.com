@@ -12,8 +12,8 @@
       <stop offset="100%" stop-color="rgba(21, 21, 21, .4)"></stop>
       </radialGradient>
 			<linearGradient y2="0" x2="1" y1="0" x1="0" id="svg_2">
-					   <stop stop-color="rgba(21, 21, 21, 1)" stop-opacity=".6" offset="0"></stop>
-					   <stop stop-color="rgba(21, 21, 21, 1)" stop-opacity=".6" offset="1"></stop>
+					   <stop stop-color="rgba(21, 21, 21, 1)" stop-opacity=".4" offset="0"></stop>
+					   <stop stop-color="rgba(21, 21, 21, 1)" stop-opacity=".4" offset="1"></stop>
 					  </linearGradient>
 
       </defs>

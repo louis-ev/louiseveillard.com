@@ -1,14 +1,8 @@
 <?php $index = str_pad( $p->num(), 2, '0', STR_PAD_LEFT); ?>
-<header class="module--projet--header" data-index="<?= $index ?>">
+<?php $isProjetPage = $page->template() == 'projet'; ?>
 
-	<div class="module--projet--header--visuel">
-		<?php
-			if( $p->imageCover()->isNotEmpty())
-				echo thumb( $p->imageCover()->toFile(), array(
-					'width' 	=> 1800,
-				));
-		?>
-	</div>
+<header class="module--projet--header <?= e( $isProjetPage == 1, 'is--collapsed', ''); ?>" data-index="<?= $index ?>">
+
 
 	<div class="module--projet--header--text">
     <h1>
@@ -26,4 +20,13 @@
     </div>
 	</div>
 
+
+  <div class="module--projet--header--visuel">
+  	<?php
+  		if( $p->imageCover()->isNotEmpty())
+  			echo thumb( $p->imageCover()->toFile(), array(
+  				'width' 	=> 1800,
+  			));
+  	?>
+  </div>
 </header>
