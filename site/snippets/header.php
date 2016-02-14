@@ -49,7 +49,8 @@
    data-template="<?php echo $page->template() ?>"
    data-intended-template="<?php echo $page->intendedTemplate() ?>"
    data-rubrique="<?php e( $page->type()->exists(), str::slug( $page->type()), '' ); ?>"
-       >
+   data-visuel=""
+           >
 <script>
   document.getElementsByTagName('body')[0].className += 'is--loading ';
 </script>

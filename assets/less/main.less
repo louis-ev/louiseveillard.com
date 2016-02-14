@@ -6,15 +6,15 @@
 @c-pagebg: #151515;
 
 @c-textColor: #f9f9f9;
-@c-textMeta: #999;
+@c-textMeta: #bbb;
 
 @c-vr:                     #0A997F;
 @c-sites:                  #03a9f4;
 @c-installations:          #D1DF98;
 @c-outils-pedagogiques: #FECD62;
 
-
 @t-margin: 16px;
+@t-largemaxwidth: 70rem;
 
 
 ::-moz-selection {
@@ -52,9 +52,8 @@ html {
 
 .containMe {
 	width: 	100%;
-	max-width: 88em;
+	max-width: @t-largemaxwidth;
 	margin: 0 auto;
-	padding: 0 10%;
 }
 
 body {
@@ -77,6 +76,10 @@ body {
   -webkit-font-kerning: normal;
      -moz-font-kerning: normal;
           font-kerning: normal;
+
+  &[data-visuel='zoomedIn'] {
+    overflow: hidden;
+  }
 }
 
 strong {
@@ -92,6 +95,8 @@ h1, h2, h3, h4, h5, h6, b {
 hr {
   border: none;
   border-top: 1px solid #444;
+  margin-top: @t-margin;
+  margin-bottom:  @t-margin;
 }
 
 
@@ -104,8 +109,8 @@ a:hover {
   text-decoration: none;
 }
 
-h3 {
-	font-size: .8rem;
+.titleCaps {
+	font-size: .7rem;
 	font-family: 'GT Cinetype Bold';
 	margin-top: @t-margin;
 	margin-bottom: 0;
@@ -116,10 +121,21 @@ h3 {
 
 .module--navbar {
 
-  .containMe;
-	overflow: auto;
+  padding: 0 10%;
+  padding-top: @t-margin * 2;
 
 	color: #fff;
+
+  position: relative;
+  z-index: 1000;
+  top: 0;
+
+
+  .module--navbar--wrapper {
+  	position: fixed;
+  	max-width: @t-largemaxwidth;
+  	width:  100%;
+  }
 
 	a {
   	display: block;
@@ -176,12 +192,16 @@ h3 {
 	transition: opacity .4s .4s ease-out;
 
 	.module--into--textblock {
-		margin: 24vh	0 14vh 33% ;
+		margin: 22vh	0 14vh 33% ;
 		max-width: 22em;
 	}
 	body[module--gradient_overlay="is--away"] & {
     opacity: 0;
     transition: opacity .4s ease-out;
+  }
+
+  h3 {
+    .titleCaps;
   }
 
 	a {
@@ -288,6 +308,11 @@ h3 {
     }
   }
 
+  h3 {
+    .titleCaps;
+
+  }
+
 	.module--projetList--projetName {
 
   	width: 80%;
@@ -351,7 +376,7 @@ h3 {
 }
 
 
-@t-bandeauImage: 34vh;
+@t-bandeauImage: 44vh;
 
 // page projet
 .module--projet {
@@ -361,44 +386,47 @@ h3 {
 
 	.module--projet--header {
 
+    	padding: 0 10%;
+
   	color: @c-textColor;
     padding-bottom:  @t-margin * 2;
 
     margin-top:   @t-bandeauImage + 10vh;
   	background-color: @c-pagebg;
 
-    transition: margin-top .4s ease-out, background-color .4s ease;
+  	position: relative;
+  	z-index:  10;
+
+    transition: margin-top .6s ease-out, background-color .4s ease;
 
     // à l'arrivée (quand is--loading), afficher l'image non collapsed
     // quand le body est loading, on collapse l'image
-    // sans js on ne peut pas désactiver le is--collapsed
-    body:not(.is--loading) &.is--collapsed {
+    // sans js on ne peut pas désactiver le zoomedin
+    body:not(.is--loading)[data-visuel=''] & {
       margin-top: @t-bandeauImage;
-
-      .module--projet--header--visuel {
-        transform: translate( 0, -50vh + @t-bandeauImage);
-        opacity: .8;
-      }
     }
 
     // avec JS, après chargement, full screen image
-    body:not(.is--loading) &:not(.is--collapsed) {
-      margin-top: @t-bandeauImage + 20vh;
+    body:not(.is--loading)[data-visuel='zoomedIn'] & {
+      margin-top: 100vh;
       .module--projet--header--text {
-        opacity:0;
+//         opacity:0;
       }
 
-      background: transparent;
+//       background: transparent;
 
       + .module--projet--text {
-        opacity:0;
+//         opacity:0;
       }
 
     }
 
     .module--projet--header--text {
 
-      .containMe;
+    	width: 	100%;
+    	margin: 0 auto;
+    	max-width: @t-largemaxwidth;
+
       padding-top: 2rem;
       .clearfix();
 
@@ -426,17 +454,14 @@ h3 {
   		h1 {
   			.projet--name;
   		}
-  		h2 {
-        .mediumText
-  		}
 
       .module--projet--header--text--colLeft {
         float: left;
-        width: 60%;
+        width: 66%;
 
-        font-size:  1.4em;
+        .mediumText;
 
-        margin-right:   @t-margin;
+        padding-right: @t-margin*2;
         margin-top: @t-margin/2;
 
         > *:first-child {
@@ -449,11 +474,17 @@ h3 {
       }
       .module--projet--header--text--colRight {
         float: left;
-        right:  40%;
-        margin-top: @t-margin/2;
+        width:  34%;
+        margin-top: @t-margin;
+
+        :first-child {
+          margin-top: 0;
+        }
 
         h3 {
-          margin-top: @t-margin/2;
+          margin-top: @t-margin;
+          margin-bottom:  @t-margin/2;
+          .titleCaps;
         }
 
         p {
@@ -464,44 +495,87 @@ h3 {
 
 
     }
-
-  	.module--projet--header--visuel {
-
-      background-color: @c-pagebg;
-      color: @c-textColor;
-      overflow: hidden;
-      position: fixed;
-
-      top: 0;
-      left: 0;
-      right: 0;
-
-      height: 100vh;
-      width:  auto;
-
-      z-index:  -2;
+  }
 
 
-      img {
-  			object-fit: cover;
-  			width: 100%;
-  			height: 100%;
-      }
+	.module--projet--visuel {
 
-      transform: translate( 0, 00vh);
-      transition: transform .6s ease-out, opacity .5s ease-out;
+    background-color: @c-pagebg;
+    color: @c-textColor;
+    overflow: hidden;
+    position: fixed;
+    display: block;
 
-  	}
+    top: 0px;
+    left: 0;
+    right: 0;
+
+    height: 100%;
+    width:  auto;
+
+    z-index:  0;
 
 
+    figure {
+      margin: 0;
+    }
+
+    img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+    }
+
+    transition: transform .6s ease-out, opacity .5s ease-out;
 	}
+
+  .module--projet--visuel {
+    transform: translate(0, ~"calc( -50% + 250px/2)");
+    transform: translate(0, ~"calc( -50% + @{t-bandeauImage}/2)");
+    opacity: .8;
+  }
+
+  body[data-visuel='zoomedIn'] & .module--projet--header + .module--projet--visuel {
+    transform: translate( 0, 0vh);
+    transform: scale(1.2);
+  }
+
+	.styleLink( @rubrique, @color ) {
+    [data-type= @{rubrique}]& {
+      h3 {
+        color: @color;
+		  }
+		  a {
+      	background-position: 0 100%;
+      	background-repeat: no-repeat;
+      	background-size: 200% 2px;
+      	transition:	all .25s;
+
+  			background-image: linear-gradient(to right,
+		                                  @color,
+		                                  @color 50%,
+		                                  transparent 50%,
+		                                  transparent);
+
+
+		  }
+		}
+	}
+	.styleLink( "vr", @c-vr);
+	.styleLink( "sites", @c-sites);
+	.styleLink( "installations", @c-installations);
+	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
+
 
 
 	.module--projet--text {
 
+  	position: relative;
+  	z-index:  10;
+
     background-color: @c-pagebg;
     color: @c-textColor;
-		padding: 0 15% 0 15%;
+		padding: 0 12.5% 0 12.5%;
 
   	padding-top: 2rem;
   	padding-bottom: 2rem;
@@ -537,9 +611,13 @@ h3 {
 
   			&::before {
   				content: "->";
-  				margin-left: -1em;
   				font-family: 'gt cinetype regular';
   				color: @c-textMeta;
+
+  				margin-left: -1.5em;
+  				width:  1.5em;
+  				display: inline-block;
+
   			}
   		}
   	}
@@ -548,6 +626,13 @@ h3 {
 
     	padding-top: 2rem;
     	padding-bottom: 2rem;
+      max-width: @t-largemaxwidth;
+
+      margin: 0 auto;
+
+    	+ .media-image {
+      	padding-top:  1rem;
+    	}
 
       .legende {
         p {
@@ -559,7 +644,6 @@ h3 {
       }
 
     }
-
 
   	p, ul, ol {
 
@@ -579,12 +663,20 @@ h3 {
       }
   	}
 
+    h2 {
+      .mediumText;
+    	max-width: 44em / 1.4;
+    	max-width: 66ch / 1.4;
+    	margin: 0 auto;
+      	padding-top: 1em;
+      	padding-bottom: .5em;
+    }
 
+    h3 {
+      .titleCaps;
+    }
 
 	}
-
-
-
 }
 
 // cas spécial : on utilise le même markup sur la page d'accueil (parce que c'est plus simple (en théorie !))
@@ -633,7 +725,7 @@ h3 {
   	.module--projet--header--text {
   		display: none;
   	}
-  	.module--projet--header--visuel {
+  	.module--projet--visuel {
     	transform: none !important;
   	}
   }

@@ -4,7 +4,7 @@ Title: Le Tricodeur
 
 Text: 
 
-Le Tricodeur explore la mise en relation de deux pratiques créatives liées entre elles par un héritage commun : le tricot et la programmation. Au XIXe siècle, le métier à tisser Jacquard est précurseur dans l'utilisation de cartes perforées pour encoder un motif. Il a ensuite inspiré la création du Analytical Engine, ancêtre des ordinateurs modernes et première machine capable de mémoriser et d'exécuter un algorithme dit algébrique. Son développement a d'ailleurs mené à l'informatique contemporaine.
+Le Tricodeur explore la mise en relation de deux pratiques créatives liées entre elles par un héritage commun : le tricot et la programmation. Au XIX<sup>e</sup> siècle, le métier à tisser Jacquard est précurseur dans l'utilisation de cartes perforées pour encoder un motif. Il a ensuite inspiré la création du Analytical Engine, ancêtre des ordinateurs modernes et première machine capable de mémoriser et d'exécuter un algorithme dit algébrique. Son développement a d'ailleurs mené à l'informatique contemporaine.
 
 (image: tricodeur-residence-large-1.jpg legende: Installation à l'association Sew & Laine en septembre 2014)
 

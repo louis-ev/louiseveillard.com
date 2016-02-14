@@ -1,1 +1,21 @@
-Title: Site Title
+Title: Portfolio de Louis Eveillard
+
+----
+
+Author: Louis Eveillard
+
+----
+
+Description: Portfolio de Louis Eveillard, designer graphique et d'interaction indépendant à Paris.
+
+----
+
+Keywords: design,portfolio,interaction,programming,louis eveillard,graphical user interface,print,silkscreen,knitting,hacking,virtual reality
+
+----
+
+Ogimage: 
+
+----
+
+Socialnetworks: 

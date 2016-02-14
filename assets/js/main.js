@@ -344,12 +344,16 @@ var theProjetView = {
 	init : function() {
 
 
-    $('.module--projet--header').on('click', function() {
-      $(".module--projet--header").toggleClass("is--collapsed");
+    // fonction qui gère le zoom-in sur l'image du haut
+    var zoomedIn = false;
+    $('.module--projet--visuel').on('click', function(e) {
+      zoomedIn = !zoomedIn;
+      $('body').attr( 'data-visuel', zoomedIn ? '' : 'zoomedIn');
+      return false;
     });
 
     var wHeight = window.innerHeight;
-    var $visuelTop = $(".module--projet_full .module--projet--header--visuel").first();
+    var $visuelTop = $(".module--projet_full .module--projet--visuel").first();
     if( window.innerWidth > 700 && $visuelTop.length > 0) {
       theProjetView.changeVisuelOpacity( wHeight, $visuelTop);
     }
@@ -382,5 +386,4 @@ $(document).ready(function() {
 
 	if( $(".module--cv").length > 0)
   	canvasCV.init();
-
 });

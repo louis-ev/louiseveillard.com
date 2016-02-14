@@ -4,14 +4,45 @@ Title: Along the Trail
 
 Text: 
 
-Along the Trail est une déambulation dans des univers matérialisant les données archivées par les réseaux sociaux, sur casque VR.
+(image: et-accueil-01.jpg)
 
-exploration, sérendipité, représentation
-2015
-Description à venir.
-Paysage/portrait généré par nos traces numériques
+Along the Trail est une œuvre de réalité virtuelle qui donne à voir les traces des interactions humaines présentes sur les réseaux sociaux en ligne. En connectant son compte personnel, un participant équipé d’un casque se retrouve à déambuler au milieu de paysages générés par ses données, ce qui l’amène à redécouvrir des événements passés et des souvenirs oubliés qui persistent dans des data center à l’autre bout du globe.
 
-Réalisé à Panoptic Lab avec Ferdinand Dervieux, Jérémie Lasnier et Aby Batti.
+(image: poster-1.jpg)
+
+Along the Trail donne ainsi une matérialité à des informations habituellement intangibles dont l’existence découle de l’utilisation de réseaux informatiques comme intermédiaires de communications inter-personnelles. De cette manière, l’œuvre questionne certaines problématiques liées à la gestion de l’identité numérique et met en évidence le décalage entre la mémoire humaine et la mémoire infaillible des machines.
+
+---
+
+## Fonctionnement d'Along the Trail
+
+Along the Trail récupère les données d’un compte Facebook (informations biographiques, posts, likes, événements et messages). Ces informations deviennent le matériau de paysages dans lesquels l’utilisateur peut se promener, et qui, intrigants, l’amènent à contempler des fragments d’expérience passées. Il avance d’un paysage à l’autre en suivant un chemin tracé pour lui et qui l’emmène toujours plus profondément dans l’exploration. Traversant d’abord des vastes plaines sous un ciel dégagé, il croise ensuite des architectures rigides plantées dans le sol qui l’orientent vers un canyon exiguë et sombre. De minces cristaux brillent sur les parois, et tracent un chemin vers d’autres lieux à visiter. Chaque fois qu’Along the Trail est lancé, de nouvelles données sont récupérées et un nouveau tri est effectué. Elles sont sélectionnées par un algorithme qui détermine les contenus les plus pertinents à af cher. Il opère des regroupements par thématique tout en privilégiant les informations anciennes et potentiellement oubliées. Lorsque des informations sont au même niveau, elles sont  filtrées aléatoirement rendant ainsi chaque exploration d’Along the Trail unique.
+
+(image: along_the_trail-dossier_presentation-2016.jpg)
+
+(image: boites-01.jpg)
+
+Les formes qui contiennent des informations (mots, dates, lieux, etc.) brillent et se parent de couleurs lumineuses. Quand on les regarde avec insistance, les données qu’elles renferment se révèlent et deviennent lisibles. Le reste du paysage, monochrome, contraste fortement avec ces objets. Il ne contient aucune donnée et ne changent pas en fonction du pro l de la personne qui l’observe.
+
+---
+
+**Les paysages d’Along the Trail se modifient donc en fonction des personnes qui les contemplent.** La trame narrative et la succession des paysages restent les mêmes mais les objets qui les peuplent et les informations qu’ils contiennent changent. Ces espaces deviennent une représentation de la personne qui en est à l’origine, dans une expérimentation portrait/paysage qui s’inspire des travaux d’Isamu Noguchi.
+
+La navigation d’un univers à un autre se fait par un système très simple d’objets à viser avec le regard. Un petit touchpad sur le côté du casque sert à valider le déplacement. Il est cependant impossible de revenir en arrière car la narration suit une progression où les informations récupérées deviennent de plus en plus intimes et anciennes.
+
+(image: yeux-01.jpg)
+
+(image: u4-meduses.jpg)
+
+## Installation d’Along the Trail
+
+Depuis le mois de juin 2015 Along the Trail est en bêta fermé dans le but de réunir des témoignages et des retours d’expérience. L’application peut s’installer sur tous les smartphones Samsung Galaxy Note 4. Ce smartphone peut ensuite être installé à l’intérieur d’un autre accessoire grand public, le Gear VR, pour le transformer en un casque de réalité virtuelle. Son écran devient donc celui du casque, et les applications tournent sur le smartphone lui-même.
+
+(image: p1010632-1.jpg)
+
+(image: _1010722-4.jpg)
+
+(image: _1010740-5.jpg)
 
 ----
 
@@ -19,7 +50,7 @@ Imagecover: u2-boite.jpg
 
 ----
 
-Header: # Along the Trail
+Header: Une déambulation dans des univers matérialisant les données archivées dans les réseaux sociaux, sur casque VR.
 
 ----
 
@@ -28,3 +59,16 @@ Type: vr
 ----
 
 Annee: 2015
+
+----
+
+Headercol2: 
+
+### thème
+## expérience générative en réalité virtuelle
+### année
+## 2015
+### prix
+## Prix OR catégorie *expérience* au concours Oculus VR Jam
+### équipe
+## Réalisé à Panoptic Lab avec Ferdinand Dervieux, Jérémie Lasnier et Aby Batti
