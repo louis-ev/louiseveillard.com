@@ -3,7 +3,9 @@
 @import "_image.less";
 @import "_grid.less";
 
-@c-pagebg: #151515;
+//@c-pagebg: #151515;
+@c-pagebg: #181818;
+@c-pagebgwhite: #F0F0F0;
 
 @c-textColor: #f9f9f9;
 @c-textMeta: #bbb;
@@ -14,7 +16,7 @@
 @c-outils-pedagogiques: #FECD62;
 
 @t-margin: 16px;
-@t-largemaxwidth: 70rem;
+@t-largemaxwidth: 66rem;
 
 
 ::-moz-selection {
@@ -91,6 +93,12 @@ h1, h2, h3, h4, h5, h6, b {
   font-size: 	inherit;
 }
 
+ul, ol {
+	padding-left:  0;
+	margin-left: 0;
+  list-style: none;
+}
+
 
 hr {
   border: none;
@@ -121,20 +129,22 @@ a:hover {
 
 .module--navbar {
 
-  padding: 0 10%;
   padding-top: @t-margin * 2;
 
 	color: #fff;
 
   position: relative;
   z-index: 1000;
-  top: 0;
+
+  mix-blend-mode: exclusion;
 
 
   .module--navbar--wrapper {
   	position: fixed;
-  	max-width: @t-largemaxwidth;
+  	top: 0;
   	width:  100%;
+    padding: 0 @t-margin*2;
+
   }
 
 	a {
@@ -192,7 +202,7 @@ a:hover {
 	transition: opacity .4s .4s ease-out;
 
 	.module--into--textblock {
-		margin: 22vh	0 14vh 33% ;
+		margin: 22vh	10% 14vh 33% ;
 		max-width: 22em;
 	}
 	body[module--gradient_overlay="is--away"] & {
@@ -299,6 +309,8 @@ a:hover {
 //   counter-reset: projet;
   list-style-type: none;
   z-index: 0;
+  padding-left: @t-margin*2;
+  padding-right: @t-margin*2;
 
   &:hover .module--projetList--projetName .module--projetList--projetName--links {
     color: #BEBEBE;
@@ -386,7 +398,7 @@ a:hover {
 
 	.module--projet--header {
 
-    	padding: 0 10%;
+		padding: 0 @t-margin*2;
 
   	color: @c-textColor;
     padding-bottom:  @t-margin * 2;
@@ -545,7 +557,7 @@ a:hover {
       h3 {
         color: @color;
 		  }
-		  a {
+		  .module--projet--text a {
       	background-position: 0 100%;
       	background-repeat: no-repeat;
       	background-size: 200% 2px;
@@ -576,11 +588,12 @@ a:hover {
     background-color: @c-pagebg;
     color: @c-textColor;
 		padding: 0 12.5% 0 12.5%;
+		padding:  0 @t-margin*2;
 
   	padding-top: 2rem;
   	padding-bottom: 2rem;
 
-  	transition: opacity .4s;
+  	transition: opacity .3s;
 
     // sur une page projet, virer les encarts lorsqu'on hover la projetListe
     body[module--gradient_overlay="is--away"] & {
@@ -588,7 +601,7 @@ a:hover {
     }
 
 		&:nth-of-type(even) {
-      background-color: @c-textColor;
+      background-color: @c-pagebgwhite;
       color: @c-pagebg;
 		}
 
@@ -600,8 +613,6 @@ a:hover {
   		margin: 0;
   	}
   	ul,ol {
-    	padding-left:  0;
-    	margin-left: 0;
     	list-style-type: none;
 
       li {
@@ -735,8 +746,7 @@ a:hover {
 .module--cv {
 
   position: relative;
-	.containMe;
-
+	padding: 0 @t-margin*2;
 
 	a {
 		display: inline;
@@ -745,17 +755,64 @@ a:hover {
 		padding: .1em .0em;
 		margin: -.1em -.0em;
 
+    text-decoration: none;
+    padding-bottom: 2px;
+
   	background-position: 0 100%;
   	background-repeat: no-repeat;
   	background-size: 200% 1px;
   	transition:	all .25s;
 
+    &:hover {
+      background-size: 200% 10%;
+    }
 
 		background-image: linear-gradient(to right,
 		                                  #fff,
 		                                  #fff 50%,
 		                                  transparent 50%,
 		                                  transparent);
+
+
+		&[data-link] {
+
+		  &.is--linkedto {
+    		background-image: linear-gradient(to right,
+    		          #09606F 25%,
+    		          #fff 50%
+    		      );
+
+		  }
+		  &.is--linkedfrom {
+    		background-image: linear-gradient(to right,
+    		          #fff 25%,
+    		          #09606F 50%
+    		      );
+
+  		}
+		  &.is--linkedto.is--linkedfrom {
+/*
+    		background-image: linear-gradient(to right,
+    		          #09606F 0%,
+    		          #fff 25%,
+    		          #09606F 50%
+    		      );
+*/
+    		background-image: linear-gradient(to right,
+    		          #09606F 0%,
+    		          #09606F 50%
+    		      );
+
+		  }
+
+			.position-of-eles {
+				&:before {
+					content: ".";
+					position: absolute;
+					color: #7dc1c8;
+				}
+			}
+		}
   }
 
 	.description {
@@ -815,6 +872,8 @@ a:hover {
   }
 }
 
+
+
 #links {
   width:  100%;
   position: absolute;
@@ -835,7 +894,7 @@ a:hover {
     width: 100%;
     height: 100%;
     position: absolute;
-  	background-color: #151515;
+  	background-color: @c-pagebg;
   	transition: background-color .4s .4s ease-out;
 	}
 
