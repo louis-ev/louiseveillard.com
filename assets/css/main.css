@@ -978,8 +978,8 @@ ol {
 hr {
   border: none;
   border-top: 1px solid #444;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 a,
 a:hover,
@@ -1046,8 +1046,8 @@ a:hover {
   transition: opacity 0.4s 0.4s ease-out;
 }
 .module--intro .module--into--textblock {
-  margin: 22vh	10% 14vh 33% ;
-  max-width: 22em;
+  margin: 22vh	5% 14vh 33% ;
+  max-width: 23em;
 }
 body[module--gradient_overlay="is--away"] .module--intro {
   opacity: 0;
@@ -1135,9 +1135,10 @@ body[module--gradient_overlay="is--away"] .module--intro {
   margin: 0 auto;
   min-height: 120vh;
   list-style-type: none;
-  z-index: 0;
+  z-index: 1;
   padding-left: 32px;
   padding-right: 32px;
+  padding-top: 32px;
 }
 .module--projetList:hover .module--projetList--projetName .module--projetList--projetName--links {
   color: #BEBEBE;
@@ -1209,7 +1210,7 @@ body[data-template="projet"] .module--projetList .module--projetList--projetName
   transition: margin 0.25s 0.3s ease-out, opacity 0.3s 0.4s ease-out;
 }
 .module--projet {
-  padding-bottom: 30px;
+  padding-bottom: 32px;
   transition: opacity 0.4s ease-out, margin 1.5s ease-out;
 }
 .module--projet .module--projet--header {

@@ -9272,7 +9272,7 @@ var canvasCV = {
 		function drawLinks(processing) {
 			processing.setup = function() {
 				processing.noLoop();
-				processing.background( 21);
+				//processing.background( 21);
 				processing.smooth();
 			};
 
@@ -9285,7 +9285,7 @@ var canvasCV = {
 				processing.noFill();
 				processing.strokeWeight(1);
 
-				for( var i=0; i< 1 ; i++ ) {
+				for( var i=0; i<1 ; i++ ) {
 
 					var randomInt = processing.random();
 
@@ -9293,19 +9293,18 @@ var canvasCV = {
 					var cdgreen = processing.color(9, 96, 111);
 					var clgreen = processing.color( 125, 193, 200);
 
-					console.log( p5Color );
+//					console.log( p5Color );
 
 					var randomToInterval = processing.map( randomInt, 0, 2, 140, 400 );
-					randomToInterval = 240;
+					//randomToInterval = 240;
 
 					var noHorizontalLine = 0;
 					if( Math.abs(startPointy - endPointy) < 20 ) {
 						noHorizontalLine = 20;
 					}
 
-					processing.stroke( p5Color );
-//						processing.stroke( processing.lerpColor( clgreen, cdgreen, randomInt ) );
-//						processing.stroke( clgreen );
+//					processing.stroke( p5Color );
+					processing.stroke( cdgreen );
 
 					processing.pushMatrix();
 
@@ -9318,7 +9317,7 @@ var canvasCV = {
 			}
 
 			processing.eraseBg = function() {
-				processing.fill( 21);
+				processing.fill( 24);
 				processing.noStroke();
 				processing.rect( 0, 0, processing.width, processing.height);
 			}
@@ -9333,63 +9332,86 @@ var canvasCV = {
 		var processingInstance = new Processing(canvasJS, drawLinks);
 
 		var thisSketch = Processing.getInstanceById('links');
+
 		thisSketch.updateSize( $("body").width(), $(".module--cv").height());
 		thisSketch.eraseBg();
 
-		$(".module--cv a").each(function() {
-  		$this = $(this);
-  		thisLink = $this.attr("data-link");
-  		thisColor = "#ff00ff";
-  		canvasCV.drawAllLinks( thisSketch, $this, thisLink, thisColor );
+		var alreadyLinked = new Array([]);
+
+		// donner un ID à chaque lien qu'il va falloir traiter
+		$(".module--cv a[data-link]").each(function(i) {
+  		$(this).data( 'linkID', i);
+		});
+
+		$(".module--cv a[data-link]").each(function() {
+  		var $this = $(this);
+  		var thisLink = $this.attr("data-link");
+  		var thisColor = "#ff00ff";
+
+  		// return la liste de ce qui a été relié. La mettre à la suite de alreadyLinked
+  		canvasCV.drawAllLinks( $this.data( 'linkID'), thisSketch, $this, thisLink, thisColor, alreadyLinked);
 		});
   },
 
-	drawAllLinks : function( thisSketch, $hoveredLink, hoveredDataLink, thisColor ) {
+	drawAllLinks : function( linkID, thisSketch, $this, thisLink, thisColor, alreadyLinked) {
 
 		//thisColor = thisColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
 
 		//var p5Color = thisSketch.color( parseInt(thisColor[1],10), parseInt(thisColor[2],10), parseInt(thisColor[3],10) );
 
-		console.log( "thisColor " + thisColor );
+		//console.log( "thisColor " + thisColor );
 		//console.log( "parseInt(thisColor[1],10) " + parseInt(thisColor[1],10) );
-
-
 		//thisSketch.background(0,90);
 
-
-		var $linkTo = $(".module--cv").find("a[data-link='" + hoveredDataLink + "']").not( $hoveredLink );
+		var $linkTo = $(".module--cv").find("a[data-link='" + thisLink + "']").not( $this );
 
 		if ( $linkTo.length > 0 ) {
 
 			$linkTo.each( function() {
 				$thisLinkTo = $(this);
-				console.log("LINK $this :" + $hoveredLink.text() + " $linkTo : " + $thisLinkTo.text() + " thisColor : " + thisColor );
+				//console.log("LINK $this :" + $this.text() + " $linkTo : " + $thisLinkTo.text() + " thisColor : " + thisColor );
 
-/*
-				if ( $hoveredLink.closest(".content").hasClass("realisations") === true ) {
-					thisPosLeft = $hoveredLink.offset().left - 10;
-					thisPosTop = $hoveredLink.offset().top + $hoveredLink.height()/2 + 2;
-				} else {
-					thisPosLeft = $hoveredLink.offset().left;
-					thisPosTop = $hoveredLink.offset().top + $hoveredLink.height() + 1;
-				}
-				if ( $thisLinkTo.closest(".content").hasClass("realisations") === true ) {
-					linkPosLeft = $thisLinkTo.offset().left - 10;
-					linkPosTop = $thisLinkTo.offset().top + $thisLinkTo.height()/2 + 2;
-				} else {
-					linkPosLeft = $thisLinkTo.offset().left;
-					linkPosTop = $thisLinkTo.offset().top + $thisLinkTo.height() + 1;
-				}
-*/
+        // faire un tableau de ces deux liens
+        var thoseTwoLinks = [linkID, $thisLinkTo.data( 'linkID')].sort();
+        var thoseLinksHaveBeenLinked = false;
 
-				var locationthisPos = canvasCV.getLocationOfDatalink( $hoveredLink, false );
-				var locationlinkPos = canvasCV.getLocationOfDatalink( $thisLinkTo, true );
+        var boucles = 0;
+        // checker si on a déjà relier ces deux points ensemble
+        for( var i = 0, len = alreadyLinked.length; i < len; i++ ) {
+          var a = alreadyLinked[i];
+          var b = thoseTwoLinks;
 
-				thisSketch.drawLink( locationthisPos.left - 1, locationthisPos.bottom, locationlinkPos.left + 1, locationlinkPos.bottom, thisColor );
+          boucles++;
+          if( alreadyLinked[i][0] === thoseTwoLinks[0]){
+            if( alreadyLinked[i][1] === thoseTwoLinks[1]) {
+              thoseLinksHaveBeenLinked = true;
+              // supprimer cette paire du tableau (optimisation !)
+               alreadyLinked.splice(i, 1);
+              break;
+            }
+          }
+        }
 
+        console.log( 'boucles ' + boucles);
+
+        if( !thoseLinksHaveBeenLinked) {
+
+  				var locationthisPos = canvasCV.getLocationOfDatalink( $this, false );
+  				var locationlinkPos = canvasCV.getLocationOfDatalink( $thisLinkTo, true );
+
+  				thisSketch.drawLink( locationthisPos.left - 1, locationthisPos.bottom, locationlinkPos.left + 1, locationlinkPos.bottom, thisColor );
+
+  				$thisLinkTo.addClass('is--linkedto');
+  				$this.addClass('is--linkedfrom');
+
+          // ajouter dans le tableau de ceux qu'on a déjà relié le point concerné
+          alreadyLinked.push(thoseTwoLinks);
+
+        }
 			});
 		}
 
+    return alreadyLinked;
 	},
 
 	loopMeUp: function() {
@@ -9415,7 +9437,7 @@ var canvasCV = {
 		var height = $elem.find(".position-of-eles").height();
 		offset.bottom = offset.top + height + 1.5;
 
-		console.log( offset );
+//		console.log( offset );
 
 		$elem.html(text)    ; //Place back
 
@@ -9569,12 +9591,16 @@ var theProjetView = {
 	init : function() {
 
 
-    $('.module--projet--header').on('click', function() {
-      $(".module--projet--header").toggleClass("is--collapsed");
+    // fonction qui gère le zoom-in sur l'image du haut
+    var zoomedIn = false;
+    $('.module--projet--visuel').on('click', function(e) {
+      zoomedIn = !zoomedIn;
+      $('body').attr( 'data-visuel', zoomedIn ? 'zoomedIn' : '');
+      return false;
     });
 
     var wHeight = window.innerHeight;
-    var $visuelTop = $(".module--projet_full .module--projet--header--visuel").first();
+    var $visuelTop = $(".module--projet_full .module--projet--visuel").first();
     if( window.innerWidth > 700 && $visuelTop.length > 0) {
       theProjetView.changeVisuelOpacity( wHeight, $visuelTop);
     }
@@ -9606,6 +9632,5 @@ $(document).ready(function() {
 	$('body').removeClass("is--loading");
 
 	if( $(".module--cv").length > 0)
-  	canvasCV.init();
-
+	setTimeout( canvasCV.init(), 400);
 });

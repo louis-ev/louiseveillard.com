@@ -257,7 +257,6 @@ var theIntroLinks = {
 	init : function( $projetList) {
 
     click = 0;
-
     var $items = $projetList.find( ".isotope--item");
     $items.each(function() {
       if( $(this).attr("data-index") !== undefined)
