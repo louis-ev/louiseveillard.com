@@ -43,6 +43,19 @@
 
   <meta name="apple-mobile-web-app-capable" content="yes">
 
+  <script>
+      function loadJS(u) {
+          var r = document.getElementsByTagName("script")[0],
+              s = document.createElement("script");
+          s.src = u;
+          r.parentNode.insertBefore(s, r);
+      }
+
+      if (!window.HTMLPictureElement) {
+          loadJS("https://afarkas.github.io/lazysizes/plugins/respimg/ls.respimg.min.js");
+      }
+  </script>
+
 </head>
 <body
    data-login="<?php e($site->user(),'true', 'false') ?>"

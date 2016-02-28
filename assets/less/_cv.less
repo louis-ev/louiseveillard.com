@@ -1,0 +1,169 @@
+.module--cv {
+
+  position: relative;
+	padding: 0 @t-margin*2;
+	max-width: @t-largemaxwidth;
+	margin: 0 auto;
+	font-size:  .8em;
+
+	a {
+		display: inline;
+		cursor: pointer;
+		color: #fff;
+		padding: .1em .0em;
+		margin: -.1em -.0em;
+
+    text-decoration: none;
+    padding-bottom: 2px;
+
+  	background-position: 0 100%;
+  	background-repeat: no-repeat;
+  	background-size: 200% 1px;
+  	transition:	none;
+
+//     text-shadow: 0.03em 0 @c-pagebg, -0.03em 0 @c-pagebg, 0 0.03em @c-pagebg, 0 -0.03em @c-pagebg, 0.06em 0 @c-pagebg, -0.06em 0 @c-pagebg, 0.09em 0 @c-pagebg, -0.09em 0 @c-pagebg, 0.12em 0 @c-pagebg, -0.12em 0 @c-pagebg, 0.15em 0 @c-pagebg, -0.15em 0 @c-pagebg;
+
+		background-image: linear-gradient(to right,
+		          #666,
+		          #666
+		      );
+
+    @c-soulignements: #0A997F;
+    @c-lines: #09606F;
+
+    @c-singlehover-soulignements: #09606F;
+    @c-singlehover-lines: #0A997F;
+
+
+    .backgroundImageLinks( @colorSoulignements, @colorLines) {
+      @percentageBezierInUnderlines: 15%;
+		  &.is--linkedto {
+    		background-image: linear-gradient(to right,
+    		          @colorLines 1px,
+    		          @colorSoulignements @percentageBezierInUnderlines
+    		      );
+		  }
+		  &.is--linkedfrom {
+    		background-image: linear-gradient(to right,
+    		          @colorSoulignements 50%-@percentageBezierInUnderlines,
+    		          @colorLines ~"calc(50% - 1px)"
+    		      );
+  		}
+		  &.is--linkedto.is--linkedfrom {
+    		background-image: linear-gradient(to right,
+    		          @colorLines 1px,
+    		          @colorSoulignements @percentageBezierInUnderlines,
+    		          @colorSoulignements 50%-@percentageBezierInUnderlines,
+    		          @colorLines ~"calc(50% - 1px)"
+    		      );
+		  }
+    }
+
+		&[data-link] {
+      border-bottom-color: @c-lines;
+
+  		background-image: linear-gradient(to right,
+  		          @c-lines,
+  		          @c-lines
+  		      );
+
+      .backgroundImageLinks( @c-soulignements, @c-lines);
+      &:hover, &.is--currentlyLinkedTo {
+/*
+        background-size: 200% 2px;
+        padding-bottom: 3px;
+*/
+        border-bottom-color: @c-singlehover-lines;
+        .backgroundImageLinks( @c-singlehover-soulignements, @c-singlehover-lines);
+      }
+
+
+			.position-of-eles {
+				&:before {
+					content: ".";
+					position: absolute;
+					color: #7dc1c8;
+				}
+			}
+		}
+  }
+
+  .grid {
+    display: block;
+    margin: 0 -@t-margin;
+    .clearfix;
+    .column {
+      float: left;
+      width:  33.333%;
+      padding: 0 @t-margin;
+    }
+
+  }
+
+	.description {
+		margin-top: 1em;
+		opacity: 1;
+		transition: opacity .4s;
+
+	}
+
+	.realisations {
+
+		.description {
+		}
+		li {
+			padding-bottom: .5em;
+
+			a {
+// 							padding-bottom: 0;
+				margin-bottom: .2em;
+			}
+
+			.realisationsDetails {
+				font-size: .7em;
+				line-height: 1.1;
+
+			}
+		}
+	}
+
+	.description {
+
+		padding-left: 0;
+		padding-right: 1em;
+		list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAJ0lEQVQIW2NkwAEYYeL/gQDEZgQCMA0iQIIwARgbvwRMF4ZR2OwHABqMGAckPqgXAAAAAElFTkSuQmCC);
+
+		li {
+			padding-bottom: 1em;
+		}
+
+	/* custom list images, sur 8 pixels */
+		&> li:nth-child(4n + 1) {
+			list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAJ0lEQVQIW2NkwAEYYeL/gQDEZgQCMA0iQIIwARgbvwRMF4ZR2OwHABqMGAckPqgXAAAAAElFTkSuQmCC);
+		}
+
+		&> li:nth-child(4n + 2) {
+			list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAI0lEQVQIW2NkwAEYQeL/gYARCJDZYA5MAETDFOCXwGsUuhsAGowYB1QLYcMAAAAASUVORK5CYII=);
+		}
+
+		&> li:nth-child(4n + 3) {
+			list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAALElEQVQIW2NkwAEYQeL/gQBEMwIBiA2iwRLIAEUCxkFWADcKZgzMSAyjYLoAGowYB9CpIioAAAAASUVORK5CYII=);
+		}
+
+		&> li:nth-child(4n + 4) {
+			list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAI0lEQVQIW2NkwAEYYeL/gQDEZgQCMA0iQIIwARibAh3obgAAtn0YB/1UIlkAAAAASUVORK5CYII=);
+
+		}
+  }
+}
+
+
+
+#links {
+  width:  100%;
+  position: absolute;
+  top: 0; left: 0;
+  z-index:  -1;
+
+  pointer-events: none;
+}

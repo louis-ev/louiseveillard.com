@@ -349,7 +349,7 @@ kirbytext::$tags['image'] = array(
 						'data-sizes' =>	"auto",
 						'data-srcset'  => $ms_datasrcset,
 						'class'     => $class . ' lazyload',
-						'alt'       => html($alt)
+						'alt'       => html($alt),
 						)
 					);
 
@@ -385,9 +385,9 @@ kirbytext::$tags['image'] = array(
 						'data-sizes' =>	"auto",
 						'data-srcset'  => $ms_datasrcset,
 						'class'     => $class . ' lazyload',
-						'alt'       => html($alt)
-						)
-					);
+						'alt'       => html($alt),
+            'data-parent-fit' => "cover"
+          ));
 
 				} else {
 					$imagethumb = html::img( $placeholderSRC,array(

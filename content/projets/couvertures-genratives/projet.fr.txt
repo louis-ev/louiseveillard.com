@@ -1,16 +1,20 @@
-Title: Opendoc/Dodoc
+Title: Couvertures génératives
 
 ----
 
-Type: outils pédagogiques
+Type: 
 
 ----
 
-Annee: 2015
+Annee: 
 
 ----
 
 Header: 
+
+----
+
+Headercol2: 
 
 ----
 

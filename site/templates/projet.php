@@ -10,8 +10,6 @@
 		</section>
 	</article>
 
-  <hr>
-
 	<?php snippet( "module--projetList"); ?>
 
   <div class="module--projet_short">

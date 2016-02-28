@@ -33,6 +33,8 @@ c::set('environment', 'production');
 c::set('multisizes', true);
 c::set('lazyloadimages', true);
 
+c::set('smartypants', true);
+
 c::set('languages', array(
   array(
     'code'    => 'fr',

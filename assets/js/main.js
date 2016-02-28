@@ -55,31 +55,29 @@ var canvasCV = {
 
 			};
 
-			processing.drawLink = function( startPointx, startPointy, endPointx, endPointy, p5Color ) {
+			processing.drawLink = function( startPointx, startPointy, endPointx, endPointy, p5Color, strokeWeight ) {
 
 				processing.noFill();
-				processing.strokeWeight(1);
+				processing.strokeWeight(strokeWeight);
 
 				for( var i=0; i<1 ; i++ ) {
 
-					var randomInt = processing.random();
+					var randomInt = processing.random(0, 2);
 
 					var cred = processing.color(255, 39, 25);
 					var cdgreen = processing.color(9, 96, 111);
 					var clgreen = processing.color( 125, 193, 200);
-
-//					console.log( p5Color );
 
 					var randomToInterval = processing.map( randomInt, 0, 2, 140, 400 );
 					//randomToInterval = 240;
 
 					var noHorizontalLine = 0;
 					if( Math.abs(startPointy - endPointy) < 20 ) {
-						noHorizontalLine = 20;
+						noHorizontalLine = 55;
 					}
 
 //					processing.stroke( p5Color );
-					processing.stroke( cdgreen );
+					processing.stroke( p5Color[0], p5Color[1], p5Color[2]);
 
 					processing.pushMatrix();
 
@@ -118,31 +116,38 @@ var canvasCV = {
   		$(this).data( 'linkID', i);
 		});
 
+
+    var c = $(".module--cv a").first().css("border-bottom-color");
+    var linksUnderlineColor = c.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
+
 		$(".module--cv a[data-link]").each(function() {
   		var $this = $(this);
   		var thisLink = $this.attr("data-link");
-  		var thisColor = "#ff00ff";
 
   		// return la liste de ce qui a été relié. La mettre à la suite de alreadyLinked
-  		canvasCV.drawAllLinks( $this.data( 'linkID'), thisSketch, $this, thisLink, thisColor, alreadyLinked);
+  		canvasCV.drawAllLinks( $this.data( 'linkID'), thisSketch, $this, thisLink, linksUnderlineColor, alreadyLinked);
+
+  		//au survol
+			$this.on("mouseover", function() {
+  			var c = $this.css("border-bottom-color");
+        var linksUnderlineColor = c.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
+
+        $(".module--cv a[data-link]").removeClass('is--linkedto').removeClass('is--linkedfrom');
+        $this.addClass('is--currentlyLinkedTo');
+        thisSketch.eraseBg();
+				canvasCV.drawAllLinks( $this.data( 'linkID'), thisSketch, $this, thisLink, linksUnderlineColor);
+		  });
 		});
   },
 
 	drawAllLinks : function( linkID, thisSketch, $this, thisLink, thisColor, alreadyLinked) {
-
-		//thisColor = thisColor.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-
-		//var p5Color = thisSketch.color( parseInt(thisColor[1],10), parseInt(thisColor[2],10), parseInt(thisColor[3],10) );
-
-		//console.log( "thisColor " + thisColor );
-		//console.log( "parseInt(thisColor[1],10) " + parseInt(thisColor[1],10) );
-		//thisSketch.background(0,90);
 
 		var $linkTo = $(".module--cv").find("a[data-link='" + thisLink + "']").not( $this );
 
 		if ( $linkTo.length > 0 ) {
 
 			$linkTo.each( function() {
+
 				$thisLinkTo = $(this);
 				//console.log("LINK $this :" + $this.text() + " $linkTo : " + $thisLinkTo.text() + " thisColor : " + thisColor );
 
@@ -151,50 +156,52 @@ var canvasCV = {
         var thoseLinksHaveBeenLinked = false;
 
         var boucles = 0;
-        // checker si on a déjà relier ces deux points ensemble
-        for( var i = 0, len = alreadyLinked.length; i < len; i++ ) {
-          var a = alreadyLinked[i];
-          var b = thoseTwoLinks;
 
-          boucles++;
-          if( alreadyLinked[i][0] === thoseTwoLinks[0]){
-            if( alreadyLinked[i][1] === thoseTwoLinks[1]) {
-              thoseLinksHaveBeenLinked = true;
-              // supprimer cette paire du tableau (optimisation !)
-               alreadyLinked.splice(i, 1);
-              break;
+        // checker si on a bien passé un alreadyLinked
+        if( alreadyLinked !== undefined) {
+          // checker si on a déjà relier ces deux points ensemble
+          for( var i = 0, len = alreadyLinked.length; i < len; i++ ) {
+            var a = alreadyLinked[i];
+            var b = thoseTwoLinks;
+
+            boucles++;
+            if( alreadyLinked[i][0] === thoseTwoLinks[0]){
+              if( alreadyLinked[i][1] === thoseTwoLinks[1]) {
+                thoseLinksHaveBeenLinked = true;
+                // supprimer cette paire du tableau (optimisation !)
+                 alreadyLinked.splice(i, 1);
+                break;
+              }
             }
           }
+          var thisStroke = 1;
         }
-
-        console.log( 'boucles ' + boucles);
+        // si on en a pas passé c'est qu'on est dans le cas du soulignement d'un élément hover
+        else {
+          $thisLinkTo.addClass('is--currentlyLinkedTo');
+          $linkTo.removeClass('is--linkedfrom');
+          var thisStroke = 1;
+        }
 
         if( !thoseLinksHaveBeenLinked) {
 
   				var locationthisPos = canvasCV.getLocationOfDatalink( $this, false );
   				var locationlinkPos = canvasCV.getLocationOfDatalink( $thisLinkTo, true );
 
-  				thisSketch.drawLink( locationthisPos.left - 1, locationthisPos.bottom, locationlinkPos.left + 1, locationlinkPos.bottom, thisColor );
+  				thisSketch.drawLink( locationthisPos.left - 1, locationthisPos.bottom, locationlinkPos.left + 1, locationlinkPos.bottom, thisColor, thisStroke);
 
   				$thisLinkTo.addClass('is--linkedto');
   				$this.addClass('is--linkedfrom');
 
           // ajouter dans le tableau de ceux qu'on a déjà relié le point concerné
-          alreadyLinked.push(thoseTwoLinks);
+          if( alreadyLinked !== undefined)
+            alreadyLinked.push(thoseTwoLinks);
 
         }
 			});
 		}
 
     return alreadyLinked;
-	},
-
-	loopMeUp: function() {
-
-	},
-
-	drawAllLinksAtOnce : function() {
-
 	},
 
 
@@ -210,7 +217,7 @@ var canvasCV = {
 		$elem.html(newText); //Set wrapper
 		var offset = $elem.find(".position-of-eles").offset();
 		var height = $elem.find(".position-of-eles").height();
-		offset.bottom = offset.top + height + 1.5;
+		offset.bottom = offset.top + height + 1.4;
 
 //		console.log( offset );
 
@@ -227,6 +234,9 @@ var theProjetList = {
 		// binder un event mouse : au survol sur un a, passer le gradient en is--away et charger l'image qui correspond
 
 		var $allProjets = $(".module--projet_short");
+
+		// au scroll, détecter si le bloc est visible
+
 		$('.module--projetList .module--projetList--projetName--links').each( function() {
 
   		$(this).on('mouseover', function() {
@@ -311,8 +321,8 @@ var theIntroLinks = {
     // remettre tous les projets dans une section "derniers projets réalisés"
     var filterByType = $('.module--intro a.is--active').attr("href");
     if( filterByType === undefined) {
-      $projetList.find("h3[data-type]").hide();
-      $projetList.find("h3:not([data-type])").show();
+      $projetList.find("h3[data-type]").addClass('is--hidden').attr("data-num", "100");
+      $projetList.find("h3:not([data-type])").removeClass('is--hidden');
 
       $items.each(function() {
         if( $(this).attr("data-index") !== undefined)
@@ -323,9 +333,6 @@ var theIntroLinks = {
 		    sortBy : ['number', 'type'],
       });
     } else {
-
-      $projetList.find("h3[data-type]").show();
-      $projetList.find("h3:not([data-type])").hide();
 
       filterByType = filterByType.substring(1);
       click++;
@@ -348,6 +355,9 @@ var theIntroLinks = {
         $(this).attr("data-num", index);
       });
 
+      $projetList.find("h3[data-type]").removeClass('is--hidden');
+      $projetList.find("h3:not([data-type])").addClass('is--hidden').attr("data-num", "110");
+
       $projetList.isotope( 'updateSortData', $items);
       $projetList.isotope({
 		    sortBy : ['number', 'type'],
@@ -364,12 +374,12 @@ var theProjetView = {
 
 	init : function() {
 
-
     // fonction qui gère le zoom-in sur l'image du haut
     var zoomedIn = false;
     $('.module--projet--visuel').on('click', function(e) {
       zoomedIn = !zoomedIn;
       $('body').attr( 'data-visuel', zoomedIn ? 'zoomedIn' : '');
+      $('html, body').animate({scrollTop : 0},400);
       return false;
     });
 

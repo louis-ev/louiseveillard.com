@@ -146,6 +146,11 @@ gulp.task('dev-watch', function() {
   gulp.watch( 'assets/less/*.less', ['less']);
 });
 
+// Watch Files For Changes
+gulp.task('watch', function() {
+  gulp.watch( userScripts, [ 'script-plugins']);
+  gulp.watch( 'assets/less/*.less', ['less']);
+});
 
 
 // Default Task

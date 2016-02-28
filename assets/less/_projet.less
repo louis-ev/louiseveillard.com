@@ -4,7 +4,6 @@
 .module--projet {
 
 	padding-bottom: 	@t-margin * 2;
-
 	transition: opacity .4s ease-out, margin 1.5s ease-out;
 
 	.module--projet--header {
@@ -21,6 +20,12 @@
   	z-index:  10;
 
     transition: margin-top .6s ease-out, background-color .4s ease;
+  -webkit-transition-timing-function: cubic-bezier(0.355, 0.255, 0.010, 1); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.355, 0.255, 0.010, 1.055);
+     -moz-transition-timing-function: cubic-bezier(0.355, 0.255, 0.010, 1.055);
+       -o-transition-timing-function: cubic-bezier(0.355, 0.255, 0.010, 1.055);
+          transition-timing-function: cubic-bezier(0.355, 0.255, 0.010, 1.055); /* custom */
+
 
     // à l'arrivée (quand is--loading), afficher l'image non collapsed
     // quand le body est loading, on collapse l'image
@@ -50,7 +55,7 @@
     	margin: 0 auto;
     	max-width: @t-largemaxwidth;
 
-      padding-top: 2rem;
+      padding-top: 1.5rem;
       .clearfix();
 
       transition: opacity .2s ease-out;
@@ -63,6 +68,10 @@
       .module--projet--header--text--index {
     		.projet--number;
 
+    		display: inline-block;
+    		width:  2em;
+    		margin-right: 0;
+
       	.styleLink( @rubrique, @color ) {
           [data-type= @{rubrique}]& {
             color: @color;
@@ -70,12 +79,13 @@
       	}
       	.styleLink( "vr", @c-vr);
       	.styleLink( "sites", @c-sites);
-      	.styleLink( "installations", @c-installations);
+      	.styleLink( "objets-interactifs", @c-objets-interactifs);
       	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
       }
 
   		h1 {
   			.projet--name;
+
   		}
 
       .module--projet--header--text--colLeft {
@@ -134,7 +144,7 @@
     right: 0;
 
     height: 100%;
-    width:  auto;
+    width: 100%;
 
     z-index:  0;
 
@@ -143,13 +153,44 @@
       margin: 0;
     }
 
-    img {
-			object-fit: cover;
-			width: 100%;
-			height: 100%;
+    .FigureImage-lazy {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      padding-bottom: 0 !important;
     }
 
-    transition: transform .6s ease-out, opacity .5s ease-out;
+    > .module--projet--visuel--inside {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      width:  100%;
+      height:   100%;
+
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+
+    img {
+/*
+			object-fit: cover;
+*/
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+    }
+
+    transition: transform 1.2s ease-in-out, opacity .5s ease-out;
+
+-webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
+   -moz-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
+     -o-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
+        transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055); /* custom */
+
 	}
 
   .module--projet--visuel {
@@ -160,7 +201,15 @@
 
   body[data-visuel='zoomedIn'] & .module--projet--header + .module--projet--visuel {
     transform: translate( 0, 0vh);
-    transform: scale(1.2);
+    transform: scale(1.05);
+
+    transition: transform .8s ease-in-out, opacity .5s ease-out;
+
+  -webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
+     -moz-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
+       -o-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
+          transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055); /* custom */
   }
 
 	.styleLink( @rubrique, @color ) {
@@ -168,10 +217,11 @@
       h3 {
         color: @color;
 		  }
-		  .module--projet--text a {
+
+		  .module--projet--header--text a, .module--projet--text a {
       	background-position: 0 100%;
       	background-repeat: no-repeat;
-      	background-size: 200% 2px;
+      	background-size: 200% 1px;
       	transition:	all .25s;
 
   			background-image: linear-gradient(to right,
@@ -186,7 +236,7 @@
 	}
 	.styleLink( "vr", @c-vr);
 	.styleLink( "sites", @c-sites);
-	.styleLink( "installations", @c-installations);
+	.styleLink( "objets-interactifs", @c-objets-interactifs);
 	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
 
 
@@ -244,7 +294,7 @@
   		}
   	}
 
-    .media-image {
+    .media-image, .media-video {
 
     	padding-top: 2rem;
     	padding-bottom: 2rem;
@@ -252,7 +302,7 @@
 
       margin: 0 auto;
 
-    	+ .media-image {
+    	+ .media-image, .media-video {
       	padding-top:  1rem;
     	}
 
@@ -260,6 +310,8 @@
         p {
           margin-left: 0;
           padding: 0;
+          max-width: 50%;
+          min-width: 320px - @t-margin * 2;
 
           font-size:  .8em;
         }
@@ -276,8 +328,8 @@
       	max-width: 66ch;
       	margin: 0 auto;
 
-      	padding-top: 1rem;
-      	padding-bottom: 1rem;
+      	padding-top: .8rem;
+      	padding-bottom: 1.3rem;
 
       	& + p, ul, ol {
         	padding-top: 0rem;

@@ -2,7 +2,7 @@ Title: Le Tricodeur
 
 ----
 
-Text: 
+Text:
 
 Le Tricodeur explore la mise en relation de deux pratiques créatives liées entre elles par un héritage commun : le tricot et la programmation. Au XIX<sup>e</sup> siècle, le métier à tisser Jacquard est précurseur dans l'utilisation de cartes perforées pour encoder un motif. Il a ensuite inspiré la création du Analytical Engine, ancêtre des ordinateurs modernes et première machine capable de mémoriser et d'exécuter un algorithme dit algébrique. Son développement a d'ailleurs mené à l'informatique contemporaine.
 
@@ -64,7 +64,7 @@ Le projet a été présenté par Sew & Laine à l'Hôtel de Ville de Bordeaux po
 
 ----
 
-Cover: 
+Cover:
 
 ----
 
@@ -76,7 +76,7 @@ Header: Un projet de détournement de machines à tricoter pour produire des mot
 
 ----
 
-Type: installations
+Type: objets-interactifs
 
 ----
 
@@ -84,7 +84,7 @@ Annee: 2014
 
 ----
 
-Headercol2: 
+Headercol2:
 
 ### thème
 ## Tricot + code + data
