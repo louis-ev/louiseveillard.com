@@ -252,13 +252,30 @@
 		padding:  0 @t-margin*2;
 
   	padding-top: 2rem;
-  	padding-bottom: 2rem;
+  	padding-bottom: 8rem;
 
   	transition: opacity .3s;
 
     // sur une page projet, virer les encarts lorsqu'on hover la projetListe
     body[module--gradient_overlay="is--away"] & {
       opacity: 0;
+    }
+
+
+    // ligne en bas
+    &:last-child:nth-of-type(odd) {
+      padding-bottom: 0;
+      &::after {
+        content: "";
+        border-top: 1px solid #444;
+        display: block;
+        max-width: @t-largemaxwidth;
+        width: 100%;
+        margin: 0 auto;
+
+        margin-top: 6rem;
+        margin-bottom: 4rem;
+      }
     }
 
 		&:nth-of-type(even) {
@@ -294,7 +311,7 @@
   		}
   	}
 
-    .media-image, .media-video {
+    .media-image, .media-video, .media-tweet {
 
     	padding-top: 2rem;
     	padding-bottom: 2rem;
@@ -304,6 +321,10 @@
 
     	+ .media-image, .media-video {
       	padding-top:  1rem;
+    	}
+
+    	.twitter-tweet {
+      	margin: 0 auto !important;
     	}
 
       .legende {
@@ -316,6 +337,7 @@
           font-size:  .8em;
         }
       }
+
 
     }
 

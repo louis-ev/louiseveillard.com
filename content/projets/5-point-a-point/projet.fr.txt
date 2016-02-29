@@ -1,0 +1,81 @@
+Title: Point à point
+
+----
+
+Text: 
+
+Point à Point se déroule de la manière suivante :
+
+1.  les participants relient les points indiqués sur une feuille A4 avec les outils de leurs choix (stylo, feutres, pinceaux, calame, crayons, scotch, etc.),
+2. une fois la feuille remplie, ils viennent la placer sur le scanner placé devant eux, puis ils appuient sur le bouton à l'avant
+3. le scan se lance et un un ordinateur récupère le résultat. Un programme écrit pour l'installation analyse automatiquement les tracés du participant et les transforme en quelques secondes en un alphabet complet. 
+4. cet alphabet est ensuite composé dans un format web, et publié sur le compte (link: https://twitter.com/pointapoint text: Point à Point sur Twitter popup: yes)
+5. en parallèle, une feuille au format A5 est composée automatiquement et imprimée avec une série de mots en lien avec un lieu ou un événement.
+
+(image: point-a-point_installation_batisseurs-possibles.jpg legende: Installation de Point à point aux Bâtisseurs de Possibles en juin 2015.)
+
+(image: pasted-image-10668.jpg legende: Les outils à dispositions pour les participants, ici aux Puces typo 2015.)
+
+(image: pasted-image-10724.jpg legende: Une participant en train de remplir la feuille des modules.)
+
+(image: point-a-point_installation_batisseurs-possibles-2.jpg legende: Un enfant relie les points de la feuille de modules aux Bâtisseurs de Possibles en juin 2015.)
+
+(image: pucestypo8.jpg legende: Un dessin en train d'être scanné.)
+
+(image: pucestypo6.jpg legende: Après l'interprétation par le programme, le tracé des modules devient alphabet et expression ici les mots "puces typo". )
+
+<figure class="media-tweet">
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Une nouvelle famille de caractères vient d’être dessinée par un visiteur des <a href="https://twitter.com/hashtag/pucestypo2015?src=hash">#pucestypo2015</a> ! <a href="http://t.co/3N9Xzydmsg">pic.twitter.com/3N9Xzydmsg</a></p>— pointapoint (@pointapoint) <a href="https://twitter.com/pointapoint/status/604702304701399040">30 mai 2015</a>
+</blockquote>
+<figcaption class="legende">
+<p>
+L'alphabet généré se retrouve également posté sur le compte Twitter @pointapoint, pour pouvoir être facilement récupéré par les participants. À la fin de la journée, le fil Twitter de ce compte affiche l'ensemble des productions des participants.
+</p>
+</figcaption>
+</figure>
+
+<figure class="media-tweet">
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Une nouvelle famille de caractères vient d’être dessinée par un visiteur des <a href="https://twitter.com/hashtag/pucestypo2015?src=hash">#pucestypo2015</a> ! <a href="http://t.co/RqomxOzdlQ">pic.twitter.com/RqomxOzdlQ</a></p>— pointapoint (@pointapoint) <a href="https://twitter.com/pointapoint/status/604693916458336256">30 mai 2015</a></blockquote>
+</figure>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+(image: point-a-point_puces-typo_sorties-1.jpg)
+
+(image: point-a-point_puces-typo_sorties-2.jpg)
+
+(image: pucestypo.jpg)
+
+<figure class="media-tweet">
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">La découverte ludique de la <a href="https://twitter.com/hashtag/typographie?src=hash">#typographie</a> :) <a href="https://twitter.com/hashtag/bpossibles?src=hash">#bpossibles</a> <a href="http://t.co/IHsVl2ccar">pic.twitter.com/IHsVl2ccar</a></p>— Bâtisseursdpossibles (@bpossibles) <a href="https://twitter.com/bpossibles/status/610727483860779008">16 juin 2015</a></blockquote>
+</figure>
+
+----
+
+Cover: 
+
+----
+
+Imagecover: point-a-point_puces-typo_sorties-2.jpg
+
+----
+
+Type: objets-interactifs
+
+----
+
+Annee: 2015
+
+----
+
+Header: Une installation interactive pour découvrir les principes de construction de familles de caractère. Point à point a été conçu pour animer des ateliers pour enfant.
+
+----
+
+Headercol2: 
+
+### thème
+## installation interactive et typographique
+### année de création
+## 2015
+### crédits
+## Réalisé avec (link: http://emiliecoquard.fr/ text: Émilie Coquard popup: yes)

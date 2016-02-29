@@ -678,11 +678,13 @@ body[module--gradient_overlay="is--away"] .module--intro {
   width: 100%;
   max-width: 66rem;
   margin: 0 auto;
-  min-height: 120vh;
+  min-height: 100vh;
   list-style-type: none;
   z-index: 1;
-  padding-left: 32px;
-  padding-right: 32px;
+  /*
+  padding-left: @t-margin*2;
+  padding-right: @t-margin*2;
+*/
   padding-top: 16px;
 }
 .module--projetList:hover .module--projetList--projetName .module--projetList--projetName--links {
@@ -989,11 +991,24 @@ body[data-visuel='zoomedIn'] .module--projet .module--projet--header + .module--
   padding: 0 12.5% 0 12.5%;
   padding: 0 32px;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 8rem;
   transition: opacity .3s;
 }
 body[module--gradient_overlay="is--away"] .module--projet .module--projet--text {
   opacity: 0;
+}
+.module--projet .module--projet--text:last-child:nth-of-type(odd) {
+  padding-bottom: 0;
+}
+.module--projet .module--projet--text:last-child:nth-of-type(odd)::after {
+  content: "";
+  border-top: 1px solid #444;
+  display: block;
+  max-width: 66rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
 }
 .module--projet .module--projet--text:nth-of-type(even) {
   background-color: #F0F0F0;
@@ -1026,7 +1041,8 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   display: inline-block;
 }
 .module--projet .module--projet--text .media-image,
-.module--projet .module--projet--text .media-video {
+.module--projet .module--projet--text .media-video,
+.module--projet .module--projet--text .media-tweet {
   padding-top: 2rem;
   padding-bottom: 2rem;
   max-width: 66rem;
@@ -1034,12 +1050,20 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 }
 .module--projet .module--projet--text .media-image + .media-image,
 .module--projet .module--projet--text .media-video + .media-image,
+.module--projet .module--projet--text .media-tweet + .media-image,
 .module--projet .module--projet--text .media-image .media-video,
-.module--projet .module--projet--text .media-video .media-video {
+.module--projet .module--projet--text .media-video .media-video,
+.module--projet .module--projet--text .media-tweet .media-video {
   padding-top: 1rem;
 }
+.module--projet .module--projet--text .media-image .twitter-tweet,
+.module--projet .module--projet--text .media-video .twitter-tweet,
+.module--projet .module--projet--text .media-tweet .twitter-tweet {
+  margin: 0 auto !important;
+}
 .module--projet .module--projet--text .media-image .legende p,
-.module--projet .module--projet--text .media-video .legende p {
+.module--projet .module--projet--text .media-video .legende p,
+.module--projet .module--projet--text .media-tweet .legende p {
   margin-left: 0;
   padding: 0;
   max-width: 50%;
