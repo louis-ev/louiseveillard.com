@@ -2,7 +2,7 @@ Title: Sociable Media
 
 ----
 
-Type: 
+Type: sites
 
 ----
 
@@ -23,3 +23,7 @@ Cover:
 ----
 
 Imagecover: 
+
+----
+
+Headercol2: 

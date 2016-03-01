@@ -12,8 +12,9 @@
 
 @c-vr:                     #0A997F;
 @c-sites:                  #03a9f4;
-@c-objets-interactifs:          #D1DF98;
+@c-objets-interactifs:    #D1DF98;
 @c-outils-pedagogiques: #FECD62;
+@c-autres:                 #ACA8A5;
 
 @t-margin: 16px;
 @t-largemaxwidth: 66rem;
@@ -246,6 +247,7 @@ a:hover {
   	.styleLink( "sites", @c-sites);
   	.styleLink( "objets-interactifs", @c-objets-interactifs);
   	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
+  	.styleLink( "autres", @c-autres);
 
     &:hover {
     	.styleLink( @rubrique, @color ) {
@@ -258,6 +260,7 @@ a:hover {
     	.styleLink( "sites", @c-sites);
     	.styleLink( "objets-interactifs", @c-objets-interactifs);
     	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
+      .styleLink( "autres", @c-autres);
     }
 
 	  &.is--active {
@@ -271,6 +274,7 @@ a:hover {
     	.styleLink( "sites", @c-sites);
     	.styleLink( "objets-interactifs", @c-objets-interactifs);
     	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
+      .styleLink( "autres", @c-autres);
     }
 
 	}
@@ -357,7 +361,7 @@ a:hover {
   	.styleLink( "sites", @c-sites);
   	.styleLink( "objets-interactifs", @c-objets-interactifs);
   	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
-
+  	.styleLink( "autres", @c-autres);
 
     body[data-template="projet"] & {
 

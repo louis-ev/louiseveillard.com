@@ -628,6 +628,9 @@ body[module--gradient_overlay="is--away"] .module--intro {
 .module--intro a[href*="outils-pedagogiques"] {
   background-image: linear-gradient(to right, #FECD62, #FECD62 50%, transparent 50%, transparent);
 }
+.module--intro a[href*="autres"] {
+  background-image: linear-gradient(to right, #ACA8A5, #ACA8A5 50%, transparent 50%, transparent);
+}
 .module--intro a:hover[href*="vr"] {
   background-size: 200% 10%;
 }
@@ -640,6 +643,9 @@ body[module--gradient_overlay="is--away"] .module--intro {
 .module--intro a:hover[href*="outils-pedagogiques"] {
   background-size: 200% 10%;
 }
+.module--intro a:hover[href*="autres"] {
+  background-size: 200% 10%;
+}
 .module--intro a.is--active[href*="vr"] {
   background-size: 200% 100%;
 }
@@ -650,6 +656,9 @@ body[module--gradient_overlay="is--away"] .module--intro {
   background-size: 200% 100%;
 }
 .module--intro a.is--active[href*="outils-pedagogiques"] {
+  background-size: 200% 100%;
+}
+.module--intro a.is--active[href*="autres"] {
   background-size: 200% 100%;
 }
 .projet--number {
@@ -725,6 +734,9 @@ body[module--gradient_overlay="is--away"] .module--intro {
 }
 .module--projetList .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links--index {
   color: #FECD62;
+}
+.module--projetList .module--projetList--projetName[data-type="autres"] .module--projetList--projetName--links--index {
+  color: #ACA8A5;
 }
 body[data-template="projet"] .module--projetList .module--projetList--projetName {
   /*
