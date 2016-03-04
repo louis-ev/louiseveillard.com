@@ -245,32 +245,14 @@ var theProjetList = {
   			projetIndex = $(this).parent("li").attr("data-index");
   			$thisProjet = $allProjets.find(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
 
-  			$thisProjet
-  			  .addClass("is--shown")
-  			  .velocity({
-    			  	    opacity: 1
-  			  }, {
-            queue: false,
-            duration: 200,
-            easing: "swing",
-  			  });
-  			  ;
+  			$thisProjet.addClass("is--shown");
 
   		});
   		$(this).on('mouseleave', function() {
 
   			projetIndex = $(this).parent("li").attr("data-index");
   			$thisProjet = $allProjets.find(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
-  			$thisProjet
-  			  .removeClass("is--shown")
-  			  .velocity({
-    			  	    opacity: 0
-  			  }, {
-            queue: false,
-            duration: 200,
-            easing: "swing",
-  			  });
-  			  ;
+  			$thisProjet.removeClass("is--shown");
 
   			$("body").attr("module--gradient_overlay", "");
 

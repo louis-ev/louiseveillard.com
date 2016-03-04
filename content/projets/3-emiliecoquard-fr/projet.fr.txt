@@ -8,7 +8,7 @@ Text:
 
 La page d'accueil, sobre et colorée, donne l'atmosphère des projets présentés par la suite. Elle est très légère (moins de 150ko) et n'utilise que des éléments vectoriels : famille de caractère et fichiers SVG intégrés au document.
 
---> vidéo apparition du site
+(video: webm: emiliecoquardfr-apparition-web.webm mp4: emiliecoquardfr-apparition-web.mp4 caption: Sélection d'une catégorie.  autoplay: true loop: true)
 
 ---
 

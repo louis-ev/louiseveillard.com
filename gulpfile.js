@@ -18,8 +18,8 @@ var pluginsScripts = [
   'bower_components/jquery/dist/jquery.js',
   'bower_components/bootstrap/dist/js/bootstrap.js',
   'bower_components/isotope/dist/isotope.pkgd.min.js',
-  'bower_components/lazysizes/lazysizes.min.js',
-  'bower_components/velocity/velocity.min.js'
+  'bower_components/lazysizes/plugins/bgset/ls.bgset.min.js',
+  'bower_components/lazysizes/lazysizes.min.js'
 ];
 
 var userScripts = [
@@ -72,8 +72,11 @@ gulp.task('less', function() {
     }))
     .pipe(less())
     .pipe(autoprefixer({
-    	browsers: ['last 3 versions'],
-    	cascade: false
+      browsers: [
+        'last 2 versions',
+        'android 4',
+        'opera 12'
+      ]
     }))
     .pipe(gulp.dest('assets/css'));
 });
@@ -96,8 +99,11 @@ gulp.task('css', function () {
     }))
     .pipe(less())
     .pipe(autoprefixer({
-			browsers: ['last 3 versions'],
-			cascade: false
+      browsers: [
+        'last 2 versions',
+        'android 4',
+        'opera 12'
+      ]
 		}))
     .pipe(gulp.dest('assets/css'))
     .pipe(nano({discardComments: {removeAll: true}}))

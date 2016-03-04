@@ -47,6 +47,7 @@ kirbytext::$tags['image'] = array(
 		'thumbwidth',
 		'maxLinkedImageWidth',
 		'secondLinkedImageWidth',
+		'return_srcset',
 	),
 	'html' => function($tag) {
 
@@ -116,6 +117,7 @@ kirbytext::$tags['image'] = array(
 		$outputlink = $tag->attr('outputlink');
 		$maxLinkedImageWidth = $tag->attr('maxLinkedImageWidth');
 		$secondLinkedImageWidth = $tag->attr('secondLinkedImageWidth');
+		$return_srcset = $tag->attr('return_srcset');
 		$nofigure = $tag->attr('nofigure');
 		$thumbwidth = $tag->attr('thumbwidth');
 		$multisizes = $tag->attr('multisizes');
@@ -164,6 +166,10 @@ kirbytext::$tags['image'] = array(
 			if( !isset( $secondLinkedImageWidth)) {
 				$secondLinkedImageWidth = false;
 			}
+		}
+
+		if( !isset( $return_srcset)) {
+			$return_srcset = false;
 		}
 
 		if( !isset( $nofigure)) {
@@ -326,6 +332,9 @@ kirbytext::$tags['image'] = array(
 				$ms_datasrcset .= generate_thumb( $image, $quality, $crop, $thumbwidth);
 
 			}
+
+      if( $return_srcset)
+			  return $ms_datasrcset;
 
 			if($feed == true) {
 
