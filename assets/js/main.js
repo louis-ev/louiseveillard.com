@@ -245,14 +245,32 @@ var theProjetList = {
   			projetIndex = $(this).parent("li").attr("data-index");
   			$thisProjet = $allProjets.find(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
 
-  			$thisProjet.addClass("is--shown");
+  			$thisProjet
+  			  .addClass("is--shown")
+  			  .velocity({
+    			  	    opacity: 1
+  			  }, {
+            queue: false,
+            duration: 200,
+            easing: "swing",
+  			  });
+  			  ;
 
   		});
   		$(this).on('mouseleave', function() {
 
   			projetIndex = $(this).parent("li").attr("data-index");
   			$thisProjet = $allProjets.find(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
-  			$thisProjet.removeClass("is--shown");
+  			$thisProjet
+  			  .removeClass("is--shown")
+  			  .velocity({
+    			  	    opacity: 0
+  			  }, {
+            queue: false,
+            duration: 200,
+            easing: "swing",
+  			  });
+  			  ;
 
   			$("body").attr("module--gradient_overlay", "");
 
@@ -269,10 +287,9 @@ var theIntroLinks = {
     click = 0;
     var $items = $projetList.find( ".isotope--item");
     $items.each(function() {
-      if( $(this).attr("data-index") !== undefined)
-        $(this).attr("data-num", $(this).attr("data-index"));
+      if( $(this).attr("data-selected") === undefined)
+        $(this).attr("data-selected", 0);
     });
-
 
   	$projetList.isotope({
       itemSelector: '.isotope--item',
@@ -289,6 +306,22 @@ var theIntroLinks = {
       },
 */
       getSortData: {
+        'selected': function( item ) {
+          $item = $(item);
+          var selected = $item.attr('data-selected');
+          if( selected !== undefined)
+            return parseInt( selected, 10);
+          else
+            return false;
+        },
+        'index': function( item ) {
+          $item = $(item);
+          var index = $item.attr('data-index');
+          if( index !== undefined)
+            return parseInt( index, 10);
+          else
+            return false;
+        },
         'number': function( item ) {
           $item = $(item);
           var num = $item.attr('data-num');
@@ -306,7 +339,7 @@ var theIntroLinks = {
             return false;
         },
 		  },
-		  sortBy : ['number', 'type'],
+		  sortBy : ['index', 'number', 'type', ],
     });
 
 
@@ -321,16 +354,18 @@ var theIntroLinks = {
     // remettre tous les projets dans une section "derniers projets réalisés"
     var filterByType = $('.module--intro a.is--active').attr("href");
     if( filterByType === undefined) {
-      $projetList.find("h3[data-type]").addClass('is--hidden').attr("data-num", "100");
+      $projetList.find("h3[data-type]").addClass('is--hidden');
       $projetList.find("h3:not([data-type])").removeClass('is--hidden');
 
+/*
       $items.each(function() {
         if( $(this).attr("data-index") !== undefined)
           $(this).attr("data-num", $(this).attr("data-index"));
       });
+*/
       $projetList.isotope( 'updateSortData', $items);
       $projetList.isotope({
-		    sortBy : ['number', 'type'],
+		    sortBy : ['index', 'number', 'type'],
       });
     } else {
 
@@ -343,24 +378,21 @@ var theIntroLinks = {
         return $(this).attr("data-type") == filterByType;
       });
 
-      var index = 0;
-
       $selectedItems.each(function() {
-        currentCount = $(this).attr("data-num");
-        $(this).attr("data-num", index);
+        $(this).attr("data-selected", 0);
       });
-      index++;
+
+
       $items.not( $selectedItems).each(function() {
-        currentCount = $(this).attr("data-num");
-        $(this).attr("data-num", index);
+        $(this).attr("data-selected", 1);
       });
 
       $projetList.find("h3[data-type]").removeClass('is--hidden');
-      $projetList.find("h3:not([data-type])").addClass('is--hidden').attr("data-num", "110");
+      $projetList.find("h3:not([data-type])").addClass('is--hidden');
 
       $projetList.isotope( 'updateSortData', $items);
       $projetList.isotope({
-		    sortBy : ['number', 'type'],
+		    sortBy : ['selected', 'number', 'type', 'index'],
       });
     }
 
@@ -399,7 +431,7 @@ var theProjetView = {
 		$(window).on('scroll', function () {
       scrollY = window.pageYOffset;
       if( scrollY < wHeight) {
-        var cssOpacity = scrollY.map( 0, wHeight * .34, 1, 0)
+        var cssOpacity = scrollY.map( 0, wHeight * .66, 1, 0)
         $visuelTop.css("opacity", cssOpacity);
       }
     });
@@ -416,5 +448,5 @@ $(document).ready(function() {
 	$('body').removeClass("is--loading");
 
 	if( $(".module--cv").length > 0)
-	setTimeout( canvasCV.init(), 400);
+	  setTimeout( canvasCV.init(), 400);
 });

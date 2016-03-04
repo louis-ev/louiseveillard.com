@@ -34,6 +34,11 @@ c::set('multisizes', true);
 c::set('lazyloadimages', true);
 
 c::set('smartypants', true);
+c::set('kirby.extension.videoext.video_tag', true);
+c::set('kirby.extension.videoext.class', 'media-video');
+c::set('kirby.extension.videoext.caption_class', 'media-video');
+c::set('kirby.extension.videoext.controls', false);
+
 
 c::set('languages', array(
   array(

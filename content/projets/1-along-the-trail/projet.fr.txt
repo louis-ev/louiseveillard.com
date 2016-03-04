@@ -26,7 +26,7 @@ Les formes qui contiennent des informations (mots, dates, lieux, etc.) brillent 
 
 ---
 
-**Les paysages d’Along the Trail se modifient donc en fonction des personnes qui les contemplent.** La trame narrative et la succession des paysages restent les mêmes mais les objets qui les peuplent et les informations qu’ils contiennent changent. Ces espaces deviennent une représentation de la personne qui en est à l’origine, dans une expérimentation portrait/paysage qui s’inspire des travaux d’Isamu Noguchi.
+Les paysages d’Along the Trail se modifient donc en fonction des personnes qui les contemplent. La trame narrative et la succession des paysages restent les mêmes mais les objets qui les peuplent et les informations qu’ils contiennent changent. Ces espaces deviennent une représentation de la personne qui en est à l’origine, dans une expérimentation portrait/paysage qui s’inspire des travaux d’Isamu Noguchi.
 
 La navigation d’un univers à un autre se fait par un système très simple d’objets à viser avec le regard. Un petit touchpad sur le côté du casque sert à valider le déplacement. Il est cependant impossible de revenir en arrière car la narration suit une progression où les informations récupérées deviennent de plus en plus intimes et anciennes.
 

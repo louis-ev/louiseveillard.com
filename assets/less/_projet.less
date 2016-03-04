@@ -251,8 +251,8 @@
 		padding: 0 12.5% 0 12.5%;
 		padding:  0 @t-margin*2;
 
-  	padding-top: 2rem;
-  	padding-bottom: 8rem;
+  	padding-top:    2rem;
+  	padding-bottom: 2rem;
 
   	transition: opacity .3s;
 
@@ -283,7 +283,8 @@
       color: @c-pagebg;
 		}
 
-  	img {
+  	img, video {
+    	width: 100%;
   		max-width: 100%;
   		height: auto;
   	}
@@ -311,15 +312,16 @@
   		}
   	}
 
-    .media-image, .media-video, .media-tweet {
+    >.media-image, >.media-video, >.media-tweet {
 
+      display: block;
     	padding-top: 2rem;
     	padding-bottom: 2rem;
       max-width: @t-largemaxwidth;
 
       margin: 0 auto;
 
-    	+ .media-image, .media-video {
+    	+ .media-image, + .media-video {
       	padding-top:  1rem;
     	}
 
@@ -327,15 +329,13 @@
       	margin: 0 auto !important;
     	}
 
-      .legende {
-        p {
-          margin-left: 0;
-          padding: 0;
-          max-width: 50%;
-          min-width: 320px - @t-margin * 2;
+      .legende, .caption-bottom {
+        margin-left: 0;
+        padding: 0;
 
-          font-size:  .8em;
-        }
+        max-width: 66ch;
+
+        font-size:  .8em;
       }
 
 

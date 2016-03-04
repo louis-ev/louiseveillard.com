@@ -34,8 +34,8 @@
 		echo kirbytag(array(
 		  'image'  				=> $image->filename(),
 		  'class'					=> "image cover",
-		  'thumbwidth' 		=> 2800,
-		  'maxLinkedImageWidth'	=> 2400,
+		  'thumbwidth' 		=> /* 2800 */800,
+		  'maxLinkedImageWidth'	=> /* 2400 */400,
 		  'outputlink'    => false,
 		  'originalPage'  => $p
 		));

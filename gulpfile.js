@@ -18,7 +18,8 @@ var pluginsScripts = [
   'bower_components/jquery/dist/jquery.js',
   'bower_components/bootstrap/dist/js/bootstrap.js',
   'bower_components/isotope/dist/isotope.pkgd.min.js',
-  'bower_components/lazysizes/lazysizes.min.js'
+  'bower_components/lazysizes/lazysizes.min.js',
+  'bower_components/velocity/velocity.min.js'
 ];
 
 var userScripts = [

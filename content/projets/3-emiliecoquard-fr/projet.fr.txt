@@ -4,13 +4,28 @@ Title: emiliecoquard.fr
 
 Text: 
 
+(image: site-emiliecoquard-fr-2.png legende: Page d'accueil du site)
+
+La page d'accueil, sobre et colorée, donne l'atmosphère des projets présentés par la suite. Elle est très légère (moins de 150ko) et n'utilise que des éléments vectoriels : famille de caractère et fichiers SVG intégrés au document.
+
+--> vidéo apparition du site
+
+---
+
+Les projets peuvent être filtrés par catégorie pour permettre d'orienter un visiteur vers les projets qui l'intéresse davantage.
+
+(video: mp4: emiliecoquardfr-tri-categorie-web_1.mp4 caption: Sélection d'une catégorie.  autoplay: true loop: true)
+
+
+--> vidéo chargement d'une page
+
 ----
 
 Cover: 
 
 ----
 
-Imagecover: 
+Imagecover: capture-decran-2016-03-01-a-16.59.01.png
 
 ----
 
@@ -22,8 +37,15 @@ Annee: 2015
 
 ----
 
-Header: 
+Header: Un site web minimaliste et fluide pour présenter les projets d'une graphiste à cheval entre la datavisualisation, la typographie et l'illustration.
 
 ----
 
 Headercol2: 
+
+### brief
+## Portfolio de la graphiste Émilie Coquard
+### date de réalisation
+## Novembre 2014
+### crédits
+## Créé avec Émilie Coquard
