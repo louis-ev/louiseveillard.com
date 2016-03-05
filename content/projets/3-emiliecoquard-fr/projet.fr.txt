@@ -4,20 +4,23 @@ Title: emiliecoquard.fr
 
 Text: 
 
-(image: site-emiliecoquard-fr-2.png legende: Page d'accueil du site)
+(image: site-emiliecoquard-fr-2.png legende: La page d'accueil du site d'Émilie Coquard.)
 
 La page d'accueil, sobre et colorée, donne l'atmosphère des projets présentés par la suite. Elle est très légère (moins de 150ko) et n'utilise que des éléments vectoriels : famille de caractère et fichiers SVG intégrés au document.
-
-(video: webm: emiliecoquardfr-apparition-web.webm mp4: emiliecoquardfr-apparition-web.mp4 caption: Sélection d'une catégorie.  autoplay: true loop: true)
 
 ---
 
 Les projets peuvent être filtrés par catégorie pour permettre d'orienter un visiteur vers les projets qui l'intéresse davantage.
 
-(video: mp4: emiliecoquardfr-tri-categorie-web_1.mp4 caption: Sélection d'une catégorie.  autoplay: true loop: true)
+(video: mp4: emiliecoquardfr-tri-categorie-web_1.mp4 webm: emiliecoquardfr-tri-categorie-web_1.webm caption: Sélection d'une catégorie.  autoplay: true loop: true class: capture_siteweb)
 
+La navigation du site se produit sur une seule page du début à la fin de la visite. Lorsqu'un projet est ouvert, un encart dont la couleur dépend de la catégorie du projet s'ouvre au-dessus de la liste de projets. La lettre du projet est reprise à l'intérieur de cet encart et animée tant que les 3 premières images du projet demandé ne sont pas chargées. Le projet s'affiche lorsqu'il est prêt à être consulté.
 
---> vidéo chargement d'une page
+(video: mp4: emiliecoquardfr-ouverture_projet-web.mp4 webm: emiliecoquardfr-ouverture_projet-web.webm caption: Survol sur la vignette d'un projet et click sur Le P'tit Libé.  autoplay: true loop: true class: capture_siteweb)
+
+Arrivé en bas de page, le projet se referme et le menu réapparaît de manière à proposer une navigation transversale vers d'autres projets sans repasser par l'accueil. Le tri dans les projets est conservé pour permettre de facilement identifier les autres projets de la même catégorie.
+
+(image: emiliecoquardfr-vignette-vue.png legende: Les projets déjà consultés affichent une lettre "en plein".)
 
 ----
 

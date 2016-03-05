@@ -566,11 +566,13 @@ a:hover {
 }
 .module--navbar a {
   display: block;
-  padding: 1rem;
-  margin-left: -1rem;
-  font-size: 1.2rem;
+  padding: 16px;
+  margin-left: -16px;
+  margin-top: 16px;
+  font-size: .8rem;
   font-family: 'GT Cinetype Bold';
-  text-transform: lowercase;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
   pointer-events: all;
 }
 .module--navbar ul {
@@ -865,6 +867,9 @@ body:not(.is--loading)[data-visuel='zoomedIn'] .module--projet .module--projet--
 [data-type="outils-pedagogiques"].module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
   color: #FECD62;
 }
+[data-type="autres"].module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
+  color: #ACA8A5;
+}
 .module--projet .module--projet--header .module--projet--header--text h1 {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -1008,6 +1013,17 @@ body[data-visuel='zoomedIn'] .module--projet .module--projet--header + .module--
   background-size: 200% 1px;
   transition: all .25s;
   background-image: linear-gradient(to right, #FECD62, #FECD62 50%, transparent 50%, transparent);
+}
+[data-type="autres"].module--projet h3 {
+  color: #ACA8A5;
+}
+[data-type="autres"].module--projet .module--projet--header--text a,
+[data-type="autres"].module--projet .module--projet--text a {
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 200% 1px;
+  transition: all .25s;
+  background-image: linear-gradient(to right, #ACA8A5, #ACA8A5 50%, transparent 50%, transparent);
 }
 .module--projet .module--projet--text {
   position: relative;
