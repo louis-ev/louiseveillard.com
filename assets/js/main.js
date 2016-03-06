@@ -413,7 +413,7 @@ var theProjetView = {
 		$(window).on('scroll', function () {
       scrollY = window.pageYOffset;
       if( scrollY < wHeight) {
-        var cssOpacity = scrollY.map( 0, wHeight * .66, 1, 0)
+        var cssOpacity = scrollY.map( 0, wHeight * .44, 1, 0)
         $visuelTop.css("opacity", cssOpacity);
       }
     });

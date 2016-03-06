@@ -3,7 +3,6 @@
 
 <header class="module--projet--header" data-index="<?= $index ?>">
 
-
 	<div class="module--projet--header--text">
     <h1>
   	  <span class="module--projet--header--text--index"><?= $index; ?></span>
@@ -40,4 +39,3 @@
 <?php
   endif;
 ?>
-
