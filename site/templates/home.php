@@ -13,7 +13,7 @@
 
   <div class="module--projet_short">
     <?php foreach($pages->findByURI('projets')->children()->visible() as $p): ?>
-  		<article class="module--projet">
+  		<article class="module--projet" data-visuel="zoomedIn">
   			<?php snippet( "projet--header", array( 'p' => $p)); ?>
   		</article>
   	<?php endforeach ?>

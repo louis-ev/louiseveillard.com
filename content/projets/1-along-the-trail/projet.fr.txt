@@ -20,7 +20,7 @@ Along the Trail récupère les données d’un compte Facebook (informations 
 
 (image: along_the_trail-dossier_presentation-2016.jpg)
 
-(video: mp4: u2-boite.mp4 webm: u2-boite.webm autoplay: true loop: true poster: boites-01.jpg)
+(video: mp4: u2-boite.mp4 webm: u2-boite.webm poster: boites-01.jpg)
 
 Les formes qui contiennent des informations (mots, dates, lieux, etc.) brillent et se parent de couleurs lumineuses. Quand on les regarde avec insistance, les données qu’elles renferment se révèlent et deviennent lisibles. Le reste du paysage, monochrome, contraste fortement avec ces objets. Il ne contient aucune donnée et ne changent pas en fonction du pro l de la personne qui l’observe.
 
@@ -30,11 +30,9 @@ Les paysages d’Along the Trail se modifient donc en fonction des personnes qui
 
 La navigation d’un univers à un autre se fait par un système très simple d’objets à viser avec le regard. Un petit touchpad sur le côté du casque sert à valider le déplacement. Il est cependant impossible de revenir en arrière car la narration suit une progression où les informations récupérées deviennent de plus en plus intimes et anciennes.
 
-(video: mp4: u4-meduses.mp4 webm: u4-meduses.webm autoplay: true loop: true)
+(video: mp4: u4-meduses.mp4 webm: u4-meduses.webm)
 
-## Installation d’Along the Trail
-
-Depuis le mois de juin 2015 Along the Trail est en bêta fermé dans le but de réunir des témoignages et des retours d’expérience. L’application peut s’installer sur tous les smartphones Samsung Galaxy Note 4. Ce smartphone peut ensuite être installé à l’intérieur d’un autre accessoire grand public, le Gear VR, pour le transformer en un casque de réalité virtuelle. Son écran devient donc celui du casque, et les applications tournent sur le smartphone lui-même.
+L’application peut s’installer sur tous les smartphones Samsung Galaxy Note 4. Ce smartphone peut ensuite être installé à l’intérieur d’un autre accessoire grand public, le Gear VR, pour le transformer en un casque de réalité virtuelle. Son écran devient donc celui du casque, et les applications tournent sur le smartphone lui-même.
 
 (image: p1010632-1.jpg)
 

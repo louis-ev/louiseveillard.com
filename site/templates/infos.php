@@ -4,11 +4,13 @@
 <main class="main" role="main">
 
 		<section class="module--cv">
+<!--
 			<div class="header status-witness bouton-outline" data-target="collapsable">
 				<h2>
 					Informations
 				</h2>
 			</div>
+-->
 			<div id="details" class="ui three column stackable grid">
 
 <!-- 				<div class="row"> -->
@@ -18,7 +20,7 @@
 					    	    	<h3>Activités</h3>
 								</div>
 								<ul class="description">
-					    		<li>Designer indépendant et développeur front-end depuis 2010.</li>
+					    		<li>Designer indépendant et développeur front-end à Paris.</li>
 						    	<li>Co-fondateur de <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, un collectif dans la réalité virtuelle.</li>
 									<li>Étudiant-chercheur en design d'interaction au laboratoire de recherche <a href='http://sociablemedia.ensadlab.fr/' data-link='socmed' target='_blank'>EnsadLab Sociable&nbsp;Media</a> à l'EnsadLab, aux <a href="http://www.ensad.fr/" target='_blank'>Arts Décoratifs de Paris</a>.</li>
 							    	<li>Coorganisateur au <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>FAB</a>, association à but non lucratif dédiée la promotion d'outils libres pour la création.</li>
@@ -112,7 +114,7 @@
 				    	    	<h3>Interventions</h3>
 							</div>
 							<ul class="description">
-								<li>Conférence à l'<a href="http://www.ensad.fr/" target="_blank">ENSAD</a> pour la présentation du projet de création et de réalisation de 10000 couvertures pour livres numériques (2015).</li>
+								<li>Conférence à l'<a href="http://www.ensad.fr/" target="_blank">ENSAD</a> pour la présentation du projet de création et de réalisation de 10000 couvertures pour livres numériques (2016).</li>
 								<li>Conférence aux <a href="http://delure.org/les-a-cotes/evenements-et-workshops/mardis-de-lure-1" target="_blank" data-link='delure'>Mardis de Lure</a> à la Générale à Paris pour présenter des outils pour enseigner le design et encourager des pédagogies actives (2015).</li>
 								<li>Workshop à la <a href="http://www.newschool.edu/parsons-paris/" target="_blank">PARSONS</a> à Paris dans le cours <em>Creativity and Computation Lab</em> (2015).</li>
 								<li>Workshop à la conférence <a href="http://learnxdesign2015.com/" target="_blank">LearnxDesign 2015 </a> à Chicago, avec l'équipe de <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l'atelier des chercheurs</a>.</li>
@@ -153,15 +155,16 @@
 									<h3>Publications</h3>
 								</div>
 								<ul class="description">
+									<li><a href="http://www.eyrolles.com/Audiovisuel/Livre/fibres-fils-tissus-9782212143126" target="_blank">Fibres, fils, tissus</a>, éditions Eyrolles (2016) – introduction au <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
 									<li>Gourlet, P., Dervieux, F., Eveillard, L., Mancini, J. (2015) 'The Research Diary: Documenting and Publishing Classrooms' Activites', in International Journal for Cross-Disciplinary Subjects in Education, Volume 6, Issue 1.</li>
 									<li>Gourlet, P., Dervieux, F., Eveillard, L., Garcin, S. (2015) 'Designing learning tools for education', workshop DRS/LearnxDesign 2015, Chicago, USA.</li>
-									<li><a href="img/tri/bergere-de-france-inspire-tricodeur-2.jpg" target="_blank">inspire&vous</a>, le magazine de Bergère de France (2014)</li>
-									<li><a href="http://www.pearson.fr/livre/?GCOI=27440100443180" target="_blank">Projets créatifs avec Arduino</a> (2014)</li>
-									<li><a href="img/hab/hab-intramuros-172.jpg" target="_blank">Intramuros #172</a> (mai-juin 2014)</li>
-									<li><a href="http://www.mouvement.net/analyses/enquetes/faciliter-lacces-au-web" target="_blank">Mouvement #72</a> (janvier-février 2014)</li>
-									<li>étapes: #216 (octobre 2013)</li>
-									<li>étapes: #209 (octobre 2012)</li>
-									<li>Basse Def #3 (juin 2010)</li>
+									<li><a href="./content/2-infos/bergere-de-france-inspire-tricodeur-2.jpg" target="_blank">inspire&vous</a>, le magazine de Bergère de France (2014) – présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
+									<li><a href="http://www.pearson.fr/livre/?GCOI=27440100443180" target="_blank">Projets créatifs avec Arduino</a> (2014) – présentation de <a href="./projets/slowscreen" data-link='slowscreen'>Slowscreen</a>.</li>
+									<li><a href="./content/2-infos/hab-intramuros-172.jpg" target="_blank">Intramuros #172</a> (mai-juin 2014) – publication du projet Habsense.</li>
+									<li><a href="http://www.mouvement.net/analyses/enquetes/faciliter-lacces-au-web" target="_blank">Mouvement #72</a> (janvier-février 2014) – présentation du projet Breakpoint.</li>
+									<li>étapes: #216 (octobre 2013) – présentation de <a href="./projets/slowscreen" data-link='slowscreen'>Slowscreen</a>.</li>
+									<li>étapes: #209 (octobre 2012) – présentation de Hypomnémata.</li>
+									<li>Basse Def #3 (juin 2010).</li>
 								</ul>
 					    </div>
 			    	</div>

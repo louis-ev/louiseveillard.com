@@ -32,18 +32,8 @@
     // à l'arrivée (quand is--loading), afficher l'image non collapsed
     // quand le body est loading, on collapse l'image
     // sans js on ne peut pas désactiver le zoomedin
-    body:not(.is--loading)[data-visuel=''] & {
+    body:not(.is--loading) [data-visuel='']& {
       transform: translate( 0, 0vh);
-    }
-
-    // avec JS, après chargement, full screen image
-    body:not(.is--loading)[data-visuel='zoomedIn'] & {
-      transform: translate( 0, 100vh - @t-bandeauImage);
-
-      ~ .module--projet--text:nth-of-type(1) {
-        transform: translate( 0, 100vh - @t-bandeauImage);
-      }
-
     }
 
     .module--projet--header--text {
@@ -134,7 +124,7 @@
     background-color: @c-pagebg;
     color: @c-textColor;
     overflow: hidden;
-    position: fixed;
+    position: absolute;
     display: block;
 
     top: 0px;
@@ -159,14 +149,25 @@
     }
 
     > .module--projet--visuel--inside {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      opacity: 1;
 
+      pointer-events: none;
       background-size: cover;
       background-position: center center;
+
+      html.js & {
+        opacity: 0;
+
+        &.lazyloaded {
+          opacity: 1;
+        }
+
+      }
     }
 
     img {
@@ -174,27 +175,36 @@
 
     }
 
-    transition: transform 1.2s ease-in-out, opacity .5s ease-out;
-
--webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1); /* older webkit */
--webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
-   -moz-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
-     -o-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
-        transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055); /* custom */
 
 	}
 
-  .module--projet--visuel {
+
+	// effet d'animation au click
+
+  // avec JS, après chargement, full screen image
+  &[data-visuel='zoomedIn'] .module--projet--header {
+    transform: translate( 0, 100vh - @t-bandeauImage);
+
+    ~ .module--projet--text:nth-of-type(1) {
+      transform: translate( 0, 100vh - @t-bandeauImage);
+    }
+
+  }
+
+
+  .module--projet--visuel--inside {
     transform: translate(0, ~"calc( -50% + 250px/2)");
     transform: translate(0, ~"calc( -50% + @{t-bandeauImage}/2)");
     opacity: .8;
+
+    transition: transform .8s ease-in-out, opacity .5s ease-out;
+
   }
 
-  body[data-visuel='zoomedIn'] & .module--projet--header + .module--projet--visuel {
+  &[data-visuel='zoomedIn'] .module--projet--visuel--inside {
     transform: translate( 0, 0vh);
     transform: scale(1.05);
 
-    transition: transform .8s ease-in-out, opacity .5s ease-out;
 
   -webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1); /* older webkit */
   -webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
@@ -259,7 +269,6 @@
     body[module--gradient_overlay="is--away"] & {
       opacity: 0;
     }
-
 
     // ligne en bas
     &:last-child:nth-of-type(odd) {
@@ -332,12 +341,24 @@
         margin-left: 0;
         padding: 0;
 
-        max-width: 66ch;
-
+        max-width: 76ch;
         font-size:  .8em;
+
+        p {
+          max-width: 76ch;
+        }
       }
+    }
 
+    .media-video {
+      &.capture_siteweb {
+          border: 1px solid #E3E3E3;
+          border-radius: 4px;
+          padding-top: 40px;
+          background-color: #E3E3E3;
+          box-shadow: 0px 0px 30px -10px #ccc;
 
+      }
     }
 
   	p, ul, ol {
@@ -373,4 +394,28 @@
 
 	}
 }
+
+
+.styleProjet( @rubrique, @color ) {
+  body[data-rubrique= @{rubrique}] {
+    .module--projet--header {
+//       box-shadow: 0px 50px 50px 45px @color;
+
+    }
+
+    hr {
+//       border-color: @color;
+    }
+
+    .module--projet--visuel {
+//       background-color: @color;
+    }
+	}
+}
+.styleProjet( "vr", @c-vr);
+.styleProjet( "sites", @c-sites);
+.styleProjet( "objets-interactifs", @c-objets-interactifs);
+.styleProjet( "outils-pedagogiques", @c-outils-pedagogiques);
+.styleProjet( "autres", @c-autres);
+
 

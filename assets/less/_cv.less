@@ -1,10 +1,12 @@
 .module--cv {
 
   position: relative;
-	padding: 0 @t-margin*2;
-	max-width: @t-largemaxwidth;
-	margin: 0 auto;
+
+	.containMe;
+  padding-top:  22vh;
+
 	font-size:  .8em;
+
 
 	a {
 		display: inline;
@@ -88,6 +90,10 @@
 		}
   }
 
+  h3 {
+    .titleCaps;
+  }
+
   .grid {
     display: block;
     margin: 0 -@t-margin;
@@ -96,6 +102,17 @@
       float: left;
       width:  33.333%;
       padding: 0 @t-margin;
+
+    }
+
+    @media screen and (max-width: @m-tablet-max) {
+      margin: 0;
+      .column {
+        width: 100%;
+        padding: 0;
+        float: none;
+      }
+
     }
 
   }

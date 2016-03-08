@@ -393,6 +393,7 @@ kirbytext::$tags['image'] = array(
 						'data-src'  => $thumburl,
 						'data-sizes' =>	"auto",
 						'data-srcset'  => $ms_datasrcset,
+            'data-optimumx' => "1.6",
 						'class'     => $class . ' lazyload',
 						'alt'       => html($alt),
             'data-parent-fit' => "cover"

@@ -68,8 +68,8 @@ var canvasCV = {
 					var cdgreen = processing.color(9, 96, 111);
 					var clgreen = processing.color( 125, 193, 200);
 
-					var randomToInterval = processing.map( randomInt, 0, 2, 140, 400 );
-					//randomToInterval = 240;
+					//var randomToInterval = processing.map( randomInt, 0, 2, 240, 800 );
+					randomToInterval = 400;
 
 					var noHorizontalLine = 0;
 					if( Math.abs(startPointy - endPointy) < 20 ) {
@@ -77,20 +77,38 @@ var canvasCV = {
 					}
 
 //					processing.stroke( p5Color );
-					processing.stroke( p5Color[0], p5Color[1], p5Color[2]);
 
 					processing.pushMatrix();
 
 					processing.scale(2);
-					processing.bezier( startPointx, startPointy, (startPointx + randomToInterval ), startPointy, (endPointx - randomToInterval ), endPointy + noHorizontalLine, endPointx, endPointy );
+
+					var a1dx = startPointx;
+					var a1dy = startPointy;
+					var a1fx = startPointx + randomToInterval;
+					var a1fy = startPointy;
+
+          var a2dx = endPointx - randomToInterval;
+          var a2dy = 	endPointy + noHorizontalLine;
+          var a2fx = endPointx;
+          var a2fy = endPointy;
+
+					processing.stroke( 0,0,0);
+/*
+          processing.line( a1dx, a1dy, a1fx, a1fy);
+          processing.line( a2dx, a2dy, a2fx, a2fy)
+*/
+					processing.stroke( p5Color[0], p5Color[1], p5Color[2]);
+					processing.bezier( a1dx, a1dy, a1fx, a1fy, a2dx, a2dy, a2fx, a2fy);
 
 					processing.popMatrix();
 
 				}
 			}
 
-			processing.eraseBg = function() {
-				processing.fill( 24);
+			processing.eraseBg = function( backgroundColor, bgOpacity) {
+  			if( bgOpacity === undefined)
+  			  bgOpacity = 255;
+				processing.fill( backgroundColor[0], backgroundColor[1], backgroundColor[2], bgOpacity);
 				processing.noStroke();
 				processing.rect( 0, 0, processing.width, processing.height);
 			}
@@ -105,9 +123,10 @@ var canvasCV = {
 		var processingInstance = new Processing(canvasJS, drawLinks);
 
 		var thisSketch = Processing.getInstanceById('links');
+		var cbg = $("body").css("background-color").replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
 
-		thisSketch.updateSize( $("body").width(), $(".module--cv").height());
-		thisSketch.eraseBg();
+		thisSketch.updateSize( $("body").width(), $("body").height());
+		thisSketch.eraseBg( cbg);
 
 		var alreadyLinked = new Array([]);
 
@@ -130,11 +149,12 @@ var canvasCV = {
   		//au survol
 			$this.on("mouseover", function() {
   			var c = $this.css("border-bottom-color");
+        var cbg = $("body").css("background-color").replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
         var linksUnderlineColor = c.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
 
         $(".module--cv a[data-link]").removeClass('is--linkedto').removeClass('is--linkedfrom');
         $this.addClass('is--currentlyLinkedTo');
-        thisSketch.eraseBg();
+        thisSketch.eraseBg( cbg, 225);
 				canvasCV.drawAllLinks( $this.data( 'linkID'), thisSketch, $this, thisLink, linksUnderlineColor);
 		  });
 		});
@@ -215,6 +235,7 @@ var canvasCV = {
 			var newText = '<span class="position-of-eles"></span>' + text;
 		}
 		$elem.html(newText); //Set wrapper
+
 		var offset = $elem.find(".position-of-eles").offset();
 		var height = $elem.find(".position-of-eles").height();
 		offset.bottom = offset.top + height + 1.4;
@@ -245,15 +266,15 @@ var theProjetList = {
   			projetIndex = $(this).parent("li").attr("data-index");
   			$thisProjet = $allProjets.find(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
 
-  			$thisProjet.addClass("is--shown");
+        // activer cette vignette (donc la charger sur lazysizes)
+        $thisProjet.addClass("is--shown");
 
   		});
   		$(this).on('mouseleave', function() {
 
   			projetIndex = $(this).parent("li").attr("data-index");
   			$thisProjet = $allProjets.find(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
-  			$thisProjet.removeClass("is--shown");
-
+  			$thisProjet.removeClass("is--shown").addClass("was--shown");
   			$("body").attr("module--gradient_overlay", "");
 
   		});
@@ -388,30 +409,45 @@ var theProjetView = {
 
 	init : function() {
 
+    window.scrollY = window.pageYOffset;
+
     // fonction qui gère le zoom-in sur l'image du haut
     var zoomedIn = false;
     $('.module--projet--visuel').on('click', function(e) {
       zoomedIn = !zoomedIn;
-      $('body').attr( 'data-visuel', zoomedIn ? 'zoomedIn' : '');
-      $('html, body').animate({scrollTop : 0},400);
+      $parentProjet = $(this).closest('.module--projet');
+      $parentProjet.attr( 'data-visuel', zoomedIn ? 'zoomedIn' : '');
+      $("body").css( "overflow", zoomedIn ? 'hidden' : '');
+
+      if( scrollY > 0)
+        $('html, body').animate({scrollTop : 0},400);
       return false;
     });
 
+    // animation sur le header avec opacity
     var wHeight = window.innerHeight;
-    var $visuelTop = $(".module--projet_full .module--projet--visuel").first();
+    var $visuelTop = $(".module--projet_full .module--projet--visuel--inside").first();
     if( window.innerWidth > 700 && $visuelTop.length > 0) {
       theProjetView.changeVisuelOpacity( wHeight, $visuelTop);
     }
+
+    // check pour les vidéos
+    $(document).on('lazybeforeunveil', function(e){
+      var isVideo = $(e.target).is("video");
+      if( isVideo){
+        $(e.target).attr("autoplay", true);
+      }
+    });
+
   },
 
   changeVisuelOpacity : function( wHeight, $visuelTop) {
 
-    scrollY = window.pageYOffset;
     var cssOpacity = scrollY.map( 0, wHeight, 1, 0)
     $visuelTop.css("opacity", cssOpacity);
 
 		$(window).on('scroll', function () {
-      scrollY = window.pageYOffset;
+      window.scrollY = window.pageYOffset;
       if( scrollY < wHeight) {
         var cssOpacity = scrollY.map( 0, wHeight * .44, 1, 0)
         $visuelTop.css("opacity", cssOpacity);

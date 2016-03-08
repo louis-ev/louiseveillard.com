@@ -19,6 +19,8 @@ var pluginsScripts = [
   'bower_components/bootstrap/dist/js/bootstrap.js',
   'bower_components/isotope/dist/isotope.pkgd.min.js',
   'bower_components/lazysizes/plugins/bgset/ls.bgset.min.js',
+  'bower_components/lazysizes/plugins/optimumx/ls.optimumx.min.js',
+  'bower_components/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js',
   'bower_components/lazysizes/lazysizes.min.js'
 ];
 

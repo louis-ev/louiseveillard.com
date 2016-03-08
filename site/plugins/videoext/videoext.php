@@ -9,7 +9,7 @@ namespace at\fanninger\kirby\extension\videoext;
  * @link https://github.com/fanningert/kirbycms-extension-video
  */
 class VideoExt {
-
+	
 	/**
 	 * **************************************************************************
 	 */
@@ -27,7 +27,7 @@ class VideoExt {
 	const CAPTION_CLASS = 'caption_class';
 	const SOURCES = 'sources';
 	const POSTER = 'poster';
-
+	
 	/**
 	 * **************************************************************************
 	 */
@@ -46,20 +46,20 @@ class VideoExt {
 			VideoExt::CAPTION_TOP => false,
 			VideoExt::CAPTION_CLASS => 'video',
 			VideoExt::POSTER => null,
-			VideoExt::SOURCES => array ()
+			VideoExt::SOURCES => array () 
 	);
-
+	
 	/**
 	 *
-	 * @param \Page $page
+	 * @param \Page $page        	
 	 */
 	public function __construct(\Page $page) {
 		$this->page = $page;
-
+		
 		// if ($this->page instanceof \Page) {
 		// throw new VideoExtException ( VideoExtException::missing_page_object );
 		// }
-
+		
 		$this->setOption ( VideoExt::SNIPPET_NAME, kirby ()->option ( 'kirby.extension.videoext.snippet_name', null ) );
 		$this->setOption ( VideoExt::VIDEO_WIDTH, kirby ()->option ( 'kirby.extension.videoext.width', null ) );
 		$this->setOption ( VideoExt::VIDEO_HEIGHT, kirby ()->option ( 'kirby.extension.videoext.height', null ) );
@@ -76,7 +76,7 @@ class VideoExt {
 	public function setOption($opt_name, $opt_value) {
 		if (array_key_exists ( $opt_name, $this->options ))
 			$this->options [$opt_name] = $opt_value;
-
+		
 		return $this;
 	}
 	public function getOption($opt_name) {
@@ -86,13 +86,13 @@ class VideoExt {
 			throw new VideoExtException ( VideoExtException::unknown_option );
 		}
 	}
-
+	
 	/**
 	 * Add a new Source
 	 *
-	 * @param string $video
-	 * @param string $type
-	 * @param string $media
+	 * @param string $video        	
+	 * @param string $type        	
+	 * @param string $media        	
 	 * @return VideoExt
 	 */
 	public function addSource($video, $type = null, $media = null) {
@@ -100,12 +100,12 @@ class VideoExt {
 			$this->options [VideoExt::SOURCES] [] = array (
 					'src' => $video,
 					'type' => $type,
-					'media' => $media
+					'media' => $media 
 			);
 		}
 		return $this;
 	}
-
+	
 	/**
 	 * Check if the caption should print at the top.
 	 *
@@ -114,7 +114,7 @@ class VideoExt {
 	public function isCaptionTop() {
 		return $this->getOption ( VideoExt::CAPTION_TOP );
 	}
-
+	
 	/**
 	 * Generate the HTML-Code of the video tag.
 	 *
@@ -128,7 +128,7 @@ class VideoExt {
 		} else {
 			// Create over BRICK
 			$video = new \Brick ( 'video' );
-
+			
 			// Add options
 			if ($this->getOption ( VideoExt::VIDEO_WIDTH ) != null)
 				$video->attr ( 'width', $this->getOption ( VideoExt::VIDEO_WIDTH ) );
@@ -136,44 +136,44 @@ class VideoExt {
 				$video->attr ( 'width', $this->getOption ( VideoExt::VIDEO_HEIGHT ) );
 			if ($this->getOption ( VideoExt::VIDEO_CLASS ) != null)
 				$video->addClass ( $this->getOption ( VideoExt::VIDEO_CLASS ) );
-			if ($this->getOption ( VideoExt::OPTION_PRELOAD ) != false)
+			if ($this->getOption ( VideoExt::OPTION_PRELOAD ) !== false)
 				$video->attr ( 'preload', $this->getOption ( VideoExt::OPTION_PRELOAD ) );
-			if ($this->getOption ( VideoExt::OPTION_CONTROLS ) == true)
+			if ($this->getOption ( VideoExt::OPTION_CONTROLS ) === true)
 				$video->attr ( 'controls', 'controls' );
-			if ($this->getOption ( VideoExt::OPTION_LOOP ) == true)
+			if ($this->getOption ( VideoExt::OPTION_LOOP ) === true)
 				$video->attr ( 'loop', 'loop' );
-			if ($this->getOption ( VideoExt::OPTION_MUTED ) == true)
-				$video->attr ( 'muted', 'muted' );
-			if ($this->getOption ( VideoExt::OPTION_AUTOPLAY ) == true)
+			if ($this->getOption ( VideoExt::OPTION_AUTOPLAY ) === true)
 				$video->attr ( 'autoplay', 'autoplay' );
+			if ($this->getOption ( VideoExt::OPTION_MUTED ) === true)
+				$video->attr ( 'muted', 'muted' );
 			if ($this->getOption ( VideoExt::POSTER ) != null){
 				$file = $this->page->file ( $this->getOption ( VideoExt::POSTER ) );
 				$url_poster = ($file) ? $file->url () : $this->getOption ( VideoExt::POSTER );
 				$video->attr ( 'poster', $url_poster );
 			}
-
+				
 				// Add Sources
 			foreach ( $this->options [VideoExt::SOURCES] as $source ) {
 				$video_source = new \Brick ( 'source' );
-
+				
 				$file = $this->page->file ( $source ['src'] );
 				$url_video = ($file) ? $file->url () : $source ['src'];
 				$video_source->attr ( 'src', $url_video );
-
+				
 				if ($source ['type'] != null)
 					$video_source->attr ( 'type', $source ['type'] );
 				if ($source ['media'] != null)
 					$video_source->attr ( 'media', $source ['media'] );
 				$video->append ( $video_source );
 			}
-
+			
 			// Add optional caption
 			$figure_caption = '';
 			if ($this->getOption ( VideoExt::CAPTION ) != null) {
 				$caption = ( string ) $this->convert ( $this->getOption ( VideoExt::CAPTION ) );
 				$figure_caption = new \Brick ( 'figcaption', $caption );
 			}
-
+			
 			if ($this->getOption ( VideoExt::CAPTION ) != null) {
 				$figure = new \Brick ( 'figure' );
 				if ($this->getOption ( VideoExt::CAPTION_CLASS ) != null)
@@ -187,51 +187,55 @@ class VideoExt {
 					$figure_caption->addClass ( 'caption-bottom' );
 					$figure->append ( $figure_caption );
 				}
-
+				
 				return ( string ) $figure->toString ();
 			} else {
 				return ( string ) $video->toString ();
 			}
 		}
 	}
-
+	
 	/**
 	 * Overwrite of the super method
 	 */
 	public function __toString() {
 		$this->toHtml ();
 	}
-
+	
 	/**
 	 * Replace not allowed character in the text with replacements.
 	 *
-	 * @param string $text
+	 * @param string $text        	
 	 * @return string
 	 */
 	protected function convert($text) {
 		return ( string ) htmlentities ( $text );
 	}
-
+	
 	/**
 	 * This static method is executed by kirbytag method.
 	 *
-	 * @param unknown $tag
+	 * @param unknown $tag        	
 	 * @return string Generated HTML-Code for the HTML5-Video-KirbyTag
 	 */
 	public static function executeTag($tag) {
 		try {
 			$videoext = new VideoExt ( $tag->page () );
-
+			
 			foreach ( \kirbytext::$tags ['videoext'] ['attr'] as $name ) {
-				if (! empty ( $value = $tag->attr ( $name ) ))
+				$value = $tag->attr ( $name );
+				if (!empty( $value )) {
+					$value = ( is_string($value) && $value === 'true' )? true : $value;
+					$value = ( is_string($value) && $value === 'false' )? false : $value;
 					$videoext->setOption ( $name, $value );
+				}
 			}
-
-			// Sources
-			$videoext->addSource ( $tag->attr ( 'ogg' ), 'video/ogg' );
-			$videoext->addSource ( $tag->attr ( 'webm' ), 'video/webm' );
+			
+			// Sources	
+			$videoext->addSource ( $tag->attr ( 'webm' ), 'video/webm' );	
 			$videoext->addSource ( $tag->attr ( 'mp4' ), 'video/mp4' );
-
+			$videoext->addSource ( $tag->attr ( 'ogg' ), 'video/ogg' );
+			
 			return $videoext->toHtml ();
 		} catch ( VideoExtException $e ) {
 			echo 'Exception: ', $e->getMessage (), "\n";
@@ -250,10 +254,10 @@ class VideoExtException extends \Exception {
 	const missing_page_object = 2;
 	public function __construct($code, $message = null, $previous = null) {
 		$this->code = $code;
-
+		
 		if ($message == null)
 			$message = $this->generateMessageForCode ();
-
+		
 		parent::__construct ( $message, $code, $previous );
 	}
 	public function __toString() {

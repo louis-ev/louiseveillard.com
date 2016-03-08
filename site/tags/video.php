@@ -7,7 +7,7 @@
  * Install
  * =======
  * Move this file to /site/tags/ and rename it video.php
- * 
+ *
  * @package VideoExt
  * @author Thomas Fanninger <thomas@fanninger.at>
  * @link https://github.com/fanningert/kirbycms-extension-video
