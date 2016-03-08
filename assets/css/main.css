@@ -459,16 +459,16 @@ th {
   background: rgba(0, 220, 140, 0.25);
 }
 body[data-rubrique="vr"] ::-moz-selection {
-  background: #0A997F;
+  background: #3ECCB2;
 }
 body[data-rubrique="vr"] ::selection {
-  background: #0A997F;
+  background: #3ECCB2;
 }
 body[data-rubrique="sites"] ::-moz-selection {
-  background: #03a9f4;
+  background: #03B8F4;
 }
 body[data-rubrique="sites"] ::selection {
-  background: #03a9f4;
+  background: #03B8F4;
 }
 body[data-rubrique="objets-interactifs"] ::-moz-selection {
   background: #D1DF98;
@@ -477,10 +477,10 @@ body[data-rubrique="objets-interactifs"] ::selection {
   background: #D1DF98;
 }
 body[data-rubrique="outils-pedagogiques"] ::-moz-selection {
-  background: #FECD62;
+  background: #FFCE5B;
 }
 body[data-rubrique="outils-pedagogiques"] ::selection {
-  background: #FECD62;
+  background: #FFCE5B;
 }
 body[data-rubrique="autres"] ::-moz-selection {
   background: #ACA8A5;
@@ -506,7 +506,7 @@ html {
   box-sizing: inherit;
 }
 .largeText {
-  font-size: 1.8em;
+  font-size: 1.4em;
 }
 .mediumText {
   font-size: 1.4em;
@@ -664,14 +664,14 @@ body[module--gradient_overlay="is--away"] .module--intro {
   transition: all .25s;
 }
 .module--intro a[href*="vr"] {
-  background-image: -webkit-linear-gradient(left, #0A997F, #0A997F 50%, transparent 50%, transparent);
-  background-image: -o-linear-gradient(left, #0A997F, #0A997F 50%, transparent 50%, transparent);
-  background-image: linear-gradient(to right, #0A997F, #0A997F 50%, transparent 50%, transparent);
+  background-image: -webkit-linear-gradient(left, #3ECCB2, #3ECCB2 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #3ECCB2, #3ECCB2 50%, transparent 50%, transparent);
+  background-image: linear-gradient(to right, #3ECCB2, #3ECCB2 50%, transparent 50%, transparent);
 }
 .module--intro a[href*="sites"] {
-  background-image: -webkit-linear-gradient(left, #03a9f4, #03a9f4 50%, transparent 50%, transparent);
-  background-image: -o-linear-gradient(left, #03a9f4, #03a9f4 50%, transparent 50%, transparent);
-  background-image: linear-gradient(to right, #03a9f4, #03a9f4 50%, transparent 50%, transparent);
+  background-image: -webkit-linear-gradient(left, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
+  background-image: linear-gradient(to right, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
 }
 .module--intro a[href*="objets-interactifs"] {
   background-image: -webkit-linear-gradient(left, #D1DF98, #D1DF98 50%, transparent 50%, transparent);
@@ -679,9 +679,9 @@ body[module--gradient_overlay="is--away"] .module--intro {
   background-image: linear-gradient(to right, #D1DF98, #D1DF98 50%, transparent 50%, transparent);
 }
 .module--intro a[href*="outils-pedagogiques"] {
-  background-image: -webkit-linear-gradient(left, #FECD62, #FECD62 50%, transparent 50%, transparent);
-  background-image: -o-linear-gradient(left, #FECD62, #FECD62 50%, transparent 50%, transparent);
-  background-image: linear-gradient(to right, #FECD62, #FECD62 50%, transparent 50%, transparent);
+  background-image: -webkit-linear-gradient(left, #FFCE5B, #FFCE5B 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #FFCE5B, #FFCE5B 50%, transparent 50%, transparent);
+  background-image: linear-gradient(to right, #FFCE5B, #FFCE5B 50%, transparent 50%, transparent);
 }
 .module--intro a[href*="autres"] {
   background-image: -webkit-linear-gradient(left, #ACA8A5, #ACA8A5 50%, transparent 50%, transparent);
@@ -719,10 +719,7 @@ body[module--gradient_overlay="is--away"] .module--intro {
   background-size: 200% 100%;
 }
 .projet--number {
-  font-size: .6em;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  margin-right: 3em;
+  font-size: 6em;
   font-family: 'GT Cinetype Bold';
 }
 .projet--type {
@@ -736,7 +733,7 @@ body[module--gradient_overlay="is--away"] .module--intro {
   padding-bottom: 8px;
   display: block;
   color: #fff;
-  font-size: 1.8em;
+  font-size: 1.4em;
   -webkit-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
   -o-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
   transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
@@ -750,7 +747,38 @@ body[module--gradient_overlay="is--away"] .module--intro {
   min-height: 100vh;
   list-style-type: none;
   z-index: 1;
+  padding: 0;
   padding-top: 16px;
+}
+.module--projetList body[data-rubrique="vr"] ::-moz-selection {
+  background: #3ECCB2;
+}
+.module--projetList body[data-rubrique="vr"] ::selection {
+  background: #3ECCB2;
+}
+.module--projetList body[data-rubrique="sites"] ::-moz-selection {
+  background: #03B8F4;
+}
+.module--projetList body[data-rubrique="sites"] ::selection {
+  background: #03B8F4;
+}
+.module--projetList body[data-rubrique="objets-interactifs"] ::-moz-selection {
+  background: #D1DF98;
+}
+.module--projetList body[data-rubrique="objets-interactifs"] ::selection {
+  background: #D1DF98;
+}
+.module--projetList body[data-rubrique="outils-pedagogiques"] ::-moz-selection {
+  background: #FFCE5B;
+}
+.module--projetList body[data-rubrique="outils-pedagogiques"] ::selection {
+  background: #FFCE5B;
+}
+.module--projetList body[data-rubrique="autres"] ::-moz-selection {
+  background: #ACA8A5;
+}
+.module--projetList body[data-rubrique="autres"] ::selection {
+  background: #ACA8A5;
 }
 .module--projetList h3 {
   font-size: .7rem;
@@ -759,9 +787,12 @@ body[module--gradient_overlay="is--away"] .module--intro {
   margin-bottom: 0;
   text-transform: uppercase;
   letter-spacing: .06rem;
+  display: block;
+  width: 100%;
   -webkit-transition: opacity .4s;
   -o-transition: opacity .4s;
   transition: opacity .4s;
+  padding: 0 32px;
 }
 .module--projetList h3.is--hidden {
   /*
@@ -773,99 +804,55 @@ body[module--gradient_overlay="is--away"] .module--intro {
   display: none;
 }
 .module--projetList .module--projetList--projetName {
-  width: 60%;
-  margin-left: -16px;
+  width: 33.333%;
+  padding: 0 32px;
   -webkit-transition: opacity 0.3s ease-out;
   -o-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
-}
-.module--projetList .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links--index {
-  color: #0A997F;
-}
-.module--projetList .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links--index {
-  color: #03a9f4;
-}
-.module--projetList .module--projetList--projetName[data-type="objets-interactifs"] .module--projetList--projetName--links--index {
-  color: #D1DF98;
-}
-.module--projetList .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links--index {
-  color: #FECD62;
-}
-.module--projetList .module--projetList--projetName[data-type="autres"] .module--projetList--projetName--links--index {
-  color: #ACA8A5;
-}
-body[data-template="projet"] .module--projetList .module--projetList--projetName {
-  /*
-      &:not(.is--active):not(:hover) {
-        font-size: .5em;
-      }
-*/
 }
 .module--projetList .module--projetList--projetName .module--projetList--projetName--links {
   padding-top: 4px;
   padding-bottom: 8px;
   display: block;
   color: #fff;
-  font-size: 1.8em;
+  font-size: 1.4em;
   -webkit-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
   -o-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
   transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
-  display: inline-block;
-  padding-left: 16px;
+  margin: 0 -32px;
+  text-align: center;
 }
 .module--projetList .module--projetList--projetName .module--projetList--projetName--links--index {
-  font-size: .6em;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  margin-right: 3em;
+  font-size: 6em;
   font-family: 'GT Cinetype Bold';
-  display: inline-block;
+  display: block;
   -webkit-transition: color 1s 0.4s ease-out;
   -o-transition: color 1s 0.4s ease-out;
   transition: color 1s 0.4s ease-out;
-}
-.module--projetList .module--projetList--projetName .module--projetList--projetName--links::after {
-  content: "->";
-  margin-left: 0em;
-  display: inline-block;
-  opacity: 0;
-  -webkit-transition: margin 0.3s ease-out, opacity 0.2s ease-out;
-  -o-transition: margin 0.3s ease-out, opacity 0.2s ease-out;
-  transition: margin 0.3s ease-out, opacity 0.2s ease-out;
-  font-family: 'gt cinetype regular';
 }
 .module--projetList .module--projetList--projetName:hover {
   opacity: 1;
 }
 .module--projetList .module--projetList--projetName:hover[data-type="vr"] .module--projetList--projetName--links {
-  background-color: rgba(10, 153, 127, 0.95);
+  background-color: rgba(62, 204, 178, 0.92);
 }
 .module--projetList .module--projetList--projetName:hover[data-type="sites"] .module--projetList--projetName--links {
-  background-color: rgba(3, 169, 244, 0.95);
+  background-color: rgba(3, 184, 244, 0.92);
 }
 .module--projetList .module--projetList--projetName:hover[data-type="objets-interactifs"] .module--projetList--projetName--links {
-  background-color: rgba(209, 223, 152, 0.95);
+  background-color: rgba(209, 223, 152, 0.92);
 }
 .module--projetList .module--projetList--projetName:hover[data-type="outils-pedagogiques"] .module--projetList--projetName--links {
-  background-color: rgba(254, 205, 98, 0.95);
+  background-color: rgba(255, 206, 91, 0.92);
 }
 .module--projetList .module--projetList--projetName:hover[data-type="autres"] .module--projetList--projetName--links {
-  background-color: rgba(172, 168, 165, 0.95);
+  background-color: rgba(172, 168, 165, 0.92);
 }
 .module--projetList .module--projetList--projetName:hover .module--projetList--projetName--links {
   letter-spacing: 2px;
 }
 .module--projetList .module--projetList--projetName:hover .module--projetList--projetName--links .module--projetList--projetName--links--index {
   color: #fff;
-  margin-bottom: 4px;
-}
-.module--projetList .module--projetList--projetName:hover .module--projetList--projetName--links::after {
-  opacity: 1;
-  margin-left: 1em;
-  margin-right: .5em;
-  -webkit-transition: margin 0.25s 0.3s ease-out, opacity 0.3s 0.4s ease-out;
-  -o-transition: margin 0.25s 0.3s ease-out, opacity 0.3s 0.4s ease-out;
-  transition: margin 0.25s 0.3s ease-out, opacity 0.3s 0.4s ease-out;
 }
 .module--projet {
   padding-bottom: 32px;
@@ -925,26 +912,23 @@ body:not(.is--loading) [data-visuel=''].module--projet .module--projet--header {
   line-height: 1.4;
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
-  font-size: .6em;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  margin-right: 3em;
+  font-size: 6em;
   font-family: 'GT Cinetype Bold';
   display: inline-block;
   width: 2em;
   margin-right: 0;
 }
 [data-type="vr"].module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
-  color: #0A997F;
+  color: #3ECCB2;
 }
 [data-type="sites"].module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
-  color: #03a9f4;
+  color: #03B8F4;
 }
 [data-type="objets-interactifs"].module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
   color: #D1DF98;
 }
 [data-type="outils-pedagogiques"].module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
-  color: #FECD62;
+  color: #FFCE5B;
 }
 [data-type="autres"].module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
   color: #ACA8A5;
@@ -954,7 +938,7 @@ body:not(.is--loading) [data-visuel=''].module--projet .module--projet--header {
   padding-bottom: 8px;
   display: block;
   color: #fff;
-  font-size: 1.8em;
+  font-size: 1.4em;
   -webkit-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
   -o-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
   transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
@@ -1070,7 +1054,7 @@ html.js .module--projet .module--projet--visuel > .module--projet--visuel--insid
   /* custom */
 }
 [data-type="vr"].module--projet h3 {
-  color: #0A997F;
+  color: #3ECCB2;
 }
 [data-type="vr"].module--projet .module--projet--header--text a,
 [data-type="vr"].module--projet .module--projet--text a {
@@ -1080,12 +1064,12 @@ html.js .module--projet .module--projet--visuel > .module--projet--visuel--insid
   -webkit-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
-  background-image: -webkit-linear-gradient(left, #0A997F, #0A997F 50%, transparent 50%, transparent);
-  background-image: -o-linear-gradient(left, #0A997F, #0A997F 50%, transparent 50%, transparent);
-  background-image: linear-gradient(to right, #0A997F, #0A997F 50%, transparent 50%, transparent);
+  background-image: -webkit-linear-gradient(left, #3ECCB2, #3ECCB2 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #3ECCB2, #3ECCB2 50%, transparent 50%, transparent);
+  background-image: linear-gradient(to right, #3ECCB2, #3ECCB2 50%, transparent 50%, transparent);
 }
 [data-type="sites"].module--projet h3 {
-  color: #03a9f4;
+  color: #03B8F4;
 }
 [data-type="sites"].module--projet .module--projet--header--text a,
 [data-type="sites"].module--projet .module--projet--text a {
@@ -1095,9 +1079,9 @@ html.js .module--projet .module--projet--visuel > .module--projet--visuel--insid
   -webkit-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
-  background-image: -webkit-linear-gradient(left, #03a9f4, #03a9f4 50%, transparent 50%, transparent);
-  background-image: -o-linear-gradient(left, #03a9f4, #03a9f4 50%, transparent 50%, transparent);
-  background-image: linear-gradient(to right, #03a9f4, #03a9f4 50%, transparent 50%, transparent);
+  background-image: -webkit-linear-gradient(left, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
+  background-image: linear-gradient(to right, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
 }
 [data-type="objets-interactifs"].module--projet h3 {
   color: #D1DF98;
@@ -1115,7 +1099,7 @@ html.js .module--projet .module--projet--visuel > .module--projet--visuel--insid
   background-image: linear-gradient(to right, #D1DF98, #D1DF98 50%, transparent 50%, transparent);
 }
 [data-type="outils-pedagogiques"].module--projet h3 {
-  color: #FECD62;
+  color: #FFCE5B;
 }
 [data-type="outils-pedagogiques"].module--projet .module--projet--header--text a,
 [data-type="outils-pedagogiques"].module--projet .module--projet--text a {
@@ -1125,9 +1109,9 @@ html.js .module--projet .module--projet--visuel > .module--projet--visuel--insid
   -webkit-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
-  background-image: -webkit-linear-gradient(left, #FECD62, #FECD62 50%, transparent 50%, transparent);
-  background-image: -o-linear-gradient(left, #FECD62, #FECD62 50%, transparent 50%, transparent);
-  background-image: linear-gradient(to right, #FECD62, #FECD62 50%, transparent 50%, transparent);
+  background-image: -webkit-linear-gradient(left, #FFCE5B, #FFCE5B 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #FFCE5B, #FFCE5B 50%, transparent 50%, transparent);
+  background-image: linear-gradient(to right, #FFCE5B, #FFCE5B 50%, transparent 50%, transparent);
 }
 [data-type="autres"].module--projet h3 {
   color: #ACA8A5;

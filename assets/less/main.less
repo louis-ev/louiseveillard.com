@@ -12,10 +12,11 @@
 
 @c-linkhover: @c-pagebg;
 
-@c-vr:                     #0A997F;
-@c-sites:                  #03a9f4;
+
+@c-vr:                     #3ECCB2;
+@c-sites:                  #03B8F4;
 @c-objets-interactifs:    #D1DF98;
-@c-outils-pedagogiques: #FECD62;
+@c-outils-pedagogiques: #FFCE5B;
 @c-autres:                 #ACA8A5;
 
 @t-margin: 16px;
@@ -74,7 +75,7 @@ html {
 }
 
 .largeText {
-	font-size: 	1.8em;
+	font-size: 	1.4em;
 }
 .mediumText {
 	font-size: 	1.4em;
@@ -320,11 +321,7 @@ a:hover {
 }
 
 .projet--number {
-	font-size: 	.6em;
-	letter-spacing: .05em;
-	text-transform: uppercase;
-	margin-right: 	3em;
-
+	font-size: 	6em;
 	font-family: 'GT Cinetype Bold';
 }
 .projet--type {
@@ -358,19 +355,52 @@ a:hover {
   list-style-type: none;
   z-index: 1;
 
+	padding: 0;
   padding-top:  @t-margin * 1;
 
-  &:hover .module--projetList--projetName .module--projetList--projetName--links {
-    //color: @c-pagebg;
 
-    &:hover {
-      //color: inherit;
+	.styleVignette( @rubrique, @color ) {
+    &[data-type= @{rubrique}] {
+      .module--projetList--projetName--links--index {
+//             text-shadow: 0px 0px 15px @color;
+        color: @color;
+  		}
+  		&:hover {
+        .module--projetList--projetName--links--index {
+
+    		}
+  		}
+  		.module--projetList--projetName--links {
+        color: @color;
+  		}
+		}
+	}
+	.styleLink( "vr", @c-vr);
+	.styleLink( "sites", @c-sites);
+	.styleLink( "objets-interactifs", @c-objets-interactifs);
+	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
+	.styleLink( "autres", @c-autres);
+
+  &:hover {
+
+    .module--projetList--projetName {
+
+    }
+    .module--projetList--projetName--links {
+
+      &:hover {
+        //color: inherit;
+      }
     }
   }
 
   h3 {
     .titleCaps;
+    display: block;
+    width:  100%;
     transition: opacity .4s;
+
+    padding: 0 @t-margin * 2;
 
     &.is--hidden {
 /*
@@ -386,63 +416,27 @@ a:hover {
 
 	.module--projetList--projetName {
 
-  	@t-paddingLiensGauche: 16px;
-
-  	width: 60%;
-  	margin-left:  -@t-paddingLiensGauche;
-
+    width: 33.333%;
+    padding: 0 @t-margin * 2;
 		transition: opacity .3s ease-out;
-
-  	.styleLink( @rubrique, @color ) {
-      &[data-type= @{rubrique}] .module--projetList--projetName--links--index {
-        color: @color;
-  		}
-  	}
-  	.styleLink( "vr", @c-vr);
-  	.styleLink( "sites", @c-sites);
-  	.styleLink( "objets-interactifs", @c-objets-interactifs);
-  	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
-  	.styleLink( "autres", @c-autres);
-
-    body[data-template="projet"] & {
-
-
-/*
-      &:not(.is--active):not(:hover) {
-        font-size: .5em;
-      }
-*/
-
-    }
-
 
 		.module--projetList--projetName--links {
 			.projet--name;
-			display: inline-block;
-      padding-left:  @t-paddingLiensGauche;
+      margin: 0 -@t-margin * 2;
+      text-align: center;
 
     	&--index {
     		.projet--number;
-    		display: inline-block;
+    		display: block;
 				transition: color 1s .4s ease-out;
     	}
-
-			&::after {
-				content: "->";
-				margin-left: -0em;
-		    display: inline-block;
-				opacity: 0;
-				transition: margin .3s ease-out, opacity .2s ease-out;
-				font-family: 'gt cinetype regular';
-			}
-
 		}
 
 		&:hover {
 
     	.styleHover( @rubrique, @color ) {
         &[data-type= @{rubrique}] .module--projetList--projetName--links {
-          background-color: fade( @color, 95%);
+          background-color: fade( @color, 92%);
     		}
     	}
     	.styleHover( "vr", @c-vr);
@@ -458,13 +452,6 @@ a:hover {
 
 				.module--projetList--projetName--links--index {
   				color: #fff;
-  				margin-bottom:  4px;
-				}
-				&::after {
-			    opacity: 1;
-			    margin-left: 1em;
-			    margin-right:   .5em;
-					transition: margin .25s .3s ease-out, opacity .3s .4s ease-out;
 				}
 			}
 		}

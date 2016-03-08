@@ -296,7 +296,7 @@ var theIntroLinks = {
 
   	$projetList.isotope({
       itemSelector: '.isotope--item',
-      layoutMode: 'vertical',
+      layoutMode: 'fitRows',
 /*
 		  filter: function() {
         // _this_ is the item element. Get text of element's .number
