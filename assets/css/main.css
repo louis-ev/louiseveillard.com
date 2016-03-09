@@ -459,34 +459,34 @@ th {
   background: rgba(0, 220, 140, 0.25);
 }
 body[data-rubrique="vr"] ::-moz-selection {
-  background: #3ECCB2;
+  background: rgba(62, 204, 178, 0.92);
 }
 body[data-rubrique="vr"] ::selection {
-  background: #3ECCB2;
+  background: rgba(62, 204, 178, 0.92);
 }
 body[data-rubrique="sites"] ::-moz-selection {
-  background: #03B8F4;
+  background: rgba(3, 184, 244, 0.92);
 }
 body[data-rubrique="sites"] ::selection {
-  background: #03B8F4;
+  background: rgba(3, 184, 244, 0.92);
 }
 body[data-rubrique="objets-interactifs"] ::-moz-selection {
-  background: #D1DF98;
+  background: rgba(209, 223, 152, 0.92);
 }
 body[data-rubrique="objets-interactifs"] ::selection {
-  background: #D1DF98;
+  background: rgba(209, 223, 152, 0.92);
 }
 body[data-rubrique="outils-pedagogiques"] ::-moz-selection {
-  background: #FFCE5B;
+  background: rgba(255, 206, 91, 0.92);
 }
 body[data-rubrique="outils-pedagogiques"] ::selection {
-  background: #FFCE5B;
+  background: rgba(255, 206, 91, 0.92);
 }
 body[data-rubrique="autres"] ::-moz-selection {
-  background: #ACA8A5;
+  background: rgba(172, 168, 165, 0.92);
 }
 body[data-rubrique="autres"] ::selection {
-  background: #ACA8A5;
+  background: rgba(172, 168, 165, 0.92);
 }
 audio,
 canvas,
@@ -719,24 +719,13 @@ body[module--gradient_overlay="is--away"] .module--intro {
   background-size: 200% 100%;
 }
 .projet--number {
-  font-size: 6em;
-  font-family: 'GT Cinetype Bold';
-}
-.projet--type {
-  margin-right: 32px;
-  display: inline-block;
-  width: 6px;
-  height: 6px;
+  font-size: 7rem;
 }
 .projet--name {
-  padding-top: 4px;
-  padding-bottom: 8px;
   display: block;
   color: #fff;
+  font-family: 'GT Cinetype Bold';
   font-size: 1.4em;
-  -webkit-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
-  -o-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
-  transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
 }
 .module--projetList {
   position: relative;
@@ -748,37 +737,6 @@ body[module--gradient_overlay="is--away"] .module--intro {
   list-style-type: none;
   z-index: 1;
   padding: 0;
-  padding-top: 16px;
-}
-.module--projetList body[data-rubrique="vr"] ::-moz-selection {
-  background: #3ECCB2;
-}
-.module--projetList body[data-rubrique="vr"] ::selection {
-  background: #3ECCB2;
-}
-.module--projetList body[data-rubrique="sites"] ::-moz-selection {
-  background: #03B8F4;
-}
-.module--projetList body[data-rubrique="sites"] ::selection {
-  background: #03B8F4;
-}
-.module--projetList body[data-rubrique="objets-interactifs"] ::-moz-selection {
-  background: #D1DF98;
-}
-.module--projetList body[data-rubrique="objets-interactifs"] ::selection {
-  background: #D1DF98;
-}
-.module--projetList body[data-rubrique="outils-pedagogiques"] ::-moz-selection {
-  background: #FFCE5B;
-}
-.module--projetList body[data-rubrique="outils-pedagogiques"] ::selection {
-  background: #FFCE5B;
-}
-.module--projetList body[data-rubrique="autres"] ::-moz-selection {
-  background: #ACA8A5;
-}
-.module--projetList body[data-rubrique="autres"] ::selection {
-  background: #ACA8A5;
 }
 .module--projetList h3 {
   font-size: .7rem;
@@ -787,12 +745,11 @@ body[module--gradient_overlay="is--away"] .module--intro {
   margin-bottom: 0;
   text-transform: uppercase;
   letter-spacing: .06rem;
-  display: block;
+  display: inline-block;
   width: 100%;
   -webkit-transition: opacity .4s;
   -o-transition: opacity .4s;
   transition: opacity .4s;
-  padding: 0 32px;
 }
 .module--projetList h3.is--hidden {
   /*
@@ -805,53 +762,267 @@ body[module--gradient_overlay="is--away"] .module--intro {
 }
 .module--projetList .module--projetList--projetName {
   width: 33.333%;
-  padding: 0 32px;
+  height: 0;
+  padding: 0 0 16.6665%;
+  overflow: hidden;
   -webkit-transition: opacity 0.3s ease-out;
   -o-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
 }
 .module--projetList .module--projetList--projetName .module--projetList--projetName--links {
-  padding-top: 4px;
-  padding-bottom: 8px;
-  display: block;
-  color: #fff;
-  font-size: 1.4em;
-  -webkit-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
-  -o-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
-  transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
-  margin: 0 -32px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 1px;
+  pointer-events: auto;
+  -webkit-transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
   text-align: center;
 }
 .module--projetList .module--projetList--projetName .module--projetList--projetName--links--index {
-  font-size: 6em;
-  font-family: 'GT Cinetype Bold';
-  display: block;
-  -webkit-transition: color 1s 0.4s ease-out;
-  -o-transition: color 1s 0.4s ease-out;
-  transition: color 1s 0.4s ease-out;
+  font-size: 7rem;
+  display: inline-block;
+  width: 40%;
+  vertical-align: middle;
+  text-align: right;
+  line-height: 1;
 }
-.module--projetList .module--projetList--projetName:hover {
+.module--projetList .module--projetList--projetName .module--projetList--projetName--links--name {
+  display: block;
+  color: #fff;
+  font-family: 'GT Cinetype Bold';
+  font-size: 1.4em;
+  display: inline-block;
+  vertical-align: middle;
+  width: 40%;
+  padding-left: 2%;
+  margin-left: 2%;
+  line-height: 1.4;
+  text-align: left;
+}
+.module--projetList .module--projetList--projetName .module--projetList--projetName--links::before {
+  content: "";
+  display: inline-block;
+  height: 95%;
+  vertical-align: middle;
+}
+.module--projetList .module--projetList--projetName .module--projetList--projetName--links--name,
+.module--projetList .module--projetList--projetName .module--projetList--projetName--links--index {
+  -webkit-transition: color 0.4s ease-out, text-shadow 0.6s ease-in, width 0.6s ease-out, border-color 0.8s;
+  -o-transition: color 0.4s ease-out, text-shadow 0.6s ease-in, width 0.6s ease-out, border-color 0.8s;
+  transition: color 0.4s ease-out, text-shadow 0.6s ease-in, width 0.6s ease-out, border-color 0.8s;
+}
+.module--projetList h3[data-type="vr"]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  height: 1px;
+  background-color: #3ECCB2;
+  left: 0;
+  right: 0;
+}
+.module--projetList .module--projetList--projetName[data-type="vr"] {
   opacity: 1;
 }
-.module--projetList .module--projetList--projetName:hover[data-type="vr"] .module--projetList--projetName--links {
+.module--projetList .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links--index,
+.module--projetList .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links--name {
+  color: #3ECCB2;
+}
+.module--projetList .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links--name {
+  border-left: 1px solid #3ECCB2;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links--index {
+  text-shadow: 0px 0px 20px #3ECCB2;
+  color: transparent;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links--name {
+  text-shadow: 0px 0px 12px #3ECCB2;
+  color: transparent;
+  border-left-color: transparent;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links:hover {
   background-color: rgba(62, 204, 178, 0.92);
 }
-.module--projetList .module--projetList--projetName:hover[data-type="sites"] .module--projetList--projetName--links {
+.module--projetList:hover .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links:hover .module--projetList--projetName--links--index {
+  /*
+            -webkit-text-stroke: 1px #fff;
+            -webkit-text-fill-color: transparent;
+*/
+  color: #fff;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="vr"] .module--projetList--projetName--links:hover .module--projetList--projetName--links--name {
+  color: #fff;
+}
+.module--projetList h3[data-type="sites"]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  height: 1px;
+  background-color: #03B8F4;
+  left: 0;
+  right: 0;
+}
+.module--projetList .module--projetList--projetName[data-type="sites"] {
+  opacity: 1;
+}
+.module--projetList .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links--index,
+.module--projetList .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links--name {
+  color: #03B8F4;
+}
+.module--projetList .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links--name {
+  border-left: 1px solid #03B8F4;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links--index {
+  text-shadow: 0px 0px 20px #03B8F4;
+  color: transparent;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links--name {
+  text-shadow: 0px 0px 12px #03B8F4;
+  color: transparent;
+  border-left-color: transparent;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links:hover {
   background-color: rgba(3, 184, 244, 0.92);
 }
-.module--projetList .module--projetList--projetName:hover[data-type="objets-interactifs"] .module--projetList--projetName--links {
+.module--projetList:hover .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links:hover .module--projetList--projetName--links--index {
+  /*
+            -webkit-text-stroke: 1px #fff;
+            -webkit-text-fill-color: transparent;
+*/
+  color: #fff;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="sites"] .module--projetList--projetName--links:hover .module--projetList--projetName--links--name {
+  color: #fff;
+}
+.module--projetList h3[data-type="objets-interactifs"]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  height: 1px;
+  background-color: #D1DF98;
+  left: 0;
+  right: 0;
+}
+.module--projetList .module--projetList--projetName[data-type="objets-interactifs"] {
+  opacity: 1;
+}
+.module--projetList .module--projetList--projetName[data-type="objets-interactifs"] .module--projetList--projetName--links--index,
+.module--projetList .module--projetList--projetName[data-type="objets-interactifs"] .module--projetList--projetName--links--name {
+  color: #D1DF98;
+}
+.module--projetList .module--projetList--projetName[data-type="objets-interactifs"] .module--projetList--projetName--links--name {
+  border-left: 1px solid #D1DF98;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="objets-interactifs"] .module--projetList--projetName--links--index {
+  text-shadow: 0px 0px 20px #D1DF98;
+  color: transparent;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="objets-interactifs"] .module--projetList--projetName--links--name {
+  text-shadow: 0px 0px 12px #D1DF98;
+  color: transparent;
+  border-left-color: transparent;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="objets-interactifs"] .module--projetList--projetName--links:hover {
   background-color: rgba(209, 223, 152, 0.92);
 }
-.module--projetList .module--projetList--projetName:hover[data-type="outils-pedagogiques"] .module--projetList--projetName--links {
+.module--projetList:hover .module--projetList--projetName[data-type="objets-interactifs"] .module--projetList--projetName--links:hover .module--projetList--projetName--links--index {
+  /*
+            -webkit-text-stroke: 1px #fff;
+            -webkit-text-fill-color: transparent;
+*/
+  color: #fff;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="objets-interactifs"] .module--projetList--projetName--links:hover .module--projetList--projetName--links--name {
+  color: #fff;
+}
+.module--projetList h3[data-type="outils-pedagogiques"]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  height: 1px;
+  background-color: #FFCE5B;
+  left: 0;
+  right: 0;
+}
+.module--projetList .module--projetList--projetName[data-type="outils-pedagogiques"] {
+  opacity: 1;
+}
+.module--projetList .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links--index,
+.module--projetList .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links--name {
+  color: #FFCE5B;
+}
+.module--projetList .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links--name {
+  border-left: 1px solid #FFCE5B;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links--index {
+  text-shadow: 0px 0px 20px #FFCE5B;
+  color: transparent;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links--name {
+  text-shadow: 0px 0px 12px #FFCE5B;
+  color: transparent;
+  border-left-color: transparent;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links:hover {
   background-color: rgba(255, 206, 91, 0.92);
 }
-.module--projetList .module--projetList--projetName:hover[data-type="autres"] .module--projetList--projetName--links {
+.module--projetList:hover .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links:hover .module--projetList--projetName--links--index {
+  /*
+            -webkit-text-stroke: 1px #fff;
+            -webkit-text-fill-color: transparent;
+*/
+  color: #fff;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="outils-pedagogiques"] .module--projetList--projetName--links:hover .module--projetList--projetName--links--name {
+  color: #fff;
+}
+.module--projetList h3[data-type="autres"]::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: auto;
+  height: 1px;
+  background-color: #ACA8A5;
+  left: 0;
+  right: 0;
+}
+.module--projetList .module--projetList--projetName[data-type="autres"] {
+  opacity: 1;
+}
+.module--projetList .module--projetList--projetName[data-type="autres"] .module--projetList--projetName--links--index,
+.module--projetList .module--projetList--projetName[data-type="autres"] .module--projetList--projetName--links--name {
+  color: #ACA8A5;
+}
+.module--projetList .module--projetList--projetName[data-type="autres"] .module--projetList--projetName--links--name {
+  border-left: 1px solid #ACA8A5;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="autres"] .module--projetList--projetName--links--index {
+  text-shadow: 0px 0px 20px #ACA8A5;
+  color: transparent;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="autres"] .module--projetList--projetName--links--name {
+  text-shadow: 0px 0px 12px #ACA8A5;
+  color: transparent;
+  border-left-color: transparent;
+}
+.module--projetList:hover .module--projetList--projetName[data-type="autres"] .module--projetList--projetName--links:hover {
   background-color: rgba(172, 168, 165, 0.92);
 }
-.module--projetList .module--projetList--projetName:hover .module--projetList--projetName--links {
-  letter-spacing: 2px;
+.module--projetList:hover .module--projetList--projetName[data-type="autres"] .module--projetList--projetName--links:hover .module--projetList--projetName--links--index {
+  /*
+            -webkit-text-stroke: 1px #fff;
+            -webkit-text-fill-color: transparent;
+*/
+  color: #fff;
 }
-.module--projetList .module--projetList--projetName:hover .module--projetList--projetName--links .module--projetList--projetName--links--index {
+.module--projetList:hover .module--projetList--projetName[data-type="autres"] .module--projetList--projetName--links:hover .module--projetList--projetName--links--name {
   color: #fff;
 }
 .module--projet {
@@ -912,8 +1083,7 @@ body:not(.is--loading) [data-visuel=''].module--projet .module--projet--header {
   line-height: 1.4;
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
-  font-size: 6em;
-  font-family: 'GT Cinetype Bold';
+  font-size: 7rem;
   display: inline-block;
   width: 2em;
   margin-right: 0;
@@ -934,14 +1104,10 @@ body:not(.is--loading) [data-visuel=''].module--projet .module--projet--header {
   color: #ACA8A5;
 }
 .module--projet .module--projet--header .module--projet--header--text h1 {
-  padding-top: 4px;
-  padding-bottom: 8px;
   display: block;
   color: #fff;
+  font-family: 'GT Cinetype Bold';
   font-size: 1.4em;
-  -webkit-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
-  -o-transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
-  transition: letter-spacing 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out, background-color 0.4s ease-in-out;
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colLeft {
   float: left;
@@ -1302,29 +1468,21 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   height: 100%;
   background-color: transparent;
   opacity: 0;
-  -webkit-filter: grayscale(40%);
-          filter: grayscale(40%);
   will-change: opacity;
-  -webkit-transition: opacity 0.4s ease-out;
-  -o-transition: opacity 0.4s ease-out;
-  transition: opacity 0.4s ease-out;
+  -webkit-transition: opacity 0.8s 0.2s ease-out;
+  -o-transition: opacity 0.8s 0.2s ease-out;
+  transition: opacity 0.8s 0.2s ease-out;
 }
 .module--projet_short .module--projet.was--shown {
   opacity: 0;
-  -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
   z-index: -1;
 }
 .module--projet_short .module--projet.is--shown {
   opacity: .8;
   z-index: 1;
-  -webkit-filter: grayscale(0%);
-          filter: grayscale(0%);
-  -webkit-transition: opacity 0.4s ease-out, -webkit-filter 0.4s ease-out;
-  transition: opacity 0.4s ease-out, -webkit-filter 0.4s ease-out;
-  -o-transition: opacity 0.4s ease-out, filter 0.4s ease-out;
-  transition: opacity 0.4s ease-out, filter 0.4s ease-out;
-  transition: opacity 0.4s ease-out, filter 0.4s ease-out, -webkit-filter 0.4s ease-out;
+  -webkit-transition: opacity 0.4s 0.2s ease-in;
+  -o-transition: opacity 0.4s 0.2s ease-in;
+  transition: opacity 0.4s 0.2s ease-in;
 }
 .module--projet_short .module--projet::before {
   display: none;
@@ -1339,7 +1497,7 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   -webkit-transform: none !important;
        -o-transform: none !important;
           transform: none !important;
-  opacity: .6;
+  opacity: 1;
 }
 .module--projet_short[data-chargement="au_survol"] .module--projet {
   visibility: hidden;

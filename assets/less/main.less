@@ -43,14 +43,14 @@
 .styleLink( @rubrique, @color ) {
 	body[data-rubrique=@{rubrique}] {
     ::-moz-selection {
-        background: @color;
+      // par défaut le background d'une selection est transparent. Pour le rendre vraiment opque il faut lui donner un
+        background: fade( @color, 92%);
     }
     ::selection {
-        background: @color;
+        background: fade( @color, 92%);
     }
 	}
 }
-
 .styleLink( "vr", @c-vr);
 .styleLink( "sites", @c-sites);
 .styleLink( "objets-interactifs", @c-objets-interactifs);
@@ -176,8 +176,6 @@ a:hover {
 
   position: relative;
   z-index: 1000;
-//   mix-blend-mode: exclusion;
-
 
   .module--navbar--wrapper {
   	position: fixed;
@@ -321,26 +319,13 @@ a:hover {
 }
 
 .projet--number {
-	font-size: 	6em;
-	font-family: 'GT Cinetype Bold';
+	font-size: 	7rem;
 }
-.projet--type {
-	margin-right: 	32px;
-	display: inline-block;
-	width: 6px;
-	height: 6px;
-}
-
-
 .projet--name {
-	padding-top: 			@t-margin/4;
-	padding-bottom: 	@t-margin/2;
 	display: block;
 	color: #fff;
+  .strong;
 	.largeText;
-//   text-shadow: 0px 0px 2px @c-pagebg;
-
-	transition: letter-spacing .4s ease-in-out, opacity .4s ease-in-out, color .4s ease-in-out, background-color .4s ease-in-out;
 }
 
 
@@ -349,58 +334,21 @@ a:hover {
 .module--projetList {
 
   position: relative;
-	.containMe;
+
+  .containMe;
 	min-height: 100vh;
-//   counter-reset: projet;
   list-style-type: none;
   z-index: 1;
 
-	padding: 0;
-  padding-top:  @t-margin * 1;
-
-
-	.styleVignette( @rubrique, @color ) {
-    &[data-type= @{rubrique}] {
-      .module--projetList--projetName--links--index {
-//             text-shadow: 0px 0px 15px @color;
-        color: @color;
-  		}
-  		&:hover {
-        .module--projetList--projetName--links--index {
-
-    		}
-  		}
-  		.module--projetList--projetName--links {
-        color: @color;
-  		}
-		}
-	}
-	.styleLink( "vr", @c-vr);
-	.styleLink( "sites", @c-sites);
-	.styleLink( "objets-interactifs", @c-objets-interactifs);
-	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
-	.styleLink( "autres", @c-autres);
-
-  &:hover {
-
-    .module--projetList--projetName {
-
-    }
-    .module--projetList--projetName--links {
-
-      &:hover {
-        //color: inherit;
-      }
-    }
-  }
+  // le padding est sur les éléments intérieurs
+  padding: 0;
 
   h3 {
     .titleCaps;
-    display: block;
+    display: inline-block;
     width:  100%;
-    transition: opacity .4s;
 
-    padding: 0 @t-margin * 2;
+    transition: opacity .4s;
 
     &.is--hidden {
 /*
@@ -416,46 +364,134 @@ a:hover {
 
 	.module--projetList--projetName {
 
-    width: 33.333%;
-    padding: 0 @t-margin * 2;
+    @t-vignettesize: 33.333%;
+
+    width: @t-vignettesize;
+    height: 0;
+    padding: 0 0 @t-vignettesize/2;
+
+    overflow: hidden;
 		transition: opacity .3s ease-out;
 
 		.module--projetList--projetName--links {
-			.projet--name;
-      margin: 0 -@t-margin * 2;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      border-radius: 1px;
+
+			pointer-events: auto;
+
+    	transition: color .4s ease-in-out, background-color .4s ease-in-out;
+
       text-align: center;
 
     	&--index {
     		.projet--number;
-    		display: block;
-				transition: color 1s .4s ease-out;
+    		display: inline-block;
+    		width:  40%;
+    		vertical-align: middle;
+        text-align: right;
+        line-height:  1;
+      }
+
+    	&--name {
+  			.projet--name;
+    		display: inline-block;
+    		vertical-align: middle;
+    		width:  40%;
+    		padding-left: 2%;
+    		margin-left: 2%;
+        line-height:  1.4;
+        text-align: left;
+    	}
+
+      // pour aligner au centre les inline-block
+      &::before {
+          content: "";
+          display: inline-block;
+          height: 95%;
+          vertical-align: middle;
+      }
+
+    	&--name, &--index {
+				transition: color .4s ease-out, text-shadow .6s ease-in, width .6s ease-out, border-color .8s;
     	}
 		}
+  }
 
-		&:hover {
 
-    	.styleHover( @rubrique, @color ) {
-        &[data-type= @{rubrique}] .module--projetList--projetName--links {
-          background-color: fade( @color, 92%);
+	.styleHover( @rubrique, @color ) {
+
+  	h3[data-type= @{rubrique}]::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: auto;
+      height: 1px;
+      background-color: @color;
+      left: 0;
+      right: 0;
+
+  	}
+
+    .module--projetList--projetName {
+      &[data-type= @{rubrique}] {
+  			opacity: 1;
+
+  			.module--projetList--projetName--links {
+//     			border: 1px solid @color;
+          &--index, &--name {
+            color: @color;
+          }
+          &--name {
+            border-left:  1px solid @color;
+          }
     		}
-    	}
-    	.styleHover( "vr", @c-vr);
-    	.styleHover( "sites", @c-sites);
-    	.styleHover( "objets-interactifs", @c-objets-interactifs);
-    	.styleHover( "outils-pedagogiques", @c-outils-pedagogiques);
-    	.styleHover( "autres", @c-autres);
+      }
+  	}
 
-			opacity: 1;
+  	// survol sur tout le menu, effet sur toutes les vignettes sauf celle survolées
+  	&:hover .module--projetList--projetName[data-type= @{rubrique}] {
 
-			.module--projetList--projetName--links {
-				letter-spacing: 2px;
+    	.module--projetList--projetName--links {
 
-				.module--projetList--projetName--links--index {
-  				color: #fff;
-				}
-			}
-		}
-	}
+      	&--index {
+          text-shadow: 0px 0px 20px @color;
+          color: transparent;
+        }
+        &--name {
+          text-shadow: 0px 0px 12px @color;
+          color: transparent;
+          border-left-color: transparent;
+        }
+
+        &:hover {
+          background-color: fade( @color, 92%);
+
+  				.module--projetList--projetName--links--index {
+/*
+            -webkit-text-stroke: 1px #fff;
+            -webkit-text-fill-color: transparent;
+*/
+            color: #fff;
+          }
+  				.module--projetList--projetName--links--name {
+            color: #fff;
+  				}
+    		}
+      }
+  	}
+  }
+	.styleHover( "vr", @c-vr);
+	.styleHover( "sites", @c-sites);
+	.styleHover( "objets-interactifs", @c-objets-interactifs);
+	.styleHover( "outils-pedagogiques", @c-outils-pedagogiques);
+	.styleHover( "autres", @c-autres);
+
 }
 
 
@@ -482,22 +518,22 @@ a:hover {
   	background-color: transparent;
 
   	opacity: 0;
-    filter: grayscale(40%);
+//     filter: grayscale(40%);
 
     will-change: opacity;
-    transition: opacity .4s ease-out;
+    transition: opacity .8s .2s ease-out;
 
   	&.was--shown {
     	opacity: 0;
-      filter: grayscale( 0%);
+//       filter: grayscale( 0%);
       z-index: -1;
   	}
 
   	&.is--shown {
       opacity: .8;
       z-index: 1;
-      filter: grayscale( 0%);
-      transition: opacity .4s ease-out, filter .4s ease-out;
+//       filter: grayscale( 0%);
+      transition: opacity .4s .2s ease-in;
   	}
 
 
@@ -515,7 +551,7 @@ a:hover {
   	}
   	.module--projet--visuel--inside {
     	transform: none !important;
-      opacity: .6;
+      opacity: 1;
   	}
   }
 
