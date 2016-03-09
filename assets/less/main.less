@@ -75,7 +75,7 @@ html {
 }
 
 .largeText {
-	font-size: 	1.4em;
+	font-size: 	1.2em;
 }
 .mediumText {
 	font-size: 	1.4em;
@@ -319,12 +319,11 @@ a:hover {
 }
 
 .projet--number {
-	font-size: 	7rem;
+	font-size:  9rem;
 }
 .projet--name {
 	display: block;
 	color: #fff;
-  .strong;
 	.largeText;
 }
 
@@ -368,10 +367,11 @@ a:hover {
 
     width: @t-vignettesize;
     height: 0;
-    padding: 0 0 @t-vignettesize/2;
+    padding: 0 0 @t-vignettesize/1.6;
 
     overflow: hidden;
 		transition: opacity .3s ease-out;
+
 
 		.module--projetList--projetName--links {
 
@@ -391,22 +391,36 @@ a:hover {
 
     	&--index {
     		.projet--number;
-    		display: inline-block;
-    		width:  40%;
+    		display: block;
+    		position: absolute;
+
+    		top: 48%;
+    		transform: translate( 50%, -50%);
+    		transform-origin: center;
+
+        text-align: left;
     		vertical-align: middle;
-        text-align: right;
         line-height:  1;
+
+        z-index: 0;
+
       }
 
     	&--name {
   			.projet--name;
-    		display: inline-block;
-    		vertical-align: middle;
-    		width:  40%;
+
+  			position: absolute;
+
+    		top: 46%;
+    		transform: translate( 32%, -50%);
+    		z-index:  1;
+
+    		width:  66%;
     		padding-left: 2%;
     		margin-left: 2%;
         line-height:  1.4;
         text-align: left;
+        background-color: fade( @c-pagebg, 60%);
     	}
 
       // pour aligner au centre les inline-block
@@ -418,7 +432,7 @@ a:hover {
       }
 
     	&--name, &--index {
-				transition: color .4s ease-out, text-shadow .6s ease-in, width .6s ease-out, border-color .8s;
+				transition: color .8s ease-out, text-shadow .6s ease-in, transform .6s ease-out, opacity .8s, background .44s;
     	}
 		}
   }
@@ -441,14 +455,23 @@ a:hover {
     .module--projetList--projetName {
       &[data-type= @{rubrique}] {
   			opacity: 1;
+        border-color:  1px solid @color;
+
+        &::after, &::before {
+          border-color: @color;
+        }
 
   			.module--projetList--projetName--links {
 //     			border: 1px solid @color;
           &--index, &--name {
+          }
+          &--index{
+//             color: @c-pagebg;
+//             text-shadow: 0px 0px 20px fade(@color, 80%);
             color: @color;
           }
           &--name {
-            border-left:  1px solid @color;
+//             text-shadow: 0px 0px 2px shade( @color, 40%);
           }
     		}
       }
@@ -460,27 +483,35 @@ a:hover {
     	.module--projetList--projetName--links {
 
       	&--index {
-          text-shadow: 0px 0px 20px @color;
+          text-shadow: 0px 0px 26px @color;
           color: transparent;
         }
         &--name {
-          text-shadow: 0px 0px 12px @color;
+          text-shadow: 0px 0px 16px @color;
           color: transparent;
           border-left-color: transparent;
+          opacity: 0;
+            background-color: transparent;
         }
 
         &:hover {
-          background-color: fade( @color, 92%);
+          background-color: fade( @color, 88%);
 
   				.module--projetList--projetName--links--index {
 /*
             -webkit-text-stroke: 1px #fff;
             -webkit-text-fill-color: transparent;
 */
-            color: #fff;
+        		transform: translate( 34%, -50%) scale( 1.2);
+            color: @color;
+            text-shadow: none;
           }
   				.module--projetList--projetName--links--name {
+            transform: translate( 35%, -50%);
             color: #fff;
+            text-shadow: none;
+            opacity: 1;
+            background-color: transparent;
   				}
     		}
       }
@@ -521,7 +552,7 @@ a:hover {
 //     filter: grayscale(40%);
 
     will-change: opacity;
-    transition: opacity .8s .2s ease-out;
+    transition: opacity .8s 0s ease-out;
 
   	&.was--shown {
     	opacity: 0;
@@ -530,10 +561,10 @@ a:hover {
   	}
 
   	&.is--shown {
-      opacity: .8;
+      opacity: .4;
       z-index: 1;
 //       filter: grayscale( 0%);
-      transition: opacity .4s .2s ease-in;
+      transition: opacity .4s 0s ease-in;
   	}
 
 
