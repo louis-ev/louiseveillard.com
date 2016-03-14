@@ -46,7 +46,7 @@ Header: Un site web minimaliste et fluide pour présenter les projets d'une grap
 
 Headercol2: 
 
-### brief
+### description
 ## Portfolio de la graphiste Émilie Coquard
 ### date de réalisation
 ## Novembre 2014

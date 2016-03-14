@@ -9229,6 +9229,926 @@ c(d.prototype,b.prototype),d.prototype._getElementOffset=e,d.prototype.layout=f,
 !function(a,b){"use strict";function c(a,c){if(!e[a]){var d=b.createElement(c?"link":"script"),f=b.getElementsByTagName("script")[0];c?(d.rel="stylesheet",d.href=a):d.src=a,e[a]=!0,e[d.src||d.href]=!0,f.parentNode.insertBefore(d,f)}}var d,e={};b.addEventListener&&(d=function(a,c){var d=b.createElement("img");d.onload=function(){d.onload=null,d.onerror=null,d=null,c()},d.onerror=d.onload,d.src=a,d&&d.complete&&d.onload&&d.onload()},addEventListener("lazybeforeunveil",function(b){var e,f,g,h;b.defaultPrevented||("none"==b.target.preload&&(b.target.preload="auto"),e=b.target.getAttribute("data-link"),e&&c(e,!0),e=b.target.getAttribute("data-script"),e&&c(e),e=b.target.getAttribute("data-require"),e&&a.require&&require([e]),g=b.target.getAttribute("data-bg"),g&&(b.detail.firesLoad=!0,f=function(){b.target.style.backgroundImage="url("+g+")",b.detail.firesLoad=!1,lazySizes.fire(b.target,"_lazyloaded",{},!0,!0)},d(g,f)),h=b.target.getAttribute("data-poster"),h&&(b.detail.firesLoad=!0,f=function(){b.target.poster=h,b.detail.firesLoad=!1,lazySizes.fire(b.target,"_lazyloaded",{},!0,!0)},d(h,f)))},!1))}(window,document);
 /*! lazysizes - v1.4.0 */
 !function(a,b){var c=b(a,a.document);a.lazySizes=c,"object"==typeof module&&module.exports?module.exports=c:"function"==typeof define&&define.amd&&define(c)}(window,function(a,b){"use strict";if(b.getElementsByClassName){var c,d=b.documentElement,e=a.HTMLPictureElement&&"sizes"in b.createElement("img"),f="addEventListener",g="getAttribute",h=a[f],i=a.setTimeout,j=a.requestAnimationFrame||i,k=/^picture$/i,l=["load","error","lazyincluded","_lazyloaded"],m={},n=Array.prototype.forEach,o=function(a,b){return m[b]||(m[b]=new RegExp("(\\s|^)"+b+"(\\s|$)")),m[b].test(a[g]("class")||"")&&m[b]},p=function(a,b){o(a,b)||a.setAttribute("class",(a[g]("class")||"").trim()+" "+b)},q=function(a,b){var c;(c=o(a,b))&&a.setAttribute("class",(a[g]("class")||"").replace(c," "))},r=function(a,b,c){var d=c?f:"removeEventListener";c&&r(a,b),l.forEach(function(c){a[d](c,b)})},s=function(a,c,d,e,f){var g=b.createEvent("CustomEvent");return g.initCustomEvent(c,!e,!f,d||{}),a.dispatchEvent(g),g},t=function(b,d){var f;!e&&(f=a.picturefill||c.pf)?f({reevaluate:!0,elements:[b]}):d&&d.src&&(b.src=d.src)},u=function(a,b){return(getComputedStyle(a,null)||{})[b]},v=function(a,b,d){for(d=d||a.offsetWidth;d<c.minSize&&b&&!a._lazysizesWidth;)d=b.offsetWidth,b=b.parentNode;return d},w=function(b){var c,d=0,e=a.Date,f=function(){c=!1,d=e.now(),b()},g=function(){i(f)},h=function(){j(g)};return function(){if(!c){var a=125-(e.now()-d);c=!0,6>a&&(a=6),i(h,a)}}},x=function(){var e,l,m,v,x,z,A,B,C,D,E,F,G,H,I,J=/^img$/i,K=/^iframe$/i,L="onscroll"in a&&!/glebot/.test(navigator.userAgent),M=0,N=0,O=0,P=0,Q=function(a){O--,a&&a.target&&r(a.target,Q),(!a||0>O||!a.target)&&(O=0)},R=function(a,c){var e,f=a,g="hidden"==u(b.body,"visibility")||"hidden"!=u(a,"visibility");for(C-=c,F+=c,D-=c,E+=c;g&&(f=f.offsetParent)&&f!=b.body&&f!=d;)g=(u(f,"opacity")||1)>0,g&&"visible"!=u(f,"overflow")&&(e=f.getBoundingClientRect(),g=E>e.left&&D<e.right&&F>e.top-1&&C<e.bottom+1);return g},S=function(){var a,b,f,h,i,j,k,n,o;if((x=c.loadMode)&&8>O&&(a=e.length)){b=0,P++,null==H&&("expand"in c||(c.expand=d.clientHeight>600?d.clientWidth>860?500:410:359),G=c.expand,H=G*c.expFactor),H>N&&1>O&&P>3&&x>2?(N=H,P=0):N=x>1&&P>2&&6>O?G:M;for(;a>b;b++)if(e[b]&&!e[b]._lazyRace)if(L)if((n=e[b][g]("data-expand"))&&(j=1*n)||(j=N),o!==j&&(A=innerWidth+j*I,B=innerHeight+j,k=-1*j,o=j),f=e[b].getBoundingClientRect(),(F=f.bottom)>=k&&(C=f.top)<=B&&(E=f.right)>=k*I&&(D=f.left)<=A&&(F||E||D||C)&&(m&&3>O&&!n&&(3>x||4>P)||R(e[b],j))){if(Y(e[b]),i=!0,O>9)break}else!i&&m&&!h&&4>O&&4>P&&x>2&&(l[0]||c.preloadAfterLoad)&&(l[0]||!n&&(F||E||D||C||"auto"!=e[b][g](c.sizesAttr)))&&(h=l[0]||e[b]);else Y(e[b]);h&&!i&&Y(h)}},T=w(S),U=function(a){p(a.target,c.loadedClass),q(a.target,c.loadingClass),r(a.target,U)},V=function(a,b){try{a.contentWindow.location.replace(b)}catch(c){a.src=b}},W=function(a){var b,d,e=a[g](c.srcsetAttr);(b=c.customMedia[a[g]("data-media")||a[g]("media")])&&a.setAttribute("media",b),e&&a.setAttribute("srcset",e),b&&(d=a.parentNode,d.insertBefore(a.cloneNode(),a),d.removeChild(a))},X=function(){var a,b=[],c=function(){for(;b.length;)b.shift()();a=!1};return function(d){b.push(d),a||(a=!0,j(c))}}(),Y=function(a){var b,d,e,f,h,j,l,u=J.test(a.nodeName),w=u&&(a[g](c.sizesAttr)||a[g]("sizes")),x="auto"==w;(!x&&m||!u||!a.src&&!a.srcset||a.complete||o(a,c.errorClass))&&(x&&(l=a.offsetWidth),a._lazyRace=!0,O++,X(function(){a._lazyRace&&delete a._lazyRace,(h=s(a,"lazybeforeunveil")).defaultPrevented||(w&&(x?(y.updateElem(a,!0,l),p(a,c.autosizesClass)):a.setAttribute("sizes",w)),d=a[g](c.srcsetAttr),b=a[g](c.srcAttr),u&&(e=a.parentNode,f=e&&k.test(e.nodeName||"")),j=h.detail.firesLoad||"src"in a&&(d||b||f),h={target:a},j&&(r(a,Q,!0),clearTimeout(v),v=i(Q,2500),p(a,c.loadingClass),r(a,U,!0)),f&&n.call(e.getElementsByTagName("source"),W),d?a.setAttribute("srcset",d):b&&!f&&(K.test(a.nodeName)?V(a,b):a.src=b),(d||f)&&t(a,{src:b})),q(a,c.lazyClass),(!j||a.complete)&&(j?Q(h):O--,U(h))}))},Z=function(){if(!m){if(Date.now()-z<999)return void i(Z,999);var a,b=function(){c.loadMode=3,T()};m=!0,c.loadMode=3,O||(P?T():i(S)),h("scroll",function(){3==c.loadMode&&(c.loadMode=2),clearTimeout(a),a=i(b,99)},!0)}};return{_:function(){z=Date.now(),e=b.getElementsByClassName(c.lazyClass),l=b.getElementsByClassName(c.lazyClass+" "+c.preloadClass),I=c.hFac,h("scroll",T,!0),h("resize",T,!0),a.MutationObserver?new MutationObserver(T).observe(d,{childList:!0,subtree:!0,attributes:!0}):(d[f]("DOMNodeInserted",T,!0),d[f]("DOMAttrModified",T,!0),setInterval(T,999)),h("hashchange",T,!0),["focus","mouseover","click","load","transitionend","animationend","webkitAnimationEnd"].forEach(function(a){b[f](a,T,!0)}),/d$|^c/.test(b.readyState)?Z():(h("load",Z),b[f]("DOMContentLoaded",T),i(Z,2e4)),T(e.length>0)},checkElems:T,unveil:Y}}(),y=function(){var a,d=function(a,b,c){var d,e,f,g,h=a.parentNode;if(h&&(c=v(a,h,c),g=s(a,"lazybeforesizes",{width:c,dataAttr:!!b}),!g.defaultPrevented&&(c=g.detail.width,c&&c!==a._lazysizesWidth))){if(a._lazysizesWidth=c,c+="px",a.setAttribute("sizes",c),k.test(h.nodeName||""))for(d=h.getElementsByTagName("source"),e=0,f=d.length;f>e;e++)d[e].setAttribute("sizes",c);g.detail.dataAttr||t(a,g.detail)}},e=function(){var b,c=a.length;if(c)for(b=0;c>b;b++)d(a[b])},f=w(e);return{_:function(){a=b.getElementsByClassName(c.autosizesClass),h("resize",f)},checkElems:f,updateElem:d}}(),z=function(){z.i||(z.i=!0,y._(),x._())};return function(){var b,d={lazyClass:"lazyload",loadedClass:"lazyloaded",loadingClass:"lazyloading",preloadClass:"lazypreload",errorClass:"lazyerror",autosizesClass:"lazyautosizes",srcAttr:"data-src",srcsetAttr:"data-srcset",sizesAttr:"data-sizes",minSize:40,customMedia:{},init:!0,expFactor:1.7,hFac:.8,loadMode:2};c=a.lazySizesConfig||a.lazysizesConfig||{};for(b in d)b in c||(c[b]=d[b]);a.lazySizesConfig=c,i(function(){c.init&&z()})}(),{cfg:c,autoSizer:y,loader:x,init:z,uP:t,aC:p,rC:q,hC:o,fire:s,gW:v}}});
+/*!
+ * Copyright 2012, Chris Wanstrath
+ * Released under the MIT License
+ * https://github.com/defunkt/jquery-pjax
+ */
+
+(function($){
+
+// When called on a container with a selector, fetches the href with
+// ajax into the container or with the data-pjax attribute on the link
+// itself.
+//
+// Tries to make sure the back button and ctrl+click work the way
+// you'd expect.
+//
+// Exported as $.fn.pjax
+//
+// Accepts a jQuery ajax options object that may include these
+// pjax specific options:
+//
+//
+// container - Where to stick the response body. Usually a String selector.
+//             $(container).html(xhr.responseBody)
+//             (default: current jquery context)
+//      push - Whether to pushState the URL. Defaults to true (of course).
+//   replace - Want to use replaceState instead? That's cool.
+//
+// For convenience the second parameter can be either the container or
+// the options object.
+//
+// Returns the jQuery object
+function fnPjax(selector, container, options) {
+  var context = this
+  return this.on('click.pjax', selector, function(event) {
+    var opts = $.extend({}, optionsFor(container, options))
+    if (!opts.container)
+      opts.container = $(this).attr('data-pjax') || context
+    handleClick(event, opts)
+  })
+}
+
+// Public: pjax on click handler
+//
+// Exported as $.pjax.click.
+//
+// event   - "click" jQuery.Event
+// options - pjax options
+//
+// Examples
+//
+//   $(document).on('click', 'a', $.pjax.click)
+//   // is the same as
+//   $(document).pjax('a')
+//
+//  $(document).on('click', 'a', function(event) {
+//    var container = $(this).closest('[data-pjax-container]')
+//    $.pjax.click(event, container)
+//  })
+//
+// Returns nothing.
+function handleClick(event, container, options) {
+  options = optionsFor(container, options)
+
+  var link = event.currentTarget
+
+  if (link.tagName.toUpperCase() !== 'A')
+    throw "$.fn.pjax or $.pjax.click requires an anchor element"
+
+  // Middle click, cmd click, and ctrl click should open
+  // links in a new tab as normal.
+  if ( event.which > 1 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey )
+    return
+
+  // Ignore cross origin links
+  if ( location.protocol !== link.protocol || location.hostname !== link.hostname )
+    return
+
+  // Ignore case when a hash is being tacked on the current URL
+  if ( link.href.indexOf('#') > -1 && stripHash(link) == stripHash(location) )
+    return
+
+  // Ignore event with default prevented
+  if (event.isDefaultPrevented())
+    return
+
+  var defaults = {
+    url: link.href,
+    container: $(link).attr('data-pjax'),
+    target: link
+  }
+
+  var opts = $.extend({}, defaults, options)
+  var clickEvent = $.Event('pjax:click')
+  $(link).trigger(clickEvent, [opts])
+
+  if (!clickEvent.isDefaultPrevented()) {
+    pjax(opts)
+    event.preventDefault()
+    $(link).trigger('pjax:clicked', [opts])
+  }
+}
+
+// Public: pjax on form submit handler
+//
+// Exported as $.pjax.submit
+//
+// event   - "click" jQuery.Event
+// options - pjax options
+//
+// Examples
+//
+//  $(document).on('submit', 'form', function(event) {
+//    var container = $(this).closest('[data-pjax-container]')
+//    $.pjax.submit(event, container)
+//  })
+//
+// Returns nothing.
+function handleSubmit(event, container, options) {
+  options = optionsFor(container, options)
+
+  var form = event.currentTarget
+
+  if (form.tagName.toUpperCase() !== 'FORM')
+    throw "$.pjax.submit requires a form element"
+
+  var defaults = {
+    type: form.method.toUpperCase(),
+    url: form.action,
+    container: $(form).attr('data-pjax'),
+    target: form
+  }
+
+  if (defaults.type !== 'GET' && window.FormData !== undefined) {
+    defaults.data = new FormData(form);
+    defaults.processData = false;
+    defaults.contentType = false;
+  } else {
+    // Can't handle file uploads, exit
+    if ($(form).find(':file').length) {
+      return;
+    }
+
+    // Fallback to manually serializing the fields
+    defaults.data = $(form).serializeArray();
+  }
+
+  pjax($.extend({}, defaults, options))
+
+  event.preventDefault()
+}
+
+// Loads a URL with ajax, puts the response body inside a container,
+// then pushState()'s the loaded URL.
+//
+// Works just like $.ajax in that it accepts a jQuery ajax
+// settings object (with keys like url, type, data, etc).
+//
+// Accepts these extra keys:
+//
+// container - Where to stick the response body.
+//             $(container).html(xhr.responseBody)
+//      push - Whether to pushState the URL. Defaults to true (of course).
+//   replace - Want to use replaceState instead? That's cool.
+//
+// Use it just like $.ajax:
+//
+//   var xhr = $.pjax({ url: this.href, container: '#main' })
+//   console.log( xhr.readyState )
+//
+// Returns whatever $.ajax returns.
+function pjax(options) {
+  options = $.extend(true, {}, $.ajaxSettings, pjax.defaults, options)
+
+  if ($.isFunction(options.url)) {
+    options.url = options.url()
+  }
+
+  var target = options.target
+
+  var hash = parseURL(options.url).hash
+
+  var context = options.context = findContainerFor(options.container)
+
+  // We want the browser to maintain two separate internal caches: one
+  // for pjax'd partial page loads and one for normal page loads.
+  // Without adding this secret parameter, some browsers will often
+  // confuse the two.
+  if (!options.data) options.data = {}
+  if ($.isArray(options.data)) {
+    options.data.push({name: '_pjax', value: context.selector})
+  } else {
+    options.data._pjax = context.selector
+  }
+
+  function fire(type, args, props) {
+    if (!props) props = {}
+    props.relatedTarget = target
+    var event = $.Event(type, props)
+    context.trigger(event, args)
+    return !event.isDefaultPrevented()
+  }
+
+  var timeoutTimer
+
+  options.beforeSend = function(xhr, settings) {
+    // No timeout for non-GET requests
+    // Its not safe to request the resource again with a fallback method.
+    if (settings.type !== 'GET') {
+      settings.timeout = 0
+    }
+
+    xhr.setRequestHeader('X-PJAX', 'true')
+    xhr.setRequestHeader('X-PJAX-Container', context.selector)
+
+    if (!fire('pjax:beforeSend', [xhr, settings]))
+      return false
+
+    if (settings.timeout > 0) {
+      timeoutTimer = setTimeout(function() {
+        if (fire('pjax:timeout', [xhr, options]))
+          xhr.abort('timeout')
+      }, settings.timeout)
+
+      // Clear timeout setting so jquerys internal timeout isn't invoked
+      settings.timeout = 0
+    }
+
+    var url = parseURL(settings.url)
+    if (hash) url.hash = hash
+    options.requestUrl = stripInternalParams(url)
+  }
+
+  options.complete = function(xhr, textStatus) {
+    if (timeoutTimer)
+      clearTimeout(timeoutTimer)
+
+    fire('pjax:complete', [xhr, textStatus, options])
+
+    fire('pjax:end', [xhr, options])
+  }
+
+  options.error = function(xhr, textStatus, errorThrown) {
+    var container = extractContainer("", xhr, options)
+
+    var allowed = fire('pjax:error', [xhr, textStatus, errorThrown, options])
+    if (options.type == 'GET' && textStatus !== 'abort' && allowed) {
+      locationReplace(container.url)
+    }
+  }
+
+  options.success = function(data, status, xhr) {
+    var previousState = pjax.state;
+
+    // If $.pjax.defaults.version is a function, invoke it first.
+    // Otherwise it can be a static string.
+    var currentVersion = (typeof $.pjax.defaults.version === 'function') ?
+      $.pjax.defaults.version() :
+      $.pjax.defaults.version
+
+    var latestVersion = xhr.getResponseHeader('X-PJAX-Version')
+
+    var container = extractContainer(data, xhr, options)
+
+    var url = parseURL(container.url)
+    if (hash) {
+      url.hash = hash
+      container.url = url.href
+    }
+
+    // If there is a layout version mismatch, hard load the new url
+    if (currentVersion && latestVersion && currentVersion !== latestVersion) {
+      locationReplace(container.url)
+      return
+    }
+
+    // If the new response is missing a body, hard load the page
+    if (!container.contents) {
+      locationReplace(container.url)
+      return
+    }
+
+    pjax.state = {
+      id: options.id || uniqueId(),
+      url: container.url,
+      title: container.title,
+      container: context.selector,
+      fragment: options.fragment,
+      timeout: options.timeout
+    }
+
+    if (options.push || options.replace) {
+      window.history.replaceState(pjax.state, container.title, container.url)
+    }
+
+    // Clear out any focused controls before inserting new page contents.
+    try {
+      document.activeElement.blur()
+    } catch (e) { }
+
+    if (container.title) document.title = container.title
+
+    fire('pjax:beforeReplace', [container.contents, options], {
+      state: pjax.state,
+      previousState: previousState
+    })
+    context.html(container.contents)
+
+    // FF bug: Won't autofocus fields that are inserted via JS.
+    // This behavior is incorrect. So if theres no current focus, autofocus
+    // the last field.
+    //
+    // http://www.w3.org/html/wg/drafts/html/master/forms.html
+    var autofocusEl = context.find('input[autofocus], textarea[autofocus]').last()[0]
+    if (autofocusEl && document.activeElement !== autofocusEl) {
+      autofocusEl.focus();
+    }
+
+    executeScriptTags(container.scripts)
+
+    var scrollTo = options.scrollTo
+
+    // Ensure browser scrolls to the element referenced by the URL anchor
+    if (hash) {
+      var name = decodeURIComponent(hash.slice(1))
+      var target = document.getElementById(name) || document.getElementsByName(name)[0]
+      if (target) scrollTo = $(target).offset().top
+    }
+
+    if (typeof scrollTo == 'number') $(window).scrollTop(scrollTo)
+
+    fire('pjax:success', [data, status, xhr, options])
+  }
+
+
+  // Initialize pjax.state for the initial page load. Assume we're
+  // using the container and options of the link we're loading for the
+  // back button to the initial page. This ensures good back button
+  // behavior.
+  if (!pjax.state) {
+    pjax.state = {
+      id: uniqueId(),
+      url: window.location.href,
+      title: document.title,
+      container: context.selector,
+      fragment: options.fragment,
+      timeout: options.timeout
+    }
+    window.history.replaceState(pjax.state, document.title)
+  }
+
+  // Cancel the current request if we're already pjaxing
+  abortXHR(pjax.xhr)
+
+  pjax.options = options
+  var xhr = pjax.xhr = $.ajax(options)
+
+  if (xhr.readyState > 0) {
+    if (options.push && !options.replace) {
+      // Cache current container element before replacing it
+      cachePush(pjax.state.id, cloneContents(context))
+
+      window.history.pushState(null, "", options.requestUrl)
+    }
+
+    fire('pjax:start', [xhr, options])
+    fire('pjax:send', [xhr, options])
+  }
+
+  return pjax.xhr
+}
+
+// Public: Reload current page with pjax.
+//
+// Returns whatever $.pjax returns.
+function pjaxReload(container, options) {
+  var defaults = {
+    url: window.location.href,
+    push: false,
+    replace: true,
+    scrollTo: false
+  }
+
+  return pjax($.extend(defaults, optionsFor(container, options)))
+}
+
+// Internal: Hard replace current state with url.
+//
+// Work for around WebKit
+//   https://bugs.webkit.org/show_bug.cgi?id=93506
+//
+// Returns nothing.
+function locationReplace(url) {
+  window.history.replaceState(null, "", pjax.state.url)
+  window.location.replace(url)
+}
+
+
+var initialPop = true
+var initialURL = window.location.href
+var initialState = window.history.state
+
+// Initialize $.pjax.state if possible
+// Happens when reloading a page and coming forward from a different
+// session history.
+if (initialState && initialState.container) {
+  pjax.state = initialState
+}
+
+// Non-webkit browsers don't fire an initial popstate event
+if ('state' in window.history) {
+  initialPop = false
+}
+
+// popstate handler takes care of the back and forward buttons
+//
+// You probably shouldn't use pjax on pages with other pushState
+// stuff yet.
+function onPjaxPopstate(event) {
+
+  // Hitting back or forward should override any pending PJAX request.
+  if (!initialPop) {
+    abortXHR(pjax.xhr)
+  }
+
+  var previousState = pjax.state
+  var state = event.state
+  var direction
+
+  if (state && state.container) {
+    // When coming forward from a separate history session, will get an
+    // initial pop with a state we are already at. Skip reloading the current
+    // page.
+    if (initialPop && initialURL == state.url) return
+
+    if (previousState) {
+      // If popping back to the same state, just skip.
+      // Could be clicking back from hashchange rather than a pushState.
+      if (previousState.id === state.id) return
+
+      // Since state IDs always increase, we can deduce the navigation direction
+      direction = previousState.id < state.id ? 'forward' : 'back'
+    }
+
+    var cache = cacheMapping[state.id] || []
+    var container = $(cache[0] || state.container), contents = cache[1]
+
+    if (container.length) {
+      if (previousState) {
+        // Cache current container before replacement and inform the
+        // cache which direction the history shifted.
+        cachePop(direction, previousState.id, cloneContents(container))
+      }
+
+      var popstateEvent = $.Event('pjax:popstate', {
+        state: state,
+        direction: direction
+      })
+      container.trigger(popstateEvent)
+
+      var options = {
+        id: state.id,
+        url: state.url,
+        container: container,
+        push: false,
+        fragment: state.fragment,
+        timeout: state.timeout,
+        scrollTo: false
+      }
+
+      if (contents) {
+        container.trigger('pjax:start', [null, options])
+
+        pjax.state = state
+        if (state.title) document.title = state.title
+        var beforeReplaceEvent = $.Event('pjax:beforeReplace', {
+          state: state,
+          previousState: previousState
+        })
+        container.trigger(beforeReplaceEvent, [contents, options])
+        container.html(contents)
+
+        container.trigger('pjax:end', [null, options])
+      } else {
+        pjax(options)
+      }
+
+      // Force reflow/relayout before the browser tries to restore the
+      // scroll position.
+      container[0].offsetHeight
+    } else {
+      locationReplace(location.href)
+    }
+  }
+  initialPop = false
+}
+
+// Fallback version of main pjax function for browsers that don't
+// support pushState.
+//
+// Returns nothing since it retriggers a hard form submission.
+function fallbackPjax(options) {
+  var url = $.isFunction(options.url) ? options.url() : options.url,
+      method = options.type ? options.type.toUpperCase() : 'GET'
+
+  var form = $('<form>', {
+    method: method === 'GET' ? 'GET' : 'POST',
+    action: url,
+    style: 'display:none'
+  })
+
+  if (method !== 'GET' && method !== 'POST') {
+    form.append($('<input>', {
+      type: 'hidden',
+      name: '_method',
+      value: method.toLowerCase()
+    }))
+  }
+
+  var data = options.data
+  if (typeof data === 'string') {
+    $.each(data.split('&'), function(index, value) {
+      var pair = value.split('=')
+      form.append($('<input>', {type: 'hidden', name: pair[0], value: pair[1]}))
+    })
+  } else if ($.isArray(data)) {
+    $.each(data, function(index, value) {
+      form.append($('<input>', {type: 'hidden', name: value.name, value: value.value}))
+    })
+  } else if (typeof data === 'object') {
+    var key
+    for (key in data)
+      form.append($('<input>', {type: 'hidden', name: key, value: data[key]}))
+  }
+
+  $(document.body).append(form)
+  form.submit()
+}
+
+// Internal: Abort an XmlHttpRequest if it hasn't been completed,
+// also removing its event handlers.
+function abortXHR(xhr) {
+  if ( xhr && xhr.readyState < 4) {
+    xhr.onreadystatechange = $.noop
+    xhr.abort()
+  }
+}
+
+// Internal: Generate unique id for state object.
+//
+// Use a timestamp instead of a counter since ids should still be
+// unique across page loads.
+//
+// Returns Number.
+function uniqueId() {
+  return (new Date).getTime()
+}
+
+function cloneContents(container) {
+  var cloned = container.clone()
+  // Unmark script tags as already being eval'd so they can get executed again
+  // when restored from cache. HAXX: Uses jQuery internal method.
+  cloned.find('script').each(function(){
+    if (!this.src) jQuery._data(this, 'globalEval', false)
+  })
+  return [container.selector, cloned.contents()]
+}
+
+// Internal: Strip internal query params from parsed URL.
+//
+// Returns sanitized url.href String.
+function stripInternalParams(url) {
+  url.search = url.search.replace(/([?&])(_pjax|_)=[^&]*/g, '')
+  return url.href.replace(/\?($|#)/, '$1')
+}
+
+// Internal: Parse URL components and returns a Locationish object.
+//
+// url - String URL
+//
+// Returns HTMLAnchorElement that acts like Location.
+function parseURL(url) {
+  var a = document.createElement('a')
+  a.href = url
+  return a
+}
+
+// Internal: Return the `href` component of given URL object with the hash
+// portion removed.
+//
+// location - Location or HTMLAnchorElement
+//
+// Returns String
+function stripHash(location) {
+  return location.href.replace(/#.*/, '')
+}
+
+// Internal: Build options Object for arguments.
+//
+// For convenience the first parameter can be either the container or
+// the options object.
+//
+// Examples
+//
+//   optionsFor('#container')
+//   // => {container: '#container'}
+//
+//   optionsFor('#container', {push: true})
+//   // => {container: '#container', push: true}
+//
+//   optionsFor({container: '#container', push: true})
+//   // => {container: '#container', push: true}
+//
+// Returns options Object.
+function optionsFor(container, options) {
+  // Both container and options
+  if ( container && options )
+    options.container = container
+
+  // First argument is options Object
+  else if ( $.isPlainObject(container) )
+    options = container
+
+  // Only container
+  else
+    options = {container: container}
+
+  // Find and validate container
+  if (options.container)
+    options.container = findContainerFor(options.container)
+
+  return options
+}
+
+// Internal: Find container element for a variety of inputs.
+//
+// Because we can't persist elements using the history API, we must be
+// able to find a String selector that will consistently find the Element.
+//
+// container - A selector String, jQuery object, or DOM Element.
+//
+// Returns a jQuery object whose context is `document` and has a selector.
+function findContainerFor(container) {
+  container = $(container)
+
+  if ( !container.length ) {
+    throw "no pjax container for " + container.selector
+  } else if ( container.selector !== '' && container.context === document ) {
+    return container
+  } else if ( container.attr('id') ) {
+    return $('#' + container.attr('id'))
+  } else {
+    throw "cant get selector for pjax container!"
+  }
+}
+
+// Internal: Filter and find all elements matching the selector.
+//
+// Where $.fn.find only matches descendants, findAll will test all the
+// top level elements in the jQuery object as well.
+//
+// elems    - jQuery object of Elements
+// selector - String selector to match
+//
+// Returns a jQuery object.
+function findAll(elems, selector) {
+  return elems.filter(selector).add(elems.find(selector));
+}
+
+function parseHTML(html) {
+  return $.parseHTML(html, document, true)
+}
+
+// Internal: Extracts container and metadata from response.
+//
+// 1. Extracts X-PJAX-URL header if set
+// 2. Extracts inline <title> tags
+// 3. Builds response Element and extracts fragment if set
+//
+// data    - String response data
+// xhr     - XHR response
+// options - pjax options Object
+//
+// Returns an Object with url, title, and contents keys.
+function extractContainer(data, xhr, options) {
+  var obj = {}, fullDocument = /<html/i.test(data)
+
+  // Prefer X-PJAX-URL header if it was set, otherwise fallback to
+  // using the original requested url.
+  var serverUrl = xhr.getResponseHeader('X-PJAX-URL')
+  obj.url = serverUrl ? stripInternalParams(parseURL(serverUrl)) : options.requestUrl
+
+  // Attempt to parse response html into elements
+  if (fullDocument) {
+    var $head = $(parseHTML(data.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0]))
+    var $body = $(parseHTML(data.match(/<body[^>]*>([\s\S.]*)<\/body>/i)[0]))
+  } else {
+    var $head = $body = $(parseHTML(data))
+  }
+
+  // If response data is empty, return fast
+  if ($body.length === 0)
+    return obj
+
+  // If there's a <title> tag in the header, use it as
+  // the page's title.
+  obj.title = findAll($head, 'title').last().text()
+
+  if (options.fragment) {
+    // If they specified a fragment, look for it in the response
+    // and pull it out.
+    if (options.fragment === 'body') {
+      var $fragment = $body
+    } else {
+      var $fragment = findAll($body, options.fragment).first()
+    }
+
+    if ($fragment.length) {
+      obj.contents = options.fragment === 'body' ? $fragment : $fragment.contents()
+
+      // If there's no title, look for data-title and title attributes
+      // on the fragment
+      if (!obj.title)
+        obj.title = $fragment.attr('title') || $fragment.data('title')
+    }
+
+  } else if (!fullDocument) {
+    obj.contents = $body
+  }
+
+  // Clean up any <title> tags
+  if (obj.contents) {
+    // Remove any parent title elements
+    obj.contents = obj.contents.not(function() { return $(this).is('title') })
+
+    // Then scrub any titles from their descendants
+    obj.contents.find('title').remove()
+
+    // Gather all script[src] elements
+    obj.scripts = findAll(obj.contents, 'script[src]').remove()
+    obj.contents = obj.contents.not(obj.scripts)
+  }
+
+  // Trim any whitespace off the title
+  if (obj.title) obj.title = $.trim(obj.title)
+
+  return obj
+}
+
+// Load an execute scripts using standard script request.
+//
+// Avoids jQuery's traditional $.getScript which does a XHR request and
+// globalEval.
+//
+// scripts - jQuery object of script Elements
+//
+// Returns nothing.
+function executeScriptTags(scripts) {
+  if (!scripts) return
+
+  var existingScripts = $('script[src]')
+
+  scripts.each(function() {
+    var src = this.src
+    var matchedScripts = existingScripts.filter(function() {
+      return this.src === src
+    })
+    if (matchedScripts.length) return
+
+    var script = document.createElement('script')
+    var type = $(this).attr('type')
+    if (type) script.type = type
+    script.src = $(this).attr('src')
+    document.head.appendChild(script)
+  })
+}
+
+// Internal: History DOM caching class.
+var cacheMapping      = {}
+var cacheForwardStack = []
+var cacheBackStack    = []
+
+// Push previous state id and container contents into the history
+// cache. Should be called in conjunction with `pushState` to save the
+// previous container contents.
+//
+// id    - State ID Number
+// value - DOM Element to cache
+//
+// Returns nothing.
+function cachePush(id, value) {
+  cacheMapping[id] = value
+  cacheBackStack.push(id)
+
+  // Remove all entries in forward history stack after pushing a new page.
+  trimCacheStack(cacheForwardStack, 0)
+
+  // Trim back history stack to max cache length.
+  trimCacheStack(cacheBackStack, pjax.defaults.maxCacheLength)
+}
+
+// Shifts cache from directional history cache. Should be
+// called on `popstate` with the previous state id and container
+// contents.
+//
+// direction - "forward" or "back" String
+// id        - State ID Number
+// value     - DOM Element to cache
+//
+// Returns nothing.
+function cachePop(direction, id, value) {
+  var pushStack, popStack
+  cacheMapping[id] = value
+
+  if (direction === 'forward') {
+    pushStack = cacheBackStack
+    popStack  = cacheForwardStack
+  } else {
+    pushStack = cacheForwardStack
+    popStack  = cacheBackStack
+  }
+
+  pushStack.push(id)
+  if (id = popStack.pop())
+    delete cacheMapping[id]
+
+  // Trim whichever stack we just pushed to to max cache length.
+  trimCacheStack(pushStack, pjax.defaults.maxCacheLength)
+}
+
+// Trim a cache stack (either cacheBackStack or cacheForwardStack) to be no
+// longer than the specified length, deleting cached DOM elements as necessary.
+//
+// stack  - Array of state IDs
+// length - Maximum length to trim to
+//
+// Returns nothing.
+function trimCacheStack(stack, length) {
+  while (stack.length > length)
+    delete cacheMapping[stack.shift()]
+}
+
+// Public: Find version identifier for the initial page load.
+//
+// Returns String version or undefined.
+function findVersion() {
+  return $('meta').filter(function() {
+    var name = $(this).attr('http-equiv')
+    return name && name.toUpperCase() === 'X-PJAX-VERSION'
+  }).attr('content')
+}
+
+// Install pjax functions on $.pjax to enable pushState behavior.
+//
+// Does nothing if already enabled.
+//
+// Examples
+//
+//     $.pjax.enable()
+//
+// Returns nothing.
+function enable() {
+  $.fn.pjax = fnPjax
+  $.pjax = pjax
+  $.pjax.enable = $.noop
+  $.pjax.disable = disable
+  $.pjax.click = handleClick
+  $.pjax.submit = handleSubmit
+  $.pjax.reload = pjaxReload
+  $.pjax.defaults = {
+    timeout: 650,
+    push: true,
+    replace: false,
+    type: 'GET',
+    dataType: 'html',
+    scrollTo: 0,
+    maxCacheLength: 20,
+    version: findVersion
+  }
+  $(window).on('popstate.pjax', onPjaxPopstate)
+}
+
+// Disable pushState behavior.
+//
+// This is the case when a browser doesn't support pushState. It is
+// sometimes useful to disable pushState for debugging on a modern
+// browser.
+//
+// Examples
+//
+//     $.pjax.disable()
+//
+// Returns nothing.
+function disable() {
+  $.fn.pjax = function() { return this }
+  $.pjax = fallbackPjax
+  $.pjax.enable = enable
+  $.pjax.disable = $.noop
+  $.pjax.click = $.noop
+  $.pjax.submit = $.noop
+  $.pjax.reload = function() { window.location.reload() }
+
+  $(window).off('popstate.pjax', onPjaxPopstate)
+}
+
+
+// Add the state property to jQuery's event object so we can use it in
+// $(window).bind('popstate')
+if ( $.inArray('state', $.event.props) < 0 )
+  $.event.props.push('state')
+
+// Is pjax supported by this browser?
+$.support.pjax =
+  window.history && window.history.pushState && window.history.replaceState &&
+  // pushState isn't reliable on iOS until 5.
+  !navigator.userAgent.match(/((iPod|iPhone|iPad).+\bOS\s+[1-4]\D|WebApps\/.+CFNetwork)/)
+
+$.support.pjax ? enable() : disable()
+
+})(jQuery);
+
 /*
 	 map values :
 		var num = 5;
@@ -9254,7 +10174,7 @@ var canvasCV = {
 
     init_pjs = 768;
 		if ( $(window).width() > init_pjs ) {
-	    var scriptSrc = './bower_components/Processing.js/processing.min.js?' + new Date().getTime();
+	    var scriptSrc = 'http://louiseveillard.com/bower_components/Processing.js/processing.min.js?' + new Date().getTime();
 	    //console.log( "script : " , script);
 			var script = document.createElement('script');
 			script.src = scriptSrc;
@@ -9367,7 +10287,7 @@ var canvasCV = {
 		});
 
 
-    var c = $(".module--cv a").first().css("border-bottom-color");
+    var c = $(".module--cv a[data-link]").first().css("border-bottom-color");
     var linksUnderlineColor = c.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
 
 		$(".module--cv a[data-link]").each(function() {
@@ -9482,32 +10402,37 @@ var canvasCV = {
 jQuery.fn.reverse = [].reverse;
 
 var theProjetList = {
-	init : function() {
+	init : function( $projetListEtVisuels) {
 		// binder un event mouse : au survol sur un a, passer le gradient en is--away et charger l'image qui correspond
 
-		var $allProjets = $(".module--projet_short");
+		var $allProjetsVisuel = $projetListEtVisuels.find(".module--projetList--visuelWrapper--visuel");
 
-		// au scroll, détecter si le bloc est visible
+    var slice = [].slice;
+    document.addEventListener('lazybeforeunveil', function(e){
+        var children = e.target.getAttribute('data-lazyload-children');
+        if(children){
+            $unveilchildren = slice.call(e.target.querySelectorAll(children));
+            $unveilchildren.forEach(lazySizes.loader.unveil);
+        }
+    });
 
-		$('.module--projetList .module--projetList--projetName--links').each( function() {
+		$projetListEtVisuels.find(".module--projetList--titles--projetName--links").each( function() {
 
   		$(this).on('mouseover', function() {
-
-  			$("body").attr("module--gradient_overlay", "is--away");
-  			projetIndex = $(this).parent("li").attr("data-index");
-  			$thisProjet = $allProjets.find(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
-
-        // activer cette vignette (donc la charger sur lazysizes)
-        $thisProjet.addClass("is--shown");
-
+  			projetIndex = $(this).parent(".module--projetList--titles--projetName").attr("data-index");
+  			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
+                                                   return $(this).attr('data-index') == projetIndex
+                                                });
+        $thisProjetVisuel.addClass("is--shown");
+  			$("body").attr("module--projetVisuel", "is--shown");
   		});
   		$(this).on('mouseleave', function() {
-
   			projetIndex = $(this).parent("li").attr("data-index");
-  			$thisProjet = $allProjets.find(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
-  			$thisProjet.removeClass("is--shown").addClass("was--shown");
-  			$("body").attr("module--gradient_overlay", "");
-
+  			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
+                                                   return $(this).attr('data-index') == projetIndex
+                                                });
+  			$thisProjetVisuel.removeClass("is--shown").addClass("was--shown");
+  			$("body").attr("module--projetVisuel", "");
   		});
 		});
 
@@ -9516,7 +10441,7 @@ var theProjetList = {
 
 var theIntroLinks = {
 
-	init : function( $projetList) {
+	init : function( $introLinks, $projetList) {
 
     click = 0;
     var $items = $projetList.find( ".isotope--item");
@@ -9577,7 +10502,7 @@ var theIntroLinks = {
     });
 
 
-		$('.module--intro a').on('click', function() {
+		$introLinks.on('click', function() {
   		$('.module--intro a').not( $(this)).removeClass("is--active");
       $(this).toggleClass("is--active");
       theIntroLinks.filterProjects( $projetList, $items);
@@ -9591,16 +10516,13 @@ var theIntroLinks = {
       $projetList.find("h3[data-type]").addClass('is--hidden');
       $projetList.find("h3:not([data-type])").removeClass('is--hidden');
 
-/*
-      $items.each(function() {
-        if( $(this).attr("data-index") !== undefined)
-          $(this).attr("data-num", $(this).attr("data-index"));
-      });
-*/
       $projetList.isotope( 'updateSortData', $items);
       $projetList.isotope({
 		    sortBy : ['index', 'number', 'type'],
       });
+
+      $projetList.removeClass("is--sorted");
+
     } else {
 
       filterByType = filterByType.substring(1);
@@ -9628,15 +10550,58 @@ var theIntroLinks = {
       $projetList.isotope({
 		    sortBy : ['selected', 'number', 'type', 'index'],
       });
+      $projetList.addClass("is--sorted");
     }
 
   },
 
 };
 
+// pas encore utilisé
+var createCustomFavicon = {
+  init : function() {
+
+  	var canvas = document.createElement('canvas'),
+  		  ctx,
+        img = document.createElement('img'),
+        link = document.getElementById('favicon');
+
+  	if (canvas.getContext) {
+  	  canvas.height = canvas.width = 32; // set the size
+  	  ctx = canvas.getContext('2d');
+
+  		ctx.beginPath();
+  		ctx.arc(16, 16, 16, 0, Math.PI*2, true);
+
+  		ctx.closePath();
+    	ctx.fillStyle = couleurSecondaire;
+    	ctx.fill();
+
+  		ctx.globalAlpha=0.8; // Half opacity
+  		ctx.beginPath();
+  		ctx.arc(16, 16, 8, 0, Math.PI*2, true);
+  		ctx.closePath();
+
+    	ctx.fillStyle = couleurPrimaire;
+    	ctx.fill();
+
+    	link.href = canvas.toDataURL('image/png');
+  	}
+  }
+}
+
+var pjaxNav = {
+
+  init : function( $bloc) {
+
+
+
+  }
+
+}
+
 
 var theProjetView = {
-
 
 	init : function() {
 
@@ -9667,6 +10632,7 @@ var theProjetView = {
       var isVideo = $(e.target).is("video");
       if( isVideo){
         $(e.target).attr("autoplay", true);
+        e.target.play();
       }
     });
 
@@ -9675,8 +10641,6 @@ var theProjetView = {
   changeVisuelOpacity : function( wHeight, $visuelTop) {
 
     var cssOpacity = scrollY.map( 0, wHeight, 1, 0)
-    $visuelTop.css("opacity", cssOpacity);
-
 		$(window).on('scroll', function () {
       window.scrollY = window.pageYOffset;
       if( scrollY < wHeight) {
@@ -9689,8 +10653,8 @@ var theProjetView = {
 };
 
 $(document).ready(function() {
-	theProjetList.init();
-	theIntroLinks.init( $(".module--projetList"));
+	theProjetList.init( $(".module--projetList"));
+	theIntroLinks.init( $(".module--intro a"), $(".module--projetList--titles"));
 
 	theProjetView.init();
 

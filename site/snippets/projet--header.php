@@ -5,7 +5,7 @@
 	if( $p->imageCover()->isNotEmpty()):
 	  $image = $p->imageCover()->toFile();
 ?>
-<a class="module--projet--visuel" href="<?= $image->url() ?>" target="_blank">
+<a class="module--projet--visuel" href="<?= $image->url() ?>" target="_blank" tabindex="-1">
   <?php
 		$srcsetstring = kirbytag(array(
 		  'image'  				=> $image->filename(),
@@ -14,7 +14,7 @@
 		  'return_srcset' => true
 		));
   ?>
-  <div class="module--projet--visuel--inside lazyload" data-sizes="auto" data-bgset="<?= $srcsetstring; ?>"></div>
+  <div class="module--projet--visuel--inside lazyload" data-sizes="auto" data-optimumx="1.8" data-bgset="<?= $srcsetstring; ?>"></div>
 </a>
 <?php
   endif;
@@ -24,8 +24,8 @@
 
 	<div class="module--projet--header--text">
     <h1>
-  	  <span class="module--projet--header--text--index"><?= $index; ?></span>
-      <?= $p->title()->text() ?>
+    	<span class="module--projet--header--text--index"><?= $index ?></span>
+      <span class="module--projet--header--text--name"><?= $p->title()->html() ?></span>
     </h1>
 
     <hr>

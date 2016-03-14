@@ -5,7 +5,7 @@
 	.containMe;
   padding-top:  22vh;
 
-	font-size:  .8em;
+	font-size:  .9em;
 
 
 	a {
@@ -90,6 +90,16 @@
 		}
   }
 
+  .header {
+    h2 {
+      display: inline-block;
+      padding: @t-margin/2;
+      &:first-child {
+        margin-left:  -@t-margin/2;
+      }
+    }
+  }
+
   h3 {
     .titleCaps;
   }
@@ -169,7 +179,6 @@
 
 		&> li:nth-child(4n + 4) {
 			list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAI0lEQVQIW2NkwAEYYeL/gQDEZgQCMA0iQIIwARibAh3obgAAtn0YB/1UIlkAAAAASUVORK5CYII=);
-
 		}
   }
 }
@@ -183,4 +192,8 @@
   z-index:  -1;
 
   pointer-events: none;
+
+  opacity: 0;
+
+  transition: opacity .9s ease-out;
 }

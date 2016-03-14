@@ -29,11 +29,10 @@
 .media-image .image {
 	background-color: transparent;
 }
-.media-image .lazyload > img, .media-image .lazyloading img{
+html.js .media-image .FigureImage-lazy > img {
     opacity: 0;
-}
 
-.media-image .lazyloaded img {
-	opacity: 1;
+    &.lazyloaded {
+      opacity: 1;
+    }
 }
-
