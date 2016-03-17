@@ -77,8 +77,11 @@ gulp.task('less', function() {
     }))
     .pipe(less())
     .pipe(autoprefixer({
-      browsers: ['last 3 versions'],
-      cascade: false
+      browsers: [
+        'last 2 versions',
+        'android 4',
+        'opera 12'
+      ]
     }))
     .pipe(gulp.dest('assets/css'))
     .pipe(browserSync.stream());

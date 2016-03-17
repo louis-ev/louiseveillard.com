@@ -270,7 +270,7 @@ a:focus {
 
 	transition: opacity .4s .4s ease-out;
 
-	.module--into--textblock {
+	.module--intro--textblock {
 		margin: 22vh	5% 16vh 33% ;
 		max-width: 23em;
 	}
@@ -341,6 +341,28 @@ a:focus {
 
 }
 
+.module--infos {
+
+
+	.containMe;
+
+
+  h3 {
+    .titleCaps;
+  }
+
+  .module--infos--textblock {
+  	width: 	100%;
+  	margin: 0 auto;
+  	margin-top:   22vh;
+  	max-width: @t-largemaxwidth;
+  	columns: 2;
+
+  }
+
+}
+
+
 .projet--number {
 	font-size:  7rem;
 	.strong;
@@ -356,7 +378,8 @@ a:focus {
 .module--projetList {
 
   position: relative;
-  margin-top:   @t-margin * 2;
+  margin-top:   @t-margin;
+  padding-top:  @t-margin * 2;
 
 }
 .module--projetList--titles {
@@ -379,13 +402,6 @@ a:focus {
     transition: opacity .4s;
 
     &.is--hidden {
-/*
-      height: 0;
-      line-height:  0;
-      margin: 0;
-*/
-//      opacity: 0;
-//         display: none;
       padding: 0;
       margin: 0;
       max-height: 0;
@@ -600,7 +616,7 @@ a:focus {
 
     visibility: hidden;
 
-    transform: scale(1.03);
+    transform: translate3d( 0, 0, 0);
 		transform-origin: center;
 
 

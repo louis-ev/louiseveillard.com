@@ -27,14 +27,14 @@
          -o-transition-timing-function: cubic-bezier(0.355, 0.255, 0.010, 1.055);
             transition-timing-function: cubic-bezier(0.355, 0.255, 0.010, 1.055); /* custom */
 
-    transform: translate( 0, 10vh);
+    transform: translate3d( 0, 10vh, 0);
 
 
     // à l'arrivée (quand is--loading), afficher l'image non collapsed
     // quand le body est loading, on collapse l'image
     // sans js on ne peut pas désactiver le zoomedin
     body:not(.is--loading) .module--projet[data-visuel='']& {
-      transform: translate( 0, 0px);
+      transform: translate( 0, 0, 0);
     }
 
     .module--projet--header--text {
@@ -183,18 +183,18 @@
 
   // avec JS, après chargement, full screen image
   &[data-visuel='zoomedIn'] .module--projet--header {
-    transform: translate( 0, 100vh - @t-bandeauImage);
+    transform: translate3d( 0, 100vh - @t-bandeauImage, 0);
 
     ~ .module--projet--text:nth-of-type(1) {
-      transform: translate( 0, 100vh - @t-bandeauImage);
+      transform: translate3d( 0, 100vh - @t-bandeauImage, 0);
     }
 
   }
 
 
   .module--projet--visuel--inside {
-    transform: translate(0, ~"calc( -50% + 250px/2)");
-    transform: translate(0, ~"calc( -50% + @{t-bandeauImage}/2)");
+    transform: translate3d(0, ~"calc( -50% + 250px/2)", 0);
+    transform: translate3d(0, ~"calc( -50% + @{t-bandeauImage}/2)", 0);
     opacity: .8;
 
     transition: transform .8s ease-in-out, opacity .5s ease-out;
@@ -208,8 +208,7 @@
   }
 
   &[data-visuel='zoomedIn'] .module--projet--visuel--inside {
-    transform: translate( 0, 0vh);
-    transform: scale(1.03);
+    transform: translate3d( 0, 0, 0);
 
   }
 

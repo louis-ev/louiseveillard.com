@@ -522,12 +522,20 @@ var pjaxNav = {
 
     $(document).on( "click", "a", function( event ) {
         var elem = $(this);
-
-        if( elem.is(".logo") || elem.is(".module--navbar--list--item a")) {
+        if( elem.is(".logo") || elem.is("[data-goto=infos]")) {
           linkLocation = $(this).attr("href");
           pjaxNav.loadInPJAX( linkLocation, true);
           return false;
         } else
+        // click "PROJETS"
+        if( elem.is("[data-goto=projets]")) {
+          if( $(".module--projetList").length > 0) {
+            $('html, body').animate({
+              scrollTop: $(".module--projetList").offset().top
+            }, 800);
+            return false;
+          }
+        }
         if( elem.is(".module--projetList--titles--projetName--links")) {
           linkLocation = $(this).attr("href");
           // récupérer le visuel clické, le passer en "is--visuelProjet"
@@ -544,7 +552,7 @@ var pjaxNav = {
     });
 
   	$.pjax.defaults.maxCacheLength = 3;
-  	$.pjax.defaults.timeout = 1500;
+  	$.pjax.defaults.timeout = 2250;
 
   	$(document).on('pjax:beforeReplace', function ( event, contents, options) {
   	});

@@ -3,6 +3,13 @@
 
 <main id="pjax-container" class="main" role="main">
   <?= pjaxInfos( $page); ?>
+
+	<div class="module--infos">
+		<header class="module--infos--textblock">
+	  	<?php echo $page->text()->kirbytext() ?>
+	  </header>
+	</div>
+
 	<section class="module--cv pjax">
 	  <div class="header">
 		  <h2>
@@ -21,7 +28,6 @@
 if( param('lang') !== 'en'):
 ?>
 		<div id="details" data-lang="fr" class="ui three column stackable grid">
-
 <!-- 				<div class="row"> -->
 				<div class="column ">
 				    <div class="content activites">

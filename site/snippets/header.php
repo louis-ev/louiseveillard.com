@@ -72,4 +72,4 @@
   <script>
     document.getElementsByTagName('body')[0].className += 'is--loading ';
   </script>
-<? endif; ?>
+<?php endif;

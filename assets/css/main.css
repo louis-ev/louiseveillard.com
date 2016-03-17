@@ -484,6 +484,8 @@ body {
 }
 #pjax-container {
   opacity: 1;
+  -webkit-transition: opacity .2s;
+  -o-transition: opacity .2s;
   transition: opacity .2s;
 }
 body.is--ajax_loading #pjax-container {
@@ -492,6 +494,8 @@ body.is--ajax_loading #pjax-container {
 }
 .module--projetList--titles {
   opacity: 1;
+  -webkit-transition: opacity .4s;
+  -o-transition: opacity .4s;
   transition: opacity .4s;
 }
 body.is--ajax_loading .module--projetList--titles {
@@ -595,14 +599,18 @@ a:focus {
   padding: 0 32px;
   font-size: 1.8rem;
   line-height: 1.6;
+  -webkit-transition: opacity 0.4s 0.4s ease-out;
+  -o-transition: opacity 0.4s 0.4s ease-out;
   transition: opacity 0.4s 0.4s ease-out;
 }
-.module--intro .module--into--textblock {
+.module--intro .module--intro--textblock {
   margin: 22vh	5% 16vh 33% ;
   max-width: 23em;
 }
 body[module--projetVisuel="is--shown"] .module--intro {
   opacity: 0;
+  -webkit-transition: opacity 0.4s ease-out;
+  -o-transition: opacity 0.4s ease-out;
   transition: opacity 0.4s ease-out;
 }
 .module--intro h3 {
@@ -622,10 +630,14 @@ body[module--projetVisuel="is--shown"] .module--intro {
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 200% 1px;
+  -webkit-transition: all .25s;
+  -o-transition: all .25s;
   transition: all .25s;
   outline: 1px solid transparent;
 }
 .module--intro a[href*="vr"] {
+  background-image: -webkit-linear-gradient(left, #38C4B2, #38C4B2 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #38C4B2, #38C4B2 50%, transparent 50%, transparent);
   background-image: linear-gradient(to right, #38C4B2, #38C4B2 50%, transparent 50%, transparent);
 }
 .module--intro a:hover {
@@ -635,6 +647,8 @@ body[module--projetVisuel="is--shown"] .module--intro {
   outline: 1px solid #38C4B2;
 }
 .module--intro a[href*="sites"] {
+  background-image: -webkit-linear-gradient(left, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
   background-image: linear-gradient(to right, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
 }
 .module--intro a:hover {
@@ -644,6 +658,8 @@ body[module--projetVisuel="is--shown"] .module--intro {
   outline: 1px solid #03B8F4;
 }
 .module--intro a[href*="objets-interactifs"] {
+  background-image: -webkit-linear-gradient(left, #ABD190, #ABD190 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #ABD190, #ABD190 50%, transparent 50%, transparent);
   background-image: linear-gradient(to right, #ABD190, #ABD190 50%, transparent 50%, transparent);
 }
 .module--intro a:hover {
@@ -653,6 +669,8 @@ body[module--projetVisuel="is--shown"] .module--intro {
   outline: 1px solid #ABD190;
 }
 .module--intro a[href*="outils-pedagogiques"] {
+  background-image: -webkit-linear-gradient(left, #FFC162, #FFC162 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #FFC162, #FFC162 50%, transparent 50%, transparent);
   background-image: linear-gradient(to right, #FFC162, #FFC162 50%, transparent 50%, transparent);
 }
 .module--intro a:hover {
@@ -662,6 +680,8 @@ body[module--projetVisuel="is--shown"] .module--intro {
   outline: 1px solid #FFC162;
 }
 .module--intro a[href*="autres"] {
+  background-image: -webkit-linear-gradient(left, #ACA8A5, #ACA8A5 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #ACA8A5, #ACA8A5 50%, transparent 50%, transparent);
   background-image: linear-gradient(to right, #ACA8A5, #ACA8A5 50%, transparent 50%, transparent);
 }
 .module--intro a:hover {
@@ -685,6 +705,29 @@ body[module--projetVisuel="is--shown"] .module--intro {
 .module--intro a.is--active[href*="autres"] {
   background-size: 200% 100%;
 }
+.module--infos {
+  width: 100%;
+  max-width: 66rem;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.module--infos h3 {
+  font-size: .7rem;
+  font-family: 'gt-c-b';
+  margin-top: 16px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: .06rem;
+}
+.module--infos .module--infos--textblock {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 22vh;
+  max-width: 66rem;
+  -webkit-columns: 2;
+     -moz-columns: 2;
+          columns: 2;
+}
 .projet--number {
   font-size: 7rem;
   font-family: 'gt-c-b';
@@ -695,7 +738,8 @@ body[module--projetVisuel="is--shown"] .module--intro {
 }
 .module--projetList {
   position: relative;
-  margin-top: 32px;
+  margin-top: 16px;
+  padding-top: 32px;
 }
 .module--projetList--titles {
   position: relative;
@@ -718,14 +762,11 @@ body[module--projetVisuel="is--shown"] .module--intro {
   width: 100%;
   opacity: 1;
   max-height: none;
+  -webkit-transition: opacity .4s;
+  -o-transition: opacity .4s;
   transition: opacity .4s;
 }
 .module--projetList--titles h3.is--hidden {
-  /*
-      height: 0;
-      line-height:  0;
-      margin: 0;
-*/
   padding: 0;
   margin: 0;
   max-height: 0;
@@ -738,7 +779,11 @@ body[module--projetVisuel="is--shown"] .module--intro {
   height: 0;
   padding: 0 0 20.833125%;
   overflow: visible;
+  -webkit-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
+  -webkit-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
   transition-duration: 0.8s;
 }
 .module--projetList--titles .module--projetList--titles--projetName.is--visited .module--projetList--titles--projetName--links--name {
@@ -751,6 +796,8 @@ body[module--projetVisuel="is--shown"] .module--intro {
   bottom: 0;
   right: 0;
   pointer-events: auto;
+  -webkit-transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  -o-transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
   transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
   text-align: center;
 }
@@ -764,10 +811,10 @@ body[module--projetVisuel="is--shown"] .module--intro {
   right: 60%;
   width: 40%;
   -webkit-transform: translate3d(0%, -50%, 0);
-  transform: translate3d(0%, -50%, 0);
+          transform: translate3d(0%, -50%, 0);
   -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
+       -o-transform-origin: center;
+          transform-origin: center;
   padding-right: 2.5%;
   text-align: right;
   line-height: 1;
@@ -783,7 +830,7 @@ body[module--projetVisuel="is--shown"] .module--intro {
   left: 40%;
   width: 60%;
   -webkit-transform: translate3d(0%, -50%, 0);
-  transform: translate3d(0%, -50%, 0);
+          transform: translate3d(0%, -50%, 0);
   z-index: 1;
   padding-left: 2.5%;
   line-height: 1.4;
@@ -796,14 +843,18 @@ body[module--projetVisuel="is--shown"] .module--intro {
   vertical-align: middle;
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--index {
+  -webkit-transition: color 0.8s ease-out, text-shadow 0.6s ease-in, opacity 0.8s, background 0.44s, right 0.6s ease-out, -webkit-transform 0.9s ease-out;
   transition: color 0.8s ease-out, text-shadow 0.6s ease-in, opacity 0.8s, background 0.44s, right 0.6s ease-out, -webkit-transform 0.9s ease-out;
+  -o-transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-out, opacity 0.8s, background 0.44s, right 0.6s ease-out, -o-transform 0.9s ease-out;
   transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-out, opacity 0.8s, background 0.44s, right 0.6s ease-out;
-  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-out, opacity 0.8s, background 0.44s, right 0.6s ease-out, -webkit-transform 0.9s ease-out;
+  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-out, opacity 0.8s, background 0.44s, right 0.6s ease-out, -webkit-transform 0.9s ease-out, -o-transform 0.9s ease-out;
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--name {
+  -webkit-transition: color 0.8s ease-out, text-shadow 0.6s ease-in, opacity 0.8s, background 0.44s, left 0.6s, -webkit-transform 0.9s ease-in-out;
   transition: color 0.8s ease-out, text-shadow 0.6s ease-in, opacity 0.8s, background 0.44s, left 0.6s, -webkit-transform 0.9s ease-in-out;
+  -o-transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-in-out, opacity 0.8s, background 0.44s, left 0.6s, -o-transform 0.9s ease-in-out;
   transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-in-out, opacity 0.8s, background 0.44s, left 0.6s;
-  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-in-out, opacity 0.8s, background 0.44s, left 0.6s, -webkit-transform 0.9s ease-in-out;
+  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-in-out, opacity 0.8s, background 0.44s, left 0.6s, -webkit-transform 0.9s ease-in-out, -o-transform 0.9s ease-in-out;
 }
 .module--projetList--titles h3[data-type="vr"]::after {
   content: "";
@@ -841,13 +892,13 @@ body[module--projetVisuel="is--shown"] .module--intro {
 */
   right: 50%;
   -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
-  transform: translate3d(50%, -50%, 0) scale(1.8);
+          transform: translate3d(50%, -50%, 0) scale(1.8);
   color: #38C4B2;
   text-shadow: none;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--name {
   -webkit-transform: translate3d(-25%, -50%, 0) scale(1.2);
-  transform: translate3d(-25%, -50%, 0) scale(1.2);
+          transform: translate3d(-25%, -50%, 0) scale(1.2);
   color: #fff;
   text-shadow: none;
   background-color: transparent;
@@ -888,13 +939,13 @@ body[module--projetVisuel="is--shown"] .module--intro {
 */
   right: 50%;
   -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
-  transform: translate3d(50%, -50%, 0) scale(1.8);
+          transform: translate3d(50%, -50%, 0) scale(1.8);
   color: #03B8F4;
   text-shadow: none;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--name {
   -webkit-transform: translate3d(-25%, -50%, 0) scale(1.2);
-  transform: translate3d(-25%, -50%, 0) scale(1.2);
+          transform: translate3d(-25%, -50%, 0) scale(1.2);
   color: #fff;
   text-shadow: none;
   background-color: transparent;
@@ -935,13 +986,13 @@ body[module--projetVisuel="is--shown"] .module--intro {
 */
   right: 50%;
   -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
-  transform: translate3d(50%, -50%, 0) scale(1.8);
+          transform: translate3d(50%, -50%, 0) scale(1.8);
   color: #ABD190;
   text-shadow: none;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--name {
   -webkit-transform: translate3d(-25%, -50%, 0) scale(1.2);
-  transform: translate3d(-25%, -50%, 0) scale(1.2);
+          transform: translate3d(-25%, -50%, 0) scale(1.2);
   color: #fff;
   text-shadow: none;
   background-color: transparent;
@@ -982,13 +1033,13 @@ body[module--projetVisuel="is--shown"] .module--intro {
 */
   right: 50%;
   -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
-  transform: translate3d(50%, -50%, 0) scale(1.8);
+          transform: translate3d(50%, -50%, 0) scale(1.8);
   color: #FFC162;
   text-shadow: none;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--name {
   -webkit-transform: translate3d(-25%, -50%, 0) scale(1.2);
-  transform: translate3d(-25%, -50%, 0) scale(1.2);
+          transform: translate3d(-25%, -50%, 0) scale(1.2);
   color: #fff;
   text-shadow: none;
   background-color: transparent;
@@ -1029,13 +1080,13 @@ body[module--projetVisuel="is--shown"] .module--intro {
 */
   right: 50%;
   -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
-  transform: translate3d(50%, -50%, 0) scale(1.8);
+          transform: translate3d(50%, -50%, 0) scale(1.8);
   color: #ACA8A5;
   text-shadow: none;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--name {
   -webkit-transform: translate3d(-25%, -50%, 0) scale(1.2);
-  transform: translate3d(-25%, -50%, 0) scale(1.2);
+          transform: translate3d(-25%, -50%, 0) scale(1.2);
   color: #fff;
   text-shadow: none;
   background-color: transparent;
@@ -1060,13 +1111,14 @@ body[module--projetVisuel="is--shown"] .module--intro {
   background-position: center center;
   opacity: 0;
   visibility: hidden;
-  -webkit-transform: scale(1.03);
-  -ms-transform: scale(1.03);
-  transform: scale(1.03);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
+       -o-transform-origin: center;
+          transform-origin: center;
   will-change: opacity;
+  -webkit-transition: opacity 0.8s ease-out;
+  -o-transition: opacity 0.8s ease-out;
   transition: opacity 0.8s ease-out;
 }
 .module--projetList--visuelWrapper .module--projetList--visuelWrapper--visuel.lazyload,
@@ -1077,20 +1129,28 @@ body[module--projetVisuel="is--shown"] .module--intro {
 .module--projetList--visuelWrapper .module--projetList--visuelWrapper--visuel.was--shown {
   opacity: 0;
   z-index: -2;
+  -webkit-transition: opacity 0.8s 0.8s ease-out;
+  -o-transition: opacity 0.8s 0.8s ease-out;
   transition: opacity 0.8s 0.8s ease-out;
 }
 .module--projetList--visuelWrapper .module--projetList--visuelWrapper--visuel.is--shown {
   opacity: .6;
   z-index: -1;
+  -webkit-transition: opacity 0.4s 0.4s ease-in;
+  -o-transition: opacity 0.4s 0.4s ease-in;
   transition: opacity 0.4s 0.4s ease-in;
 }
 .module--projetList--visuelWrapper .module--projetList--visuelWrapper--visuel.is--visuelProjet {
   opacity: 1;
   z-index: -1;
+  -webkit-transition: opacity 0.4s ease-in;
+  -o-transition: opacity 0.4s ease-in;
   transition: opacity 0.4s ease-in;
 }
 .module--projet {
   padding-bottom: 32px;
+  -webkit-transition: opacity 0.4s ease-out, margin 1.5s ease-out;
+  -o-transition: opacity 0.4s ease-out, margin 1.5s ease-out;
   transition: opacity 0.4s ease-out, margin 1.5s ease-out;
 }
 .module--projet .module--projet--header {
@@ -1102,26 +1162,32 @@ body[module--projetVisuel="is--shown"] .module--intro {
   margin-bottom: -5px;
   position: relative;
   z-index: 10;
+  -webkit-transition: background-color 0.4s ease, -webkit-transform 0.6s ease-out;
   transition: background-color 0.4s ease, -webkit-transform 0.6s ease-out;
+  -o-transition: transform 0.6s ease-out, background-color 0.4s ease, -o-transform 0.6s ease-out;
   transition: transform 0.6s ease-out, background-color 0.4s ease;
-  transition: transform 0.6s ease-out, background-color 0.4s ease, -webkit-transform 0.6s ease-out;
+  transition: transform 0.6s ease-out, background-color 0.4s ease, -webkit-transform 0.6s ease-out, -o-transform 0.6s ease-out;
+  -webkit-transition-timing-function: cubic-bezier(0.355, 0.255, 0.01, 1);
   /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.355, 0.255, 0.01, 1.055);
+  -o-transition-timing-function: cubic-bezier(0.355, 0.255, 0.01, 1.055);
   transition-timing-function: cubic-bezier(0.355, 0.255, 0.01, 1.055);
   /* custom */
-  -webkit-transform: translate(0, 10vh);
-  -ms-transform: translate(0, 10vh);
-  transform: translate(0, 10vh);
+  -webkit-transform: translate3d(0, 10vh, 0);
+          transform: translate3d(0, 10vh, 0);
 }
 body:not(.is--loading) .module--projet[data-visuel=''].module--projet .module--projet--header {
-  -webkit-transform: translate(0, 0px);
-  -ms-transform: translate(0, 0px);
-  transform: translate(0, 0px);
+  -webkit-transform: translate(0, 0, 0);
+       -o-transform: translate(0, 0, 0);
+          transform: translate(0, 0, 0);
 }
 .module--projet .module--projet--header .module--projet--header--text {
   width: 100%;
   margin: 0 auto;
   max-width: 66rem;
   padding-top: 1.5rem;
+  -webkit-transition: opacity 0.2s ease-out;
+  -o-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
 .module--projet .module--projet--header .module--projet--header--text:before,
@@ -1237,42 +1303,43 @@ html.js .module--projet .module--projet--visuel > .module--projet--visuel--insid
   opacity: 1;
 }
 .module--projet[data-visuel='zoomedIn'] .module--projet--header {
-  -webkit-transform: translate(0, 56vh);
-  -ms-transform: translate(0, 56vh);
-  transform: translate(0, 56vh);
+  -webkit-transform: translate3d(0, 56vh, 0);
+          transform: translate3d(0, 56vh, 0);
 }
 .module--projet[data-visuel='zoomedIn'] .module--projet--header ~ .module--projet--text:nth-of-type(1) {
-  -webkit-transform: translate(0, 56vh);
-  -ms-transform: translate(0, 56vh);
-  transform: translate(0, 56vh);
+  -webkit-transform: translate3d(0, 56vh, 0);
+          transform: translate3d(0, 56vh, 0);
 }
 .module--projet .module--projet--visuel--inside {
-  -webkit-transform: translate(0, calc( -50% + 250px/2));
-  -ms-transform: translate(0, calc( -50% + 250px/2));
-  transform: translate(0, calc( -50% + 250px/2));
-  -webkit-transform: translate(0, calc( -50% + 44vh/2));
-  -ms-transform: translate(0, calc( -50% + 44vh/2));
-  transform: translate(0, calc( -50% + 44vh/2));
+  -webkit-transform: translate3d(0, calc( -50% + 250px/2), 0);
+          transform: translate3d(0, calc( -50% + 250px/2), 0);
+  -webkit-transform: translate3d(0, calc( -50% + 44vh/2), 0);
+          transform: translate3d(0, calc( -50% + 44vh/2), 0);
   opacity: .8;
+  -webkit-transition: opacity 0.5s ease-out, -webkit-transform 0.8s ease-in-out;
   transition: opacity 0.5s ease-out, -webkit-transform 0.8s ease-in-out;
+  -o-transition: transform 0.8s ease-in-out, opacity 0.5s ease-out, -o-transform 0.8s ease-in-out;
   transition: transform 0.8s ease-in-out, opacity 0.5s ease-out;
-  transition: transform 0.8s ease-in-out, opacity 0.5s ease-out, -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out, opacity 0.5s ease-out, -webkit-transform 0.8s ease-in-out, -o-transform 0.8s ease-in-out;
+  -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1);
   /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
+  -o-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
   transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
   /* custom */
 }
 .module--projet[data-visuel='zoomedIn'] .module--projet--visuel--inside {
-  -webkit-transform: translate(0, 0vh);
-  -ms-transform: translate(0, 0vh);
-  transform: translate(0, 0vh);
-  -webkit-transform: scale(1.03);
-  -ms-transform: scale(1.03);
-  transform: scale(1.03);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 body.is--ajax_loading .module--projet[data-visuel='zoomedIn'] {
+  -webkit-transition: none;
+  -o-transition: none;
   transition: none;
 }
 body.is--ajax_loading .module--projet[data-visuel='zoomedIn'] .module--projet--visuel--inside {
+  -webkit-transition: none;
+  -o-transition: none;
   transition: none;
 }
 [data-type="vr"].module--projet h3 {
@@ -1283,7 +1350,11 @@ body.is--ajax_loading .module--projet[data-visuel='zoomedIn'] .module--projet--v
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 200% 1px;
+  -webkit-transition: all .25s;
+  -o-transition: all .25s;
   transition: all .25s;
+  background-image: -webkit-linear-gradient(left, #38C4B2, #38C4B2 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #38C4B2, #38C4B2 50%, transparent 50%, transparent);
   background-image: linear-gradient(to right, #38C4B2, #38C4B2 50%, transparent 50%, transparent);
 }
 [data-type="sites"].module--projet h3 {
@@ -1294,7 +1365,11 @@ body.is--ajax_loading .module--projet[data-visuel='zoomedIn'] .module--projet--v
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 200% 1px;
+  -webkit-transition: all .25s;
+  -o-transition: all .25s;
   transition: all .25s;
+  background-image: -webkit-linear-gradient(left, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
   background-image: linear-gradient(to right, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
 }
 [data-type="objets-interactifs"].module--projet h3 {
@@ -1305,7 +1380,11 @@ body.is--ajax_loading .module--projet[data-visuel='zoomedIn'] .module--projet--v
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 200% 1px;
+  -webkit-transition: all .25s;
+  -o-transition: all .25s;
   transition: all .25s;
+  background-image: -webkit-linear-gradient(left, #ABD190, #ABD190 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #ABD190, #ABD190 50%, transparent 50%, transparent);
   background-image: linear-gradient(to right, #ABD190, #ABD190 50%, transparent 50%, transparent);
 }
 [data-type="outils-pedagogiques"].module--projet h3 {
@@ -1316,7 +1395,11 @@ body.is--ajax_loading .module--projet[data-visuel='zoomedIn'] .module--projet--v
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 200% 1px;
+  -webkit-transition: all .25s;
+  -o-transition: all .25s;
   transition: all .25s;
+  background-image: -webkit-linear-gradient(left, #FFC162, #FFC162 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #FFC162, #FFC162 50%, transparent 50%, transparent);
   background-image: linear-gradient(to right, #FFC162, #FFC162 50%, transparent 50%, transparent);
 }
 [data-type="autres"].module--projet h3 {
@@ -1327,7 +1410,11 @@ body.is--ajax_loading .module--projet[data-visuel='zoomedIn'] .module--projet--v
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 200% 1px;
+  -webkit-transition: all .25s;
+  -o-transition: all .25s;
   transition: all .25s;
+  background-image: -webkit-linear-gradient(left, #ACA8A5, #ACA8A5 50%, transparent 50%, transparent);
+  background-image: -o-linear-gradient(left, #ACA8A5, #ACA8A5 50%, transparent 50%, transparent);
   background-image: linear-gradient(to right, #ACA8A5, #ACA8A5 50%, transparent 50%, transparent);
 }
 .module--projet .module--projet--text {
@@ -1339,10 +1426,15 @@ body.is--ajax_loading .module--projet[data-visuel='zoomedIn'] .module--projet--v
   padding: 0 32px;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  -webkit-transition: opacity .9s, -webkit-transform .6s;
   transition: opacity .9s, -webkit-transform .6s;
+  -o-transition: opacity .9s, transform .6s, -o-transform .6s;
   transition: opacity .9s, transform .6s;
-  transition: opacity .9s, transform .6s, -webkit-transform .6s;
+  transition: opacity .9s, transform .6s, -webkit-transform .6s, -o-transform .6s;
+  -webkit-transition-timing-function: cubic-bezier(0.355, 0.255, 0.01, 1);
   /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.355, 0.255, 0.01, 1.055);
+  -o-transition-timing-function: cubic-bezier(0.355, 0.255, 0.01, 1.055);
   transition-timing-function: cubic-bezier(0.355, 0.255, 0.01, 1.055);
   /* custom */
 }
@@ -1513,20 +1605,32 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 200% 1px;
+  -webkit-transition: none;
+  -o-transition: none;
   transition: none;
+  background-image: -webkit-linear-gradient(left, #666, #666);
+  background-image: -o-linear-gradient(left, #666, #666);
   background-image: linear-gradient(to right, #666, #666);
 }
 .module--cv a[data-link] {
   border-bottom-color: #09606F;
+  background-image: -webkit-linear-gradient(left, #09606F, #09606F);
+  background-image: -o-linear-gradient(left, #09606F, #09606F);
   background-image: linear-gradient(to right, #09606F, #09606F);
 }
 .module--cv a[data-link].is--linkedto {
+  background-image: -webkit-linear-gradient(left, #09606F 1px, #0A997F 15%);
+  background-image: -o-linear-gradient(left, #09606F 1px, #0A997F 15%);
   background-image: linear-gradient(to right, #09606F 1px, #0A997F 15%);
 }
 .module--cv a[data-link].is--linkedfrom {
+  background-image: -webkit-linear-gradient(left, #0A997F 35%, #09606F calc(50% - 1px));
+  background-image: -o-linear-gradient(left, #0A997F 35%, #09606F calc(50% - 1px));
   background-image: linear-gradient(to right, #0A997F 35%, #09606F calc(50% - 1px));
 }
 .module--cv a[data-link].is--linkedto.is--linkedfrom {
+  background-image: -webkit-linear-gradient(left, #09606F 1px, #0A997F 15%, #0A997F 35%, #09606F calc(50% - 1px));
+  background-image: -o-linear-gradient(left, #09606F 1px, #0A997F 15%, #0A997F 35%, #09606F calc(50% - 1px));
   background-image: linear-gradient(to right, #09606F 1px, #0A997F 15%, #0A997F 35%, #09606F calc(50% - 1px));
 }
 .module--cv a[data-link]:hover,
@@ -1539,14 +1643,20 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 }
 .module--cv a[data-link]:hover.is--linkedto,
 .module--cv a[data-link].is--currentlyLinkedTo.is--linkedto {
+  background-image: -webkit-linear-gradient(left, #0A997F 1px, #09606F 15%);
+  background-image: -o-linear-gradient(left, #0A997F 1px, #09606F 15%);
   background-image: linear-gradient(to right, #0A997F 1px, #09606F 15%);
 }
 .module--cv a[data-link]:hover.is--linkedfrom,
 .module--cv a[data-link].is--currentlyLinkedTo.is--linkedfrom {
+  background-image: -webkit-linear-gradient(left, #09606F 35%, #0A997F calc(50% - 1px));
+  background-image: -o-linear-gradient(left, #09606F 35%, #0A997F calc(50% - 1px));
   background-image: linear-gradient(to right, #09606F 35%, #0A997F calc(50% - 1px));
 }
 .module--cv a[data-link]:hover.is--linkedto.is--linkedfrom,
 .module--cv a[data-link].is--currentlyLinkedTo.is--linkedto.is--linkedfrom {
+  background-image: -webkit-linear-gradient(left, #0A997F 1px, #09606F 15%, #09606F 35%, #0A997F calc(50% - 1px));
+  background-image: -o-linear-gradient(left, #0A997F 1px, #09606F 15%, #09606F 35%, #0A997F calc(50% - 1px));
   background-image: linear-gradient(to right, #0A997F 1px, #09606F 15%, #09606F 35%, #0A997F calc(50% - 1px));
 }
 .module--cv a[data-link] .position-of-eles:before {
@@ -1599,6 +1709,8 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 .module--cv .description {
   margin-top: 1em;
   opacity: 1;
+  -webkit-transition: opacity .4s;
+  -o-transition: opacity .4s;
   transition: opacity .4s;
 }
 .module--cv .realisations li {
@@ -1640,5 +1752,7 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   z-index: -1;
   pointer-events: none;
   opacity: 0;
+  -webkit-transition: opacity 0.9s ease-out;
+  -o-transition: opacity 0.9s ease-out;
   transition: opacity 0.9s ease-out;
 }

@@ -3,3 +3,15 @@ Title: Infos
 ----
 
 Text: 
+
+### Informations
+
+Après un master en communication visuelle (2012), j'ai étudié le design d'interaction pendant 3 ans (de 2012 à 2015) au sein du programme de recherche (link: http://sociablemedia.ensadlab.fr/ text: Sociable Media) de l'EnsadLab, le laboratoire de recherche de l'école nationale supérieure des Arts Décoratifs de Paris (ENSAD). Ma pratique de recherche tourne autour des notions de traces numériques et la matérialisation de ces traces dans des interfaces. Je suis aussi membre fondateur du collectif (link: http://latelier-des-chercheurs.fr/ text: L'Atelier des Chercheurs) qui développe des outils pour encourager les pratiques réflexives dans les contextes d'apprentissage, parmi lesquels les écoles primaires et les fablabs.
+
+En parallèle à ce travail, je suis designer et développeur indépendant pour le web. J'aime comprendre et identifier les besoins de mes clients, pour ensuite trouver avec eux les solutions qui leurs permettront d'atteindre leurs objectifs de communication. Ces solutions impliquent souvent la création d'une identité visuelle, associée à la mise en place de principes de déclinaison sur différents supports. 
+
+En février 2015, il a également co-fondé le collectif Panoptic Lab dont les projets de réalité virtuelle ont remporté plusieurs prix au concours annuel organisé par Oculus.
+
+# Contact
+
+(email: hello@louiseveillard.com text: Envoyez moi un mail)
