@@ -459,7 +459,7 @@ var theProjetView = {
 
     // animation sur le header avec opacity
     var wHeight = window.innerHeight;
-    var $visuelTop = $(".module--projet_full .module--projet--visuel--inside");
+    var $visuelTop = $(".module--projet_full .module--projet--visuel");
     if( window.innerWidth > 700 && $visuelTop.length > 0) {
       theProjetView.changeVisuelOpacity( wHeight, $visuelTop);
     }
@@ -479,9 +479,9 @@ var theProjetView = {
     $parentProjet = $( '.module--projet');
     $parentProjet.attr( 'data-visuel', goZoom ? 'zoomedIn' : '');
     $("body").css( "overflow", goZoom ? 'hidden' : '');
-    $(".module--projetList .module--projetList--visuelWrapper--visuel").removeClass("is--visuelProjet");
     if( scrollY > 0) {
-      $('html, body').animate({scrollTop : 0},400);
+      $('html, body').animate({scrollTop : 0},400, function() {
+      });
     }
   },
 
@@ -530,9 +530,13 @@ var pjaxNav = {
         // click "PROJETS"
         if( elem.is("[data-goto=projets]")) {
           if( $(".module--projetList").length > 0) {
+
+            $("body").css("pointer-events", "none");
             $('html, body').animate({
               scrollTop: $(".module--projetList").offset().top
-            }, 800);
+            }, 800, function(){
+            $("body").css("pointer-events", "");
+            });
             return false;
           }
         }
@@ -573,11 +577,13 @@ var pjaxNav = {
       if( pjaxInfos.template === "projet") {
         theProjetView.zoomIn(true);
 
+
         // à la fin de l'animation de cet élément, repasser en zoomIn == false
+        $("body").removeClass("is--ajax_loading");
         setTimeout( function() {
-          $("body").removeClass("is--ajax_loading");
+         $(".module--projetList .module--projetList--visuelWrapper--visuel").removeClass("is--visuelProjet");
           setTimeout( function() {
-            theProjetView.zoomIn(false);
+           theProjetView.zoomIn(false);
           }, 400);
         }, 600);
         pageInit();

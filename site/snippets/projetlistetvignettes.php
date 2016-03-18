@@ -42,21 +42,20 @@
       <?php
       	if( $p->imageCover()->isNotEmpty()):
       	  $image = $p->imageCover()->toFile();
-      ?>
-        <?php
       		$srcsetstring = kirbytag(array(
       		  'image'  				=> $image->filename(),
-      		  'thumbwidth' 		=> 2800,
+      		  'thumbwidth' 		=> 2400,
       		  'originalPage'  => $p,
       		  'return_srcset' => true
       		));
 
         ?>
-        <div class="module--projetList--visuelWrapper--visuel" data-index="<?= $index; ?>" data-sizes="auto" data-optimumx="1.8" data-bgset="<?= $srcsetstring; ?>"></div>
+        <div class="module--projetList--visuelWrapper--visuel" data-index="<?= $index; ?>" data-sizes="auto" data-optimumx="1.4" data-bgset="<?= $srcsetstring; ?>"></div>
       <?php
         endif;
       ?>
     <?php endforeach ?>
+    <div class="module--projetList--visuelWrapper--bgmask"></div>
   </div>
 
 </section>
