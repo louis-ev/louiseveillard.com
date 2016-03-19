@@ -596,7 +596,10 @@ main {
 
     &.is--visited {
       .module--projetList--titles--projetName--links--name {
-        text-decoration: line-through;
+      }
+    }
+    &.is--active {
+      .module--projetList--titles--projetName--links--index {
       }
     }
 
@@ -668,7 +671,7 @@ main {
       }
 
     	&--index {
-				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-out, opacity .8s, background .44s, right .6s ease-out;
+				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-out, opacity .8s, background .44s, right .6s ease-out, -webkit-text-stroke .4s ease-out;
     	}
       &--name {
 				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-in-out, opacity .8s, background .44s, left .6s;
@@ -704,23 +707,43 @@ main {
           &--name {
           }
     		}
+
+    		&.is--visited {
+    			.module--projetList--titles--projetName--links--name {
+
+          }
+    			.module--projetList--titles--projetName--links--index {
+             -webkit-text-stroke-width: 1px;
+             -webkit-text-stroke-color: @color;
+             -webkit-text-fill-color: transparent;
+          }
+    		}
       }
   	}
 
   	// survol sur tout le menu, effet sur toutes les vignettes sauf celle survolées
   	&:hover .module--projetList--titles--projetName[data-type= @{rubrique}] {
 
+
+  		&.is--visited {
+      	.module--projetList--titles--projetName--links--index {
+
+        }
+      }
+
     	.module--projetList--titles--projetName--links {
 
       	&--index {
           text-shadow: 0px 0px 26px @color;
-          color: transparent;
+           -webkit-text-stroke-color: transparent;
+           color: transparent;
         }
         &--name {
           text-shadow: 0px 0px 16px #fff;
           color: transparent;
           border-left-color: transparent;
           background-color: transparent;
+          opacity: 1;
         }
 
         &:hover {
@@ -733,6 +756,7 @@ main {
 */
         		right: 50%;
         		transform: translate3d( 50%, -50%, 0) scale( 1.8);
+            -webkit-text-fill-color: @color;
             color: @color;
             text-shadow: none;
           }

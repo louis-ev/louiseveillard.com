@@ -68,6 +68,7 @@
      data-template="<?php echo $page->template() ?>"
      data-intended-template="<?php echo $page->intendedTemplate() ?>"
      data-rubrique="<?php e( $page->type()->exists(), str::slug( $page->type()), '' ); ?>"
+     data-index="<?php e( $page->template() === 'projet', str_pad( $page->num(), 2, '0', STR_PAD_LEFT), '') ?>"
              >
   <script>
     document.getElementsByTagName('body')[0].className += 'is--loading ';

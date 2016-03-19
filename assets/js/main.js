@@ -577,7 +577,8 @@ var pjaxNav = {
       $("body")
         .attr("data-template", pjaxInfos.template)
         .attr("data-intended-template", pjaxInfos.intendedtemplate)
-        .attr("data-rubrique", pjaxInfos.rubrique);
+        .attr("data-rubrique", pjaxInfos.rubrique)
+        .attr("data-index", pjaxInfos.projetIndex);
 
       // si on a affaire à une page projet, on démarre en zoomedin
       if( pjaxInfos.template === "projet") {
