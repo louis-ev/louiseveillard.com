@@ -6,20 +6,31 @@ Text:
 
 ### Informations
 
-# Je suis designer et développeur indépendant depuis 2010 à Paris. Pour réaliser mes projets, j'aime créer mes propres outils (lienProjet: couvertures-generatives, lopendoc-et-dodoc, delure-org) ou en détourner d'autre ((lienProjet: le-tricodeur).
+# Je suis designer et développeur indépendant depuis 2010 à Paris. Pour réaliser mes projets, j'aime créer des outils ((lienProjet: lopendoc-et-dodoc, couvertures-generatives, delure-org, point-a-point, slowscreen)) ou en détourner d'autres ((lienProjet: le-tricodeur, panopticon, emiliecoquard-fr)).
+
+***
 
 ### Parcours
 
 Après un master en communication visuelle en 2012, j'ai étudié le design d'interaction pendant 3 ans au sein du programme de recherche (link: http://sociablemedia.ensadlab.fr/ text: Sociable Media) de l'EnsadLab, le laboratoire de recherche de l'école nationale supérieure des Arts Décoratifs de Paris (ENSAD). 
 
-Depuis 2014, je suis membre fondateur du collectif (link: http://latelier-des-chercheurs.fr/ text: L'Atelier des Chercheurs) qui développe des outils pour encourager les pratiques réflexives dans les contextes d'apprentissage. Nous produisons des  
- 
+Depuis 2014, je suis membre fondateur du groupe (link: http://latelier-des-chercheurs.fr/ text: L'Atelier des Chercheurs) qui développe des outils (lienProjet: lopendoc-et-dodoc) pour encourager les pratiques réflexives dans les contextes d'apprentissage. Nous produisons des objets intermédiaires que nous plaçons dans différents terrains – fablabs, écoles primaires, collectif d'artistes – pour révéler et identifier les besoins et les manière de les faire évoluer. Ces explorations donnent lieu à des publications de papiers de recherche qui rendent compte de la connaissance accumulée. Nos outils sont actuellement déployés 
+- dans une école primaire du XV<sup>e</sup> arrondissement de Paris,
+- dans un lycée technique également dans le XV<sup>e</sup>,
+- au sein de plusieurs cours de l'université Paris XIII,  
+- dans le cadre de plusieurs cours de l'ENSAD Paris,
+- et dans plusieurs fablabs de Paris et de province.
 
-En parallèle à ce travail, je suis designer et développeur indépendant pour des projets de commande. J'aime comprendre et identifier les besoins de mes clients, et trouver avec eux les solutions qui leurs permettront d'atteindre leurs objectifs. Ces solutions impliquent par exemple la création d'une identité visuelle, d'un site internet ou d'un outil interactif.
+En février 2015, j'ai co-fondé le collectif (link: http://panoptic-lab.com/ text: Panoptic Lab) avec deux autres designers : Ferdinand Dervieux et Jérémie Lasnier. Nos 2 premiers projets, réalisés en collaboration pour l'un avec une illustratrice et pour l'autre avec un level/3d designer, ont remporté les 2<sup>e</sup> et 3<sup>e</sup> prix du grand concours annuel organisé par Oculus. Ces projets sont présentés sur ce site ici (lienProjet: along-the-trail) et ici (lienProjet: panopticon). Ils ont aussi leur page dédiée avec les applications en téléchargement libre (link: http://panoptic-lab.com/alongthetrail/ text: ici) et (link: http://panoptic-lab.com/panopticon/ text: là).
 
-En février
-En février 2015, il a également co-fondé le collectif Panoptic Lab dont les projets de réalité virtuelle ont remporté plusieurs prix au concours annuel organisé par Oculus.
+Enfin, je suis designer et développeur indépendant pour des projets de commande. J'aime comprendre et identifier les besoins de mes clients, et trouver avec eux les solutions qui leurs permettront d'atteindre leurs objectifs. Ces solutions impliquent par exemple la création d'une identité visuelle, d'un site internet ou d'un outil interactif.
 
-# Contact
+***
 
-(email: hello@louiseveillard.com text: Envoyez moi un mail)
+### Contact
+
+- envoyez moi un (email: hello@louiseveillard.com text: mail)
+- suivez moi sur (link: https://github.com/louis-ev/ text: github)
+- consultez mon (link: http://www.beautifulseams.com/ text: journal/blog)
+
+Vous trouverez ci-dessous une liste plus exhaustive de mes activités, réalisations, interventions, ainsi que les prix et diplômes que j'ai obtenu, les publications de mes projets ou articles et les lieux ou j'ai exposé.

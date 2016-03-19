@@ -692,6 +692,94 @@ main a:hover {
 main a:focus {
   outline: 1px solid transparent;
 }
+main a.lienProjet {
+  font-size: .75em;
+  position: relative;
+  font-family: 'gt-c-b';
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 .15em .3em;
+  padding-bottom: 0;
+  background-position: 00% 88%;
+  background-size: 250% 2px;
+}
+main a.lienProjet::before {
+  position: absolute;
+  top: -50%;
+  left: -550%;
+  padding: .7em;
+  padding-top: .8em;
+  width: 1200%;
+  height: 200%;
+  background: #fff;
+  color: transparent;
+  content: attr(title);
+  white-space: pre-wrap;
+  word-break: break-all;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s, color 0.3s, -webkit-transform 0.3s, background-position 0.2s;
+  -webkit-transition: opacity 0.3s, color 0.3s, background-position 0.2s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, color 0.3s, background-position 0.2s, -webkit-transform 0.3s;
+  -o-transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s, -o-transform 0.3s;
+  transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s;
+  transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s, -webkit-transform 0.3s, -o-transform 0.3s;
+  -webkit-transform: scale(0.08333333, 0.5);
+  -o-transform: scale(0.08333333, 0.5);
+     transform: scale(0.08333333, 0.5);
+  -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
+  -o-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
+  transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
+  /* custom */
+  pointer-events: none;
+  text-align: center;
+}
+main a.lienProjet:hover::before,
+main a.lienProjet:focus::before {
+  color: #fff;
+  opacity: 1;
+  -webkit-transition-delay: 0s, 0s, 0s, 0.1s;
+  -o-transition-delay: 0s, 0s, 0s, 0.1s;
+     transition-delay: 0s, 0s, 0s, 0.1s;
+  -webkit-transform: scale(1) translateY(-80%);
+  -o-transform: scale(1) translateY(-80%);
+     transform: scale(1) translateY(-80%);
+  pointer-events: auto;
+}
+main a.lienProjet[data-rubrique="vr"]::before {
+  background-color: rgba(56, 196, 178, 0.94);
+}
+main a.lienProjet[data-rubrique="sites"]::before {
+  background-color: rgba(3, 184, 244, 0.94);
+}
+main a.lienProjet[data-rubrique="objets-interactifs"]::before {
+  background-color: rgba(171, 209, 144, 0.94);
+}
+main a.lienProjet[data-rubrique="outils-pedagogiques"]::before {
+  background-color: rgba(255, 193, 98, 0.94);
+}
+main a.lienProjet[data-rubrique="autres"]::before {
+  background-color: rgba(172, 168, 165, 0.94);
+}
+main ul,
+main ol {
+  list-style-type: none;
+}
+main ul li,
+main ol li {
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-bottom: 1rem;
+}
+main ul li::before,
+main ol li::before {
+  content: "->";
+  color: #bbb;
+  margin-left: -1.5em;
+  width: 1.5em;
+  display: inline-block;
+}
 .module--infos {
   width: 100%;
   max-width: 66rem;
@@ -1585,24 +1673,6 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 .module--projet .module--projet--text figure {
   margin: 0;
 }
-.module--projet .module--projet--text ul,
-.module--projet .module--projet--text ol {
-  list-style-type: none;
-}
-.module--projet .module--projet--text ul li,
-.module--projet .module--projet--text ol li {
-  margin-left: 4rem;
-  margin-right: 4rem;
-  margin-bottom: 1rem;
-}
-.module--projet .module--projet--text ul li::before,
-.module--projet .module--projet--text ol li::before {
-  content: "->";
-  color: #bbb;
-  margin-left: -1.5em;
-  width: 1.5em;
-  display: inline-block;
-}
 .module--projet .module--projet--text > .media-image,
 .module--projet .module--projet--text > .media-video,
 .module--projet .module--projet--text > .media-tweet {
@@ -1843,6 +1913,10 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 }
 .module--cv .description li {
   padding-bottom: 1em;
+  margin: 0;
+}
+.module--cv .description li::before {
+  display: none;
 }
 #links {
   width: 100%;
