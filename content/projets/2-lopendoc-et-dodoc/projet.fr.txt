@@ -69,8 +69,10 @@ Imagecover: dodoc.jpg
 Headercol2: 
 
 ### sujet
-## Outils de documentations open-source
+## Outils pour encourager les pratiques réflexives dans les situations d'apprentissage
 ### année
-## Démarré en 2013
+## Démarré en 2014
 ### équipe
-## Réalisé par (link: http://latelier-des-chercheurs.fr/ text: l’Atelier des Chercheurs popup: yes) (Pauline Gourlet, Sarah Garcin, Louis Eveillard, Ferdinand Dervieux et Juliette Mancini)
+## Réalisé par (link: http://latelier-des-chercheurs.fr/ text: l’Atelier des Chercheurs popup: yes) ((link: http://www.paulinegourlet.com/ text: Pauline Gourlet popup: yes), (link: http://sarahgarcin.com/ text: Sarah Garcin popup: yes), Louis Eveillard, (link: http://ferdinanddervieux.com/ text: Ferdinand Dervieux popup: yes) et (link: http://juliettemancini.com/ text: Juliette Mancini popup: yes))
+### Code source
+## Github de (link: https://github.com/sarahgarcin/dodoc text: dodoc popup: yes), et celui de (link: https://github.com/sarahgarcin/lopendoc/ text: l'Opendoc popup: yes)

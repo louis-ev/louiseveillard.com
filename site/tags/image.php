@@ -48,6 +48,7 @@ kirbytext::$tags['image'] = array(
 		'maxLinkedImageWidth',
 		'secondLinkedImageWidth',
 		'return_srcset',
+		'optimumx',
 	),
 	'html' => function($tag) {
 
@@ -115,6 +116,7 @@ kirbytext::$tags['image'] = array(
 		$taille 		= $tag->attr('taille');
 		$class 			= $tag->attr('class');
 		$outputlink = $tag->attr('outputlink');
+		$optimumx = $tag->attr('optimumx', c::get('optimumx', 1.6));
 		$maxLinkedImageWidth = $tag->attr('maxLinkedImageWidth');
 		$secondLinkedImageWidth = $tag->attr('secondLinkedImageWidth');
 		$return_srcset = $tag->attr('return_srcset');
@@ -393,7 +395,7 @@ kirbytext::$tags['image'] = array(
 						'data-src'  => $thumburl,
 						'data-sizes' =>	"auto",
 						'data-srcset'  => $ms_datasrcset,
-            'data-optimumx' => "1.6",
+            'data-optimumx' => str_replace(',', '.', $optimumx),
 						'class'     => $class . ' lazyload',
 						'alt'       => html($alt),
             'data-parent-fit' => "cover"

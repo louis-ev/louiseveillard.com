@@ -511,7 +511,7 @@ function pageInit() {
   }
 
   // fin de chargement
-	$('body').removeClass("is--loading");
+  $('body').removeClass("is--loading");
 
 }
 
@@ -564,6 +564,12 @@ var pjaxNav = {
     $(document).on("pjax:end", function(event, data) {
 
       linkToContent = event.target.baseURI;
+
+      // si c'est un fail (cas typique d'un projet qui génère ses thumbs)
+      if( data.statusText === "timeout") {
+        return false;
+      }
+
   		$(".module--projetList--titles--projetName--links").filter( function() {
       	return $(this).attr("href") === linkToContent;
     	}).parents(".module--projetList--titles--projetName").addClass("is--visited");
@@ -571,17 +577,16 @@ var pjaxNav = {
       $("body")
         .attr("data-template", pjaxInfos.template)
         .attr("data-intended-template", pjaxInfos.intendedtemplate)
-        .attr("data-rubrique", pjaxInfos.rubrique);
+        .attr("data-rubrique", pjaxInfos.rubrique)
+        .attr("data-index", pjaxInfos.projetIndex);
 
       // si on a affaire à une page projet, on démarre en zoomedin
       if( pjaxInfos.template === "projet") {
         theProjetView.zoomIn(true);
-
-
         // à la fin de l'animation de cet élément, repasser en zoomIn == false
         $("body").removeClass("is--ajax_loading");
         setTimeout( function() {
-         $(".module--projetList .module--projetList--visuelWrapper--visuel").removeClass("is--visuelProjet");
+          $(".module--projetList .module--projetList--visuelWrapper--visuel").removeClass("is--visuelProjet");
           setTimeout( function() {
            theProjetView.zoomIn(false);
           }, 400);
@@ -614,7 +619,6 @@ var pjaxNav = {
   },
 
 };
-
 
 $(document).ready(function() {
 

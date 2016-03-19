@@ -40,14 +40,15 @@
     background: rgba(0, 220, 140, 0.25);
 }
 
+
 .styleLink( @rubrique, @color ) {
 	body[data-rubrique=@{rubrique}] {
     ::-moz-selection {
       // par défaut le background d'une selection est transparent. Pour le rendre vraiment opque il faut lui donner un
-        background: fade( @color, 92%);
+        background: fade( @color, 82%);
     }
     ::selection {
-        background: fade( @color, 92%);
+        background: fade( @color, 82%);
     }
 	}
 }
@@ -133,7 +134,7 @@ body {
 
   body.is--ajax_loading & {
     opacity: 0;
-    pointer-events: none;
+
   }
 }
 .module--projetList--titles {
@@ -143,6 +144,10 @@ body {
   body.is--ajax_loading & {
     opacity: 0;
     pointer-events: none;
+
+    .module--projetList--titles--projetName--links {
+      pointer-events: none !important;
+    }
   }
 }
 
@@ -209,7 +214,7 @@ a:focus {
 	a {
   	display: block;
 		padding: @t-margin;
-    margin-left: -@t-margin;
+//     margin-left: -@t-margin;
     margin-top: @t-margin;
 
   	font-size: .7rem;
@@ -221,8 +226,8 @@ a:focus {
     pointer-events: all;
 
     &:hover, &:focus {
+//       outline: 1px solid #fff;
       outline: none;
-      .strong;
     }
 	}
 
@@ -365,7 +370,7 @@ main {
     &::before {
 
       @finalWidth: 12;
-      @finalHeight: 2;
+      @finalHeight: 1.8;
 
       position: absolute;
       top: -((@finalHeight * 50%) - 50%);
@@ -550,6 +555,8 @@ main {
   padding: 0;
   margin-bottom:  @t-margin*2;
 
+  pointer-events: none;
+
   h3 {
     .titleCaps;
     width:  100%;
@@ -585,9 +592,14 @@ main {
          -o-transition-duration: 0.8s;
             transition-duration: 0.8s;
 
+    pointer-events: auto;
+
     &.is--visited {
       .module--projetList--titles--projetName--links--name {
-        text-decoration: line-through;
+      }
+    }
+    &.is--active {
+      .module--projetList--titles--projetName--links--index {
       }
     }
 
@@ -659,7 +671,7 @@ main {
       }
 
     	&--index {
-				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-out, opacity .8s, background .44s, right .6s ease-out;
+				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-out, opacity .8s, background .44s, right .6s ease-out, -webkit-text-stroke .4s ease-out;
     	}
       &--name {
 				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-in-out, opacity .8s, background .44s, left .6s;
@@ -695,23 +707,43 @@ main {
           &--name {
           }
     		}
+
+    		&.is--visited {
+    			.module--projetList--titles--projetName--links--name {
+
+          }
+    			.module--projetList--titles--projetName--links--index {
+             -webkit-text-stroke-width: 1px;
+             -webkit-text-stroke-color: @color;
+             -webkit-text-fill-color: transparent;
+          }
+    		}
       }
   	}
 
   	// survol sur tout le menu, effet sur toutes les vignettes sauf celle survolées
   	&:hover .module--projetList--titles--projetName[data-type= @{rubrique}] {
 
+
+  		&.is--visited {
+      	.module--projetList--titles--projetName--links--index {
+
+        }
+      }
+
     	.module--projetList--titles--projetName--links {
 
       	&--index {
           text-shadow: 0px 0px 26px @color;
-          color: transparent;
+           -webkit-text-stroke-color: transparent;
+           color: transparent;
         }
         &--name {
           text-shadow: 0px 0px 16px #fff;
           color: transparent;
           border-left-color: transparent;
           background-color: transparent;
+          opacity: 1;
         }
 
         &:hover {
@@ -724,6 +756,7 @@ main {
 */
         		right: 50%;
         		transform: translate3d( 50%, -50%, 0) scale( 1.8);
+            -webkit-text-fill-color: @color;
             color: @color;
             text-shadow: none;
           }

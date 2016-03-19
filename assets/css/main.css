@@ -405,34 +405,34 @@ html.js .media-image .FigureImage-lazy > img.lazyloaded {
   background: rgba(0, 220, 140, 0.25);
 }
 body[data-rubrique="vr"] ::-moz-selection {
-  background: rgba(56, 196, 178, 0.92);
+  background: rgba(56, 196, 178, 0.82);
 }
 body[data-rubrique="vr"] ::selection {
-  background: rgba(56, 196, 178, 0.92);
+  background: rgba(56, 196, 178, 0.82);
 }
 body[data-rubrique="sites"] ::-moz-selection {
-  background: rgba(3, 184, 244, 0.92);
+  background: rgba(3, 184, 244, 0.82);
 }
 body[data-rubrique="sites"] ::selection {
-  background: rgba(3, 184, 244, 0.92);
+  background: rgba(3, 184, 244, 0.82);
 }
 body[data-rubrique="objets-interactifs"] ::-moz-selection {
-  background: rgba(171, 209, 144, 0.92);
+  background: rgba(171, 209, 144, 0.82);
 }
 body[data-rubrique="objets-interactifs"] ::selection {
-  background: rgba(171, 209, 144, 0.92);
+  background: rgba(171, 209, 144, 0.82);
 }
 body[data-rubrique="outils-pedagogiques"] ::-moz-selection {
-  background: rgba(255, 193, 98, 0.92);
+  background: rgba(255, 193, 98, 0.82);
 }
 body[data-rubrique="outils-pedagogiques"] ::selection {
-  background: rgba(255, 193, 98, 0.92);
+  background: rgba(255, 193, 98, 0.82);
 }
 body[data-rubrique="autres"] ::-moz-selection {
-  background: rgba(172, 168, 165, 0.92);
+  background: rgba(172, 168, 165, 0.82);
 }
 body[data-rubrique="autres"] ::selection {
-  background: rgba(172, 168, 165, 0.92);
+  background: rgba(172, 168, 165, 0.82);
 }
 audio,
 canvas,
@@ -490,7 +490,6 @@ body {
 }
 body.is--ajax_loading #pjax-container {
   opacity: 0;
-  pointer-events: none;
 }
 .module--projetList--titles {
   opacity: 1;
@@ -501,6 +500,9 @@ body.is--ajax_loading #pjax-container {
 body.is--ajax_loading .module--projetList--titles {
   opacity: 0;
   pointer-events: none;
+}
+body.is--ajax_loading .module--projetList--titles .module--projetList--titles--projetName--links {
+  pointer-events: none !important;
 }
 strong,
 .strong {
@@ -562,7 +564,6 @@ a:focus {
 .module--navbar a {
   display: block;
   padding: 16px;
-  margin-left: -16px;
   margin-top: 16px;
   font-size: .7rem;
   font-family: 'gt-c-b';
@@ -573,7 +574,6 @@ a:focus {
 .module--navbar a:hover,
 .module--navbar a:focus {
   outline: none;
-  font-family: 'gt-c-b';
 }
 .module--navbar ul {
   list-style: none;
@@ -705,12 +705,12 @@ main a.lienProjet {
 }
 main a.lienProjet::before {
   position: absolute;
-  top: -50%;
+  top: -40%;
   left: -550%;
   padding: .7em;
   padding-top: .8em;
   width: 1200%;
-  height: 200%;
+  height: 180%;
   background: #fff;
   color: transparent;
   content: attr(title);
@@ -723,9 +723,9 @@ main a.lienProjet::before {
   -o-transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s, -o-transform 0.3s;
   transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s;
   transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s, -webkit-transform 0.3s, -o-transform 0.3s;
-  -webkit-transform: scale(0.08333333, 0.5);
-  -o-transform: scale(0.08333333, 0.5);
-     transform: scale(0.08333333, 0.5);
+  -webkit-transform: scale(0.08333333, 0.55555556);
+  -o-transform: scale(0.08333333, 0.55555556);
+     transform: scale(0.08333333, 0.55555556);
   -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1);
   /* older webkit */
   -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
@@ -894,6 +894,7 @@ main ol li::before {
   z-index: 101;
   padding: 0;
   margin-bottom: 32px;
+  pointer-events: none;
 }
 .module--projetList--titles h3 {
   font-size: .7rem;
@@ -928,9 +929,7 @@ main ol li::before {
   -webkit-transition-duration: 0.8s;
   -o-transition-duration: 0.8s;
   transition-duration: 0.8s;
-}
-.module--projetList--titles .module--projetList--titles--projetName.is--visited .module--projetList--titles--projetName--links--name {
-  text-decoration: line-through;
+  pointer-events: auto;
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links {
   position: absolute;
@@ -985,11 +984,7 @@ main ol li::before {
   vertical-align: middle;
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--index {
-  -webkit-transition: color 0.8s ease-out, text-shadow 0.6s ease-in, opacity 0.8s, background 0.44s, right 0.6s ease-out, -webkit-transform 0.9s ease-out;
-  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, opacity 0.8s, background 0.44s, right 0.6s ease-out, -webkit-transform 0.9s ease-out;
-  -o-transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-out, opacity 0.8s, background 0.44s, right 0.6s ease-out, -o-transform 0.9s ease-out;
-  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-out, opacity 0.8s, background 0.44s, right 0.6s ease-out;
-  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-out, opacity 0.8s, background 0.44s, right 0.6s ease-out, -webkit-transform 0.9s ease-out, -o-transform 0.9s ease-out;
+  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-out, opacity 0.8s, background 0.44s, right 0.6s ease-out, -webkit-text-stroke 0.4s ease-out;
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--name {
   -webkit-transition: color 0.8s ease-out, text-shadow 0.6s ease-in, opacity 0.8s, background 0.44s, left 0.6s, -webkit-transform 0.9s ease-in-out;
@@ -1014,8 +1009,14 @@ main ol li::before {
 .module--projetList--titles .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links--index {
   color: #38C4B2;
 }
+.module--projetList--titles .module--projetList--titles--projetName[data-type="vr"].is--visited .module--projetList--titles--projetName--links--index {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #38C4B2;
+  -webkit-text-fill-color: transparent;
+}
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links--index {
   text-shadow: 0px 0px 26px #38C4B2;
+  -webkit-text-stroke-color: transparent;
   color: transparent;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links--name {
@@ -1023,6 +1024,7 @@ main ol li::before {
   color: transparent;
   border-left-color: transparent;
   background-color: transparent;
+  opacity: 1;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links:hover {
   background-color: rgba(56, 196, 178, 0.88);
@@ -1035,6 +1037,7 @@ main ol li::before {
   right: 50%;
   -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
           transform: translate3d(50%, -50%, 0) scale(1.8);
+  -webkit-text-fill-color: #38C4B2;
   color: #38C4B2;
   text-shadow: none;
 }
@@ -1061,8 +1064,14 @@ main ol li::before {
 .module--projetList--titles .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links--index {
   color: #03B8F4;
 }
+.module--projetList--titles .module--projetList--titles--projetName[data-type="sites"].is--visited .module--projetList--titles--projetName--links--index {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #03B8F4;
+  -webkit-text-fill-color: transparent;
+}
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links--index {
   text-shadow: 0px 0px 26px #03B8F4;
+  -webkit-text-stroke-color: transparent;
   color: transparent;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links--name {
@@ -1070,6 +1079,7 @@ main ol li::before {
   color: transparent;
   border-left-color: transparent;
   background-color: transparent;
+  opacity: 1;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links:hover {
   background-color: rgba(3, 184, 244, 0.88);
@@ -1082,6 +1092,7 @@ main ol li::before {
   right: 50%;
   -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
           transform: translate3d(50%, -50%, 0) scale(1.8);
+  -webkit-text-fill-color: #03B8F4;
   color: #03B8F4;
   text-shadow: none;
 }
@@ -1108,8 +1119,14 @@ main ol li::before {
 .module--projetList--titles .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links--index {
   color: #ABD190;
 }
+.module--projetList--titles .module--projetList--titles--projetName[data-type="objets-interactifs"].is--visited .module--projetList--titles--projetName--links--index {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ABD190;
+  -webkit-text-fill-color: transparent;
+}
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links--index {
   text-shadow: 0px 0px 26px #ABD190;
+  -webkit-text-stroke-color: transparent;
   color: transparent;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links--name {
@@ -1117,6 +1134,7 @@ main ol li::before {
   color: transparent;
   border-left-color: transparent;
   background-color: transparent;
+  opacity: 1;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links:hover {
   background-color: rgba(171, 209, 144, 0.88);
@@ -1129,6 +1147,7 @@ main ol li::before {
   right: 50%;
   -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
           transform: translate3d(50%, -50%, 0) scale(1.8);
+  -webkit-text-fill-color: #ABD190;
   color: #ABD190;
   text-shadow: none;
 }
@@ -1155,8 +1174,14 @@ main ol li::before {
 .module--projetList--titles .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links--index {
   color: #FFC162;
 }
+.module--projetList--titles .module--projetList--titles--projetName[data-type="outils-pedagogiques"].is--visited .module--projetList--titles--projetName--links--index {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #FFC162;
+  -webkit-text-fill-color: transparent;
+}
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links--index {
   text-shadow: 0px 0px 26px #FFC162;
+  -webkit-text-stroke-color: transparent;
   color: transparent;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links--name {
@@ -1164,6 +1189,7 @@ main ol li::before {
   color: transparent;
   border-left-color: transparent;
   background-color: transparent;
+  opacity: 1;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links:hover {
   background-color: rgba(255, 193, 98, 0.88);
@@ -1176,6 +1202,7 @@ main ol li::before {
   right: 50%;
   -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
           transform: translate3d(50%, -50%, 0) scale(1.8);
+  -webkit-text-fill-color: #FFC162;
   color: #FFC162;
   text-shadow: none;
 }
@@ -1202,8 +1229,14 @@ main ol li::before {
 .module--projetList--titles .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links--index {
   color: #ACA8A5;
 }
+.module--projetList--titles .module--projetList--titles--projetName[data-type="autres"].is--visited .module--projetList--titles--projetName--links--index {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ACA8A5;
+  -webkit-text-fill-color: transparent;
+}
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links--index {
   text-shadow: 0px 0px 26px #ACA8A5;
+  -webkit-text-stroke-color: transparent;
   color: transparent;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links--name {
@@ -1211,6 +1244,7 @@ main ol li::before {
   color: transparent;
   border-left-color: transparent;
   background-color: transparent;
+  opacity: 1;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links:hover {
   background-color: rgba(172, 168, 165, 0.88);
@@ -1223,6 +1257,7 @@ main ol li::before {
   right: 50%;
   -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
           transform: translate3d(50%, -50%, 0) scale(1.8);
+  -webkit-text-fill-color: #ACA8A5;
   color: #ACA8A5;
   text-shadow: none;
 }
@@ -1492,11 +1527,11 @@ html.js .module--projet .module--projet--visuel > .module--projet--visuel--insid
   -webkit-transform: translate3d(0, calc( -50% + 44vh/2), 0);
           transform: translate3d(0, calc( -50% + 44vh/2), 0);
   opacity: .95;
-  -webkit-transition: opacity 0.5s ease-out, -webkit-transform 0.8s ease-in-out;
-  transition: opacity 0.5s ease-out, -webkit-transform 0.8s ease-in-out;
-  -o-transition: transform 0.8s ease-in-out, opacity 0.5s ease-out, -o-transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out, opacity 0.5s ease-out;
-  transition: transform 0.8s ease-in-out, opacity 0.5s ease-out, -webkit-transform 0.8s ease-in-out, -o-transform 0.8s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-out, -webkit-transform 0.6s ease-in-out;
+  transition: opacity 0.5s ease-out, -webkit-transform 0.6s ease-in-out;
+  -o-transition: transform 0.6s ease-in-out, opacity 0.5s ease-out, -o-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, opacity 0.5s ease-out;
+  transition: transform 0.6s ease-in-out, opacity 0.5s ease-out, -webkit-transform 0.6s ease-in-out, -o-transform 0.6s ease-in-out;
   -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1);
   /* older webkit */
   -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
@@ -1710,6 +1745,7 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   padding: 0;
   max-width: 76ch;
   font-size: .8em;
+  margin-top: .4em;
 }
 .module--projet .module--projet--text > .media-image .legende p,
 .module--projet .module--projet--text > .media-video .legende p,
@@ -1717,8 +1753,9 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 .module--projet .module--projet--text > .media-image .caption-bottom p,
 .module--projet .module--projet--text > .media-video .caption-bottom p,
 .module--projet .module--projet--text > .media-tweet .caption-bottom p {
+  margin-top: .4em;
   max-width: 76ch;
-  padding-top: .4em;
+  padding: 0;
 }
 .module--projet .module--projet--text .media-video.capture_siteweb {
   border: 1px solid #E3E3E3;

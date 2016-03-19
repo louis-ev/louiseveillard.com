@@ -33,5 +33,6 @@ function pjaxInfos($p) {
   $response["template"] = $p->template();
   $response["intended-template"] = $p->intendedTemplate();
   $response["rubrique"] = $p->type()->exists() ? str::slug( $p->type()): '';
+  $response["projetIndex"] = $p->template() === 'projet' ? str_pad( $p->num(), 2, '0', STR_PAD_LEFT): '';
   return '<script>var pjaxInfos = ' . json_encode( $response) . '</script>';
 }
