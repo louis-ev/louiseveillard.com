@@ -4,28 +4,6 @@
     </p>
   </footer>
 
-	<div class="module--gradient_overlay <?php e( $page->intendedTemplate() === "home", '', 'is--away'); ?>">
-    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-      <radialGradient id="GradientPad" cx="-.2" cy=".5" r="1" fx="0" fy=".5" spreadMethod="pad">
-      <stop offset="0%" stop-color="rgba(21, 21, 21, 1)"></stop>
-      <stop offset="100%" stop-color="rgba(21, 21, 21, .4)"></stop>
-      </radialGradient>
-			<linearGradient y2="0" x2="1" y1="0" x1="0" id="svg_2">
-			   <stop stop-color="rgba(21, 21, 21, 1)" stop-opacity=".4" offset="0"></stop>
-			   <stop stop-color="rgba(21, 21, 21, 1)" stop-opacity=".4" offset="1"></stop>
-      </linearGradient>
-
-      </defs>
-      <g>
-      <title>Layer 1</title>
-
-      <rect x="0" y="0" rx="0" ry="0" width="100%" height="100%" fill="url(#svg_2)"></rect>
-
-      </g>
-		</svg>
-	</div>
-
   <!-- scripts -->
   <?php if ( c::get('environment') == 'local' ) : ?>
 
@@ -37,6 +15,16 @@
   <?= js('assets/production/all.min.js') ?>
 
   <?php endif ?>
+	<script>
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-37336212-1']);
+	  _gaq.push(['_trackPageview']);
 
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
 </body>
 </html>

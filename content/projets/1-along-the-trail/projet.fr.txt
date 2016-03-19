@@ -46,7 +46,7 @@ Imagecover: u2-boite.jpg
 
 ----
 
-Header: Une déambulation dans des univers matérialisant les données archivées dans les réseaux sociaux du porteur d'un casque de réalité virtuelle.
+Header: Une déambulation dans des univers matérialisant les données stockées sur les réseaux sociaux du porteur d'un casque de réalité virtuelle. Along the Trail donne à voir les traces numériques des interactions humaines.
 
 ----
 

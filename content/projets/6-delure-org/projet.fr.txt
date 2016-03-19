@@ -6,6 +6,8 @@ Text:
 
 L'association des Rencontres de Lure est renommée pour l'organisation des célèbres Rencontres du même nom depuis plus de 60 ans, la dernière semaine d'août. Pendant le reste de l'année, elle organise des ateliers, des conférences ou publie des ouvrages sur l'écriture sous toutes ses formes.
 
+ ----
+
 Pour retranscrire ces deux temps, la page d'accueil possède deux modes d'affichage : un mode "été", actif pendant la période précédent les Rencontres de Lure, indique leur thématique ainsi qu'un aperçu des intervenants.
 
 (image: delureorg-mode_ete.png legende: Le mode "été" du site, avec des renvois rapides vers les sections dédiés sur le site)

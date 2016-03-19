@@ -1,6 +1,7 @@
-<nav class="module--navbar">
-  <div class="module--navbar--wrapper">
-  	<div class="module--logo">
+<?php if(!kirby()->request()->ajax()) : ?>
+  <nav class="module--navbar">
+    <div class="module--navbar--wrapper">
+    	<div class="module--logo">
   	    <a class="logo" href="<?php echo url() ?>">
     	     Louis Eveillard
   <!--
@@ -21,15 +22,14 @@
   				</svg>
   -->
   	    </a>
-
-
-  	</div>
-  	<ul class="module--navbar--list">
-  	  <?php foreach($pages->visible() as $p): ?>
-  	  <li class="module--navbar--list--item">
-  	    <a <?php e($p->isOpen(), ' class="active"') ?> href="<?php echo $p->url() ?>"><?php echo $p->title()->html() ?></a>
-  	  </li>
-  	  <?php endforeach ?>
-  	</ul>
-  </div>
-</nav>
+    	</div>
+    	<ul class="module--navbar--list">
+    	  <?php foreach($pages->visible() as $p): ?>
+    	  <li class="module--navbar--list--item">
+    	    <a data-goto="<?php echo str::slug($p->title()); ?>" class="<?php e($p->isOpen(), 'active') ?>" href="<?php echo $p->url() ?>"><?php echo $p->title()->html() ?></a>
+    	  </li>
+    	  <?php endforeach ?>
+    	</ul>
+    </div>
+  </nav>
+<?php endif; ?>

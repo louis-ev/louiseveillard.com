@@ -21,7 +21,9 @@ var pluginsScripts = [
   'bower_components/lazysizes/plugins/bgset/ls.bgset.min.js',
   'bower_components/lazysizes/plugins/optimumx/ls.optimumx.min.js',
   'bower_components/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js',
-  'bower_components/lazysizes/lazysizes.min.js'
+  'bower_components/lazysizes/lazysizes.min.js',
+  'bower_components/fastclick/lib/fastclick.js',
+  'bower_components/jquery-pjax/jquery.pjax.js'
 ];
 
 var userScripts = [
@@ -29,6 +31,7 @@ var userScripts = [
 ];
 
 var localDevUrl = 'localhost:8888/louiseveillard.com-v2/';
+
 
 /*
 
@@ -52,14 +55,14 @@ var gulp = require('gulp');
 
 // Include Our Plugins
 var autoprefixer = require('gulp-autoprefixer');
-var concat  = require('gulp-concat');
-var jshint  = require('gulp-jshint');
-var less    = require('gulp-less');
-var nano    = require('gulp-cssnano');
-var plumber = require('gulp-plumber');
-var rename  = require('gulp-rename');
-var uglify  = require('gulp-uglify');
-var browserSync = require('browser-sync').create();
+var browserSync  = require('browser-sync').create();
+var concat       = require('gulp-concat');
+var jshint       = require('gulp-jshint');
+var less         = require('gulp-less');
+var nano         = require('gulp-cssnano');
+var plumber      = require('gulp-plumber');
+var rename       = require('gulp-rename');
+var uglify       = require('gulp-uglify');
 
 
 
@@ -68,8 +71,8 @@ gulp.task('less', function() {
   return gulp.src( 'assets/less/main.less')
     .pipe(plumber({
         errorHandler: function (err) {
-            console.log(err);
-            this.emit('end');
+          console.log(err);
+          this.emit('end');
         }
     }))
     .pipe(less())
@@ -80,34 +83,17 @@ gulp.task('less', function() {
         'opera 12'
       ]
     }))
-    .pipe(gulp.dest('assets/css'));
+    .pipe(gulp.dest('assets/css'))
+    .pipe(browserSync.stream());
 });
 
 
 
 // Prefix & Minify CSS
-/*
- * NB: If CSS task does not contain LESS operations and that you execute
- * ('less', 'css'), CSS task finish before LESS, so it does not work include
- * less udpate. I do not understand why.
- */
-gulp.task('css', function () {
-  return gulp.src( 'assets/less/main.less')
-    .pipe(plumber({
-        errorHandler: function (err) {
-            console.log(err);
-            this.emit('end');
-        }
-    }))
-    .pipe(less())
-    .pipe(autoprefixer({
-      browsers: [
-        'last 2 versions',
-        'android 4',
-        'opera 12'
-      ]
-		}))
-    .pipe(gulp.dest('assets/css'))
+gulp.task('css', ['less'], function (done) {
+  return gulp.src([
+      'assets/css/*.css',
+    ])
     .pipe(nano({discardComments: {removeAll: true}}))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('assets/production'));
@@ -128,13 +114,14 @@ gulp.task('lint', function() {
 gulp.task('script-plugins', function() {
   return gulp.src(pluginsScripts)
     .pipe(concat('plugins.js'))
-    .pipe(gulp.dest('assets/js'));
+    .pipe(gulp.dest('assets/js'))
+    .pipe(browserSync.stream());
 });
 
 
 
 // Concatenate JS plugin with user scripts and minify them.
-gulp.task('scripts', function() {
+gulp.task('scripts', ['script-plugins'], function (done) {
   return gulp.src(['assets/js/plugins.js'].concat(userScripts))
     .pipe(concat('all.js'))
     .pipe(gulp.dest('assets/production'))
@@ -145,22 +132,33 @@ gulp.task('scripts', function() {
 
 
 
+// Live reload sync on every screen connect to localhost
+gulp.task('init-live-reload', function() {
+  browserSync.init({
+    proxy: localDevUrl,
+    files: ['!site/accounts/', 'site/**/*.php', 'content/**/*.txt'],
+  });
+});
+
+
+
 // Watch Files For Changes
 gulp.task('dev-watch', function() {
-  browserSync.init({
-    files: ['{site}/**/*.php', '*.php', userScripts, 'assets/less/*.less', '!site/accounts/**'],
-    proxy: localDevUrl,
-  });
-  gulp.watch( userScripts, [ 'script-plugins']);
+  gulp.watch( userScripts, ['lint', 'script-plugins']);
   gulp.watch( 'assets/less/*.less', ['less']);
 });
 
-// Watch Files For Changes
-gulp.task('watch', function() {
-  gulp.watch( userScripts, [ 'script-plugins']);
-  gulp.watch( 'assets/less/*.less', ['less']);
-});
+
+
+// Watch Files For Changes with live reload sync on every screen connect to localhost.
+gulp.task('dev-watch-sync', ['init-live-reload', 'dev-watch']);
+
+
+
+// Production Task
+gulp.task('prod', ['lint', 'less', 'css', 'script-plugins', 'scripts']);
+
 
 
 // Default Task
-gulp.task('default', ['css', 'script-plugins', 'scripts']);
+gulp.task('default', ['prod']);

@@ -9224,7 +9224,1773 @@ c(d.prototype,b.prototype),d.prototype._getElementOffset=e,d.prototype.layout=f,
 /*! lazysizes - v1.4.0 */
 !function(){"use strict";if(window.addEventListener){var a=/\s+/g,b=/\s*\|\s+|\s+\|\s*/g,c=/^(.+?)(?:\s+\[\s*(.+?)\s*\])?$/,d={contain:1,cover:1},e=window.requestAnimationFrame||setTimeout,f=function(a){var b=lazySizes.gW(a,a.parentNode);return(!a._lazysizesWidth||b>a._lazysizesWidth)&&(a._lazysizesWidth=b),a._lazysizesWidth},g=function(e,f,g){var h=document.createElement("picture"),i=f.getAttribute(lazySizesConfig.sizesAttr),j=f.getAttribute("data-ratio"),k=f.getAttribute("data-optimumx"),l=(getComputedStyle(f)||{getPropertyValue:function(){}}).getPropertyValue("background-size");!d[l]&&d[f.style.backgroundSize]&&(l=f.style.backgroundSize),!d[l]||"auto"!=i&&i||(g.setAttribute("data-parent-fit",l),i="auto"),f._lazybgset&&f._lazybgset.parentNode==f&&f.removeChild(f._lazybgset),Object.defineProperty(g,"_lazybgset",{value:f,writable:!0}),Object.defineProperty(f,"_lazybgset",{value:h,writable:!0}),e=e.replace(a," ").split(b),h.style.display="none",g.className=lazySizesConfig.lazyClass,1!=e.length||i||(i="auto"),e.forEach(function(a){var b=document.createElement("source");i&&"auto"!=i&&b.setAttribute("sizes",i),a.match(c)&&(b.setAttribute(lazySizesConfig.srcsetAttr,RegExp.$1),RegExp.$2&&b.setAttribute("media",lazySizesConfig.customMedia[RegExp.$2]||RegExp.$2)),h.appendChild(b)}),i&&(g.setAttribute(lazySizesConfig.sizesAttr,i),f.removeAttribute(lazySizesConfig.sizesAttr),f.removeAttribute("sizes")),k&&g.setAttribute("data-optimumx",k),j&&g.setAttribute("data-ratio",j),h.appendChild(g),f.appendChild(h)},h=function(a){if(a.target._lazybgset){var b=a.target,c=b._lazybgset,d=b.currentSrc||b.src;d&&(c.style.backgroundImage="url("+d+")"),b._lazybgsetLoading&&(lazySizes.fire(c,"_lazyloaded",{},!1,!0),delete b._lazybgsetLoading)}};addEventListener("lazybeforeunveil",function(a){var b,c,d;!a.defaultPrevented&&(b=a.target.getAttribute("data-bgset"))&&(d=a.target,c=document.createElement("img"),c.alt="",c._lazybgsetLoading=!0,a.detail.firesLoad=!0,g(b,d,c),setTimeout(function(){lazySizes.loader.unveil(c),e(function(){lazySizes.fire(c,"_lazyloaded",{},!0,!0),c.complete&&h({target:c})})}))}),document.addEventListener("load",h,!0),document.documentElement.addEventListener("lazybeforesizes",function(a){!a.defaultPrevented&&a.target._lazybgset&&(a.detail.width=f(a.target._lazybgset))})}}();
 /*! lazysizes - v1.4.0 */
+!function(a,b,c){"use strict";if(a.addEventListener){var d,e=/^picture$/i,f=b.documentElement,g=function(){var a,b=/(([^,\s].[^\s]+)\s+(\d+)(w|h)(\s+(\d+)(w|h))?)/g,c=function(b,c,d,e,f,g,h,i){a.push({c:c,u:d,w:1*("w"==i?h:e)})};return function(d){return a=[],d.replace(b,c),a}}(),h=function(){var a=function(a,b){return a.w-b.w},b=function(b,c){var d={srcset:b.getAttribute(lazySizes.cfg.srcsetAttr)||""},e=g(d.srcset);return Object.defineProperty(b,c,{value:d,writable:!0}),d.cands=e,d.index=0,d.dirty=!1,e[0]&&e[0].w?(e.sort(a),d.cSrcset=[e[d.index].c]):(d.cSrcset=d.srcset?[d.srcset]:[],d.cands=[]),d};return function(a,c){var d,f,g,h;if(!a[c]&&(h=a.parentNode||{},a[c]=b(a,c),a[c].isImg=!0,e.test(h.nodeName||"")))for(a[c].picture=!0,d=h.getElementsByTagName("source"),f=0,g=d.length;g>f;f++)b(d[f],c).isImg=!1;return a[c]}}(),i={_lazyOptimumx:function(){var a=function(a,b,c){var d,e;return a&&a.w?a.w>c?!1:(d=1-a.w/c,e=b/c-1,0>e-d):!0};return function(b,c){var d,e;for(d=b.index+1;d<b.cands.length&&(e=b.cands[d],e.w<=c||a(b.cands[d-1],e.w,c));d++)b.cSrcset.push(e.c),b.index=d}}()},j=function(){var a=function(a,b,c,d){var e,f=a[d];f&&(e=f.index,i[d](f,b),f.dirty&&e==f.index||(f.cSrcset.join(", "),a.setAttribute(c,f.cSrcset.join(", ")),f.dirty=!0))};return function(b,c,d,e){var f,g,h,i,j=b[e];if(j.width=c,j.picture&&(g=b.parentNode))for(f=g.getElementsByTagName("source"),i=0,h=f.length;h>i;i++)a(f[i],c,d,e);a(b,c,d,e)}}(),k=function(a){var b=a.getAttribute("data-optimumx")||a.getAttribute("data-maxdpr");return b&&(b="auto"==b?d.getOptimumX(a):parseFloat(b,10)),b},l=function(){a.lazySizes&&!a.lazySizes.getOptimumX&&(lazySizes.getX=k,lazySizes.pWS=g,f.removeEventListener("lazybeforeunveil",l))};f.addEventListener("lazybeforeunveil",l),setTimeout(l),d=a.lazySizes&&lazySizes.cfg||a.lazySizesConfig,d||(d={},a.lazySizesConfig=d),"function"!=typeof d.getOptimumX&&(d.getOptimumX=function(){var b=a.devicePixelRatio||1;return b>2.5?b*=.6:b>1.9&&(b*=.8),Math.min(Math.round(100*b)/100,2)}),a.devicePixelRatio&&(addEventListener("lazybeforesizes",function(a){var b,c,d,e;a.defaultPrevented||!(b=k(a.target))||b>=devicePixelRatio||(c=h(a.target,"_lazyOptimumx"),d=a.detail.width*b,d&&(c.width||0)<d&&(e=a.detail.dataAttr?lazySizes.cfg.srcsetAttr:"srcset",j(a.target,d,e,"_lazyOptimumx")))}),addEventListener("lazybeforeunveil",function(a){a.target._lazyOptimumx&&!a.detail.reloaded&&(a.target._lazyOptimumx=null)}))}}(window,document);
+/*! lazysizes - v1.4.0 */
+!function(a,b){"use strict";function c(a,c){if(!e[a]){var d=b.createElement(c?"link":"script"),f=b.getElementsByTagName("script")[0];c?(d.rel="stylesheet",d.href=a):d.src=a,e[a]=!0,e[d.src||d.href]=!0,f.parentNode.insertBefore(d,f)}}var d,e={};b.addEventListener&&(d=function(a,c){var d=b.createElement("img");d.onload=function(){d.onload=null,d.onerror=null,d=null,c()},d.onerror=d.onload,d.src=a,d&&d.complete&&d.onload&&d.onload()},addEventListener("lazybeforeunveil",function(b){var e,f,g,h;b.defaultPrevented||("none"==b.target.preload&&(b.target.preload="auto"),e=b.target.getAttribute("data-link"),e&&c(e,!0),e=b.target.getAttribute("data-script"),e&&c(e),e=b.target.getAttribute("data-require"),e&&a.require&&require([e]),g=b.target.getAttribute("data-bg"),g&&(b.detail.firesLoad=!0,f=function(){b.target.style.backgroundImage="url("+g+")",b.detail.firesLoad=!1,lazySizes.fire(b.target,"_lazyloaded",{},!0,!0)},d(g,f)),h=b.target.getAttribute("data-poster"),h&&(b.detail.firesLoad=!0,f=function(){b.target.poster=h,b.detail.firesLoad=!1,lazySizes.fire(b.target,"_lazyloaded",{},!0,!0)},d(h,f)))},!1))}(window,document);
+/*! lazysizes - v1.4.0 */
 !function(a,b){var c=b(a,a.document);a.lazySizes=c,"object"==typeof module&&module.exports?module.exports=c:"function"==typeof define&&define.amd&&define(c)}(window,function(a,b){"use strict";if(b.getElementsByClassName){var c,d=b.documentElement,e=a.HTMLPictureElement&&"sizes"in b.createElement("img"),f="addEventListener",g="getAttribute",h=a[f],i=a.setTimeout,j=a.requestAnimationFrame||i,k=/^picture$/i,l=["load","error","lazyincluded","_lazyloaded"],m={},n=Array.prototype.forEach,o=function(a,b){return m[b]||(m[b]=new RegExp("(\\s|^)"+b+"(\\s|$)")),m[b].test(a[g]("class")||"")&&m[b]},p=function(a,b){o(a,b)||a.setAttribute("class",(a[g]("class")||"").trim()+" "+b)},q=function(a,b){var c;(c=o(a,b))&&a.setAttribute("class",(a[g]("class")||"").replace(c," "))},r=function(a,b,c){var d=c?f:"removeEventListener";c&&r(a,b),l.forEach(function(c){a[d](c,b)})},s=function(a,c,d,e,f){var g=b.createEvent("CustomEvent");return g.initCustomEvent(c,!e,!f,d||{}),a.dispatchEvent(g),g},t=function(b,d){var f;!e&&(f=a.picturefill||c.pf)?f({reevaluate:!0,elements:[b]}):d&&d.src&&(b.src=d.src)},u=function(a,b){return(getComputedStyle(a,null)||{})[b]},v=function(a,b,d){for(d=d||a.offsetWidth;d<c.minSize&&b&&!a._lazysizesWidth;)d=b.offsetWidth,b=b.parentNode;return d},w=function(b){var c,d=0,e=a.Date,f=function(){c=!1,d=e.now(),b()},g=function(){i(f)},h=function(){j(g)};return function(){if(!c){var a=125-(e.now()-d);c=!0,6>a&&(a=6),i(h,a)}}},x=function(){var e,l,m,v,x,z,A,B,C,D,E,F,G,H,I,J=/^img$/i,K=/^iframe$/i,L="onscroll"in a&&!/glebot/.test(navigator.userAgent),M=0,N=0,O=0,P=0,Q=function(a){O--,a&&a.target&&r(a.target,Q),(!a||0>O||!a.target)&&(O=0)},R=function(a,c){var e,f=a,g="hidden"==u(b.body,"visibility")||"hidden"!=u(a,"visibility");for(C-=c,F+=c,D-=c,E+=c;g&&(f=f.offsetParent)&&f!=b.body&&f!=d;)g=(u(f,"opacity")||1)>0,g&&"visible"!=u(f,"overflow")&&(e=f.getBoundingClientRect(),g=E>e.left&&D<e.right&&F>e.top-1&&C<e.bottom+1);return g},S=function(){var a,b,f,h,i,j,k,n,o;if((x=c.loadMode)&&8>O&&(a=e.length)){b=0,P++,null==H&&("expand"in c||(c.expand=d.clientHeight>600?d.clientWidth>860?500:410:359),G=c.expand,H=G*c.expFactor),H>N&&1>O&&P>3&&x>2?(N=H,P=0):N=x>1&&P>2&&6>O?G:M;for(;a>b;b++)if(e[b]&&!e[b]._lazyRace)if(L)if((n=e[b][g]("data-expand"))&&(j=1*n)||(j=N),o!==j&&(A=innerWidth+j*I,B=innerHeight+j,k=-1*j,o=j),f=e[b].getBoundingClientRect(),(F=f.bottom)>=k&&(C=f.top)<=B&&(E=f.right)>=k*I&&(D=f.left)<=A&&(F||E||D||C)&&(m&&3>O&&!n&&(3>x||4>P)||R(e[b],j))){if(Y(e[b]),i=!0,O>9)break}else!i&&m&&!h&&4>O&&4>P&&x>2&&(l[0]||c.preloadAfterLoad)&&(l[0]||!n&&(F||E||D||C||"auto"!=e[b][g](c.sizesAttr)))&&(h=l[0]||e[b]);else Y(e[b]);h&&!i&&Y(h)}},T=w(S),U=function(a){p(a.target,c.loadedClass),q(a.target,c.loadingClass),r(a.target,U)},V=function(a,b){try{a.contentWindow.location.replace(b)}catch(c){a.src=b}},W=function(a){var b,d,e=a[g](c.srcsetAttr);(b=c.customMedia[a[g]("data-media")||a[g]("media")])&&a.setAttribute("media",b),e&&a.setAttribute("srcset",e),b&&(d=a.parentNode,d.insertBefore(a.cloneNode(),a),d.removeChild(a))},X=function(){var a,b=[],c=function(){for(;b.length;)b.shift()();a=!1};return function(d){b.push(d),a||(a=!0,j(c))}}(),Y=function(a){var b,d,e,f,h,j,l,u=J.test(a.nodeName),w=u&&(a[g](c.sizesAttr)||a[g]("sizes")),x="auto"==w;(!x&&m||!u||!a.src&&!a.srcset||a.complete||o(a,c.errorClass))&&(x&&(l=a.offsetWidth),a._lazyRace=!0,O++,X(function(){a._lazyRace&&delete a._lazyRace,(h=s(a,"lazybeforeunveil")).defaultPrevented||(w&&(x?(y.updateElem(a,!0,l),p(a,c.autosizesClass)):a.setAttribute("sizes",w)),d=a[g](c.srcsetAttr),b=a[g](c.srcAttr),u&&(e=a.parentNode,f=e&&k.test(e.nodeName||"")),j=h.detail.firesLoad||"src"in a&&(d||b||f),h={target:a},j&&(r(a,Q,!0),clearTimeout(v),v=i(Q,2500),p(a,c.loadingClass),r(a,U,!0)),f&&n.call(e.getElementsByTagName("source"),W),d?a.setAttribute("srcset",d):b&&!f&&(K.test(a.nodeName)?V(a,b):a.src=b),(d||f)&&t(a,{src:b})),q(a,c.lazyClass),(!j||a.complete)&&(j?Q(h):O--,U(h))}))},Z=function(){if(!m){if(Date.now()-z<999)return void i(Z,999);var a,b=function(){c.loadMode=3,T()};m=!0,c.loadMode=3,O||(P?T():i(S)),h("scroll",function(){3==c.loadMode&&(c.loadMode=2),clearTimeout(a),a=i(b,99)},!0)}};return{_:function(){z=Date.now(),e=b.getElementsByClassName(c.lazyClass),l=b.getElementsByClassName(c.lazyClass+" "+c.preloadClass),I=c.hFac,h("scroll",T,!0),h("resize",T,!0),a.MutationObserver?new MutationObserver(T).observe(d,{childList:!0,subtree:!0,attributes:!0}):(d[f]("DOMNodeInserted",T,!0),d[f]("DOMAttrModified",T,!0),setInterval(T,999)),h("hashchange",T,!0),["focus","mouseover","click","load","transitionend","animationend","webkitAnimationEnd"].forEach(function(a){b[f](a,T,!0)}),/d$|^c/.test(b.readyState)?Z():(h("load",Z),b[f]("DOMContentLoaded",T),i(Z,2e4)),T(e.length>0)},checkElems:T,unveil:Y}}(),y=function(){var a,d=function(a,b,c){var d,e,f,g,h=a.parentNode;if(h&&(c=v(a,h,c),g=s(a,"lazybeforesizes",{width:c,dataAttr:!!b}),!g.defaultPrevented&&(c=g.detail.width,c&&c!==a._lazysizesWidth))){if(a._lazysizesWidth=c,c+="px",a.setAttribute("sizes",c),k.test(h.nodeName||""))for(d=h.getElementsByTagName("source"),e=0,f=d.length;f>e;e++)d[e].setAttribute("sizes",c);g.detail.dataAttr||t(a,g.detail)}},e=function(){var b,c=a.length;if(c)for(b=0;c>b;b++)d(a[b])},f=w(e);return{_:function(){a=b.getElementsByClassName(c.autosizesClass),h("resize",f)},checkElems:f,updateElem:d}}(),z=function(){z.i||(z.i=!0,y._(),x._())};return function(){var b,d={lazyClass:"lazyload",loadedClass:"lazyloaded",loadingClass:"lazyloading",preloadClass:"lazypreload",errorClass:"lazyerror",autosizesClass:"lazyautosizes",srcAttr:"data-src",srcsetAttr:"data-srcset",sizesAttr:"data-sizes",minSize:40,customMedia:{},init:!0,expFactor:1.7,hFac:.8,loadMode:2};c=a.lazySizesConfig||a.lazysizesConfig||{};for(b in d)b in c||(c[b]=d[b]);a.lazySizesConfig=c,i(function(){c.init&&z()})}(),{cfg:c,autoSizer:y,loader:x,init:z,uP:t,aC:p,rC:q,hC:o,fire:s,gW:v}}});
+;(function () {
+	'use strict';
+
+	/**
+	 * @preserve FastClick: polyfill to remove click delays on browsers with touch UIs.
+	 *
+	 * @codingstandard ftlabs-jsv2
+	 * @copyright The Financial Times Limited [All Rights Reserved]
+	 * @license MIT License (see LICENSE.txt)
+	 */
+
+	/*jslint browser:true, node:true*/
+	/*global define, Event, Node*/
+
+
+	/**
+	 * Instantiate fast-clicking listeners on the specified layer.
+	 *
+	 * @constructor
+	 * @param {Element} layer The layer to listen on
+	 * @param {Object} [options={}] The options to override the defaults
+	 */
+	function FastClick(layer, options) {
+		var oldOnClick;
+
+		options = options || {};
+
+		/**
+		 * Whether a click is currently being tracked.
+		 *
+		 * @type boolean
+		 */
+		this.trackingClick = false;
+
+
+		/**
+		 * Timestamp for when click tracking started.
+		 *
+		 * @type number
+		 */
+		this.trackingClickStart = 0;
+
+
+		/**
+		 * The element being tracked for a click.
+		 *
+		 * @type EventTarget
+		 */
+		this.targetElement = null;
+
+
+		/**
+		 * X-coordinate of touch start event.
+		 *
+		 * @type number
+		 */
+		this.touchStartX = 0;
+
+
+		/**
+		 * Y-coordinate of touch start event.
+		 *
+		 * @type number
+		 */
+		this.touchStartY = 0;
+
+
+		/**
+		 * ID of the last touch, retrieved from Touch.identifier.
+		 *
+		 * @type number
+		 */
+		this.lastTouchIdentifier = 0;
+
+
+		/**
+		 * Touchmove boundary, beyond which a click will be cancelled.
+		 *
+		 * @type number
+		 */
+		this.touchBoundary = options.touchBoundary || 10;
+
+
+		/**
+		 * The FastClick layer.
+		 *
+		 * @type Element
+		 */
+		this.layer = layer;
+
+		/**
+		 * The minimum time between tap(touchstart and touchend) events
+		 *
+		 * @type number
+		 */
+		this.tapDelay = options.tapDelay || 200;
+
+		/**
+		 * The maximum time for a tap
+		 *
+		 * @type number
+		 */
+		this.tapTimeout = options.tapTimeout || 700;
+
+		if (FastClick.notNeeded(layer)) {
+			return;
+		}
+
+		// Some old versions of Android don't have Function.prototype.bind
+		function bind(method, context) {
+			return function() { return method.apply(context, arguments); };
+		}
+
+
+		var methods = ['onMouse', 'onClick', 'onTouchStart', 'onTouchMove', 'onTouchEnd', 'onTouchCancel'];
+		var context = this;
+		for (var i = 0, l = methods.length; i < l; i++) {
+			context[methods[i]] = bind(context[methods[i]], context);
+		}
+
+		// Set up event handlers as required
+		if (deviceIsAndroid) {
+			layer.addEventListener('mouseover', this.onMouse, true);
+			layer.addEventListener('mousedown', this.onMouse, true);
+			layer.addEventListener('mouseup', this.onMouse, true);
+		}
+
+		layer.addEventListener('click', this.onClick, true);
+		layer.addEventListener('touchstart', this.onTouchStart, false);
+		layer.addEventListener('touchmove', this.onTouchMove, false);
+		layer.addEventListener('touchend', this.onTouchEnd, false);
+		layer.addEventListener('touchcancel', this.onTouchCancel, false);
+
+		// Hack is required for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
+		// which is how FastClick normally stops click events bubbling to callbacks registered on the FastClick
+		// layer when they are cancelled.
+		if (!Event.prototype.stopImmediatePropagation) {
+			layer.removeEventListener = function(type, callback, capture) {
+				var rmv = Node.prototype.removeEventListener;
+				if (type === 'click') {
+					rmv.call(layer, type, callback.hijacked || callback, capture);
+				} else {
+					rmv.call(layer, type, callback, capture);
+				}
+			};
+
+			layer.addEventListener = function(type, callback, capture) {
+				var adv = Node.prototype.addEventListener;
+				if (type === 'click') {
+					adv.call(layer, type, callback.hijacked || (callback.hijacked = function(event) {
+						if (!event.propagationStopped) {
+							callback(event);
+						}
+					}), capture);
+				} else {
+					adv.call(layer, type, callback, capture);
+				}
+			};
+		}
+
+		// If a handler is already declared in the element's onclick attribute, it will be fired before
+		// FastClick's onClick handler. Fix this by pulling out the user-defined handler function and
+		// adding it as listener.
+		if (typeof layer.onclick === 'function') {
+
+			// Android browser on at least 3.2 requires a new reference to the function in layer.onclick
+			// - the old one won't work if passed to addEventListener directly.
+			oldOnClick = layer.onclick;
+			layer.addEventListener('click', function(event) {
+				oldOnClick(event);
+			}, false);
+			layer.onclick = null;
+		}
+	}
+
+	/**
+	* Windows Phone 8.1 fakes user agent string to look like Android and iPhone.
+	*
+	* @type boolean
+	*/
+	var deviceIsWindowsPhone = navigator.userAgent.indexOf("Windows Phone") >= 0;
+
+	/**
+	 * Android requires exceptions.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsAndroid = navigator.userAgent.indexOf('Android') > 0 && !deviceIsWindowsPhone;
+
+
+	/**
+	 * iOS requires exceptions.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsIOS = /iP(ad|hone|od)/.test(navigator.userAgent) && !deviceIsWindowsPhone;
+
+
+	/**
+	 * iOS 4 requires an exception for select elements.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsIOS4 = deviceIsIOS && (/OS 4_\d(_\d)?/).test(navigator.userAgent);
+
+
+	/**
+	 * iOS 6.0-7.* requires the target element to be manually derived
+	 *
+	 * @type boolean
+	 */
+	var deviceIsIOSWithBadTarget = deviceIsIOS && (/OS [6-7]_\d/).test(navigator.userAgent);
+
+	/**
+	 * BlackBerry requires exceptions.
+	 *
+	 * @type boolean
+	 */
+	var deviceIsBlackBerry10 = navigator.userAgent.indexOf('BB10') > 0;
+
+	/**
+	 * Determine whether a given element requires a native click.
+	 *
+	 * @param {EventTarget|Element} target Target DOM element
+	 * @returns {boolean} Returns true if the element needs a native click
+	 */
+	FastClick.prototype.needsClick = function(target) {
+		switch (target.nodeName.toLowerCase()) {
+
+		// Don't send a synthetic click to disabled inputs (issue #62)
+		case 'button':
+		case 'select':
+		case 'textarea':
+			if (target.disabled) {
+				return true;
+			}
+
+			break;
+		case 'input':
+
+			// File inputs need real clicks on iOS 6 due to a browser bug (issue #68)
+			if ((deviceIsIOS && target.type === 'file') || target.disabled) {
+				return true;
+			}
+
+			break;
+		case 'label':
+		case 'iframe': // iOS8 homescreen apps can prevent events bubbling into frames
+		case 'video':
+			return true;
+		}
+
+		return (/\bneedsclick\b/).test(target.className);
+	};
+
+
+	/**
+	 * Determine whether a given element requires a call to focus to simulate click into element.
+	 *
+	 * @param {EventTarget|Element} target Target DOM element
+	 * @returns {boolean} Returns true if the element requires a call to focus to simulate native click.
+	 */
+	FastClick.prototype.needsFocus = function(target) {
+		switch (target.nodeName.toLowerCase()) {
+		case 'textarea':
+			return true;
+		case 'select':
+			return !deviceIsAndroid;
+		case 'input':
+			switch (target.type) {
+			case 'button':
+			case 'checkbox':
+			case 'file':
+			case 'image':
+			case 'radio':
+			case 'submit':
+				return false;
+			}
+
+			// No point in attempting to focus disabled inputs
+			return !target.disabled && !target.readOnly;
+		default:
+			return (/\bneedsfocus\b/).test(target.className);
+		}
+	};
+
+
+	/**
+	 * Send a click event to the specified element.
+	 *
+	 * @param {EventTarget|Element} targetElement
+	 * @param {Event} event
+	 */
+	FastClick.prototype.sendClick = function(targetElement, event) {
+		var clickEvent, touch;
+
+		// On some Android devices activeElement needs to be blurred otherwise the synthetic click will have no effect (#24)
+		if (document.activeElement && document.activeElement !== targetElement) {
+			document.activeElement.blur();
+		}
+
+		touch = event.changedTouches[0];
+
+		// Synthesise a click event, with an extra attribute so it can be tracked
+		clickEvent = document.createEvent('MouseEvents');
+		clickEvent.initMouseEvent(this.determineEventType(targetElement), true, true, window, 1, touch.screenX, touch.screenY, touch.clientX, touch.clientY, false, false, false, false, 0, null);
+		clickEvent.forwardedTouchEvent = true;
+		targetElement.dispatchEvent(clickEvent);
+	};
+
+	FastClick.prototype.determineEventType = function(targetElement) {
+
+		//Issue #159: Android Chrome Select Box does not open with a synthetic click event
+		if (deviceIsAndroid && targetElement.tagName.toLowerCase() === 'select') {
+			return 'mousedown';
+		}
+
+		return 'click';
+	};
+
+
+	/**
+	 * @param {EventTarget|Element} targetElement
+	 */
+	FastClick.prototype.focus = function(targetElement) {
+		var length;
+
+		// Issue #160: on iOS 7, some input elements (e.g. date datetime month) throw a vague TypeError on setSelectionRange. These elements don't have an integer value for the selectionStart and selectionEnd properties, but unfortunately that can't be used for detection because accessing the properties also throws a TypeError. Just check the type instead. Filed as Apple bug #15122724.
+		if (deviceIsIOS && targetElement.setSelectionRange && targetElement.type.indexOf('date') !== 0 && targetElement.type !== 'time' && targetElement.type !== 'month') {
+			length = targetElement.value.length;
+			targetElement.setSelectionRange(length, length);
+		} else {
+			targetElement.focus();
+		}
+	};
+
+
+	/**
+	 * Check whether the given target element is a child of a scrollable layer and if so, set a flag on it.
+	 *
+	 * @param {EventTarget|Element} targetElement
+	 */
+	FastClick.prototype.updateScrollParent = function(targetElement) {
+		var scrollParent, parentElement;
+
+		scrollParent = targetElement.fastClickScrollParent;
+
+		// Attempt to discover whether the target element is contained within a scrollable layer. Re-check if the
+		// target element was moved to another parent.
+		if (!scrollParent || !scrollParent.contains(targetElement)) {
+			parentElement = targetElement;
+			do {
+				if (parentElement.scrollHeight > parentElement.offsetHeight) {
+					scrollParent = parentElement;
+					targetElement.fastClickScrollParent = parentElement;
+					break;
+				}
+
+				parentElement = parentElement.parentElement;
+			} while (parentElement);
+		}
+
+		// Always update the scroll top tracker if possible.
+		if (scrollParent) {
+			scrollParent.fastClickLastScrollTop = scrollParent.scrollTop;
+		}
+	};
+
+
+	/**
+	 * @param {EventTarget} targetElement
+	 * @returns {Element|EventTarget}
+	 */
+	FastClick.prototype.getTargetElementFromEventTarget = function(eventTarget) {
+
+		// On some older browsers (notably Safari on iOS 4.1 - see issue #56) the event target may be a text node.
+		if (eventTarget.nodeType === Node.TEXT_NODE) {
+			return eventTarget.parentNode;
+		}
+
+		return eventTarget;
+	};
+
+
+	/**
+	 * On touch start, record the position and scroll offset.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onTouchStart = function(event) {
+		var targetElement, touch, selection;
+
+		// Ignore multiple touches, otherwise pinch-to-zoom is prevented if both fingers are on the FastClick element (issue #111).
+		if (event.targetTouches.length > 1) {
+			return true;
+		}
+
+		targetElement = this.getTargetElementFromEventTarget(event.target);
+		touch = event.targetTouches[0];
+
+		if (deviceIsIOS) {
+
+			// Only trusted events will deselect text on iOS (issue #49)
+			selection = window.getSelection();
+			if (selection.rangeCount && !selection.isCollapsed) {
+				return true;
+			}
+
+			if (!deviceIsIOS4) {
+
+				// Weird things happen on iOS when an alert or confirm dialog is opened from a click event callback (issue #23):
+				// when the user next taps anywhere else on the page, new touchstart and touchend events are dispatched
+				// with the same identifier as the touch event that previously triggered the click that triggered the alert.
+				// Sadly, there is an issue on iOS 4 that causes some normal touch events to have the same identifier as an
+				// immediately preceeding touch event (issue #52), so this fix is unavailable on that platform.
+				// Issue 120: touch.identifier is 0 when Chrome dev tools 'Emulate touch events' is set with an iOS device UA string,
+				// which causes all touch events to be ignored. As this block only applies to iOS, and iOS identifiers are always long,
+				// random integers, it's safe to to continue if the identifier is 0 here.
+				if (touch.identifier && touch.identifier === this.lastTouchIdentifier) {
+					event.preventDefault();
+					return false;
+				}
+
+				this.lastTouchIdentifier = touch.identifier;
+
+				// If the target element is a child of a scrollable layer (using -webkit-overflow-scrolling: touch) and:
+				// 1) the user does a fling scroll on the scrollable layer
+				// 2) the user stops the fling scroll with another tap
+				// then the event.target of the last 'touchend' event will be the element that was under the user's finger
+				// when the fling scroll was started, causing FastClick to send a click event to that layer - unless a check
+				// is made to ensure that a parent layer was not scrolled before sending a synthetic click (issue #42).
+				this.updateScrollParent(targetElement);
+			}
+		}
+
+		this.trackingClick = true;
+		this.trackingClickStart = event.timeStamp;
+		this.targetElement = targetElement;
+
+		this.touchStartX = touch.pageX;
+		this.touchStartY = touch.pageY;
+
+		// Prevent phantom clicks on fast double-tap (issue #36)
+		if ((event.timeStamp - this.lastClickTime) < this.tapDelay) {
+			event.preventDefault();
+		}
+
+		return true;
+	};
+
+
+	/**
+	 * Based on a touchmove event object, check whether the touch has moved past a boundary since it started.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.touchHasMoved = function(event) {
+		var touch = event.changedTouches[0], boundary = this.touchBoundary;
+
+		if (Math.abs(touch.pageX - this.touchStartX) > boundary || Math.abs(touch.pageY - this.touchStartY) > boundary) {
+			return true;
+		}
+
+		return false;
+	};
+
+
+	/**
+	 * Update the last position.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onTouchMove = function(event) {
+		if (!this.trackingClick) {
+			return true;
+		}
+
+		// If the touch has moved, cancel the click tracking
+		if (this.targetElement !== this.getTargetElementFromEventTarget(event.target) || this.touchHasMoved(event)) {
+			this.trackingClick = false;
+			this.targetElement = null;
+		}
+
+		return true;
+	};
+
+
+	/**
+	 * Attempt to find the labelled control for the given label element.
+	 *
+	 * @param {EventTarget|HTMLLabelElement} labelElement
+	 * @returns {Element|null}
+	 */
+	FastClick.prototype.findControl = function(labelElement) {
+
+		// Fast path for newer browsers supporting the HTML5 control attribute
+		if (labelElement.control !== undefined) {
+			return labelElement.control;
+		}
+
+		// All browsers under test that support touch events also support the HTML5 htmlFor attribute
+		if (labelElement.htmlFor) {
+			return document.getElementById(labelElement.htmlFor);
+		}
+
+		// If no for attribute exists, attempt to retrieve the first labellable descendant element
+		// the list of which is defined here: http://www.w3.org/TR/html5/forms.html#category-label
+		return labelElement.querySelector('button, input:not([type=hidden]), keygen, meter, output, progress, select, textarea');
+	};
+
+
+	/**
+	 * On touch end, determine whether to send a click event at once.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onTouchEnd = function(event) {
+		var forElement, trackingClickStart, targetTagName, scrollParent, touch, targetElement = this.targetElement;
+
+		if (!this.trackingClick) {
+			return true;
+		}
+
+		// Prevent phantom clicks on fast double-tap (issue #36)
+		if ((event.timeStamp - this.lastClickTime) < this.tapDelay) {
+			this.cancelNextClick = true;
+			return true;
+		}
+
+		if ((event.timeStamp - this.trackingClickStart) > this.tapTimeout) {
+			return true;
+		}
+
+		// Reset to prevent wrong click cancel on input (issue #156).
+		this.cancelNextClick = false;
+
+		this.lastClickTime = event.timeStamp;
+
+		trackingClickStart = this.trackingClickStart;
+		this.trackingClick = false;
+		this.trackingClickStart = 0;
+
+		// On some iOS devices, the targetElement supplied with the event is invalid if the layer
+		// is performing a transition or scroll, and has to be re-detected manually. Note that
+		// for this to function correctly, it must be called *after* the event target is checked!
+		// See issue #57; also filed as rdar://13048589 .
+		if (deviceIsIOSWithBadTarget) {
+			touch = event.changedTouches[0];
+
+			// In certain cases arguments of elementFromPoint can be negative, so prevent setting targetElement to null
+			targetElement = document.elementFromPoint(touch.pageX - window.pageXOffset, touch.pageY - window.pageYOffset) || targetElement;
+			targetElement.fastClickScrollParent = this.targetElement.fastClickScrollParent;
+		}
+
+		targetTagName = targetElement.tagName.toLowerCase();
+		if (targetTagName === 'label') {
+			forElement = this.findControl(targetElement);
+			if (forElement) {
+				this.focus(targetElement);
+				if (deviceIsAndroid) {
+					return false;
+				}
+
+				targetElement = forElement;
+			}
+		} else if (this.needsFocus(targetElement)) {
+
+			// Case 1: If the touch started a while ago (best guess is 100ms based on tests for issue #36) then focus will be triggered anyway. Return early and unset the target element reference so that the subsequent click will be allowed through.
+			// Case 2: Without this exception for input elements tapped when the document is contained in an iframe, then any inputted text won't be visible even though the value attribute is updated as the user types (issue #37).
+			if ((event.timeStamp - trackingClickStart) > 100 || (deviceIsIOS && window.top !== window && targetTagName === 'input')) {
+				this.targetElement = null;
+				return false;
+			}
+
+			this.focus(targetElement);
+			this.sendClick(targetElement, event);
+
+			// Select elements need the event to go through on iOS 4, otherwise the selector menu won't open.
+			// Also this breaks opening selects when VoiceOver is active on iOS6, iOS7 (and possibly others)
+			if (!deviceIsIOS || targetTagName !== 'select') {
+				this.targetElement = null;
+				event.preventDefault();
+			}
+
+			return false;
+		}
+
+		if (deviceIsIOS && !deviceIsIOS4) {
+
+			// Don't send a synthetic click event if the target element is contained within a parent layer that was scrolled
+			// and this tap is being used to stop the scrolling (usually initiated by a fling - issue #42).
+			scrollParent = targetElement.fastClickScrollParent;
+			if (scrollParent && scrollParent.fastClickLastScrollTop !== scrollParent.scrollTop) {
+				return true;
+			}
+		}
+
+		// Prevent the actual click from going though - unless the target node is marked as requiring
+		// real clicks or if it is in the whitelist in which case only non-programmatic clicks are permitted.
+		if (!this.needsClick(targetElement)) {
+			event.preventDefault();
+			this.sendClick(targetElement, event);
+		}
+
+		return false;
+	};
+
+
+	/**
+	 * On touch cancel, stop tracking the click.
+	 *
+	 * @returns {void}
+	 */
+	FastClick.prototype.onTouchCancel = function() {
+		this.trackingClick = false;
+		this.targetElement = null;
+	};
+
+
+	/**
+	 * Determine mouse events which should be permitted.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onMouse = function(event) {
+
+		// If a target element was never set (because a touch event was never fired) allow the event
+		if (!this.targetElement) {
+			return true;
+		}
+
+		if (event.forwardedTouchEvent) {
+			return true;
+		}
+
+		// Programmatically generated events targeting a specific element should be permitted
+		if (!event.cancelable) {
+			return true;
+		}
+
+		// Derive and check the target element to see whether the mouse event needs to be permitted;
+		// unless explicitly enabled, prevent non-touch click events from triggering actions,
+		// to prevent ghost/doubleclicks.
+		if (!this.needsClick(this.targetElement) || this.cancelNextClick) {
+
+			// Prevent any user-added listeners declared on FastClick element from being fired.
+			if (event.stopImmediatePropagation) {
+				event.stopImmediatePropagation();
+			} else {
+
+				// Part of the hack for browsers that don't support Event#stopImmediatePropagation (e.g. Android 2)
+				event.propagationStopped = true;
+			}
+
+			// Cancel the event
+			event.stopPropagation();
+			event.preventDefault();
+
+			return false;
+		}
+
+		// If the mouse event is permitted, return true for the action to go through.
+		return true;
+	};
+
+
+	/**
+	 * On actual clicks, determine whether this is a touch-generated click, a click action occurring
+	 * naturally after a delay after a touch (which needs to be cancelled to avoid duplication), or
+	 * an actual click which should be permitted.
+	 *
+	 * @param {Event} event
+	 * @returns {boolean}
+	 */
+	FastClick.prototype.onClick = function(event) {
+		var permitted;
+
+		// It's possible for another FastClick-like library delivered with third-party code to fire a click event before FastClick does (issue #44). In that case, set the click-tracking flag back to false and return early. This will cause onTouchEnd to return early.
+		if (this.trackingClick) {
+			this.targetElement = null;
+			this.trackingClick = false;
+			return true;
+		}
+
+		// Very odd behaviour on iOS (issue #18): if a submit element is present inside a form and the user hits enter in the iOS simulator or clicks the Go button on the pop-up OS keyboard the a kind of 'fake' click event will be triggered with the submit-type input element as the target.
+		if (event.target.type === 'submit' && event.detail === 0) {
+			return true;
+		}
+
+		permitted = this.onMouse(event);
+
+		// Only unset targetElement if the click is not permitted. This will ensure that the check for !targetElement in onMouse fails and the browser's click doesn't go through.
+		if (!permitted) {
+			this.targetElement = null;
+		}
+
+		// If clicks are permitted, return true for the action to go through.
+		return permitted;
+	};
+
+
+	/**
+	 * Remove all FastClick's event listeners.
+	 *
+	 * @returns {void}
+	 */
+	FastClick.prototype.destroy = function() {
+		var layer = this.layer;
+
+		if (deviceIsAndroid) {
+			layer.removeEventListener('mouseover', this.onMouse, true);
+			layer.removeEventListener('mousedown', this.onMouse, true);
+			layer.removeEventListener('mouseup', this.onMouse, true);
+		}
+
+		layer.removeEventListener('click', this.onClick, true);
+		layer.removeEventListener('touchstart', this.onTouchStart, false);
+		layer.removeEventListener('touchmove', this.onTouchMove, false);
+		layer.removeEventListener('touchend', this.onTouchEnd, false);
+		layer.removeEventListener('touchcancel', this.onTouchCancel, false);
+	};
+
+
+	/**
+	 * Check whether FastClick is needed.
+	 *
+	 * @param {Element} layer The layer to listen on
+	 */
+	FastClick.notNeeded = function(layer) {
+		var metaViewport;
+		var chromeVersion;
+		var blackberryVersion;
+		var firefoxVersion;
+
+		// Devices that don't support touch don't need FastClick
+		if (typeof window.ontouchstart === 'undefined') {
+			return true;
+		}
+
+		// Chrome version - zero for other browsers
+		chromeVersion = +(/Chrome\/([0-9]+)/.exec(navigator.userAgent) || [,0])[1];
+
+		if (chromeVersion) {
+
+			if (deviceIsAndroid) {
+				metaViewport = document.querySelector('meta[name=viewport]');
+
+				if (metaViewport) {
+					// Chrome on Android with user-scalable="no" doesn't need FastClick (issue #89)
+					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
+						return true;
+					}
+					// Chrome 32 and above with width=device-width or less don't need FastClick
+					if (chromeVersion > 31 && document.documentElement.scrollWidth <= window.outerWidth) {
+						return true;
+					}
+				}
+
+			// Chrome desktop doesn't need FastClick (issue #15)
+			} else {
+				return true;
+			}
+		}
+
+		if (deviceIsBlackBerry10) {
+			blackberryVersion = navigator.userAgent.match(/Version\/([0-9]*)\.([0-9]*)/);
+
+			// BlackBerry 10.3+ does not require Fastclick library.
+			// https://github.com/ftlabs/fastclick/issues/251
+			if (blackberryVersion[1] >= 10 && blackberryVersion[2] >= 3) {
+				metaViewport = document.querySelector('meta[name=viewport]');
+
+				if (metaViewport) {
+					// user-scalable=no eliminates click delay.
+					if (metaViewport.content.indexOf('user-scalable=no') !== -1) {
+						return true;
+					}
+					// width=device-width (or less than device-width) eliminates click delay.
+					if (document.documentElement.scrollWidth <= window.outerWidth) {
+						return true;
+					}
+				}
+			}
+		}
+
+		// IE10 with -ms-touch-action: none or manipulation, which disables double-tap-to-zoom (issue #97)
+		if (layer.style.msTouchAction === 'none' || layer.style.touchAction === 'manipulation') {
+			return true;
+		}
+
+		// Firefox version - zero for other browsers
+		firefoxVersion = +(/Firefox\/([0-9]+)/.exec(navigator.userAgent) || [,0])[1];
+
+		if (firefoxVersion >= 27) {
+			// Firefox 27+ does not have tap delay if the content is not zoomable - https://bugzilla.mozilla.org/show_bug.cgi?id=922896
+
+			metaViewport = document.querySelector('meta[name=viewport]');
+			if (metaViewport && (metaViewport.content.indexOf('user-scalable=no') !== -1 || document.documentElement.scrollWidth <= window.outerWidth)) {
+				return true;
+			}
+		}
+
+		// IE11: prefixed -ms-touch-action is no longer supported and it's recomended to use non-prefixed version
+		// http://msdn.microsoft.com/en-us/library/windows/apps/Hh767313.aspx
+		if (layer.style.touchAction === 'none' || layer.style.touchAction === 'manipulation') {
+			return true;
+		}
+
+		return false;
+	};
+
+
+	/**
+	 * Factory method for creating a FastClick object
+	 *
+	 * @param {Element} layer The layer to listen on
+	 * @param {Object} [options={}] The options to override the defaults
+	 */
+	FastClick.attach = function(layer, options) {
+		return new FastClick(layer, options);
+	};
+
+
+	if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+
+		// AMD. Register as an anonymous module.
+		define(function() {
+			return FastClick;
+		});
+	} else if (typeof module !== 'undefined' && module.exports) {
+		module.exports = FastClick.attach;
+		module.exports.FastClick = FastClick;
+	} else {
+		window.FastClick = FastClick;
+	}
+}());
+
+/*!
+ * Copyright 2012, Chris Wanstrath
+ * Released under the MIT License
+ * https://github.com/defunkt/jquery-pjax
+ */
+
+(function($){
+
+// When called on a container with a selector, fetches the href with
+// ajax into the container or with the data-pjax attribute on the link
+// itself.
+//
+// Tries to make sure the back button and ctrl+click work the way
+// you'd expect.
+//
+// Exported as $.fn.pjax
+//
+// Accepts a jQuery ajax options object that may include these
+// pjax specific options:
+//
+//
+// container - Where to stick the response body. Usually a String selector.
+//             $(container).html(xhr.responseBody)
+//             (default: current jquery context)
+//      push - Whether to pushState the URL. Defaults to true (of course).
+//   replace - Want to use replaceState instead? That's cool.
+//
+// For convenience the second parameter can be either the container or
+// the options object.
+//
+// Returns the jQuery object
+function fnPjax(selector, container, options) {
+  var context = this
+  return this.on('click.pjax', selector, function(event) {
+    var opts = $.extend({}, optionsFor(container, options))
+    if (!opts.container)
+      opts.container = $(this).attr('data-pjax') || context
+    handleClick(event, opts)
+  })
+}
+
+// Public: pjax on click handler
+//
+// Exported as $.pjax.click.
+//
+// event   - "click" jQuery.Event
+// options - pjax options
+//
+// Examples
+//
+//   $(document).on('click', 'a', $.pjax.click)
+//   // is the same as
+//   $(document).pjax('a')
+//
+//  $(document).on('click', 'a', function(event) {
+//    var container = $(this).closest('[data-pjax-container]')
+//    $.pjax.click(event, container)
+//  })
+//
+// Returns nothing.
+function handleClick(event, container, options) {
+  options = optionsFor(container, options)
+
+  var link = event.currentTarget
+
+  if (link.tagName.toUpperCase() !== 'A')
+    throw "$.fn.pjax or $.pjax.click requires an anchor element"
+
+  // Middle click, cmd click, and ctrl click should open
+  // links in a new tab as normal.
+  if ( event.which > 1 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey )
+    return
+
+  // Ignore cross origin links
+  if ( location.protocol !== link.protocol || location.hostname !== link.hostname )
+    return
+
+  // Ignore case when a hash is being tacked on the current URL
+  if ( link.href.indexOf('#') > -1 && stripHash(link) == stripHash(location) )
+    return
+
+  // Ignore event with default prevented
+  if (event.isDefaultPrevented())
+    return
+
+  var defaults = {
+    url: link.href,
+    container: $(link).attr('data-pjax'),
+    target: link
+  }
+
+  var opts = $.extend({}, defaults, options)
+  var clickEvent = $.Event('pjax:click')
+  $(link).trigger(clickEvent, [opts])
+
+  if (!clickEvent.isDefaultPrevented()) {
+    pjax(opts)
+    event.preventDefault()
+    $(link).trigger('pjax:clicked', [opts])
+  }
+}
+
+// Public: pjax on form submit handler
+//
+// Exported as $.pjax.submit
+//
+// event   - "click" jQuery.Event
+// options - pjax options
+//
+// Examples
+//
+//  $(document).on('submit', 'form', function(event) {
+//    var container = $(this).closest('[data-pjax-container]')
+//    $.pjax.submit(event, container)
+//  })
+//
+// Returns nothing.
+function handleSubmit(event, container, options) {
+  options = optionsFor(container, options)
+
+  var form = event.currentTarget
+
+  if (form.tagName.toUpperCase() !== 'FORM')
+    throw "$.pjax.submit requires a form element"
+
+  var defaults = {
+    type: form.method.toUpperCase(),
+    url: form.action,
+    container: $(form).attr('data-pjax'),
+    target: form
+  }
+
+  if (defaults.type !== 'GET' && window.FormData !== undefined) {
+    defaults.data = new FormData(form);
+    defaults.processData = false;
+    defaults.contentType = false;
+  } else {
+    // Can't handle file uploads, exit
+    if ($(form).find(':file').length) {
+      return;
+    }
+
+    // Fallback to manually serializing the fields
+    defaults.data = $(form).serializeArray();
+  }
+
+  pjax($.extend({}, defaults, options))
+
+  event.preventDefault()
+}
+
+// Loads a URL with ajax, puts the response body inside a container,
+// then pushState()'s the loaded URL.
+//
+// Works just like $.ajax in that it accepts a jQuery ajax
+// settings object (with keys like url, type, data, etc).
+//
+// Accepts these extra keys:
+//
+// container - Where to stick the response body.
+//             $(container).html(xhr.responseBody)
+//      push - Whether to pushState the URL. Defaults to true (of course).
+//   replace - Want to use replaceState instead? That's cool.
+//
+// Use it just like $.ajax:
+//
+//   var xhr = $.pjax({ url: this.href, container: '#main' })
+//   console.log( xhr.readyState )
+//
+// Returns whatever $.ajax returns.
+function pjax(options) {
+  options = $.extend(true, {}, $.ajaxSettings, pjax.defaults, options)
+
+  if ($.isFunction(options.url)) {
+    options.url = options.url()
+  }
+
+  var target = options.target
+
+  var hash = parseURL(options.url).hash
+
+  var context = options.context = findContainerFor(options.container)
+
+  // We want the browser to maintain two separate internal caches: one
+  // for pjax'd partial page loads and one for normal page loads.
+  // Without adding this secret parameter, some browsers will often
+  // confuse the two.
+  if (!options.data) options.data = {}
+  if ($.isArray(options.data)) {
+    options.data.push({name: '_pjax', value: context.selector})
+  } else {
+    options.data._pjax = context.selector
+  }
+
+  function fire(type, args, props) {
+    if (!props) props = {}
+    props.relatedTarget = target
+    var event = $.Event(type, props)
+    context.trigger(event, args)
+    return !event.isDefaultPrevented()
+  }
+
+  var timeoutTimer
+
+  options.beforeSend = function(xhr, settings) {
+    // No timeout for non-GET requests
+    // Its not safe to request the resource again with a fallback method.
+    if (settings.type !== 'GET') {
+      settings.timeout = 0
+    }
+
+    xhr.setRequestHeader('X-PJAX', 'true')
+    xhr.setRequestHeader('X-PJAX-Container', context.selector)
+
+    if (!fire('pjax:beforeSend', [xhr, settings]))
+      return false
+
+    if (settings.timeout > 0) {
+      timeoutTimer = setTimeout(function() {
+        if (fire('pjax:timeout', [xhr, options]))
+          xhr.abort('timeout')
+      }, settings.timeout)
+
+      // Clear timeout setting so jquerys internal timeout isn't invoked
+      settings.timeout = 0
+    }
+
+    var url = parseURL(settings.url)
+    if (hash) url.hash = hash
+    options.requestUrl = stripInternalParams(url)
+  }
+
+  options.complete = function(xhr, textStatus) {
+    if (timeoutTimer)
+      clearTimeout(timeoutTimer)
+
+    fire('pjax:complete', [xhr, textStatus, options])
+
+    fire('pjax:end', [xhr, options])
+  }
+
+  options.error = function(xhr, textStatus, errorThrown) {
+    var container = extractContainer("", xhr, options)
+
+    var allowed = fire('pjax:error', [xhr, textStatus, errorThrown, options])
+    if (options.type == 'GET' && textStatus !== 'abort' && allowed) {
+      locationReplace(container.url)
+    }
+  }
+
+  options.success = function(data, status, xhr) {
+    var previousState = pjax.state;
+
+    // If $.pjax.defaults.version is a function, invoke it first.
+    // Otherwise it can be a static string.
+    var currentVersion = (typeof $.pjax.defaults.version === 'function') ?
+      $.pjax.defaults.version() :
+      $.pjax.defaults.version
+
+    var latestVersion = xhr.getResponseHeader('X-PJAX-Version')
+
+    var container = extractContainer(data, xhr, options)
+
+    var url = parseURL(container.url)
+    if (hash) {
+      url.hash = hash
+      container.url = url.href
+    }
+
+    // If there is a layout version mismatch, hard load the new url
+    if (currentVersion && latestVersion && currentVersion !== latestVersion) {
+      locationReplace(container.url)
+      return
+    }
+
+    // If the new response is missing a body, hard load the page
+    if (!container.contents) {
+      locationReplace(container.url)
+      return
+    }
+
+    pjax.state = {
+      id: options.id || uniqueId(),
+      url: container.url,
+      title: container.title,
+      container: context.selector,
+      fragment: options.fragment,
+      timeout: options.timeout
+    }
+
+    if (options.push || options.replace) {
+      window.history.replaceState(pjax.state, container.title, container.url)
+    }
+
+    // Clear out any focused controls before inserting new page contents.
+    try {
+      document.activeElement.blur()
+    } catch (e) { }
+
+    if (container.title) document.title = container.title
+
+    fire('pjax:beforeReplace', [container.contents, options], {
+      state: pjax.state,
+      previousState: previousState
+    })
+    context.html(container.contents)
+
+    // FF bug: Won't autofocus fields that are inserted via JS.
+    // This behavior is incorrect. So if theres no current focus, autofocus
+    // the last field.
+    //
+    // http://www.w3.org/html/wg/drafts/html/master/forms.html
+    var autofocusEl = context.find('input[autofocus], textarea[autofocus]').last()[0]
+    if (autofocusEl && document.activeElement !== autofocusEl) {
+      autofocusEl.focus();
+    }
+
+    executeScriptTags(container.scripts)
+
+    var scrollTo = options.scrollTo
+
+    // Ensure browser scrolls to the element referenced by the URL anchor
+    if (hash) {
+      var name = decodeURIComponent(hash.slice(1))
+      var target = document.getElementById(name) || document.getElementsByName(name)[0]
+      if (target) scrollTo = $(target).offset().top
+    }
+
+    if (typeof scrollTo == 'number') $(window).scrollTop(scrollTo)
+
+    fire('pjax:success', [data, status, xhr, options])
+  }
+
+
+  // Initialize pjax.state for the initial page load. Assume we're
+  // using the container and options of the link we're loading for the
+  // back button to the initial page. This ensures good back button
+  // behavior.
+  if (!pjax.state) {
+    pjax.state = {
+      id: uniqueId(),
+      url: window.location.href,
+      title: document.title,
+      container: context.selector,
+      fragment: options.fragment,
+      timeout: options.timeout
+    }
+    window.history.replaceState(pjax.state, document.title)
+  }
+
+  // Cancel the current request if we're already pjaxing
+  abortXHR(pjax.xhr)
+
+  pjax.options = options
+  var xhr = pjax.xhr = $.ajax(options)
+
+  if (xhr.readyState > 0) {
+    if (options.push && !options.replace) {
+      // Cache current container element before replacing it
+      cachePush(pjax.state.id, cloneContents(context))
+
+      window.history.pushState(null, "", options.requestUrl)
+    }
+
+    fire('pjax:start', [xhr, options])
+    fire('pjax:send', [xhr, options])
+  }
+
+  return pjax.xhr
+}
+
+// Public: Reload current page with pjax.
+//
+// Returns whatever $.pjax returns.
+function pjaxReload(container, options) {
+  var defaults = {
+    url: window.location.href,
+    push: false,
+    replace: true,
+    scrollTo: false
+  }
+
+  return pjax($.extend(defaults, optionsFor(container, options)))
+}
+
+// Internal: Hard replace current state with url.
+//
+// Work for around WebKit
+//   https://bugs.webkit.org/show_bug.cgi?id=93506
+//
+// Returns nothing.
+function locationReplace(url) {
+  window.history.replaceState(null, "", pjax.state.url)
+  window.location.replace(url)
+}
+
+
+var initialPop = true
+var initialURL = window.location.href
+var initialState = window.history.state
+
+// Initialize $.pjax.state if possible
+// Happens when reloading a page and coming forward from a different
+// session history.
+if (initialState && initialState.container) {
+  pjax.state = initialState
+}
+
+// Non-webkit browsers don't fire an initial popstate event
+if ('state' in window.history) {
+  initialPop = false
+}
+
+// popstate handler takes care of the back and forward buttons
+//
+// You probably shouldn't use pjax on pages with other pushState
+// stuff yet.
+function onPjaxPopstate(event) {
+
+  // Hitting back or forward should override any pending PJAX request.
+  if (!initialPop) {
+    abortXHR(pjax.xhr)
+  }
+
+  var previousState = pjax.state
+  var state = event.state
+  var direction
+
+  if (state && state.container) {
+    // When coming forward from a separate history session, will get an
+    // initial pop with a state we are already at. Skip reloading the current
+    // page.
+    if (initialPop && initialURL == state.url) return
+
+    if (previousState) {
+      // If popping back to the same state, just skip.
+      // Could be clicking back from hashchange rather than a pushState.
+      if (previousState.id === state.id) return
+
+      // Since state IDs always increase, we can deduce the navigation direction
+      direction = previousState.id < state.id ? 'forward' : 'back'
+    }
+
+    var cache = cacheMapping[state.id] || []
+    var container = $(cache[0] || state.container), contents = cache[1]
+
+    if (container.length) {
+      if (previousState) {
+        // Cache current container before replacement and inform the
+        // cache which direction the history shifted.
+        cachePop(direction, previousState.id, cloneContents(container))
+      }
+
+      var popstateEvent = $.Event('pjax:popstate', {
+        state: state,
+        direction: direction
+      })
+      container.trigger(popstateEvent)
+
+      var options = {
+        id: state.id,
+        url: state.url,
+        container: container,
+        push: false,
+        fragment: state.fragment,
+        timeout: state.timeout,
+        scrollTo: false
+      }
+
+      if (contents) {
+        container.trigger('pjax:start', [null, options])
+
+        pjax.state = state
+        if (state.title) document.title = state.title
+        var beforeReplaceEvent = $.Event('pjax:beforeReplace', {
+          state: state,
+          previousState: previousState
+        })
+        container.trigger(beforeReplaceEvent, [contents, options])
+        container.html(contents)
+
+        container.trigger('pjax:end', [null, options])
+      } else {
+        pjax(options)
+      }
+
+      // Force reflow/relayout before the browser tries to restore the
+      // scroll position.
+      container[0].offsetHeight
+    } else {
+      locationReplace(location.href)
+    }
+  }
+  initialPop = false
+}
+
+// Fallback version of main pjax function for browsers that don't
+// support pushState.
+//
+// Returns nothing since it retriggers a hard form submission.
+function fallbackPjax(options) {
+  var url = $.isFunction(options.url) ? options.url() : options.url,
+      method = options.type ? options.type.toUpperCase() : 'GET'
+
+  var form = $('<form>', {
+    method: method === 'GET' ? 'GET' : 'POST',
+    action: url,
+    style: 'display:none'
+  })
+
+  if (method !== 'GET' && method !== 'POST') {
+    form.append($('<input>', {
+      type: 'hidden',
+      name: '_method',
+      value: method.toLowerCase()
+    }))
+  }
+
+  var data = options.data
+  if (typeof data === 'string') {
+    $.each(data.split('&'), function(index, value) {
+      var pair = value.split('=')
+      form.append($('<input>', {type: 'hidden', name: pair[0], value: pair[1]}))
+    })
+  } else if ($.isArray(data)) {
+    $.each(data, function(index, value) {
+      form.append($('<input>', {type: 'hidden', name: value.name, value: value.value}))
+    })
+  } else if (typeof data === 'object') {
+    var key
+    for (key in data)
+      form.append($('<input>', {type: 'hidden', name: key, value: data[key]}))
+  }
+
+  $(document.body).append(form)
+  form.submit()
+}
+
+// Internal: Abort an XmlHttpRequest if it hasn't been completed,
+// also removing its event handlers.
+function abortXHR(xhr) {
+  if ( xhr && xhr.readyState < 4) {
+    xhr.onreadystatechange = $.noop
+    xhr.abort()
+  }
+}
+
+// Internal: Generate unique id for state object.
+//
+// Use a timestamp instead of a counter since ids should still be
+// unique across page loads.
+//
+// Returns Number.
+function uniqueId() {
+  return (new Date).getTime()
+}
+
+function cloneContents(container) {
+  var cloned = container.clone()
+  // Unmark script tags as already being eval'd so they can get executed again
+  // when restored from cache. HAXX: Uses jQuery internal method.
+  cloned.find('script').each(function(){
+    if (!this.src) jQuery._data(this, 'globalEval', false)
+  })
+  return [container.selector, cloned.contents()]
+}
+
+// Internal: Strip internal query params from parsed URL.
+//
+// Returns sanitized url.href String.
+function stripInternalParams(url) {
+  url.search = url.search.replace(/([?&])(_pjax|_)=[^&]*/g, '')
+  return url.href.replace(/\?($|#)/, '$1')
+}
+
+// Internal: Parse URL components and returns a Locationish object.
+//
+// url - String URL
+//
+// Returns HTMLAnchorElement that acts like Location.
+function parseURL(url) {
+  var a = document.createElement('a')
+  a.href = url
+  return a
+}
+
+// Internal: Return the `href` component of given URL object with the hash
+// portion removed.
+//
+// location - Location or HTMLAnchorElement
+//
+// Returns String
+function stripHash(location) {
+  return location.href.replace(/#.*/, '')
+}
+
+// Internal: Build options Object for arguments.
+//
+// For convenience the first parameter can be either the container or
+// the options object.
+//
+// Examples
+//
+//   optionsFor('#container')
+//   // => {container: '#container'}
+//
+//   optionsFor('#container', {push: true})
+//   // => {container: '#container', push: true}
+//
+//   optionsFor({container: '#container', push: true})
+//   // => {container: '#container', push: true}
+//
+// Returns options Object.
+function optionsFor(container, options) {
+  // Both container and options
+  if ( container && options )
+    options.container = container
+
+  // First argument is options Object
+  else if ( $.isPlainObject(container) )
+    options = container
+
+  // Only container
+  else
+    options = {container: container}
+
+  // Find and validate container
+  if (options.container)
+    options.container = findContainerFor(options.container)
+
+  return options
+}
+
+// Internal: Find container element for a variety of inputs.
+//
+// Because we can't persist elements using the history API, we must be
+// able to find a String selector that will consistently find the Element.
+//
+// container - A selector String, jQuery object, or DOM Element.
+//
+// Returns a jQuery object whose context is `document` and has a selector.
+function findContainerFor(container) {
+  container = $(container)
+
+  if ( !container.length ) {
+    throw "no pjax container for " + container.selector
+  } else if ( container.selector !== '' && container.context === document ) {
+    return container
+  } else if ( container.attr('id') ) {
+    return $('#' + container.attr('id'))
+  } else {
+    throw "cant get selector for pjax container!"
+  }
+}
+
+// Internal: Filter and find all elements matching the selector.
+//
+// Where $.fn.find only matches descendants, findAll will test all the
+// top level elements in the jQuery object as well.
+//
+// elems    - jQuery object of Elements
+// selector - String selector to match
+//
+// Returns a jQuery object.
+function findAll(elems, selector) {
+  return elems.filter(selector).add(elems.find(selector));
+}
+
+function parseHTML(html) {
+  return $.parseHTML(html, document, true)
+}
+
+// Internal: Extracts container and metadata from response.
+//
+// 1. Extracts X-PJAX-URL header if set
+// 2. Extracts inline <title> tags
+// 3. Builds response Element and extracts fragment if set
+//
+// data    - String response data
+// xhr     - XHR response
+// options - pjax options Object
+//
+// Returns an Object with url, title, and contents keys.
+function extractContainer(data, xhr, options) {
+  var obj = {}, fullDocument = /<html/i.test(data)
+
+  // Prefer X-PJAX-URL header if it was set, otherwise fallback to
+  // using the original requested url.
+  var serverUrl = xhr.getResponseHeader('X-PJAX-URL')
+  obj.url = serverUrl ? stripInternalParams(parseURL(serverUrl)) : options.requestUrl
+
+  // Attempt to parse response html into elements
+  if (fullDocument) {
+    var $head = $(parseHTML(data.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0]))
+    var $body = $(parseHTML(data.match(/<body[^>]*>([\s\S.]*)<\/body>/i)[0]))
+  } else {
+    var $head = $body = $(parseHTML(data))
+  }
+
+  // If response data is empty, return fast
+  if ($body.length === 0)
+    return obj
+
+  // If there's a <title> tag in the header, use it as
+  // the page's title.
+  obj.title = findAll($head, 'title').last().text()
+
+  if (options.fragment) {
+    // If they specified a fragment, look for it in the response
+    // and pull it out.
+    if (options.fragment === 'body') {
+      var $fragment = $body
+    } else {
+      var $fragment = findAll($body, options.fragment).first()
+    }
+
+    if ($fragment.length) {
+      obj.contents = options.fragment === 'body' ? $fragment : $fragment.contents()
+
+      // If there's no title, look for data-title and title attributes
+      // on the fragment
+      if (!obj.title)
+        obj.title = $fragment.attr('title') || $fragment.data('title')
+    }
+
+  } else if (!fullDocument) {
+    obj.contents = $body
+  }
+
+  // Clean up any <title> tags
+  if (obj.contents) {
+    // Remove any parent title elements
+    obj.contents = obj.contents.not(function() { return $(this).is('title') })
+
+    // Then scrub any titles from their descendants
+    obj.contents.find('title').remove()
+
+    // Gather all script[src] elements
+    obj.scripts = findAll(obj.contents, 'script[src]').remove()
+    obj.contents = obj.contents.not(obj.scripts)
+  }
+
+  // Trim any whitespace off the title
+  if (obj.title) obj.title = $.trim(obj.title)
+
+  return obj
+}
+
+// Load an execute scripts using standard script request.
+//
+// Avoids jQuery's traditional $.getScript which does a XHR request and
+// globalEval.
+//
+// scripts - jQuery object of script Elements
+//
+// Returns nothing.
+function executeScriptTags(scripts) {
+  if (!scripts) return
+
+  var existingScripts = $('script[src]')
+
+  scripts.each(function() {
+    var src = this.src
+    var matchedScripts = existingScripts.filter(function() {
+      return this.src === src
+    })
+    if (matchedScripts.length) return
+
+    var script = document.createElement('script')
+    var type = $(this).attr('type')
+    if (type) script.type = type
+    script.src = $(this).attr('src')
+    document.head.appendChild(script)
+  })
+}
+
+// Internal: History DOM caching class.
+var cacheMapping      = {}
+var cacheForwardStack = []
+var cacheBackStack    = []
+
+// Push previous state id and container contents into the history
+// cache. Should be called in conjunction with `pushState` to save the
+// previous container contents.
+//
+// id    - State ID Number
+// value - DOM Element to cache
+//
+// Returns nothing.
+function cachePush(id, value) {
+  cacheMapping[id] = value
+  cacheBackStack.push(id)
+
+  // Remove all entries in forward history stack after pushing a new page.
+  trimCacheStack(cacheForwardStack, 0)
+
+  // Trim back history stack to max cache length.
+  trimCacheStack(cacheBackStack, pjax.defaults.maxCacheLength)
+}
+
+// Shifts cache from directional history cache. Should be
+// called on `popstate` with the previous state id and container
+// contents.
+//
+// direction - "forward" or "back" String
+// id        - State ID Number
+// value     - DOM Element to cache
+//
+// Returns nothing.
+function cachePop(direction, id, value) {
+  var pushStack, popStack
+  cacheMapping[id] = value
+
+  if (direction === 'forward') {
+    pushStack = cacheBackStack
+    popStack  = cacheForwardStack
+  } else {
+    pushStack = cacheForwardStack
+    popStack  = cacheBackStack
+  }
+
+  pushStack.push(id)
+  if (id = popStack.pop())
+    delete cacheMapping[id]
+
+  // Trim whichever stack we just pushed to to max cache length.
+  trimCacheStack(pushStack, pjax.defaults.maxCacheLength)
+}
+
+// Trim a cache stack (either cacheBackStack or cacheForwardStack) to be no
+// longer than the specified length, deleting cached DOM elements as necessary.
+//
+// stack  - Array of state IDs
+// length - Maximum length to trim to
+//
+// Returns nothing.
+function trimCacheStack(stack, length) {
+  while (stack.length > length)
+    delete cacheMapping[stack.shift()]
+}
+
+// Public: Find version identifier for the initial page load.
+//
+// Returns String version or undefined.
+function findVersion() {
+  return $('meta').filter(function() {
+    var name = $(this).attr('http-equiv')
+    return name && name.toUpperCase() === 'X-PJAX-VERSION'
+  }).attr('content')
+}
+
+// Install pjax functions on $.pjax to enable pushState behavior.
+//
+// Does nothing if already enabled.
+//
+// Examples
+//
+//     $.pjax.enable()
+//
+// Returns nothing.
+function enable() {
+  $.fn.pjax = fnPjax
+  $.pjax = pjax
+  $.pjax.enable = $.noop
+  $.pjax.disable = disable
+  $.pjax.click = handleClick
+  $.pjax.submit = handleSubmit
+  $.pjax.reload = pjaxReload
+  $.pjax.defaults = {
+    timeout: 650,
+    push: true,
+    replace: false,
+    type: 'GET',
+    dataType: 'html',
+    scrollTo: 0,
+    maxCacheLength: 20,
+    version: findVersion
+  }
+  $(window).on('popstate.pjax', onPjaxPopstate)
+}
+
+// Disable pushState behavior.
+//
+// This is the case when a browser doesn't support pushState. It is
+// sometimes useful to disable pushState for debugging on a modern
+// browser.
+//
+// Examples
+//
+//     $.pjax.disable()
+//
+// Returns nothing.
+function disable() {
+  $.fn.pjax = function() { return this }
+  $.pjax = fallbackPjax
+  $.pjax.enable = enable
+  $.pjax.disable = $.noop
+  $.pjax.click = $.noop
+  $.pjax.submit = $.noop
+  $.pjax.reload = function() { window.location.reload() }
+
+  $(window).off('popstate.pjax', onPjaxPopstate)
+}
+
+
+// Add the state property to jQuery's event object so we can use it in
+// $(window).bind('popstate')
+if ( $.inArray('state', $.event.props) < 0 )
+  $.event.props.push('state')
+
+// Is pjax supported by this browser?
+$.support.pjax =
+  window.history && window.history.pushState && window.history.replaceState &&
+  // pushState isn't reliable on iOS until 5.
+  !navigator.userAgent.match(/((iPod|iPhone|iPad).+\bOS\s+[1-4]\D|WebApps\/.+CFNetwork)/)
+
+$.support.pjax ? enable() : disable()
+
+})(jQuery);
+
 /*
 	 map values :
 		var num = 5;
@@ -9235,22 +11001,21 @@ c(d.prototype,b.prototype),d.prototype._getElementOffset=e,d.prototype.layout=f,
 Number.prototype.map = function ( in_min , in_max , out_min , out_max ) {
   var theNumber = ( this - in_min ) * ( out_max - out_min ) / ( in_max - in_min ) + out_min;
   if ( out_max > out_min ) {
-	  if ( theNumber > out_max ) theNumber = out_max;
-	  if ( theNumber < out_min ) theNumber = out_min;
+	  if ( theNumber > out_max ) { theNumber = out_max; }
+	  if ( theNumber < out_min ) { theNumber = out_min; }
   } else {
-	  if ( theNumber < out_max ) theNumber = out_max;
-	  if ( theNumber > out_min ) theNumber = out_min;
+	  if ( theNumber < out_max ) { theNumber = out_max; }
+	  if ( theNumber > out_min ) { theNumber = out_min; }
   }
   return theNumber;
-}
-
+};
 
 var canvasCV = {
 	init : function() {
 
     init_pjs = 768;
 		if ( $(window).width() > init_pjs ) {
-	    var scriptSrc = './bower_components/Processing.js/processing.min.js?' + new Date().getTime();
+	    var scriptSrc = 'http://louiseveillard.com/bower_components/Processing.js/processing.min.js?' + new Date().getTime();
 	    //console.log( "script : " , script);
 			var script = document.createElement('script');
 			script.src = scriptSrc;
@@ -9267,9 +11032,8 @@ var canvasCV = {
   start : function() {
 
 		// trouver le canvas dans la page
-		var canvas = $("body").prepend("<canvas id='links' width='100%' height='100%'></canvas>");;
+		var canvas = $("main").prepend("<canvas id='links' width='100%' height='100%'></canvas>");
 		// rattacher le sketch au doc HTML
-		canvas.css('visibility',"visible");
 
 		function drawLinks(processing) {
 			processing.setup = function() {
@@ -9295,8 +11059,8 @@ var canvasCV = {
 					var cdgreen = processing.color(9, 96, 111);
 					var clgreen = processing.color( 125, 193, 200);
 
-					var randomToInterval = processing.map( randomInt, 0, 2, 140, 400 );
-					//randomToInterval = 240;
+					//var randomToInterval = processing.map( randomInt, 0, 2, 240, 800 );
+					randomToInterval = 400;
 
 					var noHorizontalLine = 0;
 					if( Math.abs(startPointy - endPointy) < 20 ) {
@@ -9304,27 +11068,46 @@ var canvasCV = {
 					}
 
 //					processing.stroke( p5Color );
-					processing.stroke( p5Color[0], p5Color[1], p5Color[2]);
 
 					processing.pushMatrix();
 
 					processing.scale(2);
-					processing.bezier( startPointx, startPointy, (startPointx + randomToInterval ), startPointy, (endPointx - randomToInterval ), endPointy + noHorizontalLine, endPointx, endPointy );
+
+					var a1dx = startPointx;
+					var a1dy = startPointy;
+					var a1fx = startPointx + randomToInterval;
+					var a1fy = startPointy;
+
+          var a2dx = endPointx - randomToInterval;
+          var a2dy = 	endPointy + noHorizontalLine;
+          var a2fx = endPointx;
+          var a2fy = endPointy;
+
+					processing.stroke( 0,0,0);
+/*
+          processing.line( a1dx, a1dy, a1fx, a1fy);
+          processing.line( a2dx, a2dy, a2fx, a2fy)
+*/
+					processing.stroke( p5Color[0], p5Color[1], p5Color[2]);
+					processing.bezier( a1dx, a1dy, a1fx, a1fy, a2dx, a2dy, a2fx, a2fy);
 
 					processing.popMatrix();
 
 				}
-			}
+			};
 
-			processing.eraseBg = function() {
-				processing.fill( 24);
+			processing.eraseBg = function( backgroundColor, bgOpacity) {
+  			if( bgOpacity === undefined) {
+  			  bgOpacity = 255;
+  		  }
+				processing.fill( backgroundColor[0], backgroundColor[1], backgroundColor[2], bgOpacity);
 				processing.noStroke();
 				processing.rect( 0, 0, processing.width, processing.height);
-			}
+			};
 
 			processing.updateSize = function( width, height ) {
 			  processing.size(width * 2, height * 2);
-			}
+			};
 
 		}
 
@@ -9332,9 +11115,10 @@ var canvasCV = {
 		var processingInstance = new Processing(canvasJS, drawLinks);
 
 		var thisSketch = Processing.getInstanceById('links');
+		var cbg = $("body").css("background-color").replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
 
-		thisSketch.updateSize( $("body").width(), $(".module--cv").height());
-		thisSketch.eraseBg();
+		thisSketch.updateSize( $("body").width(), $("body").height());
+		thisSketch.eraseBg( cbg);
 
 		var alreadyLinked = new Array([]);
 
@@ -9344,7 +11128,7 @@ var canvasCV = {
 		});
 
 
-    var c = $(".module--cv a").first().css("border-bottom-color");
+    var c = $(".module--cv a[data-link]").first().css("border-bottom-color");
     var linksUnderlineColor = c.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
 
 		$(".module--cv a[data-link]").each(function() {
@@ -9357,14 +11141,16 @@ var canvasCV = {
   		//au survol
 			$this.on("mouseover", function() {
   			var c = $this.css("border-bottom-color");
+        var cbg = $("body").css("background-color").replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
         var linksUnderlineColor = c.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
 
         $(".module--cv a[data-link]").removeClass('is--linkedto').removeClass('is--linkedfrom');
         $this.addClass('is--currentlyLinkedTo');
-        thisSketch.eraseBg();
+        thisSketch.eraseBg( cbg, 225);
 				canvasCV.drawAllLinks( $this.data( 'linkID'), thisSketch, $this, thisLink, linksUnderlineColor);
 		  });
 		});
+		$(canvasJS).css("opacity", 1);
   },
 
 	drawAllLinks : function( linkID, thisSketch, $this, thisLink, thisColor, alreadyLinked) {
@@ -9384,6 +11170,7 @@ var canvasCV = {
 
         var boucles = 0;
 
+        var thisStroke;
         // checker si on a bien passé un alreadyLinked
         if( alreadyLinked !== undefined) {
           // checker si on a déjà relier ces deux points ensemble
@@ -9401,13 +11188,13 @@ var canvasCV = {
               }
             }
           }
-          var thisStroke = 1;
+          thisStroke = 1;
         }
         // si on en a pas passé c'est qu'on est dans le cas du soulignement d'un élément hover
         else {
           $thisLinkTo.addClass('is--currentlyLinkedTo');
           $linkTo.removeClass('is--linkedfrom');
-          var thisStroke = 1;
+          thisStroke = 1;
         }
 
         if( !thoseLinksHaveBeenLinked) {
@@ -9421,9 +11208,9 @@ var canvasCV = {
   				$this.addClass('is--linkedfrom');
 
           // ajouter dans le tableau de ceux qu'on a déjà relié le point concerné
-          if( alreadyLinked !== undefined)
+          if( alreadyLinked !== undefined) {
             alreadyLinked.push(thoseTwoLinks);
-
+          }
         }
 			});
 		}
@@ -9435,13 +11222,14 @@ var canvasCV = {
 	getLocationOfDatalink : function( $thisLink, firstChar ) {
 		var $elem = $thisLink;
 		var text = $elem.html();
-
+    var newText;
 		if( !firstChar ) {
-			var newText = text + '<span class="position-of-eles"></span>';
+			newText = text + '<span class="position-of-eles"></span>';
 		} else {
-			var newText = '<span class="position-of-eles"></span>' + text;
+			newText = '<span class="position-of-eles"></span>' + text;
 		}
 		$elem.html(newText); //Set wrapper
+
 		var offset = $elem.find(".position-of-eles").offset();
 		var height = $elem.find(".position-of-eles").height();
 		offset.bottom = offset.top + height + 1.4;
@@ -9457,32 +11245,37 @@ var canvasCV = {
 jQuery.fn.reverse = [].reverse;
 
 var theProjetList = {
-	init : function() {
+	init : function( $projetListEtVisuels) {
 		// binder un event mouse : au survol sur un a, passer le gradient en is--away et charger l'image qui correspond
 
-		var $allProjets = $(".module--projet_short");
+		var $allProjetsVisuel = $projetListEtVisuels.find(".module--projetList--visuelWrapper--visuel");
 
-		// au scroll, détecter si le bloc est visible
+    var slice = [].slice;
+    document.addEventListener('lazybeforeunveil', function(e){
+        var children = e.target.getAttribute('data-lazyload-children');
+        if(children){
+            $unveilchildren = slice.call(e.target.querySelectorAll(children));
+            $unveilchildren.forEach(lazySizes.loader.unveil);
+        }
+    });
 
-		$('.module--projetList .module--projetList--projetName--links').each( function() {
+		$projetListEtVisuels.find(".module--projetList--titles--projetName--links").each( function() {
 
   		$(this).on('mouseover', function() {
-
-  			$("body").attr("module--gradient_overlay", "is--away");
-  			projetIndex = $(this).parent("li").attr("data-index");
-  			$thisProjet = $allProjets.find(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
-
-  			$thisProjet.addClass("is--shown");
-
+  			projetIndex = $(this).parent(".module--projetList--titles--projetName").attr("data-index");
+  			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
+                                                   return $(this).attr('data-index') === projetIndex;
+                                                });
+        $thisProjetVisuel.addClass("is--shown");
+  			$("body").attr("module--projetVisuel", "is--shown");
   		});
   		$(this).on('mouseleave', function() {
-
   			projetIndex = $(this).parent("li").attr("data-index");
-  			$thisProjet = $allProjets.find(".module--projet--header[data-index=" + projetIndex + "]").closest(".module--projet");
-  			$thisProjet.removeClass("is--shown");
-
-  			$("body").attr("module--gradient_overlay", "");
-
+  			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
+                                                   return $(this).attr('data-index') === projetIndex;
+                                                });
+  			$thisProjetVisuel.removeClass("is--shown").addClass("was--shown");
+  			$("body").attr("module--projetVisuel", "");
   		});
 		});
 
@@ -9491,18 +11284,19 @@ var theProjetList = {
 
 var theIntroLinks = {
 
-	init : function( $projetList) {
+	init : function( introLinks, $projetList) {
 
     click = 0;
     var $items = $projetList.find( ".isotope--item");
     $items.each(function() {
-      if( $(this).attr("data-selected") === undefined)
+      if( $(this).attr("data-selected") === undefined){
         $(this).attr("data-selected", 0);
+      }
     });
 
   	$projetList.isotope({
       itemSelector: '.isotope--item',
-      layoutMode: 'vertical',
+      layoutMode: 'fitRows',
 /*
 		  filter: function() {
         // _this_ is the item element. Get text of element's .number
@@ -9518,41 +11312,43 @@ var theIntroLinks = {
         'selected': function( item ) {
           $item = $(item);
           var selected = $item.attr('data-selected');
-          if( selected !== undefined)
+          if( selected !== undefined){
             return parseInt( selected, 10);
-          else
+          } else {
             return false;
+          }
         },
         'index': function( item ) {
           $item = $(item);
           var index = $item.attr('data-index');
-          if( index !== undefined)
+          if( index !== undefined) {
             return parseInt( index, 10);
-          else
+          } else {
             return false;
+          }
         },
         'number': function( item ) {
           $item = $(item);
           var num = $item.attr('data-num');
-          if( num !== undefined)
+          if( num !== undefined) {
             return parseInt( num, 10);
-          else
+          } else {
             return false;
+          }
         },
         'type': function( item ) {
           $item = $(item);
           var type = $item.attr('data-type');
-          if( type !== undefined)
+          if( type !== undefined) {
             return type;
-          else
+          } else {
             return false;
+          }
         },
 		  },
 		  sortBy : ['index', 'number', 'type', ],
     });
-
-
-		$('.module--intro a').on('click', function() {
+		$(document).on('click', introLinks, function() {
   		$('.module--intro a').not( $(this)).removeClass("is--active");
       $(this).toggleClass("is--active");
       theIntroLinks.filterProjects( $projetList, $items);
@@ -9566,16 +11362,13 @@ var theIntroLinks = {
       $projetList.find("h3[data-type]").addClass('is--hidden');
       $projetList.find("h3:not([data-type])").removeClass('is--hidden');
 
-/*
-      $items.each(function() {
-        if( $(this).attr("data-index") !== undefined)
-          $(this).attr("data-num", $(this).attr("data-index"));
-      });
-*/
       $projetList.isotope( 'updateSortData', $items);
       $projetList.isotope({
 		    sortBy : ['index', 'number', 'type'],
       });
+
+      $projetList.removeClass("is--sorted");
+
     } else {
 
       filterByType = filterByType.substring(1);
@@ -9584,7 +11377,7 @@ var theIntroLinks = {
 
       //$projetList.find("h3[data-type='" + filterByType + "']").show();
       var $selectedItems = $items.filter( function() {
-        return $(this).attr("data-type") == filterByType;
+        return $(this).attr("data-type") === filterByType;
       });
 
       $selectedItems.each(function() {
@@ -9603,44 +11396,95 @@ var theIntroLinks = {
       $projetList.isotope({
 		    sortBy : ['selected', 'number', 'type', 'index'],
       });
+      $projetList.addClass("is--sorted");
     }
 
   },
 
 };
 
+// pas encore utilisé
+var createCustomFavicon = {
+  init : function() {
+
+  	var canvas = document.createElement('canvas'),
+  		  ctx,
+        img = document.createElement('img'),
+        link = document.getElementById('favicon');
+
+  	if (canvas.getContext) {
+  	  canvas.height = canvas.width = 32; // set the size
+  	  ctx = canvas.getContext('2d');
+
+  		ctx.beginPath();
+  		ctx.arc(16, 16, 16, 0, Math.PI*2, true);
+
+  		ctx.closePath();
+    	ctx.fillStyle = couleurSecondaire;
+    	ctx.fill();
+
+  		ctx.globalAlpha=0.8; // Half opacity
+  		ctx.beginPath();
+  		ctx.arc(16, 16, 8, 0, Math.PI*2, true);
+  		ctx.closePath();
+
+    	ctx.fillStyle = couleurPrimaire;
+    	ctx.fill();
+
+    	link.href = canvas.toDataURL('image/png');
+  	}
+  },
+};
 
 var theProjetView = {
 
-
 	init : function() {
+
+    window.scrollY = window.pageYOffset;
 
     // fonction qui gère le zoom-in sur l'image du haut
     var zoomedIn = false;
-    $('.module--projet--visuel').on('click', function(e) {
+    $(document).on('click', '.module--projet--visuel', function(e) {
       zoomedIn = !zoomedIn;
-      $('body').attr( 'data-visuel', zoomedIn ? 'zoomedIn' : '');
-      $('html, body').animate({scrollTop : 0},400);
+      theProjetView.zoomIn( zoomedIn);
       return false;
     });
 
+    // animation sur le header avec opacity
     var wHeight = window.innerHeight;
-    var $visuelTop = $(".module--projet_full .module--projet--visuel").first();
+    var $visuelTop = $(".module--projet_full .module--projet--visuel");
     if( window.innerWidth > 700 && $visuelTop.length > 0) {
       theProjetView.changeVisuelOpacity( wHeight, $visuelTop);
+    }
+
+    // check pour les vidéos
+    $(document).on('lazybeforeunveil', function(e){
+      var isVideo = $(e.target).is("video");
+      if( isVideo){
+        $(e.target).attr("autoplay", true);
+        e.target.play();
+      }
+    });
+
+  },
+
+  zoomIn : function( goZoom) {
+    $parentProjet = $( '.module--projet');
+    $parentProjet.attr( 'data-visuel', goZoom ? 'zoomedIn' : '');
+    $("body").css( "overflow", goZoom ? 'hidden' : '');
+    if( scrollY > 0) {
+      $('html, body').animate({scrollTop : 0},400, function() {
+      });
     }
   },
 
   changeVisuelOpacity : function( wHeight, $visuelTop) {
 
-    scrollY = window.pageYOffset;
-    var cssOpacity = scrollY.map( 0, wHeight, 1, 0)
-    $visuelTop.css("opacity", cssOpacity);
-
+    var cssOpacity = scrollY.map( 0, wHeight, 1, 0);
 		$(window).on('scroll', function () {
-      scrollY = window.pageYOffset;
+      window.scrollY = window.pageYOffset;
       if( scrollY < wHeight) {
-        var cssOpacity = scrollY.map( 0, wHeight * .66, 1, 0)
+        var cssOpacity = scrollY.map( 0, wHeight * 0.44, 1, 0);
         $visuelTop.css("opacity", cssOpacity);
       }
     });
@@ -9648,14 +11492,132 @@ var theProjetView = {
 
 };
 
-$(document).ready(function() {
-	theProjetList.init();
-	theIntroLinks.init( $(".module--projetList"));
 
+function pageInit() {
+
+  // pour la vue projet
 	theProjetView.init();
 
+  // pour l'affichage du CV
+	if( $(".module--cv").length > 0) {
+	  setTimeout( canvasCV.init(), 400);
+  }
+
+  // fin de chargement
 	$('body').removeClass("is--loading");
 
-	if( $(".module--cv").length > 0)
-	  setTimeout( canvasCV.init(), 400);
+}
+
+
+var pjaxNav = {
+
+  init : function() {
+
+    $(document).on( "click", "a", function( event ) {
+        var elem = $(this);
+        if( elem.is(".logo") || elem.is("[data-goto=infos]")) {
+          linkLocation = $(this).attr("href");
+          pjaxNav.loadInPJAX( linkLocation, true);
+          return false;
+        } else
+        // click "PROJETS"
+        if( elem.is("[data-goto=projets]")) {
+          if( $(".module--projetList").length > 0) {
+
+            $("body").css("pointer-events", "none");
+            $('html, body').animate({
+              scrollTop: $(".module--projetList").offset().top
+            }, 800, function(){
+            $("body").css("pointer-events", "");
+            });
+            return false;
+          }
+        }
+        if( elem.is(".module--projetList--titles--projetName--links")) {
+          linkLocation = $(this).attr("href");
+          // récupérer le visuel clické, le passer en "is--visuelProjet"
+    			$(".module--projetList .module--projetList--visuelWrapper--visuel")
+    			  .filter(function() {
+               return $(this).attr('data-index') === projetIndex;
+            })
+            .addClass("is--visuelProjet")
+          ;
+
+          pjaxNav.loadInPJAX( linkLocation, true);
+          return false;
+        }
+    });
+
+  	$.pjax.defaults.maxCacheLength = 3;
+  	$.pjax.defaults.timeout = 2250;
+
+  	$(document).on('pjax:beforeReplace', function ( event, contents, options) {
+  	});
+
+    $(document).on("pjax:end", function(event, data) {
+
+      linkToContent = event.target.baseURI;
+  		$(".module--projetList--titles--projetName--links").filter( function() {
+      	return $(this).attr("href") === linkToContent;
+    	}).parents(".module--projetList--titles--projetName").addClass("is--visited");
+
+      $("body")
+        .attr("data-template", pjaxInfos.template)
+        .attr("data-intended-template", pjaxInfos.intendedtemplate)
+        .attr("data-rubrique", pjaxInfos.rubrique);
+
+      // si on a affaire à une page projet, on démarre en zoomedin
+      if( pjaxInfos.template === "projet") {
+        theProjetView.zoomIn(true);
+
+
+        // à la fin de l'animation de cet élément, repasser en zoomIn == false
+        $("body").removeClass("is--ajax_loading");
+        setTimeout( function() {
+         $(".module--projetList .module--projetList--visuelWrapper--visuel").removeClass("is--visuelProjet");
+          setTimeout( function() {
+           theProjetView.zoomIn(false);
+          }, 400);
+        }, 600);
+        pageInit();
+        return;
+      }
+      $("body").removeClass("is--ajax_loading").css( "overflow", '');
+      pageInit();
+    });
+
+
+  },
+
+  loadInPJAX : function( thisURL, withAnim) {
+
+		$("body").addClass("is--ajax_loading");
+
+  	console.log("PJAX to : " + thisURL);
+  	if( typeof _gaq !== 'undefined') { _gaq.push(['_trackPageview', thisURL]); }
+  	setTimeout( function() {
+  		//$('html, body').animate({scrollTop:0}, 100);
+  	  $.pjax({
+  	    "url": thisURL,
+  	    "fragment": "#pjax-container",
+  	    "container": "#pjax-container",
+  	  });
+    }, 600);
+
+  },
+
+};
+
+
+$(document).ready(function() {
+
+	// pour le bloc intro, associé à la liste des projets
+	theIntroLinks.init( '.module--intro a', $(".module--projetList--titles"));
+
+  // pour la liste des projets
+	theProjetList.init( $(".module--projetList"));
+  pjaxNav.init();
+  FastClick.attach(document.body);
+
+  pageInit();
 });

@@ -12,10 +12,11 @@
 
 @c-linkhover: @c-pagebg;
 
-@c-vr:                     #0A997F;
-@c-sites:                  #03a9f4;
-@c-objets-interactifs:    #D1DF98;
-@c-outils-pedagogiques: #FECD62;
+
+@c-vr:                      #38C4B2; //#3ECCB2
+@c-sites:                   #03B8F4;
+@c-objets-interactifs:    #ABD190; //#D1DF98;
+@c-outils-pedagogiques:  #FFC162; //#FFCE5B
 @c-autres:                 #ACA8A5;
 
 @t-margin: 16px;
@@ -42,14 +43,14 @@
 .styleLink( @rubrique, @color ) {
 	body[data-rubrique=@{rubrique}] {
     ::-moz-selection {
-        background: @color;
+      // par défaut le background d'une selection est transparent. Pour le rendre vraiment opque il faut lui donner un
+        background: fade( @color, 92%);
     }
     ::selection {
-        background: @color;
+        background: fade( @color, 92%);
     }
 	}
 }
-
 .styleLink( "vr", @c-vr);
 .styleLink( "sites", @c-sites);
 .styleLink( "objets-interactifs", @c-objets-interactifs);
@@ -74,7 +75,7 @@ html {
 }
 
 .largeText {
-	font-size: 	1.8em;
+	font-size: 	1.4em;
 }
 .mediumText {
 	font-size: 	1.4em;
@@ -104,7 +105,7 @@ em {
 
 body {
 
-  font-family: 'gt cinetype regular', Helvetica, Arial, sans-serif;
+  .gt-reg;
   margin: 0 auto;
   font-size: 1.1rem;
   line-height: 1.78;
@@ -124,8 +125,31 @@ body {
           font-kerning: normal;
 }
 
+
+// cas pjax
+#pjax-container {
+  opacity: 1;
+  transition: opacity .2s;
+
+  body.is--ajax_loading & {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+.module--projetList--titles {
+  opacity: 1;
+  transition: opacity .4s;
+
+  body.is--ajax_loading & {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+
+
 strong, .strong {
-  font-family: 'GT Cinetype Bold';
+  .gt-bold;
 }
 
 h1, h2, h3, h4, h5, h6, b {
@@ -148,13 +172,12 @@ hr {
 }
 
 
-a, a:hover, a:active, a:visited {
+a, a:hover, a:focus, a:active, a:visited {
   color: inherit;
   text-decoration: none;
 }
-
-a:hover {
-  text-decoration: none;
+a:focus {
+  outline: 1px solid @c-textMeta;
 }
 
 .titleCaps {
@@ -170,13 +193,10 @@ a:hover {
 
 .module--navbar {
 
-
 	color: #fff;
 
   position: relative;
   z-index: 1000;
-//   mix-blend-mode: exclusion;
-
 
   .module--navbar--wrapper {
   	position: fixed;
@@ -184,7 +204,6 @@ a:hover {
   	width:  100%;
     padding: 0 @t-margin*2;
     pointer-events: none;
-
   }
 
 	a {
@@ -193,12 +212,18 @@ a:hover {
     margin-left: -@t-margin;
     margin-top: @t-margin;
 
-    font-size: .8rem;
-    font-family: 'GT Cinetype Bold';
+  	font-size: .7rem;
+    .strong;
     text-transform: uppercase;
+
     letter-spacing: .06rem;
 
     pointer-events: all;
+
+    &:hover, &:focus {
+      outline: none;
+      .strong;
+    }
 	}
 
 	ul {
@@ -237,7 +262,7 @@ a:hover {
 
 
 // page home
-.module--intro {
+.module--intro, {
 
 	.containMe;
 	font-size: 	1.8rem;
@@ -245,14 +270,10 @@ a:hover {
 
 	transition: opacity .4s .4s ease-out;
 
-	.module--into--textblock {
-		margin: 22vh	5% 14vh 33% ;
+	.module--intro--textblock {
+		margin: 22vh	7% 16vh 33.333% ;
 		max-width: 23em;
 	}
-	body[module--gradient_overlay="is--away"] & {
-    opacity: 0;
-    transition: opacity .4s ease-out;
-  }
 
   h3 {
     .titleCaps;
@@ -267,11 +288,23 @@ a:hover {
 
   	background-position: 0 100%;
   	background-repeat: no-repeat;
-  	background-size: 200% 1px;
+  	background-size: 250% 1px;
   	transition:	all .25s;
 
+	  outline: 1px solid transparent;
 
-  	.styleLink( @rubrique, @color ) {
+    &:hover {
+      background-size: 250% 10%;
+    }
+    &:focus, &.is--active {
+  	  padding: .1em .12em;
+    }
+	  &.is--active {
+      background-size: 250% 100%;
+    }
+
+
+  	.styleLink1( @rubrique, @color ) {
   		&[href*= @{rubrique}] {
   			background-image: linear-gradient(to right,
   			                                  @color,
@@ -279,71 +312,219 @@ a:hover {
   			                                  transparent 50%,
   			                                  transparent);
   		}
+
+      &:focus {
+    		&[href*= @{rubrique}] {
+    		  outline: 1px solid @color;
+        }
+      }
   	}
 
-  	.styleLink( "vr", @c-vr);
-  	.styleLink( "sites", @c-sites);
-  	.styleLink( "objets-interactifs", @c-objets-interactifs);
-  	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
-  	.styleLink( "autres", @c-autres);
-
-    &:hover {
-    	.styleLink( @rubrique, @color ) {
-    		&[href*= @{rubrique}] {
-          background-size: 200% 10%;
-    		}
-    	}
-
-    	.styleLink( "vr", @c-vr);
-    	.styleLink( "sites", @c-sites);
-    	.styleLink( "objets-interactifs", @c-objets-interactifs);
-    	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
-      .styleLink( "autres", @c-autres);
-    }
-
-	  &.is--active {
-    	.styleLink( @rubrique, @color ) {
-    		&[href*= @{rubrique}] {
-          background-size: 200% 100%;
-    		}
-    	}
-
-    	.styleLink( "vr", @c-vr);
-    	.styleLink( "sites", @c-sites);
-    	.styleLink( "objets-interactifs", @c-objets-interactifs);
-    	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
-      .styleLink( "autres", @c-autres);
-    }
+  	.styleLink1( "vr", @c-vr);
+  	.styleLink1( "sites", @c-sites);
+  	.styleLink1( "objets-interactifs", @c-objets-interactifs);
+  	.styleLink1( "outils-pedagogiques", @c-outils-pedagogiques);
+  	.styleLink1( "autres", @c-autres);
 
 	}
 
 }
 
+
+// tous les contenus
+
+main {
+  a, a:hover {
+  	background-position: 0 100%;
+  	background-repeat: no-repeat;
+  	background-size: 200% 1px;
+
+  	background-image: linear-gradient(to right,
+  	                                  #fff,
+  	                                  #fff 50%,
+  	                                  transparent 50%,
+  	                                  transparent);
+  }
+  a:focus {
+	  outline: 1px solid transparent;
+
+  }
+
+  a.lienProjet {
+    font-size:  .75em;
+    position: relative;
+    .strong;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 .15em .3em;
+    padding-bottom: 0;
+
+    background-position: 00% 88%;
+    background-size: 250% 2px;
+
+    &::before {
+
+      @finalWidth: 12;
+      @finalHeight: 2;
+
+      position: absolute;
+      top: -((@finalHeight * 50%) - 50%);
+      left: -((@finalWidth * 50%) - 50%);
+      padding: .7em;
+      padding-top:  .8em;
+      width: @finalWidth * 100%;
+      height: @finalHeight * 100%;
+
+      background: #fff;
+      color: transparent;
+      content: attr(title);
+      white-space: pre-wrap;
+      word-break: break-all;
+      opacity: 0;
+      -webkit-transition: opacity 0.3s, color 0.3s, -webkit-transform 0.3s, background-position 0.2s;
+      transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s;
+      -webkit-transform: scale( 1/@finalWidth, 1/@finalHeight);
+      transform: scale( 1/@finalWidth, 1/@finalHeight);
+
+  -webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
+     -moz-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
+       -o-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
+          transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055); /* custom */
+
+      pointer-events: none;
+      text-align: center;
+    }
+
+    &:hover, &:focus {
+      &::before {
+        color: #fff;
+        opacity: 1;
+        -webkit-transition-delay: 0s, 0s, 0s, 0.1s;
+        transition-delay: 0s, 0s, 0s, 0.1s;
+        -webkit-transform: scale(1) translateY(-80%);
+        transform: scale(1) translateY(-80%);
+        pointer-events: auto;
+      }
+    }
+
+  	.styleLink1( @rubrique, @color ) {
+      &[data-rubrique=@{rubrique}] {
+    		&::before {
+          background-color: fade( @color, 94%);
+        }
+    	}
+    }
+
+  	.styleLink1( "vr", @c-vr);
+  	.styleLink1( "sites", @c-sites);
+  	.styleLink1( "objets-interactifs", @c-objets-interactifs);
+  	.styleLink1( "outils-pedagogiques", @c-outils-pedagogiques);
+  	.styleLink1( "autres", @c-autres);
+
+
+  }
+
+	ul,ol {
+  	list-style-type: none;
+
+    li {
+			margin-left: 4rem;
+			margin-right: 4rem;
+      margin-bottom:  1rem;
+
+			&::before {
+				content: "->";
+				color: @c-textMeta;
+				margin-left: -1.5em;
+				width:  1.5em;
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.module--infos {
+
+
+	.containMe;
+
+
+  h3 {
+    .titleCaps;
+  }
+
+  h1 {
+  	font-size: 	1.8rem;
+    line-height: 1.6;
+  }
+
+  .module--infos--textblock {
+
+  	width: 	auto;
+
+  	margin: 0 auto;
+  	margin-top:   22vh;
+  	margin-left: 33.333%;
+
+  }
+
+
+	a {
+		display: inline;
+		cursor: pointer;
+		color: #fff;
+		padding: .1em .0em;
+		margin: -.1em -.0em;
+
+  	background-position: 0 100%;
+  	background-repeat: no-repeat;
+  	background-size: 250% 1px;
+  	transition:	all .25s;
+
+	  outline: 1px solid transparent;
+
+    &:hover {
+      background-size: 250% 10%;
+    }
+    &:focus, &.is--active {
+  	  padding: .1em .12em;
+    }
+
+  	.styleLink1( @rubrique, @color ) {
+  		&[data-rubrique=@{rubrique}] {
+    		color: @color;
+  			background-image: linear-gradient(to right,
+  			                                  @color,
+  			                                  @color 50%,
+  			                                  transparent 50%,
+  			                                  transparent);
+  		}
+
+      &:focus {
+    		&[data-rubrique=@{rubrique}] {
+    		  outline: 1px solid @color;
+        }
+      }
+  	}
+
+  	.styleLink1( "vr", @c-vr);
+  	.styleLink1( "sites", @c-sites);
+  	.styleLink1( "objets-interactifs", @c-objets-interactifs);
+  	.styleLink1( "outils-pedagogiques", @c-outils-pedagogiques);
+  	.styleLink1( "autres", @c-autres);
+
+	}
+}
+
+
 .projet--number {
-	font-size: 	.6em;
-	letter-spacing: .05em;
-	text-transform: uppercase;
-	margin-right: 	3em;
-
-	font-family: 'GT Cinetype Bold';
+	font-size:  7rem;
+	.strong;
 }
-.projet--type {
-	margin-right: 	32px;
-	display: inline-block;
-	width: 6px;
-	height: 6px;
-}
-
-
 .projet--name {
-	padding-top: 			@t-margin/4;
-	padding-bottom: 	@t-margin/2;
-	display: block;
 	color: #fff;
 	.largeText;
-//   text-shadow: 0px 0px 2px @c-pagebg;
-
-	transition: letter-spacing .4s ease-in-out, opacity .4s ease-in-out, color .4s ease-in-out, background-color .4s ease-in-out;
 }
 
 
@@ -352,224 +533,297 @@ a:hover {
 .module--projetList {
 
   position: relative;
-	.containMe;
+  margin-top:   @t-margin;
+  padding-top:  @t-margin * 2;
+
+}
+.module--projetList--titles {
+
+  position: relative;
+
+  .containMe;
 	min-height: 100vh;
-//   counter-reset: projet;
   list-style-type: none;
-  z-index: 1;
+  z-index: 101;
 
-  padding-top:  @t-margin * 1;
-
-  &:hover .module--projetList--projetName .module--projetList--projetName--links {
-    //color: @c-pagebg;
-
-    &:hover {
-      //color: inherit;
-    }
-  }
+  // le padding est sur les éléments intérieurs
+  padding: 0;
+  margin-bottom:  @t-margin*2;
 
   h3 {
     .titleCaps;
+    width:  100%;
+    opacity: 1;
+    max-height: none;
     transition: opacity .4s;
 
     &.is--hidden {
-/*
-      height: 0;
       padding: 0;
-      line-height:  0;
       margin: 0;
-*/
-//      opacity: 0;
-      display: none;
+      max-height: 0;
+      opacity: 0;
     }
   }
 
-	.module--projetList--projetName {
+	.module--projetList--titles--projetName {
 
-  	@t-paddingLiensGauche: 16px;
+    @t-vignettesize: 33.333%;
 
-  	width: 60%;
-  	margin-left:  -@t-paddingLiensGauche;
+    position: relative;
+    float: left;
 
+    width: @t-vignettesize;
+    height: 0;
+    padding: 0 0 @t-vignettesize/1.6;
+
+    overflow: visible;
 		transition: opacity .3s ease-out;
 
-  	.styleLink( @rubrique, @color ) {
-      &[data-type= @{rubrique}] .module--projetList--projetName--links--index {
-        color: @color;
-  		}
-  	}
-  	.styleLink( "vr", @c-vr);
-  	.styleLink( "sites", @c-sites);
-  	.styleLink( "objets-interactifs", @c-objets-interactifs);
-  	.styleLink( "outils-pedagogiques", @c-outils-pedagogiques);
-  	.styleLink( "autres", @c-autres);
+    -webkit-transition-duration: 0.8s;
+       -moz-transition-duration: 0.8s;
+        -ms-transition-duration: 0.8s;
+         -o-transition-duration: 0.8s;
+            transition-duration: 0.8s;
 
-    body[data-template="projet"] & {
-
-
-/*
-      &:not(.is--active):not(:hover) {
-        font-size: .5em;
+    &.is--visited {
+      .module--projetList--titles--projetName--links--name {
+        text-decoration: line-through;
       }
-*/
-
     }
 
+		.module--projetList--titles--projetName--links {
 
-		.module--projetList--projetName--links {
-			.projet--name;
-			display: inline-block;
-      padding-left:  @t-paddingLiensGauche;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+    	transition: color .4s ease-in-out, background-color .4s ease-in-out;
+
+      text-align: center;
 
     	&--index {
     		.projet--number;
-    		display: inline-block;
-				transition: color 1s .4s ease-out;
+        .gt-reg;
+    		display: block;
+    		position: absolute;
+
+    		top:48%;
+    		right: 60%;
+    		width:  40%;
+
+    		transform: translate3d( 0%, -50%, 0);
+    		transform-origin: center;
+
+    		padding-right: 2.5%;
+        text-align: right;
+        line-height:  1;
+
+        z-index: 0;
+
+
+      }
+
+    	&--name {
+
+        color: #fff;
+        font-size: 	1.3em;
+
+        line-height:  1.2;
+
+        display: block;
+  			position: absolute;
+
+    		top: 48%;
+    		left: 40%;
+    		width:  60%;
+
+    		transform: translate3d( 0%, -50%, 0);
+    		z-index:  1;
+
+    		padding-left: 2.5%;
+        line-height:  1.4;
+        text-align: left;
+
     	}
 
-			&::after {
-				content: "->";
-				margin-left: -0em;
-		    display: inline-block;
-				opacity: 0;
-				transition: margin .3s ease-out, opacity .2s ease-out;
-				font-family: 'gt cinetype regular';
-			}
 
+
+      // pour aligner au centre les inline-block
+      &::before {
+          content: "";
+          display: inline-block;
+          height: 95%;
+          vertical-align: middle;
+      }
+
+    	&--index {
+				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-out, opacity .8s, background .44s, right .6s ease-out;
+    	}
+      &--name {
+				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-in-out, opacity .8s, background .44s, left .6s;
+      }
 		}
+  }
 
-		&:hover {
 
-    	.styleHover( @rubrique, @color ) {
-        &[data-type= @{rubrique}] .module--projetList--projetName--links {
-          background-color: fade( @color, 95%);
+	.styleHover( @rubrique, @color ) {
+
+  	h3[data-type= @{rubrique}]::after {
+      content: "";
+      position: absolute;
+      top: 1.2rem;
+      width: auto;
+      height: 1px;
+      background-color: @color;
+      left: 0;
+      right: 0;
+  	}
+
+    .module--projetList--titles--projetName {
+      &[data-type= @{rubrique}] {
+  			.module--projetList--titles--projetName--links {
+          &:focus {
+            outline: 1px solid @color;
+          }
+          &--index{
+              color: @color;
+            .is--sorted& {
+            }
+          }
+          &--name {
+          }
     		}
-    	}
-    	.styleHover( "vr", @c-vr);
-    	.styleHover( "sites", @c-sites);
-    	.styleHover( "objets-interactifs", @c-objets-interactifs);
-    	.styleHover( "outils-pedagogiques", @c-outils-pedagogiques);
-    	.styleHover( "autres", @c-autres);
+      }
+  	}
 
-			opacity: 1;
+  	// survol sur tout le menu, effet sur toutes les vignettes sauf celle survolées
+  	&:hover .module--projetList--titles--projetName[data-type= @{rubrique}] {
 
-			.module--projetList--projetName--links {
-				letter-spacing: 2px;
+    	.module--projetList--titles--projetName--links {
 
-				.module--projetList--projetName--links--index {
-  				color: #fff;
-  				margin-bottom:  4px;
-				}
-				&::after {
-			    opacity: 1;
-			    margin-left: 1em;
-			    margin-right:   .5em;
-					transition: margin .25s .3s ease-out, opacity .3s .4s ease-out;
-				}
-			}
-		}
+      	&--index {
+          text-shadow: 0px 0px 26px @color;
+          color: transparent;
+        }
+        &--name {
+          text-shadow: 0px 0px 16px #fff;
+          color: transparent;
+          border-left-color: transparent;
+          background-color: transparent;
+        }
+
+        &:hover {
+          background-color: fade( @color, 88%);
+
+  				.module--projetList--titles--projetName--links--index {
+/*
+            -webkit-text-stroke: 1px #fff;
+            -webkit-text-fill-color: transparent;
+*/
+        		right: 50%;
+        		transform: translate3d( 50%, -50%, 0) scale( 1.8);
+            color: @color;
+            text-shadow: none;
+          }
+  				.module--projetList--titles--projetName--links--name {
+            transform: translate3d( -25%, -50%, 0) scale( 1.2);
+            color: #fff;
+            text-shadow: none;
+            background-color: transparent;
+  				}
+    		}
+      }
+  	}
+  }
+	.styleHover( "vr", @c-vr);
+	.styleHover( "sites", @c-sites);
+	.styleHover( "objets-interactifs", @c-objets-interactifs);
+	.styleHover( "outils-pedagogiques", @c-outils-pedagogiques);
+	.styleHover( "autres", @c-autres);
+}
+
+
+.module--projetList--visuelWrapper {
+
+  position: absolute;
+  z-index:  -100;
+	top: 0;	left: 0;
+	width: 	100%;
+	height: 	100%;
+	background-color: transparent;
+	z-index:  100;
+
+	pointer-events: none;
+
+
+	.module--projetList--visuelWrapper--bgmask {
+  	position: fixed;
+    top: 0; left: 0;  right: 0; bottom: 0;
+    z-index: -5;
+    opacity: 0;
+    background-color: @c-pagebg;
+
+    transition: opacity .6s ease-out;
+
 	}
+
+
+  .module--projetList--visuelWrapper--visuel {
+
+    position: fixed;
+
+    top: 0; left: 0;  right: 0; bottom: 0;
+
+  	background-size: cover;
+  	background-position: center center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translate3d( 0, 0, 0);
+		transform-origin: center;
+
+
+    will-change: opacity;
+    transition: opacity .8s ease-out;
+
+    &.lazyload, &.lazyloading, &.lazyloaded {
+      visibility: visible;
+    }
+
+  	&.was--shown {
+    	opacity: 0;
+      z-index: -1;
+      transition: opacity .4s .2s ease-in;
+  	}
+
+  	&.is--shown {
+      opacity: 1;
+    	z-index:  1;
+      transition: opacity .4s ease-out;
+  	}
+  	// cas pjax : la vignette cliquée
+  	&.is--visuelProjet {
+    	opacity: 1;
+    	z-index:  2;
+      transition: opacity .4s ease-in;
+  	}
+
+  	&.is--shown ~ .module--projetList--visuelWrapper--bgmask {
+    	opacity: 1;
+  	}
+  }
+  body.is--ajax_loading & {
+    .module--projetList--visuelWrapper--bgmask {
+      //opacity: 0 !important;
+    }
+  }
 }
 
 
 @import "_projet.less";
 
-// cas spécial : on utilise le même markup sur la page d'accueil (parce que c'est plus simple (en théorie !))
-// voici les exceptions pour module--projet
-.module--projet_short {
-
-	position: fixed;
-	z-index: -100;
-	top: 0;
-	bottom: 0;
-	width: 	100%;
-	height: 	100%;
-
-
-  .module--projet {
-
-    position: absolute;
-  	top: 0;	left: 0;
-  	width: 	100%;
-  	height: 	100%;
-  	background-color: transparent;
-
-  	opacity: 0;
-    filter: grayscale(40%);
-
-    will-change: opacity;
-    transition: opacity .4s ease-out;
-
-  	&.was--shown {
-    	opacity: 0;
-      filter: grayscale( 0%);
-      z-index: -1;
-  	}
-
-  	&.is--shown {
-      opacity: .8;
-      z-index: 1;
-      filter: grayscale( 0%);
-      transition: opacity .4s ease-out, filter .4s ease-out;
-  	}
-
-
-
-  	&::before {
-  		display: none;
-  	}
-
-    .module--projet--header {
-      background-color: transparent;
-    }
-
-  	.module--projet--header--text {
-  		display: none;
-  	}
-  	.module--projet--visuel--inside {
-    	transform: none !important;
-      opacity: .6;
-  	}
-  }
-
-  // option "lazyload" du menu (page projet, par exemple)
-  &[data-chargement="au_survol"] {
-
-    .module--projet {
-      visibility: hidden;
-    	&.is--shown {
-        visibility: visible;
-      }
-      &.was--shown {
-        visibility: visible;
-      }
-    }
-  }
-}
-
-
 @import "_cv.less";
-
-.module--gradient_overlay {
-
-  display: none;
-
-	position: fixed;
-	left: 0;	top: 0;	bottom: 0; right: 0;
-	z-index: -50;
-
-	&::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-  	background-color: @c-pagebg;
-  	transition: background-color .4s .4s ease-out;
-	}
-
-	body[module--gradient_overlay="is--away"] & {
-  	&::before {
-  	  background-color: transparent;
-  	}
-	}
-}
