@@ -14,7 +14,7 @@
 		  'thumbwidth' 		=> 2400,
 		  'originalPage'  => $p,
 		  'outputlink'     => false,
-		  'data-optimumx'=> 2,
+		  'optimumx'=> 2,
 		  'return_srcset' => false
 		));
 

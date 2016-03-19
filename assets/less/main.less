@@ -40,14 +40,15 @@
     background: rgba(0, 220, 140, 0.25);
 }
 
+
 .styleLink( @rubrique, @color ) {
 	body[data-rubrique=@{rubrique}] {
     ::-moz-selection {
       // par défaut le background d'une selection est transparent. Pour le rendre vraiment opque il faut lui donner un
-        background: fade( @color, 92%);
+        background: fade( @color, 82%);
     }
     ::selection {
-        background: fade( @color, 92%);
+        background: fade( @color, 82%);
     }
 	}
 }
@@ -133,7 +134,7 @@ body {
 
   body.is--ajax_loading & {
     opacity: 0;
-    pointer-events: none;
+
   }
 }
 .module--projetList--titles {
@@ -143,6 +144,10 @@ body {
   body.is--ajax_loading & {
     opacity: 0;
     pointer-events: none;
+
+    .module--projetList--titles--projetName--links {
+      pointer-events: none !important;
+    }
   }
 }
 
@@ -209,7 +214,7 @@ a:focus {
 	a {
   	display: block;
 		padding: @t-margin;
-    margin-left: -@t-margin;
+//     margin-left: -@t-margin;
     margin-top: @t-margin;
 
   	font-size: .7rem;
@@ -221,8 +226,8 @@ a:focus {
     pointer-events: all;
 
     &:hover, &:focus {
+//       outline: 1px solid #fff;
       outline: none;
-      .strong;
     }
 	}
 
@@ -365,7 +370,7 @@ main {
     &::before {
 
       @finalWidth: 12;
-      @finalHeight: 2;
+      @finalHeight: 1.8;
 
       position: absolute;
       top: -((@finalHeight * 50%) - 50%);
@@ -550,6 +555,8 @@ main {
   padding: 0;
   margin-bottom:  @t-margin*2;
 
+  pointer-events: none;
+
   h3 {
     .titleCaps;
     width:  100%;
@@ -584,6 +591,8 @@ main {
         -ms-transition-duration: 0.8s;
          -o-transition-duration: 0.8s;
             transition-duration: 0.8s;
+
+    pointer-events: auto;
 
     &.is--visited {
       .module--projetList--titles--projetName--links--name {

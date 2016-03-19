@@ -32,6 +32,7 @@ of the system, please check out http://getkirby.com/docs/advanced/options
 c::set('environment', 'production');
 c::set('multisizes', true);
 c::set('lazyloadimages', true);
+c::get('optimumx', 1.6);
 
 c::set('smartypants', true);
 c::set('kirby.extension.videoext.video_tag', true);

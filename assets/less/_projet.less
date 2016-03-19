@@ -203,7 +203,7 @@
     transform: translate3d(0, ~"calc( -50% + @{t-bandeauImage}/2)", 0);
     opacity: .95;
 
-    transition: transform .8s ease-in-out, opacity .5s ease-out;
+    transition: transform .6s ease-in-out, opacity .5s ease-out;
 
   -webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1); /* older webkit */
   -webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
@@ -341,7 +341,6 @@
 
       margin: 0 auto;
 
-
     	+ .media-image, + .media-video {
       	padding-top:  1rem;
     	}
@@ -361,9 +360,13 @@
         max-width: 76ch;
         font-size:  .8em;
 
+        margin-top:  .4em;
+
         p {
+          margin-top:  .4em;
+
           max-width: 76ch;
-          padding-top:  .4em;
+          padding:0;
         }
       }
     }

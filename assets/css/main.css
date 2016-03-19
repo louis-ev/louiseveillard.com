@@ -405,34 +405,34 @@ html.js .media-image .FigureImage-lazy > img.lazyloaded {
   background: rgba(0, 220, 140, 0.25);
 }
 body[data-rubrique="vr"] ::-moz-selection {
-  background: rgba(56, 196, 178, 0.92);
+  background: rgba(56, 196, 178, 0.82);
 }
 body[data-rubrique="vr"] ::selection {
-  background: rgba(56, 196, 178, 0.92);
+  background: rgba(56, 196, 178, 0.82);
 }
 body[data-rubrique="sites"] ::-moz-selection {
-  background: rgba(3, 184, 244, 0.92);
+  background: rgba(3, 184, 244, 0.82);
 }
 body[data-rubrique="sites"] ::selection {
-  background: rgba(3, 184, 244, 0.92);
+  background: rgba(3, 184, 244, 0.82);
 }
 body[data-rubrique="objets-interactifs"] ::-moz-selection {
-  background: rgba(171, 209, 144, 0.92);
+  background: rgba(171, 209, 144, 0.82);
 }
 body[data-rubrique="objets-interactifs"] ::selection {
-  background: rgba(171, 209, 144, 0.92);
+  background: rgba(171, 209, 144, 0.82);
 }
 body[data-rubrique="outils-pedagogiques"] ::-moz-selection {
-  background: rgba(255, 193, 98, 0.92);
+  background: rgba(255, 193, 98, 0.82);
 }
 body[data-rubrique="outils-pedagogiques"] ::selection {
-  background: rgba(255, 193, 98, 0.92);
+  background: rgba(255, 193, 98, 0.82);
 }
 body[data-rubrique="autres"] ::-moz-selection {
-  background: rgba(172, 168, 165, 0.92);
+  background: rgba(172, 168, 165, 0.82);
 }
 body[data-rubrique="autres"] ::selection {
-  background: rgba(172, 168, 165, 0.92);
+  background: rgba(172, 168, 165, 0.82);
 }
 audio,
 canvas,
@@ -490,7 +490,6 @@ body {
 }
 body.is--ajax_loading #pjax-container {
   opacity: 0;
-  pointer-events: none;
 }
 .module--projetList--titles {
   opacity: 1;
@@ -501,6 +500,9 @@ body.is--ajax_loading #pjax-container {
 body.is--ajax_loading .module--projetList--titles {
   opacity: 0;
   pointer-events: none;
+}
+body.is--ajax_loading .module--projetList--titles .module--projetList--titles--projetName--links {
+  pointer-events: none !important;
 }
 strong,
 .strong {
@@ -562,7 +564,6 @@ a:focus {
 .module--navbar a {
   display: block;
   padding: 16px;
-  margin-left: -16px;
   margin-top: 16px;
   font-size: .7rem;
   font-family: 'gt-c-b';
@@ -573,7 +574,6 @@ a:focus {
 .module--navbar a:hover,
 .module--navbar a:focus {
   outline: none;
-  font-family: 'gt-c-b';
 }
 .module--navbar ul {
   list-style: none;
@@ -705,12 +705,12 @@ main a.lienProjet {
 }
 main a.lienProjet::before {
   position: absolute;
-  top: -50%;
+  top: -40%;
   left: -550%;
   padding: .7em;
   padding-top: .8em;
   width: 1200%;
-  height: 200%;
+  height: 180%;
   background: #fff;
   color: transparent;
   content: attr(title);
@@ -723,9 +723,9 @@ main a.lienProjet::before {
   -o-transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s, -o-transform 0.3s;
   transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s;
   transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s, -webkit-transform 0.3s, -o-transform 0.3s;
-  -webkit-transform: scale(0.08333333, 0.5);
-  -o-transform: scale(0.08333333, 0.5);
-     transform: scale(0.08333333, 0.5);
+  -webkit-transform: scale(0.08333333, 0.55555556);
+  -o-transform: scale(0.08333333, 0.55555556);
+     transform: scale(0.08333333, 0.55555556);
   -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1);
   /* older webkit */
   -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
@@ -894,6 +894,7 @@ main ol li::before {
   z-index: 101;
   padding: 0;
   margin-bottom: 32px;
+  pointer-events: none;
 }
 .module--projetList--titles h3 {
   font-size: .7rem;
@@ -928,6 +929,7 @@ main ol li::before {
   -webkit-transition-duration: 0.8s;
   -o-transition-duration: 0.8s;
   transition-duration: 0.8s;
+  pointer-events: auto;
 }
 .module--projetList--titles .module--projetList--titles--projetName.is--visited .module--projetList--titles--projetName--links--name {
   text-decoration: line-through;
@@ -1492,11 +1494,11 @@ html.js .module--projet .module--projet--visuel > .module--projet--visuel--insid
   -webkit-transform: translate3d(0, calc( -50% + 44vh/2), 0);
           transform: translate3d(0, calc( -50% + 44vh/2), 0);
   opacity: .95;
-  -webkit-transition: opacity 0.5s ease-out, -webkit-transform 0.8s ease-in-out;
-  transition: opacity 0.5s ease-out, -webkit-transform 0.8s ease-in-out;
-  -o-transition: transform 0.8s ease-in-out, opacity 0.5s ease-out, -o-transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out, opacity 0.5s ease-out;
-  transition: transform 0.8s ease-in-out, opacity 0.5s ease-out, -webkit-transform 0.8s ease-in-out, -o-transform 0.8s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-out, -webkit-transform 0.6s ease-in-out;
+  transition: opacity 0.5s ease-out, -webkit-transform 0.6s ease-in-out;
+  -o-transition: transform 0.6s ease-in-out, opacity 0.5s ease-out, -o-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, opacity 0.5s ease-out;
+  transition: transform 0.6s ease-in-out, opacity 0.5s ease-out, -webkit-transform 0.6s ease-in-out, -o-transform 0.6s ease-in-out;
   -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1);
   /* older webkit */
   -webkit-transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
@@ -1710,6 +1712,7 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   padding: 0;
   max-width: 76ch;
   font-size: .8em;
+  margin-top: .4em;
 }
 .module--projet .module--projet--text > .media-image .legende p,
 .module--projet .module--projet--text > .media-video .legende p,
@@ -1717,8 +1720,9 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 .module--projet .module--projet--text > .media-image .caption-bottom p,
 .module--projet .module--projet--text > .media-video .caption-bottom p,
 .module--projet .module--projet--text > .media-tweet .caption-bottom p {
+  margin-top: .4em;
   max-width: 76ch;
-  padding-top: .4em;
+  padding: 0;
 }
 .module--projet .module--projet--text .media-video.capture_siteweb {
   border: 1px solid #E3E3E3;
