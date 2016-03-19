@@ -63,4 +63,5 @@ Headercol2:
 ### date de réalisation
 ## De juin à novembre 2015
 ### crédits
-## L’ensemble du site (conception, charte graphique et applications) a été créé et développé par Louis Eveillard, avec la participation d’Arnaud Juracek et le soutien de Stéphane Buellet. Le logo a été créé par Patrick Paleta.
+## L’ensemble du site (conception, charte graphique et applications) a été créé et développé par Louis Eveillard avec Arnaud Juracek (stagiaire) et le soutien de Stéphane Buellet. 
+Le logo a été créé par Patrick Paleta.

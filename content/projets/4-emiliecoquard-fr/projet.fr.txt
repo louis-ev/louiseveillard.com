@@ -51,6 +51,6 @@ Headercol2:
 ### date de réalisation
 ## Novembre 2014
 ### crédits
-## Créé avec Émilie Coquard
+## Créé avec et pour (link: http://emiliecoquard.fr/ text: Émilie Coquard popup: yes)
 ### code source
 ## Disponible sur (link: https://github.com/louis-ev/emiliecoquard.fr text: Github)

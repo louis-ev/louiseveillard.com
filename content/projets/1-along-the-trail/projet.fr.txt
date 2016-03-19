@@ -4,7 +4,11 @@ Title: Along the Trail
 
 Text: 
 
-(image: et-accueil-01.jpg)
+<figure class='media-video'><style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/126740963' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+<figcaption class="legende">
+Le trailer de l'expérience Along the Trail.
+</figcaption>
+</figure>
 
 Along the Trail est une œuvre de réalité virtuelle qui donne à voir les traces des interactions humaines présentes sur les réseaux sociaux en ligne. En connectant son compte personnel, un participant équipé d’un casque se retrouve à déambuler au milieu de paysages générés par ses données, ce qui l’amène à redécouvrir des événements passés et des souvenirs oubliés qui persistent dans des data center à l’autre bout du globe.
 
@@ -67,4 +71,4 @@ Headercol2:
 ### prix
 ## Prix OR catégorie *expérience* au concours Oculus VR Jam
 ### équipe
-## Réalisé à Panoptic Lab avec Ferdinand Dervieux, Jérémie Lasnier et Aby Batti
+## Réalisé à Panoptic Lab avec (link: http://ferdinanddervieux.com/ text: Ferdinand Dervieux popup: yes), (link: http://jeremielasnier.com/ text: Jérémie Lasnier popup: yes) et (link: http://www.sharpsense.fr/ text: Aby Batti popup: yes)
