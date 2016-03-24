@@ -464,7 +464,12 @@ em {
   width: 100%;
   max-width: 66rem;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 16px;
+}
+@media only screen and (min-width: 48em) {
+  .containMe {
+    padding: 0 32px;
+  }
 }
 body {
   font-family: 'gt-c', Helvetica, Arial, sans-serif;
@@ -554,12 +559,25 @@ a:focus {
   position: relative;
   z-index: 1000;
 }
+html.js .module--navbar {
+  opacity: 1;
+  -webkit-transition: opacity 0.9s 1s ease-out;
+  -o-transition: opacity 0.9s 1s ease-out;
+  transition: opacity 0.9s 1s ease-out;
+}
+html.js body.is--loading .module--navbar {
+  opacity: 0;
+}
 .module--navbar .module--navbar--wrapper {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0 32px;
   pointer-events: none;
+}
+@media only screen and (min-width: 48em) {
+  .module--navbar .module--navbar--wrapper {
+    padding: 0 16px;
+  }
 }
 .module--navbar a {
   display: block;
@@ -597,16 +615,28 @@ a:focus {
   width: 100%;
   max-width: 66rem;
   margin: 0 auto;
-  padding: 0 32px;
-  font-size: 1.8rem;
+  padding: 0 16px;
+  font-size: 1.2rem;
   line-height: 1.6;
-  -webkit-transition: opacity 0.4s 0.4s ease-out;
-  -o-transition: opacity 0.4s 0.4s ease-out;
-  transition: opacity 0.4s 0.4s ease-out;
+}
+@media only screen and (min-width: 48em) {
+  .module--intro {
+    padding: 0 32px;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .module--intro {
+    font-size: 1.8rem;
+  }
 }
 .module--intro .module--intro--textblock {
-  margin: 22vh	7% 16vh 33.333% ;
-  max-width: 23em;
+  margin: 150px auto 100px;
+  max-width: 26em;
+}
+@media only screen and (min-width: 62em) {
+  .module--intro .module--intro--textblock {
+    margin: 22vh	7% 16vh 33.333% ;
+  }
 }
 .module--intro h3 {
   font-size: .7rem;
@@ -625,17 +655,13 @@ a:focus {
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 250% 1px;
-  -webkit-transition: all .25s;
-  -o-transition: all .25s;
-  transition: all .25s;
+  -webkit-transition: all 0.25s, background-position 1.6s ease-out;
+  -o-transition: all 0.25s, background-position 1.6s ease-out;
+  transition: all 0.25s, background-position 1.6s ease-out;
   outline: 1px solid transparent;
 }
 .module--intro a:hover {
   background-size: 250% 10%;
-}
-.module--intro a:focus,
-.module--intro a.is--active {
-  padding: .1em .12em;
 }
 .module--intro a.is--active {
   background-size: 250% 100%;
@@ -679,6 +705,68 @@ a:focus {
 }
 .module--intro a:focus[href*="autres"] {
   outline: 1px solid #ACA8A5;
+}
+html.js .module--intro {
+  opacity: 1;
+  -webkit-transition: opacity 1.4s ease-out, -webkit-transform 0.6s ease-out;
+  transition: opacity 1.4s ease-out, -webkit-transform 0.6s ease-out;
+  -o-transition: opacity 1.4s ease-out, transform 0.6s ease-out, -o-transform 0.6s ease-out;
+  transition: opacity 1.4s ease-out, transform 0.6s ease-out;
+  transition: opacity 1.4s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out, -o-transform 0.6s ease-out;
+}
+html.js .module--intro a:nth-of-type(1) {
+  -webkit-transition: all 0.25s, background-position 2.2s 0.6s;
+  -o-transition: all 0.25s, background-position 2.2s 0.6s;
+  transition: all 0.25s, background-position 2.2s 0.6s;
+  -webkit-transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  -o-transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  /* custom */
+}
+html.js .module--intro a:nth-of-type(2) {
+  -webkit-transition: all 0.25s, background-position 2.2s 1.2s;
+  -o-transition: all 0.25s, background-position 2.2s 1.2s;
+  transition: all 0.25s, background-position 2.2s 1.2s;
+  -webkit-transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  -o-transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  /* custom */
+}
+html.js .module--intro a:nth-of-type(3) {
+  -webkit-transition: all 0.25s, background-position 2.2s 1.8s;
+  -o-transition: all 0.25s, background-position 2.2s 1.8s;
+  transition: all 0.25s, background-position 2.2s 1.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  -o-transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  /* custom */
+}
+html.js .module--intro a:nth-of-type(4) {
+  -webkit-transition: all 0.25s, background-position 2.2s 2.4s;
+  -o-transition: all 0.25s, background-position 2.2s 2.4s;
+  transition: all 0.25s, background-position 2.2s 2.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  -o-transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  /* custom */
+}
+html.js .module--intro a:nth-of-type(5) {
+  -webkit-transition: all 0.25s, background-position 2.2s 3s;
+  -o-transition: all 0.25s, background-position 2.2s 3s;
+  transition: all 0.25s, background-position 2.2s 3s;
+  -webkit-transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  -o-transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
+  /* custom */
+}
+html.js body.is--loading .module--intro {
+  opacity: 0;
+  -webkit-transform: translateY(15px);
+       -o-transform: translateY(15px);
+          transform: translateY(15px);
+}
+html.js body.is--loading .module--intro a {
+  background-position: 100% 100%;
 }
 main a,
 main a:hover {
@@ -780,11 +868,22 @@ main ol li::before {
   width: 1.5em;
   display: inline-block;
 }
+main img,
+main video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
 .module--infos {
   width: 100%;
   max-width: 66rem;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 16px;
+}
+@media only screen and (min-width: 48em) {
+  .module--infos {
+    padding: 0 32px;
+  }
 }
 .module--infos h3 {
   font-size: .7rem;
@@ -882,17 +981,29 @@ main ol li::before {
   position: relative;
   margin-top: 16px;
   padding-top: 32px;
-}
-.module--projetList--titles {
-  position: relative;
   width: 100%;
   max-width: 66rem;
   margin: 0 auto;
-  padding: 0 32px;
-  min-height: 100vh;
+  padding: 0 16px;
+}
+@media only screen and (min-width: 48em) {
+  .module--projetList {
+    padding: 0 32px;
+  }
+}
+html.js .module--projetList {
+  opacity: 1;
+  -webkit-transition: opacity 0.6s 0.6s ease-out;
+  -o-transition: opacity 0.6s 0.6s ease-out;
+  transition: opacity 0.6s 0.6s ease-out;
+}
+html.js body.is--loading .module--projetList {
+  opacity: 0;
+}
+.module--projetList--titles {
+  position: relative;
   list-style-type: none;
   z-index: 101;
-  padding: 0;
   margin-bottom: 32px;
   pointer-events: none;
 }
@@ -919,9 +1030,9 @@ main ol li::before {
 .module--projetList--titles .module--projetList--titles--projetName {
   position: relative;
   float: left;
-  width: 33.333%;
+  width: 100%;
+  padding: 0 0 40%;
   height: 0;
-  padding: 0 0 20.833125%;
   overflow: visible;
   -webkit-transition: opacity 0.3s ease-out;
   -o-transition: opacity 0.3s ease-out;
@@ -930,6 +1041,18 @@ main ol li::before {
   -o-transition-duration: 0.8s;
   transition-duration: 0.8s;
   pointer-events: auto;
+}
+@media only screen and (min-width: 48em) {
+  .module--projetList--titles .module--projetList--titles--projetName {
+    width: 50%;
+    padding: 0 0 25%;
+  }
+}
+@media only screen and (min-width: 62em) {
+  .module--projetList--titles .module--projetList--titles--projetName {
+    width: 33.333%;
+    padding: 0 0 20.833125%;
+  }
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links {
   position: absolute;
@@ -1421,6 +1544,7 @@ body:not(.is--loading) .module--projet[data-visuel=''].module--projet .module--p
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--name {
   color: #fff;
   font-size: 1.4em;
+  display: inline-block;
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colLeft {
   float: left;
@@ -1490,7 +1614,7 @@ body:not(.is--loading) .module--projet[data-visuel=''].module--projet .module--p
       -ms-flex-pack: center;
           justify-content: center;
 }
-.module--projet .module--projet--visuel .FigureImage-lazy img {
+.module--projet .module--projet--visuel .FigureImage-lazy > img {
   width: 100%;
   height: auto;
   position: relative;
@@ -1699,12 +1823,6 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 .module--projet .module--projet--text:nth-of-type(even) > .media-tweet .FigureImage-lazy {
   background-color: #ebebeb;
 }
-.module--projet .module--projet--text img,
-.module--projet .module--projet--text video {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
 .module--projet .module--projet--text figure {
   margin: 0;
 }
@@ -1810,9 +1928,14 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   width: 100%;
   max-width: 66rem;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 16px;
   padding-top: 22vh;
   font-size: .9em;
+}
+@media only screen and (min-width: 48em) {
+  .module--cv {
+    padding: 0 32px;
+  }
 }
 .module--cv a {
   display: inline;
@@ -1901,7 +2024,6 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 }
 .module--cv .grid {
   display: block;
-  margin: 0 -16px;
 }
 .module--cv .grid:before,
 .module--cv .grid:after {
@@ -1912,18 +2034,15 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   clear: both;
 }
 .module--cv .grid .column {
-  float: left;
-  width: 33.333%;
-  padding: 0 16px;
+  width: 100%;
+  padding: 0;
+  float: none;
 }
-@media screen and (max-width: 767px) {
-  .module--cv .grid {
-    margin: 0;
-  }
+@media only screen and (min-width: 48em) {
   .module--cv .grid .column {
-    width: 100%;
-    padding: 0;
-    float: none;
+    float: left;
+    width: 33.333%;
+    padding: 0 16px 0 0;
   }
 }
 .module--cv .description {

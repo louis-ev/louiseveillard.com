@@ -42,6 +42,8 @@ c::set('kirby.extension.videoext.controls', false);
 c::set('kirby.extension.videoext.preload', 'none');
 c::set('kirby.extension.videoext.loop', true);
 
+c::set('smartypants',true);
+
 c::set('languages', array(
   array(
     'code'    => 'fr',

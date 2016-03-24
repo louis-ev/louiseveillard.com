@@ -106,21 +106,18 @@
 
   .grid {
     display: block;
-    margin: 0 -@t-margin;
     .clearfix;
     .column {
-      float: left;
-      width:  33.333%;
-      padding: 0 @t-margin;
-
+      width: 100%;
+      padding: 0;
+      float: none;
     }
 
-    @media screen and (max-width: @m-tablet-max) {
-      margin: 0;
+    @media @md {
       .column {
-        width: 100%;
-        padding: 0;
-        float: none;
+        float: left;
+        width:  33.333%;
+        padding: 0 @t-margin 0 0;
       }
 
     }

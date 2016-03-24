@@ -39,9 +39,9 @@
 <header class="module--projet--header" data-index="<?= $index ?>">
 
 	<div class="module--projet--header--text">
-    <h1>
-    	<span class="module--projet--header--text--index"><?= $index ?></span>
-      <span class="module--projet--header--text--name"><?= $p->title()->html() ?></span>
+  	<span class="module--projet--header--text--index"><?= $index ?></span>
+    <h1 class="module--projet--header--text--name">
+      <?= $p->title()->html() ?>
     </h1>
 
     <hr>

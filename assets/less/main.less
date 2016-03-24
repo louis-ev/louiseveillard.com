@@ -22,15 +22,13 @@
 @t-margin: 16px;
 @t-largemaxwidth: 66rem;
 
-@m-tablet-max: 767px;
-@m-desktop-min: @m-tablet-max + 1px;
+@m-md: 48em;
+@md:    ~"only screen and (min-width: @{m-md})";
+@media @md {}
 
-@media screen and (max-width: @m-tablet-max) {
-
-}
-@media screen and (min-width: @m-desktop-min) {
-
-}
+@m-lg: 62em;
+@lg:    ~"only screen and (min-width: @{m-lg})";
+@media @lg {}
 
 
 ::-moz-selection {
@@ -101,7 +99,11 @@ em {
 	width: 	100%;
 	max-width: @t-largemaxwidth;
 	margin: 0 auto;
-  padding: 0 @t-margin * 2;
+  padding: 0 @t-margin;
+
+  @media @md {
+    padding: 0 @t-margin * 2;
+  }
 }
 
 body {
@@ -203,12 +205,25 @@ a:focus {
   position: relative;
   z-index: 1000;
 
+  html.js & {
+    opacity: 1;
+    transition: opacity .9s 1s ease-out;
+  }
+  html.js body.is--loading & {
+    opacity: 0;
+  }
+
+
   .module--navbar--wrapper {
   	position: fixed;
   	top: 0;
   	width:  100%;
-    padding: 0 @t-margin*2;
     pointer-events: none;
+
+    @media @md {
+      padding: 0 @t-margin;
+
+    }
   }
 
 	a {
@@ -229,6 +244,7 @@ a:focus {
 //       outline: 1px solid #fff;
       outline: none;
     }
+
 	}
 
 	ul {
@@ -270,14 +286,26 @@ a:focus {
 .module--intro, {
 
 	.containMe;
-	font-size: 	1.8rem;
+
+  font-size: 1.2rem;
   line-height: 1.6;
 
-	transition: opacity .4s .4s ease-out;
+  @media @md {
+  	font-size: 	1.8rem;
+  }
 
 	.module--intro--textblock {
-		margin: 22vh	7% 16vh 33.333% ;
-		max-width: 23em;
+
+		margin: 150px auto 100px;
+		max-width: 26em;
+
+    @media @md {
+
+    }
+
+		@media @lg {
+  		margin: 22vh	7% 16vh 33.333% ;
+		}
 	}
 
   h3 {
@@ -294,7 +322,7 @@ a:focus {
   	background-position: 0 100%;
   	background-repeat: no-repeat;
   	background-size: 250% 1px;
-  	transition:	all .25s;
+  	transition:	all .25s, background-position 1.6s ease-out;
 
 	  outline: 1px solid transparent;
 
@@ -302,7 +330,7 @@ a:focus {
       background-size: 250% 10%;
     }
     &:focus, &.is--active {
-  	  padding: .1em .12em;
+//   	  padding: .1em .12em;
     }
 	  &.is--active {
       background-size: 250% 100%;
@@ -333,7 +361,45 @@ a:focus {
 
 	}
 
+
+	html.js & {
+    opacity: 1;
+  	transition: opacity 1.4s ease-out, transform .6s ease-out;
+
+  	a {
+
+      .animationDifferee(@index) {
+        &:nth-of-type(@{index}){
+          transition:	all .25s, background-position 2.2s @index * .6s;
+
+
+  -webkit-transition-timing-function: cubic-bezier(0.315, 0.110, 0.000, 0.985);
+     -moz-transition-timing-function: cubic-bezier(0.315, 0.110, 0.000, 0.985);
+       -o-transition-timing-function: cubic-bezier(0.315, 0.110, 0.000, 0.985);
+          transition-timing-function: cubic-bezier(0.315, 0.110, 0.000, 0.985); /* custom */
+
+        }
+      }
+      .animationDifferee(1);
+      .animationDifferee(2);
+      .animationDifferee(3);
+      .animationDifferee(4);
+      .animationDifferee(5);
+
+  	}
+	}
+
+  html.js body.is--loading & {
+    opacity: 0;
+    transform: translateY(15px);
+
+    a {
+      background-position: 100% 100%;
+    }
+  }
+
 }
+
 
 
 // tous les contenus
@@ -447,6 +513,13 @@ main {
 			}
 		}
 	}
+
+	img, video {
+  	width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+
 }
 
 .module--infos {
@@ -541,18 +614,25 @@ main {
   margin-top:   @t-margin;
   padding-top:  @t-margin * 2;
 
+  .containMe;
+
+  html.js & {
+    opacity: 1;
+    transition: opacity .6s .6s ease-out;
+  }
+
+  html.js body.is--loading & {
+    opacity: 0;
+  }
 }
 .module--projetList--titles {
 
   position: relative;
 
-  .containMe;
-	min-height: 100vh;
   list-style-type: none;
   z-index: 101;
 
   // le padding est sur les éléments intérieurs
-  padding: 0;
   margin-bottom:  @t-margin*2;
 
   pointer-events: none;
@@ -574,14 +654,15 @@ main {
 
 	.module--projetList--titles--projetName {
 
-    @t-vignettesize: 33.333%;
 
     position: relative;
     float: left;
 
+    @t-vignettesize: 100%;
     width: @t-vignettesize;
+    padding: 0 0 @t-vignettesize/2.5;
+
     height: 0;
-    padding: 0 0 @t-vignettesize/1.6;
 
     overflow: visible;
 		transition: opacity .3s ease-out;
@@ -593,6 +674,19 @@ main {
             transition-duration: 0.8s;
 
     pointer-events: auto;
+
+
+    @media @md {
+      @t-vignettesize: 50%;
+      width: @t-vignettesize;
+      padding: 0 0 @t-vignettesize/2;
+    }
+    @media @lg {
+      @t-vignettesize: 33.333%;
+      width: @t-vignettesize;
+      padding: 0 0 @t-vignettesize/1.6;
+    }
+
 
     &.is--visited {
       .module--projetList--titles--projetName--links--name {

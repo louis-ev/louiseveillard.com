@@ -74,6 +74,7 @@
 
       .module--projet--header--text--name {
   			.projet--name;
+  			display: inline-block;
       }
 
       .module--projet--header--text--colLeft {
@@ -152,10 +153,16 @@
       align-items: center;
       justify-content: center;
 
-      img {
+      > img {
         width:  100%;
         height: auto;
+
+        // le relative permet d'utiliser la flexbox pour aligner l'élément au centre du div
         position: relative;
+
+        html:not(.js) & {
+
+        }
       }
     }
 
@@ -323,11 +330,6 @@
       }
 		}
 
-  	img, video {
-    	width: 100%;
-  		max-width: 100%;
-  		height: auto;
-  	}
   	figure {
   		margin: 0;
   	}

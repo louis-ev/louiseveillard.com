@@ -7,4 +7,4 @@ Text:
 ### Introduction
 
 # Bonjour, je m’appelle  Louis Eveillard et je suis designer indépendant à Paris.
-## Je conçois et réalise des (link: #sites text: sites web), des (link: #objets-interactifs text: objets interactifs), des (link: #vr text: applications en réalité virtuelle) et des (link: #outils-pedagogiques text: outils pédagogiques).  Et (link: #autres text: d'autres choses) aussi.
+## Je conçois et réalise des (link: #sites text: sites web), des (link: #objets-interactifs text: objets interactifs), des (link: #vr text: applications en réalité virtuelle) et des (link: #outils-pedagogiques text: outils pédagogiques).  Et (link: #autres text: d'autres choses) aussi.

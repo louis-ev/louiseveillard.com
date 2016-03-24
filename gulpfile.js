@@ -16,7 +16,6 @@ Managing more than one LESS/CSS is made with @imports in LESS.
 
 var pluginsScripts = [
   'bower_components/jquery/dist/jquery.js',
-  'bower_components/bootstrap/dist/js/bootstrap.js',
   'bower_components/isotope/dist/isotope.pkgd.min.js',
   'bower_components/lazysizes/plugins/bgset/ls.bgset.min.js',
   'bower_components/lazysizes/plugins/optimumx/ls.optimumx.min.js',
