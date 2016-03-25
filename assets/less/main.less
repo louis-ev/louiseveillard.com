@@ -74,7 +74,11 @@ html {
 }
 
 .largeText {
-	font-size: 	1.4em;
+	font-size: 	1em;
+
+	@media @md {
+  	font-size: 	1.3em;
+  }
 }
 .mediumText {
 	font-size: 	1.4em;
@@ -104,6 +108,15 @@ em {
   @media @md {
     padding: 0 @t-margin * 2;
   }
+}
+.rowDecale {
+	margin: 150px auto 10vh;
+	max-width: 26em;
+
+	@media @lg {
+		margin: 22vh	7% 16vh 33.333% ;
+	}
+
 }
 
 body {
@@ -296,16 +309,7 @@ a:focus {
 
 	.module--intro--textblock {
 
-		margin: 150px auto 100px;
-		max-width: 26em;
-
-    @media @md {
-
-    }
-
-		@media @lg {
-  		margin: 22vh	7% 16vh 33.333% ;
-		}
+    .rowDecale;
 	}
 
   h3 {
@@ -539,11 +543,7 @@ main {
 
   .module--infos--textblock {
 
-  	width: 	auto;
-
-  	margin: 0 auto;
-  	margin-top:   22vh;
-  	margin-left: 33.333%;
+    .rowDecale;
 
   }
 
@@ -597,8 +597,12 @@ main {
 
 
 .projet--number {
-	font-size:  7rem;
+	font-size:  5rem;
 	.strong;
+
+	@media @md {
+  	font-size:  7rem;
+	}
 }
 .projet--name {
 	color: #fff;
@@ -733,8 +737,9 @@ main {
 
     	&--name {
 
+      	.projet--name;
+
         color: #fff;
-        font-size: 	1.3em;
 
         line-height:  1.2;
 

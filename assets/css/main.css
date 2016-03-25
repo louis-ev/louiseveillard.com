@@ -452,7 +452,12 @@ html {
   box-sizing: inherit;
 }
 .largeText {
-  font-size: 1.4em;
+  font-size: 1em;
+}
+@media only screen and (min-width: 48em) {
+  .largeText {
+    font-size: 1.3em;
+  }
 }
 .mediumText {
   font-size: 1.4em;
@@ -469,6 +474,15 @@ em {
 @media only screen and (min-width: 48em) {
   .containMe {
     padding: 0 32px;
+  }
+}
+.rowDecale {
+  margin: 150px auto 10vh;
+  max-width: 26em;
+}
+@media only screen and (min-width: 62em) {
+  .rowDecale {
+    margin: 22vh	7% 16vh 33.333% ;
   }
 }
 body {
@@ -630,7 +644,7 @@ html.js body.is--loading .module--navbar {
   }
 }
 .module--intro .module--intro--textblock {
-  margin: 150px auto 100px;
+  margin: 150px auto 10vh;
   max-width: 26em;
 }
 @media only screen and (min-width: 62em) {
@@ -898,10 +912,13 @@ main video {
   line-height: 1.6;
 }
 .module--infos .module--infos--textblock {
-  width: auto;
-  margin: 0 auto;
-  margin-top: 22vh;
-  margin-left: 33.333%;
+  margin: 150px auto 10vh;
+  max-width: 26em;
+}
+@media only screen and (min-width: 62em) {
+  .module--infos .module--infos--textblock {
+    margin: 22vh	7% 16vh 33.333% ;
+  }
 }
 .module--infos a {
   display: inline;
@@ -970,12 +987,22 @@ main video {
   outline: 1px solid #ACA8A5;
 }
 .projet--number {
-  font-size: 7rem;
+  font-size: 5rem;
   font-family: 'gt-c-b';
+}
+@media only screen and (min-width: 48em) {
+  .projet--number {
+    font-size: 7rem;
+  }
 }
 .projet--name {
   color: #fff;
-  font-size: 1.4em;
+  font-size: 1em;
+}
+@media only screen and (min-width: 48em) {
+  .projet--name {
+    font-size: 1.3em;
+  }
 }
 .module--projetList {
   position: relative;
@@ -1066,7 +1093,7 @@ html.js body.is--loading .module--projetList {
   text-align: center;
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--index {
-  font-size: 7rem;
+  font-size: 5rem;
   font-family: 'gt-c-b';
   font-family: 'gt-c', Helvetica, Arial, sans-serif;
   display: block;
@@ -1084,9 +1111,14 @@ html.js body.is--loading .module--projetList {
   line-height: 1;
   z-index: 0;
 }
+@media only screen and (min-width: 48em) {
+  .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--index {
+    font-size: 7rem;
+  }
+}
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--name {
+  font-size: 1em;
   color: #fff;
-  font-size: 1.3em;
   line-height: 1.2;
   display: block;
   position: absolute;
@@ -1099,6 +1131,11 @@ html.js body.is--loading .module--projetList {
   padding-left: 2.5%;
   line-height: 1.4;
   text-align: left;
+}
+@media only screen and (min-width: 48em) {
+  .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--name {
+    font-size: 1.3em;
+  }
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links::before {
   content: "";
@@ -1543,8 +1580,13 @@ body:not(.is--loading) .module--projet[data-visuel=''].module--projet .module--p
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--name {
   color: #fff;
-  font-size: 1.4em;
+  font-size: 1em;
   display: inline-block;
+}
+@media only screen and (min-width: 48em) {
+  .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--name {
+    font-size: 1.3em;
+  }
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colLeft {
   float: left;
