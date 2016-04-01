@@ -451,19 +451,35 @@ html {
 *:after {
   box-sizing: inherit;
 }
-.largeText {
-  font-size: 1em;
+.projet--index {
+  font-size: 5rem;
 }
 @media only screen and (min-width: 48em) {
-  .largeText {
-    font-size: 1.3em;
+  .projet--index {
+    font-size: 7rem;
   }
 }
-.mediumText {
-  font-size: 1.4em;
+.projet--index_small {
+  font-size: 1.15rem;
+  font-family: 'gt-c-b';
 }
-em {
-  font-style: normal;
+.projet--name {
+  font-size: 1rem;
+}
+@media only screen and (min-width: 48em) {
+  .projet--name {
+    font-size: 1.3rem;
+  }
+}
+.projet--chapeau {
+  font-size: 1.2rem;
+  max-width: 60.5ch;
+}
+@media only screen and (min-width: 48em) {
+  .projet--chapeau {
+    font-size: 1.4rem;
+    max-width: 51.85714286ch;
+  }
 }
 .containMe {
   width: 100%;
@@ -478,7 +494,6 @@ em {
 }
 .rowDecale {
   margin: 150px auto 10vh;
-  max-width: 26em;
 }
 @media only screen and (min-width: 62em) {
   .rowDecale {
@@ -525,6 +540,9 @@ body.is--ajax_loading .module--projetList--titles .module--projetList--titles--p
 }
 strong,
 .strong {
+  font-family: 'gt-c-b';
+}
+em {
   font-family: 'gt-c-b';
 }
 h1,
@@ -645,7 +663,6 @@ html.js body.is--loading .module--navbar {
 }
 .module--intro .module--intro--textblock {
   margin: 150px auto 10vh;
-  max-width: 26em;
 }
 @media only screen and (min-width: 62em) {
   .module--intro .module--intro--textblock {
@@ -908,12 +925,11 @@ main video {
   letter-spacing: .06rem;
 }
 .module--infos h1 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.6;
 }
 .module--infos .module--infos--textblock {
   margin: 150px auto 10vh;
-  max-width: 26em;
 }
 @media only screen and (min-width: 62em) {
   .module--infos .module--infos--textblock {
@@ -985,24 +1001,6 @@ main video {
 }
 .module--infos a:focus[data-rubrique="autres"] {
   outline: 1px solid #ACA8A5;
-}
-.projet--number {
-  font-size: 5rem;
-  font-family: 'gt-c-b';
-}
-@media only screen and (min-width: 48em) {
-  .projet--number {
-    font-size: 7rem;
-  }
-}
-.projet--name {
-  color: #fff;
-  font-size: 1em;
-}
-@media only screen and (min-width: 48em) {
-  .projet--name {
-    font-size: 1.3em;
-  }
 }
 .module--projetList {
   position: relative;
@@ -1094,8 +1092,6 @@ html.js body.is--loading .module--projetList {
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--index {
   font-size: 5rem;
-  font-family: 'gt-c-b';
-  font-family: 'gt-c', Helvetica, Arial, sans-serif;
   display: block;
   position: absolute;
   top: 48%;
@@ -1117,7 +1113,7 @@ html.js body.is--loading .module--projetList {
   }
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--name {
-  font-size: 1em;
+  font-size: 1rem;
   color: #fff;
   line-height: 1.2;
   display: block;
@@ -1134,7 +1130,7 @@ html.js body.is--loading .module--projetList {
 }
 @media only screen and (min-width: 48em) {
   .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--name {
-    font-size: 1.3em;
+    font-size: 1.3rem;
   }
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links::before {
@@ -1530,7 +1526,7 @@ html.js body.is--loading .module--projetList {
   -webkit-transform: translate3d(0, 10vh, 0);
           transform: translate3d(0, 10vh, 0);
 }
-body:not(.is--loading) .module--projet[data-visuel=''].module--projet .module--projet--header {
+body:not(.is--loading)[data-visuel=''] .module--projet .module--projet--header {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
@@ -1557,9 +1553,9 @@ body:not(.is--loading) .module--projet[data-visuel=''].module--projet .module--p
   margin: 0;
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--index {
-  display: inline-block;
   font-size: 1.15rem;
   font-family: 'gt-c-b';
+  display: inline-block;
   width: 2em;
   margin-right: 0;
 }
@@ -1579,21 +1575,32 @@ body:not(.is--loading) .module--projet[data-visuel=''].module--projet .module--p
   color: #ACA8A5;
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--name {
-  color: #fff;
-  font-size: 1em;
+  font-size: 1rem;
   display: inline-block;
 }
 @media only screen and (min-width: 48em) {
   .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--name {
-    font-size: 1.3em;
+    font-size: 1.3rem;
   }
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colLeft {
-  float: left;
-  width: 66%;
-  font-size: 1.4em;
+  font-size: 1.2rem;
+  max-width: 60.5ch;
   padding-right: 32px;
   margin-top: 8px;
+  margin-bottom: 32px;
+}
+@media only screen and (min-width: 48em) {
+  .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colLeft {
+    font-size: 1.4rem;
+    max-width: 51.85714286ch;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colLeft {
+    float: left;
+    width: 66%;
+  }
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colLeft > *:first-child {
   margin-top: 0;
@@ -1602,10 +1609,14 @@ body:not(.is--loading) .module--projet[data-visuel=''].module--projet .module--p
   margin-top: 8px;
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colRight {
-  float: left;
-  width: 34%;
   margin-top: 16px;
   line-height: 1.71;
+}
+@media only screen and (min-width: 48em) {
+  .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colRight {
+    float: left;
+    width: 34%;
+  }
 }
 .module--projet .module--projet--header .module--projet--header--text .module--projet--header--text--colRight :first-child {
   margin-top: 0;
@@ -1678,11 +1689,11 @@ html.js .module--projet .module--projet--visuel > .module--projet--visuel--insid
 html.js .module--projet .module--projet--visuel > .module--projet--visuel--inside.lazyloaded {
   opacity: 1;
 }
-.module--projet[data-visuel='zoomedIn'] .module--projet--header {
+body[data-visuel='zoomedIn'] .module--projet .module--projet--header {
   -webkit-transform: translate3d(0, 56vh, 0);
           transform: translate3d(0, 56vh, 0);
 }
-.module--projet[data-visuel='zoomedIn'] .module--projet--header ~ .module--projet--text:nth-of-type(1) {
+body[data-visuel='zoomedIn'] .module--projet .module--projet--header ~ .module--projet--text:nth-of-type(1) {
   -webkit-transform: translate3d(0, 56vh, 0);
           transform: translate3d(0, 56vh, 0);
 }
@@ -1705,22 +1716,22 @@ html.js .module--projet .module--projet--visuel > .module--projet--visuel--insid
   transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
   /* custom */
 }
-.module--projet[data-visuel='zoomedIn'] .module--projet--visuel--inside {
+body[data-visuel='zoomedIn'] .module--projet .module--projet--visuel--inside {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
-.module--projet[data-visuel='zoomedIn'] .FigureImage-lazy {
+body[data-visuel='zoomedIn'] .module--projet .FigureImage-lazy {
   -webkit-transform: translate3d(0, 0%, 0);
           transform: translate3d(0, 0%, 0);
   opacity: 1;
 }
-body.is--ajax_loading .module--projet[data-visuel='zoomedIn'] {
+body.is--ajax_loading[data-visuel='zoomedIn'] .module--projet {
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
 }
-body.is--ajax_loading .module--projet[data-visuel='zoomedIn'] .module--projet--visuel--inside,
-body.is--ajax_loading .module--projet[data-visuel='zoomedIn'] .FigureImage-lazy {
+body.is--ajax_loading[data-visuel='zoomedIn'] .module--projet .module--projet--visuel--inside,
+body.is--ajax_loading[data-visuel='zoomedIn'] .module--projet .FigureImage-lazy {
   -webkit-transition: none;
   -o-transition: none;
   transition: none;
@@ -1950,12 +1961,17 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   padding-top: 0rem;
 }
 .module--projet .module--projet--text h2 {
-  font-size: 1.4em;
-  max-width: 31.42857143em;
-  max-width: 47.14285714ch;
+  font-size: 1.2rem;
+  max-width: 60.5ch;
   margin: 0 auto;
   padding-top: 1em;
   padding-bottom: .5em;
+}
+@media only screen and (min-width: 48em) {
+  .module--projet .module--projet--text h2 {
+    font-size: 1.4rem;
+    max-width: 51.85714286ch;
+  }
 }
 .module--projet .module--projet--text h3 {
   font-size: .7rem;
@@ -1964,6 +1980,9 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   margin-bottom: 0;
   text-transform: uppercase;
   letter-spacing: .06rem;
+}
+body[data-visuel='zoomedIn'] .module--navbar {
+  opacity: 0;
 }
 .module--cv {
   position: relative;

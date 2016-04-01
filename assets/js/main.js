@@ -477,8 +477,10 @@ var theProjetView = {
 
   zoomIn : function( goZoom) {
     $parentProjet = $( '.module--projet');
-    $parentProjet.attr( 'data-visuel', goZoom ? 'zoomedIn' : '');
-    $("body").css( "overflow", goZoom ? 'hidden' : '');
+    $("body")
+      .attr( 'data-visuel', goZoom ? 'zoomedIn' : '')
+      .css( "overflow", goZoom ? 'hidden' : '')
+    ;
     if( scrollY > 0) {
       $('html, body').animate({scrollTop : 0},400, function() {
       });
@@ -530,7 +532,6 @@ var pjaxNav = {
         // click "PROJETS"
         if( elem.is("[data-goto=projets]")) {
           if( $(".module--projetList").length > 0) {
-
             $("body").css("pointer-events", "none");
             $('html, body').animate({
               scrollTop: $(".module--projetList").offset().top
@@ -604,7 +605,6 @@ var pjaxNav = {
   loadInPJAX : function( thisURL, withAnim) {
 
 		$("body").addClass("is--ajax_loading");
-
   	console.log("PJAX to : " + thisURL);
   	if( typeof _gaq !== 'undefined') { _gaq.push(['_trackPageview', thisURL]); }
   	setTimeout( function() {

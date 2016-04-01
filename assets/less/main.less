@@ -73,18 +73,32 @@ html {
     box-sizing: inherit;
 }
 
-.largeText {
-	font-size: 	1em;
-
+.projet--index {
+	font-size:  5rem;
 	@media @md {
-  	font-size: 	1.3em;
+  	font-size:  7rem;
+	}
+}
+.projet--index_small {
+  font-size:  1.15rem;
+  .strong;
+}
+
+.projet--name {
+	font-size: 	1rem;
+	@media @md {
+  	font-size: 	1.3rem;
   }
 }
-.mediumText {
-	font-size: 	1.4em;
-}
-em {
-  font-style: normal;
+
+.projet--chapeau {
+	font-size: 	1.2rem;
+  max-width: 66 * 1.1 / 1.2ch;
+
+	@media @md {
+  	font-size: 	1.4rem;
+    max-width: 66 * 1.1 / 1.4ch;
+	}
 }
 
 .clearfix() {
@@ -111,8 +125,6 @@ em {
 }
 .rowDecale {
 	margin: 150px auto 10vh;
-	max-width: 26em;
-
 	@media @lg {
 		margin: 22vh	7% 16vh 33.333% ;
 	}
@@ -170,6 +182,9 @@ body {
 
 strong, .strong {
   .gt-bold;
+}
+em {
+  .strong;
 }
 
 h1, h2, h3, h4, h5, h6, b {
@@ -308,7 +323,6 @@ a:focus {
   }
 
 	.module--intro--textblock {
-
     .rowDecale;
 	}
 
@@ -537,14 +551,21 @@ main {
   }
 
   h1 {
-  	font-size: 	1.8rem;
+  	font-size: 	1.6rem;
     line-height: 1.6;
   }
 
+
+  h1 {
+  }
+
+  h2, h3, p, ul, ol {
+    //max-width: 36ch;
+  }
+
+
   .module--infos--textblock {
-
     .rowDecale;
-
   }
 
 
@@ -593,20 +614,6 @@ main {
   	.styleLink1( "autres", @c-autres);
 
 	}
-}
-
-
-.projet--number {
-	font-size:  5rem;
-	.strong;
-
-	@media @md {
-  	font-size:  7rem;
-	}
-}
-.projet--name {
-	color: #fff;
-	.largeText;
 }
 
 
@@ -714,8 +721,8 @@ main {
       text-align: center;
 
     	&--index {
-    		.projet--number;
-        .gt-reg;
+
+    		.projet--index;
     		display: block;
     		position: absolute;
 

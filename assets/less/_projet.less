@@ -29,11 +29,10 @@
 
     transform: translate3d( 0, 10vh, 0);
 
-
     // à l'arrivée (quand is--loading), afficher l'image non collapsed
     // quand le body est loading, on collapse l'image
     // sans js on ne peut pas désactiver le zoomedin
-    body:not(.is--loading) .module--projet[data-visuel='']& {
+    body:not(.is--loading)[data-visuel=''] & {
       transform: translate3d( 0, 0, 0);
     }
 
@@ -54,9 +53,10 @@
 
       .module--projet--header--text--index {
 
+        .projet--index_small;
+
     		display: inline-block;
-        font-size:  1.15rem;
-        .strong;
+
     		width:  2em;
     		margin-right: 0;
 
@@ -78,13 +78,17 @@
       }
 
       .module--projet--header--text--colLeft {
-        float: left;
-        width: 66%;
 
-        .mediumText;
+        .projet--chapeau;
 
         padding-right: @t-margin*2;
         margin-top: @t-margin/2;
+        margin-bottom:  @t-margin*2;
+
+        @media @md {
+          float: left;
+          width: 66%;
+        }
 
         > *:first-child {
           margin-top: 0;
@@ -95,10 +99,13 @@
 
       }
       .module--projet--header--text--colRight {
-        float: left;
-        width:  34%;
         margin-top: @t-margin;
   			line-height:  1.71;
+
+        @media @md {
+          float: left;
+          width:  34%;
+        }
 
         :first-child {
           margin-top: 0;
@@ -195,7 +202,7 @@
 	// effet d'animation au click
 
   // avec JS, après chargement, full screen image
-  &[data-visuel='zoomedIn'] .module--projet--header {
+  body[data-visuel='zoomedIn'] & .module--projet--header {
     transform: translate3d( 0, 100vh - @t-bandeauImage, 0);
 
     ~ .module--projet--text:nth-of-type(1) {
@@ -220,17 +227,17 @@
 
   }
 
-  &[data-visuel='zoomedIn'] .module--projet--visuel--inside {
+  body[data-visuel='zoomedIn'] & .module--projet--visuel--inside {
     transform: translate3d( 0, 0, 0);
 
   }
-  &[data-visuel='zoomedIn'] .FigureImage-lazy {
+  body[data-visuel='zoomedIn'] & .FigureImage-lazy {
     transform: translate3d( 0, 0%, 0);
     opacity: 1;
   }
 
 
-  body.is--ajax_loading &[data-visuel='zoomedIn'] {
+  body.is--ajax_loading[data-visuel='zoomedIn'] & {
     transition: none;
     .module--projet--visuel--inside, .FigureImage-lazy {
       transition: none;
@@ -403,12 +410,13 @@
   	}
 
     h2 {
-      .mediumText;
-    	max-width: 44em / 1.4;
-    	max-width: 66ch / 1.4;
+
+      .projet--chapeau;
     	margin: 0 auto;
-      	padding-top: 1em;
-      	padding-bottom: .5em;
+    	padding-top: 1em;
+    	padding-bottom: .5em;
+
+
     }
 
     h3 {
@@ -418,6 +426,9 @@
 	}
 }
 
+body[data-visuel='zoomedIn'] .module--navbar {
+  opacity: 0;
+}
 
 .styleProjet( @rubrique, @color ) {
   body[data-rubrique= @{rubrique}] {
