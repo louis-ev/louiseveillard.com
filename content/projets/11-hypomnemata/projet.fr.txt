@@ -1,0 +1,111 @@
+Title: Hypomnémata
+
+----
+
+Type: autres
+
+----
+
+Annee: 2012
+
+----
+
+Header: 
+
+Un projet expérimental portant sur l'obsession à la collecte de données personnelles (par les individus ou par des tiers) et sur ce qu'elles peuvent révéler de chacun de nous. Captées par une application créée pour l'occasion, ces données sont transformées en des représentations grand format imprimées très détaillées qui évoquent, à différents degrés d'abstraction, des comportements et des situations de la vie quotidienne.
+
+« Ce que Google et la NSA savent de moi que j'ignore. »
+
+----
+
+Headercol2: 
+
+### thème
+## Expériences de captation/représentation d’informations
+### contexte
+## Projet de diplôme de 5<sup>è</sup> année à l'ésad d'Amiens, section design graphique.
+### année
+## 2012
+### Crédits
+## L'application est développée en Processing et en Java avec Eclipse.
+## Les 6 posters 60*80cm sont imprimés sur des feuilles de papier Arctic Paper avec des encres pigmentaires.
+
+----
+
+Text: 
+
+Le déferlement d’appareils numériques portatifs dans notre environnement nous permet de collecter des quantités impressionnantes d’informations personnelles, informations qui se révèlent parfois être tout autant anecdotiques qu’intimes. Cette pratique s’apparente à l’écriture des hypomnemata, terme employé par le philosophe Michel Foucault pour désigner des dispositifs capables d’enregistrer ce qui a été dit, entendu, vu ou même lu dans le but de « constituer en quelque sorte “du passé”, vers lequel il est toujours possible de faire retour et retraite. »
+
+(image: hyp-large-2.jpg)
+
+Ce potentiel encore assez peu exploité ne doit cependant pas nous faire oublier les limites de ces nouveaux outils : les informations captées et enregistrées sont rarement pertinentes pour les individus qu’elles concernent. Plus gênant encore, ces appareils ne sont pas douées de la capacité de réinterprétation ou d’oubli propre à la mémoire humaine. À l’heure où de plus en plus d’échanges entre les hommes ont lieu sur des plate-formes dématérialisées, il est devenu à la fois difficile et vital de rester maître de l’image que l’on veut donner de soi, ce qui a tendance à développer un climat de méfiance autour de ces nouvelles pratiques d’écriture de soi.
+
+(image: hyp-large-3.jpg)
+
+Ainsi, les incarnations de la mémoire dans des objets numériques ne doivent pas chercher à se substituer au dispositif mnésique. Au contraire, elles doivent plutôt se former en synergie avec nos souvenirs de manière à apporter des portes d’entrées capables de déclencher le rappel d’un évènement précieux sans chercher à l’émuler. Dans quelle direction développer ces systèmes ? Et sous quelle forme devrait-on représenter ces données pour mieux les appréhender ? Ce projet vise à interroger ces nouveaux supports de mémoire par l’élaboration de plusieurs expériences de captation/restitution d’informations biographiques.
+
+(image: hyp-large-4.jpg)
+
+(image: hyp-large-5.jpg)
+
+(image: hyp-large-6.jpg)
+
+(image: hyp-large-8.jpg)
+
+(image: hyp-large-9.jpg)
+
+(image: hyp-large-11.jpg)
+
+(image: hyp-large-12.jpg)
+
+(image: hyp-large-13.jpg)
+
+(image: hyp-large-14.jpg)
+
+(image: hyp-large-15.jpg)
+
+(image: hyp-large-16.jpg)
+
+(image: hyp-large-17.jpg)
+
+(image: hyp-large-18.jpg)
+
+(image: hyp-large-19.jpg)
+
+(image: hyp-large-20.jpg)
+
+(image: hyp-large-21.jpg)
+
+(image: hyp-large-22.jpg)
+
+(image: hyp-large-23.jpg)
+
+(image: hyp-large-24.jpg)
+
+(image: hyp-large-25.jpg)
+
+Préalablement à ce travail et dans le cadre du diplôme du DNSEP en 2012 à l’ésad d’Amiens, j’ai réalisé un mémoire portant sur les appareils numériques mobiles et leurs interfaces graphiques. Ces nouveaux objets ont pris une place centrale dans la vie de beaucoup d’entre nous en l’espace de quelques années à peine, à tel point qu’ils sont devenus pour certains des symboles d’indépendance et des objets particulièrement rassurants. Les interfaces graphiques qu’ils affichent sur leurs écrans tactiles multipoints proposent de nouvelles manières d’interagir avec nos ordinateurs et remettent ainsi en question la métaphore du bureau que nous connaissons depuis presque trente ans.
+
+(file: louis-eveillard_interfaces-en-mouvements.pdf text: Télécharger le PDF de ce mémoire.)
+
+(image: hyp-large-26.jpg)
+
+(image: hyp-large-27.jpg)
+
+(image: hyp-large-28.jpg)
+
+(image: hyp-large-29.jpg)
+
+(image: hyp-large-30.jpg)
+
+(image: hyp-large-31.jpg)
+
+(image: hyp-large-32.jpg)
+
+----
+
+Cover: 
+
+----
+
+Imagecover: hyp-large-1.jpg

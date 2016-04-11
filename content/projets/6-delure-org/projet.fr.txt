@@ -40,7 +40,7 @@ Cover:
 
 ----
 
-Imagecover: association-delure.png
+Imagecover: delureorg_couverture.jpg
 
 ----
 
