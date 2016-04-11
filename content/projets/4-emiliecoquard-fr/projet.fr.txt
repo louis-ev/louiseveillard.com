@@ -10,7 +10,7 @@ La page d'accueil, sobre et colorée, donne l'atmosphère des projets présenté
 
 ---
 
-Les projets peuvent être filtrés par catégorie pour permettre d'orienter un visiteur vers les projets qui l'intéresse davantage.
+Les projets peuvent être filtrés par catégorie pour permettre d'orienter un visiteur vers les projets qui l'intéressent davantage.
 
 (video: mp4: emiliecoquardfr-tri-categorie-web_1.mp4 webm: emiliecoquardfr-tri-categorie-web_1.webm class: media-video lazyload capture_siteweb caption: Sélection d'une catégorie.)
 

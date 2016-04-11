@@ -35,6 +35,10 @@ c::set('lazyloadimages', true);
 c::get('optimumx', 1.6);
 
 c::set('smartypants', true);
+c::set('smartypants.doublequote.open', '&#8220;');                              // Openning smart double-quotes.
+c::set('smartypants.doublequote.close', '&#8221;');                             // Closing smart double-quotes.
+c::get('smartypants.space.frenchquote', '&#160;');                              // Space inside french quotes. "Voici la «_chose_» qui m'a attaqué."
+
 c::set('kirby.extension.videoext.video_tag', true);
 c::set('kirby.extension.videoext.class', 'media-video lazyload');
 c::set('kirby.extension.videoext.caption_class', 'media-video');

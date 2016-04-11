@@ -8,11 +8,11 @@ L'association des Rencontres de Lure est renommée pour l'organisation des cél�
 
  ----
 
-Pour retranscrire ces deux temps, la page d'accueil possède deux modes d'affichage : un mode "été", actif pendant la période précédent les Rencontres de Lure, indique leur thématique ainsi qu'un aperçu des intervenants.
+Pour retranscrire ces deux temps, la page d'accueil possède deux modes d'affichage : un mode "été", actif pendant la période précédant les Rencontres de Lure, indique leur thématique et donne un aperçu des intervenants.
 
 (image: delureorg-mode_ete.png legende: Le mode "été" du site, avec des renvois rapides vers les sections dédiés sur le site)
 
-L'autre mode, le mode "année", présente les événements à venir ou ayant eu lieu ainsi qu'un petit texte d'introduction des activités de l'association. Le basculement entre les deux modes se fait grâce à une case à cocher dans la partie "admin" du site.
+L'autre mode, le mode "année", présente les événements à venir ou ayant déjà eu lieu, ainsi qu'un petit texte d'introduction des activités de l'association. Le basculement entre les deux modes se fait grâce à une case à cocher dans la partie "admin" du site.
 
 (image: delureorg-mode_annee.png legende: Le mode "année", avec le texte d'introduction et la timeline.)
 

@@ -29,7 +29,7 @@ Text:
 
 (image: ssc-large-2.jpg legende: Prototype du tissu constitué de 750 cellules chauffantes cousues.)
 
-La surface textile est aussi lien sensible. Les échanges peuvent se faire de deux façons : dans le temps, lorsque le tissu enregistre une trace laissée par le passage d'une main ou d'un doigt et la reproduit à intervalles régulier dans le même espace. Mais Slowscreen peut également fonctionner en temps réel, en permettant à deux personnes situés à des endroits différents de s'envoyer des messages sous forme de motifs.
+La surface textile est aussi lien sensible. Les échanges peuvent se faire de deux façons : dans le temps, lorsque le tissu enregistre une trace laissée par le passage d'une main ou d'un doigt et la reproduit à intervalles régulier dans le même espace. Mais Slowscreen peut également fonctionner en temps réel, en permettant à deux personnes situées à des endroits différents de s'envoyer des messages sous forme de motifs.
 
 <small>Publié dans le magazine (link: http://etapes.com/ text: étapes:) numéro 216 (octobre 2013).</small>
 <small>Publié dans le livre (link: http://www.pearson.fr/livre/?GCOI=27440100443180 text: Projets créatifs avec Arduino) (août 2014).</small>
@@ -40,7 +40,7 @@ La surface textile est aussi lien sensible. Les échanges peuvent se faire de de
 
 (image: ssc-tissu-mov-large.gif)
 
-(image: ssc-large-5.jpg legende: Le dos du tissu. Chaque cellule est composé de fil résistif, de fil conducteur ainsi que d'une diode.)
+(image: ssc-large-5.jpg legende: Le dos du tissu. Les cellules sont composées de fil résistif, de fil conducteur et de diodes.)
 
 (image: ssc-large-6.jpg)
 

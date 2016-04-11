@@ -14,15 +14,15 @@ Point à Point se déroule de la manière suivante :
 
 (image: point-a-point_installation_batisseurs-possibles.jpg legende: Installation de Point à point aux Bâtisseurs de Possibles en juin 2015.)
 
-(image: pasted-image-10668.jpg legende: Les outils à dispositions pour les participants, ici aux Puces typo 2015.)
+(image: pasted-image-10668.jpg legende: Les outils à dispositions des participants, ici aux Puces typo 2015.)
 
-(image: pasted-image-10724.jpg legende: Une participant en train de remplir la feuille des modules.)
+(image: pasted-image-10724.jpg legende: Une participante en train de remplir la feuille des modules.)
 
 (image: point-a-point_installation_batisseurs-possibles-2.jpg legende: Un enfant relie les points de la feuille de modules aux Bâtisseurs de Possibles en juin 2015.)
 
 (image: pucestypo8.jpg legende: Un dessin en train d'être scanné.)
 
-(image: pucestypo6.jpg legende: Après l'interprétation par le programme, le tracé des modules devient alphabet et expression ici les mots "puces typo". )
+(image: pucestypo6.jpg legende: Après l'interprétation par le programme, le tracé des modules se transforme en un alphabet complet qui est utilisé pour écrire des mots.)
 
 <figure class="media-tweet">
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Une nouvelle famille de caractères vient d’être dessinée par un visiteur des <a href="https://twitter.com/hashtag/pucestypo2015?src=hash">#pucestypo2015</a> ! <a href="http://t.co/3N9Xzydmsg">pic.twitter.com/3N9Xzydmsg</a></p>— pointapoint (@pointapoint) <a href="https://twitter.com/pointapoint/status/604702304701399040">30 mai 2015</a>
@@ -67,7 +67,7 @@ Annee: 2015
 
 ----
 
-Header: Une installation interactive pour découvrir les principes de construction de familles de caractère. Point à point a été conçu pour animer des ateliers pour enfant.
+Header: Une installation interactive pour découvrir les principes de la construction d'une famille de caractères. Point à point a été conçu pour animer des ateliers pour enfants.
 
 ----
 

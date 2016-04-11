@@ -18,7 +18,7 @@ Text:
 
 ## La publication des chercheurs
 
-Premier prototype réalisé en 2014, La Publication des chercheurs a été mis en situation et utilisé par une classe de primaire pendant 3 mois. Cet artefact est composé d’un objet en bois pour la prise de vue, constitué d’une GoPro et d’un plateau en bois surmonté d’une arche, et d’une interface web sur laquelle sont renvoyées toutes les photos prises par les élèves. Plusieurs itérations ont été développées en collaboration avec les élèves.
+Premier prototype réalisé en 2014, << La Publication des chercheurs >> a été mise en situation et utilisée par une classe de primaire pendant 3 mois. Cette installation est composée d'une part d’un objet en bois, d'une GoPro et d’un plateau surmonté d’une arche pour la prise de vue, et d'autre part d’une interface sur écran dans laquelle sont renvoyées toutes les photos prises par les élèves. Plusieurs itérations ont été développées en collaboration avec les élèves.
 
 (image: docschool-large-1.jpg legende: Le dispositif de documentation dans la classe à l’école des Alouettes à Paris.)
 
