@@ -1,6 +1,6 @@
 <?php if(!kirby()->request()->ajax()): ?>
   <!DOCTYPE html>
-  <html lang="<?php echo $site->language() ?>">
+  <html lang="<?php echo $site->language() ?>" class="no-js">
   <head>
 
     <meta charset="utf-8" />
