@@ -36,31 +36,12 @@ if( param('lang') !== 'en'):
 							</div>
 							<ul class="description">
 				    		<li>Designer indépendant et développeur front-end à Paris.</li>
-					    	<li>Co-fondateur de <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, un collectif dans la réalité virtuelle.</li>
-								<li>Membre du groupe de recherche <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l'atelier des chercheurs</a>.</li>
-                <li>Coorganisateur au <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>FAB</a>, association à but non lucratif dédiée la promotion d'outils libres pour la création.</li>
+					    	<li>Co-fondateur de <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, un collectif œuvrant la réalité virtuelle.</li>
+								<li>Membre du groupe de recherche <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l’atelier des chercheurs</a>.</li>
+                <li>Coorganisateur au <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>Free Art Bureau</a>, association à but non lucratif dédiée la promotion d’outils libres pour la création.</li>
 							</ul>
 				    </div>
 		    	</div>
-
-<!--
-
-	    	sites sur lesquels j'ai travaillé :
-		    	http://chevalvert.fr/ (animations, responsive, typographie, navigation, code)
-		    	http://newsoftheartworld.com/ (responsive, agenda culturel dynamique, code)
-		    	http://www.fraciledefrance.com/ (intégration de l'identité et des maquettes, responsive, navigation, code)
-		    	http://freeartbureau.org/sundays/ (maquette, responsive, navigation, code)
-		    	http://letricodeur.com/ (maquette, contenus, typographie, code)
-		    	http://connexe.org/ (maquette (en collaboration avec l'équipe du projet Connexe), typographie, animations, code)
-		    	http://sociablemedia.ensadlab.fr/ (maquette (avec Ferdinand Dervieux et Max Mollon), typographie, navigation, code)
-		    	http://www.beautifulseams.com/ (maquette, navigation, animations, code)
-		    	http://letricodeur.com/workshop (maquette, contenus, typographie, code)
-		    	http://algorithme.beautifulseams.com/ (maquette, contenus, typographie, code)
-		    	http://www.mfpp-origami.fr/ (maquette, typographie, responsive, navigation, code)
-		    	http://latelier-des-chercheurs.fr/ (maquette (avec Juliette Mancini et Pauline Gourlet), navigation, responsive, code)
-		    	http://www.emiliecoquard.fr/ (maquette (avec Émilie Coquard), navigation, animation, responsive, code)
-
--->
 
 				<div class="column ">
 				    <div class="content realisations">
@@ -129,6 +110,7 @@ if( param('lang') !== 'en'):
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Conférence aux <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> sur le thème <em>Chercher l’erreur – Égarements et odyssées graphiques</em> (2016).</li>
 							<li>Conférence à l'<a href="http://www.ensci.com/" target="_blank">ENSCI</a> pour la journée d'étude <em>La Fabrique des Outils</em> organisée par l'association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a> (2016).</li>
 							<li>Conférence à l'<a href="http://www.ensad.fr/" target="_blank">ENSAD</a> pour la présentation du projet de création et de réalisation de 10000 couvertures pour livres numériques (2016).</li>
 							<li>Conférence aux <a href="http://delure.org/les-a-cotes/evenements-et-workshops/mardis-de-lure-1" target="_blank" data-link='delure'>Mardis de Lure</a> à la Générale à Paris pour présenter des outils pour enseigner le design et encourager des pédagogies actives (2015).</li>
@@ -309,6 +291,7 @@ else:
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Lecture at the <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> on the topic of <em>Errors and failures in Graphic Design</em> (2016).</li>
 							<li>Lecture at <a href="http://www.ensci.com/" target="_blank">ENSCI</a> for the seminar <em>La Fabrique des Outils</em> organized by the association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a> (2016).</li>
 							<li>Lecture at <a href="http://www.ensad.fr/" target="_blank">ENSAD</a> on the 10.000 generated covers project for FeniXX (2016).</li>
 							<li>Lecture at the <a href="http://delure.org/les-a-cotes/evenements-et-workshops/mardis-de-lure-1" target="_blank" data-link='delure'>Mardis de Lure</a> at La Générale in Paris to show and discuss tools created to teach design and support reflective practice (2015).</li>
