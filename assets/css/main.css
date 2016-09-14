@@ -644,6 +644,18 @@ html.js body.is--loading .module--navbar {
 .module--navbar .module--navbar--list .module--navbar--list--item {
   display: inline-block;
 }
+.module--default {
+  width: 100%;
+  max-width: 66rem;
+  margin: 0 auto;
+  padding: 0 16px;
+  margin-top: 40px;
+}
+@media only screen and (min-width: 48em) {
+  .module--default {
+    padding: 0 32px;
+  }
+}
 .module--intro {
   width: 100%;
   max-width: 66rem;
