@@ -1,0 +1,55 @@
+Title: Panopticon
+
+----
+
+Text: 
+
+<figure class='media-video'><style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/126752534' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+</figure>
+
+## Concept Art réalisés pour le lancement du jeu
+
+(image: _1010686-1.jpg)
+
+(image: _1010687-2.jpg)
+
+(image: _1010688-3.jpg)
+
+(image: _1010692-4.jpg)
+
+(image: _1010693-5.jpg)
+
+(image: _1010694-6.jpg)
+
+----
+
+Cover: 
+
+----
+
+Imagecover: ingame-1.jpg
+
+----
+
+Header: Un jeu pour casque de Réalité Virtuelle qui place le joueur dans la situation d'un gardien de prison. Panopticon est aussi une allégorie de la surveillance mutuelle opérée inconsciemment par un utilisateur sur un autre.
+
+----
+
+Type: vr
+
+----
+
+Annee: 2015
+
+----
+
+Headercol2: 
+
+### thème
+## jeu sur casque de réalité virtuelle
+### année
+## 2015
+### prix
+## prix ARGENT catégorie *jeu* au concours Oculus VR Jam
+### équipe
+## réalisé à (link: http://panoptic-lab.com/ text: Panoptic Lab popup: yes) avec (link: http://www.juliaspiers.com/ text: Julia Spiers popup: yes) et (link: http://ferdinanddervieux.com/ text: Ferdinand Dervieux popup: yes)
