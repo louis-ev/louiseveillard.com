@@ -70,17 +70,14 @@ gulp.task('less', function() {
   return gulp.src( 'assets/less/main.less')
     .pipe(plumber({
         errorHandler: function (err) {
-          console.log(err);
+          console.log(err.message);
           this.emit('end');
         }
     }))
     .pipe(less())
     .pipe(autoprefixer({
-      browsers: [
-        'last 2 versions',
-        'android 4',
-        'opera 12'
-      ]
+      browsers: ['last 3 versions'],
+      cascade: false
     }))
     .pipe(gulp.dest('assets/css'))
     .pipe(browserSync.stream());
@@ -93,7 +90,7 @@ gulp.task('css', ['less'], function (done) {
   return gulp.src([
       'assets/css/*.css',
     ])
-    .pipe(nano({discardComments: {removeAll: true}}))
+    .pipe(nano({discardComments: {removeAll: true}, autoprefixer: false}))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('assets/production'));
 });
@@ -135,7 +132,10 @@ gulp.task('scripts', ['script-plugins'], function (done) {
 gulp.task('init-live-reload', function() {
   browserSync.init({
     proxy: localDevUrl,
-    files: ['!site/accounts/', 'site/**/*.php', 'content/**/*.txt'],
+    notify: false,
+    snippetOptions: {
+      ignorePaths: ['panel/**', 'site/accounts/**']
+    },
   });
 });
 
