@@ -1,0 +1,29 @@
+Title: Fossiles de données
+
+----
+
+Type: autres
+
+----
+
+Annee: 
+
+----
+
+Header: 
+
+----
+
+Headercol2: 
+
+----
+
+Text: 
+
+----
+
+Cover: 
+
+----
+
+Imagecover: _1040511.jpg

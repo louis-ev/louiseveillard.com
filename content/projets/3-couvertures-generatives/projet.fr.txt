@@ -31,7 +31,7 @@ Headercol2:
 
 Text: 
 
-(image: couvertures_generatives-charte.png legende: La charte graphique du projet. Élaborée par Coraline Mas-Prévost, elle propose de retranscrire visuellement les classifications du livre dans sa couverture.)
+(image: couvertures_generatives-charte.png legende: Un aperçu de la charte graphique du projet. Élaborée par Coraline Mas-Prévost, elle propose de retranscrire visuellement les classifications du livre dans sa couverture.)
 
 (video: mp4: couvertures_generatives-generation-web.mp4 webm: couvertures_generatives-generation-web.webm class: media-video lazyload loop: true caption: Les couvertures en cours de génération. Un ensemble de règles de positionnement, d'ajustement automatique des tailles de caractère ainsi que d'utilisation de tel ou tel motif dirigent la composition finale. Une part d'aléatoire dans la sélection d'une famille de motifs et/ou de couleurs permet également d'assurer que deux couvertures ne seront jamais identiques.)
 
