@@ -32,7 +32,9 @@ of the system, please check out http://getkirby.com/docs/advanced/options
 c::set('environment', 'production');
 c::set('multisizes', true);
 c::set('lazyloadimages', true);
-c::get('optimumx', 1.6);
+c::set('optimumx', 1.6);
+c::set('thumbsize', 1600);
+c::set('maxLinkedImageWidth', 1600);
 
 c::set('smartypants', true);
 c::set('smartypants.doublequote.open', '&#8220;');                              // Openning smart double-quotes.
@@ -64,4 +66,13 @@ c::set('languages', array(
     'url'     => '/en',
   ),
 */
+));
+
+c::set('routes', array(
+  array(
+    'pattern' => 'projets',
+    'action'  => function() {
+      go('home');
+    }
+  )
 ));

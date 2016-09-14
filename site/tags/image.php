@@ -163,7 +163,7 @@ kirbytext::$tags['image'] = array(
 			$outputlink = true;
 
 			if( !isset( $maxLinkedImageWidth)) {
-				$maxLinkedImageWidth = false;
+				$maxLinkedImageWidth = c::get('maxLinkedImageWidth',false);
 			}
 			if( !isset( $secondLinkedImageWidth)) {
 				$secondLinkedImageWidth = false;
@@ -224,7 +224,7 @@ kirbytext::$tags['image'] = array(
 					$thumbwidth = c::get('thumbs.width.feed', 1200);
 				}
 				else {
-					$thumbwidth = $image->width();
+  				  $thumbwidth = $image->width();
 				}
 			}
 
