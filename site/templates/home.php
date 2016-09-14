@@ -8,9 +8,6 @@
 	  	<?php echo $page->text()->kirbytext() ?>
 	  </header>
 	</div>
-
 </main>
-
 <?php snippet('projetlistetvignettes'); ?>
-
 <?php snippet('footer') ?>
