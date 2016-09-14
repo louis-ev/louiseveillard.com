@@ -1,0 +1,36 @@
+Title: Algorithmes typographiques
+
+----
+
+Type: autres
+
+----
+
+Annee: 
+
+----
+
+Header: 
+
+----
+
+Headercol2: 
+
+### thème
+## 
+### année
+## projet réalisé en 2014, livre publié en février 2016
+### code source
+## Github de (link: https://github.com/sarahgarcin/dodoc text: dodoc popup: yes), et celui de (link: https://github.com/sarahgarcin/lopendoc/ text: l'Opendoc popup: yes)
+
+----
+
+Text: 
+
+----
+
+Cover: 
+
+----
+
+Imagecover: _1050766.jpg

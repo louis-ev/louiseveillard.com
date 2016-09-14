@@ -1,0 +1,43 @@
+Title: Rapport d’Activité du CNAP
+
+----
+
+Type: autres
+
+----
+
+Annee: 2016
+
+----
+
+Header: Chaque année, le Centre National des Arts Plastique (CNAP) demande à des graphistes de réaliser son Rapport d'Activité. Celui-ci contient de très nombreuses données collectées au cours de l'année : nombre d'artistes soutenus, nombre d'œuvres achetées, répartition géographiques des prêts d'œuvres, budgets, etc. Pour mieux les appréhender et sortir des formes habituels de la dataviz nous avons décidé de faire tracer toutes les visualisations de ces informations à l'aide d'un robot.
+
+----
+
+Headercol2: 
+
+### brief
+## visualisations d'information du Rapport d'Activité 2015 du Centre National des Arts Plastique
+### année
+## 2016
+### crédits
+## Collaboration avec Émilie Coquard, qui a aussi réalisé la direction artistique. Mise en page de Coraline Mas-Prévost et Marine Longeanie, famille de caractère de Martin Pasquier.
+
+----
+
+Text: 
+
+un trait = une unité
+
+(video: mp4: cnap-piccolo-video_1.mp4 webm: cnap-piccolo-video.webm poster: cnap-piccolo-video.jpg autoplay: true controls: true)
+(video: mp4: cnap-piccolo-video_1.mp4 webm: cnap-piccolo-video.webm poster: cnap-piccolo-video.jpg autoplay: should controls: true)
+
+(video: mp4: cnap-xyp-video-2_2.mp4 webm: cnap-xyp-video-2.webm poster: cnap-xyp-video-2.jpg controls: true)
+
+----
+
+Cover: 
+
+----
+
+Imagecover: 
