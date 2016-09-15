@@ -465,11 +465,23 @@ var theProjetView = {
     }
 
     // check pour les vidéos
+
+    // supprimer l'autoplay sur chaque video qui l'a
+    $("video[autoplay]").each(function() {
+      $(this)
+        .attr("autoplay", false)
+        .attr("data-autoplayOnReveal", true);
+    });
+
     $(document).on('lazybeforeunveil', function(e){
       var isVideo = $(e.target).is("video");
       if( isVideo){
-        $(e.target).attr("autoplay", true);
-        e.target.play();
+        // check if autoplay on reveal is true
+        var isAutoplay = $(e.target).attr("data-autoplayOnReveal");
+        if( isAutoplay) {
+          $(e.target).attr("autoplay", true);
+          e.target.play();
+        }
       }
     });
 
