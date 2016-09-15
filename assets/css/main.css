@@ -503,7 +503,7 @@ html {
 body {
   font-family: 'gt-c', Helvetica, Arial, sans-serif;
   margin: 0 auto;
-  font-size: 1.1rem;
+  font-size: .8rem;
   line-height: 1.78;
   color: #f9f9f9;
   background-color: #1F1F1F;
@@ -515,6 +515,11 @@ body {
   -moz-font-feature-settings: "kern=1";
   -webkit-font-kerning: normal;
   font-kerning: normal;
+}
+@media only screen and (min-width: 48em) {
+  body {
+    font-size: 1.1rem;
+  }
 }
 #pjax-container {
   opacity: 1;
@@ -609,12 +614,16 @@ html.js body.is--loading .module--navbar {
 .module--navbar a {
   display: block;
   padding: 16px;
-  margin-top: 16px;
   font-size: .7rem;
   font-family: 'gt-c-b';
   text-transform: uppercase;
   letter-spacing: .06rem;
   pointer-events: all;
+}
+@media only screen and (min-width: 48em) {
+  .module--navbar a {
+    margin-top: 16px;
+  }
 }
 .module--navbar a:hover,
 .module--navbar a:focus {
@@ -988,6 +997,7 @@ html.js body.is--loading .module--projetList {
   margin-bottom: 0;
   text-transform: uppercase;
   letter-spacing: .06rem;
+  margin-bottom: 1px;
   width: 100%;
   opacity: 1;
   max-height: none;
@@ -1104,6 +1114,9 @@ html.js body.is--loading .module--projetList {
 .module--projetList--titles .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links--index {
   color: #38C4B2;
 }
+.module--projetList--titles .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links--name {
+  color: #38C4B2;
+}
 .module--projetList--titles .module--projetList--titles--projetName[data-type="vr"].is--visited .module--projetList--titles--projetName--links--index {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #38C4B2;
@@ -1157,6 +1170,9 @@ html.js body.is--loading .module--projetList {
   outline: 1px solid #03B8F4;
 }
 .module--projetList--titles .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links--index {
+  color: #03B8F4;
+}
+.module--projetList--titles .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links--name {
   color: #03B8F4;
 }
 .module--projetList--titles .module--projetList--titles--projetName[data-type="sites"].is--visited .module--projetList--titles--projetName--links--index {
@@ -1214,6 +1230,9 @@ html.js body.is--loading .module--projetList {
 .module--projetList--titles .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links--index {
   color: #ABD190;
 }
+.module--projetList--titles .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links--name {
+  color: #ABD190;
+}
 .module--projetList--titles .module--projetList--titles--projetName[data-type="objets-interactifs"].is--visited .module--projetList--titles--projetName--links--index {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ABD190;
@@ -1269,6 +1288,9 @@ html.js body.is--loading .module--projetList {
 .module--projetList--titles .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links--index {
   color: #FFC162;
 }
+.module--projetList--titles .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links--name {
+  color: #FFC162;
+}
 .module--projetList--titles .module--projetList--titles--projetName[data-type="outils-pedagogiques"].is--visited .module--projetList--titles--projetName--links--index {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #FFC162;
@@ -1322,6 +1344,9 @@ html.js body.is--loading .module--projetList {
   outline: 1px solid #ACA8A5;
 }
 .module--projetList--titles .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links--index {
+  color: #ACA8A5;
+}
+.module--projetList--titles .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links--name {
   color: #ACA8A5;
 }
 .module--projetList--titles .module--projetList--titles--projetName[data-type="autres"].is--visited .module--projetList--titles--projetName--links--index {

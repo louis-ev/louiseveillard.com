@@ -135,7 +135,7 @@ body {
 
   .gt-reg;
   margin: 0 auto;
-  font-size: 1.1rem;
+  font-size: .8rem;
   line-height: 1.78;
 
   color: @c-textColor;
@@ -151,6 +151,10 @@ body {
   -webkit-font-kerning: normal;
      -moz-font-kerning: normal;
           font-kerning: normal;
+
+  @media @md {
+    font-size: 1.1rem;
+  }
 }
 
 
@@ -256,18 +260,22 @@ a:focus {
   }
 
 	a {
-  	display: block;
+  	  display: block;
 		padding: @t-margin;
 //     margin-left: -@t-margin;
-    margin-top: @t-margin;
 
-  	font-size: .7rem;
+  	  font-size: .7rem;
     .strong;
     text-transform: uppercase;
 
     letter-spacing: .06rem;
 
     pointer-events: all;
+
+    @media @md {
+      margin-top: @t-margin;
+    }
+
 
     &:hover, &:focus {
 //       outline: 1px solid #fff;
@@ -653,6 +661,7 @@ main {
 
   h3 {
     .titleCaps;
+    margin-bottom: 1px;
     width:  100%;
     opacity: 1;
     max-height: none;
@@ -745,31 +754,29 @@ main {
 
       }
 
-    	&--name {
+      	&--name {
 
-      	.projet--name;
+        	.projet--name;
 
-        color: #fff;
+          color: #fff;
 
-        line-height:  1.2;
+          line-height:  1.2;
 
-        display: block;
-  			position: absolute;
+          display: block;
+    			position: absolute;
 
-    		top: 48%;
-    		left: 40%;
-    		width:  60%;
+      		top: 48%;
+      		left: 40%;
+      		width:  60%;
 
-    		transform: translate3d( 0%, -50%, 0);
-    		z-index:  1;
+      		transform: translate3d( 0%, -50%, 0);
+      		z-index:  1;
 
-    		padding-left: 2.5%;
+      		padding-left: 2.5%;
         line-height:  1.4;
         text-align: left;
 
-    	}
-
-
+      	}
 
       // pour aligner au centre les inline-block
       &::before {
@@ -779,9 +786,9 @@ main {
           vertical-align: middle;
       }
 
-    	&--index {
-				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-out, opacity .8s, background .44s, right .6s ease-out, -webkit-text-stroke .4s ease-out;
-    	}
+      	&--index {
+  				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-out, opacity .8s, background .44s, right .6s ease-out, -webkit-text-stroke .4s ease-out;
+      	}
       &--name {
 				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-in-out, opacity .8s, background .44s, left .6s;
       }
@@ -791,16 +798,16 @@ main {
 
 	.styleHover( @rubrique, @color ) {
 
-  	h3[data-type= @{rubrique}]::after {
-      content: "";
-      position: absolute;
-      top: 1.2rem;
-      width: auto;
-      height: 1px;
-      background-color: @color;
-      left: 0;
-      right: 0;
-  	}
+    	h3[data-type= @{rubrique}]::after {
+        content: "";
+        position: absolute;
+        top: 1.2rem;
+        width: auto;
+        height: 1px;
+        background-color: @color;
+        left: 0;
+        right: 0;
+    	}
 
     .module--projetList--titles--projetName {
       &[data-type= @{rubrique}] {
@@ -809,11 +816,12 @@ main {
             outline: 1px solid @color;
           }
           &--index{
-              color: @color;
+            color: @color;
             .is--sorted& {
             }
           }
           &--name {
+            color: @color;
           }
     		}
 

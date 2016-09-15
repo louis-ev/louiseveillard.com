@@ -11260,23 +11260,22 @@ var theProjetList = {
     });
 
 		$projetListEtVisuels.find(".module--projetList--titles--projetName--links").each( function() {
-
-  		$(this).on('mouseover', function() {
-  			projetIndex = $(this).parent(".module--projetList--titles--projetName").attr("data-index");
-  			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
-                                                   return $(this).attr('data-index') === projetIndex;
-                                                });
-        $thisProjetVisuel.addClass("is--shown");
-  			$("body").attr("module--projetVisuel", "is--shown");
-  		});
-  		$(this).on('mouseleave', function() {
-  			projetIndex = $(this).parent("li").attr("data-index");
-  			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
-                                                   return $(this).attr('data-index') === projetIndex;
-                                                });
-  			$thisProjetVisuel.removeClass("is--shown").addClass("was--shown");
-  			$("body").attr("module--projetVisuel", "");
-  		});
+    		$(this).on('mouseover', function() {
+    			projetIndex = $(this).parent(".module--projetList--titles--projetName").attr("data-index");
+    			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
+                                                     return $(this).attr('data-index') === projetIndex;
+                                                  });
+          $thisProjetVisuel.addClass("is--shown");
+    			$("body").attr("module--projetVisuel", "is--shown");
+    		});
+    		$(this).on('mouseleave', function() {
+    			projetIndex = $(this).parent("li").attr("data-index");
+    			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
+                                                     return $(this).attr('data-index') === projetIndex;
+                                                  });
+    			$thisProjetVisuel.removeClass("is--shown").addClass("was--shown");
+    			$("body").attr("module--projetVisuel", "");
+    		});
 		});
 
 	},
@@ -11458,11 +11457,23 @@ var theProjetView = {
     }
 
     // check pour les vidéos
+
+    // supprimer l'autoplay sur chaque video qui l'a
+    $("video[autoplay]").each(function() {
+      $(this)
+        .attr("autoplay", false)
+        .attr("data-autoplayOnReveal", true);
+    });
+
     $(document).on('lazybeforeunveil', function(e){
       var isVideo = $(e.target).is("video");
       if( isVideo){
-        $(e.target).attr("autoplay", true);
-        e.target.play();
+        // check if autoplay on reveal is true
+        var isAutoplay = $(e.target).attr("data-autoplayOnReveal");
+        if( isAutoplay) {
+          $(e.target).attr("autoplay", true);
+          e.target.play();
+        }
       }
     });
 
@@ -11618,9 +11629,12 @@ $(document).ready(function() {
 	// pour le bloc intro, associé à la liste des projets
 	theIntroLinks.init( '.module--intro a', $(".module--projetList--titles"));
 
-  // pour la liste des projets
-	theProjetList.init( $(".module--projetList"));
-  pjaxNav.init();
+	if( window.innerWidth > 700) {
+    // pour la liste des projets
+    	theProjetList.init( $(".module--projetList"));
+    pjaxNav.init();
+  	}
+
   FastClick.attach(document.body);
 
   pageInit();

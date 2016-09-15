@@ -267,23 +267,22 @@ var theProjetList = {
     });
 
 		$projetListEtVisuels.find(".module--projetList--titles--projetName--links").each( function() {
-
-  		$(this).on('mouseover', function() {
-  			projetIndex = $(this).parent(".module--projetList--titles--projetName").attr("data-index");
-  			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
-                                                   return $(this).attr('data-index') === projetIndex;
-                                                });
-        $thisProjetVisuel.addClass("is--shown");
-  			$("body").attr("module--projetVisuel", "is--shown");
-  		});
-  		$(this).on('mouseleave', function() {
-  			projetIndex = $(this).parent("li").attr("data-index");
-  			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
-                                                   return $(this).attr('data-index') === projetIndex;
-                                                });
-  			$thisProjetVisuel.removeClass("is--shown").addClass("was--shown");
-  			$("body").attr("module--projetVisuel", "");
-  		});
+    		$(this).on('mouseover', function() {
+    			projetIndex = $(this).parent(".module--projetList--titles--projetName").attr("data-index");
+    			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
+                                                     return $(this).attr('data-index') === projetIndex;
+                                                  });
+          $thisProjetVisuel.addClass("is--shown");
+    			$("body").attr("module--projetVisuel", "is--shown");
+    		});
+    		$(this).on('mouseleave', function() {
+    			projetIndex = $(this).parent("li").attr("data-index");
+    			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
+                                                     return $(this).attr('data-index') === projetIndex;
+                                                  });
+    			$thisProjetVisuel.removeClass("is--shown").addClass("was--shown");
+    			$("body").attr("module--projetVisuel", "");
+    		});
 		});
 
 	},
@@ -637,9 +636,12 @@ $(document).ready(function() {
 	// pour le bloc intro, associé à la liste des projets
 	theIntroLinks.init( '.module--intro a', $(".module--projetList--titles"));
 
-  // pour la liste des projets
-	theProjetList.init( $(".module--projetList"));
-  pjaxNav.init();
+	if( window.innerWidth > 700) {
+    // pour la liste des projets
+    	theProjetList.init( $(".module--projetList"));
+    pjaxNav.init();
+  	}
+
   FastClick.attach(document.body);
 
   pageInit();
