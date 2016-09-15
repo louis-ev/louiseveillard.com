@@ -21,18 +21,33 @@ Headercol2:
 ### année
 ## 2016
 ### crédits
-## Collaboration avec Émilie Coquard, qui a aussi réalisé la direction artistique. Mise en page de Coraline Mas-Prévost et Marine Longeanie, famille de caractère de Martin Pasquier.
+## Collaboration avec (link: http://emiliecoquard.fr/ text: Émilie Coquard), qui a aussi réalisé la direction artistique. Mise en page de (link: http://coralinemasprevost.fr/ text: Coraline Mas-Prévost) et (link: http://marinelongeanie.com/ text: Marine Longeanie), famille de caractère de (link: https://www.behance.net/martinpasquier text: Martin Pasquier).
 
 ----
 
 Text: 
 
-un trait = une unité
+(image: cnap-piccolo-3.jpg legende: Premiers tests de rendu avec un Piccolo, une petite CNC open-source sur laquelle on peut placer stylos, crayons et autres outils de dessin.)
 
-(video: mp4: cnap-piccolo-video_1.mp4 webm: cnap-piccolo-video.webm poster: cnap-piccolo-video.jpg autoplay: true controls: true)
-(video: mp4: cnap-piccolo-video_1.mp4 webm: cnap-piccolo-video.webm poster: cnap-piccolo-video.jpg autoplay: should controls: true)
+(video: mp4: cnap-piccolo-video_1.mp4 webm: cnap-piccolo-video.webm poster: cnap-piccolo-video.jpg class: media-video controls: true)
 
-(video: mp4: cnap-xyp-video-2_2.mp4 webm: cnap-xyp-video-2.webm poster: cnap-xyp-video-2.jpg controls: true)
+(image: cnap-xyp-montage-1.jpg legende: Pour améliorer la qualité du rendu et travailler sur de plus grands formats, nous avons construit un XYplotter, une table traçante permettant de dessiner sur des formats allant jusqu'au A3.)
+
+(video: mp4: cnap-xyp-video-2_2.mp4 webm: cnap-xyp-video-2.webm poster: cnap-xyp-video-2.jpg class: media-video controls: true)
+
+(image: cnap-xyp-stylobille.jpg legende: Recherche d'outils de dessin : des stylos à bille de chez Muji.)
+
+(image: cnap-dessins.jpg legende: Tracé d'une visualisation d'information du Rapport d'Activité. Elles ont toutes été réalisées avec des Stabilo sur du papier Bristol pour obtenir une texture importante au niveau des traits mais sans aspérité dans le reste de la feuille.)
+
+(image: cnap-camembert-rendu.jpg legende: Double page de visualisation issue du Rapport. Les couleurs choisies correspondent à des typologies de données – artistes, œuvres, prêts, etc. – et sont représentés par autant de formes que la donnée l'indique. 800 œuvres produiront donc une visualisation contenant 800 traits. Les budgets quand à eux sont traités en surface tramée à 45 degrées.)
+
+(image: _1050838.jpg)
+
+(image: _1050841.jpg)
+
+(image: _1050854.jpg)
+
+(image: _1050858.jpg legende: Les pages de chapitre qui rythment la lecture rompent avec les visualisations et utilisent des formes qui prennent l'ensemble de la page en jouant avec l'intitulé de la section.)
 
 ----
 
@@ -40,4 +55,4 @@ Cover:
 
 ----
 
-Imagecover: 
+Imagecover: _1050841.jpg
