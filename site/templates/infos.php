@@ -35,10 +35,10 @@ if( param('lang') !== 'en'):
 				    	    	<h3>Activités</h3>
 							</div>
 							<ul class="description">
-				    		<li>Designer indépendant et développeur front-end à Paris.</li>
-					    	<li>Co-fondateur de <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, un collectif œuvrant la réalité virtuelle.</li>
-								<li>Membre du groupe de recherche <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l’atelier des chercheurs</a>.</li>
-                <li>Coorganisateur au <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>Free Art Bureau</a>, association à but non lucratif dédiée la promotion d’outils libres pour la création.</li>
+				    			<li>Designer indépendant et développeur front-end à Paris.</li>
+								<li>Membre du groupe de recherche <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a>.</li>
+						    	<li>Co-fondateur de <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, un collectif œuvrant la réalité virtuelle.</li>
+				                <li>Coorganisateur au <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>Free Art Bureau</a>, association à but non lucratif dédiée la promotion d’outils libres pour la création.</li>
 							</ul>
 				    </div>
 		    	</div>
@@ -110,18 +110,19 @@ if( param('lang') !== 'en'):
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Participation à la table-ronde du <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">festival Scopitone</a> à Nantes sur la <em>Matérialité des Données</em> (2016).</li>
 							<li>Conférence aux <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> sur le thème <em>Chercher l’erreur – Égarements et odyssées graphiques</em> (2016).</li>
-							<li>Conférence à l'<a href="http://www.ensci.com/" target="_blank">ENSCI</a> pour la journée d'étude <em>La Fabrique des Outils</em> organisée par l'association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a> (2016).</li>
-							<li>Conférence à l'<a href="http://www.ensad.fr/" target="_blank">ENSAD</a> pour la présentation du projet de création et de réalisation de 10000 couvertures pour livres numériques (2016).</li>
-							<li>Conférence aux <a href="http://delure.org/les-a-cotes/evenements-et-workshops/mardis-de-lure-1" target="_blank" data-link='delure'>Mardis de Lure</a> à la Générale à Paris pour présenter des outils pour enseigner le design et encourager des pédagogies actives (2015).</li>
+							<li>Conférence à l’<a href="http://www.ensci.com/" target="_blank">ENSCI</a> pour la journée d'étude <em>La Fabrique des Outils</em> organisée par l'association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a> (2016).</li>
+							<li>Conférence à l’<a href="http://www.ensad.fr/" target="_blank">ENSAD</a> pour la présentation du projet de création et de réalisation de 10000 couvertures pour livres numériques (2016).</li>
+							<li>Conférence aux <a href="http://delure.org/les-a-cotes/evenements-et-workshops/mardis-de-lure-1" target="_blank" data-link="delure">Mardis de Lure</a> à la Générale à Paris pour présenter des outils pour enseigner le design et encourager des pédagogies actives (2015).</li>
 							<li>Workshop à la <a href="http://www.newschool.edu/parsons-paris/" target="_blank">PARSONS</a> à Paris dans le cours <em>Creativity and Computation Lab</em> (2015).</li>
-							<li>Workshop à la conférence <a href="http://learnxdesign2015.com/" target="_blank">LearnxDesign 2015</a> à Chicago, avec l'équipe de <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l'atelier des chercheurs</a>.</li>
+							<li>Workshop à la conférence <a href="http://learnxdesign2015.com/" target="_blank">LearnxDesign 2015</a> à Chicago, avec l’équipe de <a data-link="latelier" href="http://www.latelier-des-chercheurs.fr" target="_blank">l’atelier des chercheurs</a>.</li>
 							<li>Conférence de présentation de mon travail et de mes recherches à l’<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a> (2015).</li>
 							<li>Introduction au <a data-link='tricodeur' href="http://www.letricodeur.com">Tricodeur</a> lors de la <a href="http://www.dailymotion.com/video/x2mhyja_louis-eveillard-soiree-di-zain-21-mode-s_creation" target="_blank">soirée *di*/zaïn #21</a>, au Grand Palais à Paris le 11 avril 2015.</li>
 							<li>Présentation de <a href="http://panoptic-lab.com/" data-link="panopticlab">Panoptic Lab</a> au talk sur l’art génératif organisé par <a href="https://brightfor.me/">Bright</a> au <a href="http://silencio-club.com/fr" target="_blank">Silencio</a>, à Paris, le 19 février 2015.</li>
 							<li>Workshop et conférence sur la matérialisation du numérique par le code à l’<a href="http://www.esalorraine.fr/metz/" target="_blank">ésal Metz</a> les 2, 3 et 4 février 2015.</li>
 							<li>Conférence publique sur la représentation des traces numériques à l’<a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d’Amiens</a> le 9 décembre 2014.</li>
-							<li>Résidence avec l’association <a href="http://www.sewetlaine.com/" target="_blank">Sew&Laine</a> et <a href="http://www.2roqs.fr/" target="_blank">Studio 2Roqs</a> pour le projet <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">le Tricodeur</a> (septembre 2014). Préparation et animation d’un workshop de 3 jours sur le détournement et l’utilisation de machines à tricoter programmables pour réaliser des motifs générés par le code et des données personnelles.</li>
+							<li>Workshop de 3 jours à Cap Science à Bordeaux autour du projet du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>. sur le détournement et l’utilisation de machines à tricoter programmables pour réaliser des motifs générés par le code et des données personnelles (en collaboration avec l’association <a href="http://www.sewetlaine.com/" target="_blank">Sew&Laine</a> et <a href="http://www.2roqs.fr/" target="_blank">Studio 2Roqs</a>).</li>
 							<li>Enseignant de design génératif en 4<sup>e</sup> année à <a href='http://www.hetic.net/' target='_blank'>HETIC</a> à Montreuil (2013). Résumé et code du cours <a href="http://www.beautifulseams.com/2013/10/31/teaching-generative-design/" data-link='blog' target="_blank">sur mon blog</a>.</li>
 							<li>Conférence sur l’algorithme dans l’art et le design à l’<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a> (2013). Compte-rendu, slides et projets des étudiants <a data-link='algorithme' href="http://algorithme.beautifulseams.com/" target="_blank">sur cette page</a>.</li>
 						</ul>
@@ -291,6 +292,7 @@ else:
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Invited for the panel at  the <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">Scopitone festival 2016</a> to discuss the <em>Materiality of Data</em> (2016).</li>
 							<li>Lecture at the <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> on the topic of <em>Errors and failures in Graphic Design</em> (2016).</li>
 							<li>Lecture at <a href="http://www.ensci.com/" target="_blank">ENSCI</a> for the seminar <em>La Fabrique des Outils</em> organized by the association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a> (2016).</li>
 							<li>Lecture at <a href="http://www.ensad.fr/" target="_blank">ENSAD</a> on the 10.000 generated covers project for FeniXX (2016).</li>
