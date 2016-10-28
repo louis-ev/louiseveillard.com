@@ -10,7 +10,7 @@ Annee: 2016
 
 ----
 
-Header: Séries d’expérimentations de mesures d'activités et de représentation par la gravure dans des supports physiques. Les données deviennent des fossiles qui renvoient à l'instant de la mesure et permettent de comparer la performance de chaque participant face à l'exercice imposée
+Header: Séries d’expérimentations de mesures d'activités et de représentation par la gravure dans des supports physiques.
 
 ----
 
@@ -48,6 +48,8 @@ Les résultats de ces expériences ont ensuite été fossilisés dans des paysag
 (image: _1040514.jpg)
 
 (image: _1040569.jpg)
+
+(image: _1040561.jpg)
 
 ----
 

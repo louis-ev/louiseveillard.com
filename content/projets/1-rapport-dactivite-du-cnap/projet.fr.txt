@@ -10,14 +10,18 @@ Annee: 2016
 
 ----
 
-Header: Chaque année, le Centre National des Arts Plastique (CNAP) demande à des graphistes de réaliser son Rapport d'Activité. Celui-ci contient de très nombreuses données collectées au cours de l'année : nombre d'artistes soutenus, nombre d'œuvres achetées, répartition géographiques des prêts d'œuvres, budgets, etc. Pour mieux les appréhender et sortir des formes habituels de la dataviz nous avons décidé de faire tracer toutes les visualisations de ces informations à l'aide d'un robot.
+Header: 
+
+Chaque année, le Centre National des Arts Plastique (CNAP) demande à des graphistes de réaliser son Rapport d'Activité. Celui-ci contient de très nombreuses données collectées au cours de l'année : nombre d'artistes soutenus, nombre d'œuvres achetées, répartition géographiques des prêts d'œuvres, budgets, etc. Pour mieux les appréhender et sortir des formes habituels de la dataviz nous avons décidé de faire tracer toutes les visualisations de ces informations à l'aide d'un robot.
+
+Ce rapport peut être téléchargé à l’adresse suivante : (link: http://www.cnap.fr/rapport-dactivite-2015-0 text: www.cnap.fr/rapport-dactivite-2015-0 popup: yes)
 
 ----
 
 Headercol2: 
 
 ### brief
-## visualisations d'information du Rapport d'Activité 2015 du Centre National des Arts Plastique
+## visualisations d'information du Rapport d'Activité 2015 du Centre National des Arts Plastique (édité à 500 exemplaires en juillet 2016)
 ### année
 ## 2016
 ### crédits

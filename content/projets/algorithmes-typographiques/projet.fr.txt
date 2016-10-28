@@ -20,12 +20,10 @@ Headercol2:
 ## 
 ### année
 ## projet réalisé en 2014, livre publié en février 2016
-### code source
-## Github de (link: https://github.com/sarahgarcin/dodoc text: dodoc popup: yes), et celui de (link: https://github.com/sarahgarcin/lopendoc/ text: l'Opendoc popup: yes)
 
 ----
 
-Text: 
+Text: (image: _1050757.jpg legende: Le dispositif de documentation dans la classe à l’école des Alouettes à Paris.)
 
 ----
 
