@@ -110,7 +110,7 @@ if( param('lang') !== 'en'):
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
-							<li>Participation à la table-ronde du <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">festival Scopitone</a> à Nantes sur la <em>Matérialité des Données</em> (2016).</li>
+							<li>Intervention à la table-ronde du <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">festival Scopitone</a> à Nantes sur la <em>Matérialité des Données</em> (2016).</li>
 							<li>Conférence aux <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> sur le thème <em>Chercher l’erreur – Égarements et odyssées graphiques</em> (2016).</li>
 							<li>Conférence à l’<a href="http://www.ensci.com/" target="_blank">ENSCI</a> pour la journée d'étude <em>La Fabrique des Outils</em> organisée par l'association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a> (2016).</li>
 							<li>Conférence à l’<a href="http://www.ensad.fr/" target="_blank">ENSAD</a> pour la présentation du projet de création et de réalisation de 10000 couvertures pour livres numériques (2016).</li>
@@ -177,7 +177,7 @@ if( param('lang') !== 'en'):
 								<li>Présentation du livre Arsène Lupin à l'exposition <a href="http://chercherletexte.org/fr/" target="_blank">Chercher le Texte</a>, BNF, Paris (2013)</li>
 								<li>Présentation du projet Lis-moi, Lis-moi au Salon du livre, Paris (2013)</li>
 								<li>Exposition collective – Amnesia/Memoria, Marke.06, Weimar, Allemagne (2010)</li>
-								<li>Exposition d'un Nooka Show, Red Bull Space de New York, États-Unis (2010)</li>
+								<li>Exposition au Nooka Show, Red Bull Space, New York, États-Unis (2010)</li>
 							</ul>
 				    </div>
 		    	</div>
