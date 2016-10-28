@@ -11,3 +11,4 @@ Please check out http://getkirby.com/blog/multi-environment-setup for more infor
 
 c::set('environment', 'local');
 c::set('debug', true);
+c::set('ssl',false);

@@ -11015,7 +11015,7 @@ var canvasCV = {
 
     init_pjs = 768;
 		if ( $(window).width() > init_pjs ) {
-	    var scriptSrc = 'http://louiseveillard.com/bower_components/Processing.js/processing.min.js?' + new Date().getTime();
+	    var scriptSrc = './bower_components/Processing.js/processing.min.js?' + new Date().getTime();
 	    //console.log( "script : " , script);
 			var script = document.createElement('script');
 			script.src = scriptSrc;
@@ -11566,14 +11566,14 @@ var pjaxNav = {
   	$(document).on('pjax:beforeReplace', function ( event, contents, options) {
   	});
 
-    $(document).on("pjax:end", function(event, data) {
+  $(document).on("pjax:end", function(event, data) {
 
-      linkToContent = event.target.baseURI;
+    linkToContent = event.target.baseURI;
 
-      // si c'est un fail (cas typique d'un projet qui génère ses thumbs)
-      if( data.statusText === "timeout") {
-        return false;
-      }
+    // si c'est un fail (cas typique d'un projet qui génère ses thumbs)
+    if( data.statusText !== undefined && data.statusText === "timeout") {
+      return false;
+    }
 
   		$(".module--projetList--titles--projetName--links").filter( function() {
       	return $(this).attr("href") === linkToContent;

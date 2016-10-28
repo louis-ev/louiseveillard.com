@@ -36,6 +36,8 @@ c::set('optimumx', 1.6);
 c::set('thumbsize', 1600);
 c::set('maxLinkedImageWidth', 1600);
 
+c::set('ssl',true);
+
 c::set('smartypants', true);
 c::set('smartypants.doublequote.open', '&#8220;');                              // Openning smart double-quotes.
 c::set('smartypants.doublequote.close', '&#8221;');                             // Closing smart double-quotes.
