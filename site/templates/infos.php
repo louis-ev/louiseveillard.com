@@ -37,7 +37,7 @@ if( param('lang') !== 'en'):
 							<ul class="description">
 				    			<li>Designer indépendant et développeur front-end à Paris.</li>
 								<li>Membre du groupe de recherche <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a>.</li>
-						    	<li>Co-fondateur de <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, un collectif œuvrant la réalité virtuelle.</li>
+						    	<li>Co-fondateur de <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, un collectif œuvrant dans la réalité virtuelle.</li>
 				                <li>Coorganisateur au <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>Free Art Bureau</a>, association à but non lucratif dédiée la promotion d’outils libres pour la création.</li>
 							</ul>
 				    </div>
@@ -112,7 +112,7 @@ if( param('lang') !== 'en'):
 						<ul class="description">
 							<li>Intervention à la table-ronde du <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">festival Scopitone</a> à Nantes sur la <em>Matérialité des Données</em> (2016).</li>
 							<li>Conférence aux <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> sur le thème <em>Chercher l’erreur – Égarements et odyssées graphiques</em> (2016).</li>
-							<li>Conférence à l’<a href="http://www.ensci.com/" target="_blank">ENSCI</a> pour la journée d'étude <em>La Fabrique des Outils</em> organisée par l'association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a> (2016).</li>
+							<li>Conférence à l’<a href="http://www.ensci.com/" target="_blank">ENSCI</a> pour la journée d’étude <em>La Fabrique des Outils</em> organisée par l'association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a> (2016).</li>
 							<li>Conférence à l’<a href="http://www.ensad.fr/" target="_blank">ENSAD</a> pour la présentation du projet de création et de réalisation de 10000 couvertures pour livres numériques (2016).</li>
 							<li>Conférence aux <a href="http://delure.org/les-a-cotes/evenements-et-workshops/mardis-de-lure-1" target="_blank" data-link="delure">Mardis de Lure</a> à la Générale à Paris pour présenter des outils pour enseigner le design et encourager des pédagogies actives (2015).</li>
 							<li>Workshop à la <a href="http://www.newschool.edu/parsons-paris/" target="_blank">PARSONS</a> à Paris dans le cours <em>Creativity and Computation Lab</em> (2015).</li>
