@@ -728,30 +728,28 @@ main {
       bottom: 0;
       right: 0;
 
-    	transition: color .4s ease-in-out, background-color .4s ease-in-out;
+      	transition: color .4s ease-in-out, background-color .4s ease-in-out, filter .5s ease-in;
 
       text-align: center;
 
-    	&--index {
+      	&--index {
 
-    		.projet--index;
-    		display: block;
-    		position: absolute;
+      		.projet--index;
+      		display: block;
+      		position: absolute;
 
-    		top:48%;
-    		right: 60%;
-    		width:  40%;
+      		top:48%;
+      		right: 60%;
+      		width:  40%;
 
-    		transform: translate3d( 0%, -50%, 0);
-    		transform-origin: center;
+      		transform: translate3d( 0%, -50%, 0);
+      		transform-origin: center;
 
-    		padding-right: 2.5%;
+      		padding-right: 2.5%;
         text-align: right;
         line-height:  1;
 
         z-index: 0;
-
-
       }
 
       	&--name {
@@ -787,10 +785,10 @@ main {
       }
 
       	&--index {
-  				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-out, opacity .8s, background .44s, right .6s ease-out, -webkit-text-stroke .4s ease-out;
+  				transition: color .8s ease-out, transform .9s ease-out, opacity .8s, background .44s, right .6s ease-out, -webkit-text-stroke .4s ease-out;
       	}
       &--name {
-				transition: color .8s ease-out, text-shadow .6s ease-in, transform .9s ease-in-out, opacity .8s, background .44s, left .6s;
+				transition: color .8s ease-out, transform .9s ease-in-out, opacity .8s, background .44s, left .6s;
       }
 		}
   }
@@ -834,58 +832,50 @@ main {
              -webkit-text-stroke-color: @color;
              -webkit-text-fill-color: transparent;
           }
-    		}
+      		}
       }
-  	}
+    	}
 
-  	// survol sur tout le menu, effet sur toutes les vignettes sauf celle survolées
-  	&:hover .module--projetList--titles--projetName[data-type= @{rubrique}] {
+    	// survol sur tout le menu, effet sur toutes les vignettes sauf celle survolées
+    	&:hover .module--projetList--titles--projetName[data-type= @{rubrique}] {
 
 
-  		&.is--visited {
-      	.module--projetList--titles--projetName--links--index {
+    		&.is--visited {
+      	  .module--projetList--titles--projetName--links--index {
 
         }
       }
 
-    	.module--projetList--titles--projetName--links {
+      	.module--projetList--titles--projetName--links {
 
-      	&--index {
-          text-shadow: 0px 0px 26px @color;
-           -webkit-text-stroke-color: transparent;
-           color: transparent;
-        }
-        &--name {
-          text-shadow: 0px 0px 16px #fff;
-          color: transparent;
-          border-left-color: transparent;
-          background-color: transparent;
-          opacity: 1;
+        &:not(:hover) {
+
+          @blurvalue: 8px;
+          -webkit-filter: blur(@blurvalue);
+          filter: blur(@blurvalue);
+
+
+          	&--index {
+          }
+          &--name {
+          }
         }
 
         &:hover {
-          background-color: fade( @color, 88%);
+          background-color: fade( @color, 84%);
 
-  				.module--projetList--titles--projetName--links--index {
-/*
-            -webkit-text-stroke: 1px #fff;
-            -webkit-text-fill-color: transparent;
-*/
-        		right: 50%;
-        		transform: translate3d( 50%, -50%, 0) scale( 1.8);
-            -webkit-text-fill-color: @color;
-            color: @color;
-            text-shadow: none;
+    				.module--projetList--titles--projetName--links--index {
+          		right: 50%;
+          		transform: translate3d( 50%, -50%, 0) scale( 1.8);
           }
-  				.module--projetList--titles--projetName--links--name {
+    				.module--projetList--titles--projetName--links--name {
             transform: translate3d( -25%, -50%, 0) scale( 1.2);
             color: #fff;
-            text-shadow: none;
             background-color: transparent;
-  				}
-    		}
+    				}
+      		}
       }
-  	}
+  	  }
   }
 	.styleHover( "vr", @c-vr);
 	.styleHover( "sites", @c-sites);
@@ -909,7 +899,7 @@ main {
 
 
 	.module--projetList--visuelWrapper--bgmask {
-  	position: fixed;
+    	position: fixed;
     top: 0; left: 0;  right: 0; bottom: 0;
     z-index: -5;
     opacity: 0;
@@ -926,45 +916,45 @@ main {
 
     top: 0; left: 0;  right: 0; bottom: 0;
 
-  	background-size: cover;
-  	background-position: center center;
+    	background-size: cover;
+    	background-position: center center;
 
-    opacity: 0;
+      opacity: 0;
 
-    visibility: hidden;
+      visibility: hidden;
 
-    transform: translate3d( 0, 0, 0);
-		transform-origin: center;
+      transform: translate3d( 0, 0, 0);
+  		transform-origin: center;
 
 
-    will-change: opacity;
-    transition: opacity .8s ease-out;
+      will-change: opacity;
+      transition: opacity .8s ease-out;
 
-    &.lazyload, &.lazyloading, &.lazyloaded {
-      visibility: visible;
-    }
+      &.lazyload, &.lazyloading, &.lazyloaded {
+        visibility: visible;
+      }
 
-  	&.was--shown {
-    	opacity: 0;
-      z-index: -1;
-      transition: opacity .4s .2s ease-in;
-  	}
+    	&.was--shown {
+      	opacity: 0;
+        z-index: -1;
+        transition: opacity .4s .2s ease-in;
+    	}
 
-  	&.is--shown {
-      opacity: 1;
-    	z-index:  1;
-      transition: opacity .4s ease-out;
-  	}
-  	// cas pjax : la vignette cliquée
-  	&.is--visuelProjet {
-    	opacity: 1;
-    	z-index:  2;
-      transition: opacity .4s ease-in;
-  	}
+    	&.is--shown {
+        opacity: 1;
+      	z-index:  1;
+        transition: opacity .4s ease-out;
+    	}
+    	// cas pjax : la vignette cliquée
+    	&.is--visuelProjet {
+      	opacity: 1;
+      	z-index:  2;
+        transition: opacity .4s ease-in;
+    	}
 
-  	&.is--shown ~ .module--projetList--visuelWrapper--bgmask {
-    	opacity: 1;
-  	}
+    	&.is--shown ~ .module--projetList--visuelWrapper--bgmask {
+      	opacity: 1;
+    	}
   }
   body.is--ajax_loading & {
     .module--projetList--visuelWrapper--bgmask {

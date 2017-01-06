@@ -513,7 +513,6 @@ body {
   -webkit-font-feature-settings: "kern";
   -moz-font-feature-settings: "kern";
   -moz-font-feature-settings: "kern=1";
-  -webkit-font-kerning: normal;
   font-kerning: normal;
 }
 @media only screen and (min-width: 48em) {
@@ -743,9 +742,7 @@ html.js body.is--loading .module--navbar {
 }
 html.js .module--intro {
   opacity: 1;
-  transition: opacity 1.4s ease-out, -webkit-transform 0.6s ease-out;
   transition: opacity 1.4s ease-out, transform 0.6s ease-out;
-  transition: opacity 1.4s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
 }
 html.js .module--intro a:nth-of-type(1) {
   transition: all 0.25s, background-position 2.2s 0.6s;
@@ -774,7 +771,6 @@ html.js .module--intro a:nth-of-type(5) {
 }
 html.js body.is--loading .module--intro {
   opacity: 0;
-  -webkit-transform: translateY(15px);
   -ms-transform: translateY(15px);
   transform: translateY(15px);
 }
@@ -816,10 +812,7 @@ main a.lienProjet::before {
   white-space: pre-wrap;
   word-break: break-all;
   opacity: 0;
-  transition: opacity 0.3s, color 0.3s, background-position 0.2s, -webkit-transform 0.3s;
   transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s;
-  transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s, -webkit-transform 0.3s;
-  -webkit-transform: scale(0.08333333, 0.55555556);
   -ms-transform: scale(0.08333333, 0.55555556);
   transform: scale(0.08333333, 0.55555556);
   /* older webkit */
@@ -833,7 +826,6 @@ main a.lienProjet:focus::before {
   color: #fff;
   opacity: 1;
   transition-delay: 0s, 0s, 0s, 0.1s;
-  -webkit-transform: scale(1) translateY(-80%);
   -ms-transform: scale(1) translateY(-80%);
   transform: scale(1) translateY(-80%);
   pointer-events: auto;
@@ -1038,7 +1030,9 @@ html.js body.is--loading .module--projetList {
   left: 0;
   bottom: 0;
   right: 0;
-  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out, -webkit-filter 0.5s ease-in;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out, filter 0.5s ease-in;
+  transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out, filter 0.5s ease-in, -webkit-filter 0.5s ease-in;
   text-align: center;
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--index {
@@ -1048,9 +1042,7 @@ html.js body.is--loading .module--projetList {
   top: 48%;
   right: 60%;
   width: 40%;
-  -webkit-transform: translate3d(0%, -50%, 0);
   transform: translate3d(0%, -50%, 0);
-  -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
   padding-right: 2.5%;
@@ -1072,7 +1064,6 @@ html.js body.is--loading .module--projetList {
   top: 48%;
   left: 40%;
   width: 60%;
-  -webkit-transform: translate3d(0%, -50%, 0);
   transform: translate3d(0%, -50%, 0);
   z-index: 1;
   padding-left: 2.5%;
@@ -1091,12 +1082,10 @@ html.js body.is--loading .module--projetList {
   vertical-align: middle;
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--index {
-  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-out, opacity 0.8s, background 0.44s, right 0.6s ease-out, -webkit-text-stroke 0.4s ease-out;
+  transition: color 0.8s ease-out, transform 0.9s ease-out, opacity 0.8s, background 0.44s, right 0.6s ease-out, -webkit-text-stroke 0.4s ease-out;
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--name {
-  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, opacity 0.8s, background 0.44s, left 0.6s, -webkit-transform 0.9s ease-in-out;
-  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-in-out, opacity 0.8s, background 0.44s, left 0.6s;
-  transition: color 0.8s ease-out, text-shadow 0.6s ease-in, transform 0.9s ease-in-out, opacity 0.8s, background 0.44s, left 0.6s, -webkit-transform 0.9s ease-in-out;
+  transition: color 0.8s ease-out, transform 0.9s ease-in-out, opacity 0.8s, background 0.44s, left 0.6s;
 }
 .module--projetList--titles h3[data-type="vr"]::after {
   content: "";
@@ -1122,38 +1111,20 @@ html.js body.is--loading .module--projetList {
   -webkit-text-stroke-color: #38C4B2;
   -webkit-text-fill-color: transparent;
 }
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links--index {
-  text-shadow: 0px 0px 26px #38C4B2;
-  -webkit-text-stroke-color: transparent;
-  color: transparent;
-}
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links--name {
-  text-shadow: 0px 0px 16px #fff;
-  color: transparent;
-  border-left-color: transparent;
-  background-color: transparent;
-  opacity: 1;
+.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links:not(:hover) {
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links:hover {
-  background-color: rgba(56, 196, 178, 0.88);
+  background-color: rgba(56, 196, 178, 0.84);
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--index {
-  /*
-            -webkit-text-stroke: 1px #fff;
-            -webkit-text-fill-color: transparent;
-*/
   right: 50%;
-  -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
   transform: translate3d(50%, -50%, 0) scale(1.8);
-  -webkit-text-fill-color: #38C4B2;
-  color: #38C4B2;
-  text-shadow: none;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--name {
-  -webkit-transform: translate3d(-25%, -50%, 0) scale(1.2);
   transform: translate3d(-25%, -50%, 0) scale(1.2);
   color: #fff;
-  text-shadow: none;
   background-color: transparent;
 }
 .module--projetList--titles h3[data-type="sites"]::after {
@@ -1180,38 +1151,20 @@ html.js body.is--loading .module--projetList {
   -webkit-text-stroke-color: #03B8F4;
   -webkit-text-fill-color: transparent;
 }
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links--index {
-  text-shadow: 0px 0px 26px #03B8F4;
-  -webkit-text-stroke-color: transparent;
-  color: transparent;
-}
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links--name {
-  text-shadow: 0px 0px 16px #fff;
-  color: transparent;
-  border-left-color: transparent;
-  background-color: transparent;
-  opacity: 1;
+.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links:not(:hover) {
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links:hover {
-  background-color: rgba(3, 184, 244, 0.88);
+  background-color: rgba(3, 184, 244, 0.84);
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--index {
-  /*
-            -webkit-text-stroke: 1px #fff;
-            -webkit-text-fill-color: transparent;
-*/
   right: 50%;
-  -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
   transform: translate3d(50%, -50%, 0) scale(1.8);
-  -webkit-text-fill-color: #03B8F4;
-  color: #03B8F4;
-  text-shadow: none;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--name {
-  -webkit-transform: translate3d(-25%, -50%, 0) scale(1.2);
   transform: translate3d(-25%, -50%, 0) scale(1.2);
   color: #fff;
-  text-shadow: none;
   background-color: transparent;
 }
 .module--projetList--titles h3[data-type="objets-interactifs"]::after {
@@ -1238,38 +1191,20 @@ html.js body.is--loading .module--projetList {
   -webkit-text-stroke-color: #ABD190;
   -webkit-text-fill-color: transparent;
 }
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links--index {
-  text-shadow: 0px 0px 26px #ABD190;
-  -webkit-text-stroke-color: transparent;
-  color: transparent;
-}
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links--name {
-  text-shadow: 0px 0px 16px #fff;
-  color: transparent;
-  border-left-color: transparent;
-  background-color: transparent;
-  opacity: 1;
+.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links:not(:hover) {
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links:hover {
-  background-color: rgba(171, 209, 144, 0.88);
+  background-color: rgba(171, 209, 144, 0.84);
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--index {
-  /*
-            -webkit-text-stroke: 1px #fff;
-            -webkit-text-fill-color: transparent;
-*/
   right: 50%;
-  -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
   transform: translate3d(50%, -50%, 0) scale(1.8);
-  -webkit-text-fill-color: #ABD190;
-  color: #ABD190;
-  text-shadow: none;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--name {
-  -webkit-transform: translate3d(-25%, -50%, 0) scale(1.2);
   transform: translate3d(-25%, -50%, 0) scale(1.2);
   color: #fff;
-  text-shadow: none;
   background-color: transparent;
 }
 .module--projetList--titles h3[data-type="outils-pedagogiques"]::after {
@@ -1296,38 +1231,20 @@ html.js body.is--loading .module--projetList {
   -webkit-text-stroke-color: #FFC162;
   -webkit-text-fill-color: transparent;
 }
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links--index {
-  text-shadow: 0px 0px 26px #FFC162;
-  -webkit-text-stroke-color: transparent;
-  color: transparent;
-}
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links--name {
-  text-shadow: 0px 0px 16px #fff;
-  color: transparent;
-  border-left-color: transparent;
-  background-color: transparent;
-  opacity: 1;
+.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links:not(:hover) {
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links:hover {
-  background-color: rgba(255, 193, 98, 0.88);
+  background-color: rgba(255, 193, 98, 0.84);
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--index {
-  /*
-            -webkit-text-stroke: 1px #fff;
-            -webkit-text-fill-color: transparent;
-*/
   right: 50%;
-  -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
   transform: translate3d(50%, -50%, 0) scale(1.8);
-  -webkit-text-fill-color: #FFC162;
-  color: #FFC162;
-  text-shadow: none;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--name {
-  -webkit-transform: translate3d(-25%, -50%, 0) scale(1.2);
   transform: translate3d(-25%, -50%, 0) scale(1.2);
   color: #fff;
-  text-shadow: none;
   background-color: transparent;
 }
 .module--projetList--titles h3[data-type="autres"]::after {
@@ -1354,38 +1271,20 @@ html.js body.is--loading .module--projetList {
   -webkit-text-stroke-color: #ACA8A5;
   -webkit-text-fill-color: transparent;
 }
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links--index {
-  text-shadow: 0px 0px 26px #ACA8A5;
-  -webkit-text-stroke-color: transparent;
-  color: transparent;
-}
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links--name {
-  text-shadow: 0px 0px 16px #fff;
-  color: transparent;
-  border-left-color: transparent;
-  background-color: transparent;
-  opacity: 1;
+.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links:not(:hover) {
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links:hover {
-  background-color: rgba(172, 168, 165, 0.88);
+  background-color: rgba(172, 168, 165, 0.84);
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--index {
-  /*
-            -webkit-text-stroke: 1px #fff;
-            -webkit-text-fill-color: transparent;
-*/
   right: 50%;
-  -webkit-transform: translate3d(50%, -50%, 0) scale(1.8);
   transform: translate3d(50%, -50%, 0) scale(1.8);
-  -webkit-text-fill-color: #ACA8A5;
-  color: #ACA8A5;
-  text-shadow: none;
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--name {
-  -webkit-transform: translate3d(-25%, -50%, 0) scale(1.2);
   transform: translate3d(-25%, -50%, 0) scale(1.2);
   color: #fff;
-  text-shadow: none;
   background-color: transparent;
 }
 .module--projetList--visuelWrapper {
@@ -1420,9 +1319,7 @@ html.js body.is--loading .module--projetList {
   background-position: center center;
   opacity: 0;
   visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
-  -webkit-transform-origin: center;
   -ms-transform-origin: center;
   transform-origin: center;
   will-change: opacity;
@@ -1464,17 +1361,13 @@ html.js body.is--loading .module--projetList {
   margin-bottom: -5px;
   position: relative;
   z-index: 10;
-  transition: background-color 0.4s ease, -webkit-transform 0.6s ease-out;
   transition: transform 0.6s ease-out, background-color 0.4s ease;
-  transition: transform 0.6s ease-out, background-color 0.4s ease, -webkit-transform 0.6s ease-out;
   /* older webkit */
   transition-timing-function: cubic-bezier(0.355, 0.255, 0.01, 1.055);
   /* custom */
-  -webkit-transform: translate3d(0, 10vh, 0);
   transform: translate3d(0, 10vh, 0);
 }
 body:not(.is--loading)[data-visuel=''] .module--projet .module--projet--header {
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 .module--projet .module--projet--header .module--projet--header--text {
@@ -1599,13 +1492,10 @@ body:not(.is--loading)[data-visuel=''] .module--projet .module--projet--header {
   width: 100%;
   height: 100%;
   padding-bottom: 0 !important;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
@@ -1632,33 +1522,25 @@ html.js .module--projet .module--projet--visuel > .module--projet--visuel--insid
   opacity: 1;
 }
 body[data-visuel='zoomedIn'] .module--projet .module--projet--header {
-  -webkit-transform: translate3d(0, 56vh, 0);
   transform: translate3d(0, 56vh, 0);
 }
 body[data-visuel='zoomedIn'] .module--projet .module--projet--header ~ .module--projet--text:nth-of-type(1) {
-  -webkit-transform: translate3d(0, 56vh, 0);
   transform: translate3d(0, 56vh, 0);
 }
 .module--projet .module--projet--visuel--inside,
 .module--projet .module--projet--visuel .FigureImage-lazy {
-  -webkit-transform: translate3d(0, calc( -50% + 250px/2), 0);
   transform: translate3d(0, calc( -50% + 250px/2), 0);
-  -webkit-transform: translate3d(0, calc( -50% + 44vh/2), 0);
   transform: translate3d(0, calc( -50% + 44vh/2), 0);
   opacity: .95;
-  transition: opacity 0.5s ease-out, -webkit-transform 0.6s ease-in-out;
   transition: transform 0.6s ease-in-out, opacity 0.5s ease-out;
-  transition: transform 0.6s ease-in-out, opacity 0.5s ease-out, -webkit-transform 0.6s ease-in-out;
   /* older webkit */
   transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
   /* custom */
 }
 body[data-visuel='zoomedIn'] .module--projet .module--projet--visuel--inside {
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 body[data-visuel='zoomedIn'] .module--projet .FigureImage-lazy {
-  -webkit-transform: translate3d(0, 0%, 0);
   transform: translate3d(0, 0%, 0);
   opacity: 1;
 }
@@ -1752,9 +1634,7 @@ body.is--ajax_loading[data-visuel='zoomedIn'] .module--projet .FigureImage-lazy 
   padding: 0 32px;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  transition: opacity .9s, -webkit-transform .6s;
   transition: opacity .9s, transform .6s;
-  transition: opacity .9s, transform .6s, -webkit-transform .6s;
   /* older webkit */
   transition-timing-function: cubic-bezier(0.355, 0.255, 0.01, 1.055);
   /* custom */

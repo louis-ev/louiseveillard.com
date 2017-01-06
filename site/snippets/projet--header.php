@@ -12,7 +12,7 @@
 		  'thumbwidth' 		        => 2400,
 		  'originalPage'          => $p,
 		  'outputlink'            => false,
-		  'optimumx'              => 2,
+		  'optimumx'              => 1.8,
 		  'maxLinkedImageWidth'   => 2400,
 		  'return_srcset'         => false
 		));
