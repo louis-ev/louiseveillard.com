@@ -5,6 +5,7 @@
   </footer>
 
   <!-- scripts -->
+  <?= js('assets/plugins/kirby-tracking/js/kirby-tracking.js') ?>
   <?php if ( c::get('environment') == 'local' ) : ?>
 
   <?= js('assets/js/plugins.js') ?>

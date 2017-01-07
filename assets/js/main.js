@@ -131,7 +131,7 @@ var canvasCV = {
 
 		// donner un ID à chaque lien qu'il va falloir traiter
 		$(".module--cv a[data-link]").each(function(i) {
-  		$(this).data( 'linkID', i);
+    		$(this).data( 'linkID', i);
 		});
 
 
@@ -139,15 +139,15 @@ var canvasCV = {
     var linksUnderlineColor = c.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
 
 		$(".module--cv a[data-link]").each(function() {
-  		var $this = $(this);
-  		var thisLink = $this.attr("data-link");
+    		var $this = $(this);
+    		var thisLink = $this.attr("data-link");
 
-  		// return la liste de ce qui a été relié. La mettre à la suite de alreadyLinked
-  		canvasCV.drawAllLinks( $this.data( 'linkID'), thisSketch, $this, thisLink, linksUnderlineColor, alreadyLinked);
+    		// return la liste de ce qui a été relié. La mettre à la suite de alreadyLinked
+    		canvasCV.drawAllLinks( $this.data( 'linkID'), thisSketch, $this, thisLink, linksUnderlineColor, alreadyLinked);
 
-  		//au survol
+    		//au survol
 			$this.on("mouseover", function() {
-  			var c = $this.css("border-bottom-color");
+    			var c = $this.css("border-bottom-color");
         var cbg = $("body").css("background-color").replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
         var linksUnderlineColor = c.replace(/^(rgb|rgba)\(/,'').replace(/\)$/,'').replace(/\s/g,'').split(',');
 
@@ -155,6 +155,7 @@ var canvasCV = {
         $this.addClass('is--currentlyLinkedTo');
         thisSketch.eraseBg( cbg, 225);
 				canvasCV.drawAllLinks( $this.data( 'linkID'), thisSketch, $this, thisLink, linksUnderlineColor);
+        logClientEvents('Survol sur l’élément du CV : ' + $(this).text());
 		  });
 		});
 		$(canvasJS).css("opacity", 1);
@@ -266,24 +267,24 @@ var theProjetList = {
         }
     });
 
-		$projetListEtVisuels.find(".module--projetList--titles--projetName--links").each( function() {
-    		$(this).on('mouseover', function() {
-    			projetIndex = $(this).parent(".module--projetList--titles--projetName").attr("data-index");
-    			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
-                                                     return $(this).attr('data-index') === projetIndex;
-                                                  });
-          $thisProjetVisuel.addClass("is--shown");
-    			$("body").attr("module--projetVisuel", "is--shown");
-    		});
-    		$(this).on('mouseleave', function() {
-    			projetIndex = $(this).parent("li").attr("data-index");
-    			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
-                                                     return $(this).attr('data-index') === projetIndex;
-                                                  });
-    			$thisProjetVisuel.removeClass("is--shown").addClass("was--shown");
-    			$("body").attr("module--projetVisuel", "");
-    		});
-		});
+		$(document).on('mouseenter','.module--projetList--titles--projetName--links', function() {
+  		  console.log('plip');
+  			projetIndex = $(this).parent(".module--projetList--titles--projetName").attr("data-index");
+  			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
+         return $(this).attr('data-index') === projetIndex;
+      });
+      $thisProjetVisuel.addClass("is--shown");
+  			$("body").attr("module--projetVisuel", "is--shown");
+      logClientEvents('Survol sur la vignette du projet : ' + $(this).find(".module--projetList--titles--projetName--links--name").text());
+  		});
+		$(document).on('mouseleave','.module--projetList--titles--projetName--links', function() {
+  			projetIndex = $(this).parent("li").attr("data-index");
+  			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
+         return $(this).attr('data-index') === projetIndex;
+      });
+  			$thisProjetVisuel.removeClass("is--shown").addClass("was--shown");
+  			$("body").attr("module--projetVisuel", "");
+  		});
 
 	},
 };
@@ -303,17 +304,6 @@ var theIntroLinks = {
   	$projetList.isotope({
       itemSelector: '.isotope--item',
       layoutMode: 'fitRows',
-/*
-		  filter: function() {
-        // _this_ is the item element. Get text of element's .number
-        var number = $(this).attr('data-type');
-        // return true to show, false to hide
-        return number === 'vr';
-      },
-      hiddenStyle: {
-        opacity: .4
-      },
-*/
       getSortData: {
         'selected': function( item ) {
           $item = $(item);
@@ -357,6 +347,7 @@ var theIntroLinks = {
 		$(document).on('click', introLinks, function() {
   		$('.module--intro a').not( $(this)).removeClass("is--active");
       $(this).toggleClass("is--active");
+      logClientEvents('Click sur un filtre du texte d’intro: ' + $(this).text());
       theIntroLinks.filterProjects( $projetList, $items);
     });
 	},
@@ -453,6 +444,7 @@ var theProjetView = {
     $(document).on('click', '.module--projet--visuel', function(e) {
       zoomedIn = !zoomedIn;
       theProjetView.zoomIn( zoomedIn);
+      logClientEvents('Click sur l’image poster d’un projet.');
       return false;
     });
 
@@ -515,6 +507,8 @@ var theProjetView = {
 
 function pageInit() {
 
+  	logClientEvents('Chargement de la page.');
+
   // pour la vue projet
 	theProjetView.init();
 
@@ -538,6 +532,7 @@ var pjaxNav = {
         if( elem.is(".logo") || elem.is("[data-goto=infos]")) {
           linkLocation = $(this).attr("href");
           pjaxNav.loadInPJAX( linkLocation, true);
+          logClientEvents('Click nav : ' + linkLocation);
           return false;
         } else
         // click "PROJETS"
@@ -547,21 +542,23 @@ var pjaxNav = {
             $('html, body').animate({
               scrollTop: $(".module--projetList").offset().top
             }, 800, function(){
-            $("body").css("pointer-events", "");
+              $("body").css("pointer-events", "");
             });
+            logClientEvents('Click nav : PROJETS');
             return false;
           }
         }
         if( elem.is(".module--projetList--titles--projetName--links")) {
           linkLocation = $(this).attr("href");
           // récupérer le visuel clické, le passer en "is--visuelProjet"
-    			$(".module--projetList .module--projetList--visuelWrapper--visuel")
-    			  .filter(function() {
-               return $(this).attr('data-index') === projetIndex;
-            })
-            .addClass("is--visuelProjet")
-          ;
+      			$(".module--projetList .module--projetList--visuelWrapper--visuel")
+      			  .filter(function() {
+                 return $(this).attr('data-index') === projetIndex;
+              })
+              .addClass("is--visuelProjet")
+            ;
 
+          logClientEvents('Click sur un projet : ' + linkLocation);
           pjaxNav.loadInPJAX( linkLocation, true);
           return false;
         }
@@ -616,15 +613,15 @@ var pjaxNav = {
   loadInPJAX : function( thisURL, withAnim) {
 
 		$("body").addClass("is--ajax_loading");
-  	console.log("PJAX to : " + thisURL);
-  	if( typeof _gaq !== 'undefined') { _gaq.push(['_trackPageview', thisURL]); }
-  	setTimeout( function() {
-  		//$('html, body').animate({scrollTop:0}, 100);
-  	  $.pjax({
-  	    "url": thisURL,
-  	    "fragment": "#pjax-container",
-  	    "container": "#pjax-container",
-  	  });
+    	console.log("PJAX to : " + thisURL);
+    	if( typeof _gaq !== 'undefined') { _gaq.push(['_trackPageview', thisURL]); }
+    	setTimeout( function() {
+    		//$('html, body').animate({scrollTop:0}, 100);
+    	  $.pjax({
+    	    "url": thisURL,
+    	    "fragment": "#pjax-container",
+    	    "container": "#pjax-container",
+    	  });
     }, 600);
 
   },

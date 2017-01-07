@@ -1,0 +1,323 @@
+Title: 2017-01-06 à 21:24:12 — admin sur Chrome 55
+
+----
+
+Date: 201701062124
+
+----
+
+Ip: ::1
+
+----
+
+Browser: Chrome 55
+
+----
+
+Device: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36
+
+----
+
+Lang: fr
+
+----
+
+Window-size: 1683×949
+
+----
+
+Events: 
+
+- 
+  event_date: "20170106"
+  event_time: 21:24:12.605
+  event_page: '~/#autres'
+  event_type: Chargement de la page.
+- 
+  event_date: "20170106"
+  event_time: 21:24:13.829
+  event_page: '~/#autres'
+  event_type: 'Survol sur la vignette du projet : Rapport d’Activité du CNAP'
+- 
+  event_date: "20170106"
+  event_time: 21:24:18.240
+  event_page: '~/#autres'
+  event_type: 'Survol sur la vignette du projet : emiliecoquard.fr'
+- 
+  event_date: "20170106"
+  event_time: 21:24:19.374
+  event_page: '~/#autres'
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170106"
+  event_time: 21:24:20.192
+  event_page: '~/#autres'
+  event_type: 'Click sur un projet : http://localhost:8888/louiseveillard.com-v2/projets/along-the-trail'
+- 
+  event_date: "20170106"
+  event_time: 21:24:31.844
+  event_page: ~/projets/along-the-trail
+  event_type: Chargement de la page.
+- 
+  event_date: "20170106"
+  event_time: 21:25:05.599
+  event_page: ~/projets/along-the-trail
+  event_type: Chargement de la page.
+- 
+  event_date: "20170106"
+  event_time: 21:25:10.187
+  event_page: ~/projets/along-the-trail
+  event_type: >
+    Click sur l’image poster d’un
+    projet.
+- 
+  event_date: "20170106"
+  event_time: 21:25:13.35
+  event_page: ~/projets/along-the-trail
+  event_type: >
+    Click sur l’image poster d’un
+    projet.
+- 
+  event_date: "20170106"
+  event_time: 21:25:22.521
+  event_page: ~/projets/along-the-trail
+  event_type: 'Survol sur la vignette du projet : Habsense'
+- 
+  event_date: "20170106"
+  event_time: 21:25:23.465
+  event_page: ~/projets/along-the-trail
+  event_type: 'Click sur un projet : http://localhost:8888/louiseveillard.com-v2/projets/habsense'
+- 
+  event_date: "20170106"
+  event_time: 21:25:41.156
+  event_page: ~/projets/habsense
+  event_type: Chargement de la page.
+- 
+  event_date: "20170106"
+  event_time: 21:32:14.97
+  event_page: ~/projets/habsense
+  event_type: >
+    Click sur l’image poster d’un
+    projet.
+- 
+  event_date: "20170106"
+  event_time: 21:32:14.596
+  event_page: ~/projets/habsense
+  event_type: >
+    Click sur l’image poster d’un
+    projet.
+- 
+  event_date: "20170106"
+  event_time: 21:32:21.712
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : Point à point'
+- 
+  event_date: "20170106"
+  event_time: 21:32:22.441
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : Slowscreen'
+- 
+  event_date: "20170106"
+  event_time: 21:32:23.40
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : Crease Patterns'
+- 
+  event_date: "20170106"
+  event_time: 21:32:23.724
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : Hypomnémata'
+- 
+  event_date: "20170106"
+  event_time: 21:32:24.229
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : Le Tricodeur'
+- 
+  event_date: "20170106"
+  event_time: 21:32:24.727
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : Panopticon'
+- 
+  event_date: "20170106"
+  event_time: 21:32:25.85
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : l’Opendoc & do.doc'
+- 
+  event_date: "20170106"
+  event_time: 21:32:26.726
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : l’Opendoc & do.doc'
+- 
+  event_date: "20170106"
+  event_time: 21:32:37.236
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : Le Tricodeur'
+- 
+  event_date: "20170106"
+  event_time: 21:32:38.870
+  event_page: ~/projets/habsense
+  event_type: Chargement de la page.
+- 
+  event_date: "20170106"
+  event_time: 21:33:44.57
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : l’Opendoc & do.doc'
+- 
+  event_date: "20170106"
+  event_time: 21:33:44.83
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : Panopticon'
+- 
+  event_date: "20170106"
+  event_time: 21:33:48.929
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : emiliecoquard.fr'
+- 
+  event_date: "20170106"
+  event_time: 21:33:48.978
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : emiliecoquard.fr'
+- 
+  event_date: "20170106"
+  event_time: 21:34:11.347
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : Point à point'
+- 
+  event_date: "20170106"
+  event_time: 21:34:11.352
+  event_page: ~/projets/habsense
+  event_type: 'Survol sur la vignette du projet : delure.org'
+- 
+  event_date: "20170107"
+  event_time: 17:09:34.511
+  event_page: ~/
+  event_type: Chargement de la page.
+- 
+  event_date: "20170107"
+  event_time: 17:09:35.684
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Rapport d’Activité du CNAP'
+- 
+  event_date: "20170107"
+  event_time: 17:11:15.54
+  event_page: ~/
+  event_type: Chargement de la page.
+- 
+  event_date: "20170107"
+  event_time: 17:11:15.950
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Rapport d’Activité du CNAP'
+- 
+  event_date: "20170107"
+  event_time: 17:11:16.692
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:11:17.434
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:18.241
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:11:18.820
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:20.94
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:20.884
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:21.193
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:21.428
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:21.598
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:11:21.837
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:21.957
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:11:22.126
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:22.210
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:11:22.329
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:22.466
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:11:22.603
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:22.723
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:11:22.841
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:22.992
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:11:23.163
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:11:23.283
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:11:23.663
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : Along the Trail'
+- 
+  event_date: "20170107"
+  event_time: 17:13:20.917
+  event_page: ~/
+  event_type: 'Survol sur la vignette du projet : l’Opendoc & do.doc'

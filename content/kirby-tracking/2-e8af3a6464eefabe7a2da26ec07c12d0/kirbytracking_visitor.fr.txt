@@ -1,0 +1,135 @@
+Title: 2017-01-07 à 16:46:27 — visiteur sur Firefox 50
+
+----
+
+Date: 201701071646
+
+----
+
+Ip: ::1
+
+----
+
+Browser: Firefox 50
+
+----
+
+Device: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:50.0) Gecko/20100101 Firefox/50.0
+
+----
+
+Lang: fr
+
+----
+
+Window-size: 1300×676
+
+----
+
+Events: 
+
+- 
+  event_date: "20170107"
+  event_time: 16:46:27.288
+  event_page: ~/
+  event_type: Chargement de la page.
+- 
+  event_date: "20170107"
+  event_time: 17:09:18.833
+  event_page: ~/
+  event_type: 'Click sur un filtre du texte d’intro: objets interactifs'
+- 
+  event_date: "20170107"
+  event_time: 17:09:19.614
+  event_page: '~/#objets-interactifs'
+  event_type: 'Click sur un filtre du texte d’intro: objets interactifs'
+- 
+  event_date: "20170107"
+  event_time: 17:09:20.556
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Rapport d’Activité du CNAP'
+- 
+  event_date: "20170107"
+  event_time: 17:09:21.323
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:09:22.104
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Rapport d’Activité du CNAP'
+- 
+  event_date: "20170107"
+  event_time: 17:09:22.946
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:09:57.300
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Rapport d’Activité du CNAP'
+- 
+  event_date: "20170107"
+  event_time: 17:09:58.131
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Fossiles de données'
+- 
+  event_date: "20170107"
+  event_time: 17:09:58.218
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Rapport d’Activité du CNAP'
+- 
+  event_date: "20170107"
+  event_time: 17:09:59.154
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Rapport d’Activité du CNAP'
+- 
+  event_date: "20170107"
+  event_time: 17:10:00.790
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Rapport d’Activité du CNAP'
+- 
+  event_date: "20170107"
+  event_time: 17:10:02.50
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Rapport d’Activité du CNAP'
+- 
+  event_date: "20170107"
+  event_time: 17:10:02.806
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : l’Opendoc & do.doc'
+- 
+  event_date: "20170107"
+  event_time: 17:10:07.259
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Couvertures génératives'
+- 
+  event_date: "20170107"
+  event_time: 17:10:12.208
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Couvertures génératives'
+- 
+  event_date: "20170107"
+  event_time: 17:10:22.308
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Panopticon'
+- 
+  event_date: "20170107"
+  event_time: 17:10:22.540
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : l’Opendoc & do.doc'
+- 
+  event_date: "20170107"
+  event_time: 17:10:24.448
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Panopticon'
+- 
+  event_date: "20170107"
+  event_time: 17:10:25.284
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Panopticon'
+- 
+  event_date: "20170107"
+  event_time: 17:10:59.82
+  event_page: '~/#objets-interactifs'
+  event_type: 'Survol sur la vignette du projet : Couvertures génératives'
