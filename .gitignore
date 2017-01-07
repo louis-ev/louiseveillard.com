@@ -6,3 +6,6 @@
 /thumbs/*
 /node_modules
 /bower_components
+
+content/kirby-tracking/
+content/kirby-tracking/*

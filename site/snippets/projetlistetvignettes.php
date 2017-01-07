@@ -24,8 +24,9 @@
         ?>
         <li class="module--projetList--titles--projetName isotope--item <?php e($p->isOpen(), 'is--active') ?> <?php e(is_visited($p->url()), 'is--visited', '') ?>" data-index="<?= $index ?>" data-type="<?= $projectSlug; ?>" data-num="<?= $ordreDesCategories[$projectSlug]; ?>">
           <a class="module--projetList--titles--projetName--links" href="<?= $p->url() ?>">
-          	<span class="module--projetList--titles--projetName--links--index"><?= $index ?></span>
+            	<span class="module--projetList--titles--projetName--links--index"><?= $index ?></span>
             <span class="module--projetList--titles--projetName--links--name"><?= $p->title()->html() ?></span>
+            <span class="module--projetList--titles--projetName--links--corners"></span>
           </a>
         </li>
     <?php

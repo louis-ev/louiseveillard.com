@@ -11261,13 +11261,11 @@ var theProjetList = {
     });
 
 		$(document).on('mouseenter','.module--projetList--titles--projetName--links', function() {
-  		  console.log('plip');
   			projetIndex = $(this).parent(".module--projetList--titles--projetName").attr("data-index");
   			$thisProjetVisuel = $allProjetsVisuel.filter(function(){
          return $(this).attr('data-index') === projetIndex;
       });
       $thisProjetVisuel.addClass("is--shown");
-  			$("body").attr("module--projetVisuel", "is--shown");
       logClientEvents('Survol sur la vignette du projet : ' + $(this).find(".module--projetList--titles--projetName--links--name").text());
   		});
 		$(document).on('mouseleave','.module--projetList--titles--projetName--links', function() {
@@ -11276,7 +11274,6 @@ var theProjetList = {
          return $(this).attr('data-index') === projetIndex;
       });
   			$thisProjetVisuel.removeClass("is--shown").addClass("was--shown");
-  			$("body").attr("module--projetVisuel", "");
   		});
 
 	},
@@ -11504,7 +11501,6 @@ function pageInit() {
 
   // pour la vue projet
 	theProjetView.init();
-
   // pour l'affichage du CV
 	if( $(".module--cv").length > 0) {
 	  setTimeout( canvasCV.init(), 400);
