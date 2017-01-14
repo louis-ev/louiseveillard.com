@@ -6,7 +6,7 @@ Text:
 
 ### Informations
 
-# Je suis designer et développeur indépendant depuis 2010 à Paris. Pour réaliser mes projets, j'aime créer des outils ((lienProjet: lopendoc-et-dodoc, couvertures-generatives, delure-org, point-a-point, slowscreen)) ou en détourner d'autres ((lienProjet: le-tricodeur, panopticon, emiliecoquard-fr)).
+# Je suis designer et développeur indépendant depuis 2010 à Paris. Pour réaliser mes projets, je crée des outils ((lienProjet: lopendoc-et-dodoc, couvertures-generatives, delure-org, point-a-point, slowscreen)) et j’en détourne d'autres ((lienProjet: le-tricodeur, panopticon)).
 
 ***
 
@@ -14,16 +14,11 @@ Text:
 
 Après un master en graphisme et typographie en 2012 à l'(link: http://www.esad-amiens.fr/ text: ésad d'Amiens popup: yes), j'ai rejoint le programme (link: http://sociablemedia.ensadlab.fr/ text: Sociable Media) du laboratoire de recherche de l'école nationale supérieure des Arts Décoratifs de Paris (ENSAD). Tourné vers le design d'interaction et les interfaces hommes-machines, ce programme était à l'origine encadré par Remy Bourganel et Étienne Mineur. Il s'est terminé en 2015 mais une archive est accessible sur le site du programme à l'adresse suivante : (link: http://sociablemedia.ensadlab.fr text: sociablemedia.ensadlab.fr popup: yes). 
 
-En 2014, j'ai également co-fondé le groupe (link: http://latelier-des-chercheurs.fr/ text: L'Atelier des Chercheurs) avec plusieurs autres designers. L'Atelier des Chercheurs développe des outils open-source pour encourager les pratiques réflexives dans les contextes d'apprentissage (lienProjet: lopendoc-et-dodoc). Nous fabriquons des objets intermédiaires que nous plaçons dans différents terrains – fablabs, écoles primaires, collectif d'artistes – pour révéler et identifier des situations et des besoins. Ces explorations donnent lieu à la publication de papiers de recherche qui rendent compte de la connaissance accumulée et nous permettent aussi d'itérer dans la création de nos outils. L'Opendoc et Dodoc, les deux outils que nous développons actuellement, sont déployés :
-- dans une école primaire du XV<sup>e</sup> arrondissement de Paris,
-- dans un lycée technique également dans le XV<sup>e</sup>,
-- au sein de plusieurs cours de l'université Paris 8,  
-- dans le cadre de cours de design d'interaction à l'ENSAD Paris,
-- et dans plusieurs fablabs de Paris et de province.
+En 2014, j'ai également co-fondé  le groupe (link: http://latelier-des-chercheurs.fr/ text: L'Atelier des Chercheurs) avec plusieurs autres designers. L'Atelier des Chercheurs développe des outils open-source pour encourager les pratiques réflexives dans les contextes d'apprentissage (lienProjet: lopendoc-et-dodoc). Nous fabriquons des objets que nous plaçons dans différents terrains – fablabs, écoles primaires, associations – pour révéler et identifier des situations et des besoins. Ces explorations donnent lieu à la publication de papiers de recherche qui rendent compte de la connaissance accumulée et nous permettent aussi d'itérer dans la création de ces outils. L'Opendoc et do•doc, les deux outils que nous développons actuellement, sont déployés dans une école primaire du XV<sup>e</sup> arrondissement de Paris, dans un lycée technique également dans le XV<sup>e</sup>, au sein de plusieurs cours de l'université Paris 8, dans le cadre de cours de design d'interaction à l'ENSAD Paris et dans plusieurs fablabs de Paris et de province.
 
-En février 2015, j'ai co-fondé le collectif (link: http://panoptic-lab.com/ text: Panoptic Lab) avec deux autres designers : Ferdinand Dervieux et Jérémie Lasnier. Nos 2 premiers projets, réalisés en collaboration pour l'un avec une illustratrice et pour l'autre avec un level designer, ont remporté les 2<sup>e</sup> et 3<sup>e</sup> prix du grand concours annuel organisé par Oculus en juin 2015. Ces projets sont présentés sur ce site (lienProjet: along-the-trail) (lienProjet: panopticon), et les applications sont en téléchargement libre pour le Samsung Gear VR (link: http://panoptic-lab.com/alongthetrail/ text: ici) et (link: http://panoptic-lab.com/panopticon/ text: là).
+En février 2015, j'ai co-fondé le collectif (link: http://panoptic-lab.com/ text: Panoptic Lab) avec deux autres designers : (link: http://ferdinanddervieux.com/ text: Ferdinand Dervieux) et (link: http://jeremielasnier.com/ text: Jérémie Lasnier). Nos 2 premiers projets, réalisés en collaboration pour l'un avec une illustratrice et pour l'autre avec un level designer, ont remporté les 2<sup>e</sup> et 3<sup>e</sup> prix du grand concours annuel organisé par Oculus en juin 2015. Ces projets sont présentés sur ce site (lienProjet: along-the-trail) (lienProjet: panopticon), et les applications sont en téléchargement libre pour le Samsung Gear VR (link: http://panoptic-lab.com/alongthetrail/ text: ici) et (link: http://panoptic-lab.com/panopticon/ text: là).
 
-Enfin, je suis designer et développeur indépendant pour des projets de commande. J'aime comprendre et identifier les besoins de mes clients, et trouver avec eux les solutions qui leur permettront d'atteindre leurs objectifs. Ces solutions impliquent par exemple la création d'une identité visuelle, d'un site internet ou d'un objet interactif.
+Enfin, je suis designer et développeur indépendant pour des projets alliant graphisme et code (le plus souvent sur le web). J'aime comprendre et identifier les besoins de mes clients et trouver avec eux les solutions qui leur permettront d'atteindre leurs objectifs. Ces solutions impliquent par exemple la création d'une identité visuelle, d'un site internet ou d'un objet interactif.
 
 ***
 

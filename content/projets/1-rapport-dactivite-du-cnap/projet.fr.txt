@@ -12,9 +12,9 @@ Annee: 2016
 
 Header: 
 
-Chaque année, le Centre National des Arts Plastique (CNAP) demande à des graphistes de réaliser son Rapport d'Activité. Celui-ci contient de très nombreuses données collectées au cours de l'année : nombre d'artistes soutenus, nombre d'œuvres achetées, répartition géographiques des prêts d'œuvres, budgets, etc. Pour mieux les appréhender et sortir des formes habituels de la dataviz nous avons décidé de faire tracer toutes les visualisations de ces informations à l'aide d'un robot.
+Chaque année, le Centre National des Arts Plastique (CNAP) demande à des graphistes de réaliser son Rapport d'Activité. Celui-ci contient de très nombreuses données collectées au cours de l'année : nombre d'artistes soutenus, nombre d'œuvres achetées, répartition géographiques des prêts d'œuvres, budgets, etc. Pour mieux les communiquer et sortir des formes habituels de la dataviz, toutes les visualisations de données du rapport 2015 ont été tracées par un robot.
 
-Ce rapport peut être téléchargé à l’adresse suivante : (link: http://www.cnap.fr/rapport-dactivite-2015-0 text: www.cnap.fr/rapport-dactivite-2015-0 popup: yes)
+La version PDF de ce document peut être téléchargé à l’adresse suivante : (link: http://www.cnap.fr/rapport-dactivite-2015-0 text: www.cnap.fr/rapport-dactivite-2015-0 popup: yes)
 
 ----
 
@@ -35,7 +35,7 @@ Text:
 
 (video: mp4: cnap-piccolo-video_1.mp4 webm: cnap-piccolo-video.webm poster: cnap-piccolo-video.jpg class: media-video controls: true)
 
-(image: cnap-xyp-montage-1.jpg legende: Pour améliorer la qualité du rendu et travailler sur de plus grands formats, nous avons construit un XYplotter, une table traçante permettant de dessiner sur des formats allant jusqu'au A3.)
+(image: cnap-xyp-montage-1.jpg legende: Pour améliorer la qualité du rendu et travailler sur de plus grands formats, nous avons construit un <a href="http://www.makeblock.com/xy-plotter-robot-kit/">XYplotter de Makeblock</a>, une table traçante permettant de dessiner sur des formats allant jusqu'au A3.)
 
 (video: mp4: cnap-xyp-video-2_2.mp4 webm: cnap-xyp-video-2.webm poster: cnap-xyp-video-2.jpg class: media-video controls: true)
 
