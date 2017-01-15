@@ -36,6 +36,7 @@ c::set('optimumx', 1.6);
 c::set('thumbsize', 1600);
 c::set('maxLinkedImageWidth', 1600);
 
+
 c::set('ssl',true);
 
 c::set('smartypants', true);
@@ -52,6 +53,8 @@ c::set('kirby.extension.videoext.autoplay', false);
 c::set('kirby.extension.videoext.loop', true);
 
 c::set('smartypants',true);
+
+c::set('timezone','Europe/Paris');
 
 c::set('languages', array(
   array(
