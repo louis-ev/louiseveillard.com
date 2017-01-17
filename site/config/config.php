@@ -35,7 +35,7 @@ c::set('lazyloadimages', true);
 c::set('optimumx', 1.6);
 c::set('thumbsize', 1600);
 c::set('maxLinkedImageWidth', 1600);
-
+c::set('thumbs.quality', 75);
 
 c::set('ssl',true);
 
