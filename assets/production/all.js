@@ -11038,8 +11038,6 @@ var canvasCV = {
 		function drawLinks(processing) {
 			processing.setup = function() {
 				processing.noLoop();
-				//processing.background( 21);
-				processing.smooth();
 			};
 
 			processing.draw = function() {
@@ -11092,14 +11090,13 @@ var canvasCV = {
 					processing.bezier( a1dx, a1dy, a1fx, a1fy, a2dx, a2dy, a2fx, a2fy);
 
 					processing.popMatrix();
-
 				}
 			};
 
 			processing.eraseBg = function( backgroundColor, bgOpacity) {
-  			if( bgOpacity === undefined) {
-  			  bgOpacity = 255;
-  		  }
+    			if( bgOpacity === undefined) {
+    			  bgOpacity = 255;
+    		  }
 				processing.fill( backgroundColor[0], backgroundColor[1], backgroundColor[2], bgOpacity);
 				processing.noStroke();
 				processing.rect( 0, 0, processing.width, processing.height);
