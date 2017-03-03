@@ -36,9 +36,10 @@ if( param('lang') !== 'en'):
 							</div>
 							<ul class="description">
 				    			<li>Designer indépendant et développeur front-end à Paris.</li>
-								<li>Membre du groupe de recherche <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a>.</li>
+								<li>Membre du collectif <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a>.</li>
+						    	<li>Enseignant en webdesign dans le cycle de <em>Communication Design</em> au <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a>.</li>
 						    	<li>Co-fondateur de <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, un collectif œuvrant dans la réalité virtuelle.</li>
-				                <li>Coorganisateur au <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>Free Art Bureau</a>, association à but non lucratif dédiée la promotion d’outils libres pour la création.</li>
+                <li>Coorganisateur au <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>Free Art Bureau</a>, association à but non lucratif dédiée la promotion d’outils libres pour la création.</li>
 							</ul>
 				    </div>
 		    	</div>
@@ -110,6 +111,7 @@ if( param('lang') !== 'en'):
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Intervention à l’<a href="www.ecole-boulle.org/articles/4171/conference-culture-code" target="_blank">école Boulle</a> lors d’une conférence sur le sujet <em>Culture Code</em> (2017).</li>
 							<li>Intervention à la table-ronde du <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">festival Scopitone</a> à Nantes sur la <em>Matérialité des Données</em> (2016).</li>
 							<li>Conférence aux <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> sur le thème <em>Chercher l’erreur – Égarements et odyssées graphiques</em> (2016).</li>
 							<li>Conférence à l’<a href="http://www.ensci.com/" target="_blank">ENSCI</a> pour la journée d’étude <em>La Fabrique des Outils</em> organisée par l'association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a> (2016).</li>
@@ -154,6 +156,7 @@ if( param('lang') !== 'en'):
 								<h3>Publications</h3>
 							</div>
 							<ul class="description">
+								<li><a href="http://www.revue-backoffice.com/" target="_blank">Back Office</a>, éditions Fork & B42 (2017) – présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> dans l’article Œuvrer avec les machines numériques de Sophie Fétro.</li>
 								<li><a href="http://www.r-diffusion.org/index.php?ouvrage=CAM-09" target="_blank">Algorithmes typographiques</a>, éditions La clé à molette (2016) – présentation d'un générateur aléatoire de caractères.</li>
 								<li><a href="http://www.eyrolles.com/Audiovisuel/Livre/fibres-fils-tissus-9782212143126" target="_blank">Fibres, fils, tissus</a>, éditions Eyrolles (2016) – introduction au <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
 								<li>Gourlet, P., Dervieux, F., Eveillard, L., Mancini, J. (2015) 'The Research Diary: Documenting and Publishing Classrooms' Activites', in International Journal for Cross-Disciplinary Subjects in Education, Volume 6, Issue 1.</li>
@@ -199,9 +202,10 @@ else:
 							</div>
 							<ul class="description">
 				    		<li>Freelance designer and front-end developer in Paris.</li>
-					    	<li>Co-founder of <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, a design studio working on Virtual Reality projects.</li>
-								<li>Member of the research group <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l'atelier des chercheurs</a>.</li>
-						    <li>Co-organizer of events and sessions for the <a href='http://freeartbureau.org/sundays/' data-link='fab' target='_blank'>Free Art Sundays</a> at the <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>Free Art Bureau</a>, a not-for-profit association dedicated to promoting open-source digital tools for designers and artists.</li>
+							<li>Member of the group <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l'atelier des chercheurs</a>.</li>
+					    	<li>Teacher in webdesign for the BFA in <em>Communication Design</em> at the <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a>.</li>
+  					    	<li>Co-founder of <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, a design studio working on Virtual Reality projects.</li>
+					    <li>Co-organizer of events and sessions for the <a href='http://freeartbureau.org/sundays/' data-link='fab' target='_blank'>Free Art Sundays</a> at the <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>Free Art Bureau</a>, a not-for-profit association dedicated to promoting open-source digital tools for designers and artists.</li>
 							</ul>
 				    </div>
 		    	</div>
@@ -292,6 +296,7 @@ else:
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Invited for the panel at  the <a href="www.ecole-boulle.org/articles/4171/conference-culture-code" target="_blank">école Boulle</a> to discuss the <em>Culture of Code for designers</em> (2017).</li>
 							<li>Invited for the panel at  the <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">Scopitone festival 2016</a> to discuss the <em>Materiality of Data</em> (2016).</li>
 							<li>Lecture at the <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> on the topic of <em>Errors and failures in Graphic Design</em> (2016).</li>
 							<li>Lecture at <a href="http://www.ensci.com/" target="_blank">ENSCI</a> for the seminar <em>La Fabrique des Outils</em> organized by the association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a> (2016).</li>
@@ -334,6 +339,7 @@ else:
 								<h3>Publications</h3>
 							</div>
 							<ul class="description">
+								<li><a href="http://www.revue-backoffice.com/" target="_blank">Back Office</a>, Éditions Fork & B42 (2017) – introduction to the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
 								<li><a href="http://www.r-diffusion.org/index.php?ouvrage=CAM-09" target="_blank">Typographic algorithms</a>, éditions La clé à molette (2016) – page created by a type generator that uses random shapes and OCR.</li>
 								<li><a href="http://www.eyrolles.com/Audiovisuel/Livre/fibres-fils-tissus-9782212143126" target="_blank">Fibres, fils, tissus</a>, éditions Eyrolles (2016) – introduction to the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
 								<li>Gourlet, P., Dervieux, F., Eveillard, L., Mancini, J. (2015) 'The Research Diary: Documenting and Publishing Classrooms' Activites', in International Journal for Cross-Disciplinary Subjects in Education, Volume 6, Issue 1.</li>
