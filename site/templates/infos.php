@@ -111,6 +111,7 @@ if( param('lang') !== 'en'):
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Conférence de présentation de mon travail et de mes recherches au <a href="https://www.campusfonderiedelimage.org/" target="_blank">Campus Fonderie de l’Image</a> (2017).</li>
 							<li>Intervention à l’<a href="www.ecole-boulle.org/articles/4171/conference-culture-code" target="_blank">école Boulle</a> lors d’une conférence sur le sujet <em>Culture Code</em> (2017).</li>
 							<li>Intervention à la table-ronde du <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">festival Scopitone</a> à Nantes sur la <em>Matérialité des Données</em> (2016).</li>
 							<li>Conférence aux <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> sur le thème <em>Chercher l’erreur – Égarements et odyssées graphiques</em> (2016).</li>
@@ -296,6 +297,7 @@ else:
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Lecture on my work and research at <a href="https://www.campusfonderiedelimage.org/" target="_blank">Campus Fonderie de l’Image</a> (2017).</li>
 							<li>Invited for the panel at  the <a href="www.ecole-boulle.org/articles/4171/conference-culture-code" target="_blank">école Boulle</a> to discuss the <em>Culture of Code for designers</em> (2017).</li>
 							<li>Invited for the panel at  the <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">Scopitone festival 2016</a> to discuss the <em>Materiality of Data</em> (2016).</li>
 							<li>Lecture at the <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> on the topic of <em>Errors and failures in Graphic Design</em> (2016).</li>
