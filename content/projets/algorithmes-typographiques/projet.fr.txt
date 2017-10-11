@@ -19,11 +19,16 @@ Headercol2:
 ### thème
 ## 
 ### année
-## projet réalisé en 2014, livre publié en février 2016
+## livre publié en février 2016
 
 ----
 
-Text: (image: _1050757.jpg legende: Le dispositif de documentation dans la classe à l’école des Alouettes à Paris.)
+Text: 
+
+(image: _1050757.jpg legende: .)
+(image: _1050765.jpg legende: .)
+(image: _1050766.jpg legende: .)
+(image: _1050771.jpg legende: .)
 
 ----
 

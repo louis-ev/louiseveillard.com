@@ -7,10 +7,10 @@ Text:
 Point à Point se déroule de la manière suivante :
 
 1.  les participants relient les points indiqués sur une feuille A4 avec les outils de leurs choix (stylo, feutres, pinceaux, calame, crayons, scotch, etc.),
-2. une fois la feuille remplie, ils viennent la placer sur le scanner placé devant eux, puis ils appuient sur le bouton à l'avant
-3. le scan se lance et un un ordinateur récupère le résultat. Un programme écrit pour l'installation analyse automatiquement les tracés du participant et les transforme en quelques secondes en un alphabet complet. 
-4. cet alphabet est ensuite composé dans un format web, et publié sur le compte (link: https://twitter.com/pointapoint text: Point à Point sur Twitter popup: yes)
-5. en parallèle, une feuille au format A5 est composée automatiquement et imprimée avec une série de mots en lien avec un lieu ou un événement.
+2. une fois la feuille remplie, ils viennent la placer sur le scanner qui est devant eux, puis ils appuient sur le bouton à l'avant
+3. le scan se lance et un un ordinateur récupère le résultat. Un programme analyse automatiquement les tracés du participant et les transforme en un alphabet complet. 
+4. cet alphabet est ensuite exporté dans une image et publié sur le compte (link: https://twitter.com/pointapoint text: Point à Point sur Twitter popup: yes)
+5. en parallèle, une feuille au format A5 est imprimée avec une série de mots en lien avec un lieu ou l’événement où se passer l’installation.
 
 (image: point-a-point_installation_batisseurs-possibles.jpg legende: Installation de Point à point aux Bâtisseurs de Possibles en juin 2015.)
 

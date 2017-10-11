@@ -6,7 +6,7 @@ Type: objets-interactifs
 
 ----
 
-Annee:
+Annee: 
 
 ----
 
@@ -14,7 +14,7 @@ Header: Un prototype d'écran textile réactif à la chaleur corporelle. Intégr
 
 ----
 
-Headercol2:
+Headercol2: 
 
 ### thème
 ## support tactile et textile de communication
@@ -25,7 +25,7 @@ Headercol2:
 
 ----
 
-Text:
+Text: 
 
 (image: ssc-large-2.jpg legende: Prototype du tissu constitué de 750 cellules chauffantes cousues.)
 
@@ -33,6 +33,8 @@ La surface textile est aussi lien sensible. Les échanges peuvent se faire de de
 
 <small>Publié dans le magazine (link: http://etapes.com/ text: étapes:) numéro 216 (octobre 2013).</small>
 <small>Publié dans le livre (link: http://www.pearson.fr/livre/?GCOI=27440100443180 text: Projets créatifs avec Arduino) (août 2014).</small>
+
+(image: slowscreen-schema-complet.png legende: Schema du circuit)
 
 (image: ssc-large-3.jpg legende: Chaque cellule est contrôlable individuellement, comme les pixels d'un écran d'ordinateur.)
 
@@ -50,7 +52,7 @@ La surface textile est aussi lien sensible. Les échanges peuvent se faire de de
 
 ----
 
-Cover:
+Cover: 
 
 ----
 
