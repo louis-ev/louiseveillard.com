@@ -35,7 +35,7 @@ if( param('lang') !== 'en'):
 				    	    	<h3>Activités</h3>
 							</div>
 							<ul class="description">
-				    			<li>Designer indépendant et développeur front-end à Paris.</li>
+				    			<li>Designer indépendant à Paris.</li>
 								<li>Membre du collectif <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a>.</li>
 						    	<li>Enseignant en webdesign dans le cycle de <em>Communication Design</em> au <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a>.</li>
 						    	<li>Co-fondateur de <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, un collectif œuvrant dans la réalité virtuelle.</li>
@@ -111,6 +111,8 @@ if( param('lang') !== 'en'):
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Workshop sur le thème de la <em>data-physicalisation</em> à l’<a href="http://www.newschool.edu/parsons-paris/" target="_blank">École de design Nantes Atlantique</a> du 15 au 19 mai 2017. Compte-rendu, références, méthodologie et projets des étudiants <a href="https://datafossil.xyz/" target="_blank">sur cette page</a>.</li>
+							<li>Conférence de présentation de mon travail avec des robots et des programmes dans le cadre du club tech'ART du Lycée Louis Armand dans le XV<sup>e</sup> arrondissement de Paris (2017).</li>
 							<li>Conférence de présentation de mon travail et de mes recherches au <a href="https://www.campusfonderiedelimage.org/" target="_blank">Campus Fonderie de l’Image</a> (2017).</li>
 							<li>Intervention à l’<a href="www.ecole-boulle.org/articles/4171/conference-culture-code" target="_blank">école Boulle</a> lors d’une conférence sur le sujet <em>Culture Code</em> (2017).</li>
 							<li>Intervention à la table-ronde du <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">festival Scopitone</a> à Nantes sur la <em>Matérialité des Données</em> (2016).</li>
@@ -119,22 +121,19 @@ if( param('lang') !== 'en'):
 							<li>Conférence à l’<a href="http://www.ensad.fr/" target="_blank">ENSAD</a> pour la présentation du projet de création et de réalisation de 10000 couvertures pour livres numériques (2016).</li>
 							<li>Conférence aux <a href="http://delure.org/les-a-cotes/evenements-et-workshops/mardis-de-lure-1" target="_blank" data-link="delure">Mardis de Lure</a> à la Générale à Paris pour présenter des outils pour enseigner le design et encourager des pédagogies actives (2015).</li>
 							<li>Workshop à la <a href="http://www.newschool.edu/parsons-paris/" target="_blank">PARSONS</a> à Paris dans le cours <em>Creativity and Computation Lab</em> (2015).</li>
-							<li>Workshop à la conférence <a href="http://learnxdesign2015.com/" target="_blank">LearnxDesign 2015</a> à Chicago, avec l’équipe de <a data-link="latelier" href="http://www.latelier-des-chercheurs.fr" target="_blank">l’atelier des chercheurs</a>.</li>
+							<li>Workshop à la conférence <a href="http://learnxdesign2015.com/" target="_blank">LearnxDesign 2015</a> à Chicago, avec l’équipe de <a data-link="latelier" href="http://www.latelier-des-chercheurs.fr" target="_blank">l’atelier des chercheurs</a> (2015).</li>
 							<li>Conférence de présentation de mon travail et de mes recherches à l’<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a> (2015).</li>
 							<li>Introduction au <a data-link='tricodeur' href="http://www.letricodeur.com">Tricodeur</a> lors de la <a href="http://www.dailymotion.com/video/x2mhyja_louis-eveillard-soiree-di-zain-21-mode-s_creation" target="_blank">soirée *di*/zaïn #21</a>, au Grand Palais à Paris le 11 avril 2015.</li>
 							<li>Présentation de <a href="http://panoptic-lab.com/" data-link="panopticlab">Panoptic Lab</a> au talk sur l’art génératif organisé par <a href="https://brightfor.me/">Bright</a> au <a href="http://silencio-club.com/fr" target="_blank">Silencio</a>, à Paris, le 19 février 2015.</li>
 							<li>Workshop et conférence sur la matérialisation du numérique par le code à l’<a href="http://www.esalorraine.fr/metz/" target="_blank">ésal Metz</a> les 2, 3 et 4 février 2015.</li>
 							<li>Conférence publique sur la représentation des traces numériques à l’<a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d’Amiens</a> le 9 décembre 2014.</li>
-							<li>Workshop de 3 jours à Cap Science à Bordeaux autour du projet du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>. sur le détournement et l’utilisation de machines à tricoter programmables pour réaliser des motifs générés par le code et des données personnelles (en collaboration avec l’association <a href="http://www.sewetlaine.com/" target="_blank">Sew&Laine</a> et <a href="http://www.2roqs.fr/" target="_blank">Studio 2Roqs</a>).</li>
+							<li>Workshop dans le cadre du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> sur le détournement et l’utilisation de machines à tricoter programmables pour réaliser des motifs générés par des données personnelles. Sur 3 jours à Cap Science à Bordeaux, en collaboration avec l’association <a href="http://www.sewetlaine.com/" target="_blank">Sew&Laine</a> et <a href="http://www.2roqs.fr/" target="_blank">Studio 2Roqs</a>).</li>
 							<li>Enseignant de design génératif en 4<sup>e</sup> année à <a href='http://www.hetic.net/' target='_blank'>HETIC</a> à Montreuil (2013). Résumé et code du cours <a href="http://www.beautifulseams.com/2013/10/31/teaching-generative-design/" data-link='blog' target="_blank">sur mon blog</a>.</li>
 							<li>Conférence sur l’algorithme dans l’art et le design à l’<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a> (2013). Compte-rendu, slides et projets des étudiants <a data-link='algorithme' href="http://algorithme.beautifulseams.com/" target="_blank">sur cette page</a>.</li>
 						</ul>
 				    </div>
 		    	</div>
-<!--
-			</div>
-			<div class="row">
--->
+
 		    	<div class="column ">
 				    <div class="content prix">
 						<div class="header">
@@ -157,6 +156,7 @@ if( param('lang') !== 'en'):
 								<h3>Publications</h3>
 							</div>
 							<ul class="description">
+								<li><a href="http://etapes.com/etapes-237" target="_blank">étapes: #237</a> (mai 2017) – présentation du Tricodeur et de Acrobates Builder.</li>
 								<li><a href="http://www.revue-backoffice.com/" target="_blank">Back Office</a>, éditions Fork & B42 (2017) – présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> dans l’article Œuvrer avec les machines numériques de Sophie Fétro.</li>
 								<li><a href="http://www.r-diffusion.org/index.php?ouvrage=CAM-09" target="_blank">Algorithmes typographiques</a>, éditions La clé à molette (2016) – présentation d'un générateur aléatoire de caractères.</li>
 								<li><a href="http://www.eyrolles.com/Audiovisuel/Livre/fibres-fils-tissus-9782212143126" target="_blank">Fibres, fils, tissus</a>, éditions Eyrolles (2016) – introduction au <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
@@ -202,7 +202,7 @@ else:
 				    	    	<h3>Activities</h3>
 							</div>
 							<ul class="description">
-				    		<li>Freelance designer and front-end developer in Paris.</li>
+				    		<li>Freelance designer in Paris.</li>
 							<li>Member of the group <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l'atelier des chercheurs</a>.</li>
 					    	<li>Teacher in webdesign for the BFA in <em>Communication Design</em> at the <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a>.</li>
   					    	<li>Co-founder of <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, a design studio working on Virtual Reality projects.</li>
@@ -297,9 +297,11 @@ else:
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Workshop on <em>data-physicalisation</em> at l’<a href="http://www.newschool.edu/parsons-paris/" target="_blank">École de design Nantes Atlantique</a> over 5 days in May 2017. Presentation, references, methods and the students' productions can be <a href="https://datafossil.xyz/" target="_blank">read on this page</a>.</li>
+							<li>Lecture on my work with robots and programs at the club tech'ART of the Lycée Louis Armand in Paris (2017).</li>
 							<li>Lecture on my work and research at <a href="https://www.campusfonderiedelimage.org/" target="_blank">Campus Fonderie de l’Image</a> (2017).</li>
 							<li>Invited for the panel at  the <a href="www.ecole-boulle.org/articles/4171/conference-culture-code" target="_blank">école Boulle</a> to discuss the <em>Culture of Code for designers</em> (2017).</li>
-							<li>Invited for the panel at  the <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">Scopitone festival 2016</a> to discuss the <em>Materiality of Data</em> (2016).</li>
+							<li>Invited for the panel at  the <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">Scopitone festival 2016</a> in Nantes to discuss the <em>Materiality of Data</em> (2016).</li>
 							<li>Lecture at the <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> on the topic of <em>Errors and failures in Graphic Design</em> (2016).</li>
 							<li>Lecture at <a href="http://www.ensci.com/" target="_blank">ENSCI</a> for the seminar <em>La Fabrique des Outils</em> organized by the association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a> (2016).</li>
 							<li>Lecture at <a href="http://www.ensad.fr/" target="_blank">ENSAD</a> on the 10.000 generated covers project for FeniXX (2016).</li>
@@ -341,16 +343,17 @@ else:
 								<h3>Publications</h3>
 							</div>
 							<ul class="description">
+								<li><a href="http://etapes.com/etapes-237" target="_blank">étapes: #237</a> (May 2017) – introduction to my profile and two projects: the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> and Acrobates Builder.</li>
 								<li><a href="http://www.revue-backoffice.com/" target="_blank">Back Office</a>, Éditions Fork & B42 (2017) – introduction to the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
 								<li><a href="http://www.r-diffusion.org/index.php?ouvrage=CAM-09" target="_blank">Typographic algorithms</a>, éditions La clé à molette (2016) – page created by a type generator that uses random shapes and OCR.</li>
 								<li><a href="http://www.eyrolles.com/Audiovisuel/Livre/fibres-fils-tissus-9782212143126" target="_blank">Fibres, fils, tissus</a>, éditions Eyrolles (2016) – introduction to the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
 								<li>Gourlet, P., Dervieux, F., Eveillard, L., Mancini, J. (2015) 'The Research Diary: Documenting and Publishing Classrooms' Activites', in International Journal for Cross-Disciplinary Subjects in Education, Volume 6, Issue 1.</li>
 								<li>Gourlet, P., Dervieux, F., Eveillard, L., Garcin, S. (2015) 'Designing learning tools for education', workshop DRS/LearnxDesign 2015, Chicago, USA.</li>
 								<li><a href="http://www.pearson.fr/livre/?GCOI=27440100443180" target="_blank">Projets créatifs avec Arduino</a> (2014)</li>
-								<li><a href="img/hab/hab-intramuros-172.jpg" target="_blank">Intramuros #172</a> (mai-juin 2014)</li>
-								<li><a href="http://www.mouvement.net/analyses/enquetes/faciliter-lacces-au-web" target="_blank">Mouvement #72</a> (janvier-février 2014)</li>
-								<li>étapes: #216 (octobre 2013)</li>
-								<li>étapes: #209 (octobre 2012)</li>
+								<li><a href="img/hab/hab-intramuros-172.jpg" target="_blank">Intramuros #172</a> (May 2014)</li>
+								<li><a href="http://www.mouvement.net/analyses/enquetes/faciliter-lacces-au-web" target="_blank">Mouvement #72</a> (January-February 2014)</li>
+								<li>étapes: #216 (October 2013)</li>
+								<li>étapes: #209 (October 2012)</li>
 							</ul>
 				    </div>
 		    	</div>
