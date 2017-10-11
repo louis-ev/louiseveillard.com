@@ -347,6 +347,7 @@ a:focus {
 		color: #fff;
 		padding: .1em .0em;
 		margin: -.1em -.0em;
+    text-shadow: 0px 2px 4px black;
 
   	background-position: 0 100%;
   	background-repeat: no-repeat;
@@ -399,7 +400,7 @@ a:focus {
 
       .animationDifferee(@index) {
         &:nth-of-type(@{index}){
-          transition:	all .25s, background-position 2.2s @index * .6s;
+          transition:	background-size .2s, background-position 2.2s @index * .6s;
 
 
   -webkit-transition-timing-function: cubic-bezier(0.315, 0.110, 0.000, 0.985);

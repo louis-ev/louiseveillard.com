@@ -11015,13 +11015,13 @@ var canvasCV = {
 
     init_pjs = 768;
 		if ( $(window).width() > init_pjs ) {
-	    var scriptSrc = './bower_components/Processing.js/processing.min.js?' + new Date().getTime();
+	    var scriptSrc = 'https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js';
 	    //console.log( "script : " , script);
 			var script = document.createElement('script');
 			script.src = scriptSrc;
 
 			script.onload = function() {
-		    canvasCV.start();
+// 		    canvasCV.start();
 			};
 
 			var head = document.getElementsByTagName('head')[0];
@@ -11041,11 +11041,11 @@ var canvasCV = {
 			};
 
 			processing.draw = function() {
-
 			};
 
 			processing.drawLink = function( startPointx, startPointy, endPointx, endPointy, p5Color, strokeWeight ) {
 
+        console.log('plio');
 				processing.noFill();
 				processing.strokeWeight(strokeWeight);
 
@@ -11569,11 +11569,11 @@ var pjaxNav = {
       	return $(this).attr("href") === linkToContent;
     	}).parents(".module--projetList--titles--projetName").addClass("is--visited");
 
-      $("body")
-        .attr("data-template", pjaxInfos.template)
-        .attr("data-intended-template", pjaxInfos.intendedtemplate)
-        .attr("data-rubrique", pjaxInfos.rubrique)
-        .attr("data-index", pjaxInfos.projetIndex);
+    $("body")
+      .attr("data-template", pjaxInfos.template)
+      .attr("data-intended-template", pjaxInfos.intendedtemplate)
+      .attr("data-rubrique", pjaxInfos.rubrique)
+      .attr("data-index", pjaxInfos.projetIndex);
 
       // si on a affaire à une page projet, on démarre en zoomedin
       if( pjaxInfos.template === "projet") {
@@ -11590,6 +11590,8 @@ var pjaxNav = {
         return;
       }
       $("body").removeClass("is--ajax_loading").css( "overflow", '');
+
+
       pageInit();
     });
 

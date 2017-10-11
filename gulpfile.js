@@ -136,6 +136,7 @@ gulp.task('init-live-reload', function() {
     snippetOptions: {
       ignorePaths: ['panel/**', 'site/accounts/**']
     },
+    browser: ['google chrome']
   });
 });
 

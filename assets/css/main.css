@@ -698,6 +698,7 @@ html.js body.is--loading .module--navbar {
   color: #fff;
   padding: .1em .0em;
   margin: -0.1em 0em;
+  text-shadow: 0px 2px 4px black;
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 250% 1px;
@@ -745,27 +746,27 @@ html.js .module--intro {
   transition: opacity 1.4s ease-out, transform 0.6s ease-out;
 }
 html.js .module--intro a:nth-of-type(1) {
-  transition: all 0.25s, background-position 2.2s 0.6s;
+  transition: background-size 0.2s, background-position 2.2s 0.6s;
   transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
   /* custom */
 }
 html.js .module--intro a:nth-of-type(2) {
-  transition: all 0.25s, background-position 2.2s 1.2s;
+  transition: background-size 0.2s, background-position 2.2s 1.2s;
   transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
   /* custom */
 }
 html.js .module--intro a:nth-of-type(3) {
-  transition: all 0.25s, background-position 2.2s 1.8s;
+  transition: background-size 0.2s, background-position 2.2s 1.8s;
   transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
   /* custom */
 }
 html.js .module--intro a:nth-of-type(4) {
-  transition: all 0.25s, background-position 2.2s 2.4s;
+  transition: background-size 0.2s, background-position 2.2s 2.4s;
   transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
   /* custom */
 }
 html.js .module--intro a:nth-of-type(5) {
-  transition: all 0.25s, background-position 2.2s 3s;
+  transition: background-size 0.2s, background-position 2.2s 3s;
   transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
   /* custom */
 }
