@@ -2,7 +2,7 @@ Title: Le Tricodeur
 
 ----
 
-Text:
+Text: 
 
 Le Tricodeur explore la mise en relation de deux pratiques créatives liées entre elles par un héritage commun : le tricot et la programmation. Au XIX<sup>e</sup> siècle, le métier à tisser Jacquard est précurseur dans l'utilisation de cartes perforées pour encoder un motif. Il a ensuite inspiré la création du Analytical Engine, ancêtre des ordinateurs modernes et première machine capable de mémoriser et d'exécuter un algorithme dit algébrique. Son développement a d'ailleurs mené à l'informatique contemporaine.
 
@@ -10,19 +10,16 @@ Le Tricodeur explore la mise en relation de deux pratiques créatives liées ent
 
 ---
 
-Le Tricodeur se base sur des techniques récentes de piratage de machines à tricoter électroniques (celle de <a href="https://learn.adafruit.com/electroknit" target="_blank">Becky Stern</a> notamment) et transforme des motifs générés par du code informatique en motifs de mailles, de manière à réunir à nouveau algorithmes programmés et à la tricot machine.
+Le Tricodeur se base sur des techniques récentes de piratage de machines à tricoter électroniques (celle de <a href="https://learn.adafruit.com/electroknit" target="_blank">Becky Stern</a> notamment) et transforme des motifs générés par du code informatique en motifs de mailles, de manière à réunir à nouveau algorithmes programmés et tricot machine.
 
 J'ai réalisé le Tricodeur en collaboration avec deux entités bordelaises : <a href="http://www.sewetlaine.com/" target="_blank">Sew & Laine</a>, une association dédiée aux textiles et au fait-main et <a href="http://www.2roqs.fr/">2Roqs</a>, un studio dont le travail tourne autour des technologies digitales créatives.
 
 * Photos et explications des projets sur <a href="http://letricodeur.com/" target="_blank">letricodeur.com/</a>
 * <a href="https://www.youtube.com/watch?v=KM-ImfTF0O8" target="_blank">Vidéo récapitulative des 3 jours</a>
- 
-
-pendant le workshop se trouvesont présentés ici
 * Le sujet du workshop, les contenus et les résultats du workshop d’initiation avec Processing sont présentés ici : <a href="http://letricodeur.com/workshop/" target="_blank">letricodeur.com/workshop/</a>
 * L'ensemble des contenus sont sous licence libre Creative Commons et sont en téléchargement <a href="https://github.com/louis-ev/Le-Tricodeur" target="_blank">sur GitHub</a>
 
-Repris par :
+Les articles suivant parlent du Tricodeur :
 * <a href="http://www.makery.info/2014/09/08/tricoter-en-decodant/" target="_blank">Tricoter en décodant</a> sur Makery
 * <a href="https://blog.etsy.com/fr/2014/le-tricodeur-rencontre-entre-le-numerique-et-la-maille/" target="_blank">Rencontre entre le numérique et la maille</a> sur Etsy
 * <a href="https://storify.com/capsciences/le-tricodeur-quand-le-numerique-et-la-maille-se-re">Le Tricodeur</a> sur Storify par Cap Sciences
@@ -31,29 +28,27 @@ Repris par :
 
 Famille de caractère Tricofont créée par <a href="http://www.emiliecoquard.fr" target="_blank">Émilie Coquard</a>.
 
-Le projet a démarré en septembre 2014 par une résidence d'une semaine au local de Sew & Laine à Bordeaux pour créer et réaliser le Tricodeur.
-
 ---
 
-Du 10 au 12 octobre 2014, j'ai animé et encadré à <a href="http://www.cap-sciences.net/" target="_blank">Cap Sciences</a> (à Bordeaux) un workshop ouvert au public proposant une initiation au code par le tricot et au tricot par le code. Un ensemble d'outils permettant de connecter mailles et pixels ont été développés pour l'occasion.
-Ci-dessous, les productions des participants du workshop.
+Le projet a démarré en septembre 2014 par une résidence d'une semaine au local de Sew & Laine à Bordeaux pour créer et réaliser le Tricodeur.
+
+Du 10 au 12 octobre 2014, j’ai ensuite animé et encadré à <a href="http://www.cap-sciences.net/" target="_blank">Cap Sciences</a> (à Bordeaux) un workshop ouvert au public proposant une initiation au code par le tricot et au tricot par le code. Un ensemble d'outils permettant de connecter mailles et pixels ont été développés pour l'occasion. Ci-dessous, les productions des participants du workshop.
 
 (image: assemblage-tricodeur-workshop-web-large-1.jpg)
 
-L'enjeu de ce workshop était de créer des images d’abord sur écran puis de les tricoter en partant de jeux de données personnelles fournis par les participants eux-mêmes (profil Facebook ou Twitter, historique Google, échanges de SMS, podomètres, etc.). Les images, produites avec les contraintes du tricot, vont du descriptif à l'abstrait mais toujours en restant propres à leurs porteurs. Elles donnent à voir de manière poétique un aspect habituellement masqué de notre identité. Pour plus d'informations sur le workshop, voir <a href="http://letricodeur.com/workshop/" target="_blank">letricodeur.com/workshop/</a>.
-Ci-dessous, visualisation de l'activité d'un compte Twitter depuis sa création.
+L'enjeu de ce workshop était de créer des images d’abord sur écran puis de les tricoter en partant de jeux de données personnelles fournis par les participants eux-mêmes (profil Facebook ou Twitter, historique Google, échanges de SMS, podomètres, etc.). Les images, produites avec les contraintes du tricot, vont du figuratif à l'abstrait mais toujours en restant propres à leurs porteurs. Elles donnent à voir de manière poétique un aspect habituellement masqué de notre identité. Pour plus d'informations sur le workshop, rendez-vous sur <a href="http://letricodeur.com/workshop/" target="_blank">letricodeur.com/workshop/</a>.
 
-(image: tricodeur-large-2.jpg)
+(image: tricodeur-large-2.jpg legende: Visualisation de l'activité d'un compte Twitter depuis sa création)
 
-Un des outils préparé pour le workshop : un simulateur de maille pour Processing, permettant aux participants de tester leurs images en maille très rapidement. L'outil permet d'exporter ces images dans un format PNG, ou de les envoyer directement à la machine à tricoter si elle est branchée en USB.
+Un des outils préparé pour le workshop est un simulateur de maille pour Processing, permettant aux participants de tester leurs images en maille très rapidement. L'outil permet d'exporter ces images dans un format PNG, ou de les envoyer directement à la machine à tricoter si elle est branchée en USB.
 
 (image: apercu-maille.png)
 
-Le lieu du workshop à Cap Sciences et les participants : Charlotte, Guillaume, Harmony, Émilie et Alice. Julien Gachadoat de 2Roqs (qui a pris cette photo) a également encadré les participants dans leurs productions.
+Ci-dessous, le lieu du workshop à Cap Sciences et les participants : Charlotte, Guillaume, Harmony, Émilie et Alice. Julien Gachadoat du studio 2Roqs (qui a pris cette photo) a également aidé les participants dans leurs productions.
 
 (image: tricodeur-large-3.jpg)
 
-Productions du workshop. Tous les projets et explications sur <a href="http://letricodeur.com/" target="_blank">letricodeur.com</a>. Codes à l'origine de ces programmes sur <a href="https://github.com/louis-ev/Le-Tricodeur" target="_blank">GitHub</a>.
+Productions du workshop. Tous les projets et explications sont sur <a href="http://letricodeur.com/" target="_blank">letricodeur.com</a>. Les codes à l'origine de ces images sont sur <a href="https://github.com/louis-ev/Le-Tricodeur" target="_blank">GitHub</a> sous license libre CC BY-NC-SA. Ils peuvent être repris, modifiés et retricotés par d’autres et avec d’autres données, par exemple.
 
 (image: tricodeur-large-4.jpg)
 
@@ -67,7 +62,7 @@ Le projet a été présenté par Sew & Laine à l'Hôtel de Ville de Bordeaux po
 
 ----
 
-Cover:
+Cover: 
 
 ----
 
@@ -87,7 +82,7 @@ Annee: 2014
 
 ----
 
-Headercol2:
+Headercol2: 
 
 ### thème
 ## Tricot + code + data

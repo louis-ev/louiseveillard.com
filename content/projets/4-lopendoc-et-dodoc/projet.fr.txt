@@ -18,7 +18,7 @@ Text:
 
 ## La publication des chercheurs
 
-Premier prototype réalisé en 2014, << La Publication des chercheurs >> a été mise en situation et utilisée par une classe de primaire pendant 3 mois. Cette installation est composée d'une part d’un objet en bois, d'une GoPro et d’un plateau surmonté d’une arche pour la prise de vue, et d'autre part d’une interface sur écran dans laquelle sont renvoyées toutes les photos prises par les élèves. Plusieurs itérations ont été développées en collaboration avec les élèves.
+Premier prototype réalisé en 2014, << La Publication des chercheurs >> a été mise en situation et utilisée par une classe de primaire pendant 3 mois. Cette installation est composée d'une part d’un objet en bois, d'une caméra et d’un plateau surmonté d’une arche pour la prise de vue, et d'autre part d’une interface sur écran dans laquelle sont renvoyées toutes les photos prises par les élèves. Plusieurs versions ont été développées successivement, toujours en se basant sur les retours des élèves avec les élèves.
 
 (image: docschool-large-1.jpg legende: Le dispositif de documentation dans la classe à l’école des Alouettes à Paris.)
 
@@ -28,11 +28,11 @@ Premier prototype réalisé en 2014, << La Publication des chercheurs >> a été
 
 ## do.doc
 
-do.doc est un outil qui permet la prise de note rapide et la documentation à l’aide de différents média lors d’une activité. Il propose dans un deuxième temps la mise en récit de cette activité, grâce à une ré-organisation des traces qui auront été prises lors de cette activité. Le proto proposé est constitué d’une partie physique “capteurs” pour l’enregistrement de traces, et d’une partie “interface” qui restitue ces données et propose de les organiser pour créer une narration multimédia.
+do.doc est un outil qui permet la prise de note rapide et la documentation à l’aide de différents média lors d’une activité. Il propose dans un deuxième temps la mise en récit de cette activité, grâce à une ré-organisation des traces qui auront été prises lors de cette activité. Le dispositif est constitué d’une partie physique “capteurs” pour l’enregistrement de traces, et d’une partie “interface” qui restitue ces données et propose de les organiser pour créer une narration multimédia.
 
-La conception et les implémentations de Do.Doc sont documentées sur une instance de l'Opendoc à l'adresse suivante : (link: http://www.lopendoc.org/dodoc/ text: lopendoc.org/dodoc popup: yes).
+La conception et les implémentations de Do.Doc sont documentées sur le site de l’Atelier des Chercheurs : (link: https://latelier-des-chercheurs.fr/outils text: lopendoc.org/dodoc popup: yes).
 
-(image: img_dodoc_batisseursdepossibles.jpg legende: Installation de do.doc aux Bâtisseurs de Possibles en juin 2015. Les enfants imaginent et racontent sous forme de photos, vidéos, enregistrements audio et animations image par image des solutions à des situations de la vie quotidienne.)
+(image: img_dodoc_batisseursdepossibles.jpg legende: Installation de do.doc aux <a href="http://www.batisseursdepossibles.org/" target="_blank">Bâtisseurs de Possibles</a> en juin 2015. Les enfants imaginent et racontent sous forme de photos, vidéos, enregistrements audio et animations image par image des solutions à des situations de la vie quotidienne.)
 
 (image: dodoc-instal.jpg legende: do.doc a été présenté à la conférence <a href="http://www.tei-conf.org/16/" target="_blank">TEI <small>Tangible, Embedded and Embodied Interaction</small></a> 2016 à Eindhoven aux Pays-Bas.)
 
