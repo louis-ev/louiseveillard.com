@@ -492,6 +492,8 @@ var theProjetView = {
       if( scrollY < wHeight) {
         var cssOpacity = scrollY.map( 0, wHeight * 0.44, 1, 0);
         $visuelTop.css("opacity", cssOpacity);
+      } else {
+        $visuelTop.css("opacity", 0);
       }
     });
   },
