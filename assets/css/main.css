@@ -813,12 +813,10 @@ main a.lienProjet::before {
   white-space: pre-wrap;
   word-break: break-all;
   opacity: 0;
-  transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s;
   -ms-transform: scale(0.08333333, 0.55555556);
   transform: scale(0.08333333, 0.55555556);
-  /* older webkit */
+  transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s;
   transition-timing-function: cubic-bezier(0.13, 0.22, 0.01, 1.055);
-  /* custom */
   pointer-events: none;
   text-align: center;
 }

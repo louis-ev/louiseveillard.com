@@ -509,7 +509,7 @@ function pageInit() {
 	theProjetView.init();
   // pour l'affichage du CV
 	if( $(".module--cv").length > 0) {
-	  setTimeout( canvasCV.init(), 400);
+/* 	  setTimeout( canvasCV.init(), 400); */
   }
 
   // fin de chargement

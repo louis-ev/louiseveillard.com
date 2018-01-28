@@ -480,16 +480,10 @@ main {
       white-space: pre-wrap;
       word-break: break-all;
       opacity: 0;
-      -webkit-transition: opacity 0.3s, color 0.3s, -webkit-transform 0.3s, background-position 0.2s;
-      transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s;
-      -webkit-transform: scale( 1/@finalWidth, 1/@finalHeight);
       transform: scale( 1/@finalWidth, 1/@finalHeight);
 
-  -webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1); /* older webkit */
-  -webkit-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
-     -moz-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
-       -o-transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
-          transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055); /* custom */
+      transition: opacity 0.3s, color 0.3s, transform 0.3s, background-position 0.2s;
+      transition-timing-function: cubic-bezier(0.130, 0.220, 0.010, 1.055);
 
       pointer-events: none;
       text-align: center;
@@ -499,9 +493,7 @@ main {
       &::before {
         color: #fff;
         opacity: 1;
-        -webkit-transition-delay: 0s, 0s, 0s, 0.1s;
         transition-delay: 0s, 0s, 0s, 0.1s;
-        -webkit-transform: scale(1) translateY(-80%);
         transform: scale(1) translateY(-80%);
         pointer-events: auto;
       }
