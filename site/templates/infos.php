@@ -112,7 +112,7 @@ if( param('lang') !== 'en'):
 						<ul class="description">
 							<li>Intervention théorique et pratique autour de la représentation de données avec les étudiants du BTS Design Graphique au Lycée Vernant, à Sèvres (2017).</li>
   						  <li>Enseignant en webdesign dans le cycle de <em>Communication Design</em> au <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a> (2017).</li>
-							<li>Workshop sur le thème de la <em>data-physicalisation</em> à l’<a href="http://www.newschool.edu/parsons-paris/" target="_blank">École de design Nantes Atlantique</a> du 15 au 19 mai 2017. Compte-rendu, références, méthodologie et projets des étudiants <a href="https://datafossil.xyz/" target="_blank">sur cette page</a>.</li>
+							<li>Workshop sur le thème de la <em>data-physicalisation</em> à l’<a href="https://www.lecolededesign.com/" target="_blank">École de design Nantes Atlantique</a> du 15 au 19 mai 2017. Compte-rendu, références, méthodologie et projets des étudiants <a href="https://datafossil.xyz/" target="_blank">sur cette page</a>.</li>
 							<li>Conférence de présentation de mon travail avec des robots et des programmes dans le cadre du club tech'ART au Lycée Louis Armand dans le XV<sup>e</sup> arrondissement de Paris (2017).</li>
 							<li>Conférence de présentation de mon travail et de mes recherches au <a href="https://www.campusfonderiedelimage.org/" target="_blank">Campus Fonderie de l’Image</a> (2017).</li>
 							<li>Intervention à l’<a href="www.ecole-boulle.org/articles/4171/conference-culture-code" target="_blank">école Boulle</a> lors d’une conférence sur le sujet <em>Culture Code</em> (2017).</li>
@@ -301,7 +301,7 @@ else:
 						<ul class="description">
 							<li>Lecture and workshop on data vizualisation at the Lycée Vernant, in Sèvres (2017).</li>
 					    	<li>Teacher in webdesign for the BFA in <em>Communication Design</em> at the <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a>.</li>
-							<li>Workshop on <em>data-physicalisation</em> at l’<a href="http://www.newschool.edu/parsons-paris/" target="_blank">École de design Nantes Atlantique</a> over 5 days in May 2017. Presentation, references, methods and the students' productions can be <a href="https://datafossil.xyz/" target="_blank">read on this page</a>.</li>
+							<li>Workshop on <em>data-physicalisation</em> at l’<a href="https://www.lecolededesign.com/" target="_blank">École de design Nantes Atlantique</a> over 5 days in May 2017. Presentation, references, methods and the students' productions can be <a href="https://datafossil.xyz/" target="_blank">read on this page</a>.</li>
 							<li>Lecture on my work with robots and programs at the club tech'ART of the Lycée Louis Armand in Paris (2017).</li>
 							<li>Lecture on my work and research at <a href="https://www.campusfonderiedelimage.org/" target="_blank">Campus Fonderie de l’Image</a> (2017).</li>
 							<li>Invited for the panel at  the <a href="www.ecole-boulle.org/articles/4171/conference-culture-code" target="_blank">école Boulle</a> to discuss the <em>Culture of Code for designers</em> (2017).</li>
