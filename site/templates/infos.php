@@ -37,7 +37,6 @@ if( param('lang') !== 'en'):
 							<ul class="description">
 				    			<li>Designer indépendant à Paris.</li>
 								<li>Membre du collectif <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a>.</li>
-						    	<li>Enseignant en webdesign dans le cycle de <em>Communication Design</em> au <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a>.</li>
 						    	<li>Co-fondateur de <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, un collectif œuvrant dans la réalité virtuelle.</li>
                 <li>Coorganisateur au <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>Free Art Bureau</a>, association à but non lucratif dédiée la promotion d’outils libres pour la création.</li>
 							</ul>
@@ -111,8 +110,10 @@ if( param('lang') !== 'en'):
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Intervention théorique et pratique autour de la représentation de données avec les étudiants du BTS Design Graphique au Lycée Vernant, à Sèvres (2017).</li>
+  						  <li>Enseignant en webdesign dans le cycle de <em>Communication Design</em> au <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a> (2017).</li>
 							<li>Workshop sur le thème de la <em>data-physicalisation</em> à l’<a href="http://www.newschool.edu/parsons-paris/" target="_blank">École de design Nantes Atlantique</a> du 15 au 19 mai 2017. Compte-rendu, références, méthodologie et projets des étudiants <a href="https://datafossil.xyz/" target="_blank">sur cette page</a>.</li>
-							<li>Conférence de présentation de mon travail avec des robots et des programmes dans le cadre du club tech'ART du Lycée Louis Armand dans le XV<sup>e</sup> arrondissement de Paris (2017).</li>
+							<li>Conférence de présentation de mon travail avec des robots et des programmes dans le cadre du club tech'ART au Lycée Louis Armand dans le XV<sup>e</sup> arrondissement de Paris (2017).</li>
 							<li>Conférence de présentation de mon travail et de mes recherches au <a href="https://www.campusfonderiedelimage.org/" target="_blank">Campus Fonderie de l’Image</a> (2017).</li>
 							<li>Intervention à l’<a href="www.ecole-boulle.org/articles/4171/conference-culture-code" target="_blank">école Boulle</a> lors d’une conférence sur le sujet <em>Culture Code</em> (2017).</li>
 							<li>Intervention à la table-ronde du <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">festival Scopitone</a> à Nantes sur la <em>Matérialité des Données</em> (2016).</li>
@@ -156,7 +157,9 @@ if( param('lang') !== 'en'):
 								<h3>Publications</h3>
 							</div>
 							<ul class="description">
-								<li><a href="http://etapes.com/etapes-237" target="_blank">étapes: #237</a> (mai 2017) – présentation du Tricodeur et de Acrobates Builder.</li>
+  							  <li>Article récapitulatif du projet Acrobates Builder sur Medium, écris avec <a href="http://vdesclaux.com/" target="_blank">Vincent Desclaux</a> : <a href="https://medium.com/@timetofirstfix/designing-and-building-a-web-app-from-scratch-a-case-study-39e587951f41" target="_blank">Designing and building a web app from scratch: a case study</a>.</li>
+								<li><a href="https://twitter.com/timetofirstfix/status/923184802781638656" target="_blank">étapes: #239</a> (septembre – octobre 2017) – dossier <em>Art, design & algorithme</em>.</li>
+								<li><a href="http://etapes.com/etapes-237" target="_blank">étapes: #237</a> (mai 2017) – présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> et de Acrobates Builder.</li>
 								<li><a href="http://www.revue-backoffice.com/" target="_blank">Back Office</a>, éditions Fork & B42 (2017) – présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> dans l’article Œuvrer avec les machines numériques de Sophie Fétro.</li>
 								<li><a href="http://www.r-diffusion.org/index.php?ouvrage=CAM-09" target="_blank">Algorithmes typographiques</a>, éditions La clé à molette (2016) – présentation d'un générateur aléatoire de caractères.</li>
 								<li><a href="http://www.eyrolles.com/Audiovisuel/Livre/fibres-fils-tissus-9782212143126" target="_blank">Fibres, fils, tissus</a>, éditions Eyrolles (2016) – introduction au <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
@@ -204,7 +207,6 @@ else:
 							<ul class="description">
 				    		<li>Freelance designer in Paris.</li>
 							<li>Member of the group <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l'atelier des chercheurs</a>.</li>
-					    	<li>Teacher in webdesign for the BFA in <em>Communication Design</em> at the <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a>.</li>
   					    	<li>Co-founder of <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, a design studio working on Virtual Reality projects.</li>
 					    <li>Co-organizer of events and sessions for the <a href='http://freeartbureau.org/sundays/' data-link='fab' target='_blank'>Free Art Sundays</a> at the <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>Free Art Bureau</a>, a not-for-profit association dedicated to promoting open-source digital tools for designers and artists.</li>
 							</ul>
@@ -297,6 +299,8 @@ else:
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+							<li>Lecture and workshop on data vizualisation at the Lycée Vernant, in Sèvres (2017).</li>
+					    	<li>Teacher in webdesign for the BFA in <em>Communication Design</em> at the <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a>.</li>
 							<li>Workshop on <em>data-physicalisation</em> at l’<a href="http://www.newschool.edu/parsons-paris/" target="_blank">École de design Nantes Atlantique</a> over 5 days in May 2017. Presentation, references, methods and the students' productions can be <a href="https://datafossil.xyz/" target="_blank">read on this page</a>.</li>
 							<li>Lecture on my work with robots and programs at the club tech'ART of the Lycée Louis Armand in Paris (2017).</li>
 							<li>Lecture on my work and research at <a href="https://www.campusfonderiedelimage.org/" target="_blank">Campus Fonderie de l’Image</a> (2017).</li>
@@ -343,6 +347,8 @@ else:
 								<h3>Publications</h3>
 							</div>
 							<ul class="description">
+  							  <li>General overview and explanations of the project <em>Acrobates Builder</em> on Medium (written with <a href="http://vdesclaux.com/" target="_blank">Vincent Desclaux</a>): <a href="https://medium.com/@timetofirstfix/designing-and-building-a-web-app-from-scratch-a-case-study-39e587951f41" target="_blank">Designing and building a web app from scratch: a case study</a>.</li>
+								<li><a href="https://twitter.com/timetofirstfix/status/923184802781638656" target="_blank">étapes: #239</a> (septembre – octobre 2017) – longform on <em>Art, design & algorithme</em>.</li>
 								<li><a href="http://etapes.com/etapes-237" target="_blank">étapes: #237</a> (May 2017) – introduction to my profile and two projects: the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> and Acrobates Builder.</li>
 								<li><a href="http://www.revue-backoffice.com/" target="_blank">Back Office</a>, Éditions Fork & B42 (2017) – introduction to the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
 								<li><a href="http://www.r-diffusion.org/index.php?ouvrage=CAM-09" target="_blank">Typographic algorithms</a>, éditions La clé à molette (2016) – page created by a type generator that uses random shapes and OCR.</li>
