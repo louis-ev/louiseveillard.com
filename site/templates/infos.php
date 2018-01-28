@@ -89,7 +89,10 @@ if( param('lang') !== 'en'):
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
-							<li>Intervention théorique et pratique autour de la représentation de données avec les étudiants du BTS Design Graphique au Lycée Vernant, à Sèvres (2017).</li>
+							<li>Workshop de 5 jours sur la création <em>d’affiches interactives sur le web</em> à l’<a href="http://www.esapyrenees.fr/" target="_blank">École supérieure d’art des Pyrénées</a> du 18 au 22 décembre 2017. Compte-rendu, références, et projets des étudiants <a href="https://affichesinteractives.louiseveillard.com/" target="_blank">sur cette page</a>.</li>
+							<li>Intervention sur la data-physicalisation à l’occasion d’une journée d’étude sur le sujet organisé par <a href="https://www.univ-rennes2.fr/" target="_blank">l’université Rennes 2</a> (2017).</li>
+							<li>Conférence de présentation de mon travail et de mes recherches à <a href="http://www.esad-orleans.fr/" target="_blank">l’ÉSAD d’Orléans</a> (2017).</li>
+							<li>Intervention théorique et pratique autour de la représentation de données avec les étudiants du BTS Design Graphique au <a href="http://www.lyceevernant.fr/dg/" target="_blank">Lycée Vernant</a>, à Sèvres (2017).</li>
   						  <li>Enseignant en webdesign dans le cycle de <em>Communication Design</em> au <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a> (2017).</li>
 							<li>Workshop sur le thème de la <em>data-physicalisation</em> à l’<a href="https://www.lecolededesign.com/" target="_blank">École de design Nantes Atlantique</a> du 15 au 19 mai 2017. Compte-rendu, références, méthodologie et projets des étudiants <a href="https://datafossil.xyz/" target="_blank">sur cette page</a>.</li>
 							<li>Conférence de présentation de mon travail avec des robots et des programmes dans le cadre du club tech'ART au Lycée Louis Armand dans le XV<sup>e</sup> arrondissement de Paris (2017).</li>
@@ -281,6 +284,8 @@ else:
 			    	    	<h3>Interventions</h3>
 						</div>
 						<ul class="description">
+  						  <li>Lecture on data-physicalisation at <a href="https://www.univ-rennes2.fr/" target="_blank">Université Rennes 2</a> (2017).
+							<li>Lecture on my work and research at <a href="http://www.esad-orleans.fr/" target="_blank">ÉSAD Orléans</a> (2017).</li>
 							<li>Lecture and workshop on data vizualisation at the Lycée Vernant, in Sèvres (2017).</li>
 					    	<li>Teacher in webdesign for the BFA in <em>Communication Design</em> at the <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a>.</li>
 							<li>Workshop on <em>data-physicalisation</em> at l’<a href="https://www.lecolededesign.com/" target="_blank">École de design Nantes Atlantique</a> over 5 days in May 2017. Presentation, references, methods and the students' productions can be <a href="https://datafossil.xyz/" target="_blank">read on this page</a>.</li>
