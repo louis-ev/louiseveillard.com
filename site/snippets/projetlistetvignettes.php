@@ -19,7 +19,7 @@
   	<h3 class="isotope--item is--hidden" data-type="autres" data-index="0" data-num="<?= $ordreDesCategories["autres"]; ?>">Autres projets</h3>
     <?php
       if($user = site()->user() and $user->hasPanelAccess()):
-        $projets = $pages->findByURI('projets')->children();
+        $projets = $pages->findByURI('projets')->children()->visible();
       else:
         $projets = $pages->findByURI('projets')->children()->visible();
       endif;
