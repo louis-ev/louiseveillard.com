@@ -46,59 +46,38 @@ if( param('lang') !== 'en'):
 				<div class="column ">
 				    <div class="content realisations">
 							<div class="header">
-				    	    	<h3>Réalisations</h3>
+				    	    	<h3>Réalisations web</h3>
 							</div>
 							<ul class="description">
+  							  <li>
+  									<a href="https://acrobatesbuilder.fr/en" target="_blank">acrobatesbuilder.fr/en</a> <span class="realisationsDetails">avec <a href="http://vdesclaux.com/" target="_blank">Vincent Desclaux</a></span>
+                </li>
+  							  <li>
+  									<a href="https://ante-prima.com/" target="_blank">ante-prima.com</a> <span class="realisationsDetails">avec <a href="http://www.baldingervuhuu.com/" data-link='bvh' target="_blank">Baldinger•Vu-Huu</a></span>
+  							  </li>
+  							  <li>
+  									<a href="https://thuvantran.fr/" target="_blank">thuvantran.fr</a> <span class="realisationsDetails">avec <a href="http://www.baldingervuhuu.com/" data-link='bvh' target="_blank">Baldinger•Vu-Huu</a></span>
+  							  </li>
+  							  <li>
+  									<a href="https://www.studiotheatre.fr/" target="_blank">studiotheatre.fr</a> <span class="realisationsDetails">avec <a href="http://vdesclaux.com/" target="_blank">Vincent Desclaux</a></span>
+  							  </li>
+  							  <li>
+  									<a href="http://www.madd-bordeaux.fr/" target="_blank">madd-bordeaux.fr</a> <span class="realisationsDetails">maquettes avec <a href="https://sarahgarcin.com/" target="_blank">Sarah Garcin</a></span>
+  							  </li>
+  							  <li>
+  									<a href="http://www.rhplus-architecture.com/" target="_blank">rhplus-architecture.com</a>
+  							  </li>
 								<li>
-									<a href="http://delure.org/" data-link='delure' target="_blank">delure.org</a> <span class="realisationsDetails">charte graphique, maquette, responsive, code</span>
+									<a href="http://delure.org/" data-link='delure' target="_blank">delure.org</a> <span class="realisationsDetails">avec la participation d’<a href="http://www.arnaudjuracek.fr/" target="_blank">Arnaud Juracek</a></span>
 								</li>
 								<li>
-									<a href="http://www.baldingervuhuu.com/" target="_blank">baldingervuhuu.com</a> <span class="realisationsDetails">intégration de l'identité (maquettes de <a href="http://www.baldingervuhuu.com/" data-link='bvh' target="_blank">Baldinger•Vu-Huu</a>), animations, responsive, code</span>
+									<a href="http://www.baldingervuhuu.com/" target="_blank">baldingervuhuu.com</a> <span class="realisationsDetails">avec <a href="http://www.baldingervuhuu.com/" data-link='bvh' target="_blank">Baldinger•Vu-Huu</a></span>
 								</li>
 								<li>
-									<a href="http://frenak-jullien.com/" target="_blank">frenak-jullien.com</a> <span class="realisationsDetails">intégration de l'identité (maquettes de <a href="http://www.baldingervuhuu.com/" data-link='bvh' target="_blank">Baldinger•Vu-Huu</a>), responsive, code, installation et design du back-office</span>
+									<a href="http://frenak-jullien.com/" target="_blank">frenak-jullien.com</a> <span class="realisationsDetails">avec <a href="http://www.baldingervuhuu.com/" data-link='bvh' target="_blank">Baldinger•Vu-Huu</a></span>
 								</li>
 								<li>
-									<a href="http://panoptic-lab.com/" data-link="panopticlab" target="_blank">panoptic-lab.com</a> <span class="realisationsDetails">maquette, animation générative, responsive, code</span>
-								</li>
-								<li>
-									<a href="http://www.emiliecoquard.fr/" target="_blank">emiliecoquard.fr</a> <span class="realisationsDetails">maquette (avec Émilie Coquard), navigation, animation, responsive, code</span>
-								</li>
-								<li>
-									<a href="http://www.newsoftheartworld.com/" target="_blank">newsoftheartworld.com</a> <span class="realisationsDetails">réalisation et intégration (maquette de <a href="http://chevalvert.fr/" target="_blank" data-link='chevalvert'>Chevalvert</a>), responsive, agenda culturel dynamique, code, admin</span>
-								</li>
-								<li>
-									<a data-link='chevalvert' href="http://www.chevalvert.fr" target="_blank">chevalvert.fr</a> <span class="realisationsDetails">responsive, animations, code</span>
-								</li>
-								<li>
-									<a href="http://www.fraciledefrance.com/" target="_blank">fraciledefrance.com</a> <span class="realisationsDetails">intégration de l'identité (maquettes de <a href="http://www.baldingervuhuu.com/" data-link='bvh' target="_blank">Baldinger•Vu-Huu</a>), responsive, navigation, code, admin</span>
-								</li>
-								<li>
-									<a data-link='socmed' href="http://sociablemedia.ensadlab.fr" target="_blank">sociablemedia.ensadlab.fr</a> <span class="realisationsDetails">maquette (avec Ferdinand Dervieux et Max Mollon), typographie, navigation, code</span>
-								</li>
-								<li>
-									<a href="http://www.mfpp-origami.fr" target="_blank">mfpp-origami.fr</a> <span class="realisationsDetails">maquette, typographie, responsive, navigation, code</span>
-								</li>
-								<li>
-									<a data-link='fab' href="http://www.freeartbureau.org/sundays/" target="_blank">freeartbureau.org/sundays/</a> <span class="realisationsDetails">maquette, responsive, navigation, code</span>
-								</li>
-								<li>
-									<a data-link='tricodeur' href="http://www.letricodeur.com" target="_blank">letricodeur.com</a> <span class="realisationsDetails">maquette, contenus, typographie, code</span>
-								</li>
-								<li>
-									<a data-link='connexe' href="http://www.connexe.org" target="_blank">connexe.org</a> <span class="realisationsDetails">maquette (en collaboration avec l'équipe du projet Connexe), typographie, animations, code</span>
-								</li>
-								<li>
-									<a data-link='blog' href="http://www.beautifulseams.com" target="_blank">beautifulseams.com</a> <span class="realisationsDetails">maquette, navigation, animations, code</span>
-								</li>
-								<li>
-									<a data-link='algorithme' href="http://algorithme.beautifulseams.com" target="_blank">algorithme.beautifulseams.com</a> <span class="realisationsDetails">maquette, contenus, typographie, code</span>
-								</li>
-								<li>
-									<a data-link='tricodeur' href="http://www.letricodeur.com/workshop" target="_blank">letricodeur.com/workshop</a> <span class="realisationsDetails">maquette, contenus, typographie, code</span>
-								</li>
-								<li>
-									<a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">latelier-des-chercheurs.fr</a> <span class="realisationsDetails">maquette (avec Juliette Mancini et Pauline Gourlet), navigation, responsive, code</span>
+									<a href="http://www.fraciledefrance.com/" target="_blank">fraciledefrance.com</a> <span class="realisationsDetails">avec <a href="http://www.baldingervuhuu.com/" data-link='bvh' target="_blank">Baldinger•Vu-Huu</a></span>
 								</li>
 							</ul>
 				    </div>
@@ -238,6 +217,9 @@ else:
 				    	    	<h3>Websites</h3>
 							</div>
 							<ul class="description">
+								<li>
+									<a href="https://thuvantran.fr/" target="_blank">thuvantran.fr</a> <span class="realisationsDetails">with <a href="http://www.baldingervuhuu.com/" data-link='bvh' target="_blank">Baldinger•Vu-Huu</a></span>
+								</li>
 								<li>
 									<a href="http://delure.org/" data-link='delure' target="_blank">delure.org</a> <span class="realisationsDetails">identity design, mockups, development, responsive</span>
 								</li>
