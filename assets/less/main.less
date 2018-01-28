@@ -12,7 +12,6 @@
 
 @c-linkhover: @c-pagebg;
 
-
 @c-vr:                      #38C4B2; //#3ECCB2
 @c-sites:                   #03B8F4;
 @c-objets-interactifs:    #ABD190; //#D1DF98;
@@ -42,11 +41,11 @@
 .styleLink( @rubrique, @color ) {
 	body[data-rubrique=@{rubrique}] {
     ::-moz-selection {
-      // par défaut le background d'une selection est transparent. Pour le rendre vraiment opque il faut lui donner un
-        background: fade( @color, 82%);
+      // par défaut le background d'une selection est transparent. Pour le rendre vraiment opaque il faut lui donner un
+      background: fade( @color, 82%);
     }
     ::selection {
-        background: fade( @color, 82%);
+      background: fade( @color, 82%);
     }
 	}
 }
@@ -64,7 +63,6 @@ video {
   display: block; /* 1 */
   vertical-align: baseline; /* 2 */
 }
-
 
 html {
     box-sizing: border-box;
