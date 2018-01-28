@@ -19,7 +19,7 @@
 @c-autres:                 #ACA8A5;
 
 @t-margin: 16px;
-@t-largemaxwidth: 76rem;
+@t-largemaxwidth: 66rem;
 
 @m-md: 48em;
 @md:    ~"only screen and (min-width: @{m-md})";
@@ -874,10 +874,10 @@ main {
 
         &:not(:hover) {
           .module--projetList--titles--projetName--links--index {
-            opacity: 0;
+            opacity: 0.8;
           }
           .module--projetList--titles--projetName--links--name {
-            opacity: 0;
+            opacity: 0.8;
           }
           .module--projetList--titles--projetName--links--corners {
             opacity: 1;
@@ -885,7 +885,6 @@ main {
         }
 
         &:hover {
-
     				.module--projetList--titles--projetName--links--index {
           		right: 50%;
           		transform: translate3d( 50%, -50%, 0) scale( 1.8);
@@ -970,7 +969,7 @@ main {
     	}
 
     	&.is--shown {
-      opacity: .2;
+      opacity: .4;
       transition: opacity .4s .4s ease-out;
     	}
     	// cas pjax : la vignette cliquée

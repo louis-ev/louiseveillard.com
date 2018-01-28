@@ -16,15 +16,15 @@ fields:
     width: 1/4
   header:
     label: Header
-    type:  textarea
+    type:  markdown
     width: 1/2
   headercol2:
     label: Infos techniques
-    type:  textarea
+    type:  markdown
     width: 1/2
   text:
     label: Text
-    type:  textarea
+    type:  markdown
   cover:
     label: Aperçu
     type: headline
