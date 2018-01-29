@@ -1,0 +1,70 @@
+Title: Acrobates Builder
+
+----
+
+Type: sites
+
+----
+
+Annee: 2017
+
+----
+
+Header: Acrobates Builder est une application en ligne qui permet de composer une installation de lampes modulaires dans une pièce. Ces lampes, issues de la série des Acrobates de Gras et éditées par DCW Éditions, ont la particularité de pouvoir être reliées les unes aux autres pour former une longue chaîne suspendue allant d'un point à un autre.
+
+----
+
+Headercol2: 
+
+### année
+## 2017
+### client
+Réalisé pour (link: http://dcw-editions.fr text: DCW Éditions), une entreprise qui édite des luminaires et du mobiliers. 
+### crédits
+## En collaboration avec (link: http://vdesclaux.com/ text: Vincent Desclaux).
+
+----
+
+Text: 
+
+<figure class='media-video largeur--Colonne'><style>.embed-container2 { position: relative; padding-bottom: 76.93%; height: 0; overflow: hidden; max-width: 100%; } .embed-container2 iframe, .embed-container object, .embed-container2 embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container2'><iframe src='https://player.vimeo.com/video/224781137' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+<figcaption>
+Tour d’horizon d’Acrobates Builder, à tester ici : (link: https://acrobatesbuilder.fr/en text: https://acrobatesbuilder.fr/  popup: yes)
+</figcaption>
+</figure>
+
+L’application a été développée avec deux objectifs précis quand à son utilisation : 
+- les potentiels clients qui s’y connecteraient par Internet et qui se familiariseraient ainsi avec le catalogue des ces lampes,
+- mais aussi les visiteurs du stand de DCW Éditions au salon de design de Milan, où des tablettes et des hôtes/hôtesses les accueilleraient pour tester et simuler une installation selon leurs besoins.
+
+L’interface et les interactions ont donc été mises au point dans une logique **mobile-first**, c’est à dire en capitalisant au maximum sur les spécificités des tablettes : portabilité, écran capacitif multi-touch, proportion d’écran en 4:3, grande finesse des traits et précision des couleurs (en particulier sur les iPad Air 2 qui seraient utilisés). L’application respecte au maximum les (link: https://developer.apple.com/ios/human-interface-guidelines/overview/themes/ text: Human Interface Guidelines) (HIG) d’Apple pour être au plus proche d’une de l’expérience apportée par une application native sans la nécessité pour les utilisateurs  de passer par l’App Store pour l’installer. 
+
+(image: dcw-20170405-acrobatesthumb-03_2_3000.jpg legende: Aperçu de l’écran d’accueil sur un iPad.)
+
+Un soin tout particulier a été apporté aux performances et à la réactivité : l’ensemble de l’application elle-même pèse moins de 1mo et reste très fluide même en comportant plusieurs dizaines de lampes en même temps.
+
+ ---
+
+En parallèle, de nombreux modules et paradigmes ont dû être trouvés pour faciliter au maximum la manipulation d’un catalogue aussi complexe et élaboré, tout en apportant une touche ludique et familière.
+
+(image: dcw-20170405-acrobatesthumb-037_3000.jpg legende: Échantillon d’abatjours et d’affixes du catalogue.)
+
+Cela se retrouve autant dans le graphisme de l’application que dans son comportement — simple, précis, utilisant des couleurs franches et truffé d’animations subtiles.
+
+(image: 1_el_3qt7ytzclwh_t_qybfa.gif taille: colonne legende: Slider de gestion de la position horizontale d’une lampe.)
+(image: 1_e1xnruhcznzpw2t5atxexq.gif taille: colonne legende: Module de réglage de la taille de la pièce, avec avertissement pour des valeurs hors des limites.)
+(image: 1_n0m1kzlm6d48bo3phfev3w.gif taille: colonne legende: Choix d’abatjours grâce à un module de *double carousel*.)
+
+ ---
+
+ Un article récapitulatif rédigé à quatre mains avec Vincent Desclaux est à retrouver (link: https://medium.com/@timetofirstfix/designing-and-building-a-web-app-from-scratch-a-case-study-39e587951f41  popup: yes text: sur cette page).
+ 
+(image: screenshot-2018-01-28-a-22.49.36.png)
+
+----
+
+Cover: 
+
+----
+
+Imagecover: dcw-20170405-acrobatesthumb-03_2_3000.jpg
