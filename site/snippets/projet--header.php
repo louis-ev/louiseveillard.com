@@ -17,17 +17,6 @@
 		  'return_srcset'         => false
 		));
 
-/*
-		$srcsetstring = kirbytag(array(
-		  'image'  				=> $image->filename(),
-		  'thumbwidth' 		=> 2800,
-		  'originalPage'  => $p,
-		  'return_srcset' => true
-		));
-  ?>
-  <div class="module--projet--visuel--inside lazyload" data-sizes="auto" data-optimumx="1.8" data-bgset="<?= $srcsetstring; ?>"></div>
-<?php
-  */
 ?>
 
 </a>

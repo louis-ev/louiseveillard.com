@@ -46,7 +46,6 @@ kirbytext::$tags['image'] = array(
 		'multisizes',
 		'thumbwidth',
 		'maxLinkedImageWidth',
-		'secondLinkedImageWidth',
 		'return_srcset',
 		'optimumx',
 	),
@@ -118,7 +117,6 @@ kirbytext::$tags['image'] = array(
 		$outputlink = $tag->attr('outputlink');
 		$optimumx = $tag->attr('optimumx', c::get('optimumx', 1.6));
 		$maxLinkedImageWidth = $tag->attr('maxLinkedImageWidth');
-		$secondLinkedImageWidth = $tag->attr('secondLinkedImageWidth');
 		$return_srcset = $tag->attr('return_srcset');
 		$nofigure = $tag->attr('nofigure');
 		$thumbwidth = $tag->attr('thumbwidth');
@@ -161,12 +159,8 @@ kirbytext::$tags['image'] = array(
 
 		if( !isset( $outputlink)) {
 			$outputlink = true;
-
 			if( !isset( $maxLinkedImageWidth)) {
 				$maxLinkedImageWidth = c::get('maxLinkedImageWidth',false);
-			}
-			if( !isset( $secondLinkedImageWidth)) {
-				$secondLinkedImageWidth = false;
 			}
 		}
 
@@ -255,228 +249,87 @@ kirbytext::$tags['image'] = array(
 			// Percentage-padding to set image aspect ratio (prevents reflow on image load)
 			$percentage_padding = floor( round($ratio * 100, 2) * 100) / 100;
 
-			// Initialize wrapper divs if lazyloading
-			if($lazyload == true) {
-				// Only init griddiv when $gridcellclass or one (or more) width is set
-				if($gridcellclass != '' || count($widths) > 0) {
-					$griddiv = new Brick('div');
-				}
-				$lazydiv = new Brick('div');
-				$lazydiv->addClass('FigureImage-lazy lazyload');
-				$lazydiv->attr('style', 'padding-bottom: ' . number_format($percentage_padding, 2, '.', '') . '%;');
-			}
+			$lazydiv = new Brick('div');
+			$lazydiv->addClass('FigureImage-lazy lazyload');
+			$lazydiv->attr('style', 'padding-bottom: ' . number_format($percentage_padding, 2, '.', '') . '%;');
 
-			// If there is one or more width set (and it's not in a feed), apply the width variable(s)
-			if($feed != true) {
-				if(count($widths) > 0) {
-					// The first part (the 1 of 3)
-					$classgridpart = str::substr($width, 0, 1);
-					// The total (the 3)
-					$classgridtot = str::substr($width, 3, 1);
-					// Add extra griddiv for lazyload
-					if($lazyload == true) {
-						// Set the class for the image
-						$class = 'FigureImage-item';
-						// Set the class on the grid div
-						if(isset($griddiv)) {
-							$griddiv->addClass($gridcellclass.'u-size' . $width . '--' . $break);
-						}
-					}
-					else {
-						$class = 'FigureImage-item ' . $gridcellclass . 'u-size' . $width . '--' . $break;
-					}
-				}
-				else {
-					// Add extra griddiv for lazyload
-					if($lazyload == true) {
-						// Set the class for the image
-						$class = 'FigureImage-item';
-						// Set the class for the grid div
-						if(isset($griddiv)) {
-							$griddiv->addClass($gridcellclass);
-						}
-					}
-					else {
-						$class = 'FigureImage-item ' . $gridcellclass . 'u-size' . $width . '--' . $break;
-					}
-				}
-			} else {
-				$class = null;
-			}
+			$class = 'FigureImage-item';
+  			$placeholderSRC = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
 
+			if($image->extension() == 'gif') {
+			  $outputlink = 1;
 
-			$thumburl = thumb($image,array(
-				'width'   => $thumbwidth,
-				'quality' => $quality,
-				'crop'    => $crop,
-			), false);
+				$imagethumb = html::img( $placeholderSRC,array(
+					'data-src'  => $image->url(),
+					'data-sizes' =>	'auto',
+					'class'     => $class . ' lazyload',
+					'alt'       => html($alt),
+          'data-parent-fit' => "cover"
+        ));
 
-			if( $multisizes == true) {
+  				$noscript = '<noscript><img src="'. $image->url() .'" class="'. $class .'" width="'. $image->width() .'" height="'. $image->height() .'" alt="'. html($alt) .'"/></noscript>';
+			} else
+			{
+    			$thumburl = thumb($image,array(
+    				'width'   => $thumbwidth,
+    				'quality' => $quality,
+    				'crop'    => $crop,
+    			), false);
+  				$ms_datasrcset = "";
+  				if( $thumbwidth > 300) {
+  					$ms_datasrcset .= generate_thumb( $image, $quality, $crop, 300);
+  				}
 
-				$ms_datasrcset = "";
+  				if( $thumbwidth > 600) {
+  					$ms_datasrcset .= generate_thumb( $image, $quality, $crop, 600);
+  				}
 
-				if( $thumbwidth > 300) {
-					$ms_datasrcset .= generate_thumb( $image, $quality, $crop, 300);
-				}
+  				if( $thumbwidth > 1200) {
+  					$ms_datasrcset .= generate_thumb( $image, $quality, $crop, 1200);
+  				}
 
-				if( $thumbwidth > 600) {
-					$ms_datasrcset .= generate_thumb( $image, $quality, $crop, 600);
-				}
+  				if( $thumbwidth > 1600) {
+  					$ms_datasrcset .= generate_thumb( $image, $quality, $crop, 1600);
+  				}
 
-				if( $thumbwidth > 1200) {
-					$ms_datasrcset .= generate_thumb( $image, $quality, $crop, 1200);
-				}
+  				$ms_datasrcset .= generate_thumb( $image, $quality, $crop, $thumbwidth);
 
-				if( $thumbwidth > 1600) {
-					$ms_datasrcset .= generate_thumb( $image, $quality, $crop, 1600);
-				}
+        if($return_srcset)
+    			  return $ms_datasrcset;
 
-				$ms_datasrcset .= generate_thumb( $image, $quality, $crop, $thumbwidth);
+				$imagethumb = html::img( $placeholderSRC,array(
+					'data-src'  => $thumburl,
+					'data-sizes' =>	"auto",
+					'data-srcset'  => $ms_datasrcset,
+          'data-optimumx' => str_replace(',', '.', $optimumx),
+					'class'     => $class . ' lazyload',
+					'alt'       => html($alt),
+          'data-parent-fit' => "cover"
+        ));
+  				$noscript = '<noscript><img src="'. $thumburl .'" class="'. $class .'" width="'. $thumbwidth .'" height="'. $thumbheight .'" alt="'. html($alt) .'"/></noscript>';
 
-			}
+    		}
 
-      if( $return_srcset)
-			  return $ms_datasrcset;
+  			if($outputlink == 1 && $maxLinkedImageWidth !== false && $image->extension() !== 'gif') {
+  				$largeImage = thumb($image,array(
+  					'width'   => $maxLinkedImageWidth,
+  					'quality' => 95,
+  				));
+  			} else {
+  				$largeImage = $image;
+  			}
 
-			if($feed == true) {
+			$lazydiv->append($imagethumb);
+			$lazydiv->append($noscript);
 
-				$imagethumb = html::img($thumburl,array(
-					// 'width'     => $image->width(),
-					// 'height'    => $image->height(),
-					'class'     => $class,
-					'alt'       => html($alt)
-					)
-				);
-
-				$noscript = false;
-
-			}
-
-			// [1] Regular image; resized thumb (e.g. thumbs.width.default)
-			if($lazyload == false) {
-
-				if( $multisizes == true) {
-					$imagethumb = html::img($thumburl,array(
-						'data-sizes' =>	"auto",
-						'data-srcset'  => $ms_datasrcset,
-						'class'     => $class . ' lazyload',
-						'alt'       => html($alt),
-						)
-					);
-
-				} else {
-					$imagethumb = html::img($thumburl,array(
-						// 'width'     => $image->width(),
-						// 'height'    => $image->height(),
-						'class'     => $class,
-						'alt'       => html($alt)
-						)
-					);
-				}
-
-
-				$noscript = false;
-
-			}
-
-			$placeholderSRC = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
-			if( $lowResPreview == true ) {
-				$placeholderSRC = thumb( $image, array(
-					'width'   => 5,
-				))->dataUri();
-			}
-
-			// [2] Lazyload image; resized thumb (e.g thumbs.width.default)
-			if($lazyload == true) {
-
-				if( $multisizes == true) {
-
-					$imagethumb = html::img( $placeholderSRC,array(
-						'data-src'  => $thumburl,
-						'data-sizes' =>	"auto",
-						'data-srcset'  => $ms_datasrcset,
-            'data-optimumx' => str_replace(',', '.', $optimumx),
-						'class'     => $class . ' lazyload',
-						'alt'       => html($alt),
-            'data-parent-fit' => "cover"
-          ));
-
-				} else {
-					$imagethumb = html::img( $placeholderSRC,array(
-						'data-src'  => $thumburl,
-						'class'     => $class . ' lazyload',
-						'alt'       => html($alt)
-						)
-					);
-				}
-
-// 				echo "imagethumb =<br>" . htmlentities($imagethumb);
-
-/*
-				$imagethumb = '<img data-sizes="auto" src="lqip-src.jpg" data-srcset="lqip-src.jpg 220w,
-    image2.jpg 300w,
-    image3.jpg 600w,
-    image4.jpg 900w" class="lazyload" />';
-*/
-
-				$noscript = '<noscript><img src="'. $thumburl .'" class="'. $class .'" width="'. $thumbwidth .'" height="'. $thumbheight .'" alt="'. html($alt) .'"/></noscript>';
-
-			}
-
-
-			// si besoin, générer un thumb grand format
-			if( $outputlink == 1 && $maxLinkedImageWidth !== false)
-				$largeImage = thumb($image,array(
-					'width'   => $maxLinkedImageWidth,
-					'quality' => 95,
-				));
-			else
-				$largeImage = $image;
-
-			// Output different markup, depending on lazyload or not
-			if($lazyload == true) {
-				$lazydiv->append($imagethumb);
-
-				if($noscript) { // If noscript is set, append to figure
-					$lazydiv->append( $noscript);
-				}
-
-				// si on veut un <a> autour de l'image
-				if( $outputlink == 1)
-					// si ce <a> doit contenir des liens vers plusieurs images de différentes tailles (à combiner avec Photoswipe, par exemple)
-					if( $secondLinkedImageWidth != false):
-						$secondLargeImage = thumb($image,array(
-							'width'   => $secondLinkedImageWidth,
-							'quality' => 95,
-						));
-
-						$figure->append(
-							'<a target="_blank"
-								href="' . $largeImage->url() . '" data-size="' . $largeImage->width() . 'x' . $largeImage->height() . '"
-								data-secondImageSrc="' . $secondLargeImage->url() . '" data-secondImageSrc-size="' . $secondLargeImage->width() . 'x' . $secondLargeImage->height() . '"
-								><div class="image">' . $lazydiv . '</div></a>');
-
-					// si ce <a> ne doit contenir un lien que vers une seule image
-					else:
-						$figure->append(
-							'<a target="_blank"
-								href="' . $largeImage->url() . '" data-size="' . $largeImage->width() . 'x' . $largeImage->height() . '"><div class="image">' . $lazydiv . '</div></a>');
-
-					endif;
-
-				else
-					$figure->append( '<div class="image">' . $lazydiv . '</div>');
-
-			}
-			else {
-				if( $outputlink == 1)
-					$figure->append( '<a target="_blank" href="' . $largeImage->url() . '" data-size="' . $largeImage->width() . 'x' . $largeImage->height() . '"><div class="image">' . $imagethumb . '</div></a>');
-				else
-					$figure->append( '<div class="image">' . $imagethumb . '</div>');
-			}
+			// si on veut un <a> autour de l'image
+			if($outputlink == 1):
+				$figure->append('<a target="_blank" href="' . $largeImage->url() . '" data-size="' . $largeImage->width() . 'x' . $largeImage->height() . '"><div class="image">' . $lazydiv . '</div></a>');
+			else:
+				$figure->append('<div class="image">' . $lazydiv . '</div>');
+			endif;
 
 			$i++;
-
 		}
 
 		// Add caption
