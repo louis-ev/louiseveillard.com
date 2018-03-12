@@ -37,19 +37,19 @@ L’application a été développée avec deux objectifs précis quand à son ut
 - les potentiels clients qui s’y connecteraient par Internet et qui se familiariseraient ainsi avec le catalogue des ces lampes,
 - mais aussi les visiteurs du stand de DCW Éditions au salon de design de Milan, où des tablettes et des hôtes/hôtesses les accueilleraient pour tester et simuler une installation selon leurs besoins.
 
-L’interface et les interactions ont donc été mises au point dans une logique **mobile-first**, c’est à dire en capitalisant au maximum sur les spécificités des tablettes : portabilité, écran capacitif multi-touch, proportion d’écran en 4:3, grande finesse des traits et précision des couleurs (en particulier sur les iPad Air 2 qui seraient utilisés). L’application respecte au maximum les (link: https://developer.apple.com/ios/human-interface-guidelines/overview/themes/ text: Human Interface Guidelines) (HIG) d’Apple pour être au plus proche d’une de l’expérience apportée par une application native sans la nécessité pour les utilisateurs  de passer par l’App Store pour l’installer. 
+L’interface et les interactions ont donc été mises au point dans une logique **mobile-first**, c’est à dire en capitalisant au maximum sur les spécificités des tablettes : portabilité, écran capacitif multi-touch, proportion d’écran en 4:3, grande finesse des traits et précision des couleurs (en particulier sur les iPad Air 2 qui seraient utilisés). L’application respecte au maximum les (link: https://developer.apple.com/ios/human-interface-guidelines/overview/themes/ text: Human Interface Guidelines) (HIG) d’Apple pour être au plus proche de l’expérience et des codes d’une application native sans la nécessité pour les utilisateurs  de passer par l’App Store pour l’installer. 
 
 (image: dcw-20170405-acrobatesthumb-03_2_3000.jpg legende: Aperçu de l’écran d’accueil sur un iPad.)
 
-Un soin tout particulier a été apporté aux performances et à la réactivité : l’ensemble de l’application elle-même pèse moins de 1mo et reste très fluide même en comportant plusieurs dizaines de lampes en même temps.
+Un soin tout particulier a été apporté aux performances et à la réactivité : l’ensemble de l’application elle-même pèse moins de 1mo et reste très fluide – même en affichant plusieurs dizaines de lampes en même temps.
 
  ---
 
-En parallèle, de nombreux modules et paradigmes ont dû être trouvés pour faciliter au maximum la manipulation d’un catalogue aussi complexe et élaboré, tout en apportant une touche ludique et familière.
+En parallèle, de nombreux paradigmes ont dû être trouvés pour faciliter au maximum la manipulation d’un catalogue de lampes aussi riche, tout en apportant une touche ludique et familière.
 
-(image: dcw-20170405-acrobatesthumb-037_3000.jpg legende: Échantillon d’abatjours et d’affixes du catalogue.)
+(image: dcw-20170405-acrobatesthumb-037_3000.jpg legende: Recensement des abatjours et des affixes du catalogue.)
 
-Cela se retrouve autant dans le graphisme de l’application que dans son comportement — simple, précis, utilisant des couleurs franches et truffé d’animations subtiles.
+Cela se retrouve autant dans le graphisme de l’application que dans son comportement – simple, précis, utilisant des couleurs franches et truffé d’animations subtiles.
 
 (image: 1_el_3qt7ytzclwh_t_qybfa.gif taille: colonne legende: Slider de gestion de la position horizontale d’une lampe.)
 (image: 1_e1xnruhcznzpw2t5atxexq.gif taille: colonne legende: Module de réglage de la taille de la pièce, avec avertissement pour des valeurs hors des limites.)
@@ -61,11 +61,11 @@ Un des premiers prototypes. La physique des lampes est volontairement exagérée
 </figcaption>
 </figure>
 
-(image: 1_ppdj__-_ywnrvuetqs9now.gif taille: colonne legende: Moteur physique régissant le mouvement des lampes dans l’espace en vue de débogage.)
+(image: 1_ppdj__-_ywnrvuetqs9now.gif taille: colonne legende: Moteur physique créé pour le projet et utilisé sur acrobatesbuilder.fr, ici en mode de débogage.)
 
  ---
 
- Un article récapitulatif rédigé à quatre mains avec Vincent Desclaux est à retrouver (link: https://medium.com/@timetofirstfix/designing-and-building-a-web-app-from-scratch-a-case-study-39e587951f41  popup: yes text: sur cette page).
+ Un article récapitulatif rédigé à quatre mains avec Vincent Desclaux est à retrouver (link: https://medium.com/@timetofirstfix/designing-and-building-a-web-app-from-scratch-a-case-study-39e587951f41  popup: yes text: sur la page suivante).
  
 (image: screenshot-2018-01-28-a-22.49.36.png)
 

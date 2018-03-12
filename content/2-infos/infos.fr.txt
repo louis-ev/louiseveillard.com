@@ -23,7 +23,7 @@ J’anime régulièrement des workshops et des cours, que je documente en ligne 
 - (link: http://pca.louiseveillard.com/ text: pca.louiseveillard.com  popup: yes) : mes cours de webdesign et d’apprentissage du code au Paris College of Art, en anglais
 - (link: https://datafossil.xyz/ text: datafossil.xyz popup: yes) : un workshop d’une semaine à (link: https://www.lecolededesign.com/ text: l’école de design de Nantes Atlantique popup: yes) autour de la visualisation d’information et la création de fossiles de données
 - (link: https://affichesinteractives.louiseveillard.com/ text: affichesinteractives.louiseveillard.com  popup: yes) : un workshop d’une semaine à (link: http://www.esapyrenees.fr/ text: l’École supérieure d’art des Pyrénées popup: yes) sur la création d’affiches interactives dans le navigateur
-- (link: http://www.penninghen.fr/ text: algorithme.beautifulseams.com popup: yes) : une intervention autour de la notion d’algorithme, suivi d’un sujet libre à l’(link: http://www.penninghen.fr/ text: ESAG Penninghen popup: yes) à Paris
+- (link: http://algorithme.beautifulseams.com/ text: algorithme.beautifulseams.com popup: yes) : une intervention autour de la notion d’algorithme, suivi d’un sujet libre à l’(link: http://www.penninghen.fr/ text: ESAG Penninghen popup: yes) à Paris
 - (link: http://letricodeur.com/workshop/ text: letricodeur.com/workshop  popup: yes) : une initiation à la visualisation d’information sur Processing, avec une ouverture sur le tricot
 
 En parallèle, je rédige régulièrement des articles sur des sujets variés qui me tiennent à cœur ou sur la réalisation de certains de mes projets. Dernièrement, j’ai publié les articles suivants : 
