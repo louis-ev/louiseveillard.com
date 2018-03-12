@@ -32,7 +32,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <meta name="og:site_name" content="<?php echo $site->ogsite_name()->html() ?>">
+    <meta name="og:site_name" content="<?php echo $site->title()->html() ?>">
     <meta name="og:description" content="<?php echo $site->description()->html() ?>">
     <meta name="og:url" content="<?php echo $site->url() ?>">
     <meta name="og:image" content="<?php echo $site->ogimage()->html() ?>">
