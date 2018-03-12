@@ -24,7 +24,7 @@ Point à Point se déroule de la manière suivante :
 
 (image: pucestypo6.jpg legende: Après l'interprétation par le programme, le tracé des modules se transforme en un alphabet complet qui est utilisé pour écrire des mots.)
 
-<figure class="media-tweet">
+<figure class="media-tweet largeur--Colonne">
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Une nouvelle famille de caractères vient d’être dessinée par un visiteur des <a href="https://twitter.com/hashtag/pucestypo2015?src=hash">#pucestypo2015</a> ! <a href="http://t.co/3N9Xzydmsg">pic.twitter.com/3N9Xzydmsg</a></p>— pointapoint (@pointapoint) <a href="https://twitter.com/pointapoint/status/604702304701399040">30 mai 2015</a>
 </blockquote>
 <figcaption class="legende">
@@ -34,7 +34,7 @@ L'alphabet généré se retrouve également posté sur le compte Twitter @pointa
 </figcaption>
 </figure>
 
-<figure class="media-tweet">
+<figure class="media-tweet largeur--Colonne">
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Une nouvelle famille de caractères vient d’être dessinée par un visiteur des <a href="https://twitter.com/hashtag/pucestypo2015?src=hash">#pucestypo2015</a> ! <a href="http://t.co/RqomxOzdlQ">pic.twitter.com/RqomxOzdlQ</a></p>— pointapoint (@pointapoint) <a href="https://twitter.com/pointapoint/status/604693916458336256">30 mai 2015</a></blockquote>
 </figure>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -45,7 +45,7 @@ L'alphabet généré se retrouve également posté sur le compte Twitter @pointa
 
 (image: pucestypo.jpg)
 
-<figure class="media-tweet">
+<figure class="media-tweet largeur--Colonne">
 <blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">La découverte ludique de la <a href="https://twitter.com/hashtag/typographie?src=hash">#typographie</a> :) <a href="https://twitter.com/hashtag/bpossibles?src=hash">#bpossibles</a> <a href="http://t.co/IHsVl2ccar">pic.twitter.com/IHsVl2ccar</a></p>— Bâtisseursdpossibles (@bpossibles) <a href="https://twitter.com/bpossibles/status/610727483860779008">16 juin 2015</a></blockquote>
 </figure>
 

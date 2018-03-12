@@ -19,11 +19,11 @@ Headercol2:
 ### thème
 ## expériences de captation/représentation d’informations
 ### contexte
-## projet de diplôme de 5<sup>è</sup> année à l'ésad d'Amiens, section design graphique.
+## projet de diplôme de 5<sup>e</sup> année à l'ésad d'Amiens, section design graphique.
 ### année
 ## 2012
 ### crédits
-## L'application est développée en Processing et en Java avec Eclipse. Les 6 posters 60*80cm sont imprimés sur des feuilles de papier Munken 200g avec des encres pigmentaires.
+## L'application est développée en Processing et en Java avec Eclipse. Les 6 posters 60×80cm sont imprimés sur des feuilles de papier Munken 200g avec des encres pigmentaires.
 
 ----
 

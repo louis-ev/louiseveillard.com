@@ -55,6 +55,14 @@ Cela se retrouve autant dans le graphisme de l’application que dans son compor
 (image: 1_e1xnruhcznzpw2t5atxexq.gif taille: colonne legende: Module de réglage de la taille de la pièce, avec avertissement pour des valeurs hors des limites.)
 (image: 1_n0m1kzlm6d48bo3phfev3w.gif taille: colonne legende: Choix d’abatjours grâce à un module de *double carousel*.)
 
+<figure class='media-video largeur--Colonne'><style>.embed-container3 { position: relative; padding-bottom: 70.68%; height: 0; overflow: hidden; max-width: 100%; } .embed-container3 iframe, .embed-container3 object, .embed-container3 embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container3'><iframe src='https://player.vimeo.com/video/223803683' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+<figcaption>
+Un des premiers prototypes. La physique des lampes est volontairement exagérée pour renforcer l’impression d’interagir avec des objets qui ont une masse et une inertie.
+</figcaption>
+</figure>
+
+(image: 1_ppdj__-_ywnrvuetqs9now.gif taille: colonne legende: Moteur physique régissant le mouvement des lampes dans l’espace en vue de débogage.)
+
  ---
 
  Un article récapitulatif rédigé à quatre mains avec Vincent Desclaux est à retrouver (link: https://medium.com/@timetofirstfix/designing-and-building-a-web-app-from-scratch-a-case-study-39e587951f41  popup: yes text: sur cette page).

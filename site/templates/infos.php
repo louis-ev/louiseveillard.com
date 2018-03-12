@@ -62,7 +62,7 @@ if( param('lang') !== 'en'):
   									<a href="https://www.studiotheatre.fr/" target="_blank">studiotheatre.fr</a> <span class="realisationsDetails">avec <a href="http://vdesclaux.com/" target="_blank">Vincent Desclaux</a></span>
   							  </li>
   							  <li>
-  									<a href="http://www.madd-bordeaux.fr/" target="_blank">madd-bordeaux.fr</a> <span class="realisationsDetails">maquettes avec <a href="https://sarahgarcin.com/" target="_blank">Sarah Garcin</a></span>
+  									<a href="http://www.madd-bordeaux.fr/" target="_blank">madd-bordeaux.fr</a> <span class="realisationsDetails">maquettes uniquement, avec <a href="https://sarahgarcin.com/" target="_blank">Sarah Garcin</a></span>
   							  </li>
   							  <li>
   									<a href="http://www.rhplus-architecture.com/" target="_blank">rhplus-architecture.com</a>
@@ -110,7 +110,7 @@ if( param('lang') !== 'en'):
 							<li>Présentation de <a href="http://panoptic-lab.com/" data-link="panopticlab">Panoptic Lab</a> au talk sur l’art génératif organisé par <a href="https://brightfor.me/">Bright</a> au <a href="http://silencio-club.com/fr" target="_blank">Silencio</a>, à Paris, le 19 février 2015.</li>
 							<li>Workshop et conférence sur la matérialisation du numérique par le code à l’<a href="http://www.esalorraine.fr/metz/" target="_blank">ésal Metz</a> les 2, 3 et 4 février 2015.</li>
 							<li>Conférence publique sur la représentation des traces numériques à l’<a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d’Amiens</a> le 9 décembre 2014.</li>
-							<li>Workshop dans le cadre du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> sur le détournement et l’utilisation de machines à tricoter programmables pour réaliser des motifs générés par des données personnelles. Sur 3 jours à Cap Science à Bordeaux, en collaboration avec l’association <a href="http://www.sewetlaine.com/" target="_blank">Sew&Laine</a> et <a href="http://www.2roqs.fr/" target="_blank">Studio 2Roqs</a>).</li>
+							<li>Workshop dans le cadre du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> sur le détournement et l’utilisation de machines à tricoter programmables pour réaliser des motifs générés par des données personnelles. Du 10 au 12 octobre 2014 à Cap Science à Bordeaux, en collaboration avec l’association <a href="http://www.sewetlaine.com/" target="_blank">Sew&Laine</a> et <a href="http://www.2roqs.fr/" target="_blank">Studio 2Roqs</a>).</li>
 							<li>Enseignant de design génératif en 4<sup>e</sup> année à <a href='http://www.hetic.net/' target='_blank'>HETIC</a> à Montreuil (2013). Résumé et code du cours <a href="http://www.beautifulseams.com/2013/10/31/teaching-generative-design/" data-link='blog' target="_blank">sur mon blog</a>.</li>
 							<li>Conférence sur l’algorithme dans l’art et le design à l’<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a> (2013). Compte-rendu, slides et projets des étudiants <a data-link='algorithme' href="http://algorithme.beautifulseams.com/" target="_blank">sur cette page</a>.</li>
 						</ul>
