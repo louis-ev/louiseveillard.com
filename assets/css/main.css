@@ -1029,6 +1029,7 @@ html.js body.is--loading .module--projetList {
   left: 0;
   bottom: 0;
   right: 0;
+  overflow: hidden;
   transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out, opacity 0.5s ease-in, border 0.2s linear;
   text-align: center;
 }
@@ -1073,30 +1074,31 @@ html.js body.is--loading .module--projetList {
   }
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--corners {
-  transition: all .4s;
+  position: absolute;
+  display: block;
+  width: 4px;
+  height: 4px;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  border-left: 1px solid currentColor;
+  border-top: 1px solid currentColor;
+  background-color: transparent;
+  transition: width 0.4s ease-in, height 0.4s ease-out, background-color 0.7s;
 }
-.module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--corners::before,
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--corners::after {
   content: '';
   position: absolute;
-  width: 4px;
-  height: 4px;
-  border: none;
-  transition: all .4s .4s;
-}
-.module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--corners::before {
-  top: 0;
-  left: 0;
-  border-left: 1px solid currentcolor;
-  border-top: 1px solid currentcolor;
-}
-.module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links--corners::after {
-  /*
-          bottom: 0;
-          right: 0;
-          	border-right: 1px solid currentcolor;
-          	border-bottom: 1px solid currentcolor;
-*/
+  width: 1px;
+  height: 1px;
+  left: var(--x);
+  top: var(--y);
+  background: radial-gradient(circle closest-side, transparent, transparent);
+  background-repeat: no-repeat;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s;
+  pointer-events: none;
 }
 .module--projetList--titles .module--projetList--titles--projetName .module--projetList--titles--projetName--links::before {
   content: "";
@@ -1158,12 +1160,14 @@ html.js body.is--loading .module--projetList {
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners {
   opacity: 1;
-}
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners::before {
   width: 100%;
   height: 100%;
   background-color: rgba(56, 196, 178, 0.84);
-  transition: all .4s;
+}
+.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="vr"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle closest-side, #38C4B2, transparent);
 }
 .module--projetList--titles h3[data-type="sites"]::after {
   content: "";
@@ -1213,12 +1217,14 @@ html.js body.is--loading .module--projetList {
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners {
   opacity: 1;
-}
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners::before {
   width: 100%;
   height: 100%;
   background-color: rgba(3, 184, 244, 0.84);
-  transition: all .4s;
+}
+.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="sites"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle closest-side, #03B8F4, transparent);
 }
 .module--projetList--titles h3[data-type="objets-interactifs"]::after {
   content: "";
@@ -1268,12 +1274,14 @@ html.js body.is--loading .module--projetList {
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners {
   opacity: 1;
-}
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners::before {
   width: 100%;
   height: 100%;
   background-color: rgba(171, 209, 144, 0.84);
-  transition: all .4s;
+}
+.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="objets-interactifs"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle closest-side, #ABD190, transparent);
 }
 .module--projetList--titles h3[data-type="outils-pedagogiques"]::after {
   content: "";
@@ -1323,12 +1331,14 @@ html.js body.is--loading .module--projetList {
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners {
   opacity: 1;
-}
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners::before {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 193, 98, 0.84);
-  transition: all .4s;
+}
+.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="outils-pedagogiques"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle closest-side, #FFC162, transparent);
 }
 .module--projetList--titles h3[data-type="autres"]::after {
   content: "";
@@ -1378,12 +1388,14 @@ html.js body.is--loading .module--projetList {
 }
 .module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners {
   opacity: 1;
-}
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners::before {
   width: 100%;
   height: 100%;
   background-color: rgba(172, 168, 165, 0.84);
-  transition: all .4s;
+}
+.module--projetList--titles:hover .module--projetList--titles--projetName[data-type="autres"] .module--projetList--titles--projetName--links:hover .module--projetList--titles--projetName--links--corners::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle closest-side, #ACA8A5, transparent);
 }
 .module--projetList--visuelWrapper {
   position: absolute;

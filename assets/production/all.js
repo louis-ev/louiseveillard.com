@@ -11264,6 +11264,7 @@ var theProjetList = {
       });
       $thisProjetVisuel.addClass("is--shown");
       logClientEvents('Survol sur la vignette du projet : ' + $(this).find(".module--projetList--titles--projetName--links--name").text());
+
   		});
 		$(document).on('mouseleave','.module--projetList--titles--projetName--links', function() {
   			projetIndex = $(this).parent("li").attr("data-index");
@@ -11273,6 +11274,12 @@ var theProjetList = {
   			$thisProjetVisuel.removeClass("is--shown").addClass("was--shown");
   		});
 
+    $(document).on('mousemove','.module--projetList--titles--projetName', function(e) {
+      var x = e.pageX - $(this)[0].offsetLeft - $('.module--projetList')[0].offsetLeft;
+      var y = e.pageY - $(this)[0].offsetTop - $('.module--projetList')[0].offsetTop;
+      $(this).find('.module--projetList--titles--projetName--links--corners')[0].style.setProperty('--x', x + 'px');
+      $(this).find('.module--projetList--titles--projetName--links--corners')[0].style.setProperty('--y', y + 'px');
+    });
 	},
 };
 
