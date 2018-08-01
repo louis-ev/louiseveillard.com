@@ -24,21 +24,41 @@
 		  </h2>
 	  </div>
 
+<?php
+if(param('lang') !== 'en'):
+?>
 
-  <div>
-  <?php foreach($page->detail()->toStructure() as $detail): ?>
-		<div class="header">
-      <h3><?= $detail->intitule(); ?></h3>
-		</div>
-		<div class="description">
-      <?= $detail->text()->kirbytext(); ?>
-		</div>
-  <?php endforeach; ?>
-  </div>
-
-    <hr>
+    <div>
+      <?php foreach($page->detail()->toStructure() as $detail): ?>
+        <div class="header">
+          <h3><?= $detail->intitule(); ?></h3>
+        </div>
+        <div class="description">
+          <?= $detail->text()->kirbytext(); ?>
+        </div>
+      <?php endforeach; ?>
+    </div>
 
 <?php
+else:
+?>
+
+    <div>
+      <?php foreach($page->detailEN()->toStructure() as $detail): ?>
+        <div class="header">
+          <h3><?= $detail->intitule(); ?></h3>
+        </div>
+        <div class="description">
+          <?= $detail->text()->kirbytext(); ?>
+        </div>
+      <?php endforeach; ?>
+    </div>
+
+<?php
+  endif;
+?>
+<?php
+  /*
 if(param('lang') !== 'en'):
 ?>
 		<div id="details" data-lang="fr" class="ui three column stackable grid">
@@ -119,7 +139,7 @@ if(param('lang') !== 'en'):
 							<li>Workshop à la <a href="http://www.newschool.edu/parsons-paris/" target="_blank">PARSONS</a> à Paris dans le cours <em>Creativity and Computation Lab</em> (2015).</li>
 							<li>Workshop à la conférence <a href="http://learnxdesign2015.com/" target="_blank">LearnxDesign 2015</a> à Chicago, avec l’équipe de <a data-link="latelier" href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a> (2015).</li>
 							<li>Conférence de présentation de mon travail et de mes recherches à l’<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a> (2015).</li>
-							<li>Introduction au <a data-link='tricodeur' href="http://www.letricodeur.com">Tricodeur</a> lors de la <a href="http://www.dailymotion.com/video/x2mhyja_louis-eveillard-soiree-di-zain-21-mode-s_creation" target="_blank">soirée *di*/zaïn #21</a>, au Grand Palais à Paris le 11 avril 2015.</li>
+							<li>Introduction au <a data-link='tricodeur' href="http://www.letricodeur.com">Tricodeur</a> lors de la <a href="http://www.dailymotion.com/video/x2mhyja_louis-eveillard-soiree-di-zain-21-mode-s_creation" target="_blank">soirée *di*zaïn #21</a>, au Grand Palais à Paris le 11 avril 2015.</li>
 							<li>Présentation de <a href="http://panoptic-lab.com/" data-link="panopticlab">Panoptic Lab</a> au talk sur l’art génératif organisé par <a href="https://brightfor.me/">Bright</a> au <a href="http://silencio-club.com/fr" target="_blank">Silencio</a>, à Paris, le 19 février 2015.</li>
 							<li>Workshop et conférence sur la matérialisation du numérique par le code à l’<a href="http://www.esalorraine.fr/metz/" target="_blank">ésal Metz</a> les 2, 3 et 4 février 2015.</li>
 							<li>Conférence publique sur la représentation des traces numériques à l’<a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d’Amiens</a> le 9 décembre 2014.</li>
@@ -313,7 +333,7 @@ else:
 							<li>Workshop at <a href="http://www.newschool.edu/parsons-paris/" target="_blank">PARSONS</a> in Paris in the <em>Creativity and Computation Lab</em> (2015).</li>
 							<li>Workshop at LearnxDesign 2015 conference in Chicago with the team of the project <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l'atelier des chercheurs</a>.</li>
 							<li>Lecture on my work and research at <a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a> (2015).</li>
-							<li>Introduction to the <a data-link='tricodeur' href="http://www.letricodeur.com">Tricodeur</a> during the <a href="http://www.dailymotion.com/video/x2mhyja_louis-eveillard-soiree-di-zain-21-mode-s_creation" target="_blank">*di*/zaïn #21 event</a>, at Le Grand Palais in Paris (2015).</li>
+							<li>Introduction to the <a data-link='tricodeur' href="http://www.letricodeur.com">Tricodeur</a> during the <a href="http://www.dailymotion.com/video/x2mhyja_louis-eveillard-soiree-di-zain-21-mode-s_creation" target="_blank">*di*zaïn #21 event</a>, at Le Grand Palais in Paris (2015).</li>
 							<li>Presentation of <a href="http://panoptic-lab.com/" data-link="panopticlab">Panoptic Lab</a> during the talk on generative art organized by <a href="https://brightfor.me/">Bright</a> at <a href="http://silencio-club.com/fr" target="_blank">Silencio club</a>, in Paris, on February 19th 2015.</li>
 							<li>Workshop and lecture on the materialization of digital artefacts with code at <a href="http://www.esalorraine.fr/metz/" target="_blank">ésal Metz</a> on February 2-3-4th 2015.</li>
 							<li>Public conference on the representation of online traces at <a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad Amiens</a> on December 9th 2014.</li>
@@ -347,19 +367,19 @@ else:
 								<h3>Publications</h3>
 							</div>
 							<ul class="description">
-  							  <li>General overview and explanations of the project <em>Acrobates Builder</em> on Medium (written with <a href="http://vdesclaux.com/" target="_blank">Vincent Desclaux</a>): <a href="https://medium.com/@timetofirstfix/designing-and-building-a-web-app-from-scratch-a-case-study-39e587951f41" target="_blank">Designing and building a web app from scratch: a case study</a>.</li>
-								<li><a href="https://twitter.com/timetofirstfix/status/923184802781638656" target="_blank">étapes: #239</a> (septembre – octobre 2017) – longform on <em>Art, design & algorithme</em>.</li>
-								<li><a href="http://etapes.com/etapes-237" target="_blank">étapes: #237</a> (May 2017) – introduction to my profile and two projects: the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> and Acrobates Builder.</li>
-								<li><a href="http://www.revue-backoffice.com/" target="_blank">Back Office</a>, Éditions Fork & B42 (2017) – introduction to the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
-								<li><a href="http://www.r-diffusion.org/index.php?ouvrage=CAM-09" target="_blank">Typographic algorithms</a>, éditions La clé à molette (2016) – page created by a type generator that uses random shapes and OCR.</li>
-								<li><a href="http://www.eyrolles.com/Audiovisuel/Livre/fibres-fils-tissus-9782212143126" target="_blank">Fibres, fils, tissus</a>, éditions Eyrolles (2016) – introduction to the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
-								<li>Gourlet, P., Dervieux, F., Eveillard, L., Mancini, J. (2015) 'The Research Diary: Documenting and Publishing Classrooms' Activites', in International Journal for Cross-Disciplinary Subjects in Education, Volume 6, Issue 1.</li>
-								<li>Gourlet, P., Dervieux, F., Eveillard, L., Garcin, S. (2015) 'Designing learning tools for education', workshop DRS/LearnxDesign 2015, Chicago, USA.</li>
-								<li><a href="http://www.pearson.fr/livre/?GCOI=27440100443180" target="_blank">Projets créatifs avec Arduino</a> (2014)</li>
-								<li><a href="img/hab/hab-intramuros-172.jpg" target="_blank">Intramuros #172</a> (May 2014)</li>
-								<li><a href="http://www.mouvement.net/analyses/enquetes/faciliter-lacces-au-web" target="_blank">Mouvement #72</a> (January-February 2014)</li>
-								<li>étapes: #216 (October 2013)</li>
-								<li>étapes: #209 (October 2012)</li>
+<li>General overview and explanations of the project <em>Acrobates Builder</em> on Medium (written with <a href="http://vdesclaux.com/" target="_blank">Vincent Desclaux</a>): <a href="https://medium.com/@timetofirstfix/designing-and-building-a-web-app-from-scratch-a-case-study-39e587951f41" target="_blank">Designing and building a web app from scratch: a case study</a>.</li>
+<li><a href="https://twitter.com/timetofirstfix/status/923184802781638656" target="_blank">étapes: #239</a> (septembre – octobre 2017) – longform on <em>Art, design & algorithme</em>.</li>
+<li><a href="http://etapes.com/etapes-237" target="_blank">étapes: #237</a> (May 2017) – introduction to my profile and two projects: the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> and Acrobates Builder.</li>
+<li><a href="http://www.revue-backoffice.com/" target="_blank">Back Office</a>, Éditions Fork & B42 (2017) – introduction to the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
+<li><a href="http://www.r-diffusion.org/index.php?ouvrage=CAM-09" target="_blank">Typographic algorithms</a>, éditions La clé à molette (2016) – page created by a type generator that uses random shapes and OCR.</li>
+<li><a href="http://www.eyrolles.com/Audiovisuel/Livre/fibres-fils-tissus-9782212143126" target="_blank">Fibres, fils, tissus</a>, éditions Eyrolles (2016) – introduction to the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.</li>
+<li>Gourlet, P., Dervieux, F., Eveillard, L., Mancini, J. (2015) 'The Research Diary: Documenting and Publishing Classrooms' Activites', in International Journal for Cross-Disciplinary Subjects in Education, Volume 6, Issue 1.</li>
+<li>Gourlet, P., Dervieux, F., Eveillard, L., Garcin, S. (2015) 'Designing learning tools for education', workshop DRS/LearnxDesign 2015, Chicago, USA.</li>
+<li><a href="http://www.pearson.fr/livre/?GCOI=27440100443180" target="_blank">Projets créatifs avec Arduino</a> (2014)</li>
+<li><a href="img/hab/hab-intramuros-172.jpg" target="_blank">Intramuros #172</a> (May 2014)</li>
+<li><a href="http://www.mouvement.net/analyses/enquetes/faciliter-lacces-au-web" target="_blank">Mouvement #72</a> (January-February 2014)</li>
+<li>étapes: #216 (October 2013)</li>
+<li>étapes: #209 (October 2012)</li>
 							</ul>
 				    </div>
 		    	</div>
@@ -369,11 +389,11 @@ else:
 								<h3>Exhibitions</h3>
 							</div>
 							<ul class="description">
-								<li>Presentation of the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> at the Semaine Digitale, in Bordeaux (2014)</li>
-								<li><a href="http://chercherletexte.org/fr/" target="_blank">Chercher le Texte</a>, Bibliothèque Nationale de France, in Paris (2013)</li>
-								<li>Salon du livre, Paris (2013)</li>
-								<li>Amnesia/Memoria, Marke.06, Weimar, Allemagne (2010)</li>
-								<li>Nooka Show, Red Bull Space in New York, États-Unis (2010)</li>
+<li>Presentation of the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> at the Semaine Digitale, in Bordeaux (2014)</li>
+<li><a href="http://chercherletexte.org/fr/" target="_blank">Chercher le Texte</a>, Bibliothèque Nationale de France, in Paris (2013)</li>
+<li>Salon du livre, Paris (2013)</li>
+<li>Amnesia/Memoria, Marke.06, Weimar, Allemagne (2010)</li>
+<li>Nooka Show, Red Bull Space in New York, États-Unis (2010)</li>
 							</ul>
 				    </div>
 		    	</div>
@@ -381,7 +401,10 @@ else:
 		</div>
 <?php
 endif;
+*/
 ?>
+
+
 	</section>
 
 </main>

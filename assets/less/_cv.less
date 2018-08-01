@@ -97,7 +97,6 @@
         margin-left:  -@t-margin/2;
       }
     }
-
   }
 
   h3 {
@@ -151,16 +150,17 @@
 	}
 
 	.description {
-
 		padding-left: 0;
 		padding-right: 1em;
 
 		ul {
     		list-style: circle;
+    		display: flex;
 		}
 
 		li {
-			padding-bottom: 1em;
+    		flex: 0 1 250px;
+  			padding-bottom: 1em;
 			margin: 0;
 			&::before {
   			display: none;
