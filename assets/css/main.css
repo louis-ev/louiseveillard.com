@@ -698,7 +698,7 @@ html.js body.is--loading .module--navbar {
   color: #fff;
   padding: .1em .0em;
   margin: -0.1em 0em;
-  text-shadow: 0px 2px 4px black;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 250% 1px;
@@ -2026,6 +2026,8 @@ body[data-visuel='zoomedIn'] .module--navbar {
 .module--cv .description {
   padding-left: 0;
   padding-right: 1em;
+}
+.module--cv .description ul {
   list-style: circle;
 }
 .module--cv .description li {

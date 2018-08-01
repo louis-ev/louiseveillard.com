@@ -24,8 +24,22 @@
 		  </h2>
 	  </div>
 
+
+  <div>
+  <?php foreach($page->detail()->toStructure() as $detail): ?>
+		<div class="header">
+      <h3><?= $detail->intitule(); ?></h3>
+		</div>
+		<div class="description">
+      <?= $detail->text()->kirbytext(); ?>
+		</div>
+  <?php endforeach; ?>
+  </div>
+
+    <hr>
+
 <?php
-if( param('lang') !== 'en'):
+if(param('lang') !== 'en'):
 ?>
 		<div id="details" data-lang="fr" class="ui three column stackable grid">
 <!-- 				<div class="row"> -->
@@ -36,9 +50,8 @@ if( param('lang') !== 'en'):
 							</div>
 							<ul class="description">
 				    			<li>Designer indépendant à Paris.</li>
-								<li>Membre du collectif <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a>.</li>
+								<li>Membre fondateur du collectif <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a>.</li>
 						    	<li>Co-fondateur de <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, un collectif œuvrant dans la réalité virtuelle.</li>
-                <li>Coorganisateur au <a href='http://freeartbureau.org/' data-link='fab' target='_blank'>Free Art Bureau</a>, association à but non lucratif dédiée la promotion d’outils libres pour la création.</li>
 							</ul>
 				    </div>
 		    	</div>
@@ -104,7 +117,7 @@ if( param('lang') !== 'en'):
 							<li>Conférence à l’<a href="http://www.ensad.fr/" target="_blank">ENSAD</a> pour la présentation du projet de création et de réalisation de 10000 couvertures pour livres numériques (2016).</li>
 							<li>Conférence aux <a href="http://delure.org/les-a-cotes/evenements-et-workshops/mardis-de-lure-1" target="_blank" data-link="delure">Mardis de Lure</a> à la Générale à Paris pour présenter des outils pour enseigner le design et encourager des pédagogies actives (2015).</li>
 							<li>Workshop à la <a href="http://www.newschool.edu/parsons-paris/" target="_blank">PARSONS</a> à Paris dans le cours <em>Creativity and Computation Lab</em> (2015).</li>
-							<li>Workshop à la conférence <a href="http://learnxdesign2015.com/" target="_blank">LearnxDesign 2015</a> à Chicago, avec l’équipe de <a data-link="latelier" href="http://www.latelier-des-chercheurs.fr" target="_blank">l’atelier des chercheurs</a> (2015).</li>
+							<li>Workshop à la conférence <a href="http://learnxdesign2015.com/" target="_blank">LearnxDesign 2015</a> à Chicago, avec l’équipe de <a data-link="latelier" href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a> (2015).</li>
 							<li>Conférence de présentation de mon travail et de mes recherches à l’<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a> (2015).</li>
 							<li>Introduction au <a data-link='tricodeur' href="http://www.letricodeur.com">Tricodeur</a> lors de la <a href="http://www.dailymotion.com/video/x2mhyja_louis-eveillard-soiree-di-zain-21-mode-s_creation" target="_blank">soirée *di*/zaïn #21</a>, au Grand Palais à Paris le 11 avril 2015.</li>
 							<li>Présentation de <a href="http://panoptic-lab.com/" data-link="panopticlab">Panoptic Lab</a> au talk sur l’art génératif organisé par <a href="https://brightfor.me/">Bright</a> au <a href="http://silencio-club.com/fr" target="_blank">Silencio</a>, à Paris, le 19 février 2015.</li>

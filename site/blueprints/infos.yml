@@ -1,0 +1,36 @@
+title: Infos
+pages: false
+files: true
+fields:
+  title:
+    label: Title
+    type:  text
+  text:
+    label: Text
+    type:  markdown
+  detail:
+    label: Détail
+    type: structure
+    entry: >
+      {{intitule}}<br>
+    fields:
+      intitule:
+        label: Intitulé
+        type: text
+      text:
+        label: Texte
+        type: markdown
+
+  detailEN:
+    label: Détail EN
+    type: structure
+    entry: >
+      {{intitule}}<br>
+      {{text}}
+    fields:
+      intitule:
+        label: Intitulé
+        type: text
+      text:
+        label: Texte
+        type: markdown
