@@ -11,30 +11,28 @@
 	</div>
 
 	<section class="module--cv pjax">
-	  <div class="header">
-		  <h2>
+	  <div class="langs">
   		  <a href="<?= $page->url(); ?>/lang:en">
     		  English
   		  </a>
-		  </h2>
-		  <h2>
   		  <a href="<?= $page->url(); ?>/lang:fr">
   		    Français
   		  </a>
-		  </h2>
 	  </div>
 
 <?php
 if(param('lang') !== 'en'):
 ?>
 
-    <div>
+    <div class="m_detail">
       <?php foreach($page->detail()->toStructure() as $detail): ?>
-        <div class="header">
-          <h3><?= $detail->intitule(); ?></h3>
-        </div>
-        <div class="description">
-          <?= $detail->text()->kirbytext(); ?>
+        <div class="m_detail--item">
+          <div class="header">
+            <h3><?= $detail->intitule(); ?></h3>
+          </div>
+          <div class="description">
+            <?= $detail->text()->kirbytext(); ?>
+          </div>
         </div>
       <?php endforeach; ?>
     </div>
@@ -43,13 +41,15 @@ if(param('lang') !== 'en'):
 else:
 ?>
 
-    <div>
+    <div class="m_detail">
       <?php foreach($page->detailEN()->toStructure() as $detail): ?>
-        <div class="header">
-          <h3><?= $detail->intitule(); ?></h3>
-        </div>
-        <div class="description">
-          <?= $detail->text()->kirbytext(); ?>
+        <div class="m_detail--item">
+          <div class="header">
+            <h3><?= $detail->intitule(); ?></h3>
+          </div>
+          <div class="description">
+            <?= $detail->text()->kirbytext(); ?>
+          </div>
         </div>
       <?php endforeach; ?>
     </div>
