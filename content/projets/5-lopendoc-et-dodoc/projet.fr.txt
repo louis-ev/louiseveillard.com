@@ -26,7 +26,7 @@ Premier prototype réalisé en 2014, << La Publication des chercheurs >> a été
 
 <figure class='media-video'><style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://player.vimeo.com/video/116288688' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div></figure>
 
-## do.doc
+## do•doc
 
 do.doc est un outil qui permet la prise de note rapide et la documentation à l’aide de différents média lors d’une activité. Il propose dans un deuxième temps la mise en récit de cette activité, grâce à une ré-organisation des traces qui auront été prises lors de cette activité. Le dispositif est constitué d’une partie physique “capteurs” pour l’enregistrement de traces, et d’une partie “interface” qui restitue ces données et propose de les organiser pour créer une narration multimédia.
 
@@ -73,6 +73,6 @@ Headercol2:
 ### année
 ## démarré en 2014
 ### équipe
-## réalisé par (link: http://latelier-des-chercheurs.fr/ text: l’Atelier des Chercheurs popup: yes) ((link: http://www.paulinegourlet.com/ text: Pauline Gourlet popup: yes), (link: http://sarahgarcin.com/ text: Sarah Garcin popup: yes) & Louis&nbsp;Eveillard)
+## réalisé par (link: http://latelier-des-chercheurs.fr/ text: l’Atelier des Chercheurs popup: yes) ((link: http://www.paulinegourlet.com/ text: Pauline Gourlet popup: yes), (link: http://sarahgarcin.com/ text: Sarah Garcin popup: yes) & Louis Eveillard)
 ### code source
-## sur Github&nbsp;: (link: https://github.com/sarahgarcin/dodoc text: dodoc popup: yes), et (link: https://github.com/sarahgarcin/lopendoc/ text: l'Opendoc popup: yes)
+## sur Github : (link: https://github.com/sarahgarcin/dodoc text: dodoc popup: yes), et (link: https://github.com/sarahgarcin/lopendoc/ text: l'Opendoc popup: yes)
