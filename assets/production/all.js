@@ -11010,6 +11010,12 @@ Number.prototype.map = function ( in_min , in_max , out_min , out_max ) {
   return theNumber;
 };
 
+if(new Date().getHours() <= 5 || new Date().getHours() >= 18) {
+  let eles = document.querySelectorAll(".js--isJour");
+  eles[0].parentNode.removeChild(eles[0]);
+  document.querySelectorAll(".js--isNuit")[0].setAttribute("style", "");
+}
+
 var canvasCV = {
 	init : function() {
 
