@@ -18,9 +18,13 @@ Number.prototype.map = function ( in_min , in_max , out_min , out_max ) {
 };
 
 if(new Date().getHours() <= 5 || new Date().getHours() >= 18) {
-  let eles = document.querySelectorAll(".js--isJour");
-  eles[0].parentNode.removeChild(eles[0]);
-  document.querySelectorAll(".js--isNuit")[0].setAttribute("style", "");
+  var eles = document.querySelectorAll(".js--isJour");
+  if(eles.length > 0) {
+    eles[0].parentNode.removeChild(eles[0]);
+  }
+  if(document.querySelectorAll(".js--isNuit").length > 0) {
+    document.querySelectorAll(".js--isNuit")[0].setAttribute("style", "");
+  }
 }
 
 var canvasCV = {

@@ -26,7 +26,6 @@ fields:
     type: structure
     entry: >
       {{intitule}}<br>
-      {{text}}
     fields:
       intitule:
         label: Intitulé
