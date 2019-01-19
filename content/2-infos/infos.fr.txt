@@ -2,7 +2,7 @@ Title: Infos
 
 ----
 
-Text:
+Text: 
 
 ### Informations
 
@@ -48,79 +48,15 @@ Ci-dessous une liste plus exhaustive de mes activités, réalisations, intervent
 
 ----
 
-Detail:
+Detailen: 
 
--
-    -
-    -
-    -     -
-    -
-    -
-    -  (2017).
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    - .
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
--
-  intitule: 'Prix & diplômes'
-  text: |
-    -
-    -
-    -  (2014).
-    -
-    -  (2013).
-    -  (2012).
-    -  (2010).
--
-  intitule: Publications
-  text: |
-    - .
-    - .
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
-    -
--
-  intitule: Expositions
-  text: |
-    -
-    -
-    -
-    -
-    -
-----
-
-Detailen:
-
--
+- 
   intitule: Activities
   text: |
     - Freelance designer in Paris.
     - Member of the group <a data-link='latelier' href="http://www.latelier-des-chercheurs.fr" target="_blank">l'atelier des chercheurs</a>.
     - Co-founder of <a data-link="panopticlab" href="http://panoptic-lab.com/" target="_blank">Panoptic Lab</a>, a design studio working on Virtual Reality projects.
--
+- 
   intitule: Interventions
   text: |
     - Lecture on data-physicalisation at <a href="https://www.univ-rennes2.fr/" target="_blank">Université Rennes 2</a> (2017).
@@ -146,7 +82,7 @@ Detailen:
     - Residency with the association <a href="http://www.sewetlaine.com/" target="_blank">Sew&Laine</a> and <a href="http://www.2roqs.fr/" target="_blank">Studio 2Roqs</a> for the project <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">the Tricodeur</a> (September 2014). Preparation and intervention for a 3-day workshop on learning and using old knitting machines to create garments from images generated with code and online personal data.
     - Teacher in generative design in 4<sup>th</sup> year at <a href='http://www.hetic.net/' target='_blank'>HETIC</a> in Montreuil (2013). Lessons and code on <a href="http://www.beautifulseams.com/2013/10/31/teaching-generative-design/" data-link='blog' target="_blank">my blog</a>.
     - Conference on the use of algorithms in art and design at <a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a> (2013). Write-up, slides and students' projects made from an exercice I gave on <a data-link='algorithme' href="http://algorithme.beautifulseams.com/" target="_blank">this page</a>.
--
+- 
   intitule: 'Awards & diplomas'
   text: |
     - Gold prize at the <a href="http://vrjam.challengepost.com/submissions" target="_blank">Oculus VR jam 2015</a> for <a href="http://panoptic-lab.com/alongthetrail/" data-link='panopticlab' target="_blank">Along the Trail</a> (2015).
@@ -156,7 +92,7 @@ Detailen:
     - Exhibition prize with Breakpoint for the <a href="http://urbandatachallenge.org" target="_blank">Urban Data Challenge</a> (2013).
     - Master's degree in graphic design with highest honors at <a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d'Amiens</a> (2012).
     - Bachelor's degree in graphic design with highest honors at <a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d'Amiens</a> (2010).
--
+- 
   intitule: Publications
   text: |
     - General overview and explanations of the project <em>Acrobates Builder</em> on Medium (written with <a href="http://vdesclaux.com/" target="_blank">Vincent Desclaux</a>): <a href="https://medium.com/@timetofirstfix/designing-and-building-a-web-app-from-scratch-a-case-study-39e587951f41" target="_blank">Designing and building a web app from scratch: a case study</a>.
@@ -172,7 +108,7 @@ Detailen:
     - <a href="http://www.mouvement.net/analyses/enquetes/faciliter-lacces-au-web" target="_blank">Mouvement #72</a> (January-February 2014)
     - étapes: #216 (October 2013)
     - étapes: #209 (October 2012)
--
+- 
   intitule: Exhibitions
   text: |
     - Presentation of the <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> at the Semaine Digitale, in Bordeaux (2014)
@@ -183,208 +119,203 @@ Detailen:
 
 ----
 
-Activities-2019:
+Activities2019: 
 
--
+----
+
+Activities2018: 
+
+- 
   text: "Enseignant en design génératif et interactif à l’(link: https://epsaa.fr/ text: EPSAA, l’École professionnelle supérieure d'arts graphiques de la Ville de Paris), pour l’année préparatoire."
-
--
-  text: ""
-
-
+- 
+  text: 'Semaine de résidence d’observation et de prototypage dans une classe de maternelle à Trébédan avec (link: http://www.latelier-des-chercheurs.fr text: l’Atelier des Chercheurs popup: yes class: link_latelier). Consulter le compte-rendu (link: https://latelier-des-chercheurs.fr/ateliers/residence-a-trebedan text: sur cette page popup: yes).'
+- 
+  text: 'Conférence dans le cadre des événements (link: https://letank.fr/blog/afk-18-workshop-avec-latelier-des-chercheurs/ text: AFK) au Tank à Paris février 2018) avec (link: http://www.latelier-des-chercheurs.fr text: l’Atelier des Chercheurs popup: yes class: link_latelier).'
+- 
+  text: 'Intervention en ouverture d’(link: https://interaction18.ixda.org/program/talk-design-versioning--perspectives-on-situated-design-gourlet-pauline-louis-eveillard/ text: interaction 18 popup: yes), conférence internationale dédiée au Design d’Interaction, à Lyon (février 2018) avec (link: http://www.latelier-des-chercheurs.fr text: l’Atelier des Chercheurs popup: yes class: link_latelier).'
+- 
+  text: 'Conférence dans le cadre de la semaine thématique (link: http://giants.esad-amiens.fr/ text: On the Shoulder of Giants popup: yes) de l’école supérieure d’art et de design d’Amiens (link: http://www.latelier-des-chercheurs.fr text: l’Atelier des Chercheurs popup: yes class: link_latelier).'
+- 
+  text: 'Interventions sur le prototypage et le design situé pour le master Innovation & Transformation Numérique de Sciences Po Paris.'
+- 
+  text: 'Conférence publique sur le travail de (link: http://www.latelier-des-chercheurs.fr text: l’Atelier des Chercheurs popup: yes class: link_latelier) au fablab de la Machinerie à Amiens.'
+- 
+  text: >
+    Semaine de résidence à Cobonne dans la
+    Drôme, pour accompagner une classe dans
+    la création d’un journal avec le
+    logiciel do•doc.
+- 
+  text: 'Workshop de création de stations de documentation,  atelier et présentation du travail de (link: http://www.latelier-des-chercheurs.fr text: l’Atelier des Chercheurs popup: yes class: link_latelier) à FAB14edu, la grande conférence des FabLabs, à Bataville.'
+- 
+  text: >
+    Résidence de deux semaines au 110bis,
+    le lab d’innovation du Ministère de
+    l’Éducation Nationale.
+- 
+  text: 'Intervention dans le cadre des journées d’étude *Documenter la production artistique : données, outils, usages* à la Villa Arson, à Nice.'
 
 ----
 
-Activities-2018:
+Activities2017: 
 
--
-  text: "Semaine de résidence d’observation et de prototypage dans une classe de maternelle à Trébédan avec (link: http://www.latelier-des-chercheurs.fr text: l’Atelier des Chercheurs popup: yes class: link_latelier). Consulter le compte-rendu (link: https://latelier-des-chercheurs.fr/ateliers/residence-a-trebedan text: sur cette page popup: yes)."
-
--
-  text: "Conférence dans le cadre des événements (link: https://letank.fr/blog/afk-18-workshop-avec-latelier-des-chercheurs/ text: AFK) au Tank à Paris février 2018) avec (link: http://www.latelier-des-chercheurs.fr text: l’Atelier des Chercheurs popup: yes class: link_latelier)."
-
--
-  text: "Intervention en ouverture d’(link: https://interaction18.ixda.org/program/talk-design-versioning--perspectives-on-situated-design-gourlet-pauline-louis-eveillard/ text: interaction 18 popup: yes), conférence internationale dédiée au Design d’Interaction, à Lyon (février 2018) avec (link: http://www.latelier-des-chercheurs.fr text: l’Atelier des Chercheurs popup: yes class: link_latelier)."
-
-
-
-----
-
-Activities-2017:
-
--
-  text: "<a href="https://twitter.com/timetofirstfix/status/923184802781638656" target="_blank">étapes: #239</a> (septembre – octobre 2017) – publication d’un dossier <em>Art, design & algorithme</em>."
-
--
-  text: "<a href="http://etapes.com/etapes-237" target="_blank">étapes: #237</a> (mai 2017) – présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> et de Acrobates Builder."
-
--
-  text: "<a href="http://www.revue-backoffice.com/" target="_blank">Back Office</a>, éditions Fork & B42 (2017) – présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> dans l’article Œuvrer avec les machines numériques de Sophie Fétro."
-
--
-  text: "Workshop de 5 jours sur la création d’affiches interactives sur le web à l’(link: http://www.esapyrenees.fr/ text: École supérieure d’art des Pyrénées) du 18 au 22 décembre. Compte-rendu, références, et projets des étudiants (link: https://affichesinteractives.louiseveillard.com text: sur cette page popup: yes)."
-
--
-  text: "Intervention sur la data-physicalisation à l’occasion d’une journée d’étude sur le sujet organisé par <a href="https://www.univ-rennes2.fr/" target="_blank">l’université Rennes 2</a>."
-
--
-  text: "Conférence de présentation de mon travail et de mes recherches à <a href="http://www.esad-orleans.fr/" target="_blank">l’ÉSAD d’Orléans</a>."
-
--
-  text: "Intervention théorique et pratique autour de la représentation de données avec les étudiants du BTS Design Graphique au <a href="http://www.lyceevernant.fr/dg/" target="_blank">Lycée Vernant</a>, à Sèvres."
-
--
-  text: "Enseignant en webdesign dans le cycle de <em>Communication Design</em> au <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a>."
-
--
-  text: "Workshop sur le thème de la <em>data-physicalisation</em> à l’<a href="https://www.lecolededesign.com/" target="_blank">École de design Nantes Atlantique</a> du 15 au 19 mai. Compte-rendu, références, méthodologie et projets des étudiants <a href="https://datafossil.xyz/" target="_blank">sur cette page</a>."
-
--
+- 
+  text: '<a href="https://twitter.com/timetofirstfix/status/923184802781638656" target="_blank">étapes: #239</a> (septembre – octobre 2017) – publication d’un dossier <em>Art, design & algorithme</em>.'
+- 
+  text: |
+    <a href="http://etapes.com/etapes-237" target="_blank">étapes: #237</a> (mai 2017) – présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> et de Acrobates Builder.
+- 
+  text: |
+    <a href="http://www.revue-backoffice.com/" target="_blank">Back Office</a>, éditions Fork & B42 (2017) – présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> dans l’article Œuvrer avec les machines numériques de Sophie Fétro.
+- 
+  text: 'Workshop de 5 jours sur la création d’affiches interactives sur le web à l’(link: http://www.esapyrenees.fr/ text: École supérieure d’art des Pyrénées) du 18 au 22 décembre. Compte-rendu, références, et projets des étudiants (link: https://affichesinteractives.louiseveillard.com text: sur cette page popup: yes).'
+- 
+  text: 'Intervention sur la data-physicalisation à l’occasion d’une journée d’étude sur le sujet organisé par <a href="https://www.univ-rennes2.fr/" target="_blank">l’université Rennes 2</a>.'
+- 
+  text: 'Conférence de présentation de mon travail et de mes recherches à <a href="http://www.esad-orleans.fr/" target="_blank">l’ÉSAD d’Orléans</a>.'
+- 
+  text: 'Intervention théorique et pratique autour de la représentation de données avec les étudiants du BTS Design Graphique au <a href="http://www.lyceevernant.fr/dg/" target="_blank">Lycée Vernant</a>, à Sèvres.'
+- 
+  text: 'Enseignant en webdesign dans le cycle de <em>Communication Design</em> au <a href="https://www.paris.edu/" target="_blank">Paris College of Art</a>.'
+- 
+  text: 'Workshop sur le thème de la <em>data-physicalisation</em> à l’<a href="https://www.lecolededesign.com/" target="_blank">École de design Nantes Atlantique</a> du 15 au 19 mai. Compte-rendu, références, méthodologie et projets des étudiants <a href="https://datafossil.xyz/" target="_blank">sur cette page</a>.'
+- 
   text: "Conférence de présentation de mon travail avec des robots et des programmes dans le cadre du club tech'ART au Lycée Louis Armand dans le XV<sup>e</sup> arrondissement de Paris."
-
--
-  text: "Conférence de présentation de mon travail et de mes recherches au <a href="https://www.campusfonderiedelimage.org/" target="_blank">Campus Fonderie de l’Image</a>."
-
--
-  text: "Intervention à l’<a href="www.ecole-boulle.org/articles/4171/conference-culture-code" target="_blank">école Boulle</a> lors d’une conférence sur le sujet <em>Culture Code</em>."
-
-
+- 
+  text: 'Conférence de présentation de mon travail et de mes recherches au <a href="https://www.campusfonderiedelimage.org/" target="_blank">Campus Fonderie de l’Image</a>.'
+- 
+  text: 'Intervention à l’<a href="www.ecole-boulle.org/articles/4171/conference-culture-code" target="_blank">école Boulle</a> lors d’une conférence sur le sujet <em>Culture Code</em>.'
 
 ----
 
-Activities-2016:
+Activities2016: 
 
--
-  text: "<a href="http://www.eyrolles.com/Audiovisuel/Livre/fibres-fils-tissus-9782212143126" target="_blank">Fibres, fils, tissus</a>, éditions Eyrolles (2016) – introduction au <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>."
-
--
-  text: "Intervention à la table-ronde du <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">festival Scopitone</a> à Nantes sur la <em>Matérialité des Données</em>."
-
--
-  text: "Conférence aux <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> sur le thème <em>Chercher l’erreur – Égarements et odyssées graphiques</em>."
-
--
-  text: "Conférence à l’<a href="http://www.ensci.com/" target="_blank">ENSCI</a> pour la journée d’étude <em>La Fabrique des Outils</em> organisée par l'association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a>."
-
--
-  text: "Conférence à l’<a href="http://www.ensad.fr/" target="_blank">ENSAD</a> pour la présentation du projet de création et de réalisation de 10000 couvertures pour livres numériques."
-
+- 
+  text: |
+    <a href="http://www.eyrolles.com/Audiovisuel/Livre/fibres-fils-tissus-9782212143126" target="_blank">Fibres, fils, tissus</a>, éditions Eyrolles (2016) – introduction au <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.
+- 
+  text: 'Intervention à la table-ronde du <a href="http://www.stereolux.org/agenda/table-ronde-la-materialite-des-donnees" target="_blank">festival Scopitone</a> à Nantes sur la <em>Matérialité des Données</em>.'
+- 
+  text: 'Conférence aux <a href="http://delure.org/" target="_blank">Rencontres internationales de Lure</a> sur le thème <em>Chercher l’erreur – Égarements et odyssées graphiques</em>.'
+- 
+  text: |
+    Conférence à l’<a href="http://www.ensci.com/" target="_blank">ENSCI</a> pour la journée d’étude <em>La Fabrique des Outils</em> organisée par l'association <a href="http://www.designenrecherche.org/evenements/la-fabrique-des-outils" target="_blank">Design en Recherche</a>.
+- 
+  text: 'Conférence à l’<a href="http://www.ensad.fr/" target="_blank">ENSAD</a> pour la présentation du projet de création et de réalisation de 10000 couvertures pour livres numériques.'
 
 ----
 
-Activities-2015:
+Activities2015: 
 
--
+- 
   text: "Gourlet, P., Dervieux, F., Eveillard, L., Mancini, J. (2015) 'The Research Diary: Documenting and Publishing Classrooms' Activites', in International Journal for Cross-Disciplinary Subjects in Education, Volume 6, Issue 1."
-
--
+- 
   text: "Gourlet, P., Dervieux, F., Eveillard, L., Garcin, S. (2015) 'Designing learning tools for education', workshop DRS/LearnxDesign 2015, Chicago, USA."
-
--
-  text: "Or au concours <a href="http://vrjam.challengepost.com/submissions" target="_blank">Oculus VR jam 2015</a> pour l’application <a href="http://panoptic-lab.com/alongthetrail/" data-link='panopticlab' target="_blank">Along the Trail</a>."
-
--
-  text: "Argent au concours <a href="http://vrjam.challengepost.com/submissions" target="_blank">Oculus VR jam 2015</a> pour le jeu <a href="http://panoptic-lab.com/panopticon/" data-link='panopticlab' target="_blank">Panopticon</a>."
-
--
-  text: "Conférence aux <a href="http://delure.org/les-a-cotes/evenements-et-workshops/mardis-de-lure-1" target="_blank" data-link="delure">Mardis de Lure</a> à la Générale à Paris pour présenter des outils de transmission et de partage de connaissances."
-
--
-  text: "Workshop à la <a href="http://www.newschool.edu/parsons-paris/" target="_blank">PARSONS</a> à Paris dans le cours <em>Creativity and Computation Lab</em>."
-
--
-  text: "Workshop à la conférence <a href="http://learnxdesign2015.com/" target="_blank">LearnxDesign 2015</a> à Chicago, avec l’équipe de <a data-link="latelier" href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a>."
-
--
-  text: "Conférence de présentation de mon travail et de mes recherches à l’<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a>."
-
--
-  text: "Introduction au <a data-link='tricodeur' href="http://www.letricodeur.com">Tricodeur</a> lors de la <a href="http://www.dailymotion.com/video/x2mhyja_louis-eveillard-soiree-di-zain-21-mode-s_creation" target="_blank">soirée *di*/zaïn #21</a>, au Grand Palais à Paris le 11 avril."
-
--
-  text: "Présentation de <a href="http://panoptic-lab.com/" data-link="panopticlab">Panoptic Lab</a> au talk sur l’art génératif organisé par <a href="https://brightfor.me/">Bright</a> au <a href="http://silencio-club.com/fr" target="_blank">Silencio</a>, à Paris, le 19 février."
-
--
-  text: "Workshop et conférence sur la matérialisation du numérique par le code à l’<a href="http://www.esalorraine.fr/metz/" target="_blank">ésal Metz</a> les 2, 3 et 4 février."
-
+- 
+  text: |
+    Or au concours <a href="http://vrjam.challengepost.com/submissions" target="_blank">Oculus VR jam 2015</a> pour l’application <a href="http://panoptic-lab.com/alongthetrail/" data-link='panopticlab' target="_blank">Along the Trail</a>.
+- 
+  text: |
+    Argent au concours <a href="http://vrjam.challengepost.com/submissions" target="_blank">Oculus VR jam 2015</a> pour le jeu <a href="http://panoptic-lab.com/panopticon/" data-link='panopticlab' target="_blank">Panopticon</a>.
+- 
+  text: 'Conférence aux <a href="http://delure.org/les-a-cotes/evenements-et-workshops/mardis-de-lure-1" target="_blank" data-link="delure">Mardis de Lure</a> à la Générale à Paris pour présenter des outils de transmission et de partage de connaissances.'
+- 
+  text: 'Workshop à la <a href="http://www.newschool.edu/parsons-paris/" target="_blank">PARSONS</a> à Paris dans le cours <em>Creativity and Computation Lab</em>.'
+- 
+  text: 'Workshop à la conférence <a href="http://learnxdesign2015.com/" target="_blank">LearnxDesign 2015</a> à Chicago, avec l’équipe de <a data-link="latelier" href="http://www.latelier-des-chercheurs.fr" target="_blank">l’Atelier des Chercheurs</a>.'
+- 
+  text: 'Conférence de présentation de mon travail et de mes recherches à l’<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a>.'
+- 
+  text: |
+    Introduction au <a data-link='tricodeur' href="http://www.letricodeur.com">Tricodeur</a> lors de la <a href="http://www.dailymotion.com/video/x2mhyja_louis-eveillard-soiree-di-zain-21-mode-s_creation" target="_blank">soirée *di*/zaïn #21</a>, au Grand Palais à Paris le 11 avril.
+- 
+  text: 'Présentation de <a href="http://panoptic-lab.com/" data-link="panopticlab">Panoptic Lab</a> au talk sur l’art génératif organisé par <a href="https://brightfor.me/">Bright</a> au <a href="http://silencio-club.com/fr" target="_blank">Silencio</a>, à Paris, le 19 février.'
+- 
+  text: 'Workshop et conférence sur la matérialisation du numérique par le code à l’<a href="http://www.esalorraine.fr/metz/" target="_blank">ésal Metz</a> les 2, 3 et 4 février.'
 
 ----
 
-Activities-2014:
+Activities2014: 
 
--
-  text: "BronzeAward avec Habsense aux <a href="http://www.samsung.com/fr/designedfor/" target="_blank">Samsung Design Awards</a>."
-
--
-  text: "<a href="./content/2-infos/hab-intramuros-172.jpg" target="_blank">Intramuros #172</a> (mai-juin 2014) – publication du projet Habsense."
-
--
-  text: "Conférence publique sur la représentation des traces numériques à l’<a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d’Amiens</a> le 9 décembre."
-
--
-  text: "Workshop dans le cadre du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> sur le détournement et l’utilisation de machines à tricoter programmables pour réaliser des motifs générés par des données personnelles. Du 10 au 12 octobre à Cap Science à Bordeaux, en collaboration avec l’association <a href="http://www.sewetlaine.com/" target="_blank">Sew&Laine</a> et <a href="http://www.2roqs.fr/" target="_blank">Studio 2Roqs</a>)."
-
--
-  text: "<a href="./content/2-infos/bergere-de-france-inspire-tricodeur-2.jpg" target="_blank">inspire&vous</a>, le magazine de Bergère de France (2014) – présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>."
-
--
-  text: "Présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> à la Semaine Digitale, Hotel de Ville de Bordeaux (2014)."
-
--
-  text: "<a href="http://www.pearson.fr/livre/?GCOI=27440100443180" target="_blank">Projets créatifs avec Arduino</a> (2014) – présentation de <a href="./projets/slowscreen" data-link='slowscreen'>Slowscreen</a>."
-
--
-  text: "<a href="http://www.mouvement.net/analyses/enquetes/faciliter-lacces-au-web" target="_blank">Mouvement #72</a> (janvier-février 2014) – présentation du projet Breakpoint."
-
+- 
+  text: 'BronzeAward avec Habsense aux <a href="http://www.samsung.com/fr/designedfor/" target="_blank">Samsung Design Awards</a>.'
+- 
+  text: '<a href="./content/2-infos/hab-intramuros-172.jpg" target="_blank">Intramuros #172</a> (mai-juin 2014) – publication du projet Habsense.'
+- 
+  text: |
+    Conférence publique sur la représentation des traces numériques à l’<a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d’Amiens</a> le 9 décembre.
+- 
+  text: |
+    Workshop dans le cadre du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> sur le détournement et l’utilisation de machines à tricoter programmables pour réaliser des motifs générés par des données personnelles. Du 10 au 12 octobre à Cap Science à Bordeaux, en collaboration avec l’association <a href="http://www.sewetlaine.com/" target="_blank">Sew&Laine</a> et <a href="http://www.2roqs.fr/" target="_blank">Studio 2Roqs</a>).
+- 
+  text: |
+    <a href="./content/2-infos/bergere-de-france-inspire-tricodeur-2.jpg" target="_blank">inspire&vous</a>, le magazine de Bergère de France (2014) – présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a>.
+- 
+  text: |
+    Présentation du <a href="http://www.letricodeur.com" data-link='tricodeur' target="_blank">Tricodeur</a> à la Semaine Digitale, Hotel de Ville de Bordeaux (2014).
+- 
+  text: |
+    <a href="http://www.pearson.fr/livre/?GCOI=27440100443180" target="_blank">Projets créatifs avec Arduino</a> (2014) – présentation de <a href="./projets/slowscreen" data-link='slowscreen'>Slowscreen</a>.
+- 
+  text: '<a href="http://www.mouvement.net/analyses/enquetes/faciliter-lacces-au-web" target="_blank">Mouvement #72</a> (janvier-février 2014) – présentation du projet Breakpoint.'
 
 ----
 
-Activities-2013:
+Activities2013: 
 
--
-  text: "Prix spécial du jury avec <a data-link='connexe' href="http://www.connexe.org" target="_blank">Connexe</a> au hackathon <a href="http://www.dailymotion.com/video/x16ywlv_l-automne-numerique-remise-des-prix_news" target="_blank">dataculture</a> du Ministère de la Culture et de la Communication."
-
--
-  text: "Prix d’exposition avec le projet Breakpoint au concours <a href="http://urbandatachallenge.org" target="_blank">Urban Data Challenge</a> de San Francisco."
-
--
-  text: "étapes: #216 (octobre 2013) – présentation de <a href="./projets/slowscreen" data-link='slowscreen'>Slowscreen</a>."
-
--
-  text: "Présentation du livre Arsène Lupin à l'exposition <a href="http://chercherletexte.org/fr/" target="_blank">Chercher le Texte</a>, BNF, Paris (2013)."
-
--
-  text: "Présentation du projet Lis-moi, Lis-moi au Salon du livre, Paris (2013)."
-
-
--
-  text: "Enseignant de design génératif en 4<sup>e</sup> année à <a href='http://www.hetic.net/' target='_blank'>HETIC</a> à Montreuil. Résumé et code du cours <a href="http://www.beautifulseams.com/2013/10/31/teaching-generative-design/" data-link='blog' target="_blank">sur mon blog</a>."
-
--
-  text: "Conférence sur l’algorithme dans l’art et le design à l’<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a>. Compte-rendu, slides et projets des étudiants <a data-link='algorithme' href="http://algorithme.beautifulseams.com/" target="_blank">sur cette page</a>."
-
-
-----
-
-Activities-2012:
-
--
-  text: "Diplômé du DNSEP (grade Master) en design graphique avec les félicitations du jury à l’<a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d’Amiens</a>."
-
--
-  text: "étapes: #209 (octobre 2012) – présentation de mon projet de diplôme, Hypomnémata."
+- 
+  text: |
+    Prix spécial du jury avec <a data-link='connexe' href="http://www.connexe.org" target="_blank">Connexe</a> au hackathon <a href="http://www.dailymotion.com/video/x16ywlv_l-automne-numerique-remise-des-prix_news" target="_blank">dataculture</a> du Ministère de la Culture et de la Communication.
+- 
+  text: 'Prix d’exposition avec le projet Breakpoint au concours <a href="http://urbandatachallenge.org" target="_blank">Urban Data Challenge</a> de San Francisco.'
+- 
+  text: |
+    étapes: #216 (octobre 2013) – présentation de <a href="./projets/slowscreen" data-link='slowscreen'>Slowscreen</a>.
+- 
+  text: |
+    Présentation du livre Arsène Lupin à l'exposition <a href="http://chercherletexte.org/fr/" target="_blank">Chercher le Texte</a>, BNF, Paris (2013).
+- 
+  text: >
+    Présentation du projet Lis-moi, Lis-moi
+    au Salon du livre, Paris (2013).
+- 
+  text: |
+    Enseignant de design génératif en 4<sup>e</sup> année à <a href='http://www.hetic.net/' target='_blank'>HETIC</a> à Montreuil. Résumé et code du cours <a href="http://www.beautifulseams.com/2013/10/31/teaching-generative-design/" data-link='blog' target="_blank">sur mon blog</a>.
+- 
+  text: |
+    Conférence sur l’algorithme dans l’art et le design à l’<a href="http://www.penninghen.fr/" target="_blank">ESAG Penninghen</a>. Compte-rendu, slides et projets des étudiants <a data-link='algorithme' href="http://algorithme.beautifulseams.com/" target="_blank">sur cette page</a>.
 
 ----
 
-Activities-2010:
+Activities2012: 
 
--
-  text: "Diplômé du DNAP avec les félicitations du jury à l’<a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d’Amiens</a>."
+- 
+  text: |
+    Diplômé du DNSEP (grade Master) en design graphique avec les félicitations du jury à l’<a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d’Amiens</a>.
+- 
+  text: 'étapes: #209 (octobre 2012) – présentation de mon projet de diplôme, Hypomnémata.'
 
--
-  text: "Exposition collective – Amnesia/Memoria, Marke.06, Weimar, Allemagne (2010)."
+----
 
--
-  text: "Exposition au Nooka Show, Red Bull Space, New York, États-Unis (2010)."
+Activities2010: 
 
+- 
+  text: |
+    Diplômé du DNAP avec les félicitations du jury à l’<a data-link='esad-amiens' href="http://www.esad-amiens.fr/" target="_blank">ésad d’Amiens</a>.
+- 
+  text: >
+    Exposition collective –
+    Amnesia/Memoria, Marke.06, Weimar,
+    Allemagne (2010).
+- 
+  text: >
+    Exposition au Nooka Show, Red Bull
+    Space, New York, États-Unis (2010).
 
+----
+
+Activities2011: 
+
+----
+
+Detail: 

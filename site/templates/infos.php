@@ -11,6 +11,7 @@
 	</div>
 
 	<section class="module--cv pjax">
+<!--
 	  <div class="langs">
   		  <a href="<?= $page->url(); ?>/lang:en">
     		  English
@@ -19,11 +20,37 @@
   		    Français
   		  </a>
 	  </div>
+-->
 
 <?php
 if(param('lang') !== 'en'):
 ?>
 
+<?php
+  $years = array(2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010);
+?>
+
+  <?php foreach($years as $year): ?>
+    <?php if($page->content()->has('activities' . $year) && $page->content()->get('activities' . $year)->isNotEmpty()): ?>
+    <div class="m_detail">
+      <div class="m_detail--item">
+        <div class="header">
+          <h3><?= $year ?></h3>
+        </div>
+        <div class="description">
+          <ul>
+          <?php foreach($page->content()->get('activities' . $year)->toStructure() as $detail): ?>
+            <li><?= $detail->text()->kirbytext(); ?></li>
+          <?php endforeach; ?>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <?php endif; ?>
+  <?php endforeach; ?>
+
+
+<?php /*
     <div class="m_detail">
       <?php foreach($page->detail()->toStructure() as $detail): ?>
         <div class="m_detail--item">
@@ -36,11 +63,13 @@ if(param('lang') !== 'en'):
         </div>
       <?php endforeach; ?>
     </div>
+*/ ?>
 
 <?php
 else:
 ?>
 
+<?php /*
     <div class="m_detail">
       <?php foreach($page->detailEN()->toStructure() as $detail): ?>
         <div class="m_detail--item">
@@ -53,11 +82,14 @@ else:
         </div>
       <?php endforeach; ?>
     </div>
+*/ ?>
 
 <?php
   endif;
 ?>
 <?php
+
+  return;
   /*
 if(param('lang') !== 'en'):
 ?>
