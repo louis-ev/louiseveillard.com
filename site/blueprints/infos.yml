@@ -8,6 +8,30 @@ fields:
   text:
     label: Text
     type:  markdown
+
+  activities_2019:
+    label: Activités 2019
+    type: structure
+    width: 1/3
+    entry: >
+      {{text}}<br>
+    fields:
+      text:
+        label: Texte
+        type: markdown
+
+  activities_2018:
+    label: Activités 2018
+    type: structure
+    width: 1/3
+    entry: >
+      {{text}}<br>
+    fields:
+      text:
+        label: Texte
+        type: markdown
+
+
   detail:
     label: Détail
     type: structure
