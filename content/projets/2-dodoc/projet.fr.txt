@@ -1,0 +1,60 @@
+Title: do•doc et stations de documentation
+
+----
+
+Text: 
+
+do•doc est un outil composite : il comprend une composante logicielle, associée à une composante physique. A minima, le logiciel s'installe sur ordinateur (Windows, Mac et Linux) et s'utilise également avec n'importe quel appareil connecté (tablette, téléphone).
+
+(image: dsc08817.jpg)
+
+---
+
+Conçu pour être intégrer à des dispositifs physiques qui facilitent la prise de vue de type studios photo légers ou fixes, do.doc permet de produire des traces à partir d'une activité pratique, grâce à plusieurs modes d'enregistrement (sons, textes, vidéos, images, animations). 
+
+(image: 07.jpg)
+
+Le but de cette application est de produire facilement des récits multi-média partageables (site web ou PDF). Les contenus sont éditables par plusieurs personnes en même temps, à partir de plusieurs terminaux connectés localement. do.doc permet ainsi une écriture collaborative, tout en restant adaptable à des environnements et des équipements variés.
+
+<figure class="media-tweet largeur--Colonne">
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Aujourd’hui les enfants finissent la mise en page de leurs articles pour Feuille de Choux #3 !<br><br>David place ses images à côté de son texte sur une des tablettes de la classe. <a href="https://t.co/5tBFJn1cb2">pic.twitter.com/5tBFJn1cb2</a></p>— L’Atelier des Chercheurs (@latelier_cherch) <a href="https://twitter.com/latelier_cherch/status/1012317302908444673?ref_src=twsrc%5Etfw">28 juin 2018</a></blockquote>
+</figure>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<figure class="media-tweet largeur--Colonne">
+<blockquote class="twitter-tweet" data-lang="fr"><p lang="fr" dir="ltr">Après presque deux mois d’échanges et de retours, la version stable du <a href="https://twitter.com/hashtag/logiciel?src=hash&ref_src=twsrc%5Etfw">#logiciel</a> <a href="https://twitter.com/hashtag/libre?src=hash&ref_src=twsrc%5Etfw">#libre</a> do•doc est enfin en ligne ! Présentation et téléchargement : <a href="https://t.co/UnT4OsldV7">https://t.co/UnT4OsldV7</a><br><br>Pour l’occasion on a fait une vidéo qui montre comment faire un document A4 avec en une minute chrono ! <a href="https://t.co/CJpRcTa3oA">pic.twitter.com/CJpRcTa3oA</a></p>— L’Atelier des Chercheurs (@latelier_cherch) <a href="https://twitter.com/latelier_cherch/status/1021398090564227072?ref_src=twsrc%5Etfw">23 juillet 2018</a></blockquote>
+</figure>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+----
+
+Type: outils pédagogiques
+
+----
+
+Annee: 2019
+
+----
+
+Header: Conçu pour documenter et créer des récits à partir d'activités pratiques, do•doc (prononcer doudoc) est un outil composite, libre et modulaire, qui permet de capturer des médias (photos, vidéos, sons et stop-motion), de les éditer, de les mettre en page et de les publier. Son aspect composite permet de le reconfigurer de manière à ce qu'il soit le plus adapté possible à la situation dans laquelle il est déployé.
+
+----
+
+Headercol2: 
+
+### sujet
+## des outils pour encourager les pratiques réflexives dans les situations d’apprentissage
+### année
+## 2014 — 2019
+### équipe
+## au sein de (link: http://latelier-des-chercheurs.fr/ text: l’Atelier des Chercheurs popup: yes) et avec de nombreux contributeurs extérieurs (enseignants, makers, etc.)
+### téléchargement
+## sur le site de (link: http://latelier-des-chercheurs.fr/outils/dodoc text: l’Atelier des Chercheurs popup: yes)
+
+----
+
+Cover: 
+
+----
+
+Imagecover: duncedhwsaaildq.png

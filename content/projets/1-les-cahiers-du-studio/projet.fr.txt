@@ -1,0 +1,46 @@
+Title: les Cahiers du Studio
+
+----
+
+Text: 
+
+(image: capture-decran-2017-11-30-a-23.27.27.png)
+
+(image: capture-decran-2017-11-30-a-23.27.59.png)
+
+(image: capture-decran-2017-11-30-a-23.28.29.png)
+
+(vimeo: https://vimeo.com/245269353 caption: Importation de photos dans une timeline vide)
+
+(vimeo: https://vimeo.com/245269545 caption: Exemple de navigation dans une timeline)
+
+----
+
+Type: outils pédagogiques
+
+----
+
+Annee: 2019
+
+----
+
+Header: Un outil collaboratif de documentation chronologique pour une prise de notes multimédia lors d’une activité ou d’un événement.
+
+----
+
+Headercol2: 
+
+### année
+## 2017 –
+### équipe
+## réalisé au sein de (link: http://latelier-des-chercheurs.fr/ text: l’Atelier des Chercheurs popup: yes) avec et pour le (link: https://studiotheatre.fr text: Studio-Théâtre de Vitry) 
+### téléchargement
+## sur le site de (link: http://latelier-des-chercheurs.fr/outils/les-cahiers-du-studio text: l’Atelier des Chercheurs popup: yes)
+
+----
+
+Cover: 
+
+----
+
+Imagecover: 32667094-f8f3b43e-c639-11e7-98e2-22de0502fa96.png
