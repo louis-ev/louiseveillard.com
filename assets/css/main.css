@@ -1761,6 +1761,7 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 }
 .module--projet .module--projet--text:nth-of-type(even) > .media-image .FigureImage-lazy,
 .module--projet .module--projet--text:nth-of-type(even) > .media-video .FigureImage-lazy,
+.module--projet .module--projet--text:nth-of-type(even) > .video .FigureImage-lazy,
 .module--projet .module--projet--text:nth-of-type(even) > .media-tweet .FigureImage-lazy {
   background-color: #ebebeb;
 }
@@ -1769,6 +1770,7 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 }
 .module--projet .module--projet--text > .media-image,
 .module--projet .module--projet--text > .media-video,
+.module--projet .module--projet--text > .video,
 .module--projet .module--projet--text > .media-tweet {
   display: block;
   padding-top: 2rem;
@@ -1778,35 +1780,47 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 }
 .module--projet .module--projet--text > .media-image.largeur--Colonne,
 .module--projet .module--projet--text > .media-video.largeur--Colonne,
+.module--projet .module--projet--text > .video.largeur--Colonne,
 .module--projet .module--projet--text > .media-tweet.largeur--Colonne {
   max-width: 66ch;
 }
 .module--projet .module--projet--text > .media-image + .media-image,
 .module--projet .module--projet--text > .media-video + .media-image,
+.module--projet .module--projet--text > .video + .media-image,
 .module--projet .module--projet--text > .media-tweet + .media-image,
 .module--projet .module--projet--text > .media-image + .media-video,
 .module--projet .module--projet--text > .media-video + .media-video,
-.module--projet .module--projet--text > .media-tweet + .media-video {
+.module--projet .module--projet--text > .video + .media-video,
+.module--projet .module--projet--text > .media-tweet + .media-video,
+.module--projet .module--projet--text > .media-image + .video,
+.module--projet .module--projet--text > .media-video + .video,
+.module--projet .module--projet--text > .video + .video,
+.module--projet .module--projet--text > .media-tweet + .video {
   padding-top: 1rem;
 }
 .module--projet .module--projet--text > .media-image .twitter-tweet,
 .module--projet .module--projet--text > .media-video .twitter-tweet,
+.module--projet .module--projet--text > .video .twitter-tweet,
 .module--projet .module--projet--text > .media-tweet .twitter-tweet {
   margin: 0 auto !important;
 }
 .module--projet .module--projet--text > .media-image .FigureImage-lazy,
 .module--projet .module--projet--text > .media-video .FigureImage-lazy,
+.module--projet .module--projet--text > .video .FigureImage-lazy,
 .module--projet .module--projet--text > .media-tweet .FigureImage-lazy {
   background-color: #232323;
 }
 .module--projet .module--projet--text > .media-image .legende,
 .module--projet .module--projet--text > .media-video .legende,
+.module--projet .module--projet--text > .video .legende,
 .module--projet .module--projet--text > .media-tweet .legende,
 .module--projet .module--projet--text > .media-image .caption-bottom,
 .module--projet .module--projet--text > .media-video .caption-bottom,
+.module--projet .module--projet--text > .video .caption-bottom,
 .module--projet .module--projet--text > .media-tweet .caption-bottom,
 .module--projet .module--projet--text > .media-image figcaption,
 .module--projet .module--projet--text > .media-video figcaption,
+.module--projet .module--projet--text > .video figcaption,
 .module--projet .module--projet--text > .media-tweet figcaption {
   margin-left: 0;
   padding: 0;
@@ -1816,12 +1830,15 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
 }
 .module--projet .module--projet--text > .media-image .legende p,
 .module--projet .module--projet--text > .media-video .legende p,
+.module--projet .module--projet--text > .video .legende p,
 .module--projet .module--projet--text > .media-tweet .legende p,
 .module--projet .module--projet--text > .media-image .caption-bottom p,
 .module--projet .module--projet--text > .media-video .caption-bottom p,
+.module--projet .module--projet--text > .video .caption-bottom p,
 .module--projet .module--projet--text > .media-tweet .caption-bottom p,
 .module--projet .module--projet--text > .media-image figcaption p,
 .module--projet .module--projet--text > .media-video figcaption p,
+.module--projet .module--projet--text > .video figcaption p,
 .module--projet .module--projet--text > .media-tweet figcaption p {
   margin-top: .4em;
   max-width: 76ch;
@@ -1833,6 +1850,13 @@ body[module--gradient_overlay="is--away"] .module--projet .module--projet--text 
   padding-top: 40px;
   background-color: #E3E3E3;
   box-shadow: 0px 0px 30px -10px #ccc;
+}
+.module--projet .module--projet--text .video {
+  max-width: 600px;
+}
+.module--projet .module--projet--text .video iframe {
+  width: 100%;
+  height: 350px;
 }
 .module--projet .module--projet--text p:empty,
 .module--projet .module--projet--text ul:empty,
