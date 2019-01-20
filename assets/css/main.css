@@ -696,50 +696,51 @@ html.js body.is--loading .module--navbar {
   display: inline;
   cursor: pointer;
   color: #fff;
-  padding: .1em .0em;
+  padding: 0 0 .1em;
   margin: -0.1em 0em;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  background-position: 0 100%;
+  background-position: 0 calc(100% - 2px);
   background-repeat: no-repeat;
   background-size: 250% 1px;
-  transition: all 0.25s, background-position 1.6s ease-out;
-  outline: 1px solid transparent;
+  transition: background-size 1.6s linear;
+  border: 1px solid transparent;
 }
 .module--intro a:hover {
-  background-size: 250% 10%;
+  background-size: 250% 2px;
 }
 .module--intro a.is--active {
   background-size: 250% 100%;
+  background-position: 0 100%;
 }
 .module--intro a[href*="vr"] {
   background-image: linear-gradient(to right, #38C4B2, #38C4B2 50%, transparent 50%, transparent);
 }
-.module--intro a:focus[href*="vr"] {
-  outline: 1px solid #38C4B2;
+.module--intro a:focus-visible[href*="vr"] {
+  border-color: 1px solid #38C4B2;
 }
 .module--intro a[href*="sites"] {
   background-image: linear-gradient(to right, #03B8F4, #03B8F4 50%, transparent 50%, transparent);
 }
-.module--intro a:focus[href*="sites"] {
-  outline: 1px solid #03B8F4;
+.module--intro a:focus-visible[href*="sites"] {
+  border-color: 1px solid #03B8F4;
 }
 .module--intro a[href*="objets-interactifs"] {
   background-image: linear-gradient(to right, #ABD190, #ABD190 50%, transparent 50%, transparent);
 }
-.module--intro a:focus[href*="objets-interactifs"] {
-  outline: 1px solid #ABD190;
+.module--intro a:focus-visible[href*="objets-interactifs"] {
+  border-color: 1px solid #ABD190;
 }
 .module--intro a[href*="outils-pedagogiques"] {
   background-image: linear-gradient(to right, #FFC162, #FFC162 50%, transparent 50%, transparent);
 }
-.module--intro a:focus[href*="outils-pedagogiques"] {
-  outline: 1px solid #FFC162;
+.module--intro a:focus-visible[href*="outils-pedagogiques"] {
+  border-color: 1px solid #FFC162;
 }
 .module--intro a[href*="autres"] {
   background-image: linear-gradient(to right, #ACA8A5, #ACA8A5 50%, transparent 50%, transparent);
 }
-.module--intro a:focus[href*="autres"] {
-  outline: 1px solid #ACA8A5;
+.module--intro a:focus-visible[href*="autres"] {
+  border-color: 1px solid #ACA8A5;
 }
 html.js .module--intro {
   opacity: 1;
