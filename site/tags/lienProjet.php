@@ -12,6 +12,8 @@ kirbytext::$tags['lienProjet'] = array(
 		if(strpos($nomprojet,',') === false) {
 
       $projet = page('projets')->children()->visible()->findBy('uid', $nomprojet);
+
+      if($projet == null) return;
       $markup = returnProjectIndexAsLink( $projet);
 
     } else {
@@ -19,6 +21,7 @@ kirbytext::$tags['lienProjet'] = array(
 
 			foreach( $nomprojets as $nomprojet):
 			  $projet   = page('projets')->children()->visible()->findBy('uid', $nomprojet);
+        if($projet == null) continue;
         $markup .= returnProjectIndexAsLink( $projet)->toString();
       endforeach;
     }
