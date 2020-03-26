@@ -14,9 +14,9 @@ Le Tricodeur se base sur des techniques récentes de piratage de machines à tri
 
 J'ai réalisé le Tricodeur en collaboration avec deux entités bordelaises : <a href="http://www.sewetlaine.com/" target="_blank">Sew & Laine</a>, une association dédiée aux textiles et au fait-main et <a href="http://www.2roqs.fr/">2Roqs</a>, un studio dont le travail tourne autour des technologies digitales créatives.
 
-* Photos et explications des projets sur <a href="http://letricodeur.com/" target="_blank">letricodeur.com/</a>
+* Photos et explications des projets sur <a href="http://pw.louiseveillard.com/2014-letricodeur/" target="_blank">http://pw.louiseveillard.com/2014-letricodeur/</a>
 * <a href="https://www.youtube.com/watch?v=KM-ImfTF0O8" target="_blank">Vidéo récapitulative des 3 jours</a>
-* Le sujet du workshop, les contenus et les résultats du workshop d’initiation avec Processing sont présentés ici : <a href="http://letricodeur.com/workshop/" target="_blank">letricodeur.com/workshop/</a>
+* Le sujet du workshop, les contenus et les résultats du workshop d’initiation avec Processing sont présentés ici : <a href="http://pw.louiseveillard.com/2014-letricodeur/workshop/" target="_blank">http://pw.louiseveillard.com/2014-letricodeur/workshop/</a>
 * L'ensemble des contenus sont sous licence libre Creative Commons et sont en téléchargement <a href="https://github.com/louis-ev/Le-Tricodeur" target="_blank">sur GitHub</a>
 
 Les articles suivant parlent du Tricodeur :
@@ -36,7 +36,7 @@ Du 10 au 12 octobre 2014, j’ai ensuite animé et encadré à <a href="http://w
 
 (image: assemblage-tricodeur-workshop-web-large-1.jpg)
 
-L'enjeu de ce workshop était de créer des images d’abord sur écran puis de les tricoter en partant de jeux de données personnelles fournis par les participants eux-mêmes (profil Facebook ou Twitter, historique Google, échanges de SMS, podomètres, etc.). Les images, produites avec les contraintes du tricot, vont du figuratif à l'abstrait mais toujours en restant propres à leurs porteurs. Elles donnent à voir de manière poétique un aspect habituellement masqué de notre identité. Pour plus d'informations sur le workshop, rendez-vous sur <a href="http://letricodeur.com/workshop/" target="_blank">letricodeur.com/workshop/</a>.
+L'enjeu de ce workshop était de créer des images d’abord sur écran puis de les tricoter en partant de jeux de données personnelles fournis par les participants eux-mêmes (profil Facebook ou Twitter, historique Google, échanges de SMS, podomètres, etc.). Les images, produites avec les contraintes du tricot, vont du figuratif à l'abstrait mais toujours en restant propres à leurs porteurs. Elles donnent à voir de manière poétique un aspect habituellement masqué de notre identité. Pour plus d'informations sur le workshop, rendez-vous sur <a href="http://pw.louiseveillard.com/2014-letricodeur/workshop/" target="_blank">http://pw.louiseveillard.com/2014-letricodeur/workshop/</a>.
 
 (image: tricodeur-large-2.jpg legende: Visualisation de l'activité d'un compte Twitter depuis sa création)
 
