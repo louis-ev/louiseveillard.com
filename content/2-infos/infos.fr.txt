@@ -6,7 +6,7 @@ Text:
 
 ### Informations
 
-# Je suis designer indépendant à Paris depuis 2010, spécialisé en design graphique et interactif. Pour réaliser mes projets, je crée des outils ((lienProjet: lopendoc-et-dodoc, couvertures-generatives, delure-org, point-a-point, slowscreen)) et j’en détourne d'autres ((lienProjet: le-tricodeur, panopticon)).
+# Je suis designer indépendant à Paris depuis 2010, spécialisé en design graphique et interactif. Pour réaliser mes projets, je crée des outils ((lienProjet: dodoc, couvertures-generatives, delure-org, point-a-point, slowscreen)) et j’en détourne d'autres ((lienProjet: le-tricodeur, panopticon)).
 
 ***
 
