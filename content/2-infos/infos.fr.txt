@@ -21,11 +21,11 @@ En février 2015, j'ai co-fondé le collectif (link: http://panoptic-lab.com/ te
 J’anime régulièrement des workshops et des cours, que je documente en ligne avec les étudiants. En voici quelques exemples :
 
 - (link: http://pca.louiseveillard.com/ text: pca.louiseveillard.com  popup: yes) : mes cours de webdesign et d’apprentissage du code au (link: https://www.paris.edu/  popup: yes text: Paris College of Art), en anglais
-- (link: https://datafossil.xyz/ text: datafossil.xyz popup: yes) : un workshop d’une semaine à (link: https://www.lecolededesign.com/ text: l’école de design de Nantes Atlantique popup: yes) autour de la visualisation d’information et la création de fossiles de données
+- (link: http://datafossil.louiseveillard.com/ text: datafossil.louiseveillard.com/ popup: yes) : un workshop d’une semaine à (link: https://www.lecolededesign.com/ text: l’école de design de Nantes Atlantique popup: yes) autour de la visualisation d’information et la création de fossiles de données
 - (link: https://affichesinteractives.louiseveillard.com/ text: affichesinteractives.louiseveillard.com  popup: yes) : un workshop d’une semaine à (link: http://www.esapyrenees.fr/ text: l’École supérieure d’art des Pyrénées popup: yes) sur la création d’affiches interactives dans le navigateur
 - (link: http://algorithme.beautifulseams.com/ text: algorithme.beautifulseams.com popup: yes) : une intervention autour de la notion d’algorithme, suivi d’un sujet libre à l’(link: http://www.penninghen.fr/ text: ESAG Penninghen popup: yes) à Paris
 - (link: https://p5.louiseveillard.com/ text: p5.louiseveillard.com  popup: yes) : une initiation à l’outil de design génératif pour les navigateurs web p5.js à destination des étudiants en art et en design — préparé pour ceux de l’(link: https://www.ecv.fr/ text: ECV  popup: yes) et de l’(link: http://epsaa.fr/ text: EPSAA popup: yes)
-- (link: http://letricodeur.com/workshop/ text: letricodeur.com/workshop  popup: yes) : une initiation à la visualisation d’information sur Processing, avec une ouverture sur le tricot
+- (link: http://pw.louiseveillard.com/2014-letricodeur/workshop text: http://pw.louiseveillard.com/2014-letricodeur/workshop  popup: yes) : une initiation à la visualisation d’information sur Processing, avec une ouverture sur le tricot
 
 En parallèle, je rédige régulièrement des articles sur des sujets variés qui me tiennent à cœur ou sur la réalisation de certains de mes projets. Dernièrement, j’ai publié les articles suivants :
 
