@@ -1,0 +1,34 @@
+:root {
+  --c-pagebg: #1f1f1f;
+  --c-pagebgwhite: #f0f0f0;
+  --c-textColor: #f9f9f9;
+  --c-textMeta: #bbb;
+
+  /* project categories */
+  --c-sites: #03b8f4;
+  --c-objets-interactifs: #abd190;
+  --c-vr: #38c4b2;
+  --c-outils-pedagogiques: #ffc162;
+  --c-autres: #aca8a5;
+
+  --t-margin: 16px;
+  --t-largemaxwidth: 66rem;
+  --t-bandeauImage: 44vh;
+
+  --f-regular: 'gt-c', Helvetica, Arial, sans-serif;
+  --f-bold: 'gt-c-b', Helvetica, Arial, sans-serif;
+
+  --ease-custom: cubic-bezier(0.355, 0.255, 0.010, 1.055);
+  --ease-custom2: cubic-bezier(0.130, 0.220, 0.010, 1.055);
+
+  /* breakpoints (media queries can't use variables):
+     md: 48em, lg: 62em */
+}
+
+/* --c-rubrique: color of the category of a project (data-type) or link
+   (data-rubrique, or the intro filter links) */
+[data-type="sites"], [data-rubrique="sites"], a[href="#sites"] { --c-rubrique: var(--c-sites); }
+[data-type="objets-interactifs"], [data-rubrique="objets-interactifs"], a[href="#objets-interactifs"] { --c-rubrique: var(--c-objets-interactifs); }
+[data-type="vr"], [data-rubrique="vr"], a[href="#vr"] { --c-rubrique: var(--c-vr); }
+[data-type="outils-pedagogiques"], [data-rubrique="outils-pedagogiques"], a[href="#outils-pedagogiques"] { --c-rubrique: var(--c-outils-pedagogiques); }
+[data-type="autres"], [data-rubrique="autres"], a[href="#autres"] { --c-rubrique: var(--c-autres); }

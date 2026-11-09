@@ -1,0 +1,15 @@
+title: Projets
+
+options:
+  delete: false
+  changeSlug: false
+
+sections:
+  projets:
+    type: pages
+    template: projet
+    status: all
+    layout: table
+    columns:
+      type: true
+      annee: true

@@ -1,0 +1,11 @@
+title: Accueil
+
+options:
+  delete: false
+  changeSlug: false
+
+fields:
+  text:
+    label: Texte d’introduction
+    type: textarea
+    help: "Les liens `(link: #sites text: …)` filtrent la liste des projets par catégorie."

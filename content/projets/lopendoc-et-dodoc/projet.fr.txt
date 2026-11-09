@@ -62,7 +62,9 @@ Cover:
 
 ----
 
-Imagecover: dodoc.jpg
+Imagecover:
+
+- dodoc.jpg
 
 ----
 

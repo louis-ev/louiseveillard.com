@@ -10,7 +10,9 @@ Cover:
 
 ----
 
-Imagecover: baldingervuhuu-com.png
+Imagecover:
+
+- baldingervuhuu-com.png
 
 ----
 

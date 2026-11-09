@@ -3,82 +3,56 @@
 /*
 
 ---------------------------------------
-License Setup
----------------------------------------
-
-Please add your license key, which you've received
-via email after purchasing Kirby on http://getkirby.com/buy
-
-It is not permitted to run a public website without a
-valid license key. Please read the End User License Agreement
-for more information: http://getkirby.com/license
-
-*/
-
-c::set('license', 'put your license key here');
-
-/*
-
----------------------------------------
 Kirby Configuration
 ---------------------------------------
 
-By default you don't have to configure anything to
-make Kirby work. For more fine-grained configuration
-of the system, please check out http://getkirby.com/docs/advanced/options
+Local overrides go in config.localhost.php.
+The Kirby license is activated from the Panel (site/config/.license).
 
 */
 
-c::set('environment', 'production');
-c::set('multisizes', true);
-c::set('lazyloadimages', true);
-c::set('optimumx', 1.6);
-c::set('thumbsize', 1600);
-c::set('maxLinkedImageWidth', 1600);
-c::set('thumbs.quality', 75);
+date_default_timezone_set('Europe/Paris');
 
-c::set('ssl',true);
+// written by the deploy workflow; the page cache is keyed by it so that
+// every deploy (which may change content/ over FTP) starts with a fresh cache
+$deploy = trim((string)@file_get_contents(__DIR__ . '/.deploy'));
 
-c::set('smartypants', true);
-c::set('smartypants.doublequote.open', '&#8220;');                              // Openning smart double-quotes.
-c::set('smartypants.doublequote.close', '&#8221;');                             // Closing smart double-quotes.
-c::get('smartypants.space.frenchquote', '&#160;');                              // Space inside french quotes. "Voici la «_chose_» qui m'a attaqué."
+return [
+  'debug' => false,
 
-c::set('kirby.extension.videoext.video_tag', true);
-c::set('kirby.extension.videoext.class', 'media-video lazyload');
-c::set('kirby.extension.videoext.caption_class', 'media-video');
-c::set('kirby.extension.videoext.controls', false);
-c::set('kirby.extension.videoext.preload', 'none');
-c::set('kirby.extension.videoext.autoplay', false);
-c::set('kirby.extension.videoext.loop', true);
+  'cache' => [
+    'pages' => [
+      'active' => $deploy !== '',
+      'prefix' => 'pages/' . $deploy,
+    ],
+  ],
 
-c::set('smartypants',true);
+  // single language, but content files are named *.fr.txt
+  'languages' => true,
 
-c::set('timezone','Europe/Paris');
+  // content still references files by filename (no UUIDs in .txt files)
+  'content' => [
+    'uuid' => false,
+  ],
 
-c::set('languages', array(
-  array(
-    'code'    => 'fr',
-    'name'    => 'Français',
-    'default' => true,
-    'locale'  => 'fr_FR',
-    'url'     => '/',
-  ),
-/*
-  array(
-    'code'    => 'en',
-    'name'    => 'English',
-    'locale'  => 'en_US',
-    'url'     => '/en',
-  ),
-*/
-));
+  'smartypants' => true,
 
-c::set('routes', array(
-  array(
-    'pattern' => 'projets',
-    'action'  => function() {
-      go('home');
-    }
-  )
-));
+  'thumbs' => [
+    'quality' => 75,
+  ],
+
+  // redirects http:// to https:// (Kirby 2 `ssl` option)
+  'louiseveillard.ssl' => true,
+
+  // the project list is on the home page
+  'routes' => [
+    [
+      'pattern' => 'projets',
+      'action' => fn () => Kirby\Cms\Response::redirect(url(), 302),
+    ],
+  ],
+
+  // Panel disabled online for now: content is edited in the repo
+  // (enabled locally in config.localhost.php)
+  'panel' => false,
+];

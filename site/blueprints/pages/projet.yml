@@ -1,0 +1,48 @@
+title: Projet
+num: default
+
+columns:
+  main:
+    width: 2/3
+    fields:
+      type:
+        label: Catégorie
+        type: tags
+        options:
+          - sites
+          - objets interactifs
+          - vr
+          - outils pédagogiques
+          - autres
+        width: 3/4
+      annee:
+        label: Année
+        type: number
+        width: 1/4
+      header:
+        label: Introduction
+        type: textarea
+        width: 1/2
+      headercol2:
+        label: Infos techniques
+        type: textarea
+        width: 1/2
+      text:
+        label: Texte
+        type: textarea
+        size: huge
+        help: "Une ligne `---` commence une nouvelle section (fonds alternés)."
+  sidebar:
+    width: 1/3
+    sections:
+      cover:
+        type: fields
+        fields:
+          imageCover:
+            label: Couverture
+            type: files
+            multiple: false
+            query: page.images
+            uploads: false
+      files:
+        type: files

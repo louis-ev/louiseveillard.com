@@ -1,0 +1,40 @@
+title: Site
+
+tabs:
+  pages:
+    label: Pages
+    icon: page
+    sections:
+      pages:
+        type: pages
+        status: all
+        create: default
+      projets:
+        label: Projets
+        type: pages
+        parent: site.find("projets")
+        status: all
+        layout: table
+        create: projet
+        columns:
+          type: true
+          annee: true
+
+  settings:
+    label: Réglages
+    icon: settings
+    fields:
+      author:
+        label: Auteur
+        type: text
+      description:
+        label: Description
+        type: textarea
+        buttons: false
+      keywords:
+        label: Mots-clés
+        type: tags
+      ogimage:
+        label: Image de partage
+        type: url
+        help: URL de l’image qui représente le site sur les réseaux sociaux.

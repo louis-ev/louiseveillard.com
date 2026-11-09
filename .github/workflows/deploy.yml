@@ -1,0 +1,81 @@
+name: Deploy to FTP
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      server_dir:
+        description: "Dossier distant (ex. staging/), sinon secret FTP_SERVER_DIR"
+        required: false
+        default: ""
+
+env:
+  SERVER_DIR: ${{ inputs.server_dir || secrets.FTP_SERVER_DIR || './' }}
+
+jobs:
+  deploy:
+    name: Deploy site via FTP
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+
+      - name: Install PHP dependencies
+        run: composer install --no-dev --optimize-autoloader --prefer-dist
+
+      - name: Lint PHP
+        run: find site index.php -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      # renders every page in every language; blocks the deploy on errors,
+      # non-200 pages or unconverted kirbytags
+      - name: Check pages
+        run: php scripts/check-pages.php
+
+      # content is edited in the repo for now (Panel disabled online);
+      # separate state file so the site sync never touches it
+      - name: Sync content to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || '21' }}
+          protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
+          local-dir: ./content/
+          server-dir: ${{ env.SERVER_DIR }}content/
+          state-name: .ftp-deploy-content-state.json
+
+      # read by site/config/config.php: a new value starts a fresh page cache
+      - name: Write deploy version
+        run: echo "${{ github.sha }}-${{ github.run_id }}" > site/config/.deploy
+
+      - name: Sync site to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT || '21' }}
+          protocol: ${{ secrets.FTP_PROTOCOL || 'ftp' }}
+          server-dir: ${{ env.SERVER_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/.claude/**
+            **/node_modules/**
+            content/**
+            media/**
+            scripts/**
+            site/accounts/**
+            site/cache/**
+            site/sessions/**
