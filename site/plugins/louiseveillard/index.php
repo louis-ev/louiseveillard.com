@@ -237,7 +237,8 @@ Kirby::plugin('louiseveillard/site', [
             . '</article>';
         }
 
-        return $html;
+        // indented lines would become markdown code blocks
+        return levOneLine($html);
       },
     ],
   ],
