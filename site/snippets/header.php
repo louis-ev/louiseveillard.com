@@ -51,13 +51,6 @@
   data-index="<?= $page->intendedTemplate()->name() === 'projet' ? $page->projetIndex() : '' ?>"
   data-visuel="">
   <script>
-    // fade-in on load (removed by main.js); a project opened from the
-    // project list starts with its cover in full screen
+    // fade-in on load (removed by main.js)
     document.body.classList.add('is--loading');
-    try {
-      if (sessionStorage.getItem('lev:zoomIn') === location.pathname) {
-        document.body.dataset.visuel = 'zoomedIn';
-      }
-      sessionStorage.removeItem('lev:zoomIn');
-    } catch (e) {}
   </script>

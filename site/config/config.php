@@ -48,7 +48,7 @@ return [
   'routes' => [
     [
       'pattern' => 'projets',
-      'action' => fn () => Kirby\Cms\Response::redirect(url(), 302),
+      'action' => fn () => Kirby\Cms\Response::redirect(site()->url(), 302),
     ],
   ],
 

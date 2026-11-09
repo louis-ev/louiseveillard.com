@@ -1,9 +1,8 @@
 "use strict";
 
 /*
-  Plain JS, no dependencies (replaces jQuery, pjax, Isotope, lazysizes and
-  FastClick). Navigation between pages uses cross-document view transitions
-  (see main.css).
+  Plain JS, no dependencies (replaces jQuery, jquery-pjax, Isotope, lazysizes
+  and FastClick). Navigation between pages: see `pjax` below.
 */
 
 var WIDE_SCREEN = 700;
@@ -180,12 +179,17 @@ var projectFilter = {
   },
 };
 
+
 /**
- * Wide screens: hovering a project shows its cover in full screen, a glow
- * follows the mouse, and opening a project zooms on its cover
+ * Wide screens: hovering a project shows its cover in full screen and a glow
+ * follows the mouse. Clicking a project marks its cover (`is--visuelProjet`)
+ * so that pjax opens the project zoomed on it.
  */
 var projectHover = {
   init: function (section) {
+    if (section.dataset.hoverInit) return;
+    section.dataset.hoverInit = "true";
+
     var visuels = section.querySelectorAll(".module--projetList--visuelWrapper--visuel");
     var titles = section.querySelector(".module--projetList--titles");
 
@@ -244,95 +248,286 @@ var projectHover = {
       corners.style.setProperty("--y", event.clientY - rect.top + "px");
     });
 
-    // opening a project: its cover goes full screen, then morphs into the
-    // project page cover (view transition), which starts zoomed in
     titles.addEventListener("click", function (event) {
       var link = event.target.closest(".module--projetList--titles--projetName--links");
-      if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      if (!link || !pjax.isPjaxLink(link, event)) return;
 
       var visuel = visuelFor(link.parentElement);
       if (!visuel || !visuel.currentSrc) return;
 
-      event.preventDefault();
-      // read by the inline script at the top of <body> (header.php)
-      try { sessionStorage.setItem("lev:zoomIn", new URL(link.href).pathname); } catch (e) {}
       document.querySelectorAll(".is--visuelProjet").forEach(function (el) { el.classList.remove("is--visuelProjet"); });
       visuel.classList.add("is--visuelProjet");
-      document.body.classList.add("is--leaving");
-
-      setTimeout(function () { window.location.href = link.href; }, reducedMotion ? 0 : 400);
     });
   },
 };
 
 /**
- * Project page: cover fades out on scroll, click on the cover toggles full screen
+ * Project page: cover fades out on scroll, click on the cover toggles full
+ * screen. Opened from the project list, the page starts zoomed on the cover,
+ * then the header rises over it.
  */
 var projectView = {
+  figure: null,
+  ticking: false,
+
+  zoomIn: function (zoom) {
+    document.body.dataset.visuel = zoom ? "zoomedIn" : "";
+    document.body.style.overflow = zoom ? "hidden" : "";
+    if (window.scrollY > 0) {
+      window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
+    }
+  },
+
   init: function () {
+    var self = this;
     var cover = document.querySelector(".module--projet_full .module--projet--visuel");
-    if (!cover) return;
+    var page = pjax.page;
 
-    var body = document.body;
+    this.figure = null;
 
-    var zoomIn = function (zoom) {
-      body.dataset.visuel = zoom ? "zoomedIn" : "";
-      body.style.overflow = zoom ? "hidden" : "";
-      if (window.scrollY > 0) {
-        window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
-      }
-    };
+    if (!cover) {
+      document.body.dataset.visuel = "";
+      document.body.style.overflow = "";
+      return;
+    }
 
     cover.addEventListener("click", function (event) {
       event.preventDefault();
-      zoomIn(body.dataset.visuel !== "zoomedIn");
+      self.zoomIn(document.body.dataset.visuel !== "zoomedIn");
     });
 
-    // arrived from the project list: zoomed in, then reveal the header
-    if (body.dataset.visuel === "zoomedIn") {
-      body.style.overflow = "hidden";
-      setTimeout(function () { zoomIn(false); }, reducedMotion ? 0 : 1000);
+    // arrived from the project list (see pjax.load)
+    if (document.body.dataset.visuel === "zoomedIn") {
+      setTimeout(function () {
+        document.querySelectorAll(".is--visuelProjet").forEach(function (el) { el.classList.remove("is--visuelProjet"); });
+        setTimeout(function () {
+          if (pjax.page === page) self.zoomIn(false);
+        }, reducedMotion ? 0 : 400);
+      }, reducedMotion ? 0 : 600);
     }
 
     if (window.innerWidth > WIDE_SCREEN) {
-      var figure = cover.querySelector(".FigureImage-lazy");
-      var ticking = false;
+      this.figure = cover.querySelector(".FigureImage-lazy");
+      this.update();
 
-      var update = function () {
-        ticking = false;
-        var progress = window.scrollY / (window.innerHeight * 0.44);
-        figure.style.opacity = window.scrollY < window.innerHeight ? clamp(1 - progress, 0, 1) : 0;
-      };
-
-      window.addEventListener("scroll", function () {
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(update);
-        }
-      }, { passive: true });
+      if (!this.listening) {
+        this.listening = true;
+        window.addEventListener("scroll", function () {
+          if (!self.ticking) {
+            self.ticking = true;
+            requestAnimationFrame(function () { self.update(); });
+          }
+        }, { passive: true });
+      }
     }
+  },
+
+  update: function () {
+    this.ticking = false;
+    if (!this.figure) return;
+    var progress = window.scrollY / (window.innerHeight * 0.44);
+    this.figure.style.opacity = window.scrollY < window.innerHeight ? clamp(1 - progress, 0, 1) : 0;
   },
 };
 
 /**
+ * "Site archivé" notice: closed for the rest of the browsing session
+ */
+function initArchiveNotice() {
+  var notice = document.querySelector(".module--archive");
+  if (!notice || storage("get", "lev:archiveClosed")) return;
+
+  notice.hidden = false;
+  notice.querySelector(".module--archive--close").addEventListener("click", function () {
+    notice.hidden = true;
+    storage("set", "lev:archiveClosed", true);
+  });
+}
+
+/**
  * "Projets" in the navbar scrolls to the project list when there is one
+ * (registered before pjax, which then ignores the click)
  */
 function initNavbar() {
-  var link = document.querySelector('.module--navbar a[data-goto="projets"]');
-  var list = document.querySelector(".module--projetList");
-  if (!link || !list) return;
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest('.module--navbar a[data-goto="projets"]');
+    var list = document.querySelector(".module--projetList");
+    if (!link || !list || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
-  link.addEventListener("click", function (event) {
     event.preventDefault();
     list.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+/**
+ * Pjax navigation (replaces jquery-pjax): internal links load the next page
+ * with fetch and only swap #main-container; the navbar, the archive notice
+ * and the project list stay in place (the list is added or removed when
+ * needed). Any problem falls back to a regular page load.
+ */
+var pjax = {
+  page: 0,
+  controller: null,
+  delay: 400,
+
+  init: function () {
+    if (!window.fetch || !window.DOMParser || !history.pushState) return;
+
+    var self = this;
+    history.replaceState({ pjax: true, scrollY: window.scrollY }, "");
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+    document.addEventListener("click", function (event) {
+      var link = event.target.closest("a");
+      if (!self.isPjaxLink(link, event)) return;
+      event.preventDefault();
+      self.load(link.href, { push: true });
+    });
+
+    window.addEventListener("popstate", function (event) {
+      if (!event.state || !event.state.pjax) return;
+      self.load(location.href, { push: false, scrollY: event.state.scrollY });
+    });
+
+    // remember the scroll position of the current entry (back button)
+    var saveScroll = function () {
+      history.replaceState(Object.assign({}, history.state, { pjax: true, scrollY: window.scrollY }), "");
+    };
+    var scrollTimer;
+    window.addEventListener("scroll", function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(saveScroll, 150);
+    }, { passive: true });
+  },
+
+  isPjaxLink: function (link, event) {
+    if (!link || !link.href || event.defaultPrevented) return false;
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return false;
+    if ((link.target && link.target !== "_self") || link.hasAttribute("download")) return false;
+    if (link.origin !== location.origin) return false;
+
+    // files, the Panel, and anchors within the current page
+    var path = link.pathname;
+    if (/^\/(panel|api|media|content|assets)(\/|$)/.test(path) || /\.[a-z0-9]{2,5}$/i.test(path)) return false;
+    if (path === location.pathname && link.search === location.search && link.hash) return false;
+
+    return true;
+  },
+
+  load: function (url, options) {
+    var self = this;
+    var body = document.body;
+    var page = ++this.page;
+
+    if (this.controller) this.controller.abort();
+    this.controller = window.AbortController ? new AbortController() : null;
+
+    var zoom = options.push && document.querySelector(".is--visuelProjet") !== null;
+    body.classList.add("is--ajax_loading");
+
+    var wait = new Promise(function (resolve) { setTimeout(resolve, reducedMotion ? 0 : self.delay); });
+    var request = fetch(url, {
+      credentials: "same-origin",
+      signal: this.controller ? this.controller.signal : undefined,
+    }).then(function (response) {
+      var type = response.headers.get("Content-Type") || "";
+      if ((!response.ok && response.status !== 404) || type.indexOf("text/html") === -1) {
+        throw new Error("not a page");
+      }
+      return response.text();
+    });
+
+    Promise.all([request, wait]).then(function (results) {
+      if (page !== self.page) return;
+
+      var doc = new DOMParser().parseFromString(results[0], "text/html");
+      if (!doc.querySelector("#main-container")) throw new Error("no #main-container");
+
+      if (options.push) {
+        history.pushState({ pjax: true, scrollY: 0 }, "", url);
+      }
+
+      self.swap(doc, zoom);
+      body.classList.remove("is--ajax_loading");
+
+      var hash = new URL(url).hash;
+      var target = hash && document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (target) {
+        target.scrollIntoView();
+      } else {
+        window.scrollTo(0, options.scrollY || 0);
+      }
+
+      pageInit();
+    }).catch(function (error) {
+      if (error && error.name === "AbortError") return;
+      window.location.href = url;
+    });
+  },
+
+  swap: function (doc, zoom) {
+    var body = document.body;
+
+    document.title = doc.title;
+
+    ["template", "intendedTemplate", "rubrique", "index"].forEach(function (key) {
+      body.dataset[key] = doc.body.dataset[key] || "";
+    });
+    body.dataset.visuel = zoom && doc.querySelector(".module--projet--visuel") ? "zoomedIn" : "";
+    body.style.overflow = body.dataset.visuel ? "hidden" : "";
+    if (!body.dataset.visuel) {
+      document.querySelectorAll(".is--visuelProjet").forEach(function (el) { el.classList.remove("is--visuelProjet"); });
+    }
+
+    // navbar: active item
+    var navList = document.querySelector(".module--navbar--list");
+    var newNavList = doc.querySelector(".module--navbar--list");
+    if (navList && newNavList) navList.replaceWith(document.adoptNode(newNavList));
+
+    // main content
+    var main = document.querySelector("#main-container");
+    var newMain = document.adoptNode(doc.querySelector("#main-container"));
+    main.replaceWith(newMain);
+    this.runScripts(newMain);
+
+    // project list: kept in place (with its loaded covers), or added / removed
+    var list = document.querySelector(".module--projetList");
+    var newList = doc.querySelector(".module--projetList");
+
+    if (list && newList) {
+      list.querySelectorAll(".module--projetList--titles--projetName").forEach(function (item) {
+        var newItem = newList.querySelector('.module--projetList--titles--projetName[data-index="' + item.dataset.index + '"]');
+        item.classList.toggle("is--active", !!newItem && newItem.classList.contains("is--active"));
+      });
+    } else if (newList) {
+      newMain.after(document.adoptNode(newList));
+    } else if (list) {
+      list.remove();
+    }
+
+    newMain.setAttribute("tabindex", "-1");
+    newMain.focus({ preventScroll: true });
+  },
+
+  // scripts inserted with the content (e.g. embeds) don't run by themselves
+  runScripts: function (container) {
+    container.querySelectorAll("script").forEach(function (old) {
+      var script = document.createElement("script");
+      Array.from(old.attributes).forEach(function (attr) { script.setAttribute(attr.name, attr.value); });
+      script.textContent = old.textContent;
+      old.replaceWith(script);
+    });
+  },
+};
+
+/**
+ * Everything that depends on the page content, run on load and after each
+ * pjax navigation
+ */
+function pageInit() {
   initDayNight();
   initImages();
   initVideos();
-  initNavbar();
   projectView.init();
 
   if (document.body.dataset.intendedTemplate === "projet") {
@@ -348,6 +543,13 @@ document.addEventListener("DOMContentLoaded", function () {
       projectHover.init(list);
     }
   }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  initNavbar();
+  initArchiveNotice();
+  pjax.init();
+  pageInit();
 
   // end of the fade-in
   requestAnimationFrame(function () {
@@ -355,9 +557,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// coming back with the back button (bfcache): reset the leaving state
+// coming back with the back button (bfcache): reset the loading state
 window.addEventListener("pageshow", function (event) {
   if (!event.persisted) return;
-  document.body.classList.remove("is--leaving");
+  document.body.classList.remove("is--ajax_loading");
   document.querySelectorAll(".is--visuelProjet").forEach(function (el) { el.classList.remove("is--visuelProjet"); });
 });

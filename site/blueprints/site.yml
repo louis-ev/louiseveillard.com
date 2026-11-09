@@ -24,6 +24,11 @@ tabs:
     label: Réglages
     icon: settings
     fields:
+      archive:
+        label: Message “site archivé”
+        type: textarea
+        size: small
+        help: Affiché dans une fenêtre flottante en haut de toutes les pages. Vide = pas de fenêtre.
       author:
         label: Auteur
         type: text

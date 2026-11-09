@@ -14,7 +14,7 @@ npm run check      # renders every page and reports errors (also run before each
 
 - `site/`: templates, snippets, blueprints, plugin `site/plugins/louiseveillard` (kirbytags `image`, `video`, `vimeo`, `link popup:`, `lienProjet`, `jour`, `toutesDescriptions`; a `---` line in a project text starts a new section)
 - `assets/css/`: `fonts.css` (GT Cinetype, embedded), `variables.css` (colors, project categories), `base.css` (normalize), `main.css`
-- `assets/js/main.js`: plain JS, no dependencies — project list sorted by category from the home intro links, full-screen covers on hover, zoom on project covers, autoplaying videos only while visible. Page changes use native cross-document view transitions.
+- `assets/js/main.js`: plain JS, no dependencies — pjax navigation (only `#main-container` is replaced, the navbar and project list stay), project list sorted by category from the home intro links, full-screen covers on hover, zoom on project covers, autoplaying videos only while visible.
 - `content/`: the contents. **The Panel is disabled online** (`'panel' => false` in `site/config/config.php`, enabled locally via `config.localhost.php`): content is edited locally, and each deploy also uploads `content/`.
 
 ## Deploy

@@ -1,7 +1,7 @@
 <nav class="module--navbar">
   <div class="module--navbar--wrapper">
     <div class="module--logo">
-      <a class="logo" href="<?= url() ?>">Louis Eveillard</a>
+      <a class="logo" href="<?= $site->url() ?>">Louis Eveillard</a>
     </div>
     <ul class="module--navbar--list">
       <?php foreach ($site->children()->listed() as $p): ?>
@@ -12,3 +12,5 @@
     </ul>
   </div>
 </nav>
+
+<?php snippet('archive') ?>

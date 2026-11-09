@@ -19,3 +19,11 @@ Ogimage: http://louiseveillard.com/content/ogimage.png
 ----
 
 Socialnetworks: 
+
+----
+
+Archive: Ce site est archivé : il n’a pas été mis à jour depuis mars 2020.
+
+La plupart de mes projets se font aujourd’hui avec le collectif l’Atelier des chercheurs, autour de la création d’outils libres et gratuits.
+
+Retrouvez-les sur (link: https://latelier-des-chercheurs.fr/ text: latelier-des-chercheurs.fr popup: yes).

@@ -20,14 +20,16 @@ video {
 html {
   box-sizing: border-box;
 }
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 body {
   font-family: var(--f-regular);
   margin: 0 auto;
-  font-size: .8rem;
+  font-size: 0.8rem;
   line-height: 1.78;
 
   color: var(--c-textColor);
@@ -43,19 +45,27 @@ body {
   }
 }
 
-strong, em {
+strong,
+em {
   font-family: var(--f-bold);
 }
 em {
   font-style: normal;
 }
 
-h1, h2, h3, h4, h5, h6, b {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b {
   font-weight: normal;
   font-size: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 0;
   margin-left: 0;
   list-style: none;
@@ -68,7 +78,11 @@ hr {
   margin-bottom: calc(var(--t-margin) * 2);
 }
 
-a, a:hover, a:focus, a:active, a:visited {
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
   color: inherit;
   text-decoration: none;
 }
@@ -83,12 +97,12 @@ a:focus-visible {
 .module--projetList--titles h3,
 .module--projet--header--text--colRight h3,
 .module--projet--text h3 {
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-family: var(--f-bold);
   margin-top: var(--t-margin);
   margin-bottom: 0;
   text-transform: uppercase;
-  letter-spacing: .06rem;
+  letter-spacing: 0.06rem;
 }
 
 /* centered column */
@@ -118,60 +132,37 @@ a:focus-visible {
   }
 }
 
-
 /* ==========================================================================
-   Page transitions (cross-document view transitions, replace pjax)
+   Page transitions (pjax, see main.js): only #main-container is replaced,
+   the navbar and the project list stay in place
    ========================================================================== */
 
-@view-transition {
-  navigation: auto;
-}
-.module--navbar--wrapper {
-  view-transition-name: navbar;
-}
 #main-container {
-  view-transition-name: main-container;
-}
-::view-transition-old(main-container) {
-  animation: .2s ease-out both lev-fade-out;
-}
-::view-transition-new(main-container) {
-  animation: .3s ease-out .1s both lev-fade-in;
-}
-/* the project cover, from the project list to the project page */
-.module--projetList--visuelWrapper--visuel.is--visuelProjet,
-.module--projet_full .module--projet--visuel .FigureImage-lazy {
-  view-transition-name: projet-visuel;
-}
-/* leaving a project for another one: only the clicked cover keeps the name */
-body.is--leaving .module--projet_full .module--projet--visuel .FigureImage-lazy {
-  view-transition-name: none;
-}
-/* leaving from the project list: the page fades out behind the cover */
-body.is--leaving #main-container,
-body.is--leaving .module--projetList--titles {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .3s;
-}
-::view-transition-group(projet-visuel) {
-  animation-duration: .6s;
-  animation-timing-function: var(--ease-custom2);
-}
-@keyframes lev-fade-out {
-  to { opacity: 0; }
-}
-@keyframes lev-fade-in {
-  from { opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
-    animation: none !important;
+  opacity: 1;
+  transition: opacity 0.2s;
+
+  /* focused after each page change (screen readers), no outline */
+  &:focus {
+    outline: none;
+  }
+
+  body.is--ajax_loading & {
+    opacity: 0;
   }
 }
+.module--projetList--titles {
+  opacity: 1;
+  transition: opacity 0.4s;
 
+  body.is--ajax_loading & {
+    opacity: 0;
+    pointer-events: none;
+
+    .module--projetList--titles--projetName--links {
+      pointer-events: none !important;
+    }
+  }
+}
 
 /* ==========================================================================
    Navbar
@@ -184,12 +175,12 @@ body.is--leaving .module--projetList--titles {
 
   html.js & {
     opacity: 1;
-    transition: opacity .9s 1s ease-out;
+    transition: opacity 0.9s 1s ease-out;
   }
   html.js body.is--loading & {
     opacity: 0;
   }
-  body[data-visuel='zoomedIn'] & {
+  body[data-visuel="zoomedIn"] & {
     opacity: 0;
   }
 
@@ -207,17 +198,18 @@ body.is--leaving .module--projetList--titles {
   a {
     display: block;
     padding: var(--t-margin);
-    font-size: .7rem;
+    font-size: 0.7rem;
     font-family: var(--f-bold);
     text-transform: uppercase;
-    letter-spacing: .06rem;
+    letter-spacing: 0.06rem;
     pointer-events: all;
 
     @media (min-width: 48em) {
       margin-top: var(--t-margin);
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       outline: none;
     }
   }
@@ -242,6 +234,70 @@ body.is--leaving .module--projetList--titles {
   }
 }
 
+/* ==========================================================================
+   Archive notice (floating, top center, closable — see main.js)
+   ========================================================================== */
+
+.module--archive {
+  position: fixed;
+  top: var(--t-margin);
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 2 * var(--t-margin));
+  max-width: 320px;
+  z-index: 1100;
+  padding: 12px 32px 12px 16px;
+
+  font-size: 0.7rem;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+
+
+  html.js & {
+    opacity: 1;
+    transition: opacity 0.9s 1s ease-out;
+  }
+  html.js body.is--loading &,
+  body[data-visuel="zoomedIn"] & {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  p {
+    margin: 0 0 0.5em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+  }
+}
+
+.module--archive--close {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  padding: 4px 8px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 1px solid currentColor;
+  }
+}
 
 /* ==========================================================================
    Default page
@@ -250,7 +306,6 @@ body.is--leaving .module--projetList--titles {
 .module--default {
   margin-top: 40px;
 }
-
 
 /* ==========================================================================
    Home intro: links filter the project list by category
@@ -268,9 +323,9 @@ body.is--leaving .module--projetList--titles {
     display: inline;
     cursor: pointer;
     color: #fff;
-    padding: 0 0 .1em;
-    margin: -.1em 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    padding: 0 0 0.1em;
+    margin: -0.1em 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
     background-position: 0 calc(100% - 2px);
     background-repeat: no-repeat;
@@ -281,7 +336,13 @@ body.is--leaving .module--projetList--titles {
 
     /* (more specific than `main a:hover`) */
     &[href^="#"] {
-      background-image: linear-gradient(to right, var(--c-rubrique, #fff), var(--c-rubrique, #fff) 50%, transparent 50%, transparent);
+      background-image: linear-gradient(
+        to right,
+        var(--c-rubrique, #fff),
+        var(--c-rubrique, #fff) 50%,
+        transparent 50%,
+        transparent
+      );
     }
 
     &:hover {
@@ -299,17 +360,31 @@ body.is--leaving .module--projetList--titles {
 
   html.js & {
     opacity: 1;
-    transition: opacity 1.4s ease-out, transform .6s ease-out;
+    transition:
+      opacity 1.4s ease-out,
+      transform 0.6s ease-out;
 
     a {
-      transition: background-size .2s, background-position 2.2s var(--delay, 0s);
-      transition-timing-function: cubic-bezier(0.315, 0.110, 0.000, 0.985);
+      transition:
+        background-size 0.2s,
+        background-position 2.2s var(--delay, 0s);
+      transition-timing-function: cubic-bezier(0.315, 0.11, 0, 0.985);
 
-      &:nth-of-type(1) { --delay: .6s; }
-      &:nth-of-type(2) { --delay: 1.2s; }
-      &:nth-of-type(3) { --delay: 1.8s; }
-      &:nth-of-type(4) { --delay: 2.4s; }
-      &:nth-of-type(5) { --delay: 3s; }
+      &:nth-of-type(1) {
+        --delay: 0.6s;
+      }
+      &:nth-of-type(2) {
+        --delay: 1.2s;
+      }
+      &:nth-of-type(3) {
+        --delay: 1.8s;
+      }
+      &:nth-of-type(4) {
+        --delay: 2.4s;
+      }
+      &:nth-of-type(5) {
+        --delay: 3s;
+      }
     }
   }
 
@@ -323,17 +398,23 @@ body.is--leaving .module--projetList--titles {
   }
 }
 
-
 /* ==========================================================================
    Texts (all pages)
    ========================================================================== */
 
 main {
-  a, a:hover {
+  a,
+  a:hover {
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: 200% 1px;
-    background-image: linear-gradient(to right, #fff, #fff 50%, transparent 50%, transparent);
+    background-image: linear-gradient(
+      to right,
+      #fff,
+      #fff 50%,
+      transparent 50%,
+      transparent
+    );
   }
   a:focus {
     outline: 1px solid transparent;
@@ -341,12 +422,12 @@ main {
 
   /* (lienProjet: …): project number, title shown on hover */
   a.lienProjet {
-    font-size: .75em;
+    font-size: 0.75em;
     position: relative;
     font-family: var(--f-bold);
     display: inline-block;
     vertical-align: bottom;
-    margin: 0 .15em .3em;
+    margin: 0 0.15em 0.3em;
     padding-bottom: 0;
 
     background-position: 0 88%;
@@ -361,8 +442,8 @@ main {
       left: calc((var(--finalWidth) * 50% - 50%) * -1);
       transform: scale(calc(1 / var(--finalWidth)), 0.05) translateY(-170%);
 
-      padding: .4em;
-      padding-top: .55em;
+      padding: 0.4em;
+      padding-top: 0.55em;
       width: calc(var(--finalWidth) * 100%);
       height: calc(var(--finalHeight) * 100%);
 
@@ -375,27 +456,37 @@ main {
       font-size: 0.75em;
 
       transform-origin: center top;
-      transition: opacity 0.3s 0.3s, color 0.3s, transform 0.3s, background-position 0.2s;
+      transition:
+        opacity 0.3s 0.3s,
+        color 0.3s,
+        transform 0.3s,
+        background-position 0.2s;
       transition-timing-function: var(--ease-custom2);
 
       pointer-events: none;
       text-align: center;
     }
 
-    &:hover, &:focus-visible {
+    &:hover,
+    &:focus-visible {
       background-position: 0 128%;
 
       &::before {
         color: #fff;
         opacity: 1;
-        transition: opacity 0s, color 0s, transform 0.3s, background-position 0.2s;
+        transition:
+          opacity 0s,
+          color 0s,
+          transform 0.3s,
+          background-position 0.2s;
         transform: scale(1);
         pointer-events: auto;
       }
     }
   }
 
-  ul, ol {
+  ul,
+  ol {
     list-style-type: none;
 
     li {
@@ -413,13 +504,13 @@ main {
     }
   }
 
-  img, video {
+  img,
+  video {
     width: 100%;
     max-width: 100%;
     height: auto;
   }
 }
-
 
 /* ==========================================================================
    Infos
@@ -435,26 +526,33 @@ main {
     display: inline;
     cursor: pointer;
     color: #fff;
-    padding: .1em 0;
-    margin: -.1em 0;
+    padding: 0.1em 0;
+    margin: -0.1em 0;
 
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: 250% 1px;
-    transition: all .25s;
+    transition: all 0.25s;
 
     outline: 1px solid transparent;
 
     &:hover {
       background-size: 250% 10%;
     }
-    &:focus-visible, &.is--active {
-      padding: .1em .12em;
+    &:focus-visible,
+    &.is--active {
+      padding: 0.1em 0.12em;
     }
 
     &[data-rubrique] {
       color: var(--c-rubrique);
-      background-image: linear-gradient(to right, var(--c-rubrique), var(--c-rubrique) 50%, transparent 50%, transparent);
+      background-image: linear-gradient(
+        to right,
+        var(--c-rubrique),
+        var(--c-rubrique) 50%,
+        transparent 50%,
+        transparent
+      );
 
       &:focus-visible {
         outline: 1px solid var(--c-rubrique);
@@ -466,14 +564,14 @@ main {
 .module--cv {
   position: relative;
   padding-top: 22vh;
-  font-size: .9em;
+  font-size: 0.9em;
 
   a {
     display: inline;
     cursor: pointer;
     color: #fff;
-    padding: .1em 0 2px;
-    margin: -.1em 0;
+    padding: 0.1em 0 2px;
+    margin: -0.1em 0;
     text-decoration: none;
 
     background-position: 0 100%;
@@ -489,18 +587,18 @@ main {
     align-content: flex-start;
 
     > * {
-      background-color: rgba(255, 255, 255, .02);
+      background-color: rgba(255, 255, 255, 0.02);
       flex: 0 1 calc(33.333% - var(--t-margin) / 2);
       min-width: 250px;
 
       padding: calc(var(--t-margin) / 2) var(--t-margin);
       margin: 0 calc(var(--t-margin) / 2) calc(var(--t-margin) / 2) 0;
 
-      transition: background-color .4s 4s ease-out;
+      transition: background-color 0.4s 4s ease-out;
 
       &:hover {
-        background-color: rgba(255, 255, 255, .05);
-        transition: background-color .2s 0s ease-out;
+        background-color: rgba(255, 255, 255, 0.05);
+        transition: background-color 0.2s 0s ease-out;
       }
 
       &::before {
@@ -509,7 +607,6 @@ main {
     }
   }
 }
-
 
 /* ==========================================================================
    Project list (home, infos, projects)
@@ -522,7 +619,7 @@ main {
 
   html.js & {
     opacity: 1;
-    transition: opacity .6s .6s ease-out;
+    transition: opacity 0.6s 0.6s ease-out;
   }
   html.js body.is--loading & {
     opacity: 0;
@@ -547,7 +644,7 @@ main {
     width: 100%;
     opacity: 1;
     max-height: none;
-    transition: opacity .4s;
+    transition: opacity 0.4s;
 
     &.is--hidden {
       padding: 0;
@@ -569,7 +666,7 @@ main {
   height: 0;
   padding: 0 0 calc(var(--vignette) / var(--vignette-ratio));
   overflow: visible;
-  transition: opacity .8s ease-out;
+  transition: opacity 0.8s ease-out;
   pointer-events: auto;
 
   @media (min-width: 48em) {
@@ -587,7 +684,11 @@ main {
   inset: 0;
   overflow: hidden;
   text-align: center;
-  transition: color .4s ease-in-out, background-color .4s ease-in-out, opacity .5s ease-in, border .2s linear;
+  transition:
+    color 0.4s ease-in-out,
+    background-color 0.4s ease-in-out,
+    opacity 0.5s ease-in,
+    border 0.2s linear;
 
   &:focus-visible {
     outline: 1px solid var(--c-rubrique);
@@ -608,7 +709,13 @@ main {
   line-height: 1;
   z-index: 0;
   color: var(--c-rubrique);
-  transition: color .8s ease-out, transform .9s ease-out, opacity .8s, background .44s, right .6s ease-out, -webkit-text-stroke .4s ease-out;
+  transition:
+    color 0.8s ease-out,
+    transform 0.9s ease-out,
+    opacity 0.8s,
+    background 0.44s,
+    right 0.6s ease-out,
+    -webkit-text-stroke 0.4s ease-out;
 
   @media (min-width: 48em) {
     font-size: 7rem;
@@ -634,7 +741,12 @@ main {
   padding-left: 2.5%;
   line-height: 1.4;
   text-align: left;
-  transition: color .8s ease-out, transform .9s ease-in-out, opacity .8s, background .44s, left .6s;
+  transition:
+    color 0.8s ease-out,
+    transform 0.9s ease-in-out,
+    opacity 0.8s,
+    background 0.44s,
+    left 0.6s;
 
   @media (min-width: 48em) {
     font-size: 1.3rem;
@@ -653,11 +765,14 @@ main {
   border-top: 1px solid currentColor;
   color: var(--c-rubrique);
   background-color: transparent;
-  transition: width .4s ease-in, height .4s ease-out, background-color .7s;
+  transition:
+    width 0.4s ease-in,
+    height 0.4s ease-out,
+    background-color 0.7s;
 
   /* glow following the mouse (--x / --y set by main.js) */
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 1px;
     height: 1px;
@@ -666,13 +781,16 @@ main {
     background: radial-gradient(circle closest-side, transparent, transparent);
     background-repeat: no-repeat;
     transform: translate(-50%, -50%);
-    transition: width .2s, height .2s;
+    transition:
+      width 0.2s,
+      height 0.2s;
     pointer-events: none;
   }
 }
 
 /* hover on the list: dim the other projects, open the hovered one */
-.module--projetList--titles:hover .module--projetList--titles--projetName[data-type] {
+.module--projetList--titles:hover
+  .module--projetList--titles--projetName[data-type] {
   .module--projetList--titles--projetName--links:not(:hover) {
     .module--projetList--titles--projetName--links--index,
     .module--projetList--titles--projetName--links--name {
@@ -699,7 +817,11 @@ main {
       &::after {
         width: 500px;
         height: 500px;
-        background: radial-gradient(circle closest-side, var(--c-rubrique), transparent);
+        background: radial-gradient(
+          circle closest-side,
+          var(--c-rubrique),
+          transparent
+        );
       }
     }
   }
@@ -723,7 +845,7 @@ main {
   z-index: -5;
   opacity: 0;
   background-color: var(--c-pagebg);
-  transition: opacity .1s ease-out;
+  transition: opacity 0.1s ease-out;
 }
 
 .module--projetList--visuelWrapper--visuel {
@@ -742,7 +864,9 @@ main {
   z-index: 1;
 
   will-change: opacity, transform;
-  transition: opacity .4s linear, transform .4s ease-out;
+  transition:
+    opacity 0.4s linear,
+    transform 0.4s ease-out;
 
   &[srcset] {
     visibility: visible;
@@ -753,18 +877,17 @@ main {
   }
 
   &.is--shown {
-    opacity: .4;
-    transition: opacity .4s .4s ease-out;
+    opacity: 0.4;
+    transition: opacity 0.4s 0.4s ease-out;
   }
 
   /* the clicked project */
   &.is--visuelProjet {
     opacity: 1;
     z-index: 2;
-    transition: opacity .4s ease-in;
+    transition: opacity 0.4s ease-in;
   }
 }
-
 
 /* ==========================================================================
    Project
@@ -772,7 +895,9 @@ main {
 
 .module--projet {
   padding-bottom: calc(var(--t-margin) * 2);
-  transition: opacity .4s ease-out, margin 1.5s ease-out;
+  transition:
+    opacity 0.4s ease-out,
+    margin 1.5s ease-out;
 
   h3 {
     color: var(--c-rubrique);
@@ -792,13 +917,15 @@ main {
   color: var(--c-textColor);
   background-color: var(--c-pagebg);
 
-  transition: transform .6s ease-out, background-color .4s ease;
+  transition:
+    transform 0.6s ease-out,
+    background-color 0.4s ease;
   transition-timing-function: var(--ease-custom);
 
   /* on load, the header rises over the cover */
   transform: translate3d(0, 10vh, 0);
 
-  body:not(.is--loading)[data-visuel=''] & {
+  body:not(.is--loading)[data-visuel=""] & {
     transform: translate3d(0, 0, 0);
   }
 }
@@ -809,9 +936,11 @@ main {
   max-width: var(--t-largemaxwidth);
   padding-top: 1.5rem;
   display: flow-root;
-  transition: opacity .2s ease-out;
+  transition: opacity 0.2s ease-out;
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     margin: 0;
   }
 }
@@ -888,8 +1017,14 @@ main {
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: 200% 1px;
-    transition: all .25s;
-    background-image: linear-gradient(to right, var(--c-rubrique), var(--c-rubrique) 50%, transparent 50%, transparent);
+    transition: all 0.25s;
+    background-image: linear-gradient(
+      to right,
+      var(--c-rubrique),
+      var(--c-rubrique) 50%,
+      transparent 50%,
+      transparent
+    );
   }
 }
 .module--projet {
@@ -932,16 +1067,19 @@ main {
     justify-content: center;
 
     transform: translate3d(0, calc(-50% + var(--t-bandeauImage) / 2), 0);
-    opacity: .95;
-    transition: transform .6s ease-in-out, opacity .5s ease-out;
+    opacity: 0.95;
+    transition:
+      transform 0.6s ease-in-out,
+      opacity 0.5s ease-out;
     transition-timing-function: var(--ease-custom2);
 
-    body[data-visuel='zoomedIn'] & {
+    body[data-visuel="zoomedIn"] & {
       transform: translate3d(0, 0, 0);
       opacity: 1;
     }
 
-    picture, img {
+    picture,
+    img {
       display: block;
       width: 100%;
       height: auto;
@@ -950,7 +1088,7 @@ main {
   }
 }
 
-body[data-visuel='zoomedIn'] .module--projet {
+body[data-visuel="zoomedIn"] .module--projet {
   .module--projet--header,
   .module--projet--header ~ .module--projet--text:nth-of-type(1) {
     transform: translate3d(0, calc(100vh - var(--t-bandeauImage)), 0);
@@ -964,7 +1102,9 @@ body[data-visuel='zoomedIn'] .module--projet {
   background-color: var(--c-pagebg);
   color: var(--c-textColor);
   padding: var(--t-margin) calc(var(--t-margin) * 2);
-  transition: opacity .9s, transform .6s;
+  transition:
+    opacity 0.9s,
+    transform 0.6s;
   transition-timing-function: var(--ease-custom);
 
   /* line at the bottom */
@@ -1017,15 +1157,17 @@ body[data-visuel='zoomedIn'] .module--projet {
       background-color: #232323;
     }
 
-    .legende, .caption-bottom, figcaption {
+    .legende,
+    .caption-bottom,
+    figcaption {
       margin-left: 0;
       padding: 0;
       max-width: 76ch;
-      font-size: .8em;
-      margin-top: .4em;
+      font-size: 0.8em;
+      margin-top: 0.4em;
 
       p {
-        margin-top: .4em;
+        margin-top: 0.4em;
         max-width: 76ch;
         padding: 0;
       }
@@ -1049,7 +1191,9 @@ body[data-visuel='zoomedIn'] .module--projet {
     }
   }
 
-  p, ul, ol {
+  p,
+  ul,
+  ol {
     &:empty {
       display: none;
     }
@@ -1057,10 +1201,12 @@ body[data-visuel='zoomedIn'] .module--projet {
     &:not(:empty) {
       max-width: 66ch;
       margin: 0 auto;
-      padding-top: .8rem;
+      padding-top: 0.8rem;
       padding-bottom: 1.3rem;
 
-      & + p, & ul, & ol {
+      & + p,
+      & ul,
+      & ol {
         padding-top: 0;
       }
     }
@@ -1071,7 +1217,7 @@ body[data-visuel='zoomedIn'] .module--projet {
     max-width: 60.5ch;
     margin: 0 auto;
     padding-top: 1em;
-    padding-bottom: .5em;
+    padding-bottom: 0.5em;
 
     @media (min-width: 48em) {
       font-size: 1.4rem;
@@ -1079,7 +1225,6 @@ body[data-visuel='zoomedIn'] .module--projet {
     }
   }
 }
-
 
 /* ==========================================================================
    Images (image kirbytag)
@@ -1093,7 +1238,8 @@ body[data-visuel='zoomedIn'] .module--projet {
 .media-image .FigureImage-lazy {
   position: relative;
 
-  picture, img {
+  picture,
+  img {
     display: block;
     width: 100%;
     height: auto;
@@ -1101,7 +1247,9 @@ body[data-visuel='zoomedIn'] .module--projet {
 }
 
 .media-image img {
-  transition: opacity 0.4s ease-out, filter 0.8s linear;
+  transition:
+    opacity 0.4s ease-out,
+    filter 0.8s linear;
 }
 
 .media-image .image {
