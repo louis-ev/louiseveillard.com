@@ -16,10 +16,10 @@ $order = array_flip(array_keys($categories));
 $projets = page('projets')->children()->listed();
 ?>
 <section class="module--projetList">
-  <ol class="module--projetList--titles">
-    <h3 class="isotope--item" data-index="0" data-num="0">Derniers projets</h3>
+  <ol class="module--projetList--titles" id="projets-liste" aria-label="Projets">
+    <li class="module--projetList--heading isotope--item" data-index="0" data-num="0"><h3>Derniers projets</h3></li>
     <?php foreach ($categories as $slug => $name): ?>
-    <h3 class="isotope--item is--hidden" data-type="<?= $slug ?>" data-index="0" data-num="<?= $order[$slug] + 1 ?>"><?= $name ?></h3>
+    <li class="module--projetList--heading isotope--item is--hidden" aria-hidden="true" data-type="<?= $slug ?>" data-index="0" data-num="<?= $order[$slug] + 1 ?>"><h3><?= $name ?></h3></li>
     <?php endforeach ?>
 
     <?php foreach ($projets as $p): ?>

@@ -14,7 +14,7 @@ Keywords: design,portfolio,interaction,programming,louis eveillard,graphical use
 
 ----
 
-Ogimage: http://louiseveillard.com/content/ogimage.png
+Ogimage: https://louiseveillard.com/content/ogimage.png
 
 ----
 

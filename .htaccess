@@ -8,6 +8,10 @@
 # http://yourdomain.com/about-us/team
 RewriteEngine on
 
+# www.louiseveillard.com → louiseveillard.com
+RewriteCond %{HTTP_HOST} ^www\.(louiseveillard\.com)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
 # make sure to set the RewriteBase correctly
 # if you are running the site in a subfolder;
 # otherwise links or the entire site will break.
@@ -80,4 +84,10 @@ ExpiresByType image/png "access plus 1 month"
 ExpiresByType image/gif "access plus 1 month"
 ExpiresByType image/webp "access plus 1 month"
 ExpiresByType font/woff2 "access plus 1 year"
+ExpiresByType video/mp4 "access plus 1 month"
+ExpiresByType video/webm "access plus 1 month"
+# versioned URLs (?v=…, see levVersioned() in site/plugins/louiseveillard)
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType text/javascript "access plus 1 year"
 </IfModule>

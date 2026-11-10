@@ -4,6 +4,7 @@ use Kirby\Cms\App as Kirby;
 use Kirby\Cms\File;
 use Kirby\Cms\Html;
 use Kirby\Cms\Page;
+use Kirby\Cms\Response;
 use Kirby\Text\KirbyTag;
 use Kirby\Toolkit\Str;
 
@@ -15,6 +16,29 @@ function levCoreTag(string $type): Closure
   static $tags;
   $tags ??= require Kirby::instance()->root('kirby') . '/config/tags.php';
   return $tags[$type]['html'];
+}
+
+/**
+ * Only the production domain is indexed by search engines (not a test folder
+ * or subdomain)
+ */
+function levIsProduction(): bool
+{
+  $kirby = Kirby::instance();
+  return $kirby->request()->url()->host() === $kirby->option('louiseveillard.site.productionHost');
+}
+
+/**
+ * Appends the file modification time to local CSS/JS URLs, so they can be
+ * cached for a long time (see .htaccess) and still update on each deploy
+ */
+function levVersioned(string $url): string
+{
+  // relative (`assets/css/main.css`) or absolute URL, site at the domain root
+  $path = ltrim((string)parse_url($url, PHP_URL_PATH), '/');
+  $file = Kirby::instance()->root('index') . '/' . $path;
+
+  return is_file($file) ? $url . '?v=' . filemtime($file) : $url;
 }
 
 /**
@@ -62,7 +86,61 @@ function levFigure(File $image, array $options = []): string
 }
 
 Kirby::plugin('louiseveillard/site', [
+  'options' => [
+    'productionHost' => 'louiseveillard.com',
+  ],
+
+  'components' => [
+    'css' => fn (Kirby $kirby, string $url) => levVersioned($url),
+    'js' => fn (Kirby $kirby, string $url) => levVersioned($url),
+  ],
+
+  'routes' => [
+    [
+      'pattern' => 'sitemap.xml',
+      'action' => function () {
+        $site = site();
+        $pages = $site->children()->listed()->add(page('projets')?->children()->listed() ?? []);
+        $pages = $pages->prepend($site->homePage()->id(), $site->homePage());
+
+        return new Response(snippet('sitemap', ['pages' => $pages], true), 'application/xml');
+      },
+    ],
+    [
+      'pattern' => 'robots.txt',
+      'action' => function () {
+        $robots = levIsProduction()
+          ? "User-agent: *\nAllow: /\n\nSitemap: " . url('sitemap.xml') . "\n"
+          : "User-agent: *\nDisallow: /\n";
+
+        return new Response($robots, 'text/plain');
+      },
+    ],
+  ],
+
   'pageMethods' => [
+    // <title>: page title first, the site name alone on the home page
+    'metaTitle' => function (): string {
+      $site = $this->site();
+      return $this->isHomePage() ? $site->title()->value() : $this->title()->value() . ' — ' . $site->author()->value();
+    },
+    // meta description: project introduction, page text, or site description
+    'metaDescription' => function (): string {
+      if ($this->isHomePage() === false) {
+        foreach (['header', 'text'] as $field) {
+          $text = $this->content()->get($field);
+          if ($text->isNotEmpty() === true) {
+            // without the small caps label that starts some texts ("Informations")
+            $html = preg_replace('#^\s*(<h3>.*?</h3>|<p class="titleCaps">.*?</p>)#s', '', (string)$text->kirbytext());
+            // and without the (lienProjet: …) numbers, meaningless as text
+            $html = preg_replace(['#\s*\(?\s*(<a class="lienProjet"[^>]*>.*?</a>\s*)+\)?#s', '#<style.*?</style>#s'], '', $html);
+            $excerpt = Str::excerpt($html, 160);
+            if ($excerpt !== '') return $excerpt;
+          }
+        }
+      }
+      return $this->site()->description()->value();
+    },
     // two-digit project number, e.g. "03"
     'projetIndex' => function (): string {
       return $this->num() !== null ? str_pad((string)$this->num(), 2, '0', STR_PAD_LEFT) : '';

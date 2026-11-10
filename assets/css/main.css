@@ -91,6 +91,7 @@ a:focus-visible {
 }
 
 /* small caps titles (h3) */
+.titleCaps,
 .module--intro h3,
 .module--infos h3,
 .module--cv h3,
@@ -639,19 +640,25 @@ main {
   pointer-events: none;
 
   h3 {
-    flex: none;
     margin-bottom: 1px;
-    width: 100%;
-    opacity: 1;
-    max-height: none;
-    transition: opacity 0.4s;
+  }
+}
 
-    &.is--hidden {
-      padding: 0;
+/* category headings (only the one for the current sort is shown) */
+.module--projetList--heading {
+  flex: none;
+  width: 100%;
+  opacity: 1;
+  max-height: none;
+  transition: opacity 0.4s;
+
+  &.is--hidden {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    h3 {
       margin: 0;
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
     }
   }
 }

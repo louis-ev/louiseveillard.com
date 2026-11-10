@@ -106,7 +106,7 @@ var projectFilter = {
   init: function (list) {
     this.list = list;
     this.items = Array.from(list.querySelectorAll(".isotope--item"));
-    this.headings = this.items.filter(function (item) { return item.tagName === "H3"; });
+    this.headings = this.items.filter(function (item) { return item.classList.contains("module--projetList--heading"); });
 
     // initial order: latest projects, by number
     this.items.forEach(function (item, i) { item.dataset.position = i; });
@@ -115,17 +115,33 @@ var projectFilter = {
     var links = document.querySelectorAll('.module--intro a[href^="#"]');
     var self = this;
 
+    // toggle buttons for assistive technologies
     links.forEach(function (link) {
+      link.setAttribute("role", "button");
+      link.setAttribute("aria-pressed", "false");
+      link.setAttribute("aria-controls", self.list.id);
+
       link.addEventListener("click", function (event) {
         event.preventDefault();
 
         links.forEach(function (other) {
-          if (other !== link) other.classList.remove("is--active");
+          if (other !== link) {
+            other.classList.remove("is--active");
+            other.setAttribute("aria-pressed", "false");
+          }
         });
-        link.classList.toggle("is--active");
+        var active = link.classList.toggle("is--active");
+        link.setAttribute("aria-pressed", active ? "true" : "false");
 
-        var type = link.classList.contains("is--active") ? link.getAttribute("href").slice(1) : null;
-        self.sort(type, true);
+        self.sort(active ? link.getAttribute("href").slice(1) : null, true);
+      });
+
+      // buttons are also activated with the space bar
+      link.addEventListener("keydown", function (event) {
+        if (event.key === " ") {
+          event.preventDefault();
+          link.click();
+        }
       });
     });
   },
@@ -156,6 +172,7 @@ var projectFilter = {
       self.headings.forEach(function (heading) {
         var hidden = type === null ? heading.dataset.type !== undefined : heading.dataset.type === undefined;
         heading.classList.toggle("is--hidden", hidden);
+        heading.setAttribute("aria-hidden", hidden ? "true" : "false");
       });
 
       self.list.classList.toggle("is--sorted", type !== null);
